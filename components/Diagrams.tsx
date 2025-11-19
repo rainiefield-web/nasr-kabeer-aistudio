@@ -97,7 +97,7 @@ export const ProductCategoryGrid: React.FC<DiagramProps> = ({ lang }) => {
     },
     trans: {
       ...t.trans,
-      image: "https://images.unsplash.com/photo-1605218427360-6960356684ce?auto=format&fit=crop&q=80&w=1000"
+      image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&q=80&w=1000" // Car body frame in factory
     }
   };
 
