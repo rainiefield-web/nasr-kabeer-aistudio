@@ -97,7 +97,7 @@ export const ProductCategoryGrid: React.FC<DiagramProps> = ({ lang }) => {
     },
     trans: {
       ...t.trans,
-      image: "https://i.postimg.cc/vHv07XjC/EV-Frame.jpg" // EV aluminum frame structure
+      image: "https://images.unsplash.com/photo-1580274455191-1c62238fa333?auto=format&fit=crop&q=80&w=1000" // Automotive Chassis/Structure
     }
   };
 
