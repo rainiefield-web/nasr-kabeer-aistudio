@@ -9,7 +9,7 @@ import { Float, MeshDistortMaterial, Cylinder, Box, Environment, Lightformer } f
 import * as THREE from 'three';
 
 // Fix for missing JSX definitions in some environments
-declare module 'react' {
+declare global {
   namespace JSX {
     interface IntrinsicElements {
       [elemName: string]: any;

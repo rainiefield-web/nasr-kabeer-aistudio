@@ -1,10 +1,11 @@
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
 */
 
 import React, { useState, useEffect } from 'react';
-import { HeroScene, StructureGrid } from './components/IndustrialScene';
+import { StructureGrid } from './components/IndustrialScene';
 import { ProductCategoryGrid, ProductionProcessFlow, CapacityGrowthChart } from './components/Diagrams';
 import { Menu, X, Download, MapPin, Mail, Linkedin, Twitter, ArrowRight, CheckCircle2, Globe, FileText, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -289,7 +290,16 @@ const App: React.FC = () => {
 
       {/* Hero Section */}
       <header className="relative h-screen flex items-center overflow-hidden bg-nasr-dark">
-        <HeroScene />
+        {/* Static Background Image */}
+        <div className="absolute inset-0 z-0">
+            <img 
+                src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=2058&auto=format&fit=crop"
+                alt="High-End Aluminum Profiles"
+                className="w-full h-full object-cover opacity-90"
+            />
+            {/* Overlays for text readability - refined for better visibility */}
+            <div className="absolute inset-0 bg-gradient-to-r from-nasr-dark via-nasr-dark/70 to-transparent/20"></div>
+        </div>
         
         <div className="relative z-10 container mx-auto px-6 pt-20">
           <motion.div 
@@ -302,12 +312,12 @@ const App: React.FC = () => {
               <span className="h-[1px] w-12 bg-nasr-accent"></span>
               <span className="text-nasr-accent text-sm font-bold tracking-[0.3em] uppercase">{t.hero.vision}</span>
             </div>
-            <h1 className={`font-serif font-bold leading-none mb-8 text-white mix-blend-overlay opacity-90 ${isRTL ? 'font-arabic text-5xl md:text-7xl' : 'text-6xl md:text-8xl'}`}>
+            <h1 className={`font-serif font-bold leading-none mb-8 text-white ${isRTL ? 'font-arabic text-5xl md:text-7xl' : 'text-6xl md:text-8xl'}`}>
               {t.hero.titleLine1}<br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">{t.hero.titleLine2}</span><br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">{t.hero.titleLine2}</span><br/>
               {t.hero.titleLine3}
             </h1>
-            <p className={`text-lg md:text-2xl text-gray-400 font-light leading-relaxed mb-12 max-w-2xl ${isRTL ? 'border-r-2 pr-8' : 'border-l-2 pl-8'} border-gray-700`}>
+            <p className={`text-lg md:text-2xl text-gray-200 font-light leading-relaxed mb-12 max-w-2xl ${isRTL ? 'border-r-2 pr-8' : 'border-l-2 pl-8'} border-gray-400/50`}>
               {t.hero.desc}
             </p>
             
@@ -316,7 +326,7 @@ const App: React.FC = () => {
                   {t.hero.btnProduct}
                   <ArrowRight size={20} className={`transition-transform ${isRTL ? 'group-hover:-translate-x-1 rotate-180' : 'group-hover:translate-x-1'}`} />
                </a>
-               <a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="flex items-center justify-center gap-3 px-8 py-4 border border-gray-500 text-gray-300 font-bold uppercase tracking-wider hover:border-white hover:text-white transition-colors">
+               <a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="flex items-center justify-center gap-3 px-8 py-4 border border-gray-300 text-gray-100 font-bold uppercase tracking-wider hover:border-white hover:text-white transition-colors">
                   {t.hero.btnProfile}
                </a>
             </div>
@@ -328,10 +338,10 @@ const App: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500"
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-300"
         >
             <span className="text-[10px] uppercase tracking-widest">{t.hero.scroll}</span>
-            <div className="w-[1px] h-16 bg-gradient-to-b from-gray-500 to-transparent"></div>
+            <div className="w-[1px] h-16 bg-gradient-to-b from-gray-300 to-transparent"></div>
         </motion.div>
       </header>
 
