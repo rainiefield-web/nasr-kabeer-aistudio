@@ -25,7 +25,7 @@ const content = {
       vision: "Vision 2030 Partner",
       titleLine1: "SHAPING",
       titleLine2: "EXCELLENCE",
-      titleLine3: "IN EVERY PROFILE",
+      titleLine3: "IN EVERY", // Removed PROFILE to style it separately
       desc: "A world-class manufacturing facility in Dammam Third Industrial City, delivering 200,000 tons of high-end profiles for the architectural, industrial, and transportation sectors.",
       btnProduct: "Discover Products",
       btnProfile: "Corporate Profile",
@@ -88,7 +88,7 @@ const content = {
       vision: "شريك رؤية 2030",
       titleLine1: "صياغة",
       titleLine2: "التميز",
-      titleLine3: "في كل قطاع",
+      titleLine3: "في كل", // Removed PROFILE equivalent
       desc: "منشأة تصنيع عالمية المستوى في المدينة الصناعية الثالثة بالدمام، تنتج 200,000 طن من المقاطع عالية الجودة للقطاعات المعمارية والصناعية وقطاع النقل.",
       btnProduct: "اكتشف منتجاتنا",
       btnProfile: "الملف التعريفي",
@@ -221,11 +221,11 @@ const App: React.FC = () => {
         <div className="container mx-auto px-6 flex justify-between items-center">
           <a href="#" onClick={scrollToTop} className={`flex items-center gap-4 group ${isRTL ? 'ml-8 lg:ml-12' : 'mr-8 lg:mr-12'}`}>
             <AlxLogo />
-            <div className={`hidden md:flex flex-col ${isRTL ? 'border-r pr-4' : 'border-l pl-4'} border-gray-400 h-8 justify-center`}>
-              <span className={`font-serif font-bold text-lg leading-none tracking-wide uppercase ${scrolled ? 'text-nasr-dark' : 'text-white'} ${isRTL ? 'font-arabic' : ''}`}>
+            <div className={`hidden md:flex flex-col ${isRTL ? 'border-r pr-5 mr-1' : 'border-l pl-5 ml-1'} border-gray-400/50 h-10 justify-center`}>
+              <span className={`font-serif font-bold text-xl leading-none tracking-tight uppercase ${scrolled ? 'text-nasr-dark' : 'text-white'} ${isRTL ? 'font-arabic' : ''}`}>
                 {isRTL ? 'نصر كبير' : 'Nasr Kabeer'}
               </span>
-              <span className={`text-[10px] tracking-[0.2em] uppercase ${scrolled ? 'text-gray-500' : 'text-gray-300'} ${isRTL ? 'font-arabic' : ''}`}>
+              <span className={`text-[10px] tracking-[0.35em] uppercase font-medium ${scrolled ? 'text-gray-500' : 'text-gray-300'} ${isRTL ? 'font-arabic tracking-wider' : ''} ml-px`}>
                 {isRTL ? 'للألمنيوم' : 'Aluminum'}
               </span>
             </div>
@@ -317,7 +317,11 @@ const App: React.FC = () => {
             <h1 className={`font-serif font-bold leading-none mb-8 text-white ${isRTL ? 'font-arabic text-5xl md:text-7xl' : 'text-6xl md:text-8xl'}`}>
               {t.hero.titleLine1}<br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">{t.hero.titleLine2}</span><br/>
-              {t.hero.titleLine3}
+              {t.hero.titleLine3} {isRTL ? (
+                <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-300 to-gray-500 drop-shadow-sm">قطاع</span>
+              ) : (
+                <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-300 to-gray-500 drop-shadow-sm">PROFILE</span>
+              )}
             </h1>
             <p className={`text-lg md:text-2xl text-gray-200 font-light leading-relaxed mb-12 max-w-2xl ${isRTL ? 'border-r-2 pr-8' : 'border-l-2 pl-8'} border-gray-400/50`}>
               {t.hero.desc}
