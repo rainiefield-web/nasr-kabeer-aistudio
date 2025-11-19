@@ -1,4 +1,3 @@
-
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -546,6 +545,7 @@ const App: React.FC = () => {
                 </div>
             </div>
         </footer>
+      </main>
     </div>
   );
 };
