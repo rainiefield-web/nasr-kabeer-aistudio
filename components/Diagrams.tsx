@@ -111,15 +111,15 @@ export const ProductCategoryGrid: React.FC<DiagramProps> = ({ lang }) => {
           <button
             key={key}
             onClick={() => setActiveCategory(key)}
-            className={`flex-1 p-6 text-left transition-all duration-300 group relative overflow-hidden ${activeCategory === key ? 'bg-white text-nasr-dark shadow-md z-10' : 'text-gray-500 hover:bg-gray-100'}`}
+            className={`flex-1 p-2 md:p-4 lg:p-6 text-left transition-all duration-300 group relative overflow-hidden ${activeCategory === key ? 'bg-white text-nasr-dark shadow-md z-10' : 'text-gray-500 hover:bg-gray-100'}`}
             style={{ textAlign: isRTL ? 'right' : 'left' }}
           >
             {activeCategory === key && <div className={`absolute ${isRTL ? 'right-0' : 'left-0'} top-0 bottom-0 w-1 bg-nasr-blue`}></div>}
-            <div className="relative z-10 flex flex-col gap-2">
-                {key === 'arch' && <Building2 size={28} className={activeCategory === key ? "text-nasr-blue" : "text-gray-400"} />}
-                {key === 'ind' && <Factory size={28} className={activeCategory === key ? "text-nasr-blue" : "text-gray-400"} />}
-                {key === 'trans' && <Car size={28} className={activeCategory === key ? "text-nasr-blue" : "text-gray-400"} />}
-                <span className={`font-serif text-lg font-bold uppercase tracking-wide mt-2 ${isRTL ? 'font-arabic' : ''}`}>{categories[key].title}</span>
+            <div className="relative z-10 flex flex-col items-center lg:items-start gap-1 lg:gap-2">
+                {key === 'arch' && <Building2 className={`w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 ${activeCategory === key ? "text-nasr-blue" : "text-gray-400"}`} />}
+                {key === 'ind' && <Factory className={`w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 ${activeCategory === key ? "text-nasr-blue" : "text-gray-400"}`} />}
+                {key === 'trans' && <Car className={`w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 ${activeCategory === key ? "text-nasr-blue" : "text-gray-400"}`} />}
+                <span className={`font-serif text-[10px] md:text-sm lg:text-lg font-bold uppercase tracking-wide mt-1 lg:mt-2 break-words text-center lg:text-left leading-tight ${isRTL ? 'font-arabic' : ''}`}>{categories[key].title}</span>
             </div>
           </button>
         ))}
@@ -230,8 +230,8 @@ export const CapacityGrowthChart: React.FC<DiagramProps> = ({ lang }) => {
 
     const phases = [
         { id: 1, capacity: 50000, year: "2026", label: lang === 'en' ? "Phase 1" : "المرحلة 1", color: "bg-gray-400", focus: lang === 'en' ? "Architectural" : "معماري" },
-        { id: 2, capacity: 100000, year: "2027", label: lang === 'en' ? "Phase 2" : "المرحلة 2", color: "bg-nasr-blue", focus: lang === 'en' ? "+ Industrial" : "+ صناعي" },
-        { id: 3, capacity: 200000, year: "2028", label: lang === 'en' ? "Phase 3" : "المرحلة 3", color: "bg-nasr-red", focus: lang === 'en' ? "+ Transportation" : "+ النقل" }
+        { id: 2, capacity: 100000, year: "2027", label: lang === 'en' ? "Phase 2" : "المرحلة 2", color: "bg-nasr-blue", focus: lang === 'en' ? "Industrial" : "صناعي" },
+        { id: 3, capacity: 200000, year: "2028", label: lang === 'en' ? "Phase 3" : "المرحلة 3", color: "bg-nasr-red", focus: lang === 'en' ? "Transportation" : "النقل" }
     ];
 
     return (

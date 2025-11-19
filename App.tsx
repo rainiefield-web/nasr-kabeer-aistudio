@@ -332,23 +332,11 @@ const App: React.FC = () => {
             </div>
           </motion.div>
         </div>
-        
-        {/* Scroll Indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-300"
-        >
-            <span className="text-[10px] uppercase tracking-widest">{t.hero.scroll}</span>
-            <div className="w-[1px] h-16 bg-gradient-to-b from-gray-300 to-transparent"></div>
-        </motion.div>
       </header>
 
       <main>
         {/* Strategic Overview */}
         <section id="about" className="py-24 md:py-32 bg-white relative overflow-hidden">
-          <StructureGrid />
           <div className="container mx-auto px-6 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
               <div>
