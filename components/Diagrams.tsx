@@ -97,36 +97,40 @@ export const ProductCategoryGrid: React.FC<DiagramProps> = ({ lang }) => {
     },
     trans: {
       ...t.trans,
-      image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&q=80&w=1000" // Car body frame in factory
+      image: "https://i.postimg.cc/vHv07XjC/EV-Frame.jpg" // EV aluminum frame structure
     }
   };
 
   const activeData = categories[activeCategory as keyof typeof categories];
 
   return (
-    <div className="flex flex-col lg:flex-row h-full bg-white shadow-2xl rounded-sm overflow-hidden border border-gray-100">
+    <div className="flex flex-col lg:flex-row w-full lg:h-full bg-white shadow-2xl rounded-sm overflow-hidden border border-gray-100">
       {/* Navigation Sidebar */}
-      <div className={`lg:w-1/4 bg-gray-50 ${isRTL ? 'border-l' : 'border-r'} border-gray-200 flex lg:flex-col`}>
+      <div className={`w-full lg:w-1/4 bg-gray-50 ${isRTL ? 'border-l' : 'border-r'} border-gray-200 flex lg:flex-col overflow-x-auto`}>
         {(Object.keys(categories) as Array<keyof typeof categories>).map((key) => (
           <button
             key={key}
             onClick={() => setActiveCategory(key)}
-            className={`flex-1 p-2 md:p-4 lg:p-6 text-left transition-all duration-300 group relative overflow-hidden ${activeCategory === key ? 'bg-white text-nasr-dark shadow-md z-10' : 'text-gray-500 hover:bg-gray-100'}`}
+            className={`flex-1 lg:flex-none min-w-[120px] p-3 md:p-4 lg:p-6 text-left transition-all duration-300 group relative overflow-hidden flex flex-col lg:block items-center justify-center lg:items-start ${activeCategory === key ? 'bg-white text-nasr-dark shadow-md z-10' : 'text-gray-500 hover:bg-gray-100'}`}
             style={{ textAlign: isRTL ? 'right' : 'left' }}
           >
-            {activeCategory === key && <div className={`absolute ${isRTL ? 'right-0' : 'left-0'} top-0 bottom-0 w-1 bg-nasr-blue`}></div>}
+            {/* Desktop Active Indicator (Side) */}
+            {activeCategory === key && <div className={`hidden lg:block absolute ${isRTL ? 'right-0' : 'left-0'} top-0 bottom-0 w-1 bg-nasr-blue`}></div>}
+            {/* Mobile Active Indicator (Bottom) */}
+            {activeCategory === key && <div className="block lg:hidden absolute bottom-0 left-0 right-0 h-1 bg-nasr-blue"></div>}
+            
             <div className="relative z-10 flex flex-col items-center lg:items-start gap-1 lg:gap-2">
-                {key === 'arch' && <Building2 className={`w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 ${activeCategory === key ? "text-nasr-blue" : "text-gray-400"}`} />}
-                {key === 'ind' && <Factory className={`w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 ${activeCategory === key ? "text-nasr-blue" : "text-gray-400"}`} />}
-                {key === 'trans' && <Car className={`w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 ${activeCategory === key ? "text-nasr-blue" : "text-gray-400"}`} />}
-                <span className={`font-serif text-[10px] md:text-sm lg:text-lg font-bold uppercase tracking-wide mt-1 lg:mt-2 break-words text-center lg:text-left leading-tight ${isRTL ? 'font-arabic' : ''}`}>{categories[key].title}</span>
+                {key === 'arch' && <Building2 className={`w-6 h-6 lg:w-7 lg:h-7 ${activeCategory === key ? "text-nasr-blue" : "text-gray-400"}`} />}
+                {key === 'ind' && <Factory className={`w-6 h-6 lg:w-7 lg:h-7 ${activeCategory === key ? "text-nasr-blue" : "text-gray-400"}`} />}
+                {key === 'trans' && <Car className={`w-6 h-6 lg:w-7 lg:h-7 ${activeCategory === key ? "text-nasr-blue" : "text-gray-400"}`} />}
+                <span className={`font-serif text-xs lg:text-lg font-bold uppercase tracking-wide mt-1 lg:mt-2 break-words text-center lg:text-left leading-tight ${isRTL ? 'font-arabic' : ''}`}>{categories[key].title}</span>
             </div>
           </button>
         ))}
       </div>
 
       {/* Content Area */}
-      <div className="lg:w-3/4 relative">
+      <div className="w-full lg:w-3/4 relative min-h-[500px] lg:min-h-0">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
               <motion.img 
@@ -140,32 +144,32 @@ export const ProductCategoryGrid: React.FC<DiagramProps> = ({ lang }) => {
               <div className={`absolute inset-0 bg-gradient-to-${isRTL ? 'l' : 'r'} from-white via-white/90 to-transparent z-10`}></div>
           </div>
 
-          <div className="relative z-20 p-8 md:p-16 h-full flex flex-col justify-center">
+          <div className="relative z-20 p-6 md:p-16 h-full flex flex-col justify-center">
             <motion.div
               key={activeCategory}
               initial={{ opacity: 0, x: isRTL ? -20 : 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="text-nasr-blue font-bold tracking-widest uppercase text-sm mb-2 block">{activeData.subtitle}</span>
-              <h3 className={`font-serif text-4xl md:text-5xl text-nasr-dark mb-6 ${isRTL ? 'font-arabic' : ''}`}>
+              <span className="text-nasr-blue font-bold tracking-widest uppercase text-xs md:text-sm mb-2 block">{activeData.subtitle}</span>
+              <h3 className={`font-serif text-2xl md:text-5xl text-nasr-dark mb-4 md:mb-6 ${isRTL ? 'font-arabic' : ''}`}>
                 {activeData.title} {lang === 'en' ? 'Profiles' : 'المقاطع'}
               </h3>
-              <p className={`text-gray-600 text-lg mb-10 max-w-xl leading-relaxed ${isRTL ? 'border-r-4 pr-6' : 'border-l-4 pl-6'} border-nasr-silver`}>
+              <p className={`text-gray-600 text-sm md:text-lg mb-8 md:mb-10 max-w-xl leading-relaxed ${isRTL ? 'border-r-4 pr-4 md:pr-6' : 'border-l-4 pl-4 md:pl-6'} border-nasr-silver`}>
                 {activeData.desc}
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 max-w-2xl">
                 {activeData.items.map((item, idx) => (
                   <motion.div 
                     key={idx} 
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.1 }}
-                    className="flex items-center gap-3 bg-white/80 backdrop-blur-sm p-4 border border-gray-200 rounded-sm hover:border-nasr-blue transition-colors"
+                    className="flex items-center gap-3 bg-white/80 backdrop-blur-sm p-3 md:p-4 border border-gray-200 rounded-sm hover:border-nasr-blue transition-colors"
                   >
-                    <ShieldCheck size={18} className="text-nasr-accent shrink-0" />
-                    <span className="font-medium text-gray-800">{item}</span>
+                    <ShieldCheck size={16} className="text-nasr-accent shrink-0 md:w-[18px] md:h-[18px]" />
+                    <span className="font-medium text-gray-800 text-sm md:text-base">{item}</span>
                   </motion.div>
                 ))}
               </div>

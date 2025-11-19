@@ -34,8 +34,9 @@ const content = {
     about: {
       subtitle: "Strategic Overview",
       title: "The Foundation of Modern Industry",
-      p1: "Nasr Kabeer Aluminum Co., Ltd. represents a cornerstone investment in Saudi Arabia's industrial diversification. Located strategically in Dammam, we bridge the gap between raw material abundance and sophisticated engineering demand.",
-      p2: "Our facility is integrated with the Kingdom's industrial ecosystem, benefiting from proximity to Ma'aden's aluminum smelter (80km) and direct access to King Abdulaziz Port for global exports.",
+      p1: "Nasr Kabeer Aluminum Co., Ltd. (NKAC) is a premier manufacturer of high-performance aluminum extrusions, strategically positioned in the Kingdom of Saudi Arabia to serve global industrial and transportation sectors.",
+      p2: "We specialize in a diverse, high-end portfolio, ranging from advanced architectural systems to large-scale profiles for industrial and transportation applications, backed by a total designed capacity of 200,000 tons per year. Our operations are anchored by a state-of-the-art facility, utilizing large-tonnage extrusion presses and CNC precision machining to ensure superior strength-to-weight ratios and complex profile geometries.",
+      p3: "We uphold the highest international benchmarks, certified to ISO 9001, ISO 14001, and ISO 45001, reflecting our unwavering commitment to quality, sustainability, and safety. Aligned with Saudi Vision 2030, NKAC is dedicated to driving local value creation and supporting export diversification for both domestic and international markets.",
       statCapacity: "Tons/Year Capacity",
       statExport: "Export Target"
     },
@@ -96,8 +97,9 @@ const content = {
     about: {
       subtitle: "نظرة استراتيجية",
       title: "أساس الصناعة الحديثة",
-      p1: "تمثل شركة نصر كبير للألمنيوم المحدودة استثماراً محورياً في التنوع الصناعي للمملكة العربية السعودية. بفضل موقعنا الاستراتيجي في الدمام، نسد الفجوة بين وفرة المواد الخام والطلب الهندسي المتطور.",
-      p2: "منشأتنا متكاملة مع المنظومة الصناعية في المملكة، مستفيدة من قربها من مصهر معادن للألمنيوم (80 كم) والوصول المباشر إلى ميناء الملك عبد العزيز للتصدير العالمي.",
+      p1: "شركة نصر كبير للألمنيوم المحدودة (NKAC) هي شركة رائدة في تصنيع مقاطع الألمنيوم عالية الأداء، وتتمتع بموقع استراتيجي في المملكة العربية السعودية لخدمة القطاعات الصناعية وقطاع النقل عالمياً.",
+      p2: "نحن متخصصون في محفظة متنوعة وعالية الجودة، تتراوح من الأنظمة المعمارية المتقدمة إلى المقاطع واسعة النطاق للتطبيقات الصناعية والنقل، مدعومة بطاقة تصميمية إجمالية تبلغ 200,000 طن سنوياً. ترتكز عملياتنا على منشأة حديثة تستخدم مكابس بثق ذات حمولة كبيرة وآلات تشغيل دقيقة CNC لضمان نسب قوة إلى وزن فائقة وهندسة مقاطع معقدة.",
+      p3: "نحن نلتزم بأعلى المعايير الدولية، وحاصلون على شهادات ISO 9001 و ISO 14001 و ISO 45001، مما يعكس التزامنا الراسخ بالجودة والاستدامة والسلامة. تماشياً مع رؤية السعودية 2030، تكرس NKAC جهودها لدفع عجلة خلق القيمة المحلية ودعم تنويع الصادرات لكل من الأسواق المحلية والدولية.",
       statCapacity: "طن/سنة طاقة إنتاجية",
       statExport: "هدف التصدير"
     },
@@ -341,15 +343,12 @@ const App: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
               <div>
                  <SectionHeading title={t.about.title} subtitle={t.about.subtitle} lang={lang} />
-                 <div className="space-y-8 text-lg text-gray-600 leading-relaxed">
-                   <p>
-                     <strong className="text-nasr-dark">{isRTL ? 'شركة نصر كبير للألمنيوم المحدودة' : 'Nasr Kabeer Aluminum Co., Ltd.'}</strong> {t.about.p1.substring(isRTL ? 35 : 31)}
-                   </p>
-                   <p>
-                     {t.about.p2}
-                   </p>
+                 <div className="space-y-6 text-base md:text-lg text-gray-600 leading-relaxed">
+                   <p>{t.about.p1}</p>
+                   <p>{t.about.p2}</p>
+                   <p>{t.about.p3}</p>
                    
-                   <div className="grid grid-cols-2 gap-8 mt-12">
+                   <div className="grid grid-cols-2 gap-8 mt-8">
                       <div className={`p-6 bg-gray-50 ${isRTL ? 'border-r-4' : 'border-l-4'} border-nasr-blue`}>
                         <div className="text-4xl font-serif font-bold text-nasr-dark mb-2">200K</div>
                         <div className="text-xs font-bold uppercase tracking-widest text-gray-500">{t.about.statCapacity}</div>
@@ -442,7 +441,7 @@ const App: React.FC = () => {
         <section id="products" className="py-24 bg-gray-50">
             <div className="container mx-auto px-6">
                 <SectionHeading title={t.products.title} subtitle={t.products.subtitle} lang={lang} />
-                <div className="h-[700px] lg:h-[600px] mt-12">
+                <div className="mt-12 lg:h-[600px]">
                     <ProductCategoryGrid lang={lang} />
                 </div>
             </div>
