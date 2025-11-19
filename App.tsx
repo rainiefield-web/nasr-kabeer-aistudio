@@ -217,7 +217,7 @@ const App: React.FC = () => {
       {/* Navigation */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <a href="#" onClick={scrollToTop} className="flex items-center gap-4 group">
+          <a href="#" onClick={scrollToTop} className={`flex items-center gap-4 group ${isRTL ? 'ml-8 lg:ml-12' : 'mr-8 lg:mr-12'}`}>
             <AlxLogo />
             <div className={`hidden md:flex flex-col ${isRTL ? 'border-r pr-4' : 'border-l pl-4'} border-gray-400 h-8 justify-center`}>
               <span className={`font-serif font-bold text-lg leading-none tracking-wide uppercase ${scrolled ? 'text-nasr-dark' : 'text-white'} ${isRTL ? 'font-arabic' : ''}`}>
@@ -229,7 +229,7 @@ const App: React.FC = () => {
             </div>
           </a>
           
-          <div className={`hidden md:flex items-center gap-10 text-sm font-medium tracking-widest uppercase ${scrolled ? 'text-gray-800' : 'text-white'}`}>
+          <div className={`hidden md:flex items-center gap-6 lg:gap-10 text-sm font-medium tracking-widest uppercase ${scrolled ? 'text-gray-800' : 'text-white'}`}>
             <a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="hover:text-nasr-blue transition-colors relative group">
               {t.nav.about}
               <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-nasr-blue transition-all duration-300 group-hover:w-full"></span>

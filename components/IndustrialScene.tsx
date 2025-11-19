@@ -1,4 +1,3 @@
-
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -10,19 +9,10 @@ import { Float, Environment, Lightformer, PerspectiveCamera } from '@react-three
 import * as THREE from 'three';
 
 // Fix for missing JSX definitions in some environments
-declare global {
+declare module 'react' {
   namespace JSX {
     interface IntrinsicElements {
-      mesh: any;
-      group: any;
-      meshStandardMaterial: any;
-      meshPhysicalMaterial: any;
-      boxGeometry: any;
-      cylinderGeometry: any;
-      extrudeGeometry: any;
-      ambientLight: any;
-      spotLight: any;
-      directionalLight: any;
+      [elemName: string]: any;
     }
   }
 }
