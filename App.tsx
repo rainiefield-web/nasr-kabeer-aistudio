@@ -7,11 +7,24 @@
 import React, { useState, useEffect } from 'react';
 import { StructureGrid } from './components/IndustrialScene';
 import { ProductCategoryGrid, ProductionProcessFlow, CapacityGrowthChart } from './components/Diagrams';
-import { Menu, X, Download, MapPin, Mail, Linkedin, Twitter, ArrowRight, CheckCircle2, Globe, FileText, Phone } from 'lucide-react';
+import { 
+  Menu, X, Download, MapPin, Mail, Linkedin, Twitter, ArrowRight, 
+  CheckCircle2, Globe, FileText, Phone, ChevronLeft, Factory, 
+  Thermometer, Settings, Layers, ShieldCheck, Zap, Cpu, PaintBucket
+} from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // --- TYPES & CONTENT ---
 type Language = 'en' | 'ar';
+type Page = 'home' | 'technology';
+
+// Process Step Type
+interface ProcessStep {
+  title: string;
+  desc: string;
+  details: string[];
+  icon: React.ElementType;
+}
 
 const content = {
   en: {
@@ -19,16 +32,19 @@ const content = {
       about: "About",
       products: "Products",
       expansion: "Expansion",
-      contact: "Get in Touch"
+      technology: "Technology",
+      contact: "Get in Touch",
+      back: "Back to Home"
     },
     hero: {
       vision: "Vision 2030 Partner",
       titleLine1: "SHAPING",
       titleLine2: "EXCELLENCE",
-      titleLine3: "IN EVERY", // Removed PROFILE to style it separately
+      titleLine3: "IN EVERY", 
       desc: "A world-class manufacturing facility in Dammam Third Industrial City, delivering 200,000 tons of high-end profiles for the architectural, industrial, and transportation sectors.",
       btnProduct: "Discover Products",
       btnProfile: "Corporate Profile",
+      btnTech: "Our Technology",
       scroll: "Scroll"
     },
     about: {
@@ -65,6 +81,164 @@ const content = {
       title: "Integrated Value Chain",
       desc: "Complete in-house control from casting to finishing ensures superior quality and traceability."
     },
+    techPage: {
+      title: "Advanced Technical Route",
+      subtitle: "Precision Manufacturing",
+      desc: "We employ distinct technical routes optimized for Architectural, Industrial, and Automotive applications, ensuring every profile meets rigorous international standards.",
+      tabs: {
+        arch: "Architectural",
+        ind: "Industrial",
+        auto: "Automotive"
+      },
+      archSteps: [
+        {
+          title: "Raw Material Processing",
+          desc: "Precision alloying and billet casting.",
+          details: [
+            "Melting & Casting: Raw ingots melted with precise alloying elements (Mg, Si, Zn).",
+            "Billet Casting: State-of-the-art casting for uniform grain structure.",
+            "Internal Alloy Control: Customization for structural strength and thermal performance."
+          ]
+        },
+        {
+          title: "In-House Die Manufacturing",
+          desc: "Advanced CNC machining for custom solutions.",
+          details: [
+            "Faster design cycles and better cost control.",
+            "Tailored solutions for complex cross-sections.",
+            "High-precision fabrication ensuring tight tolerances."
+          ]
+        },
+        {
+          title: "Extrusion Process",
+          desc: "High-precision forming for complex profiles.",
+          details: [
+            "Billet Pre-Heating: Heated to precise temperatures.",
+            "High-Precision Extrusion: Optimized for window frames and curtain walls.",
+            "Quenching: Immediate air/water quenching to lock in mechanical properties."
+          ]
+        },
+        {
+          title: "Surface Treatment",
+          desc: "Durable finishes for harsh environments.",
+          details: [
+            "Powder Coating: Electrostatic spraying for weather-resistant finishes.",
+            "Anodizing: Enhanced corrosion resistance and aesthetic appeal.",
+            "PVDF Coating: Fluorocarbon for superior weather resistance in demanding environments."
+          ]
+        },
+        {
+          title: "Accessory & Assembly",
+          desc: "Value-added integration.",
+          details: [
+            "Thermal Break Strips: Produced in-house for energy efficiency.",
+            "Integration: Seamless compatibility with glass and door components."
+          ]
+        }
+      ],
+      indSteps: [
+        {
+          title: "Raw Material Selection",
+          desc: "High-purity aluminum for industrial needs.",
+          details: [
+            "Purity > 99.7% selected.",
+            "Alloys: 6061, 6063, 5052, 7075 evaluated for specific properties.",
+            "Tailored compositions for industrial requirements."
+          ]
+        },
+        {
+          title: "Melting & Casting",
+          desc: "Advanced refining techniques.",
+          details: [
+            "Temperature Control: 690-720°C range.",
+            "Refining: Flux refining, vacuum degassing, electromagnetic stirring.",
+            "Result: High-quality molten base with impurities removed."
+          ]
+        },
+        {
+          title: "Extrusion Forming",
+          desc: "Creating complex cross-sections.",
+          details: [
+            "Methods: Direct, Indirect, and Hydrostatic extrusion.",
+            "Control: Precise ram speed, pressure, and temperature management.",
+            "Die Design: Specialized dies for intricate industrial shapes."
+          ]
+        },
+        {
+          title: "Heat Treatment",
+          desc: "Enhancing mechanical properties.",
+          details: [
+            "Solution Heat Treatment: 530-540°C.",
+            "Aging: Artificial aging to enhance strength and hardness (T6/T7).",
+            "Result: Structural integrity for demanding applications."
+          ]
+        },
+        {
+          title: "Precision Machining",
+          desc: "Meeting exact specifications.",
+          details: [
+            "CNC Techniques: Cutting, drilling, milling.",
+            "Tolerance: Extremely tight controls.",
+            "Surface Roughness: Achieved for specific applications."
+          ]
+        }
+      ],
+      autoSteps: [
+        {
+          title: "Alloy Development & Casting",
+          desc: "Engineered for crashworthiness and high strength.",
+          details: [
+            "Custom 6xxx & 7xxx Series: Developed for optimal strength-to-weight ratios.",
+            "Impurity Control: Strict control of Iron (Fe) levels to ensure ductility for crash energy absorption.",
+            "Homogenization: Uniform billet structure to prevent downstream extrusion defects."
+          ]
+        },
+        {
+          title: "Precision Extrusion",
+          desc: "Isothermal process for consistent properties.",
+          details: [
+            "Multi-Port Extrusion: Creating complex hollow profiles for battery cooling and structural rigidity.",
+            "Isothermal Control: Maintains constant temperature exit speed to ensure uniform mechanical properties.",
+            "Gradient Quenching: Precise water-mist cooling to manage distortion while locking in microstructure."
+          ]
+        },
+        {
+          title: "Advanced Forming",
+          desc: "Shaping without compromising integrity.",
+          details: [
+            "3D Stretch Bending: Curving profiles for aerodynamic vehicle contours without buckling.",
+            "Hydroforming: Using high-pressure fluid to shape complex geometries.",
+            "Calibration: Post-extrusion stretching to achieve superior straightness tolerances."
+          ]
+        },
+        {
+          title: "CNC Machining & Fabrication",
+          desc: "5-Axis precision for component integration.",
+          details: [
+            "5-Axis Milling: For complex mounting points and battery tray features.",
+            "Automated Drilling & Tapping: High-speed robotic cells for mass production efficiency.",
+            "Tight Tolerances: Maintaining +/- 0.05mm accuracy for assembly fitment."
+          ]
+        },
+        {
+          title: "Specialized Heat Treatment",
+          desc: "Balancing strength and energy absorption.",
+          details: [
+            "Crash-Optimized Aging: Specific T6/T7 cycles to maximize energy absorption (ductility) alongside yield strength.",
+            "Bake Hardening: Alloys designed to gain final strength during the paint baking process."
+          ]
+        },
+        {
+          title: "Joining & Assembly",
+          desc: "Next-generation bonding for EV structures.",
+          details: [
+            "Friction Stir Welding (FSW): Creating leak-proof, high-strength joints for EV battery enclosures.",
+            "Laser Welding: Low-heat input joining to minimize distortion.",
+            "Structural Bonding: Surface preparation for advanced adhesive applications."
+          ]
+        }
+      ]
+    },
     footer: {
       desc: "Forging the future of Saudi Arabia's industrial sector with precision aluminum solutions. Located in the heart of Dammam's industrial hub.",
       navTitle: "Navigation",
@@ -82,16 +256,19 @@ const content = {
       about: "عن الشركة",
       products: "المنتجات",
       expansion: "التوسع",
-      contact: "تواصل معنا"
+      technology: "التقنية",
+      contact: "تواصل معنا",
+      back: "العودة للرئيسية"
     },
     hero: {
       vision: "شريك رؤية 2030",
       titleLine1: "صياغة",
       titleLine2: "التميز",
-      titleLine3: "في كل", // Removed PROFILE equivalent
+      titleLine3: "في كل",
       desc: "منشأة تصنيع عالمية المستوى في المدينة الصناعية الثالثة بالدمام، تنتج 200,000 طن من المقاطع عالية الجودة للقطاعات المعمارية والصناعية وقطاع النقل.",
       btnProduct: "اكتشف منتجاتنا",
       btnProfile: "الملف التعريفي",
+      btnTech: "تقنياتنا",
       scroll: "تمرير"
     },
     about: {
@@ -127,6 +304,164 @@ const content = {
     process: {
       title: "سلسلة القيمة المتكاملة",
       desc: "تحكم داخلي كامل من الصب إلى التشطيب يضمن جودة فائقة وتتبعاً دقيقاً."
+    },
+    techPage: {
+      title: "المسار التقني المتقدم",
+      subtitle: "التصنيع الدقيق",
+      desc: "نحن نوظف مسارات تقنية متميزة ومحسنة للتطبيقات المعمارية والصناعية والسيارات، مما يضمن تلبية كل مقطع للمعايير الدولية الصارمة.",
+      tabs: {
+        arch: "معماري",
+        ind: "صناعي",
+        auto: "سيارات"
+      },
+      archSteps: [
+        {
+          title: "معالجة المواد الخام",
+          desc: "سبائك دقيقة وصب كتل.",
+          details: [
+            "الصهروالصب: صهر سبائك خام مع عناصر دقيقة (مغنيسيوم، سيليكون).",
+            "صب الكتل: تقنيات صب حديثة لهيكل حبيبي موحد.",
+            "تحكم داخلي في السبائك: تخصيص للقوة الهيكلية."
+          ]
+        },
+        {
+          title: "تصنيع القوالب داخلياً",
+          desc: "تشغيل CNC متقدم للحلول المخصصة.",
+          details: [
+            "دورات تصميم أسرع وتحكم أفضل في التكلفة.",
+            "حلول مخصصة للمقاطع المعقدة.",
+            "تصنيع عالي الدقة يضمن تفاوتات ضيقة."
+          ]
+        },
+        {
+          title: "عملية البثق",
+          desc: "تشكيل عالي الدقة للمقاطع المعقدة.",
+          details: [
+            "تسخين الكتل: تسخين لدرجات حرارة دقيقة.",
+            "بثق عالي الدقة: محسن لإطارات النوافذ والجدران الستائرية.",
+            "التبريد: تبريد فوري بالهواء/الماء لتثبيت الخواص الميكانيكية."
+          ]
+        },
+        {
+          title: "المعالجة السطحية",
+          desc: "تشطيبات متينة للبيئات القاسية.",
+          details: [
+            "طلاء البودرة: رش الكهروستاتيكي لتشطيبات مقاومة للطقس.",
+            "الأنودة: تعزيز مقاومة التآكل والجاذبية الجمالية.",
+            "طلاء PVDF: فلوروكربون لمقاومة فائقة في البيئات الصعبة."
+          ]
+        },
+        {
+          title: "التجميع والملحقات",
+          desc: "تكامل ذو قيمة مضافة.",
+          details: [
+            "شرائط العزل الحراري: تنتج داخلياً لكفاءة الطاقة.",
+            "التكامل: توافق سلس مع مكونات الزجاج والأبواب."
+          ]
+        }
+      ],
+      indSteps: [
+        {
+          title: "اختيار المواد الخام",
+          desc: "ألمنيوم عالي النقاء للاحتياجات الصناعية.",
+          details: [
+            "نقاء > 99.7٪.",
+            "سبائك: 6061، 6063، 5052، 7075.",
+            "تركيبات مخصصة للمتطلبات الصناعية."
+          ]
+        },
+        {
+          title: "الصهروالصب",
+          desc: "تقنيات تكرير متقدمة.",
+          details: [
+            "التحكم في الحرارة: 690-720 درجة مئوية.",
+            "التكرير: تكرير التدفق، تفريغ الغاز، التحريك الكهرومغناطيسي.",
+            "النتيجة: قاعدة منصهرة عالية الجودة."
+          ]
+        },
+        {
+          title: "تشكيل البثق",
+          desc: "إنشاء مقاطع عرضية معقدة.",
+          details: [
+            "الطرق: بثق مباشر، غير مباشر، وهيدروستاتيكي.",
+            "التحكم: إدارة دقيقة لسرعة المكبس والضغط.",
+            "تصميم القوالب: قوالب متخصصة للأشكال الصناعية."
+          ]
+        },
+        {
+          title: "المعالجة الحرارية",
+          desc: "تعزيز الخواص الميكانيكية.",
+          details: [
+            "معالجة حرارية للمحلول: 530-540 درجة مئوية.",
+            "التقادم: تقادم اصطناعي لتعزيز القوة (T6/T7).",
+            "النتيجة: سلامة هيكلية للتطبيقات الصعبة."
+          ]
+        },
+        {
+          title: "التشغيل الدقيق",
+          desc: "تلبية المواصفات الدقيقة.",
+          details: [
+            "تقنيات CNC: القطع، الحفر، الطحن.",
+            "التفاوت: ضوابط ضيقة للغاية.",
+            "خشونة السطح: تتحقق لتطبيقات محددة."
+          ]
+        }
+      ],
+      autoSteps: [
+        {
+          title: "تطوير السبائك والصب",
+          desc: "مصممة لمقاومة التصادم والقوة العالية.",
+          details: [
+            "سلسلة 6xxx و 7xxx المخصصة: مطورة لتحقيق أفضل نسب قوة إلى وزن.",
+            "التحكم في الشوائب: رقابة صارمة على مستويات الحديد (Fe) لضمان الليونة لامتصاص طاقة التصادم.",
+            "التجانس: هيكل موحد للكتل لمنع عيوب البثق اللاحقة."
+          ]
+        },
+        {
+          title: "البثق الدقيق",
+          desc: "عملية متساوية الحرارة لخواص متسقة.",
+          details: [
+            "بثق متعدد الفتحات: إنشاء مقاطع مجوفة معقدة لتبريد البطاريات والصلابة الهيكلية.",
+            "التحكم المتساوي الحرارة: الحفاظ على سرعة خروج ودرجة حرارة ثابتة لضمان تجانس الخواص الميكانيكية.",
+            "التبريد المتدرج: تبريد دقيق برذاذ الماء للتحكم في التشوه مع تثبيت البنية المجهرية."
+          ]
+        },
+        {
+          title: "التشكيل المتقدم",
+          desc: "تشكيل بدون المساس بالسلامة الهيكلية.",
+          details: [
+            "الثني بالتمدد ثلاثي الأبعاد: ثني المقاطع لتناسب انحناءات المركبة الديناميكية دون التواء.",
+            "التشكيل الهيدروليكي: استخدام سائل عالي الضغط لتشكيل هندسة معقدة.",
+            "المعايرة: تمدد ما بعد البثق لتحقيق تفاوتات استقامة فائقة."
+          ]
+        },
+        {
+          title: "تشغيل CNC والتصنيع",
+          desc: "دقة خماسية المحاور لتكامل المكونات.",
+          details: [
+            "طحن خماسي المحاور (5-Axis): لنقاط التثبيت المعقدة وميزات صينية البطارية.",
+            "الحفر والتثقيب الآلي: خلايا روبوتية عالية السرعة لكفاءة الإنتاج الضخم.",
+            "تفاوتات ضيقة: الحفاظ على دقة +/- 0.05 مم لملاءمة التجميع."
+          ]
+        },
+        {
+          title: "معالجة حرارية متخصصة",
+          desc: "موازنة القوة وامتصاص الطاقة.",
+          details: [
+            "تقادم محسن للتصادم: دورات T6/T7 محددة لتعظيم امتصاص الطاقة (الليونة) جنباً إلى جنب مع قوة الخضوع.",
+            "تصلب الخبز: سبائك مصممة لاكتساب قوتها النهائية أثناء عملية خبز الطلاء."
+          ]
+        },
+        {
+          title: "الربط والتجميع",
+          desc: "الجيل القادم من تقنيات الربط لهياكل المركبات الكهربائية.",
+          details: [
+            "لحام الاحتكاك (FSW): إنشاء وصلات مانعة للتسرب وعالية القوة لحاويات بطاريات السيارات الكهربائية.",
+            "اللحام بالليزر: مدخلات حرارة منخفضة لتقليل التشوه.",
+            "الربط الهيكلي: تحضير السطح لتطبيقات المواد اللاصقة المتقدمة."
+          ]
+        }
+      ]
     },
     footer: {
       desc: "صياغة مستقبل القطاع الصناعي في المملكة العربية السعودية بحلول ألمنيوم دقيقة. نقع في قلب المركز الصناعي بالدمام.",
@@ -172,10 +507,131 @@ const SectionHeading = ({ title, subtitle, dark = false, lang }: { title: string
   </div>
 );
 
+// --- Technology Page Component ---
+const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBack }) => {
+  const t = content[lang].techPage;
+  const isRTL = lang === 'ar';
+  const [activeTab, setActiveTab] = useState<'arch' | 'ind' | 'auto'>('arch');
+
+  const getSteps = (): ProcessStep[] => {
+    switch(activeTab) {
+      case 'arch': 
+        return t.archSteps.map((s, i) => ({ ...s, icon: [Factory, Settings, Layers, PaintBucket, CheckCircle2][i] || Settings }));
+      case 'ind': 
+        return t.indSteps.map((s, i) => ({ ...s, icon: [Cpu, Thermometer, Zap, Factory, Settings][i] || Settings }));
+      case 'auto': 
+        return t.autoSteps.map((s, i) => ({ ...s, icon: [Factory, Zap, Layers, Cpu, Thermometer, ShieldCheck][i] || Settings }));
+      default: return [];
+    }
+  };
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 50 }}
+      className={`min-h-screen bg-gray-50 ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}
+    >
+      {/* Sticky Header for Tech Page */}
+      <div className="container mx-auto px-6 mb-12 flex items-center justify-between">
+         <button onClick={goBack} className="flex items-center gap-2 text-nasr-blue hover:text-nasr-dark transition-colors font-bold uppercase text-sm tracking-wider">
+            <ChevronLeft size={20} className={isRTL ? "rotate-180" : ""} />
+            {content[lang].nav.back}
+         </button>
+         <div className="hidden md:block h-[1px] flex-1 bg-gray-200 mx-8"></div>
+         <AlxLogo />
+      </div>
+
+      <div className="container mx-auto px-6">
+        <SectionHeading title={t.title} subtitle={t.subtitle} lang={lang} />
+        <p className="max-w-3xl text-lg text-gray-600 mb-12 leading-relaxed">
+          {t.desc}
+        </p>
+
+        {/* Tabs */}
+        <div className="flex flex-wrap gap-4 mb-16 border-b border-gray-200 pb-1">
+          {(['arch', 'ind', 'auto'] as const).map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`pb-4 px-4 text-lg font-serif transition-all relative ${activeTab === tab ? 'text-nasr-blue font-bold' : 'text-gray-400 hover:text-gray-600'}`}
+            >
+              {t.tabs[tab]}
+              {activeTab === tab && (
+                <motion.div layoutId="techTab" className="absolute bottom-0 left-0 right-0 h-1 bg-nasr-blue" />
+              )}
+            </button>
+          ))}
+        </div>
+
+        {/* Content Flow */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          {/* Visual Diagram Side (30%) */}
+          <div className="lg:col-span-4">
+            <div className="sticky top-32 bg-white p-8 rounded-sm shadow-lg border border-gray-100">
+               <h3 className="text-xl font-serif mb-8 text-nasr-dark border-b pb-4">Processing Flow</h3>
+               <div className="relative">
+                  <div className={`absolute top-4 bottom-4 ${isRTL ? 'right-4' : 'left-4'} w-1 bg-gray-100`}></div>
+                  {getSteps().map((step, idx) => (
+                    <div key={idx} className="relative flex items-start gap-4 mb-8 last:mb-0">
+                       <div className={`relative z-10 w-9 h-9 rounded-full flex items-center justify-center text-white shadow-md shrink-0 ${idx % 2 === 0 ? 'bg-nasr-blue' : 'bg-nasr-dark'}`}>
+                          {idx + 1}
+                       </div>
+                       <div className="pt-1">
+                          <h4 className="font-bold text-sm text-gray-800">{step.title}</h4>
+                       </div>
+                    </div>
+                  ))}
+               </div>
+            </div>
+          </div>
+
+          {/* Detailed Steps Side (70%) */}
+          <div className="lg:col-span-8">
+             <AnimatePresence mode="wait">
+               <motion.div 
+                 key={activeTab}
+                 initial={{ opacity: 0, y: 20 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 exit={{ opacity: 0, y: -20 }}
+                 className="space-y-8"
+               >
+                 {getSteps().map((step, idx) => (
+                    <div key={idx} className="bg-white p-8 rounded-sm shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 group">
+                       <div className="flex items-start gap-6">
+                          <div className="p-4 bg-gray-50 text-nasr-blue rounded-sm group-hover:bg-nasr-blue group-hover:text-white transition-colors duration-300">
+                             <step.icon size={32} />
+                          </div>
+                          <div>
+                             <h3 className="text-2xl font-serif text-nasr-dark mb-2">{step.title}</h3>
+                             <p className="text-nasr-blue font-medium text-sm uppercase tracking-wider mb-4">{step.desc}</p>
+                             <ul className="space-y-3">
+                               {step.details.map((detail, dIdx) => (
+                                 <li key={dIdx} className="flex items-start gap-3 text-gray-600">
+                                    <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-nasr-accent shrink-0"></div>
+                                    <span>{detail}</span>
+                                 </li>
+                               ))}
+                             </ul>
+                          </div>
+                       </div>
+                    </div>
+                 ))}
+               </motion.div>
+             </AnimatePresence>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+
 const App: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [lang, setLang] = useState<Language>('en');
+  const [currentPage, setCurrentPage] = useState<Page>('home');
 
   const t = content[lang];
   const isRTL = lang === 'ar';
@@ -196,17 +652,32 @@ const App: React.FC = () => {
   // Navigation Handlers
   const scrollToSection = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (currentPage !== 'home') {
+      setCurrentPage('home');
+      // Wait for state update then scroll
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
     }
     setMenuOpen(false);
   };
 
   const scrollToTop = (e: React.MouseEvent) => {
     e.preventDefault();
+    setCurrentPage('home');
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setMenuOpen(false);
+  };
+
+  const goToTechnology = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setCurrentPage('technology');
+    setMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleBrochureClick = () => {
@@ -217,21 +688,21 @@ const App: React.FC = () => {
     <div className={`min-h-screen bg-[#F8FAFC] text-nasr-dark selection:bg-nasr-blue selection:text-white ${isRTL ? 'font-arabic' : 'font-sans'}`}>
       
       {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-6'}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || currentPage === 'technology' ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <a href="#" onClick={scrollToTop} className={`flex items-center gap-4 group ${isRTL ? 'ml-8 lg:ml-12' : 'mr-8 lg:mr-12'}`}>
             <AlxLogo />
             <div className={`hidden md:flex flex-col ${isRTL ? 'border-r pr-5 mr-1' : 'border-l pl-5 ml-1'} border-gray-400/50 h-10 justify-center`}>
-              <span className={`font-serif font-bold text-xl leading-none tracking-tight uppercase ${scrolled ? 'text-nasr-dark' : 'text-white'} ${isRTL ? 'font-arabic' : ''}`}>
+              <span className={`font-serif font-bold text-xl leading-none tracking-tight uppercase ${scrolled || currentPage === 'technology' ? 'text-nasr-dark' : 'text-white'} ${isRTL ? 'font-arabic' : ''}`}>
                 {isRTL ? 'نصر كبير' : 'Nasr Kabeer'}
               </span>
-              <span className={`text-[10px] tracking-[0.35em] uppercase font-medium ${scrolled ? 'text-gray-500' : 'text-gray-300'} ${isRTL ? 'font-arabic tracking-wider' : ''} ml-px`}>
+              <span className={`text-[10px] tracking-[0.35em] uppercase font-medium ${scrolled || currentPage === 'technology' ? 'text-gray-500' : 'text-gray-300'} ${isRTL ? 'font-arabic tracking-wider' : ''} ml-px`}>
                 {isRTL ? 'للألمنيوم' : 'Aluminum'}
               </span>
             </div>
           </a>
           
-          <div className={`hidden md:flex items-center gap-6 lg:gap-10 text-sm font-medium tracking-widest uppercase ${scrolled ? 'text-gray-800' : 'text-white'}`}>
+          <div className={`hidden md:flex items-center gap-6 lg:gap-10 text-sm font-medium tracking-widest uppercase ${scrolled || currentPage === 'technology' ? 'text-gray-800' : 'text-white'}`}>
             <a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="hover:text-nasr-blue transition-colors relative group">
               {t.nav.about}
               <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-nasr-blue transition-all duration-300 group-hover:w-full"></span>
@@ -244,6 +715,10 @@ const App: React.FC = () => {
               {t.nav.expansion}
               <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-nasr-blue transition-all duration-300 group-hover:w-full"></span>
             </a>
+            <a href="#technology" onClick={goToTechnology} className={`hover:text-nasr-blue transition-colors relative group ${currentPage === 'technology' ? 'text-nasr-blue' : ''}`}>
+              {t.nav.technology}
+              <span className={`absolute -bottom-1 left-0 h-[2px] bg-nasr-blue transition-all duration-300 ${currentPage === 'technology' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+            </a>
             
             <div className="flex items-center gap-4">
               <button onClick={toggleLang} className="flex items-center gap-1 hover:text-nasr-blue transition-colors">
@@ -254,7 +729,7 @@ const App: React.FC = () => {
               <a 
                 href="#contact" 
                 onClick={(e) => scrollToSection(e, 'contact')}
-                className={`px-6 py-3 border ${scrolled ? 'border-nasr-dark text-nasr-dark hover:bg-nasr-dark hover:text-white' : 'border-white text-white hover:bg-white hover:text-nasr-dark'} transition-all duration-300`}
+                className={`px-6 py-3 border ${scrolled || currentPage === 'technology' ? 'border-nasr-dark text-nasr-dark hover:bg-nasr-dark hover:text-white' : 'border-white text-white hover:bg-white hover:text-nasr-dark'} transition-all duration-300`}
               >
                 {t.nav.contact}
               </a>
@@ -262,10 +737,10 @@ const App: React.FC = () => {
           </div>
 
           <div className="flex md:hidden items-center gap-4">
-             <button onClick={toggleLang} className={`${scrolled ? 'text-nasr-dark' : 'text-white'}`}>
+             <button onClick={toggleLang} className={`${scrolled || currentPage === 'technology' ? 'text-nasr-dark' : 'text-white'}`}>
                 {lang === 'en' ? 'AR' : 'EN'}
              </button>
-             <button className={`p-2 ${scrolled ? 'text-nasr-dark' : 'text-white'}`} onClick={() => setMenuOpen(!menuOpen)}>
+             <button className={`p-2 ${scrolled || currentPage === 'technology' ? 'text-nasr-dark' : 'text-white'}`} onClick={() => setMenuOpen(!menuOpen)}>
                {menuOpen ? <X size={32} /> : <Menu size={32} />}
              </button>
           </div>
@@ -285,184 +760,196 @@ const App: React.FC = () => {
               <a href="#about" onClick={(e) => scrollToSection(e, 'about')}>{t.nav.about}</a>
               <a href="#products" onClick={(e) => scrollToSection(e, 'products')}>{t.nav.products}</a>
               <a href="#phases" onClick={(e) => scrollToSection(e, 'phases')}>{t.nav.expansion}</a>
+              <a href="#technology" onClick={goToTechnology} className={currentPage === 'technology' ? 'text-nasr-blue' : ''}>{t.nav.technology}</a>
               <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="px-8 py-3 bg-nasr-blue text-white text-lg">{t.nav.contact}</a>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Hero Section */}
-      <header className="relative h-screen flex items-center overflow-hidden bg-nasr-dark">
-        {/* Static Background Image */}
-        <div className="absolute inset-0 z-0">
-            <img 
-                src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=2058&auto=format&fit=crop"
-                alt="High-End Aluminum Profiles"
-                className="w-full h-full object-cover opacity-90"
-            />
-            {/* Overlays for text readability - refined for better visibility */}
-            <div className="absolute inset-0 bg-gradient-to-r from-nasr-dark via-nasr-dark/70 to-transparent/20"></div>
-        </div>
-        
-        <div className="relative z-10 container mx-auto px-6 pt-20">
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-4xl"
-          >
-            <div className="flex items-center gap-4 mb-6">
-              <span className="h-[1px] w-12 bg-nasr-accent"></span>
-              <span className="text-nasr-accent text-sm font-bold tracking-[0.3em] uppercase">{t.hero.vision}</span>
-            </div>
-            <h1 className={`font-serif font-bold leading-none mb-8 text-white ${isRTL ? 'font-arabic text-5xl md:text-7xl' : 'text-6xl md:text-8xl'}`}>
-              {t.hero.titleLine1}<br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">{t.hero.titleLine2}</span><br/>
-              {t.hero.titleLine3} {isRTL ? (
-                <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-300 to-gray-500 drop-shadow-sm">قطاع</span>
-              ) : (
-                <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-300 to-gray-500 drop-shadow-sm">PROFILE</span>
-              )}
-            </h1>
-            <p className={`text-lg md:text-2xl text-gray-200 font-light leading-relaxed mb-12 max-w-2xl ${isRTL ? 'border-r-2 pr-8' : 'border-l-2 pl-8'} border-gray-400/50`}>
-              {t.hero.desc}
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6">
-               <a href="#products" onClick={(e) => scrollToSection(e, 'products')} className="group flex items-center justify-center gap-3 px-8 py-4 bg-white text-nasr-dark font-bold uppercase tracking-wider hover:bg-nasr-accent hover:text-white transition-all duration-300">
-                  {t.hero.btnProduct}
-                  <ArrowRight size={20} className={`transition-transform ${isRTL ? 'group-hover:-translate-x-1 rotate-180' : 'group-hover:translate-x-1'}`} />
-               </a>
-               <a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="flex items-center justify-center gap-3 px-8 py-4 border border-gray-300 text-gray-100 font-bold uppercase tracking-wider hover:border-white hover:text-white transition-colors">
-                  {t.hero.btnProfile}
-               </a>
-            </div>
-          </motion.div>
-        </div>
-      </header>
-
       <main>
-        {/* Strategic Overview */}
-        <section id="about" className="py-24 md:py-32 bg-white relative overflow-hidden">
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-              <div>
-                 <SectionHeading title={t.about.title} subtitle={t.about.subtitle} lang={lang} />
-                 <div className="space-y-6 text-base md:text-lg text-gray-600 leading-relaxed">
-                   <p>{t.about.p1}</p>
-                   <p>{t.about.p2}</p>
-                   <p>{t.about.p3}</p>
-                   
-                   <div className="grid grid-cols-2 gap-8 mt-8">
-                      <div className={`p-6 bg-gray-50 ${isRTL ? 'border-r-4' : 'border-l-4'} border-nasr-blue`}>
-                        <div className="text-4xl font-serif font-bold text-nasr-dark mb-2">200K</div>
-                        <div className="text-xs font-bold uppercase tracking-widest text-gray-500">{t.about.statCapacity}</div>
-                      </div>
-                      <div className={`p-6 bg-gray-50 ${isRTL ? 'border-r-4' : 'border-l-4'} border-nasr-red`}>
-                        <div className="text-4xl font-serif font-bold text-nasr-dark mb-2">30%</div>
-                        <div className="text-xs font-bold uppercase tracking-widest text-gray-500">{t.about.statExport}</div>
-                      </div>
-                   </div>
-                 </div>
+        {currentPage === 'technology' ? (
+          <TechnologyPage lang={lang} goBack={() => { setCurrentPage('home'); window.scrollTo(0,0); }} />
+        ) : (
+          <>
+            {/* Hero Section */}
+            <header className="relative h-screen flex items-center overflow-hidden bg-nasr-dark">
+              {/* Static Background Image */}
+              <div className="absolute inset-0 z-0">
+                  <img 
+                      src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=2058&auto=format&fit=crop"
+                      alt="High-End Aluminum Profiles"
+                      className="w-full h-full object-cover opacity-90"
+                  />
+                  {/* Overlays for text readability - refined for better visibility */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-nasr-dark via-nasr-dark/70 to-transparent/20"></div>
               </div>
-              <div className="relative">
-                 <motion.div 
-                    initial={{ scale: 0.95, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.8 }}
-                    className="aspect-[4/5] bg-gray-200 overflow-hidden shadow-2xl relative z-10"
-                 >
-                    <img 
-                      src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" 
-                      alt="Modern Skyscraper Facade" 
-                      className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out" 
-                    />
-                    <div className="absolute inset-0 bg-nasr-blue/20 mix-blend-multiply"></div>
-                 </motion.div>
-                 {/* Decorative Elements */}
-                 <div className={`absolute -top-10 ${isRTL ? '-left-10' : '-right-10'} w-64 h-64 bg-gray-100 -z-10 pattern-dots`}></div>
-                 <div className={`absolute -bottom-10 ${isRTL ? '-right-10' : '-left-10'} w-40 h-40 border-2 border-nasr-accent -z-10`}></div>
+              
+              <div className="relative z-10 container mx-auto px-6 pt-20">
+                <motion.div 
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="max-w-4xl"
+                >
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="h-[1px] w-12 bg-nasr-accent"></span>
+                    <span className="text-nasr-accent text-sm font-bold tracking-[0.3em] uppercase">{t.hero.vision}</span>
+                  </div>
+                  <h1 className={`font-serif font-bold leading-none mb-8 text-white ${isRTL ? 'font-arabic text-5xl md:text-7xl' : 'text-6xl md:text-8xl'}`}>
+                    {t.hero.titleLine1}<br/>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">{t.hero.titleLine2}</span><br/>
+                    {t.hero.titleLine3} {isRTL ? (
+                      <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-300 to-gray-500 drop-shadow-sm">قطاع</span>
+                    ) : (
+                      <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-300 to-gray-500 drop-shadow-sm">PROFILE</span>
+                    )}
+                  </h1>
+                  <p className={`text-lg md:text-2xl text-gray-200 font-light leading-relaxed mb-12 max-w-2xl ${isRTL ? 'border-r-2 pr-8' : 'border-l-2 pl-8'} border-gray-400/50`}>
+                    {t.hero.desc}
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row gap-6">
+                     <a href="#products" onClick={(e) => scrollToSection(e, 'products')} className="group flex items-center justify-center gap-3 px-8 py-4 bg-white text-nasr-dark font-bold uppercase tracking-wider hover:bg-nasr-accent hover:text-white transition-all duration-300">
+                        {t.hero.btnProduct}
+                        <ArrowRight size={20} className={`transition-transform ${isRTL ? 'group-hover:-translate-x-1 rotate-180' : 'group-hover:translate-x-1'}`} />
+                     </a>
+                     <a href="#technology" onClick={goToTechnology} className="flex items-center justify-center gap-3 px-8 py-4 border border-gray-300 text-gray-100 font-bold uppercase tracking-wider hover:border-white hover:text-white transition-colors">
+                        {t.hero.btnTech}
+                     </a>
+                  </div>
+                </motion.div>
               </div>
-            </div>
-          </div>
-        </section>
+            </header>
 
-        {/* Phased Expansion - Vision 2030 */}
-        <section id="phases" className="py-24 bg-nasr-dark text-white">
-            <div className="container mx-auto px-6">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-20">
-                   <SectionHeading title={t.phases.title} subtitle={t.phases.subtitle} dark lang={lang} />
-                   <p className={`text-gray-400 max-w-md mb-16 md:mb-0 ${isRTL ? 'text-left' : 'text-right'}`}>
-                     {t.phases.desc}
-                   </p>
+            {/* Strategic Overview */}
+            <section id="about" className="py-24 md:py-32 bg-white relative overflow-hidden">
+              <div className="container mx-auto px-6 relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                  <div>
+                     <SectionHeading title={t.about.title} subtitle={t.about.subtitle} lang={lang} />
+                     <div className="space-y-6 text-base md:text-lg text-gray-600 leading-relaxed">
+                       <p>{t.about.p1}</p>
+                       <p>{t.about.p2}</p>
+                       <p>{t.about.p3}</p>
+                       
+                       <div className="grid grid-cols-2 gap-8 mt-8">
+                          <div className={`p-6 bg-gray-50 ${isRTL ? 'border-r-4' : 'border-l-4'} border-nasr-blue`}>
+                            <div className="text-4xl font-serif font-bold text-nasr-dark mb-2">200K</div>
+                            <div className="text-xs font-bold uppercase tracking-widest text-gray-500">{t.about.statCapacity}</div>
+                          </div>
+                          <div className={`p-6 bg-gray-50 ${isRTL ? 'border-r-4' : 'border-l-4'} border-nasr-red`}>
+                            <div className="text-4xl font-serif font-bold text-nasr-dark mb-2">30%</div>
+                            <div className="text-xs font-bold uppercase tracking-widest text-gray-500">{t.about.statExport}</div>
+                          </div>
+                       </div>
+                     </div>
+                  </div>
+                  <div className="relative">
+                     <motion.div 
+                        initial={{ scale: 0.95, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.8 }}
+                        className="aspect-[4/5] bg-gray-200 overflow-hidden shadow-2xl relative z-10"
+                     >
+                        <img 
+                          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" 
+                          alt="Modern Skyscraper Facade" 
+                          className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out" 
+                        />
+                        <div className="absolute inset-0 bg-nasr-blue/20 mix-blend-multiply"></div>
+                     </motion.div>
+                     {/* Decorative Elements */}
+                     <div className={`absolute -top-10 ${isRTL ? '-left-10' : '-right-10'} w-64 h-64 bg-gray-100 -z-10 pattern-dots`}></div>
+                     <div className={`absolute -bottom-10 ${isRTL ? '-right-10' : '-left-10'} w-40 h-40 border-2 border-nasr-accent -z-10`}></div>
+                  </div>
                 </div>
+              </div>
+            </section>
 
-                <CapacityGrowthChart lang={lang} />
+            {/* Phased Expansion - Vision 2030 */}
+            <section id="phases" className="py-24 bg-nasr-dark text-white">
+                <div className="container mx-auto px-6">
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-20">
+                       <SectionHeading title={t.phases.title} subtitle={t.phases.subtitle} dark lang={lang} />
+                       <p className={`text-gray-400 max-w-md mb-16 md:mb-0 ${isRTL ? 'text-left' : 'text-right'}`}>
+                         {t.phases.desc}
+                       </p>
+                    </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
-                   {/* Phase 1 */}
-                   <div className="p-8 border border-gray-800 bg-gray-900/50 hover:border-nasr-accent transition-colors group relative">
-                      <div className={`text-5xl font-serif font-bold text-gray-800 group-hover:text-nasr-accent/20 transition-colors absolute top-4 ${isRTL ? 'left-4' : 'right-4'} select-none`}>01</div>
-                      <h3 className="text-2xl font-serif mb-4 text-white group-hover:text-nasr-accent transition-colors">{t.phases.p1Title}</h3>
-                      <p className="text-gray-400 mb-6 text-sm leading-relaxed">
-                        {t.phases.p1Desc}
-                      </p>
-                      <ul className="space-y-2 text-sm text-gray-500">
-                        <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-nasr-accent"/> {t.phases.p1Item1}</li>
-                        <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-nasr-accent"/> {t.phases.p1Item2}</li>
-                      </ul>
-                   </div>
+                    <CapacityGrowthChart lang={lang} />
 
-                   {/* Phase 2 */}
-                   <div className="p-8 border border-gray-800 bg-gray-900/50 hover:border-nasr-blue transition-colors group relative">
-                      <div className={`text-5xl font-serif font-bold text-gray-800 group-hover:text-nasr-blue/20 transition-colors absolute top-4 ${isRTL ? 'left-4' : 'right-4'} select-none`}>02</div>
-                      <h3 className="text-2xl font-serif mb-4 text-white group-hover:text-nasr-blue transition-colors">{t.phases.p2Title}</h3>
-                      <p className="text-gray-400 mb-6 text-sm leading-relaxed">
-                        {t.phases.p2Desc}
-                      </p>
-                      <ul className="space-y-2 text-sm text-gray-500">
-                        <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-nasr-blue"/> {t.phases.p2Item1}</li>
-                        <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-nasr-blue"/> {t.phases.p2Item2}</li>
-                      </ul>
-                   </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
+                       {/* Phase 1 */}
+                       <div className="p-8 border border-gray-800 bg-gray-900/50 hover:border-nasr-accent transition-colors group relative">
+                          <div className={`text-5xl font-serif font-bold text-gray-800 group-hover:text-nasr-accent/20 transition-colors absolute top-4 ${isRTL ? 'left-4' : 'right-4'} select-none`}>01</div>
+                          <h3 className="text-2xl font-serif mb-4 text-white group-hover:text-nasr-accent transition-colors">{t.phases.p1Title}</h3>
+                          <p className="text-gray-400 mb-6 text-sm leading-relaxed">
+                            {t.phases.p1Desc}
+                          </p>
+                          <ul className="space-y-2 text-sm text-gray-500">
+                            <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-nasr-accent"/> {t.phases.p1Item1}</li>
+                            <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-nasr-accent"/> {t.phases.p1Item2}</li>
+                          </ul>
+                       </div>
 
-                   {/* Phase 3 */}
-                   <div className="p-8 border border-gray-800 bg-gray-900/50 hover:border-nasr-red transition-colors group relative">
-                      <div className={`text-5xl font-serif font-bold text-gray-800 group-hover:text-nasr-red/20 transition-colors absolute top-4 ${isRTL ? 'left-4' : 'right-4'} select-none`}>03</div>
-                      <h3 className="text-2xl font-serif mb-4 text-white group-hover:text-nasr-red transition-colors">{t.phases.p3Title}</h3>
-                      <p className="text-gray-400 mb-6 text-sm leading-relaxed">
-                        {t.phases.p3Desc}
-                      </p>
-                      <ul className="space-y-2 text-sm text-gray-500">
-                        <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-nasr-red"/> {t.phases.p3Item1}</li>
-                        <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-nasr-red"/> {t.phases.p3Item2}</li>
-                      </ul>
-                   </div>
+                       {/* Phase 2 */}
+                       <div className="p-8 border border-gray-800 bg-gray-900/50 hover:border-nasr-blue transition-colors group relative">
+                          <div className={`text-5xl font-serif font-bold text-gray-800 group-hover:text-nasr-blue/20 transition-colors absolute top-4 ${isRTL ? 'left-4' : 'right-4'} select-none`}>02</div>
+                          <h3 className="text-2xl font-serif mb-4 text-white group-hover:text-nasr-blue transition-colors">{t.phases.p2Title}</h3>
+                          <p className="text-gray-400 mb-6 text-sm leading-relaxed">
+                            {t.phases.p2Desc}
+                          </p>
+                          <ul className="space-y-2 text-sm text-gray-500">
+                            <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-nasr-blue"/> {t.phases.p2Item1}</li>
+                            <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-nasr-blue"/> {t.phases.p2Item2}</li>
+                          </ul>
+                       </div>
+
+                       {/* Phase 3 */}
+                       <div className="p-8 border border-gray-800 bg-gray-900/50 hover:border-nasr-red transition-colors group relative">
+                          <div className={`text-5xl font-serif font-bold text-gray-800 group-hover:text-nasr-red/20 transition-colors absolute top-4 ${isRTL ? 'left-4' : 'right-4'} select-none`}>03</div>
+                          <h3 className="text-2xl font-serif mb-4 text-white group-hover:text-nasr-red transition-colors">{t.phases.p3Title}</h3>
+                          <p className="text-gray-400 mb-6 text-sm leading-relaxed">
+                            {t.phases.p3Desc}
+                          </p>
+                          <ul className="space-y-2 text-sm text-gray-500">
+                            <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-nasr-red"/> {t.phases.p3Item1}</li>
+                            <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-nasr-red"/> {t.phases.p3Item2}</li>
+                          </ul>
+                       </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        {/* Products Showcase */}
-        <section id="products" className="py-24 bg-gray-50">
-            <div className="container mx-auto px-6">
-                <SectionHeading title={t.products.title} subtitle={t.products.subtitle} lang={lang} />
-                <div className="mt-12 lg:h-[600px]">
-                    <ProductCategoryGrid lang={lang} />
+            {/* Products Showcase */}
+            <section id="products" className="py-24 bg-gray-50">
+                <div className="container mx-auto px-6">
+                    <SectionHeading title={t.products.title} subtitle={t.products.subtitle} lang={lang} />
+                    <div className="mt-12 lg:h-[600px]">
+                        <ProductCategoryGrid lang={lang} />
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        {/* Process Flow */}
-        <section className="py-24 bg-white border-t border-gray-100">
-            <div className="container mx-auto px-6">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className={`font-serif mb-6 text-nasr-dark ${isRTL ? 'font-arabic text-4xl md:text-6xl' : 'text-4xl md:text-5xl'}`}>{t.process.title}</h2>
-                    <p className="text-gray-600">
-                       {t.process.desc}
-                    </p>
+            {/* Process Flow */}
+            <section className="py-24 bg-white border-t border-gray-100">
+                <div className="container mx-auto px-6">
+                    <div className="text-center max-w-3xl mx-auto mb-16">
+                        <h2 className={`font-serif mb-6 text-nasr-dark ${isRTL ? 'font-arabic text-4xl md:text-6xl' : 'text-4xl md:text-5xl'}`}>{t.process.title}</h2>
+                        <p className="text-gray-600">
+                           {t.process.desc}
+                        </p>
+                    </div>
+                    <ProductionProcessFlow lang={lang} />
+                    <div className="mt-12 text-center">
+                      <button onClick={goToTechnology} className="inline-flex items-center gap-2 text-nasr-blue hover:text-nasr-dark font-bold uppercase tracking-wider transition-colors">
+                         {lang === 'en' ? 'View Detailed Technical Route' : 'عرض المسار التقني التفصيلي'} <ArrowRight size={20} />
+                      </button>
+                    </div>
                 </div>
-                <ProductionProcessFlow lang={lang} />
-            </div>
-        </section>
+            </section>
+          </>
+        )}
 
         {/* Footer */}
         <footer id="contact" className="bg-nasr-dark text-gray-400 pt-24 pb-12 relative overflow-hidden">
@@ -497,6 +984,7 @@ const App: React.FC = () => {
                             <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="hover:text-nasr-accent transition-colors">{t.nav.about}</a></li>
                             <li><a href="#products" onClick={(e) => scrollToSection(e, 'products')} className="hover:text-nasr-accent transition-colors">{t.nav.products}</a></li>
                             <li><a href="#phases" onClick={(e) => scrollToSection(e, 'phases')} className="hover:text-nasr-accent transition-colors">{t.nav.expansion}</a></li>
+                            <li><a href="#technology" onClick={goToTechnology} className="hover:text-nasr-accent transition-colors">{t.nav.technology}</a></li>
                         </ul>
                     </div>
 
