@@ -4,19 +4,20 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { StructureGrid } from './components/IndustrialScene';
 import { ProductCategoryGrid, ProductionProcessFlow, CapacityGrowthChart } from './components/Diagrams';
 import { 
   Menu, X, Download, MapPin, Mail, Linkedin, Twitter, ArrowRight, 
   CheckCircle2, Globe, FileText, Phone, ChevronLeft, Factory, 
-  Thermometer, Settings, Layers, ShieldCheck, Zap, Cpu, PaintBucket
+  Thermometer, Settings, Layers, ShieldCheck, Zap, Cpu, PaintBucket,
+  Gamepad2, Trophy, RefreshCw, Play
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // --- TYPES & CONTENT ---
 type Language = 'en' | 'ar';
-type Page = 'home' | 'technology';
+type Page = 'home' | 'technology' | 'game';
 
 // Process Step Type
 interface ProcessStep {
@@ -33,6 +34,7 @@ const content = {
       products: "Products",
       expansion: "Expansion",
       technology: "Technology",
+      game: "Interactive",
       contact: "Get in Touch",
       back: "Back to Home"
     },
@@ -239,6 +241,17 @@ const content = {
         }
       ]
     },
+    game: {
+        title: "Interactive Zone",
+        subtitle: "Precision Stacker",
+        desc: "Experience the precision required in aluminum manufacturing. Stack the billets perfectly to build the highest structure possible.",
+        start: "Start Production",
+        score: "Current Height",
+        highScore: "Best Record",
+        gameOver: "Production Halted",
+        restart: "Restart Process",
+        instruction: "Click or Tap to place the block"
+    },
     footer: {
       desc: "Forging the future of Saudi Arabia's industrial sector with precision aluminum solutions. Located in the heart of Dammam's industrial hub.",
       navTitle: "Navigation",
@@ -257,6 +270,7 @@ const content = {
       products: "المنتجات",
       expansion: "التوسع",
       technology: "التقنية",
+      game: "المنطقة التفاعلية",
       contact: "تواصل معنا",
       back: "العودة للرئيسية"
     },
@@ -463,6 +477,17 @@ const content = {
         }
       ]
     },
+    game: {
+        title: "المنطقة التفاعلية",
+        subtitle: "مكدس الدقة",
+        desc: "جرب الدقة المطلوبة في تصنيع الألمنيوم. قم بتكديس الكتل بشكل مثالي لبناء أعلى هيكل ممكن.",
+        start: "ابدأ الإنتاج",
+        score: "الارتفاع الحالي",
+        highScore: "أفضل سجل",
+        gameOver: "توقف الإنتاج",
+        restart: "إعادة العملية",
+        instruction: "انقر أو اضغط لوضع الكتلة"
+    },
     footer: {
       desc: "صياغة مستقبل القطاع الصناعي في المملكة العربية السعودية بحلول ألمنيوم دقيقة. نقع في قلب المركز الصناعي بالدمام.",
       navTitle: "التصفح",
@@ -626,6 +651,255 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
   );
 };
 
+// --- Game Component: Aluminum Stacker ---
+const AluminumStackerGame: React.FC<{ lang: Language }> = ({ lang }) => {
+    const t = content[lang].game;
+    const canvasRef = useRef<HTMLCanvasElement>(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [score, setScore] = useState(0);
+    const [highScore, setHighScore] = useState(0);
+    const [gameOver, setGameOver] = useState(false);
+
+    // Game constants
+    const BLOCK_HEIGHT = 30;
+    const INITIAL_WIDTH = 200;
+    const MOVE_SPEED_BASE = 3;
+
+    // Game state refs to avoid re-renders in loop
+    const gameState = useRef({
+        stack: [] as {x: number, width: number}[], // existing blocks
+        currentBlock: { x: 0, width: INITIAL_WIDTH, movingRight: true },
+        level: 1,
+        offset: 0, // to scroll camera up
+        speed: MOVE_SPEED_BASE
+    });
+
+    const requestRef = useRef<number>(0);
+
+    const resetGame = () => {
+        gameState.current = {
+            stack: [{ x: 100, width: INITIAL_WIDTH }], // Base block centered (assuming canvas width 400)
+            currentBlock: { x: 0, width: INITIAL_WIDTH, movingRight: true },
+            level: 1,
+            offset: 0,
+            speed: MOVE_SPEED_BASE
+        };
+        setScore(0);
+        setGameOver(false);
+        setIsPlaying(true);
+    };
+
+    const gameLoop = useCallback(() => {
+        if (!isPlaying || gameOver) return;
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+
+        const width = canvas.width;
+        const height = canvas.height;
+        const state = gameState.current;
+
+        // Update Position
+        if (state.currentBlock.movingRight) {
+            state.currentBlock.x += state.speed;
+            if (state.currentBlock.x + state.currentBlock.width > width) {
+                state.currentBlock.movingRight = false;
+            }
+        } else {
+            state.currentBlock.x -= state.speed;
+            if (state.currentBlock.x < 0) {
+                state.currentBlock.movingRight = true;
+            }
+        }
+
+        // Draw
+        ctx.clearRect(0, 0, width, height);
+
+        // Draw Background Grid
+        ctx.strokeStyle = '#f0f0f0';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        for (let i = 0; i < width; i += 40) { ctx.moveTo(i, 0); ctx.lineTo(i, height); }
+        for (let i = 0; i < height; i += 40) { ctx.moveTo(0, i); ctx.lineTo(width, i); }
+        ctx.stroke();
+
+        // Scroll offset
+        const stackHeight = state.stack.length * BLOCK_HEIGHT;
+        const targetOffset = Math.max(0, stackHeight - height / 2);
+        // Simple lerp for smooth camera
+        state.offset += (targetOffset - state.offset) * 0.1;
+
+        ctx.save();
+        ctx.translate(0, state.offset);
+
+        // Draw Stack
+        state.stack.forEach((block, index) => {
+            const y = height - (index + 1) * BLOCK_HEIGHT;
+            // Metallic Gradient
+            const grad = ctx.createLinearGradient(block.x, 0, block.x + block.width, 0);
+            grad.addColorStop(0, '#9ca3af');
+            grad.addColorStop(0.5, '#e5e7eb');
+            grad.addColorStop(1, '#9ca3af');
+            
+            ctx.fillStyle = grad;
+            ctx.fillRect(block.x, y, block.width, BLOCK_HEIGHT);
+            ctx.strokeStyle = '#4b5563';
+            ctx.strokeRect(block.x, y, block.width, BLOCK_HEIGHT);
+        });
+
+        // Draw Current Block
+        const currentY = height - (state.stack.length + 1) * BLOCK_HEIGHT;
+        
+        // Active block color (Nasr Blue tint)
+        const activeGrad = ctx.createLinearGradient(state.currentBlock.x, 0, state.currentBlock.x + state.currentBlock.width, 0);
+        activeGrad.addColorStop(0, '#0077be'); // Darker blue
+        activeGrad.addColorStop(0.5, '#60a5fa'); // Lighter blue
+        activeGrad.addColorStop(1, '#0077be');
+
+        ctx.fillStyle = activeGrad;
+        ctx.fillRect(state.currentBlock.x, currentY, state.currentBlock.width, BLOCK_HEIGHT);
+        ctx.strokeStyle = '#1e3a8a';
+        ctx.strokeRect(state.currentBlock.x, currentY, state.currentBlock.width, BLOCK_HEIGHT);
+
+        ctx.restore();
+
+        requestRef.current = requestAnimationFrame(gameLoop);
+    }, [isPlaying, gameOver]);
+
+    useEffect(() => {
+        if (isPlaying && !gameOver) {
+            requestRef.current = requestAnimationFrame(gameLoop);
+        }
+        return () => cancelAnimationFrame(requestRef.current);
+    }, [isPlaying, gameOver, gameLoop]);
+
+    const handleAction = () => {
+        if (gameOver) {
+            resetGame();
+            return;
+        }
+        if (!isPlaying) {
+            setIsPlaying(true);
+            resetGame();
+            return;
+        }
+
+        const state = gameState.current;
+        const prevBlock = state.stack[state.stack.length - 1];
+        const curr = state.currentBlock;
+
+        // Calculate overlap
+        const overlapLeft = Math.max(prevBlock.x, curr.x);
+        const overlapRight = Math.min(prevBlock.x + prevBlock.width, curr.x + curr.width);
+        const overlapWidth = overlapRight - overlapLeft;
+
+        if (overlapWidth <= 0) {
+            // Missed completely
+            setGameOver(true);
+            setIsPlaying(false);
+            if (score > highScore) setHighScore(score);
+        } else {
+            // Success
+            // Trim the block
+            state.stack.push({ x: overlapLeft, width: overlapWidth });
+            state.currentBlock = { 
+                x: 0, 
+                width: overlapWidth, 
+                movingRight: true 
+            };
+            state.level++;
+            // Increase speed slightly
+            state.speed = Math.min(15, MOVE_SPEED_BASE + (state.level * 0.2));
+            setScore(prev => prev + 1);
+        }
+    };
+
+    return (
+        <div className="flex flex-col items-center justify-center w-full max-w-2xl mx-auto">
+            <div className="flex justify-between w-full mb-4 px-4 font-serif text-nasr-dark">
+                <div className="flex flex-col items-center bg-white p-4 rounded shadow-sm border border-gray-200 w-32">
+                    <span className="text-xs uppercase tracking-widest text-gray-500">{t.score}</span>
+                    <span className="text-3xl font-bold text-nasr-blue">{score}</span>
+                </div>
+                <div className="flex flex-col items-center bg-white p-4 rounded shadow-sm border border-gray-200 w-32">
+                    <span className="text-xs uppercase tracking-widest text-gray-500">{t.highScore}</span>
+                    <span className="text-3xl font-bold text-gray-700">{highScore}</span>
+                </div>
+            </div>
+
+            <div className="relative rounded-lg overflow-hidden shadow-2xl border-4 border-gray-800 bg-gray-900 w-full aspect-[3/4] max-w-md cursor-pointer" onClick={handleAction}>
+                <canvas 
+                    ref={canvasRef} 
+                    width={400} 
+                    height={600} 
+                    className="w-full h-full bg-gray-100"
+                />
+                
+                {/* Overlays */}
+                {!isPlaying && !gameOver && (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 backdrop-blur-sm text-white p-6 text-center">
+                        <Gamepad2 size={48} className="text-nasr-accent mb-4" />
+                        <h3 className="text-2xl font-serif mb-2">{t.title}</h3>
+                        <p className="mb-6 text-gray-300">{t.instruction}</p>
+                        <button className="px-8 py-3 bg-nasr-blue hover:bg-nasr-dark text-white font-bold uppercase tracking-wider transition-colors rounded flex items-center gap-2">
+                           <Play size={20} /> {t.start}
+                        </button>
+                    </div>
+                )}
+
+                {gameOver && (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-red-900/80 backdrop-blur-sm text-white p-6 text-center">
+                        <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center mb-4 animate-bounce">
+                            <Trophy size={32} className="text-nasr-dark" />
+                        </div>
+                        <h3 className="text-3xl font-serif mb-2">{t.gameOver}</h3>
+                        <p className="mb-6 text-gray-200 text-lg">{t.score}: {score}</p>
+                        <button className="px-8 py-3 bg-white text-nasr-red font-bold uppercase tracking-wider hover:bg-gray-200 transition-colors rounded flex items-center gap-2">
+                           <RefreshCw size={20} /> {t.restart}
+                        </button>
+                    </div>
+                )}
+            </div>
+             <p className="mt-4 text-gray-500 text-sm italic">{lang === 'en' ? "* Tap screen to drop block" : "* اضغط على الشاشة لإسقاط الكتلة"}</p>
+        </div>
+    )
+};
+
+// --- Game Page Component ---
+const GamePage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBack }) => {
+    const t = content[lang].game;
+    const isRTL = lang === 'ar';
+
+    return (
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className={`min-h-screen bg-gray-50 ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}
+        >
+             {/* Sticky Header for Game Page */}
+            <div className="container mx-auto px-6 mb-8 flex items-center justify-between">
+                <button onClick={goBack} className="flex items-center gap-2 text-nasr-blue hover:text-nasr-dark transition-colors font-bold uppercase text-sm tracking-wider">
+                    <ChevronLeft size={20} className={isRTL ? "rotate-180" : ""} />
+                    {content[lang].nav.back}
+                </button>
+                <div className="hidden md:block h-[1px] flex-1 bg-gray-200 mx-8"></div>
+                <AlxLogo />
+            </div>
+
+            <div className="container mx-auto px-6 text-center">
+                <SectionHeading title={t.title} subtitle={t.subtitle} lang={lang} />
+                <p className="max-w-2xl mx-auto text-lg text-gray-600 mb-12">
+                  {t.desc}
+                </p>
+                
+                <AluminumStackerGame lang={lang} />
+            </div>
+        </motion.div>
+    );
+};
+
 
 const App: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -680,6 +954,13 @@ const App: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const goToGame = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setCurrentPage('game');
+    setMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleBrochureClick = () => {
     alert(lang === 'en' ? 'Coming Soon' : 'قريباً');
   };
@@ -688,21 +969,21 @@ const App: React.FC = () => {
     <div className={`min-h-screen bg-[#F8FAFC] text-nasr-dark selection:bg-nasr-blue selection:text-white ${isRTL ? 'font-arabic' : 'font-sans'}`}>
       
       {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || currentPage === 'technology' ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-6'}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || currentPage !== 'home' ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <a href="#" onClick={scrollToTop} className={`flex items-center gap-4 group ${isRTL ? 'ml-8 lg:ml-12' : 'mr-8 lg:mr-12'}`}>
             <AlxLogo />
             <div className={`hidden md:flex flex-col ${isRTL ? 'border-r pr-5 mr-1' : 'border-l pl-5 ml-1'} border-gray-400/50 h-10 justify-center`}>
-              <span className={`font-serif font-bold text-xl leading-none tracking-tight uppercase ${scrolled || currentPage === 'technology' ? 'text-nasr-dark' : 'text-white'} ${isRTL ? 'font-arabic' : ''}`}>
+              <span className={`font-serif font-bold text-xl leading-none tracking-tight uppercase ${scrolled || currentPage !== 'home' ? 'text-nasr-dark' : 'text-white'} ${isRTL ? 'font-arabic' : ''}`}>
                 {isRTL ? 'نصر كبير' : 'Nasr Kabeer'}
               </span>
-              <span className={`text-[10px] tracking-[0.35em] uppercase font-medium ${scrolled || currentPage === 'technology' ? 'text-gray-500' : 'text-gray-300'} ${isRTL ? 'font-arabic tracking-wider' : ''} ml-px`}>
+              <span className={`text-[10px] tracking-[0.35em] uppercase font-medium ${scrolled || currentPage !== 'home' ? 'text-gray-500' : 'text-gray-300'} ${isRTL ? 'font-arabic tracking-wider' : ''} ml-px`}>
                 {isRTL ? 'للألمنيوم' : 'Aluminum'}
               </span>
             </div>
           </a>
           
-          <div className={`hidden md:flex items-center gap-6 lg:gap-10 text-sm font-medium tracking-widest uppercase ${scrolled || currentPage === 'technology' ? 'text-gray-800' : 'text-white'}`}>
+          <div className={`hidden md:flex items-center gap-6 lg:gap-10 text-sm font-medium tracking-widest uppercase ${scrolled || currentPage !== 'home' ? 'text-gray-800' : 'text-white'}`}>
             <a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="hover:text-nasr-blue transition-colors relative group">
               {t.nav.about}
               <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-nasr-blue transition-all duration-300 group-hover:w-full"></span>
@@ -720,6 +1001,12 @@ const App: React.FC = () => {
               <span className={`absolute -bottom-1 left-0 h-[2px] bg-nasr-blue transition-all duration-300 ${currentPage === 'technology' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
             </a>
             
+            <a href="#game" onClick={goToGame} className={`hover:text-nasr-blue transition-colors relative group flex items-center gap-2 ${currentPage === 'game' ? 'text-nasr-blue' : ''}`}>
+               <Gamepad2 size={16} />
+               {t.nav.game}
+               <span className={`absolute -bottom-1 left-0 h-[2px] bg-nasr-blue transition-all duration-300 ${currentPage === 'game' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+            </a>
+            
             <div className="flex items-center gap-4">
               <button onClick={toggleLang} className="flex items-center gap-1 hover:text-nasr-blue transition-colors">
                 <Globe size={16} />
@@ -729,7 +1016,7 @@ const App: React.FC = () => {
               <a 
                 href="#contact" 
                 onClick={(e) => scrollToSection(e, 'contact')}
-                className={`px-6 py-3 border ${scrolled || currentPage === 'technology' ? 'border-nasr-dark text-nasr-dark hover:bg-nasr-dark hover:text-white' : 'border-white text-white hover:bg-white hover:text-nasr-dark'} transition-all duration-300`}
+                className={`px-6 py-3 border ${scrolled || currentPage !== 'home' ? 'border-nasr-dark text-nasr-dark hover:bg-nasr-dark hover:text-white' : 'border-white text-white hover:bg-white hover:text-nasr-dark'} transition-all duration-300`}
               >
                 {t.nav.contact}
               </a>
@@ -737,10 +1024,10 @@ const App: React.FC = () => {
           </div>
 
           <div className="flex md:hidden items-center gap-4">
-             <button onClick={toggleLang} className={`${scrolled || currentPage === 'technology' ? 'text-nasr-dark' : 'text-white'}`}>
+             <button onClick={toggleLang} className={`${scrolled || currentPage !== 'home' ? 'text-nasr-dark' : 'text-white'}`}>
                 {lang === 'en' ? 'AR' : 'EN'}
              </button>
-             <button className={`p-2 ${scrolled || currentPage === 'technology' ? 'text-nasr-dark' : 'text-white'}`} onClick={() => setMenuOpen(!menuOpen)}>
+             <button className={`p-2 ${scrolled || currentPage !== 'home' ? 'text-nasr-dark' : 'text-white'}`} onClick={() => setMenuOpen(!menuOpen)}>
                {menuOpen ? <X size={32} /> : <Menu size={32} />}
              </button>
           </div>
@@ -761,6 +1048,7 @@ const App: React.FC = () => {
               <a href="#products" onClick={(e) => scrollToSection(e, 'products')}>{t.nav.products}</a>
               <a href="#phases" onClick={(e) => scrollToSection(e, 'phases')}>{t.nav.expansion}</a>
               <a href="#technology" onClick={goToTechnology} className={currentPage === 'technology' ? 'text-nasr-blue' : ''}>{t.nav.technology}</a>
+              <a href="#game" onClick={goToGame} className={currentPage === 'game' ? 'text-nasr-blue' : ''}>{t.nav.game}</a>
               <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="px-8 py-3 bg-nasr-blue text-white text-lg">{t.nav.contact}</a>
           </motion.div>
         )}
@@ -769,6 +1057,8 @@ const App: React.FC = () => {
       <main>
         {currentPage === 'technology' ? (
           <TechnologyPage lang={lang} goBack={() => { setCurrentPage('home'); window.scrollTo(0,0); }} />
+        ) : currentPage === 'game' ? (
+          <GamePage lang={lang} goBack={() => { setCurrentPage('home'); window.scrollTo(0,0); }} />
         ) : (
           <>
             {/* Hero Section */}
@@ -985,6 +1275,7 @@ const App: React.FC = () => {
                             <li><a href="#products" onClick={(e) => scrollToSection(e, 'products')} className="hover:text-nasr-accent transition-colors">{t.nav.products}</a></li>
                             <li><a href="#phases" onClick={(e) => scrollToSection(e, 'phases')} className="hover:text-nasr-accent transition-colors">{t.nav.expansion}</a></li>
                             <li><a href="#technology" onClick={goToTechnology} className="hover:text-nasr-accent transition-colors">{t.nav.technology}</a></li>
+                            <li><a href="#game" onClick={goToGame} className="hover:text-nasr-accent transition-colors">{t.nav.game}</a></li>
                         </ul>
                     </div>
 
