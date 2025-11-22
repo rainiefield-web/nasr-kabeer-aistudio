@@ -11,7 +11,7 @@ import {
   Menu, X, Download, MapPin, Mail, Linkedin, Twitter, ArrowRight, 
   CheckCircle2, Globe, FileText, Phone, ChevronLeft, Factory, 
   Thermometer, Settings, Layers, ShieldCheck, Zap, Cpu, PaintBucket,
-  Gamepad2, Trophy, RefreshCw, Play
+  Gamepad2, Trophy, RefreshCw, Play, ExternalLink
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -43,7 +43,7 @@ const content = {
       titleLine1: "SHAPING",
       titleLine2: "EXCELLENCE",
       titleLine3: "IN EVERY", 
-      desc: "A world-class manufacturing facility in Dammam Third Industrial City, delivering 200,000 tons of high-end profiles for the architectural, industrial, and transportation sectors.",
+      desc: "A world-class manufacturing facility in Everwin Industrial Park, Dammam Third Industrial City, delivering 200,000 tons of high-end profiles for the architectural, industrial, and transportation sectors.",
       btnProduct: "Discover Products",
       btnProfile: "Corporate Profile",
       btnTech: "Our Technology",
@@ -261,7 +261,8 @@ const content = {
       unified: "Unified No.",
       rights: "© 2025 Nasr Kabeer Aluminum",
       privacy: "Privacy Policy",
-      terms: "Terms of Use"
+      terms: "Terms of Use",
+      park: "Everwin Industrial Park"
     }
   },
   ar: {
@@ -279,7 +280,7 @@ const content = {
       titleLine1: "صياغة",
       titleLine2: "التميز",
       titleLine3: "في كل",
-      desc: "منشأة تصنيع عالمية المستوى في المدينة الصناعية الثالثة بالدمام، تنتج 200,000 طن من المقاطع عالية الجودة للقطاعات المعمارية والصناعية وقطاع النقل.",
+      desc: "منشأة تصنيع عالمية المستوى في مجمع إيفروين الصناعي بالمدينة الصناعية الثالثة بالدمام، تنتج 200,000 طن من المقاطع عالية الجودة للقطاعات المعمارية والصناعية وقطاع النقل.",
       btnProduct: "اكتشف منتجاتنا",
       btnProfile: "الملف التعريفي",
       btnTech: "تقنياتنا",
@@ -497,7 +498,8 @@ const content = {
       unified: "الرقم الموحد",
       rights: "© 2025 شركة نصر كبير للألمنيوم.",
       privacy: "سياسة الخصوصية",
-      terms: "شروط الاستخدام"
+      terms: "شروط الاستخدام",
+      park: "مجمع إيفروين الصناعي"
     }
   }
 };
@@ -1284,7 +1286,13 @@ const App: React.FC = () => {
                         <ul className="space-y-6 text-sm">
                             <li className="flex items-start gap-4">
                                 <MapPin size={20} className="text-nasr-accent shrink-0" />
-                                <span>{isRTL ? 'المدينة الصناعية الثالثة بالدمام،' : 'Dammam Third Industrial City,'}<br/>{isRTL ? 'المملكة العربية السعودية' : 'Kingdom of Saudi Arabia'}</span>
+                                <div className="flex flex-col">
+                                    <span>{isRTL ? 'المدينة الصناعية الثالثة بالدمام،' : 'Dammam Third Industrial City,'}</span>
+                                    <span>{isRTL ? 'المملكة العربية السعودية' : 'Kingdom of Saudi Arabia'}</span>
+                                    <a href="https://www.everwin.sa/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-1 text-nasr-blue hover:text-white transition-colors text-sm font-medium">
+                                       {(t.footer as any).park} <ExternalLink size={12} />
+                                    </a>
+                                </div>
                             </li>
                             <li className="flex items-center gap-4">
                                 <Mail size={20} className="text-nasr-accent shrink-0" />
