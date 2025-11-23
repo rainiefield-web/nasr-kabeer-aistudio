@@ -11,13 +11,14 @@ import {
   Menu, X, Download, MapPin, Mail, Linkedin, Twitter, ArrowRight, 
   CheckCircle2, Globe, FileText, Phone, ChevronLeft, Factory, 
   Thermometer, Settings, Layers, ShieldCheck, Zap, Cpu, PaintBucket,
-  Gamepad2, Trophy, RefreshCw, Play, ExternalLink
+  Gamepad2, Trophy, RefreshCw, Play, ExternalLink, Recycle, Leaf, 
+  Wind, Droplets, Truck, CircleDollarSign, HardHat, ClipboardCheck
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // --- TYPES & CONTENT ---
 type Language = 'en' | 'ar';
-type Page = 'home' | 'technology' | 'game';
+type Page = 'home' | 'technology' | 'game' | 'sustainability';
 
 // Process Step Type
 interface ProcessStep {
@@ -34,6 +35,7 @@ const content = {
       products: "Products",
       expansion: "Expansion",
       technology: "Technology",
+      sustainability: "Sustainability",
       game: "Interactive",
       contact: "Get in Touch",
       back: "Back to Home"
@@ -247,6 +249,60 @@ const content = {
         }
       ]
     },
+    sustainability: {
+      title: "Sustainable Future",
+      subtitle: "Our Core Values",
+      values: {
+        p1: "At NKAC, sustainability isn’t an extra feature — it’s our way of doing business. It guides who we are and how we work every day.",
+        p2: "When we design and develop our products, we focus on creating solutions that benefit our customers, partners, employees, and local communities. We believe real progress happens only when sustainability drives every decision we make.",
+        p3: "Our core values support this commitment, shaping our culture and inspiring us to build a responsible and sustainable future."
+      },
+      stats: [
+        { value: "95%", label: "Energy Savings", sub: "vs Primary Aluminum" },
+        { value: "90%", label: "CO₂ Reduction", sub: "Emission Cut" },
+        { value: "30%", label: "Recycled Input", sub: "Target Material Mix" }
+      ],
+      dammam: {
+        title: "Dammam Waste Aluminum Recycling Unit",
+        status: "Under Construction",
+        desc: "Located within Everwin Industrial Park, this facility is a dedicated mechanical pre-treatment unit designed for sorting, shredding, and compressing aluminum scrap. It operates as a completely dry, enclosed, and non-polluting system, ensuring zero chemical discharge.",
+        features: [
+          "10,000 Tons Annual Capacity",
+          "Zero Chemical Emissions",
+          "Mechanical Pre-treatment",
+          "Supports 50 Local Jobs"
+        ]
+      },
+      riyadh: {
+        title: "Riyadh Aluminum Recycling Base",
+        status: "Planning & Application",
+        desc: "A strategic pilot base planned for the central region to handle aluminum scrap collection and logistics. Currently undergoing municipal licensing and MWAN permitting processes to establish a compliant collection network.",
+        features: [
+          "Scrap Collection Hub",
+          "Logistics Center",
+          "MWAN Licensing Phase",
+          "Future Expansion Node"
+        ]
+      },
+      process: {
+        title: "The Closed-Loop System",
+        steps: [
+          { title: "Urban Collection", desc: "Recovering scrap from municipalities." },
+          { title: "Regional Bases", desc: "Sorting, cleaning, and shredding." },
+          { title: "Logistics", desc: "Efficient transport to Dammam." },
+          { title: "Extrusion Plant", desc: "Melting, refining, and production." },
+          { title: "New Life", desc: "High-end profiles for city & industry." }
+        ]
+      },
+      impact: {
+        title: "Strategic Impact",
+        items: [
+          { title: "Decarbonization", desc: "Aligning with the National Industrial Decarbonization Strategy by reducing carbon intensity." },
+          { title: "Municipal Benefits", desc: "Reducing solid waste and landfill burden while creating local employment." },
+          { title: "Resource Efficiency", desc: "Closing the material loop and reducing dependence on bauxite mining." }
+        ]
+      }
+    },
     game: {
         title: "Interactive Zone",
         subtitle: "Precision Stacker",
@@ -277,6 +333,7 @@ const content = {
       products: "المنتجات",
       expansion: "التوسع",
       technology: "التقنية",
+      sustainability: "الاستدامة",
       game: "المنطقة التفاعلية",
       contact: "تواصل معنا",
       back: "العودة للرئيسية"
@@ -490,6 +547,60 @@ const content = {
         }
       ]
     },
+    sustainability: {
+      title: "مستقبل مستدام",
+      subtitle: "قيمنا الجوهرية",
+      values: {
+        p1: "في شركة نصر كبير، الاستدامة ليست مجرد ميزة إضافية — بل هي جوهر أسلوبنا في العمل. إنها توجه هويتنا وكيفية عملنا كل يوم.",
+        p2: "عندما نصمم ونطور منتجاتنا، نركز على ابتكار حلول تعود بالنفع على عملائنا وشركائنا وموظفينا ومجتمعاتنا المحلية. نحن نؤمن بأن التقدم الحقيقي يتحقق فقط عندما تكون الاستدامة هي المحرك لكل قرار نتخذه.",
+        p3: "تدعم قيمنا الجوهرية هذا الالتزام، وتشكل ثقافتنا وتلهمنا لبناء مستقبل مسؤول ومستدام."
+      },
+      stats: [
+        { value: "95%", label: "توفير الطاقة", sub: "مقارنة بالألمنيوم الأولي" },
+        { value: "90%", label: "خفض الكربون", sub: "تقليل الانبعاثات" },
+        { value: "30%", label: "محتوى معاد تدويره", sub: "مزيج المواد المستهدف" }
+      ],
+      dammam: {
+        title: "وحدة إعادة تدوير نفايات الألمنيوم بالدمام",
+        status: "قيد الإنشاء",
+        desc: "تقع داخل مجمع إيفروين الصناعي، وهي وحدة معالجة أولية ميكانيكية مخصصة لفرز وتقطيع وضغط خردة الألمنيوم. تعمل بنظام جاف ومغلق بالكامل وغير ملوث، مما يضمن عدم وجود أي تصريف كيميائي.",
+        features: [
+          "طاقة سنوية 10,000 طن",
+          "انبعاثات كيميائية صفرية",
+          "معالجة أولية ميكانيكية",
+          "دعم 50 وظيفة محلية"
+        ]
+      },
+      riyadh: {
+        title: "قاعدة الرياض لإعادة تدوير الألمنيوم",
+        status: "مرحلة التخطيط والترخيص",
+        desc: "قاعدة استراتيجية مخطط لها في المنطقة الوسطى للتعامل مع جمع خردة الألمنيوم والخدمات اللوجستية. تخضع حالياً لعمليات الترخيص البلدي وتصاريح المركز الوطني لإدارة النفايات (MWAN).",
+        features: [
+          "مركز جمع الخردة",
+          "مركز لوجستي",
+          "مرحلة ترخيص MWAN",
+          "نقطة توسع مستقبلية"
+        ]
+      },
+      process: {
+        title: "نظام الحلقة المغلقة",
+        steps: [
+          { title: "الجمع الحضري", desc: "استعادة الخردة من البلديات." },
+          { title: "القواعد الإقليمية", desc: "الفرز، التنظيف، والتقطيع." },
+          { title: "اللوجستيات", desc: "نقل فعال إلى الدمام." },
+          { title: "مصنع البثق", desc: "الصهر، التكرير، والإنتاج." },
+          { title: "حياة جديدة", desc: "مقاطع عالية الجودة للمدن والصناعة." }
+        ]
+      },
+      impact: {
+        title: "الأثر الاستراتيجي",
+        items: [
+          { title: "إزالة الكربون", desc: "التوافق مع الاستراتيجية الوطنية لإزالة الكربون الصناعي عن طريق خفض كثافة الكربون." },
+          { title: "الفوائد البلدية", desc: "تقليل النفايات الصلبة وأعباء المكبات مع خلق فرص عمل محلية." },
+          { title: "كفاءة الموارد", desc: "إغلاق حلقة المواد وتقليل الاعتماد على تعدين البوكسيت." }
+        ]
+      }
+    },
     game: {
         title: "المنطقة التفاعلية",
         subtitle: "مكدس الدقة",
@@ -660,6 +771,197 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
              </AnimatePresence>
           </div>
         </div>
+      </div>
+    </motion.div>
+  );
+};
+
+// --- Sustainability Page Component ---
+const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBack }) => {
+  const t = content[lang].sustainability;
+  const isRTL = lang === 'ar';
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 50 }}
+      className={`min-h-screen bg-white ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}
+    >
+      {/* Header */}
+      <div className="container mx-auto px-6 mb-12 flex items-center justify-between">
+         <button onClick={goBack} className="flex items-center gap-2 text-nasr-blue hover:text-nasr-dark transition-colors font-bold uppercase text-sm tracking-wider">
+            <ChevronLeft size={20} className={isRTL ? "rotate-180" : ""} />
+            {content[lang].nav.back}
+         </button>
+         <div className="hidden md:block h-[1px] flex-1 bg-gray-200 mx-8"></div>
+         <AlxLogo />
+      </div>
+
+      {/* Hero Section */}
+      <section className="relative h-[80vh] min-h-[600px] bg-nasr-dark overflow-hidden mb-20 flex items-center">
+         <div className="absolute inset-0">
+             <img 
+               src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop" 
+               alt="Green Forest" 
+               className="w-full h-full object-cover opacity-80"
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-nasr-dark via-nasr-dark/40 to-transparent"></div>
+         </div>
+         <div className="container mx-auto px-6 relative z-10">
+            <div className="max-w-4xl mx-auto text-center">
+               <div className="flex items-center justify-center gap-3 mb-6 text-nasr-accent">
+                  <Leaf size={32} />
+                  <span className="font-bold uppercase tracking-widest text-sm">{t.subtitle}</span>
+               </div>
+               <h1 className={`text-white font-serif font-bold mb-10 leading-none ${isRTL ? 'font-arabic text-5xl lg:text-7xl' : 'text-5xl lg:text-7xl'}`}>
+                 {t.title}
+               </h1>
+               
+               {/* Core Values Text */}
+               <div className="bg-black/30 backdrop-blur-md p-8 md:p-10 rounded-sm border-l-4 border-nasr-accent text-left">
+                  <p className="text-white text-lg md:text-xl leading-relaxed mb-6 font-medium">
+                     {t.values.p1}
+                  </p>
+                  <p className="text-gray-200 text-base md:text-lg leading-relaxed mb-6">
+                     {t.values.p2}
+                  </p>
+                  <p className="text-nasr-accent text-base md:text-lg font-bold uppercase tracking-wide">
+                     {t.values.p3}
+                  </p>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <div className="container mx-auto px-6">
+        {/* Key Metrics */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 -mt-32 relative z-20 mb-24">
+           {t.stats.map((stat, i) => (
+             <motion.div 
+               key={i}
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ delay: i * 0.1 }}
+               className="bg-white p-8 shadow-xl border-t-4 border-nasr-accent"
+             >
+                <div className="text-5xl font-bold text-nasr-dark mb-2">{stat.value}</div>
+                <div className="text-nasr-accent font-bold uppercase text-sm tracking-wider mb-1">{stat.label}</div>
+                <div className="text-gray-500 text-sm">{stat.sub}</div>
+             </motion.div>
+           ))}
+        </div>
+
+        {/* Dual Facility Hubs */}
+        <div className="mb-32">
+           <SectionHeading title="Recycling Infrastructure" subtitle="Strategic Network" lang={lang} />
+           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              
+              {/* Dammam Hub (Construction) */}
+              <div className="bg-white border border-gray-100 shadow-lg overflow-hidden group hover:border-nasr-accent transition-all duration-300">
+                  <div className="relative h-64 overflow-hidden">
+                     <img 
+                        src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&q=80&w=1000" 
+                        alt="Dammam Recycling Unit" 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                     />
+                     <div className="absolute top-4 right-4 bg-nasr-accent text-white px-3 py-1 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                        <HardHat size={14} /> {t.dammam.status}
+                     </div>
+                  </div>
+                  <div className="p-8">
+                     <h3 className={`text-2xl font-serif font-bold text-nasr-dark mb-4 ${isRTL ? 'font-arabic' : ''}`}>{t.dammam.title}</h3>
+                     <p className="text-gray-600 mb-6 leading-relaxed text-sm min-h-[80px]">
+                        {t.dammam.desc}
+                     </p>
+                     <ul className="space-y-3">
+                        {t.dammam.features.map((feat, i) => (
+                           <li key={i} className="flex items-center gap-3 text-gray-700 text-sm font-medium">
+                              <CheckCircle2 size={16} className="text-nasr-accent" /> {feat}
+                           </li>
+                        ))}
+                     </ul>
+                  </div>
+              </div>
+
+              {/* Riyadh Hub (Planning) */}
+              <div className="bg-white border border-gray-100 shadow-lg overflow-hidden group hover:border-nasr-blue transition-all duration-300 opacity-90">
+                  <div className="relative h-64 overflow-hidden">
+                     <img 
+                        src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000" 
+                        alt="Riyadh Logistics Base" 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale"
+                     />
+                     <div className="absolute top-4 right-4 bg-nasr-blue text-white px-3 py-1 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                        <ClipboardCheck size={14} /> {t.riyadh.status}
+                     </div>
+                  </div>
+                  <div className="p-8">
+                     <h3 className={`text-2xl font-serif font-bold text-nasr-dark mb-4 ${isRTL ? 'font-arabic' : ''}`}>{t.riyadh.title}</h3>
+                     <p className="text-gray-600 mb-6 leading-relaxed text-sm min-h-[80px]">
+                        {t.riyadh.desc}
+                     </p>
+                     <ul className="space-y-3">
+                        {t.riyadh.features.map((feat, i) => (
+                           <li key={i} className="flex items-center gap-3 text-gray-700 text-sm font-medium">
+                              <div className="w-4 h-4 rounded-full border border-nasr-blue flex items-center justify-center">
+                                 <div className="w-2 h-2 bg-nasr-blue rounded-full"></div>
+                              </div>
+                              {feat}
+                           </li>
+                        ))}
+                     </ul>
+                  </div>
+              </div>
+
+           </div>
+        </div>
+
+        {/* The System Flow */}
+        <div className="bg-gray-50 p-12 lg:p-20 rounded-sm mb-32">
+           <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className={`text-3xl lg:text-4xl font-serif font-bold mb-4 ${isRTL ? 'font-arabic' : ''}`}>{t.process.title}</h2>
+              <div className="h-1 w-20 bg-nasr-accent mx-auto"></div>
+           </div>
+           
+           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
+              {/* Connector Line Desktop */}
+              <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-gray-300 -z-10"></div>
+              
+              {t.process.steps.map((step, i) => (
+                 <div key={i} className="flex flex-col items-center text-center group">
+                    <div className={`w-16 h-16 rounded-full border-4 bg-white flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 z-10 ${i === 0 || i === 4 ? 'border-nasr-dark text-nasr-dark' : 'border-nasr-accent text-nasr-accent'}`}>
+                       {i === 0 ? <Recycle size={24} /> : 
+                        i === 1 ? <Settings size={24} /> : 
+                        i === 2 ? <Truck size={24} /> : 
+                        i === 3 ? <Factory size={24} /> : 
+                        <Leaf size={24} />}
+                    </div>
+                    <h4 className="font-bold text-gray-900 mb-2">{step.title}</h4>
+                    <p className="text-sm text-gray-500 px-2">{step.desc}</p>
+                 </div>
+              ))}
+           </div>
+        </div>
+
+        {/* Strategic Impact Cards */}
+        <div className="mb-12">
+          <SectionHeading title={t.impact.title} subtitle="Vision 2030" lang={lang} />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+             {t.impact.items.map((item, i) => (
+                <div key={i} className="p-8 border border-gray-100 hover:border-nasr-blue hover:shadow-lg transition-all duration-300 group">
+                   <div className="mb-6 p-4 bg-blue-50 text-nasr-blue w-fit rounded-sm group-hover:bg-nasr-blue group-hover:text-white transition-colors">
+                      {i === 0 ? <Wind size={24}/> : i === 1 ? <CircleDollarSign size={24}/> : <Droplets size={24}/>}
+                   </div>
+                   <h3 className="text-xl font-serif font-bold text-nasr-dark mb-4">{item.title}</h3>
+                   <p className="text-gray-600 leading-relaxed text-sm">
+                     {item.desc}
+                   </p>
+                </div>
+             ))}
+          </div>
+        </div>
+
       </div>
     </motion.div>
   );
@@ -968,6 +1270,13 @@ const App: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const goToSustainability = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setCurrentPage('sustainability');
+    setMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const goToGame = (e: React.MouseEvent) => {
     e.preventDefault();
     setCurrentPage('game');
@@ -1006,13 +1315,13 @@ const App: React.FC = () => {
               {t.nav.products}
               <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-nasr-blue transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="#phases" onClick={(e) => scrollToSection(e, 'phases')} className="hover:text-nasr-blue transition-colors relative group">
-              {t.nav.expansion}
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-nasr-blue transition-all duration-300 group-hover:w-full"></span>
-            </a>
             <a href="#technology" onClick={goToTechnology} className={`hover:text-nasr-blue transition-colors relative group ${currentPage === 'technology' ? 'text-nasr-blue' : ''}`}>
               {t.nav.technology}
               <span className={`absolute -bottom-1 left-0 h-[2px] bg-nasr-blue transition-all duration-300 ${currentPage === 'technology' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+            </a>
+            <a href="#sustainability" onClick={goToSustainability} className={`hover:text-nasr-blue transition-colors relative group ${currentPage === 'sustainability' ? 'text-nasr-blue' : ''}`}>
+              {t.nav.sustainability}
+              <span className={`absolute -bottom-1 left-0 h-[2px] bg-nasr-blue transition-all duration-300 ${currentPage === 'sustainability' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
             </a>
             
             <a href="#game" onClick={goToGame} className={`hover:text-nasr-blue transition-colors relative group flex items-center gap-2 ${currentPage === 'game' ? 'text-nasr-blue' : ''}`}>
@@ -1062,6 +1371,7 @@ const App: React.FC = () => {
               <a href="#products" onClick={(e) => scrollToSection(e, 'products')}>{t.nav.products}</a>
               <a href="#phases" onClick={(e) => scrollToSection(e, 'phases')}>{t.nav.expansion}</a>
               <a href="#technology" onClick={goToTechnology} className={currentPage === 'technology' ? 'text-nasr-blue' : ''}>{t.nav.technology}</a>
+              <a href="#sustainability" onClick={goToSustainability} className={currentPage === 'sustainability' ? 'text-nasr-blue' : ''}>{t.nav.sustainability}</a>
               <a href="#game" onClick={goToGame} className={currentPage === 'game' ? 'text-nasr-blue' : ''}>{t.nav.game}</a>
               <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="px-8 py-3 bg-nasr-blue text-white text-lg">{t.nav.contact}</a>
           </motion.div>
@@ -1071,6 +1381,8 @@ const App: React.FC = () => {
       <main>
         {currentPage === 'technology' ? (
           <TechnologyPage lang={lang} goBack={() => { setCurrentPage('home'); window.scrollTo(0,0); }} />
+        ) : currentPage === 'sustainability' ? (
+          <SustainabilityPage lang={lang} goBack={() => { setCurrentPage('home'); window.scrollTo(0,0); }} />
         ) : currentPage === 'game' ? (
           <GamePage lang={lang} goBack={() => { setCurrentPage('home'); window.scrollTo(0,0); }} />
         ) : (
@@ -1319,6 +1631,7 @@ const App: React.FC = () => {
                             <li><a href="#products" onClick={(e) => scrollToSection(e, 'products')} className="hover:text-nasr-accent transition-colors">{t.nav.products}</a></li>
                             <li><a href="#phases" onClick={(e) => scrollToSection(e, 'phases')} className="hover:text-nasr-accent transition-colors">{t.nav.expansion}</a></li>
                             <li><a href="#technology" onClick={goToTechnology} className="hover:text-nasr-accent transition-colors">{t.nav.technology}</a></li>
+                            <li><a href="#sustainability" onClick={goToSustainability} className="hover:text-nasr-accent transition-colors">{t.nav.sustainability}</a></li>
                             <li><a href="#game" onClick={goToGame} className="hover:text-nasr-accent transition-colors">{t.nav.game}</a></li>
                         </ul>
                     </div>
