@@ -58,6 +58,12 @@ const content = {
       statCapacity: "Tons/Year Capacity",
       statExport: "Export Target"
     },
+    park: {
+      subtitle: "Industrial Ecosystem",
+      title: "Everwin Industrial Park",
+      desc: "Nasr Kabeer Aluminum operates within Everwin Industrial Park, a state-of-the-art industrial hub in Dammam Third Industrial City, providing world-class infrastructure for advanced manufacturing.",
+      link: "Visit Park Website"
+    },
     phases: {
       subtitle: "Growth Roadmap",
       title: "Phased Industrial Expansion",
@@ -294,6 +300,12 @@ const content = {
       p3: "نحن نلتزم بأعلى المعايير الدولية، وحاصلون على شهادات ISO 9001 و ISO 14001 و ISO 45001، مما يعكس التزامنا الراسخ بالجودة والاستدامة والسلامة. تماشياً مع رؤية السعودية 2030، تكرس NKAC جهودها لدفع عجلة خلق القيمة المحلية ودعم تنويع الصادرات لكل من الأسواق المحلية والدولية.",
       statCapacity: "طن/سنة طاقة إنتاجية",
       statExport: "هدف التصدير"
+    },
+    park: {
+      subtitle: "نظام بيئي صناعي",
+      title: "مجمع إيفروين الصناعي",
+      desc: "تعمل شركة نصر كبير للألمنيوم داخل مجمع إيفروين الصناعي، وهو مركز صناعي متطور في المدينة الصناعية الثالثة بالدمام، يوفر بنية تحتية عالمية المستوى للتصنيع المتقدم.",
+      link: "زيارة موقع المجمع"
     },
     phases: {
       subtitle: "خارطة الطريق للنمو",
@@ -1150,9 +1162,39 @@ const App: React.FC = () => {
                         />
                         <div className="absolute inset-0 bg-nasr-blue/20 mix-blend-multiply"></div>
                      </motion.div>
+                     
+                     {/* Everwin Industrial Park Card - Replaces Decorative Element */}
+                     <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4, duration: 0.6 }}
+                        className={`relative mt-8 lg:mt-0 lg:absolute lg:-bottom-12 lg:${isRTL ? '-right-12' : '-left-12'} z-20 bg-white p-6 shadow-xl border-t-4 border-nasr-blue max-w-sm`}
+                     >
+                        <div className="flex flex-col gap-4">
+                            <div className="flex items-center justify-between gap-4">
+                                <div>
+                                    <div className="text-[10px] font-bold uppercase text-gray-400 tracking-widest mb-1">{t.park.subtitle}</div>
+                                    <h4 className={`font-serif text-xl leading-tight text-nasr-dark ${isRTL ? 'font-arabic' : ''}`}>{t.park.title}</h4>
+                                </div>
+                                <div className="p-2 bg-gray-50 rounded-full">
+                                   <MapPin className="text-nasr-blue" size={20} />
+                                </div>
+                            </div>
+                            
+                            <img src="https://i.postimg.cc/Kv7bY59r/3.png" alt="Everwin Industrial Park" className="h-10 w-auto object-contain self-start" />
+                            
+                            <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">
+                                {t.park.desc}
+                            </p>
+
+                            <a href="https://www.everwin.sa/" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase text-nasr-blue hover:text-nasr-dark flex items-center gap-2 mt-1 transition-colors group">
+                                {t.park.link} <ExternalLink size={12} className="group-hover:translate-x-1 transition-transform" />
+                            </a>
+                        </div>
+                     </motion.div>
+
                      {/* Decorative Elements */}
                      <div className={`absolute -top-10 ${isRTL ? '-left-10' : '-right-10'} w-64 h-64 bg-gray-100 -z-10 pattern-dots`}></div>
-                     <div className={`absolute -bottom-10 ${isRTL ? '-right-10' : '-left-10'} w-40 h-40 border-2 border-nasr-accent -z-10`}></div>
                   </div>
                 </div>
               </div>
