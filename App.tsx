@@ -861,8 +861,8 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
               <div className="bg-white border border-gray-100 shadow-lg overflow-hidden group hover:border-nasr-accent transition-all duration-300">
                   <div className="relative h-64 overflow-hidden">
                      <img 
-                        src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&q=80&w=1000" 
-                        alt="Dammam Recycling Unit" 
+                        src="https://images.pexels.com/photos/6591436/pexels-photo-6591436.jpeg" 
+                        alt="Dammam Recycling Unit - Aluminum Scrap Bales" 
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                      />
                      <div className="absolute top-4 right-4 bg-nasr-accent text-white px-3 py-1 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
@@ -888,9 +888,9 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
               <div className="bg-white border border-gray-100 shadow-lg overflow-hidden group hover:border-nasr-blue transition-all duration-300 opacity-90">
                   <div className="relative h-64 overflow-hidden">
                      <img 
-                        src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000" 
-                        alt="Riyadh Logistics Base" 
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale"
+                        src="https://images.pexels.com/photos/14953330/pexels-photo-14953330.jpeg" 
+                        alt="Riyadh Logistics Base - Sorting and Processing" 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                      />
                      <div className="absolute top-4 right-4 bg-nasr-blue text-white px-3 py-1 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
                         <ClipboardCheck size={14} /> {t.riyadh.status}
