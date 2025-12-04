@@ -658,61 +658,6 @@ const content = {
             "الربط الهيكلي: تحضير السطح لتطبيقات المواد اللاصقة المتقدمة."
           ]
         }
-      ],
-      autoSteps: [
-        {
-          title: "تطوير السبائك والصب",
-          desc: "مصممة لمقاومة التصادم والقوة العالية.",
-          details: [
-            "سلسلة 6xxx و 7xxx المخصصة: مطورة لتحقيق أفضل نسب قوة إلى وزن.",
-            "التحكم في الشوائب: رقابة صارمة على مستويات الحديد (Fe) لضمان الليونة لامتصاص طاقة التصادم.",
-            "التجانس: هيكل موحد للكتل لمنع عيوب البثق اللاحقة."
-          ]
-        },
-        {
-          title: "البثق الدقيق",
-          desc: "عملية متساوية الحرارة لخواص متسقة.",
-          details: [
-            "بثق متعدد الفتحات: إنشاء مقاطع مجوفة معقدة لتبريد البطاريات والصلابة الهيكلية.",
-            "التحكم المتساوي الحرارة: الحفاظ على سرعة خروج ودرجة حرارة ثابتة لضمان تجانس الخواص الميكانيكية.",
-            "التبريد المتدرج: تبريد دقيق برذاذ الماء للتحكم في التشوه مع تثبيت البنية المجهرية."
-          ]
-        },
-        {
-          title: "التشكيل المتقدم",
-          desc: "تشكيل بدون المساس بالسلامة الهيكلية.",
-          details: [
-            "الثني بالتمدد ثلاثي الأبعاد: ثني المقاطع لتناسب انحناءات المركبة الديناميكية دون التواء.",
-            "التشكيل الهيدروليكي: استخدام سائل عالي الضغط لتشكيل هندسة معقدة.",
-            "المعايرة: تمدد ما بعد البثق لتحقيق تفاوتات استقامة فائقة."
-          ]
-        },
-        {
-          title: "تشغيل CNC والتصنيع",
-          desc: "دقة خماسية المحاور لتكامل المكونات.",
-          details: [
-            "طحن خماسي المحاور (5-Axis): لنقاط التثبيت المعقدة وميزات صينية البطارية.",
-            "الحفر والتثقيب الآلي: خلايا روبوتية عالية السرعة لكفاءة الإنتاج الضخم.",
-            "تفاوتات ضيقة: الحفاظ على دقة +/- 0.05 مم لملاءمة التجميع."
-          ]
-        },
-        {
-          title: "معالجة حرارية متخصصة",
-          desc: "موازنة القوة وامتصاص الطاقة.",
-          details: [
-            "تقادم محسن للتصادم: دورات T6/T7 محددة لتعظيم امتصاص الطاقة (الليونة) جنباً إلى جنب مع قوة الخضوع.",
-            "تصلب الخبز: سبائك مصممة لاكتساب قوتها النهائية أثناء عملية خبز الطلاء."
-          ]
-        },
-        {
-          title: "الربط والتجميع",
-          desc: "الجيل القادم من تقنيات الربط لهياكل المركبات الكهربائية.",
-          details: [
-            "لحام الاحتكاك (FSW): إنشاء وصلات مانعة للتسرب وعالية القوة لحاويات بطاريات السيارات الكهربائية.",
-            "اللحام بالليزر: مدخلات حرارة منخفضة لتقليل التشوه.",
-            "الربط الهيكلي: تحضير السطح لتطبيقات المواد اللاصقة المتقدمة."
-          ]
-        }
       ]
     },
     sustainability: {
@@ -849,9 +794,10 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[600px]">
+      {/* Main Container with MIN-HEIGHT to prevent jumping */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[650px]">
         {/* Visual Flowchart Area (Left/Top) */}
-        <div className="lg:col-span-8 bg-gray-50 p-8 relative overflow-hidden">
+        <div className="lg:col-span-8 bg-gray-50 p-8 relative overflow-hidden h-full">
              <div className="absolute inset-0 pattern-dots opacity-30 pointer-events-none"></div>
              
              <div className="relative z-10 h-full flex flex-col items-center justify-center gap-8 py-8">
@@ -939,14 +885,16 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
         </div>
 
         {/* Details Panel (Right/Bottom) */}
-        <div className="lg:col-span-4 bg-white p-8 border-l border-gray-100 flex flex-col justify-center">
-            <AnimatePresence mode="wait">
+        <div className="lg:col-span-4 bg-white p-8 border-l border-gray-100 flex flex-col justify-center h-full relative">
+            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20 pointer-events-none"></div>
+            <AnimatePresence mode="popLayout">
                 <motion.div
                     key={activeTab}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
                     transition={{ duration: 0.3 }}
+                    className="relative z-10"
                 >
                     <div className={`w-12 h-12 rounded-sm flex items-center justify-center mb-6 text-white ${
                         activeTab === 'core' ? 'bg-nasr-dark' : 
@@ -964,7 +912,7 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
                          activeTab === 'powder' ? t.auxB.title : t.auxC.title}
                     </h3>
                     
-                    <p className="text-gray-600 mb-8 leading-relaxed">
+                    <p className="text-gray-600 mb-8 leading-relaxed min-h-[60px]">
                         {activeTab === 'core' ? t.core.desc : 
                          activeTab === 'die' ? t.auxA.desc : 
                          activeTab === 'powder' ? t.auxB.desc : t.auxC.desc}
@@ -1029,7 +977,7 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
       className={`min-h-screen bg-gray-50 ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}
     >
       {/* Sticky Header for Tech Page */}
-      <div className="container mx-auto px-6 mb-12 flex items-center justify-between">
+      <div className="container mx-auto px-6 mb-8 flex items-center justify-between">
          <button onClick={goBack} className="flex items-center gap-2 text-nasr-blue hover:text-nasr-dark transition-colors font-bold uppercase text-sm tracking-wider">
             <ChevronLeft size={20} className={isRTL ? "rotate-180" : ""} />
             {content[lang].nav.back}
@@ -1038,15 +986,26 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
          <AlxLogo />
       </div>
 
-      <div className="container mx-auto px-6 mb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
-            <div>
-               <SectionHeading title={t.title} subtitle={t.subtitle} lang={lang} />
-            </div>
-            <div className="pb-4">
-               <p className={`text-lg text-gray-600 leading-relaxed ${isRTL ? 'border-r-4 pr-6' : 'border-l-4 pl-6'} border-nasr-blue`}>
-                  {t.desc}
-               </p>
+      {/* NEW: Hero Header with Background Image */}
+      <div className="relative mb-16 h-[300px] lg:h-[400px] overflow-hidden">
+        <div className="absolute inset-0">
+             <img 
+               src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?q=80&w=2070&auto=format&fit=crop" 
+               alt="Advanced Aluminum Manufacturing" 
+               className="w-full h-full object-cover"
+             />
+             <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-gray-900/20"></div>
+        </div>
+        <div className="container mx-auto px-6 h-full flex flex-col justify-center relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
+                <div>
+                   <SectionHeading title={t.title} subtitle={t.subtitle} dark lang={lang} />
+                </div>
+                <div className="pb-4">
+                   <p className={`text-lg text-gray-200 leading-relaxed ${isRTL ? 'border-r-4 pr-6' : 'border-l-4 pl-6'} border-nasr-blue bg-black/30 p-4 backdrop-blur-sm rounded-sm`}>
+                      {t.desc}
+                   </p>
+                </div>
             </div>
         </div>
       </div>
