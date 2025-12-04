@@ -805,7 +805,7 @@ const AlxLogo = () => (
 );
 
 const SectionHeading = ({ title, subtitle, dark = false, lang }: { title: string, subtitle?: string, dark?: boolean, lang: Language }) => (
-  <div className="mb-16 max-w-3xl">
+  <div className="mb-4 max-w-3xl">
     <motion.div 
       initial={{ opacity: 0, x: lang === 'en' ? -20 : 20 }}
       whileInView={{ opacity: 1, x: 0 }}
@@ -854,10 +854,10 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
         <div className="lg:col-span-8 bg-gray-50 p-8 relative overflow-hidden">
              <div className="absolute inset-0 pattern-dots opacity-30 pointer-events-none"></div>
              
-             <div className="relative z-10 h-full flex flex-col items-center justify-center gap-8">
+             <div className="relative z-10 h-full flex flex-col items-center justify-center gap-8 py-8">
                 
                 {/* PART I: CORE PROCESS (Central Spine) */}
-                <div className={`relative flex flex-col gap-4 w-full max-w-md transition-opacity duration-500 ${activeTab !== 'core' ? 'opacity-40' : 'opacity-100'}`}>
+                <div className={`relative flex flex-col gap-6 w-full max-w-md transition-opacity duration-500 ${activeTab !== 'core' ? 'opacity-40' : 'opacity-100'}`}>
                     <div className="absolute top-0 bottom-0 left-1/2 w-1 bg-gray-300 -z-10 -translate-x-1/2"></div>
                     
                     {t.core.steps.map((step, i) => (
@@ -869,58 +869,72 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
                                 <h4 className="font-bold text-nasr-dark text-sm">{step.title}</h4>
                             </div>
                             
-                            {/* Connection Points for Auxiliary */}
-                            {i === 1 && ( // Extrusion connects to Dies
-                                <div className={`absolute ${isRTL ? 'right-full mr-4' : 'left-full ml-4'} top-1/2 -translate-y-1/2 flex items-center ${activeTab === 'die' ? 'opacity-100 scale-100' : 'opacity-0 scale-90'} transition-all duration-500`}>
-                                   <div className={`h-0.5 w-8 bg-nasr-red`}></div>
-                                   <div className={`px-3 py-1 bg-nasr-red text-white text-xs font-bold uppercase rounded whitespace-nowrap`}>
-                                     {t.auxA.connection}
-                                   </div>
+                            {/* Auxiliary Nodes anchored to specific steps */}
+                            {i === 1 && ( // Step 2: Extrusion connects to Die Mfg
+                                <div 
+                                    className={`absolute ${isRTL ? 'right-full mr-8' : 'left-full ml-8'} top-1/2 -translate-y-1/2 transition-all duration-300 z-20 cursor-pointer ${activeTab === 'die' ? 'scale-110 opacity-100' : 'scale-100 opacity-60 hover:opacity-100'}`}
+                                    onClick={(e) => { e.stopPropagation(); setActiveTab('die'); }}
+                                >
+                                    <div className="flex items-center">
+                                         {/* Connector Line */}
+                                        <div className={`absolute ${isRTL ? '-left-8' : '-right-8'} top-1/2 -translate-y-1/2 w-8 h-0.5 bg-nasr-red`}></div>
+                                        
+                                        {/* Node Box */}
+                                        <div className={`w-40 p-3 bg-white border-l-4 border-nasr-red shadow-lg rounded-sm ${activeTab === 'die' ? 'ring-2 ring-nasr-red/30' : ''}`}>
+                                            <div className="flex items-center gap-2 mb-1">
+                                                <PenTool size={16} className="text-nasr-red" />
+                                                <span className="text-xs font-bold text-nasr-red uppercase">Aux A</span>
+                                            </div>
+                                            <div className="text-xs font-bold text-gray-800 leading-tight">{t.auxA.title.split(':')[0]}</div>
+                                        </div>
+                                    </div>
                                 </div>
                             )}
-                            {i === 3 && ( // Surface connects to Powder
-                                <div className={`absolute ${isRTL ? 'left-full ml-4' : 'right-full mr-4'} top-1/2 -translate-y-1/2 flex items-center ${activeTab === 'powder' ? 'opacity-100 scale-100' : 'opacity-0 scale-90'} transition-all duration-500`}>
-                                   <div className={`px-3 py-1 bg-nasr-blue text-white text-xs font-bold uppercase rounded whitespace-nowrap`}>
-                                      {t.auxB.connection}
-                                   </div>
-                                   <div className={`h-0.5 w-8 bg-nasr-blue`}></div>
+
+                            {i === 3 && ( // Step 4: Surface connects to Powder
+                                <div 
+                                    className={`absolute ${isRTL ? 'left-full ml-8' : 'right-full mr-8'} top-1/2 -translate-y-1/2 transition-all duration-300 z-20 cursor-pointer ${activeTab === 'powder' ? 'scale-110 opacity-100' : 'scale-100 opacity-60 hover:opacity-100'}`}
+                                    onClick={(e) => { e.stopPropagation(); setActiveTab('powder'); }}
+                                >
+                                    <div className="flex items-center">
+                                         {/* Connector Line */}
+                                        <div className={`absolute ${isRTL ? '-right-8' : '-left-8'} top-1/2 -translate-y-1/2 w-8 h-0.5 bg-nasr-blue`}></div>
+                                        
+                                        {/* Node Box */}
+                                        <div className={`w-40 p-3 bg-white border-r-4 border-nasr-blue shadow-lg rounded-sm ${activeTab === 'powder' ? 'ring-2 ring-nasr-blue/30' : ''}`}>
+                                            <div className="flex items-center gap-2 mb-1 justify-end">
+                                                <span className="text-xs font-bold text-nasr-blue uppercase">Aux B</span>
+                                                <PaintBucket size={16} className="text-nasr-blue" />
+                                            </div>
+                                            <div className="text-xs font-bold text-gray-800 leading-tight text-right">{t.auxB.title.split(':')[0]}</div>
+                                        </div>
+                                    </div>
                                 </div>
                             )}
-                            {i === 4 && ( // Finishing connects to Strips
-                                <div className={`absolute ${isRTL ? 'left-full ml-4' : 'right-full mr-4'} top-1/2 -translate-y-1/2 flex items-center ${activeTab === 'strip' ? 'opacity-100 scale-100' : 'opacity-0 scale-90'} transition-all duration-500`}>
-                                   <div className={`px-3 py-1 bg-nasr-accent text-white text-xs font-bold uppercase rounded whitespace-nowrap`}>
-                                      {t.auxC.connection}
-                                   </div>
-                                   <div className={`h-0.5 w-8 bg-nasr-accent`}></div>
+
+                            {i === 4 && ( // Step 5: Finishing connects to Strips
+                                <div 
+                                    className={`absolute ${isRTL ? 'left-full ml-8' : 'right-full mr-8'} top-1/2 -translate-y-1/2 transition-all duration-300 z-20 cursor-pointer ${activeTab === 'strip' ? 'scale-110 opacity-100' : 'scale-100 opacity-60 hover:opacity-100'}`}
+                                    onClick={(e) => { e.stopPropagation(); setActiveTab('strip'); }}
+                                >
+                                    <div className="flex items-center">
+                                         {/* Connector Line */}
+                                        <div className={`absolute ${isRTL ? '-right-8' : '-left-8'} top-1/2 -translate-y-1/2 w-8 h-0.5 bg-nasr-accent`}></div>
+                                        
+                                        {/* Node Box */}
+                                        <div className={`w-40 p-3 bg-white border-r-4 border-nasr-accent shadow-lg rounded-sm ${activeTab === 'strip' ? 'ring-2 ring-nasr-accent/30' : ''}`}>
+                                            <div className="flex items-center gap-2 mb-1 justify-end">
+                                                <span className="text-xs font-bold text-nasr-accent uppercase">Aux C</span>
+                                                <Layers size={16} className="text-nasr-accent" />
+                                            </div>
+                                            <div className="text-xs font-bold text-gray-800 leading-tight text-right">{t.auxC.title.split(':')[0]}</div>
+                                        </div>
+                                    </div>
                                 </div>
                             )}
                         </div>
                     ))}
                 </div>
-
-                {/* Auxiliary Process Badges (Floating) */}
-                
-                {/* Die Mfg Badge (Left Side) */}
-                <div className={`absolute top-1/4 ${isRTL ? 'right-8' : 'left-8'} p-4 bg-white border-l-4 border-nasr-red shadow-lg transition-all duration-500 max-w-[200px] cursor-pointer ${activeTab === 'die' ? 'scale-110 ring-2 ring-nasr-red/20' : 'scale-90 opacity-60 hover:opacity-100'}`} onClick={() => setActiveTab('die')}>
-                    <PenTool className="text-nasr-red mb-2" size={24} />
-                    <h5 className="font-bold text-gray-800 text-sm leading-tight mb-1">{t.auxA.title.split(':')[0]}</h5>
-                    <p className="text-xs text-gray-500">In-House Dies</p>
-                </div>
-
-                {/* Powder Badge (Right Side) */}
-                <div className={`absolute top-[60%] ${isRTL ? 'left-8' : 'right-8'} p-4 bg-white border-r-4 border-nasr-blue shadow-lg transition-all duration-500 max-w-[200px] cursor-pointer ${activeTab === 'powder' ? 'scale-110 ring-2 ring-nasr-blue/20' : 'scale-90 opacity-60 hover:opacity-100'}`} onClick={() => setActiveTab('powder')}>
-                    <PaintBucket className="text-nasr-blue mb-2" size={24} />
-                    <h5 className="font-bold text-gray-800 text-sm leading-tight mb-1">{t.auxB.title.split(':')[0]}</h5>
-                    <p className="text-xs text-gray-500">Powder Production</p>
-                </div>
-
-                 {/* Strip Badge (Right Side Lower) */}
-                 <div className={`absolute top-[80%] ${isRTL ? 'left-8' : 'right-8'} p-4 bg-white border-r-4 border-nasr-accent shadow-lg transition-all duration-500 max-w-[200px] cursor-pointer ${activeTab === 'strip' ? 'scale-110 ring-2 ring-nasr-accent/20' : 'scale-90 opacity-60 hover:opacity-100'}`} onClick={() => setActiveTab('strip')}>
-                    <Layers className="text-nasr-accent mb-2" size={24} />
-                    <h5 className="font-bold text-gray-800 text-sm leading-tight mb-1">{t.auxC.title.split(':')[0]}</h5>
-                    <p className="text-xs text-gray-500">Thermal Strips</p>
-                </div>
-
              </div>
         </div>
 
@@ -1024,12 +1038,20 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
          <AlxLogo />
       </div>
 
-      <div className="container mx-auto px-6">
-        <SectionHeading title={t.title} subtitle={t.subtitle} lang={lang} />
-        <p className="max-w-3xl text-lg text-gray-600 mb-12 leading-relaxed">
-          {t.desc}
-        </p>
+      <div className="container mx-auto px-6 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
+            <div>
+               <SectionHeading title={t.title} subtitle={t.subtitle} lang={lang} />
+            </div>
+            <div className="pb-4">
+               <p className={`text-lg text-gray-600 leading-relaxed ${isRTL ? 'border-r-4 pr-6' : 'border-l-4 pl-6'} border-nasr-blue`}>
+                  {t.desc}
+               </p>
+            </div>
+        </div>
+      </div>
 
+      <div className="container mx-auto px-6">
         {/* Application Specific Tabs */}
         <div className="flex flex-wrap gap-4 mb-16 border-b border-gray-200 pb-1">
           {(['arch', 'ind', 'auto'] as const).map((tab) => (
