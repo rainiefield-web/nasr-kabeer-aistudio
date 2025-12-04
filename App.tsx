@@ -12,7 +12,8 @@ import {
   CheckCircle2, Globe, FileText, Phone, ChevronLeft, Factory, 
   Thermometer, Settings, Layers, ShieldCheck, Zap, Cpu, PaintBucket,
   Gamepad2, Trophy, RefreshCw, Play, ExternalLink, Recycle, Leaf, 
-  Wind, Droplets, Truck, CircleDollarSign, HardHat, ClipboardCheck
+  Wind, Droplets, Truck, CircleDollarSign, HardHat, ClipboardCheck,
+  PenTool, Beaker, Box, MoveRight, ArrowDown
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -90,6 +91,63 @@ const content = {
     process: {
       title: "Integrated Value Chain",
       desc: "Complete in-house control from casting to finishing ensures superior quality and traceability."
+    },
+    techRoute: {
+        title: "Integrated Technical Route",
+        subtitle: "Vertical Integration",
+        tabs: {
+            core: "Core Process",
+            die: "Die Mfg (Aux A)",
+            powder: "Powder Coating (Aux B)",
+            strip: "Thermal Strips (Aux C)"
+        },
+        core: {
+            title: "Part I: Core Aluminum Profile Manufacturing",
+            desc: "The central, sequential flow of production from raw ingot to final profile.",
+            steps: [
+                { id: "1", title: "Casting (Billet)", desc: "Melting at 690-720°C & Continuous Casting into High-Quality Billets." },
+                { id: "2", title: "Extrusion (Forming)", desc: "Billet Pre-heating (450-500°C) & Precision Press Forming." },
+                { id: "3", title: "Strengthening", desc: "Solution Heat Treatment & Aging (T6/T7 at 530-540°C)." },
+                { id: "4", title: "Surface Treatment", desc: "Powder Coating, Anodizing, or PVDF for aesthetics & protection." },
+                { id: "5", title: "Finishing & QC", desc: "Precision CNC, Thermal Break Assembly & 3D/NDT Inspection." }
+            ]
+        },
+        auxA: {
+            title: "Part II-A: In-House Die Manufacturing",
+            desc: "Creates custom molds used in Step 2 (Extrusion).",
+            steps: [
+                "Design & Simulation (CAD)",
+                "H13 Tool Steel Prep",
+                "CNC Precision Machining",
+                "Heat Treatment (Hardening)",
+                "Polishing (EDM)"
+            ],
+            connection: "Supplies Dies to Extrusion"
+        },
+        auxB: {
+            title: "Part II-B: In-House Powder Coating",
+            desc: "Produces the powder used in Step 4 (Surface).",
+            steps: [
+                "Raw Material Prep (Resins)",
+                "Hot Extrusion & Dispersion",
+                "Cooling & Crushing",
+                "Grinding & Sieving",
+                "Quality Testing"
+            ],
+            connection: "Supplies Powder to Surface"
+        },
+        auxC: {
+            title: "Part II-C: Thermal Break Strip Production",
+            desc: "Produces insulating strips used in Step 5 (Finishing).",
+            steps: [
+                "Sourcing (PA66 + GF)",
+                "Compounding & Melting",
+                "Strip Extrusion",
+                "Cooling & Calibration",
+                "Cutting & Inspection"
+            ],
+            connection: "Supplies Strips to Assembly"
+        }
     },
     techPage: {
       title: "Advanced Technical Route",
@@ -389,6 +447,63 @@ const content = {
       title: "سلسلة القيمة المتكاملة",
       desc: "تحكم داخلي كامل من الصب إلى التشطيب يضمن جودة فائقة وتتبعاً دقيقاً."
     },
+    techRoute: {
+        title: "مسار تقني متكامل",
+        subtitle: "التكامل الرأسي",
+        tabs: {
+            core: "العملية الأساسية",
+            die: "تصنيع القوالب (ملحق أ)",
+            powder: "طلاء البودرة (ملحق ب)",
+            strip: "شرائط العزل (ملحق ج)"
+        },
+        core: {
+            title: "الجزء الأول: تصنيع مقاطع الألمنيوم الأساسية",
+            desc: "التدفق المركزي والمتسلسل للإنتاج من السبائك الخام إلى المقطع النهائي.",
+            steps: [
+                { id: "1", title: "الصب (الكتل)", desc: "الصهر عند 690-720 درجة مئوية والصب المستمر لكتل عالية الجودة." },
+                { id: "2", title: "البثق (التشكيل)", desc: "تسخين الكتل (450-500 درجة مئوية) والتشكيل الدقيق بالمكبس." },
+                { id: "3", title: "التقوية", desc: "المعالجة الحرارية والتقادم (T6/T7 عند 530-540 درجة مئوية)." },
+                { id: "4", title: "المعالجة السطحية", desc: "طلاء البودرة، الأنودة، أو PVDF للجماليات والحماية." },
+                { id: "5", title: "التشطيب والجودة", desc: "تشغيل CNC، تجميع العزل الحراري وفحص ثلاثي الأبعاد." }
+            ]
+        },
+        auxA: {
+            title: "الجزء الثاني-أ: تصنيع القوالب داخلياً",
+            desc: "يصنع القوالب المخصصة المستخدمة في الخطوة 2 (البثق).",
+            steps: [
+                "التصميم والمحاكاة (CAD)",
+                "تحضير فولاذ الأدوات H13",
+                "تشغيل CNC دقيق",
+                "المعالجة الحرارية (تصلب)",
+                "تلميع (EDM)"
+            ],
+            connection: "يورد القوالب للبثق"
+        },
+        auxB: {
+            title: "الجزء الثاني-ب: إنتاج طلاء البودرة داخلياً",
+            desc: "ينتج البودرة المستخدمة في الخطوة 4 (السطح).",
+            steps: [
+                "تحضير المواد الخام (الراتنجات)",
+                "البثق الساخن والتشتت",
+                "التبريد والتكسير",
+                "الطحن والغربلة",
+                "اختبار الجودة"
+            ],
+            connection: "يورد البودرة للسطح"
+        },
+        auxC: {
+            title: "الجزء الثاني-ج: إنتاج شرائط العزل الحراري",
+            desc: "ينتج شرائط عازلة تستخدم في الخطوة 5 (التشطيب).",
+            steps: [
+                "التوريد (PA66 + GF)",
+                "التركيب والصهر",
+                "بثق الشرائط",
+                "التبريد والمعايرة",
+                "القطع والفحص"
+            ],
+            connection: "يورد الشرائط للتجميع"
+        }
+    },
     techPage: {
       title: "المسار التقني المتقدم",
       subtitle: "التصنيع الدقيق",
@@ -488,6 +603,59 @@ const content = {
             "تقنيات CNC: القطع، الحفر، الطحن.",
             "التفاوت: ضوابط ضيقة للغاية.",
             "خشونة السطح: تتحقق لتطبيقات محددة."
+          ]
+        },
+        {
+          title: "تطوير السبائك والصب",
+          desc: "مصممة لمقاومة التصادم والقوة العالية.",
+          details: [
+            "سلسلة 6xxx و 7xxx المخصصة: مطورة لتحقيق أفضل نسب قوة إلى وزن.",
+            "التحكم في الشوائب: رقابة صارمة على مستويات الحديد (Fe) لضمان الليونة لامتصاص طاقة التصادم.",
+            "التجانس: هيكل موحد للكتل لمنع عيوب البثق اللاحقة."
+          ]
+        },
+        {
+          title: "البثق الدقيق",
+          desc: "عملية متساوية الحرارة لخواص متسقة.",
+          details: [
+            "بثق متعدد الفتحات: إنشاء مقاطع مجوفة معقدة لتبريد البطاريات والصلابة الهيكلية.",
+            "التحكم المتساوي الحرارة: الحفاظ على سرعة خروج ودرجة حرارة ثابتة لضمان تجانس الخواص الميكانيكية.",
+            "التبريد المتدرج: تبريد دقيق برذاذ الماء للتحكم في التشوه مع تثبيت البنية المجهرية."
+          ]
+        },
+        {
+          title: "التشكيل المتقدم",
+          desc: "تشكيل بدون المساس بالسلامة الهيكلية.",
+          details: [
+            "الثني بالتمدد ثلاثي الأبعاد: ثني المقاطع لتناسب انحناءات المركبة الديناميكية دون التواء.",
+            "التشكيل الهيدروليكي: استخدام سائل عالي الضغط لتشكيل هندسة معقدة.",
+            "المعايرة: تمدد ما بعد البثق لتحقيق تفاوتات استقامة فائقة."
+          ]
+        },
+        {
+          title: "تشغيل CNC والتصنيع",
+          desc: "دقة خماسية المحاور لتكامل المكونات.",
+          details: [
+            "طحن خماسي المحاور (5-Axis): لنقاط التثبيت المعقدة وميزات صينية البطارية.",
+            "الحفر والتثقيب الآلي: خلايا روبوتية عالية السرعة لكفاءة الإنتاج الضخم.",
+            "تفاوتات ضيقة: الحفاظ على دقة +/- 0.05 مم لملاءمة التجميع."
+          ]
+        },
+        {
+          title: "معالجة حرارية متخصصة",
+          desc: "موازنة القوة وامتصاص الطاقة.",
+          details: [
+            "تقادم محسن للتصادم: دورات T6/T7 محددة لتعظيم امتصاص الطاقة (الليونة) جنباً إلى جنب مع قوة الخضوع.",
+            "تصلب الخبز: سبائك مصممة لاكتساب قوتها النهائية أثناء عملية خبز الطلاء."
+          ]
+        },
+        {
+          title: "الربط والتجميع",
+          desc: "الجيل القادم من تقنيات الربط لهياكل المركبات الكهربائية.",
+          details: [
+            "لحام الاحتكاك (FSW): إنشاء وصلات مانعة للتسرب وعالية القوة لحاويات بطاريات السيارات الكهربائية.",
+            "اللحام بالليزر: مدخلات حرارة منخفضة لتقليل التشوه.",
+            "الربط الهيكلي: تحضير السطح لتطبيقات المواد اللاصقة المتقدمة."
           ]
         }
       ],
@@ -657,9 +825,173 @@ const SectionHeading = ({ title, subtitle, dark = false, lang }: { title: string
   </div>
 );
 
+// --- Integrated Route Diagram Component ---
+const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
+  const [activeTab, setActiveTab] = useState<'core' | 'die' | 'powder' | 'strip'>('core');
+  const t = content[lang].techRoute;
+  const isRTL = lang === 'ar';
+
+  return (
+    <div className="bg-white rounded-sm shadow-xl border border-gray-200 overflow-hidden mb-20">
+      {/* Tab Navigation */}
+      <div className="flex flex-wrap border-b border-gray-200">
+        {(['core', 'die', 'powder', 'strip'] as const).map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`flex-1 py-4 px-6 text-sm md:text-base font-serif font-bold uppercase tracking-wider transition-all duration-300 relative ${activeTab === tab ? 'text-nasr-blue bg-gray-50' : 'text-gray-500 hover:text-gray-800'}`}
+          >
+            {t.tabs[tab]}
+            {activeTab === tab && (
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-nasr-blue"></div>
+            )}
+          </button>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[600px]">
+        {/* Visual Flowchart Area (Left/Top) */}
+        <div className="lg:col-span-8 bg-gray-50 p-8 relative overflow-hidden">
+             <div className="absolute inset-0 pattern-dots opacity-30 pointer-events-none"></div>
+             
+             <div className="relative z-10 h-full flex flex-col items-center justify-center gap-8">
+                
+                {/* PART I: CORE PROCESS (Central Spine) */}
+                <div className={`relative flex flex-col gap-4 w-full max-w-md transition-opacity duration-500 ${activeTab !== 'core' ? 'opacity-40' : 'opacity-100'}`}>
+                    <div className="absolute top-0 bottom-0 left-1/2 w-1 bg-gray-300 -z-10 -translate-x-1/2"></div>
+                    
+                    {t.core.steps.map((step, i) => (
+                        <div key={i} className="relative bg-white border border-gray-200 p-4 rounded-sm shadow-sm flex items-center gap-4 group hover:border-nasr-blue transition-colors">
+                            <div className="w-8 h-8 rounded-full bg-nasr-dark text-white flex items-center justify-center font-bold text-sm shrink-0">
+                                {step.id}
+                            </div>
+                            <div className="flex-1">
+                                <h4 className="font-bold text-nasr-dark text-sm">{step.title}</h4>
+                            </div>
+                            
+                            {/* Connection Points for Auxiliary */}
+                            {i === 1 && ( // Extrusion connects to Dies
+                                <div className={`absolute ${isRTL ? 'right-full mr-4' : 'left-full ml-4'} top-1/2 -translate-y-1/2 flex items-center ${activeTab === 'die' ? 'opacity-100 scale-100' : 'opacity-0 scale-90'} transition-all duration-500`}>
+                                   <div className={`h-0.5 w-8 bg-nasr-red`}></div>
+                                   <div className={`px-3 py-1 bg-nasr-red text-white text-xs font-bold uppercase rounded whitespace-nowrap`}>
+                                     {t.auxA.connection}
+                                   </div>
+                                </div>
+                            )}
+                            {i === 3 && ( // Surface connects to Powder
+                                <div className={`absolute ${isRTL ? 'left-full ml-4' : 'right-full mr-4'} top-1/2 -translate-y-1/2 flex items-center ${activeTab === 'powder' ? 'opacity-100 scale-100' : 'opacity-0 scale-90'} transition-all duration-500`}>
+                                   <div className={`px-3 py-1 bg-nasr-blue text-white text-xs font-bold uppercase rounded whitespace-nowrap`}>
+                                      {t.auxB.connection}
+                                   </div>
+                                   <div className={`h-0.5 w-8 bg-nasr-blue`}></div>
+                                </div>
+                            )}
+                            {i === 4 && ( // Finishing connects to Strips
+                                <div className={`absolute ${isRTL ? 'left-full ml-4' : 'right-full mr-4'} top-1/2 -translate-y-1/2 flex items-center ${activeTab === 'strip' ? 'opacity-100 scale-100' : 'opacity-0 scale-90'} transition-all duration-500`}>
+                                   <div className={`px-3 py-1 bg-nasr-accent text-white text-xs font-bold uppercase rounded whitespace-nowrap`}>
+                                      {t.auxC.connection}
+                                   </div>
+                                   <div className={`h-0.5 w-8 bg-nasr-accent`}></div>
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+
+                {/* Auxiliary Process Badges (Floating) */}
+                
+                {/* Die Mfg Badge (Left Side) */}
+                <div className={`absolute top-1/4 ${isRTL ? 'right-8' : 'left-8'} p-4 bg-white border-l-4 border-nasr-red shadow-lg transition-all duration-500 max-w-[200px] cursor-pointer ${activeTab === 'die' ? 'scale-110 ring-2 ring-nasr-red/20' : 'scale-90 opacity-60 hover:opacity-100'}`} onClick={() => setActiveTab('die')}>
+                    <PenTool className="text-nasr-red mb-2" size={24} />
+                    <h5 className="font-bold text-gray-800 text-sm leading-tight mb-1">{t.auxA.title.split(':')[0]}</h5>
+                    <p className="text-xs text-gray-500">In-House Dies</p>
+                </div>
+
+                {/* Powder Badge (Right Side) */}
+                <div className={`absolute top-[60%] ${isRTL ? 'left-8' : 'right-8'} p-4 bg-white border-r-4 border-nasr-blue shadow-lg transition-all duration-500 max-w-[200px] cursor-pointer ${activeTab === 'powder' ? 'scale-110 ring-2 ring-nasr-blue/20' : 'scale-90 opacity-60 hover:opacity-100'}`} onClick={() => setActiveTab('powder')}>
+                    <PaintBucket className="text-nasr-blue mb-2" size={24} />
+                    <h5 className="font-bold text-gray-800 text-sm leading-tight mb-1">{t.auxB.title.split(':')[0]}</h5>
+                    <p className="text-xs text-gray-500">Powder Production</p>
+                </div>
+
+                 {/* Strip Badge (Right Side Lower) */}
+                 <div className={`absolute top-[80%] ${isRTL ? 'left-8' : 'right-8'} p-4 bg-white border-r-4 border-nasr-accent shadow-lg transition-all duration-500 max-w-[200px] cursor-pointer ${activeTab === 'strip' ? 'scale-110 ring-2 ring-nasr-accent/20' : 'scale-90 opacity-60 hover:opacity-100'}`} onClick={() => setActiveTab('strip')}>
+                    <Layers className="text-nasr-accent mb-2" size={24} />
+                    <h5 className="font-bold text-gray-800 text-sm leading-tight mb-1">{t.auxC.title.split(':')[0]}</h5>
+                    <p className="text-xs text-gray-500">Thermal Strips</p>
+                </div>
+
+             </div>
+        </div>
+
+        {/* Details Panel (Right/Bottom) */}
+        <div className="lg:col-span-4 bg-white p-8 border-l border-gray-100 flex flex-col justify-center">
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={activeTab}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
+                >
+                    <div className={`w-12 h-12 rounded-sm flex items-center justify-center mb-6 text-white ${
+                        activeTab === 'core' ? 'bg-nasr-dark' : 
+                        activeTab === 'die' ? 'bg-nasr-red' : 
+                        activeTab === 'powder' ? 'bg-nasr-blue' : 'bg-nasr-accent'
+                    }`}>
+                        {activeTab === 'core' ? <Factory size={24} /> : 
+                         activeTab === 'die' ? <PenTool size={24} /> : 
+                         activeTab === 'powder' ? <Beaker size={24} /> : <Box size={24} />}
+                    </div>
+                    
+                    <h3 className={`text-2xl font-serif font-bold text-gray-900 mb-4 ${isRTL ? 'font-arabic' : ''}`}>
+                        {activeTab === 'core' ? t.core.title : 
+                         activeTab === 'die' ? t.auxA.title : 
+                         activeTab === 'powder' ? t.auxB.title : t.auxC.title}
+                    </h3>
+                    
+                    <p className="text-gray-600 mb-8 leading-relaxed">
+                        {activeTab === 'core' ? t.core.desc : 
+                         activeTab === 'die' ? t.auxA.desc : 
+                         activeTab === 'powder' ? t.auxB.desc : t.auxC.desc}
+                    </p>
+
+                    <div className="space-y-4">
+                        <h4 className="text-xs font-bold uppercase tracking-widest text-gray-400 border-b pb-2 mb-4">Process Steps</h4>
+                        {(activeTab === 'core' ? t.core.steps : 
+                          activeTab === 'die' ? t.auxA.steps : 
+                          activeTab === 'powder' ? t.auxB.steps : t.auxC.steps).map((step, idx) => (
+                            <div key={idx} className="flex items-start gap-3 group">
+                                <ArrowDown size={16} className={`mt-1 shrink-0 ${
+                                    activeTab === 'core' ? 'text-nasr-dark' : 
+                                    activeTab === 'die' ? 'text-nasr-red' : 
+                                    activeTab === 'powder' ? 'text-nasr-blue' : 'text-nasr-accent'
+                                }`} />
+                                <div>
+                                    {typeof step === 'string' ? (
+                                        <span className="text-gray-800 font-medium text-sm">{step}</span>
+                                    ) : (
+                                        <>
+                                            <div className="text-gray-900 font-bold text-sm">{step.title}</div>
+                                            <div className="text-gray-500 text-xs mt-0.5">{step.desc}</div>
+                                        </>
+                                    )}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </motion.div>
+            </AnimatePresence>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // --- Technology Page Component ---
 const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBack }) => {
   const t = content[lang].techPage;
+  const routeT = content[lang].techRoute;
   const isRTL = lang === 'ar';
   const [activeTab, setActiveTab] = useState<'arch' | 'ind' | 'auto'>('arch');
 
@@ -698,7 +1030,7 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
           {t.desc}
         </p>
 
-        {/* Tabs */}
+        {/* Application Specific Tabs */}
         <div className="flex flex-wrap gap-4 mb-16 border-b border-gray-200 pb-1">
           {(['arch', 'ind', 'auto'] as const).map((tab) => (
             <button
@@ -714,8 +1046,8 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
           ))}
         </div>
 
-        {/* Content Flow */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        {/* Application Content Flow */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24">
           {/* Visual Diagram Side (30%) */}
           <div className="lg:col-span-4">
             <div className="sticky top-32 bg-white p-8 rounded-sm shadow-lg border border-gray-100">
@@ -771,6 +1103,13 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
              </AnimatePresence>
           </div>
         </div>
+
+        {/* NEW: Integrated Technical Route Section */}
+        <div className="mt-24 pt-12 border-t border-gray-200">
+            <SectionHeading title={routeT.title} subtitle={routeT.subtitle} lang={lang} />
+            <IntegratedRouteDiagram lang={lang} />
+        </div>
+
       </div>
     </motion.div>
   );
