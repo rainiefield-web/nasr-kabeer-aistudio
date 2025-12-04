@@ -5,7 +5,7 @@
 */
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { StructureGrid } from './components/IndustrialScene';
+import { StructureGrid, HeroScene } from './components/IndustrialScene';
 import { ProductCategoryGrid, ProductionProcessFlow, CapacityGrowthChart } from './components/Diagrams';
 import { 
   Menu, X, Download, MapPin, Mail, Linkedin, Twitter, ArrowRight, 
@@ -784,7 +784,7 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`flex-1 py-4 px-6 text-sm md:text-base font-serif font-bold uppercase tracking-wider transition-all duration-300 relative ${activeTab === tab ? 'text-nasr-blue bg-gray-50' : 'text-gray-500 hover:text-gray-800'}`}
+            className={`flex-1 py-4 px-4 md:px-6 text-sm md:text-base font-serif font-bold uppercase tracking-wider transition-all duration-300 relative ${activeTab === tab ? 'text-nasr-blue bg-gray-50' : 'text-gray-500 hover:text-gray-800'}`}
           >
             {t.tabs[tab]}
             {activeTab === tab && (
@@ -797,10 +797,10 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
       {/* Main Container with MIN-HEIGHT to prevent jumping */}
       <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[650px]">
         {/* Visual Flowchart Area (Left/Top) */}
-        <div className="lg:col-span-8 bg-gray-50 p-8 relative overflow-hidden h-full">
+        <div className="lg:col-span-8 bg-gray-50 p-4 md:p-8 relative overflow-hidden h-full min-h-[400px]">
              <div className="absolute inset-0 pattern-dots opacity-30 pointer-events-none"></div>
              
-             <div className="relative z-10 h-full flex flex-col items-center justify-center gap-8 py-8">
+             <div className="relative z-10 h-full flex flex-col items-center justify-center gap-6 md:gap-8 py-8">
                 
                 {/* PART I: CORE PROCESS (Central Spine) */}
                 <div className={`relative flex flex-col gap-6 w-full max-w-md transition-opacity duration-500 ${activeTab !== 'core' ? 'opacity-40' : 'opacity-100'}`}>
@@ -813,12 +813,38 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
                             </div>
                             <div className="flex-1">
                                 <h4 className="font-bold text-nasr-dark text-sm">{step.title}</h4>
+                                
+                                {/* Mobile Buttons to jump to related process */}
+                                {i === 1 && (
+                                   <button 
+                                      onClick={(e) => { e.stopPropagation(); setActiveTab('die'); }}
+                                      className="mt-2 text-xs font-bold text-nasr-red uppercase flex items-center gap-1 lg:hidden"
+                                   >
+                                      <PenTool size={12} /> View Die Mfg
+                                   </button>
+                                )}
+                                {i === 3 && (
+                                   <button 
+                                      onClick={(e) => { e.stopPropagation(); setActiveTab('powder'); }}
+                                      className="mt-2 text-xs font-bold text-nasr-blue uppercase flex items-center gap-1 lg:hidden"
+                                   >
+                                      <PaintBucket size={12} /> View Powder
+                                   </button>
+                                )}
+                                {i === 4 && (
+                                   <button 
+                                      onClick={(e) => { e.stopPropagation(); setActiveTab('strip'); }}
+                                      className="mt-2 text-xs font-bold text-nasr-accent uppercase flex items-center gap-1 lg:hidden"
+                                   >
+                                      <Layers size={12} /> View Strips
+                                   </button>
+                                )}
                             </div>
                             
-                            {/* Auxiliary Nodes anchored to specific steps */}
+                            {/* Auxiliary Nodes anchored to specific steps - DESKTOP ONLY */}
                             {i === 1 && ( // Step 2: Extrusion connects to Die Mfg
                                 <div 
-                                    className={`absolute ${isRTL ? 'right-full mr-8' : 'left-full ml-8'} top-1/2 -translate-y-1/2 transition-all duration-300 z-20 cursor-pointer ${activeTab === 'die' ? 'scale-110 opacity-100' : 'scale-100 opacity-60 hover:opacity-100'}`}
+                                    className={`hidden lg:block absolute ${isRTL ? 'right-full mr-8' : 'left-full ml-8'} top-1/2 -translate-y-1/2 transition-all duration-300 z-20 cursor-pointer ${activeTab === 'die' ? 'scale-110 opacity-100' : 'scale-100 opacity-60 hover:opacity-100'}`}
                                     onClick={(e) => { e.stopPropagation(); setActiveTab('die'); }}
                                 >
                                     <div className="flex items-center">
@@ -839,7 +865,7 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
 
                             {i === 3 && ( // Step 4: Surface connects to Powder
                                 <div 
-                                    className={`absolute ${isRTL ? 'left-full ml-8' : 'right-full mr-8'} top-1/2 -translate-y-1/2 transition-all duration-300 z-20 cursor-pointer ${activeTab === 'powder' ? 'scale-110 opacity-100' : 'scale-100 opacity-60 hover:opacity-100'}`}
+                                    className={`hidden lg:block absolute ${isRTL ? 'left-full ml-8' : 'right-full mr-8'} top-1/2 -translate-y-1/2 transition-all duration-300 z-20 cursor-pointer ${activeTab === 'powder' ? 'scale-110 opacity-100' : 'scale-100 opacity-60 hover:opacity-100'}`}
                                     onClick={(e) => { e.stopPropagation(); setActiveTab('powder'); }}
                                 >
                                     <div className="flex items-center">
@@ -860,7 +886,7 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
 
                             {i === 4 && ( // Step 5: Finishing connects to Strips
                                 <div 
-                                    className={`absolute ${isRTL ? 'left-full ml-8' : 'right-full mr-8'} top-1/2 -translate-y-1/2 transition-all duration-300 z-20 cursor-pointer ${activeTab === 'strip' ? 'scale-110 opacity-100' : 'scale-100 opacity-60 hover:opacity-100'}`}
+                                    className={`hidden lg:block absolute ${isRTL ? 'left-full ml-8' : 'right-full mr-8'} top-1/2 -translate-y-1/2 transition-all duration-300 z-20 cursor-pointer ${activeTab === 'strip' ? 'scale-110 opacity-100' : 'scale-100 opacity-60 hover:opacity-100'}`}
                                     onClick={(e) => { e.stopPropagation(); setActiveTab('strip'); }}
                                 >
                                     <div className="flex items-center">
@@ -986,8 +1012,8 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
          <AlxLogo />
       </div>
 
-      {/* NEW: Hero Header with Background Image */}
-      <div className="relative mb-16 h-[300px] lg:h-[400px] overflow-hidden">
+      {/* NEW: Hero Header with Background Image - OPTIMIZED FOR MOBILE */}
+      <div className="relative mb-16 min-h-[500px] h-auto overflow-hidden flex items-center py-12">
         <div className="absolute inset-0">
              <img 
                src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?q=80&w=2070&auto=format&fit=crop" 
