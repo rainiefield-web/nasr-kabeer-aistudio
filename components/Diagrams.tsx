@@ -1,4 +1,3 @@
-
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -7,6 +6,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Building2, Factory, Car, Zap, Hammer, ArrowRight, ShieldCheck, Settings, Truck } from 'lucide-react';
+
+// Fix for Framer Motion types in strict environments
+const MotionDiv = motion.div as any;
+const MotionImg = motion.img as any;
 
 type Language = 'en' | 'ar';
 
@@ -133,7 +136,7 @@ export const ProductCategoryGrid: React.FC<DiagramProps> = ({ lang }) => {
       <div className="w-full lg:w-3/4 relative min-h-[500px] lg:min-h-0">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
-              <motion.img 
+              <MotionImg 
                 key={activeData.image}
                 initial={{ opacity: 0, scale: 1.1 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -145,7 +148,7 @@ export const ProductCategoryGrid: React.FC<DiagramProps> = ({ lang }) => {
           </div>
 
           <div className="relative z-20 p-6 md:p-16 h-full flex flex-col justify-center">
-            <motion.div
+            <MotionDiv
               key={activeCategory}
               initial={{ opacity: 0, x: isRTL ? -20 : 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -161,7 +164,7 @@ export const ProductCategoryGrid: React.FC<DiagramProps> = ({ lang }) => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 max-w-2xl">
                 {activeData.items.map((item, idx) => (
-                  <motion.div 
+                  <MotionDiv 
                     key={idx} 
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -170,10 +173,10 @@ export const ProductCategoryGrid: React.FC<DiagramProps> = ({ lang }) => {
                   >
                     <ShieldCheck size={16} className="text-nasr-accent shrink-0 md:w-[18px] md:h-[18px]" />
                     <span className="font-medium text-gray-800 text-sm md:text-base">{item}</span>
-                  </motion.div>
+                  </MotionDiv>
                 ))}
               </div>
-            </motion.div>
+            </MotionDiv>
           </div>
       </div>
     </div>
@@ -278,14 +281,14 @@ export const CapacityGrowthChart: React.FC<DiagramProps> = ({ lang }) => {
                             <div className="mb-3 text-white font-bold text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 {phase.capacity.toLocaleString()}
                             </div>
-                            <motion.div 
+                            <MotionDiv 
                                 className={`w-full max-w-[60px] ${phase.id <= activePhase ? (phase.id === 3 ? 'bg-nasr-red' : phase.id === 2 ? 'bg-nasr-blue' : 'bg-gray-500') : 'bg-gray-800'} rounded-t-sm relative overflow-hidden`}
                                 initial={{ height: 0 }}
                                 animate={{ height: `${(phase.capacity / 200000) * 100}%` }}
                                 transition={{ duration: 1, delay: phase.id * 0.2 }}
                             >
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                            </motion.div>
+                            </MotionDiv>
                             <div className="mt-4 text-gray-400 text-sm font-mono">{phase.year}</div>
                         </div>
                     ))}

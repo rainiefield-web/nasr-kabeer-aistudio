@@ -8,6 +8,14 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, Environment, Lightformer, PerspectiveCamera } from '@react-three/drei';
 import * as THREE from 'three';
 
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      [elemName: string]: any;
+    }
+  }
+}
+
 // Represents an Aluminum Profile (Extrusion) with high-end metallic shader
 const AluminumProfile = ({ 
   position, 

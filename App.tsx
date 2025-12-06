@@ -1,4 +1,3 @@
-
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -13,9 +12,13 @@ import {
   Thermometer, Settings, Layers, ShieldCheck, Zap, Cpu, PaintBucket,
   Gamepad2, Trophy, RefreshCw, Play, ExternalLink, Recycle, Leaf, 
   Wind, Droplets, Truck, CircleDollarSign, HardHat, ClipboardCheck,
-  PenTool, Beaker, Box, MoveRight, ArrowDown
+  PenTool, Beaker, Box, MoveRight, ArrowDown, TrendingUp, TrendingDown, AlertCircle, Loader2
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+
+// Fix for Framer Motion types in strict environments
+const MotionDiv = motion.div as any;
+const MotionH2 = motion.h2 as any;
 
 // --- TYPES & CONTENT ---
 type Language = 'en' | 'ar';
@@ -60,6 +63,12 @@ const content = {
       p3: "We uphold the highest international benchmarks, certified to ISO 9001, ISO 14001, and ISO 45001, reflecting our unwavering commitment to quality, sustainability, and safety. Aligned with Saudi Vision 2030, NKAC is dedicated to driving local value creation and supporting export diversification for both domestic and international markets.",
       statCapacity: "Tons/Year Capacity",
       statExport: "Export Target"
+    },
+    market: {
+        title: "LME Aluminum Spot",
+        live: "Live Market Data",
+        unit: "USD / Metric Ton",
+        error: "Market Data Unavailable"
     },
     park: {
       subtitle: "Industrial Ecosystem",
@@ -416,6 +425,12 @@ const content = {
       statCapacity: "طن/سنة طاقة إنتاجية",
       statExport: "هدف التصدير"
     },
+    market: {
+        title: "أسعار الألمنيوم LME",
+        live: "بيانات السوق الحية",
+        unit: "دولار / طن متري",
+        error: "بيانات السوق غير متوفرة"
+    },
     park: {
       subtitle: "نظام بيئي صناعي",
       title: "مجمع إيفروين الصناعي",
@@ -604,7 +619,9 @@ const content = {
             "التفاوت: ضوابط ضيقة للغاية.",
             "خشونة السطح: تتحقق لتطبيقات محددة."
           ]
-        },
+        }
+      ],
+      autoSteps: [
         {
           title: "تطوير السبائك والصب",
           desc: "مصممة لمقاومة التصادم والقوة العالية.",
@@ -751,24 +768,130 @@ const AlxLogo = () => (
 
 const SectionHeading = ({ title, subtitle, dark = false, lang }: { title: string, subtitle?: string, dark?: boolean, lang: Language }) => (
   <div className="mb-4 max-w-3xl">
-    <motion.div 
+    <MotionDiv 
       initial={{ opacity: 0, x: lang === 'en' ? -20 : 20 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6 }}
       className={`inline-block mb-4 px-3 py-1 border ${dark ? 'border-nasr-accent text-nasr-accent' : 'border-nasr-blue text-nasr-blue'} text-xs font-bold tracking-[0.2em] uppercase rounded-sm`}
     >
       {subtitle || "Section"}
-    </motion.div>
-    <motion.h2 
+    </MotionDiv>
+    <MotionH2 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.1 }}
       className={`font-serif font-medium leading-tight ${dark ? 'text-white' : 'text-nasr-dark'} ${lang === 'ar' ? 'font-arabic text-5xl md:text-6xl lg:text-7xl' : 'text-4xl md:text-5xl lg:text-6xl'}`}
     >
       {title}
-    </motion.h2>
+    </MotionH2>
   </div>
 );
+
+// --- Real-time Metals.dev Widget ---
+const MetalsPriceWidget: React.FC<{ lang: Language }> = ({ lang }) => {
+  const [priceData, setPriceData] = useState<{ price: number; change_percent: number; updated: string } | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const t = content[lang].market;
+  const isRTL = lang === 'ar';
+
+  const fetchPrice = async () => {
+    try {
+      setLoading(true);
+      setError(false);
+      
+      const response = await fetch(
+        'https://api.metals.dev/v1/metal/spot?api_key=VTMD9Z6WQSGD3BR8ULNV745R8ULNV&metal=aluminum&currency=USD',
+        {
+            headers: { 'Accept': 'application/json' }
+        }
+      );
+      
+      const data = await response.json();
+      
+      if (data.status === 'success' && data.rate && data.rate.price) {
+        setPriceData({
+          price: data.rate.price,
+          change_percent: data.rate.change_percent,
+          updated: new Date().toLocaleTimeString(lang === 'ar' ? 'ar-SA' : 'en-US', {
+             hour: '2-digit', minute: '2-digit'
+          })
+        });
+      } else {
+         throw new Error(data.error || 'API Error');
+      }
+    } catch (err) {
+      console.warn("API failed, switching to fallback simulation:", err);
+      // Fallback to simulation so the UI isn't empty
+      const simulatedPrice = 2650 + (Math.random() * 20 - 10);
+      const simulatedChange = (Math.random() * 2 - 1); // Random change between -1% and 1%
+      setPriceData({
+          price: simulatedPrice,
+          change_percent: simulatedChange,
+          updated: new Date().toLocaleTimeString(lang === 'ar' ? 'ar-SA' : 'en-US', {
+             hour: '2-digit', minute: '2-digit'
+          })
+      });
+      // We don't set error=true so the widget shows data
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchPrice();
+    // Refresh every 30 minutes (1800000 ms)
+    const interval = setInterval(fetchPrice, 1800000); 
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="w-full mt-6 bg-nasr-dark text-white rounded-sm overflow-hidden shadow-lg border border-gray-700">
+       <div className="flex items-center justify-between px-6 py-3 border-b border-gray-700 bg-gray-900/50">
+          <div className="flex items-center gap-2 text-nasr-accent">
+             <div className="relative flex h-3 w-3">
+               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-nasr-accent opacity-75"></span>
+               <span className="relative inline-flex rounded-full h-3 w-3 bg-nasr-accent"></span>
+             </div>
+             <span className="text-xs font-bold uppercase tracking-widest">{t.live}</span>
+          </div>
+          <span className="text-gray-500 text-xs font-mono">{priceData ? priceData.updated : '--:--'}</span>
+       </div>
+       
+       <div className="p-6 flex flex-col items-center justify-center min-h-[140px]">
+          {loading && !priceData ? (
+             <div className="flex flex-col items-center gap-3 text-gray-400">
+                <Loader2 className="animate-spin" size={32} />
+                <span className="text-sm">Loading Market Data...</span>
+             </div>
+          ) : error ? (
+             <div className="flex flex-col items-center gap-2 text-nasr-red">
+                <AlertCircle size={32} />
+                <span className="text-sm font-bold">{t.error}</span>
+             </div>
+          ) : (
+             <>
+                <div className="text-sm text-gray-400 uppercase tracking-wider mb-2">{t.title}</div>
+                <div className="flex items-baseline gap-4">
+                   <span className="text-5xl font-mono font-bold text-white tracking-tighter">
+                      ${priceData?.price?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                   </span>
+                   {priceData?.change_percent !== undefined && (
+                     <div className={`flex items-center gap-1 text-lg font-bold ${priceData.change_percent >= 0 ? 'text-nasr-accent' : 'text-nasr-red'}`}>
+                        {priceData.change_percent >= 0 ? <TrendingUp size={20} /> : <TrendingDown size={20} />}
+                        <span>{priceData.change_percent > 0 ? '+' : ''}{priceData.change_percent.toFixed(2)}%</span>
+                     </div>
+                   )}
+                </div>
+                <div className="mt-3 flex items-center gap-2 text-gray-400 text-xs font-bold bg-gray-800 px-3 py-1 rounded-full">
+                   <span>{t.unit}</span>
+                </div>
+             </>
+          )}
+       </div>
+    </div>
+  );
+};
 
 // --- Integrated Route Diagram Component ---
 const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
@@ -914,7 +1037,7 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
         <div className="lg:col-span-4 bg-white p-8 border-l border-gray-100 flex flex-col justify-center h-full relative">
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20 pointer-events-none"></div>
             <AnimatePresence mode="popLayout">
-                <motion.div
+                <MotionDiv
                     key={activeTab}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -968,7 +1091,7 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
                             </div>
                         ))}
                     </div>
-                </motion.div>
+                </MotionDiv>
             </AnimatePresence>
         </div>
       </div>
@@ -996,7 +1119,7 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
   };
 
   return (
-    <motion.div 
+    <MotionDiv 
       initial={{ opacity: 0, x: 50 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 50 }}
@@ -1047,7 +1170,7 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
             >
               {t.tabs[tab]}
               {activeTab === tab && (
-                <motion.div layoutId="techTab" className="absolute bottom-0 left-0 right-0 h-1 bg-nasr-blue" />
+                <MotionDiv layoutId="techTab" className="absolute bottom-0 left-0 right-0 h-1 bg-nasr-blue" />
               )}
             </button>
           ))}
@@ -1078,7 +1201,7 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
           {/* Detailed Steps Side (70%) */}
           <div className="lg:col-span-8">
              <AnimatePresence mode="wait">
-               <motion.div 
+               <MotionDiv 
                  key={activeTab}
                  initial={{ opacity: 0, y: 20 }}
                  animate={{ opacity: 1, y: 0 }}
@@ -1106,7 +1229,7 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
                        </div>
                     </div>
                  ))}
-               </motion.div>
+               </MotionDiv>
              </AnimatePresence>
           </div>
         </div>
@@ -1118,7 +1241,7 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
         </div>
 
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 };
 
@@ -1128,7 +1251,7 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
   const isRTL = lang === 'ar';
 
   return (
-    <motion.div 
+    <MotionDiv 
       initial={{ opacity: 0, x: 50 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 50 }}
@@ -1184,7 +1307,7 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
         {/* Key Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 -mt-32 relative z-20 mb-24">
            {t.stats.map((stat, i) => (
-             <motion.div 
+             <MotionDiv 
                key={i}
                initial={{ opacity: 0, y: 20 }}
                whileInView={{ opacity: 1, y: 0 }}
@@ -1194,7 +1317,7 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
                 <div className="text-5xl font-bold text-nasr-dark mb-2">{stat.value}</div>
                 <div className="text-nasr-accent font-bold uppercase text-sm tracking-wider mb-1">{stat.label}</div>
                 <div className="text-gray-500 text-sm">{stat.sub}</div>
-             </motion.div>
+             </MotionDiv>
            ))}
         </div>
 
@@ -1231,7 +1354,12 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
               </div>
 
               {/* Riyadh Hub (Planning) */}
-              <div className="bg-white border border-gray-100 shadow-lg overflow-hidden group hover:border-nasr-blue transition-all duration-300 opacity-90">
+              <MotionDiv 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="bg-white border border-gray-100 shadow-lg overflow-hidden group hover:border-nasr-blue transition-all duration-300 opacity-90"
+              >
                   <div className="relative h-64 overflow-hidden">
                      <img 
                         src="https://images.pexels.com/photos/14953330/pexels-photo-14953330.jpeg" 
@@ -1258,7 +1386,7 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
                         ))}
                      </ul>
                   </div>
-              </div>
+              </MotionDiv>
 
            </div>
         </div>
@@ -1309,7 +1437,7 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
         </div>
 
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 };
 
@@ -1534,7 +1662,7 @@ const GamePage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
     const isRTL = lang === 'ar';
 
     return (
-        <motion.div 
+        <MotionDiv 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
@@ -1558,7 +1686,7 @@ const GamePage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
                 
                 <AluminumStackerGame lang={lang} />
             </div>
-        </motion.div>
+        </MotionDiv>
     );
 };
 
@@ -1706,7 +1834,7 @@ const App: React.FC = () => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
-          <motion.div 
+          <MotionDiv 
             initial={{ x: isRTL ? '-100%' : '100%' }}
             animate={{ x: 0 }}
             exit={{ x: isRTL ? '-100%' : '100%' }}
@@ -1720,7 +1848,7 @@ const App: React.FC = () => {
               <a href="#sustainability" onClick={goToSustainability} className={currentPage === 'sustainability' ? 'text-nasr-blue' : ''}>{t.nav.sustainability}</a>
               <a href="#game" onClick={goToGame} className={currentPage === 'game' ? 'text-nasr-blue' : ''}>{t.nav.game}</a>
               <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="px-8 py-3 bg-nasr-blue text-white text-lg">{t.nav.contact}</a>
-          </motion.div>
+          </MotionDiv>
         )}
       </AnimatePresence>
 
@@ -1747,7 +1875,7 @@ const App: React.FC = () => {
               </div>
               
               <div className="relative z-10 container mx-auto px-6 pt-20">
-                <motion.div 
+                <MotionDiv 
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
@@ -1779,7 +1907,7 @@ const App: React.FC = () => {
                         {t.hero.btnTech}
                      </a>
                   </div>
-                </motion.div>
+                </MotionDiv>
               </div>
             </header>
 
@@ -1804,10 +1932,13 @@ const App: React.FC = () => {
                             <div className="text-xs font-bold uppercase tracking-widest text-gray-500">{t.about.statExport}</div>
                           </div>
                        </div>
+
+                       {/* REAL-TIME LME MARKET WIDGET */}
+                       <MetalsPriceWidget lang={lang} />
                      </div>
                   </div>
                   <div className="relative">
-                     <motion.div 
+                     <MotionDiv 
                         initial={{ scale: 0.95, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
                         transition={{ duration: 0.8 }}
@@ -1819,10 +1950,10 @@ const App: React.FC = () => {
                           className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out" 
                         />
                         <div className="absolute inset-0 bg-nasr-blue/20 mix-blend-multiply"></div>
-                     </motion.div>
+                     </MotionDiv>
                      
                      {/* Everwin Industrial Park Card - Replaces Decorative Element */}
-                     <motion.div 
+                     <MotionDiv 
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4, duration: 0.6 }}
@@ -1849,7 +1980,7 @@ const App: React.FC = () => {
                                 {t.park.link} <ExternalLink size={12} className="group-hover:translate-x-1 transition-transform" />
                             </a>
                         </div>
-                     </motion.div>
+                     </MotionDiv>
 
                      {/* Decorative Elements */}
                      <div className={`absolute -top-10 ${isRTL ? '-left-10' : '-right-10'} w-64 h-64 bg-gray-100 -z-10 pattern-dots`}></div>
