@@ -12,7 +12,7 @@ import {
   Thermometer, Settings, Layers, ShieldCheck, Zap, Cpu, PaintBucket,
   Gamepad2, Trophy, RefreshCw, Play, ExternalLink, Recycle, Leaf, 
   Wind, Droplets, Truck, CircleDollarSign, HardHat, ClipboardCheck,
-  PenTool, Beaker, Box, MoveRight, ArrowDown, TrendingUp, TrendingDown, AlertCircle, Loader2
+  PenTool, Beaker, Box, MoveRight, ArrowDown, TrendingUp, TrendingDown, AlertCircle, Loader2, Wifi, WifiOff
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -66,7 +66,8 @@ const content = {
     },
     market: {
         title: "LME Aluminum Spot",
-        live: "Live Market Data",
+        live: "Live Connection",
+        simulated: "Simulated Data",
         unit: "USD / Metric Ton",
         error: "Market Data Unavailable"
     },
@@ -427,7 +428,8 @@ const content = {
     },
     market: {
         title: "أسعار الألمنيوم LME",
-        live: "بيانات السوق الحية",
+        live: "اتصال مباشر",
+        simulated: "بيانات محاكاة",
         unit: "دولار / طن متري",
         error: "بيانات السوق غير متوفرة"
     },
@@ -517,7 +519,7 @@ const content = {
                 "القطع والفحص"
             ],
             connection: "يورد الشرائط للتجميع"
-        }
+        },
     },
     techPage: {
       title: "المسار التقني المتقدم",
@@ -792,8 +794,8 @@ const MetalsPriceWidget: React.FC<{ lang: Language }> = ({ lang }) => {
   const [priceData, setPriceData] = useState<{ price: number; change_percent: number; updated: string } | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [isSimulated, setIsSimulated] = useState(false);
   const t = content[lang].market;
-  const isRTL = lang === 'ar';
 
   const fetchPrice = async () => {
     try {
@@ -817,14 +819,18 @@ const MetalsPriceWidget: React.FC<{ lang: Language }> = ({ lang }) => {
              hour: '2-digit', minute: '2-digit'
           })
         });
+        setIsSimulated(false);
       } else {
          throw new Error(data.error || 'API Error');
       }
     } catch (err) {
-      console.warn("API failed, switching to fallback simulation:", err);
-      // Fallback to simulation so the UI isn't empty
-      const simulatedPrice = 2650 + (Math.random() * 20 - 10);
-      const simulatedChange = (Math.random() * 2 - 1); // Random change between -1% and 1%
+      console.warn("API failed/blocked, switching to fallback simulation");
+      setIsSimulated(true);
+      // Fallback to simulation around 2900 to match user's screenshot
+      const basePrice = 2890;
+      const simulatedPrice = basePrice + (Math.random() * 20 - 10);
+      const simulatedChange = 0.49 + (Math.random() * 0.1 - 0.05); // Match approx screenshot change
+      
       setPriceData({
           price: simulatedPrice,
           change_percent: simulatedChange,
@@ -832,7 +838,6 @@ const MetalsPriceWidget: React.FC<{ lang: Language }> = ({ lang }) => {
              hour: '2-digit', minute: '2-digit'
           })
       });
-      // We don't set error=true so the widget shows data
     } finally {
       setLoading(false);
     }
@@ -840,7 +845,7 @@ const MetalsPriceWidget: React.FC<{ lang: Language }> = ({ lang }) => {
 
   useEffect(() => {
     fetchPrice();
-    // Refresh every 30 minutes (1800000 ms)
+    // Refresh every 30 minutes
     const interval = setInterval(fetchPrice, 1800000); 
     return () => clearInterval(interval);
   }, []);
@@ -848,12 +853,15 @@ const MetalsPriceWidget: React.FC<{ lang: Language }> = ({ lang }) => {
   return (
     <div className="w-full mt-6 bg-nasr-dark text-white rounded-sm overflow-hidden shadow-lg border border-gray-700">
        <div className="flex items-center justify-between px-6 py-3 border-b border-gray-700 bg-gray-900/50">
-          <div className="flex items-center gap-2 text-nasr-accent">
+          <div className={`flex items-center gap-2 ${isSimulated ? 'text-orange-400' : 'text-nasr-accent'}`}>
              <div className="relative flex h-3 w-3">
-               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-nasr-accent opacity-75"></span>
-               <span className="relative inline-flex rounded-full h-3 w-3 bg-nasr-accent"></span>
+               <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${isSimulated ? 'bg-orange-400' : 'bg-nasr-accent'}`}></span>
+               <span className={`relative inline-flex rounded-full h-3 w-3 ${isSimulated ? 'bg-orange-400' : 'bg-nasr-accent'}`}></span>
              </div>
-             <span className="text-xs font-bold uppercase tracking-widest">{t.live}</span>
+             <div className="flex items-center gap-1">
+                 {isSimulated ? <WifiOff size={14} /> : <Wifi size={14} />}
+                 <span className="text-xs font-bold uppercase tracking-widest">{isSimulated ? t.simulated : t.live}</span>
+             </div>
           </div>
           <span className="text-gray-500 text-xs font-mono">{priceData ? priceData.updated : '--:--'}</span>
        </div>
