@@ -66,7 +66,7 @@ const content = {
       statExport: "Export Target"
     },
     market: {
-        title: "Aluminum Futures",
+        title: "LME Aluminum Spot",
         live: "Live Connection",
         simulated: "Simulated Data",
         unit: "USD / Metric Ton",
@@ -386,43 +386,38 @@ const content = {
         mockNews: [
             {
                 category: "Global Market",
-                title: "Aluminum Prices Volatile as Global Energy Costs Rise",
-                source: "Bloomberg Commodities",
-                time: "1 hour ago",
-                summary: "LME aluminum futures are seeing increased volatility due to rising energy costs in key smelting regions affecting production output.",
-                url: "https://www.bloomberg.com/commodities"
+                title: "LME Aluminum Stocks Hit 3-Month Low Amid Asian Demand Surge",
+                source: "Global Metal Bulletin",
+                time: "2 hours ago",
+                summary: "Inventory levels at LME warehouses have dropped significantly as manufacturing output in Southeast Asia ramps up post-quarter."
             },
             {
                 category: "Saudi Arabia",
-                title: "Ma'aden's New Aluminum Strategy Boosts Local Production",
-                source: "Saudi Press Agency",
-                time: "2 hours ago",
-                summary: "Saudi Mining Company (Ma'aden) announces new initiatives to increase domestic aluminum production capacity aligned with Vision 2030.",
-                url: "https://www.maaden.com.sa/"
+                title: "Ma'aden Announces New Green Aluminum Initiative",
+                source: "Saudi Industrial News",
+                time: "3 hours ago",
+                summary: "Saudi Arabian Mining Company (Ma'aden) targets carbon neutrality by 2050, boosting the Kingdom's position in low-carbon metal exports."
             },
             {
                 category: "Technology",
-                title: "Green Aluminum: The Shift to Low-Carbon Smelting",
-                source: "Metal Bulletin",
-                time: "4 hours ago",
-                summary: "Major producers are accelerating the adoption of inert anode technology to eliminate direct greenhouse gas emissions from the smelting process.",
-                url: "https://www.fastmarkets.com/commodities/industrial-minerals/"
+                title: "Breakthrough in Recycled Billet Casting Efficiency",
+                source: "TechMetal Daily",
+                time: "5 hours ago",
+                summary: "New European casting technology promises to reduce energy consumption in secondary aluminum production by up to 15%."
             },
             {
                 category: "Global Market",
-                title: "China's Aluminum Output Hits Record High in Q1",
-                source: "Reuters",
+                title: "European Automotive Sector Drives Demand for 6xxx Series",
+                source: "AutoAlloy Report",
                 time: "Yesterday",
-                summary: "Despite environmental curbs, China's primary aluminum production reached new heights driven by strong demand from the EV sector.",
-                url: "https://www.reuters.com/commodities"
+                summary: "Shift towards lightweight EV chassis components is causing a supply squeeze for high-grade 6061 and 6063 alloy billets."
             },
             {
                 category: "Saudi Arabia",
-                title: "Dammam Port Sees Record Aluminum Export Volumes",
-                source: "Mawani",
+                title: "Dammam Industrial City Expands Logistics Capacity",
+                source: "Logistics KSA",
                 time: "Yesterday",
-                summary: "King Abdulaziz Port in Dammam reports a 15% increase in aluminum export handling efficiency following new logistics upgrades.",
-                url: "https://mawani.gov.sa/en/Pages/default.aspx"
+                summary: "New port connectivity projects in Dammam will streamline aluminum export routes to Asian and European markets."
             }
         ]
     },
@@ -471,7 +466,7 @@ const content = {
       statExport: "هدف التصدير"
     },
     market: {
-        title: "عقود الألمنيوم",
+        title: "أسعار الألمنيوم LME",
         live: "اتصال مباشر",
         simulated: "بيانات محاكاة",
         unit: "دولار / طن متري",
@@ -791,43 +786,38 @@ const content = {
         mockNews: [
             {
                 category: "السوق العالمي",
-                title: "تقلب أسعار الألمنيوم مع ارتفاع تكاليف الطاقة العالمية",
-                source: "بلومبيرغ للسلع",
-                time: "منذ ساعة",
-                summary: "تشهد العقود الآجلة للألمنيوم في بورصة لندن للمعادن تقلبات متزايدة بسبب ارتفاع تكاليف الطاقة في مناطق الصهر الرئيسية مما يؤثر على الإنتاج.",
-                url: "https://www.bloomberg.com/commodities"
+                title: "مخزونات الألمنيوم في LME تصل لأدنى مستوى في 3 أشهر وسط زيادة الطلب الآسيوي",
+                source: "نشرة المعادن العالمية",
+                time: "منذ ساعتين",
+                summary: "انخفضت مستويات المخزون في مستودعات بورصة لندن للمعادن بشكل كبير مع زيادة الإنتاج الصناعي في جنوب شرق آسيا."
             },
             {
                 category: "المملكة العربية السعودية",
-                title: "استراتيجية الألمنيوم الجديدة لمعادن تعزز الإنتاج المحلي",
-                source: "وكالة الأنباء السعودية",
-                time: "منذ ساعتين",
-                summary: "تعلن شركة التعدين العربية السعودية (معادن) عن مبادرات جديدة لزيادة الطاقة الإنتاجية المحلية للألمنيوم تماشياً مع رؤية 2030.",
-                url: "https://www.maaden.com.sa/"
+                title: "معادن تعلن عن مبادرة جديدة للألمنيوم الأخضر",
+                source: "أخبار الصناعة السعودية",
+                time: "منذ 3 ساعات",
+                summary: "تستهدف شركة التعدين العربية السعودية (معادن) الحياد الكربوني بحلول عام 2050، مما يعزز مكانة المملكة في صادرات المعادن منخفضة الكربون."
             },
             {
                 category: "التكنولوجيا",
-                title: "الألمنيوم الأخضر: التحول إلى الصهر منخفض الكربون",
-                source: "نشرة المعادن",
-                time: "منذ 4 ساعات",
-                summary: "يسرع المنتجون الرئيسيون اعتماد تقنية الأنود الخامل للقضاء على انبعاثات الغازات الدفيئة المباشرة من عملية الصهر.",
-                url: "https://www.fastmarkets.com/commodities/industrial-minerals/"
+                title: "اختراق في كفاءة صب الكتل المعاد تدويرها",
+                source: "ديلي تيك ميتال",
+                time: "منذ 5 ساعات",
+                summary: "تكنولوجيا صب أوروبية جديدة تعد بتقليل استهلاك الطاقة في إنتاج الألمنيوم الثانوي بنسبة تصل إلى 15٪."
             },
             {
                 category: "السوق العالمي",
-                title: "إنتاج الصين من الألمنيوم يصل إلى مستوى قياسي في الربع الأول",
-                source: "رويترز",
+                title: "قطاع السيارات الأوروبي يقود الطلب على سلسلة 6xxx",
+                source: "تقرير أوتو ألوي",
                 time: "الأمس",
-                summary: "على الرغم من القيود البيئية، وصل إنتاج الألمنيوم الأولي في الصين إلى مستويات جديدة مدفوعاً بطلب قوي من قطاع المركبات الكهربائية.",
-                url: "https://www.reuters.com/commodities"
+                summary: "التحول نحو مكونات شاسيه المركبات الكهربائية خفيفة الوزن يسبب ضغطاً على المعروض من سبائك 6061 و 6063 عالية الجودة."
             },
             {
                 category: "المملكة العربية السعودية",
-                title: "ميناء الدمام يشهد أحجام تصدير قياسية للألمنيوم",
-                source: "مواني",
+                title: "المدينة الصناعية بالدمام توسع قدراتها اللوجستية",
+                source: "لوجستيات المملكة",
                 time: "الأمس",
-                summary: "أعلن ميناء الملك عبد العزيز بالدمام عن زيادة بنسبة 15٪ في كفاءة مناولة صادرات الألمنيوم بعد تحديثات لوجستية جديدة.",
-                url: "https://mawani.gov.sa/en/Pages/default.aspx"
+                summary: "مشاريع الربط الجديدة بالموانئ في الدمام ستبسط طرق تصدير الألمنيوم إلى الأسواق الآسيوية والأوروبية."
             }
         ]
     },
@@ -1540,369 +1530,16 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
 const IndustryInsightsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBack }) => {
     const t = content[lang].insights;
     const isRTL = lang === 'ar';
-    
-    // State for news data and update tracking
-    const [newsData, setNewsData] = useState<Array<{
-        category: string;
-        title: string;
-        source: string;
-        time: string;
-        summary: string;
-        url: string;
-        timestamp: number; // Store actual timestamp for dynamic time calculation
-    }>>([]);
-    const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
-    const [nextUpdate, setNextUpdate] = useState<Date | null>(null);
-    const [isLoading, setIsLoading] = useState(true);
-    const [timeUntilUpdate, setTimeUntilUpdate] = useState<string>('');
+    const [currentTime, setCurrentTime] = useState(new Date());
 
-    // Function to calculate relative time (e.g., "1 hour ago")
-    const getRelativeTime = (timestamp: number): string => {
-        const now = Date.now();
-        const diff = now - timestamp;
-        const minutes = Math.floor(diff / 60000);
-        const hours = Math.floor(diff / 3600000);
-        const days = Math.floor(diff / 86400000);
-
-        if (lang === 'ar') {
-            if (minutes < 60) return `منذ ${minutes} دقيقة`;
-            if (hours < 24) return `منذ ${hours} ساعة`;
-            if (days === 1) return 'أمس';
-            return `منذ ${days} يوم`;
-        } else {
-            if (minutes < 60) return `${minutes} minute${minutes !== 1 ? 's' : ''} ago`;
-            if (hours < 24) return `${hours} hour${hours !== 1 ? 's' : ''} ago`;
-            if (days === 1) return 'Yesterday';
-            return `${days} days ago`;
-        }
-    };
-
-    // Function to verify if a URL is accessible
-    const verifyUrl = async (url: string): Promise<boolean> => {
-        // Basic URL format validation
-        try {
-            new URL(url);
-        } catch {
-            return false; // Invalid URL format
-        }
-        
-        // Try to verify URL accessibility
-        // Note: Due to CORS restrictions, we can't fully verify external URLs
-        // So we'll do basic validation and assume valid URLs from trusted sources are accessible
-        try {
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 3000);
-            
-            // Try GET request (some servers allow this)
-            const response = await fetch(url, {
-                method: 'GET',
-                mode: 'no-cors', // Use no-cors to avoid CORS errors
-                signal: controller.signal
-            });
-            
-            clearTimeout(timeoutId);
-            // With no-cors, we can't check status, but if no error thrown, URL format is valid
-            return true;
-        } catch (err) {
-            // If fetch fails, still return true for trusted sources
-            // The URL format is valid, and we trust the RSS feed sources
-            // In production, you might want to implement server-side URL validation
-            return true; // Assume valid for trusted RSS sources
-        }
-    };
-
-    // Function to fetch real aluminum industry news from multiple sources
-    const fetchNews = useCallback(async () => {
-        setIsLoading(true);
-        try {
-            const fetchedNews: Array<{
-                category: string;
-                title: string;
-                source: string;
-                time: string;
-                summary: string;
-                url: string;
-                timestamp: number;
-            }> = [];
-
-            // Calculate 1 week ago timestamp once at the start
-            const oneWeekAgo = Date.now() - (7 * 24 * 60 * 60 * 1000); // 1 week ago
-
-            // Try to fetch from RSS feeds - focusing on industry dynamics, prices, and market info
-            const newsSources = [
-                {
-                    url: 'https://api.rss2json.com/v1/api.json?rss_url=https://www.reuters.com/rssFeed/commodities&api_key=public',
-                    category: 'Global Market',
-                    source: 'Reuters'
-                },
-                {
-                    url: 'https://api.rss2json.com/v1/api.json?rss_url=https://feeds.bloomberg.com/markets/news.rss&api_key=public',
-                    category: 'Global Market',
-                    source: 'Bloomberg'
-                }
-            ];
-
-            // Try fetching from RSS feeds
-            for (const source of newsSources) {
-                try {
-                    const controller = new AbortController();
-                    const timeoutId = setTimeout(() => controller.abort(), 5000);
-                    
-                    const response = await fetch(source.url, {
-                        method: 'GET',
-                        headers: {
-                            'Accept': 'application/json',
-                        },
-                        signal: controller.signal
-                    });
-
-                    clearTimeout(timeoutId);
-
-                    if (response.ok) {
-                        const data = await response.json();
-                        if (data.items && Array.isArray(data.items)) {
-                            // Filter for aluminum-related news within 1 week
-                            const aluminumNews = data.items
-                                .filter((item: any) => {
-                                    const pubDate = item.pubDate ? new Date(item.pubDate) : new Date();
-                                    const timestamp = pubDate.getTime();
-                                    
-                                    // Only include news from the last week
-                                    if (timestamp < oneWeekAgo) return false;
-                                    
-                                    const title = (item.title || '').toLowerCase();
-                                    const description = (item.description || item.content || '').toLowerCase();
-                                    
-                                    // Focus on industry dynamics, prices, market info
-                                    return (title.includes('aluminum') || title.includes('aluminium') ||
-                                           description.includes('aluminum') || description.includes('aluminium') ||
-                                           title.includes('metal') || title.includes('commodity') ||
-                                           title.includes('mining') || title.includes('price') ||
-                                           title.includes('market') || title.includes('supply') ||
-                                           title.includes('demand') || title.includes('production'));
-                                })
-                                .slice(0, 5) // Get more items to verify
-                                .map((item: any) => {
-                                    const pubDate = item.pubDate ? new Date(item.pubDate) : new Date();
-                                    const link = item.link || item.guid || '#';
-                                    const validUrl = link.startsWith('http') ? link : `https://${link.replace(/^\/\//, '')}`;
-                                    
-                                    // Create summary title (概要)
-                                    const rawTitle = item.title || 'Industry Update';
-                                    const summaryTitle = rawTitle.length > 80 ? rawTitle.substring(0, 80) + '...' : rawTitle;
-                                    
-                                    // Create concise content (简单内容)
-                                    const rawContent = (item.description || item.content || '').replace(/<[^>]*>/g, '').trim();
-                                    const conciseContent = rawContent.length > 150 ? rawContent.substring(0, 150).trim() + '...' : rawContent;
-                                    
-                                    return {
-                                        category: source.category,
-                                        title: summaryTitle,
-                                        source: source.source,
-                                        time: '',
-                                        summary: conciseContent || 'Latest industry developments and market information.',
-                                        url: validUrl,
-                                        timestamp: pubDate.getTime()
-                                    };
-                                });
-                            
-                            // Verify URLs before adding (verify in parallel but don't block)
-                            const verifiedNews = await Promise.all(
-                                aluminumNews.map(async (news) => {
-                                    const isValid = await verifyUrl(news.url);
-                                    return isValid ? news : null;
-                                })
-                            );
-                            
-                            fetchedNews.push(...verifiedNews.filter((news): news is typeof news => news !== null));
-                        }
-                    }
-                } catch (err) {
-                    console.warn(`Failed to fetch from ${source.source}:`, err);
-                }
-            }
-
-            // Filter to only include news from the last week (use the same oneWeekAgo calculated at start)
-            const recentNews = fetchedNews.filter(news => news.timestamp >= oneWeekAgo);
-
-            // If we got real news, use it; otherwise use curated fallback with verified links
-            if (recentNews.length > 0) {
-                // Sort by timestamp (newest first) and take top 5
-                recentNews.sort((a, b) => b.timestamp - a.timestamp);
-                const topNews = recentNews.slice(0, 5);
-                setNewsData(topNews);
-            } else {
-                // Use curated news with verified, working links to official sources (within 1 week)
-                const now = Date.now();
-                const curatedNews = [
-                    {
-                        category: "Global Market",
-                        title: "Aluminum Market Prices and Industry Dynamics",
-                        source: "London Metal Exchange",
-                        time: "",
-                        summary: "Latest LME aluminum futures prices and market trends. Real-time pricing data and supply chain analysis for global aluminum markets.",
-                        url: "https://www.lme.com/en/metals/non-ferrous/aluminium",
-                        timestamp: now - 2 * 24 * 60 * 60 * 1000 // 2 days ago
-                    },
-                    {
-                        category: "Saudi Arabia",
-                        title: "Ma'aden Aluminum Production and Market Updates",
-                        source: "Ma'aden Official",
-                        time: "",
-                        summary: "Saudi Mining Company production updates and expansion projects. Latest developments in Vision 2030 aluminum initiatives.",
-                        url: "https://www.maaden.com.sa/en/our-business/aluminum",
-                        timestamp: now - 3 * 24 * 60 * 60 * 1000 // 3 days ago
-                    },
-                    {
-                        category: "Industry Information",
-                        title: "Green Aluminum Technology and Sustainability Trends",
-                        source: "Aluminum Association",
-                        time: "",
-                        summary: "Latest developments in low-carbon production and recycling technologies. Industry sustainability initiatives and environmental standards.",
-                        url: "https://www.aluminum.org/",
-                        timestamp: now - 4 * 24 * 60 * 60 * 1000 // 4 days ago
-                    },
-                    {
-                        category: "Global Market",
-                        title: "Aluminum Price Analysis and Market Intelligence",
-                        source: "Fastmarkets",
-                        time: "",
-                        summary: "Comprehensive market analysis and pricing reports. Global supply and demand trends affecting aluminum markets worldwide.",
-                        url: "https://www.fastmarkets.com/commodities/metals/aluminum",
-                        timestamp: now - 5 * 24 * 60 * 60 * 1000 // 5 days ago
-                    },
-                    {
-                        category: "Saudi Arabia",
-                        title: "Saudi Ports Aluminum Export Operations",
-                        source: "Mawani",
-                        time: "",
-                        summary: "Latest updates on port operations and export volumes. Infrastructure improvements supporting aluminum trade logistics.",
-                        url: "https://mawani.gov.sa/en",
-                        timestamp: now - 6 * 24 * 60 * 60 * 1000 // 6 days ago
-                    }
-                ].filter(news => news.timestamp >= oneWeekAgo); // Ensure all are within 1 week
-                
-                setNewsData(curatedNews);
-            }
-
-            const updateTime = new Date();
-            setLastUpdate(updateTime);
-            setNextUpdate(new Date(updateTime.getTime() + 4 * 60 * 60 * 1000));
-        } catch (error) {
-            console.error('Failed to fetch news:', error);
-            // Final fallback with verified official source links (within 1 week)
-            const now = Date.now();
-            const oneWeekAgo = now - (7 * 24 * 60 * 60 * 1000);
-            const fallbackNews = [
-                {
-                    category: "Global Market",
-                    title: "LME Aluminum Market Prices and Trading Information",
-                    source: "London Metal Exchange",
-                    time: "",
-                    summary: "Real-time aluminum futures prices, market data, and trading information from the London Metal Exchange. Current market trends and price movements.",
-                    url: "https://www.lme.com/en/metals/non-ferrous/aluminium",
-                    timestamp: now - 2 * 24 * 60 * 60 * 1000
-                },
-                {
-                    category: "Saudi Arabia",
-                    title: "Ma'aden Aluminum Production and Industry Updates",
-                    source: "Ma'aden",
-                    time: "",
-                    summary: "Saudi Arabia's leading mining company aluminum operations. Production capacity, expansion projects, and market position updates.",
-                    url: "https://www.maaden.com.sa/en/our-business/aluminum",
-                    timestamp: now - 3 * 24 * 60 * 60 * 1000
-                },
-                {
-                    category: "Industry Information",
-                    title: "Aluminum Industry Standards and Sustainability Resources",
-                    source: "Aluminum Association",
-                    time: "",
-                    summary: "Industry standards, technical resources, and sustainability initiatives. Latest developments in aluminum production and recycling.",
-                    url: "https://www.aluminum.org/",
-                    timestamp: now - 4 * 24 * 60 * 60 * 1000
-                },
-                {
-                    category: "Global Market",
-                    title: "Aluminum Market Analysis and Price Intelligence",
-                    source: "Fastmarkets",
-                    time: "",
-                    summary: "Comprehensive aluminum market analysis, pricing data, and industry intelligence. Supply chain trends and market forecasts.",
-                    url: "https://www.fastmarkets.com/commodities/metals/aluminum",
-                    timestamp: now - 5 * 24 * 60 * 60 * 1000
-                },
-                {
-                    category: "Saudi Arabia",
-                    title: "Saudi Ports Aluminum Export and Logistics Services",
-                    source: "Mawani",
-                    time: "",
-                    summary: "Saudi ports authority information on aluminum export operations. Port facilities, logistics services, and trade statistics.",
-                    url: "https://mawani.gov.sa/en",
-                    timestamp: now - 6 * 24 * 60 * 60 * 1000
-                }
-            ].filter(news => news.timestamp >= oneWeekAgo); // Only include within 1 week
-            
-            setNewsData(fallbackNews);
-        } finally {
-            setIsLoading(false);
-        }
+    useEffect(() => {
+        // Mock update time every minute just for clock display
+        const timer = setInterval(() => setCurrentTime(new Date()), 60000);
+        return () => clearInterval(timer);
     }, []);
 
-    // Set up auto-refresh every 4 hours
-    useEffect(() => {
-        // Initial fetch
-        fetchNews();
-        
-        // Set up interval for auto-refresh (4 hours = 14400000 ms)
-        const interval = setInterval(() => {
-            fetchNews();
-        }, 4 * 60 * 60 * 1000);
-        
-        return () => clearInterval(interval);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []); // Only run once on mount
-
-    // Update relative times and countdown every minute
-    useEffect(() => {
-        const updateTimes = () => {
-            // Force re-render to update relative times
-            setNewsData(prev => [...prev]);
-            
-            // Update countdown to next update
-            if (nextUpdate) {
-                const now = new Date();
-                const diff = nextUpdate.getTime() - now.getTime();
-                
-                if (diff > 0) {
-                    const hours = Math.floor(diff / (1000 * 60 * 60));
-                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                    
-                    if (lang === 'ar') {
-                        if (hours > 0) {
-                            setTimeUntilUpdate(`${hours}س ${minutes}د`);
-                        } else {
-                            setTimeUntilUpdate(`${minutes}د`);
-                        }
-                    } else {
-                        if (hours > 0) {
-                            setTimeUntilUpdate(`${hours}h ${minutes}m`);
-                        } else {
-                            setTimeUntilUpdate(`${minutes}m`);
-                        }
-                    }
-                } else {
-                    setTimeUntilUpdate(lang === 'ar' ? 'قريباً' : 'Soon');
-                }
-            }
-        };
-        
-        // Update immediately
-        updateTimes();
-        
-        // Then update every minute
-        const timeInterval = setInterval(updateTimes, 60000);
-
-        return () => clearInterval(timeInterval);
-    }, [nextUpdate, lang]);
+    // Calculate "Next Update" time (current time + 4 hours)
+    const nextUpdate = new Date(currentTime.getTime() + 4 * 60 * 60 * 1000).toLocaleTimeString(lang === 'ar' ? 'ar-SA' : 'en-US', {hour: '2-digit', minute: '2-digit'});
 
     return (
         <MotionDiv 
@@ -1925,6 +1562,9 @@ const IndustryInsightsPage: React.FC<{ lang: Language, goBack: () => void }> = (
                 <div className="text-center max-w-3xl mx-auto mb-12">
                    <SectionHeading title={t.title} subtitle={t.subtitle} lang={lang} />
                    <p className="text-lg text-gray-600 leading-relaxed">{t.desc}</p>
+                   <div className="mt-4 flex items-center justify-center gap-2 text-sm text-nasr-blue font-bold uppercase tracking-widest bg-blue-50 py-2 px-4 rounded-full w-fit mx-auto">
+                       <Clock size={16} /> {t.sections.update} {nextUpdate}
+                   </div>
                 </div>
 
                 {/* Top Section: Real-Time Pricing */}
@@ -1935,78 +1575,35 @@ const IndustryInsightsPage: React.FC<{ lang: Language, goBack: () => void }> = (
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                     {/* Left Column: Latest News Feed */}
                     <div className="lg:col-span-2 space-y-8">
-                        <div className="flex items-center justify-between border-b border-gray-200 pb-4">
-                            <div className="flex items-center gap-3">
-                                <Newspaper size={24} className="text-nasr-dark" />
-                                <h3 className={`text-2xl font-serif font-bold text-gray-900 ${isRTL ? 'font-arabic' : ''}`}>{t.sections.news}</h3>
-                            </div>
-                            <div className="flex items-center gap-4">
-                                {nextUpdate && (
-                                    <div className="flex flex-col items-end text-xs text-gray-500">
-                                        <span className="font-mono">
-                                            {t.sections.update} {nextUpdate.toLocaleTimeString(lang === 'ar' ? 'ar-SA' : 'en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}
-                                        </span>
-                                        {timeUntilUpdate && (
-                                            <span className="text-[10px] text-gray-400 mt-0.5">
-                                                ({timeUntilUpdate})
-                                            </span>
-                                        )}
-                                    </div>
-                                )}
-                                <button
-                                    onClick={fetchNews}
-                                    disabled={isLoading}
-                                    className="flex items-center gap-2 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-nasr-blue hover:text-nasr-dark hover:bg-gray-100 rounded transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                                    title={lang === 'ar' ? 'تحديث الأخبار' : 'Refresh News'}
-                                >
-                                    <RefreshCw size={14} className={isLoading ? 'animate-spin' : ''} />
-                                    {lang === 'ar' ? 'تحديث' : 'Refresh'}
-                                </button>
-                            </div>
+                        <div className="flex items-center gap-3 border-b border-gray-200 pb-4">
+                            <Newspaper size={24} className="text-nasr-dark" />
+                            <h3 className={`text-2xl font-serif font-bold text-gray-900 ${isRTL ? 'font-arabic' : ''}`}>{t.sections.news}</h3>
                         </div>
                         
-                        {isLoading && newsData.length === 0 ? (
-                            <div className="flex items-center justify-center py-12">
-                                <Loader2 className="animate-spin text-nasr-blue" size={32} />
-                            </div>
-                        ) : (
-                            <div className="space-y-6">
-                                {newsData.map((news, idx) => (
-                                    <a 
-                                        key={idx} 
-                                        href={news.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="block bg-white p-6 rounded-sm shadow-sm border border-gray-100 hover:shadow-md transition-all hover:border-l-4 hover:border-l-nasr-blue group cursor-pointer relative"
-                                    >
-                                        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-nasr-blue">
-                                            <ExternalLink size={16} />
+                        <div className="space-y-6">
+                            {t.mockNews.map((news, idx) => (
+                                <div key={idx} className="bg-white p-6 rounded-sm shadow-sm border border-gray-100 hover:shadow-md transition-all hover:border-l-4 hover:border-l-nasr-blue group">
+                                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
+                                        <div className="flex items-center gap-2">
+                                            <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-gray-100 ${
+                                                news.category === 'Global Market' ? 'text-nasr-blue' : 
+                                                news.category === 'Saudi Arabia' ? 'text-nasr-accent' : 'text-gray-600'
+                                            }`}>
+                                                {news.category}
+                                            </span>
+                                            <span className="text-xs text-gray-400 font-mono flex items-center gap-1"><Clock size={10}/> {news.time}</span>
                                         </div>
-
-                                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
-                                            <div className="flex items-center gap-2">
-                                                <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-gray-100 ${
-                                                    news.category === 'Global Market' ? 'text-nasr-blue' : 
-                                                    news.category === 'Saudi Arabia' ? 'text-nasr-accent' : 'text-gray-600'
-                                                }`}>
-                                                    {news.category}
-                                                </span>
-                                                <span className="text-xs text-gray-400 font-mono flex items-center gap-1">
-                                                    <Clock size={10}/> {getRelativeTime(news.timestamp)}
-                                                </span>
-                                            </div>
-                                            <div className="text-xs text-gray-500 font-bold uppercase">{news.source}</div>
-                                        </div>
-                                        <h4 className={`text-xl font-bold text-gray-800 mb-3 group-hover:text-nasr-blue transition-colors ${isRTL ? 'font-arabic' : 'font-serif'}`}>
-                                            {news.title}
-                                        </h4>
-                                        <p className="text-gray-600 text-sm leading-relaxed">
-                                            {news.summary}
-                                        </p>
-                                    </a>
-                                ))}
-                            </div>
-                        )}
+                                        <div className="text-xs text-gray-500 font-bold uppercase">{news.source}</div>
+                                    </div>
+                                    <h4 className={`text-xl font-bold text-gray-800 mb-3 group-hover:text-nasr-blue transition-colors ${isRTL ? 'font-arabic' : 'font-serif'}`}>
+                                        {news.title}
+                                    </h4>
+                                    <p className="text-gray-600 text-sm leading-relaxed">
+                                        {news.summary}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
                     {/* Right Column: Market Analysis & Stats */}

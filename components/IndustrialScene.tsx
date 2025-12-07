@@ -23,6 +23,7 @@ declare global {
       boxGeometry: any;
       cylinderGeometry: any;
       extrudeGeometry: any;
+      [elemName: string]: any;
     }
   }
 }
