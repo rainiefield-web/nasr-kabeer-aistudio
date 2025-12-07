@@ -1540,6 +1540,96 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
 const IndustryInsightsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBack }) => {
     const t = content[lang].insights;
     const isRTL = lang === 'ar';
+    
+    // State for news data and update tracking
+    const [newsData, setNewsData] = useState<Array<{
+        category: string;
+        title: string;
+        source: string;
+        time: string;
+        summary: string;
+        url: string;
+        timestamp: number; // Store actual timestamp for dynamic time calculation
+    }>>([]);
+    const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
+    const [nextUpdate, setNextUpdate] = useState<Date | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
+
+    // Function to calculate relative time (e.g., "1 hour ago")
+    const getRelativeTime = (timestamp: number): string => {
+        const now = Date.now();
+        const diff = now - timestamp;
+        const minutes = Math.floor(diff / 60000);
+        const hours = Math.floor(diff / 3600000);
+        const days = Math.floor(diff / 86400000);
+
+        if (lang === 'ar') {
+            if (minutes < 60) return `منذ ${minutes} دقيقة`;
+            if (hours < 24) return `منذ ${hours} ساعة`;
+            if (days === 1) return 'أمس';
+            return `منذ ${days} يوم`;
+        } else {
+            if (minutes < 60) return `${minutes} minute${minutes !== 1 ? 's' : ''} ago`;
+            if (hours < 24) return `${hours} hour${hours !== 1 ? 's' : ''} ago`;
+            if (days === 1) return 'Yesterday';
+            return `${days} days ago`;
+        }
+    };
+
+    // Function to fetch/update news data
+    const fetchNews = useCallback(async () => {
+        setIsLoading(true);
+        try {
+            // In a real implementation, you would call an API here
+            // For now, we'll simulate by using the mock data but with fresh timestamps
+            const baseNews = t.mockNews;
+            const now = Date.now();
+            
+            // Simulate fresh news with updated timestamps
+            // In production, replace this with actual API call
+            const updatedNews = baseNews.map((news, index) => ({
+                ...news,
+                timestamp: now - (index * 3600000) - Math.random() * 3600000, // Stagger timestamps
+            }));
+
+            setNewsData(updatedNews);
+            const updateTime = new Date();
+            setLastUpdate(updateTime);
+            // Set next update to 4 hours from now
+            setNextUpdate(new Date(updateTime.getTime() + 4 * 60 * 60 * 1000));
+        } catch (error) {
+            console.error('Failed to fetch news:', error);
+            // Fallback to static data if API fails
+            const fallbackNews = t.mockNews.map((news, index) => ({
+                ...news,
+                timestamp: Date.now() - (index * 3600000),
+            }));
+            setNewsData(fallbackNews);
+        } finally {
+            setIsLoading(false);
+        }
+    }, [t.mockNews]);
+
+    // Set up auto-refresh every 4 hours
+    useEffect(() => {
+        // Initial fetch
+        fetchNews();
+        
+        // Set up interval for auto-refresh (4 hours = 14400000 ms)
+        const interval = setInterval(fetchNews, 4 * 60 * 60 * 1000);
+        
+        return () => clearInterval(interval);
+    }, [fetchNews]);
+
+    // Update relative times every minute
+    useEffect(() => {
+        const timeInterval = setInterval(() => {
+            // Force re-render to update relative times
+            setNewsData(prev => [...prev]);
+        }, 60000); // Update every minute
+
+        return () => clearInterval(timeInterval);
+    }, []);
 
     return (
         <MotionDiv 
@@ -1572,45 +1662,73 @@ const IndustryInsightsPage: React.FC<{ lang: Language, goBack: () => void }> = (
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                     {/* Left Column: Latest News Feed */}
                     <div className="lg:col-span-2 space-y-8">
-                        <div className="flex items-center gap-3 border-b border-gray-200 pb-4">
-                            <Newspaper size={24} className="text-nasr-dark" />
-                            <h3 className={`text-2xl font-serif font-bold text-gray-900 ${isRTL ? 'font-arabic' : ''}`}>{t.sections.news}</h3>
+                        <div className="flex items-center justify-between border-b border-gray-200 pb-4">
+                            <div className="flex items-center gap-3">
+                                <Newspaper size={24} className="text-nasr-dark" />
+                                <h3 className={`text-2xl font-serif font-bold text-gray-900 ${isRTL ? 'font-arabic' : ''}`}>{t.sections.news}</h3>
+                            </div>
+                            <div className="flex items-center gap-4">
+                                {nextUpdate && (
+                                    <div className="flex items-center gap-2 text-xs text-gray-500">
+                                        <span className="font-mono">
+                                            {t.sections.update} {nextUpdate.toLocaleTimeString(lang === 'ar' ? 'ar-SA' : 'en-US', { hour: '2-digit', minute: '2-digit' })}
+                                        </span>
+                                    </div>
+                                )}
+                                <button
+                                    onClick={fetchNews}
+                                    disabled={isLoading}
+                                    className="flex items-center gap-2 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-nasr-blue hover:text-nasr-dark hover:bg-gray-100 rounded transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                    title={lang === 'ar' ? 'تحديث الأخبار' : 'Refresh News'}
+                                >
+                                    <RefreshCw size={14} className={isLoading ? 'animate-spin' : ''} />
+                                    {lang === 'ar' ? 'تحديث' : 'Refresh'}
+                                </button>
+                            </div>
                         </div>
                         
-                        <div className="space-y-6">
-                            {t.mockNews.map((news, idx) => (
-                                <a 
-                                    key={idx} 
-                                    href={news.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="block bg-white p-6 rounded-sm shadow-sm border border-gray-100 hover:shadow-md transition-all hover:border-l-4 hover:border-l-nasr-blue group cursor-pointer relative"
-                                >
-                                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-nasr-blue">
-                                        <ExternalLink size={16} />
-                                    </div>
-
-                                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
-                                        <div className="flex items-center gap-2">
-                                            <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-gray-100 ${
-                                                news.category === 'Global Market' ? 'text-nasr-blue' : 
-                                                news.category === 'Saudi Arabia' ? 'text-nasr-accent' : 'text-gray-600'
-                                            }`}>
-                                                {news.category}
-                                            </span>
-                                            <span className="text-xs text-gray-400 font-mono flex items-center gap-1"><Clock size={10}/> {news.time}</span>
+                        {isLoading && newsData.length === 0 ? (
+                            <div className="flex items-center justify-center py-12">
+                                <Loader2 className="animate-spin text-nasr-blue" size={32} />
+                            </div>
+                        ) : (
+                            <div className="space-y-6">
+                                {newsData.map((news, idx) => (
+                                    <a 
+                                        key={idx} 
+                                        href={news.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block bg-white p-6 rounded-sm shadow-sm border border-gray-100 hover:shadow-md transition-all hover:border-l-4 hover:border-l-nasr-blue group cursor-pointer relative"
+                                    >
+                                        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-nasr-blue">
+                                            <ExternalLink size={16} />
                                         </div>
-                                        <div className="text-xs text-gray-500 font-bold uppercase">{news.source}</div>
-                                    </div>
-                                    <h4 className={`text-xl font-bold text-gray-800 mb-3 group-hover:text-nasr-blue transition-colors ${isRTL ? 'font-arabic' : 'font-serif'}`}>
-                                        {news.title}
-                                    </h4>
-                                    <p className="text-gray-600 text-sm leading-relaxed">
-                                        {news.summary}
-                                    </p>
-                                </a>
-                            ))}
-                        </div>
+
+                                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
+                                            <div className="flex items-center gap-2">
+                                                <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-gray-100 ${
+                                                    news.category === 'Global Market' ? 'text-nasr-blue' : 
+                                                    news.category === 'Saudi Arabia' ? 'text-nasr-accent' : 'text-gray-600'
+                                                }`}>
+                                                    {news.category}
+                                                </span>
+                                                <span className="text-xs text-gray-400 font-mono flex items-center gap-1">
+                                                    <Clock size={10}/> {getRelativeTime(news.timestamp)}
+                                                </span>
+                                            </div>
+                                            <div className="text-xs text-gray-500 font-bold uppercase">{news.source}</div>
+                                        </div>
+                                        <h4 className={`text-xl font-bold text-gray-800 mb-3 group-hover:text-nasr-blue transition-colors ${isRTL ? 'font-arabic' : 'font-serif'}`}>
+                                            {news.title}
+                                        </h4>
+                                        <p className="text-gray-600 text-sm leading-relaxed">
+                                            {news.summary}
+                                        </p>
+                                    </a>
+                                ))}
+                            </div>
+                        )}
                     </div>
 
                     {/* Right Column: Market Analysis & Stats */}
