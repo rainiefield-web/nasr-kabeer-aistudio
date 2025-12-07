@@ -12,7 +12,8 @@ import {
   Thermometer, Settings, Layers, ShieldCheck, Zap, Cpu, PaintBucket,
   Gamepad2, Trophy, RefreshCw, Play, ExternalLink, Recycle, Leaf, 
   Wind, Droplets, Truck, CircleDollarSign, HardHat, ClipboardCheck,
-  PenTool, Beaker, Box, MoveRight, ArrowDown, TrendingUp, TrendingDown, AlertCircle, Loader2, Wifi, WifiOff
+  PenTool, Beaker, Box, MoveRight, ArrowDown, TrendingUp, TrendingDown, AlertCircle, Loader2, Wifi, WifiOff,
+  Newspaper
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -20,9 +21,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 const MotionDiv = motion.div as any;
 const MotionH2 = motion.h2 as any;
 
+// Add type definition for custom element
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'rssapp-list': any;
+    }
+  }
+}
+
 // --- TYPES & CONTENT ---
 type Language = 'en' | 'ar';
-type Page = 'home' | 'technology' | 'sustainability';
+type Page = 'home' | 'technology' | 'sustainability' | 'insights';
 
 // Process Step Type
 interface ProcessStep {
@@ -40,6 +50,7 @@ const content = {
       expansion: "Expansion",
       technology: "Technology",
       sustainability: "Sustainability",
+      insights: "Industry Insights",
       contact: "Get in Touch",
       back: "Back to Home"
     },
@@ -370,6 +381,11 @@ const content = {
         ]
       }
     },
+    insights: {
+        title: "Industry Insights",
+        subtitle: "Global News & Trends",
+        desc: "Stay connected with the latest developments, market analysis, and technological breakthroughs in the global aluminum and industrial manufacturing sectors."
+    },
     footer: {
       desc: "Forging the future of Saudi Arabia's industrial sector with precision aluminum solutions. Located in the heart of Dammam's industrial hub.",
       navTitle: "Navigation",
@@ -390,6 +406,7 @@ const content = {
       expansion: "التوسع",
       technology: "التقنية",
       sustainability: "الاستدامة",
+      insights: "رؤى الصناعة",
       contact: "تواصل معنا",
       back: "العودة للرئيسية"
     },
@@ -719,6 +736,11 @@ const content = {
           { title: "كفاءة الموارد", desc: "إغلاق حلقة المواد وتقليل الاعتماد على تعدين البوكسيت." }
         ]
       }
+    },
+    insights: {
+        title: "رؤى الصناعة",
+        subtitle: "أخبار واتجاهات عالمية",
+        desc: "ابق على اطلاع بأحدث التطورات وتحليلات السوق والاختراقات التكنولوجية في قطاعات الألمنيوم والتصنيع الصناعي العالمية."
     },
     footer: {
       desc: "صياغة مستقبل القطاع الصناعي في المملكة العربية السعودية بحلول ألمنيوم دقيقة. نقع في قلب المركز الصناعي بالدمام.",
@@ -1229,6 +1251,64 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
   );
 };
 
+// --- Industry Insights Page Component ---
+const IndustryInsightsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBack }) => {
+  const t = content[lang].insights;
+  const isRTL = lang === 'ar';
+
+  // Load the RSS widget script
+  useEffect(() => {
+    const scriptId = 'rss-app-widget-script';
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement('script');
+      script.src = "https://widget.rss.app/v1/list.js";
+      script.async = true;
+      script.id = scriptId;
+      document.body.appendChild(script);
+    }
+  }, []);
+
+  return (
+    <MotionDiv 
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 50 }}
+      className={`min-h-screen bg-gray-50 ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}
+    >
+      {/* Sticky Header for Insights Page */}
+      <div className="container mx-auto px-6 mb-12 flex items-center justify-between">
+         <button onClick={goBack} className="flex items-center gap-2 text-nasr-blue hover:text-nasr-dark transition-colors font-bold uppercase text-sm tracking-wider">
+            <ChevronLeft size={20} className={isRTL ? "rotate-180" : ""} />
+            {content[lang].nav.back}
+         </button>
+         <div className="hidden md:block h-[1px] flex-1 bg-gray-200 mx-8"></div>
+         <AlxLogo />
+      </div>
+
+      <div className="container mx-auto px-6">
+        <SectionHeading title={t.title} subtitle={t.subtitle} lang={lang} />
+        <p className="max-w-3xl mb-12 text-lg text-gray-600 leading-relaxed border-l-4 border-nasr-blue pl-6">
+          {t.desc}
+        </p>
+
+        {/* RSS Feeds Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+           {/* Feed 1 */}
+           <div className="bg-white p-2 rounded-sm shadow-xl min-h-[600px] border border-gray-200">
+               <rssapp-list id="Kg4gMYSoIKziJSUJ"></rssapp-list>
+           </div>
+           
+           {/* Feed 2 */}
+           <div className="bg-white p-2 rounded-sm shadow-xl min-h-[600px] border border-gray-200">
+               <rssapp-list id="Q68OlPY9hDWlamDI"></rssapp-list>
+           </div>
+        </div>
+      </div>
+    </MotionDiv>
+  );
+};
+
+
 // --- Sustainability Page Component ---
 const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBack }) => {
   const t = content[lang].sustainability;
@@ -1486,6 +1566,13 @@ const App: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const goToInsights = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setCurrentPage('insights');
+    setMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleBrochureClick = () => {
     alert(lang === 'en' ? 'Coming Soon' : 'قريباً');
   };
@@ -1524,6 +1611,10 @@ const App: React.FC = () => {
             <a href="#sustainability" onClick={goToSustainability} className={`hover:text-nasr-blue transition-colors relative group ${currentPage === 'sustainability' ? 'text-nasr-blue' : ''}`}>
               {t.nav.sustainability}
               <span className={`absolute -bottom-1 left-0 h-[2px] bg-nasr-blue transition-all duration-300 ${currentPage === 'sustainability' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+            </a>
+             <a href="#insights" onClick={goToInsights} className={`hover:text-nasr-blue transition-colors relative group ${currentPage === 'insights' ? 'text-nasr-blue' : ''}`}>
+              {t.nav.insights}
+              <span className={`absolute -bottom-1 left-0 h-[2px] bg-nasr-blue transition-all duration-300 ${currentPage === 'insights' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
             </a>
             
             <div className="flex items-center gap-4">
@@ -1568,6 +1659,7 @@ const App: React.FC = () => {
               <a href="#phases" onClick={(e) => scrollToSection(e, 'phases')}>{t.nav.expansion}</a>
               <a href="#technology" onClick={goToTechnology} className={currentPage === 'technology' ? 'text-nasr-blue' : ''}>{t.nav.technology}</a>
               <a href="#sustainability" onClick={goToSustainability} className={currentPage === 'sustainability' ? 'text-nasr-blue' : ''}>{t.nav.sustainability}</a>
+              <a href="#insights" onClick={goToInsights} className={currentPage === 'insights' ? 'text-nasr-blue' : ''}>{t.nav.insights}</a>
               <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="px-8 py-3 bg-nasr-blue text-white text-lg">{t.nav.contact}</a>
           </MotionDiv>
         )}
@@ -1578,6 +1670,8 @@ const App: React.FC = () => {
           <TechnologyPage lang={lang} goBack={() => { setCurrentPage('home'); window.scrollTo(0,0); }} />
         ) : currentPage === 'sustainability' ? (
           <SustainabilityPage lang={lang} goBack={() => { setCurrentPage('home'); window.scrollTo(0,0); }} />
+        ) : currentPage === 'insights' ? (
+          <IndustryInsightsPage lang={lang} goBack={() => { setCurrentPage('home'); window.scrollTo(0,0); }} />
         ) : (
           <>
             {/* Hero Section */}
@@ -1828,6 +1922,7 @@ const App: React.FC = () => {
                             <li><a href="#phases" onClick={(e) => scrollToSection(e, 'phases')} className="hover:text-nasr-accent transition-colors">{t.nav.expansion}</a></li>
                             <li><a href="#technology" onClick={goToTechnology} className="hover:text-nasr-accent transition-colors">{t.nav.technology}</a></li>
                             <li><a href="#sustainability" onClick={goToSustainability} className="hover:text-nasr-accent transition-colors">{t.nav.sustainability}</a></li>
+                            <li><a href="#insights" onClick={goToInsights} className="hover:text-nasr-accent transition-colors">{t.nav.insights}</a></li>
                         </ul>
                     </div>
 
