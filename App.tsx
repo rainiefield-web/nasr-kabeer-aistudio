@@ -1585,11 +1585,19 @@ const IndustryInsightsPage: React.FC<{ lang: Language, goBack: () => void }> = (
             const baseNews = t.mockNews;
             const now = Date.now();
             
-            // Simulate fresh news with updated timestamps
-            // In production, replace this with actual API call
+            // Simulate fresh news with fixed time intervals (no random to keep timestamps stable)
+            // Time intervals: 1h, 2h, 4h, 24h, 24h+ (yesterday)
+            const timeIntervals = [
+                1 * 60 * 60 * 1000,    // 1 hour ago
+                2 * 60 * 60 * 1000,    // 2 hours ago
+                4 * 60 * 60 * 1000,    // 4 hours ago
+                24 * 60 * 60 * 1000,   // 24 hours ago (yesterday)
+                25 * 60 * 60 * 1000,   // 25 hours ago (yesterday)
+            ];
+            
             const updatedNews = baseNews.map((news, index) => ({
                 ...news,
-                timestamp: now - (index * 3600000) - Math.random() * 3600000, // Stagger timestamps
+                timestamp: now - (timeIntervals[index] || timeIntervals[timeIntervals.length - 1]),
             }));
 
             setNewsData(updatedNews);
@@ -1600,9 +1608,16 @@ const IndustryInsightsPage: React.FC<{ lang: Language, goBack: () => void }> = (
         } catch (error) {
             console.error('Failed to fetch news:', error);
             // Fallback to static data if API fails
+            const timeIntervals = [
+                1 * 60 * 60 * 1000,
+                2 * 60 * 60 * 1000,
+                4 * 60 * 60 * 1000,
+                24 * 60 * 60 * 1000,
+                25 * 60 * 60 * 1000,
+            ];
             const fallbackNews = t.mockNews.map((news, index) => ({
                 ...news,
-                timestamp: Date.now() - (index * 3600000),
+                timestamp: Date.now() - (timeIntervals[index] || timeIntervals[timeIntervals.length - 1]),
             }));
             setNewsData(fallbackNews);
         } finally {
