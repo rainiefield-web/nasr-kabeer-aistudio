@@ -8,6 +8,26 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, Environment, Lightformer, PerspectiveCamera } from '@react-three/drei';
 import * as THREE from 'three';
 
+// Fix for missing JSX definitions in some environments
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      ambientLight: any;
+      pointLight: any;
+      spotLight: any;
+      directionalLight: any;
+      group: any;
+      mesh: any;
+      meshStandardMaterial: any;
+      meshPhysicalMaterial: any;
+      boxGeometry: any;
+      cylinderGeometry: any;
+      extrudeGeometry: any;
+      [elemName: string]: any;
+    }
+  }
+}
+
 // Represents an Aluminum Profile (Extrusion) with high-end metallic shader
 const AluminumProfile = ({ 
   position, 

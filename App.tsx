@@ -12,7 +12,8 @@ import {
   Thermometer, Settings, Layers, ShieldCheck, Zap, Cpu, PaintBucket,
   Gamepad2, Trophy, RefreshCw, Play, ExternalLink, Recycle, Leaf, 
   Wind, Droplets, Truck, CircleDollarSign, HardHat, ClipboardCheck,
-  PenTool, Beaker, Box, MoveRight, ArrowDown, TrendingUp, TrendingDown, AlertCircle, Loader2, Wifi, WifiOff
+  PenTool, Beaker, Box, MoveRight, ArrowDown, TrendingUp, TrendingDown, AlertCircle, Loader2, Wifi, WifiOff,
+  Newspaper, BarChart3, Globe2, Clock
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -40,7 +41,7 @@ const content = {
       expansion: "Expansion",
       technology: "Technology",
       sustainability: "Sustainability",
-      game: "Interactive",
+      game: "Industry Insights",
       contact: "Get in Touch",
       back: "Back to Home"
     },
@@ -371,16 +372,54 @@ const content = {
         ]
       }
     },
-    game: {
-        title: "Interactive Zone",
-        subtitle: "Precision Stacker",
-        desc: "Experience the precision required in aluminum manufacturing. Stack the billets perfectly to build the highest structure possible.",
-        start: "Start Production",
-        score: "Current Height",
-        highScore: "Best Record",
-        gameOver: "Production Halted",
-        restart: "Restart Process",
-        instruction: "Click or Tap to place the block"
+    insights: {
+        title: "Global Aluminum Intelligence",
+        subtitle: "Real-Time Industry Updates",
+        desc: "Stay informed with the latest global supply & demand trends, price fluctuations, and developments in the Saudi aluminum sector. Updated every 4 hours.",
+        sections: {
+            news: "Latest Industry News",
+            analysis: "Market Analysis",
+            saudi: "Saudi Sector Focus",
+            supply: "Global Supply & Demand",
+            update: "Next Update:"
+        },
+        mockNews: [
+            {
+                category: "Global Market",
+                title: "LME Aluminum Stocks Hit 3-Month Low Amid Asian Demand Surge",
+                source: "Global Metal Bulletin",
+                time: "2 hours ago",
+                summary: "Inventory levels at LME warehouses have dropped significantly as manufacturing output in Southeast Asia ramps up post-quarter."
+            },
+            {
+                category: "Saudi Arabia",
+                title: "Ma'aden Announces New Green Aluminum Initiative",
+                source: "Saudi Industrial News",
+                time: "3 hours ago",
+                summary: "Saudi Arabian Mining Company (Ma'aden) targets carbon neutrality by 2050, boosting the Kingdom's position in low-carbon metal exports."
+            },
+            {
+                category: "Technology",
+                title: "Breakthrough in Recycled Billet Casting Efficiency",
+                source: "TechMetal Daily",
+                time: "5 hours ago",
+                summary: "New European casting technology promises to reduce energy consumption in secondary aluminum production by up to 15%."
+            },
+            {
+                category: "Global Market",
+                title: "European Automotive Sector Drives Demand for 6xxx Series",
+                source: "AutoAlloy Report",
+                time: "Yesterday",
+                summary: "Shift towards lightweight EV chassis components is causing a supply squeeze for high-grade 6061 and 6063 alloy billets."
+            },
+            {
+                category: "Saudi Arabia",
+                title: "Dammam Industrial City Expands Logistics Capacity",
+                source: "Logistics KSA",
+                time: "Yesterday",
+                summary: "New port connectivity projects in Dammam will streamline aluminum export routes to Asian and European markets."
+            }
+        ]
     },
     footer: {
       desc: "Forging the future of Saudi Arabia's industrial sector with precision aluminum solutions. Located in the heart of Dammam's industrial hub.",
@@ -402,7 +441,7 @@ const content = {
       expansion: "التوسع",
       technology: "التقنية",
       sustainability: "الاستدامة",
-      game: "المنطقة التفاعلية",
+      game: "أخبار الصناعة",
       contact: "تواصل معنا",
       back: "العودة للرئيسية"
     },
@@ -733,16 +772,54 @@ const content = {
         ]
       }
     },
-    game: {
-        title: "المنطقة التفاعلية",
-        subtitle: "مكدس الدقة",
-        desc: "جرب الدقة المطلوبة في تصنيع الألمنيوم. قم بتكديس الكتل بشكل مثالي لبناء أعلى هيكل ممكن.",
-        start: "ابدأ الإنتاج",
-        score: "الارتفاع الحالي",
-        highScore: "أفضل سجل",
-        gameOver: "توقف الإنتاج",
-        restart: "إعادة العملية",
-        instruction: "انقر أو اضغط لوضع الكتلة"
+    insights: {
+        title: "ذكاء الألمنيوم العالمي",
+        subtitle: "تحديثات الصناعة الفورية",
+        desc: "ابق على اطلاع بأحدث اتجاهات العرض والطلب العالمية، وتقلبات الأسعار، وتطورات قطاع الألمنيوم في المملكة. يتم التحديث كل 4 ساعات.",
+        sections: {
+            news: "آخر أخبار الصناعة",
+            analysis: "تحليل السوق",
+            saudi: "تركيز القطاع السعودي",
+            supply: "العرض والطلب العالمي",
+            update: "التحديث القادم:"
+        },
+        mockNews: [
+            {
+                category: "السوق العالمي",
+                title: "مخزونات الألمنيوم في LME تصل لأدنى مستوى في 3 أشهر وسط زيادة الطلب الآسيوي",
+                source: "نشرة المعادن العالمية",
+                time: "منذ ساعتين",
+                summary: "انخفضت مستويات المخزون في مستودعات بورصة لندن للمعادن بشكل كبير مع زيادة الإنتاج الصناعي في جنوب شرق آسيا."
+            },
+            {
+                category: "المملكة العربية السعودية",
+                title: "معادن تعلن عن مبادرة جديدة للألمنيوم الأخضر",
+                source: "أخبار الصناعة السعودية",
+                time: "منذ 3 ساعات",
+                summary: "تستهدف شركة التعدين العربية السعودية (معادن) الحياد الكربوني بحلول عام 2050، مما يعزز مكانة المملكة في صادرات المعادن منخفضة الكربون."
+            },
+            {
+                category: "التكنولوجيا",
+                title: "اختراق في كفاءة صب الكتل المعاد تدويرها",
+                source: "ديلي تيك ميتال",
+                time: "منذ 5 ساعات",
+                summary: "تكنولوجيا صب أوروبية جديدة تعد بتقليل استهلاك الطاقة في إنتاج الألمنيوم الثانوي بنسبة تصل إلى 15٪."
+            },
+            {
+                category: "السوق العالمي",
+                title: "قطاع السيارات الأوروبي يقود الطلب على سلسلة 6xxx",
+                source: "تقرير أوتو ألوي",
+                time: "الأمس",
+                summary: "التحول نحو مكونات شاسيه المركبات الكهربائية خفيفة الوزن يسبب ضغطاً على المعروض من سبائك 6061 و 6063 عالية الجودة."
+            },
+            {
+                category: "المملكة العربية السعودية",
+                title: "المدينة الصناعية بالدمام توسع قدراتها اللوجستية",
+                source: "لوجستيات المملكة",
+                time: "الأمس",
+                summary: "مشاريع الربط الجديدة بالموانئ في الدمام ستبسط طرق تصدير الألمنيوم إلى الأسواق الآسيوية والأوروبية."
+            }
+        ]
     },
     footer: {
       desc: "صياغة مستقبل القطاع الصناعي في المملكة العربية السعودية بحلول ألمنيوم دقيقة. نقع في قلب المركز الصناعي بالدمام.",
@@ -797,7 +874,7 @@ const MetalsPriceWidget: React.FC<{ lang: Language }> = ({ lang }) => {
   const [isSimulated, setIsSimulated] = useState(false);
   const t = content[lang].market;
 
-  const fetchPrice = useCallback(async () => {
+  const fetchPrice = async () => {
     try {
       setLoading(true);
       setError(false);
@@ -841,16 +918,14 @@ const MetalsPriceWidget: React.FC<{ lang: Language }> = ({ lang }) => {
     } finally {
       setLoading(false);
     }
-  }, [lang]);
+  };
 
   useEffect(() => {
     fetchPrice();
-    // Refresh every 30 minutes (30 * 60 * 1000 = 1800000 milliseconds)
-    const interval = setInterval(() => {
-      fetchPrice();
-    }, 1800000); 
+    // Refresh every 30 minutes
+    const interval = setInterval(fetchPrice, 1800000); 
     return () => clearInterval(interval);
-  }, [fetchPrice]);
+  }, []);
 
   return (
     <div className="w-full mt-6 bg-nasr-dark text-white rounded-sm overflow-hidden shadow-lg border border-gray-700">
@@ -1451,225 +1526,20 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
   );
 };
 
-// --- Game Component: Aluminum Stacker ---
-const AluminumStackerGame: React.FC<{ lang: Language }> = ({ lang }) => {
-    const t = content[lang].game;
-    const canvasRef = useRef<HTMLCanvasElement>(null);
-    const [isPlaying, setIsPlaying] = useState(false);
-    const [score, setScore] = useState(0);
-    const [highScore, setHighScore] = useState(0);
-    const [gameOver, setGameOver] = useState(false);
-
-    // Game constants
-    const BLOCK_HEIGHT = 30;
-    const INITIAL_WIDTH = 200;
-    const MOVE_SPEED_BASE = 3;
-
-    // Game state refs to avoid re-renders in loop
-    const gameState = useRef({
-        stack: [] as {x: number, width: number}[], // existing blocks
-        currentBlock: { x: 0, width: INITIAL_WIDTH, movingRight: true },
-        level: 1,
-        offset: 0, // to scroll camera up
-        speed: MOVE_SPEED_BASE
-    });
-
-    const requestRef = useRef<number>(0);
-
-    const resetGame = () => {
-        gameState.current = {
-            stack: [{ x: 100, width: INITIAL_WIDTH }], // Base block centered (assuming canvas width 400)
-            currentBlock: { x: 0, width: INITIAL_WIDTH, movingRight: true },
-            level: 1,
-            offset: 0,
-            speed: MOVE_SPEED_BASE
-        };
-        setScore(0);
-        setGameOver(false);
-        setIsPlaying(true);
-    };
-
-    const gameLoop = useCallback(() => {
-        if (!isPlaying || gameOver) return;
-        const canvas = canvasRef.current;
-        if (!canvas) return;
-        const ctx = canvas.getContext('2d');
-        if (!ctx) return;
-
-        const width = canvas.width;
-        const height = canvas.height;
-        const state = gameState.current;
-
-        // Update Position
-        if (state.currentBlock.movingRight) {
-            state.currentBlock.x += state.speed;
-            if (state.currentBlock.x + state.currentBlock.width > width) {
-                state.currentBlock.movingRight = false;
-            }
-        } else {
-            state.currentBlock.x -= state.speed;
-            if (state.currentBlock.x < 0) {
-                state.currentBlock.movingRight = true;
-            }
-        }
-
-        // Draw
-        ctx.clearRect(0, 0, width, height);
-
-        // Draw Background Grid
-        ctx.strokeStyle = '#f0f0f0';
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        for (let i = 0; i < width; i += 40) { ctx.moveTo(i, 0); ctx.lineTo(i, height); }
-        for (let i = 0; i < height; i += 40) { ctx.moveTo(0, i); ctx.lineTo(width, i); }
-        ctx.stroke();
-
-        // Scroll offset
-        const stackHeight = state.stack.length * BLOCK_HEIGHT;
-        const targetOffset = Math.max(0, stackHeight - height / 2);
-        // Simple lerp for smooth camera
-        state.offset += (targetOffset - state.offset) * 0.1;
-
-        ctx.save();
-        ctx.translate(0, state.offset);
-
-        // Draw Stack
-        state.stack.forEach((block, index) => {
-            const y = height - (index + 1) * BLOCK_HEIGHT;
-            // Metallic Gradient
-            const grad = ctx.createLinearGradient(block.x, 0, block.x + block.width, 0);
-            grad.addColorStop(0, '#9ca3af');
-            grad.addColorStop(0.5, '#e5e7eb');
-            grad.addColorStop(1, '#9ca3af');
-            
-            ctx.fillStyle = grad;
-            ctx.fillRect(block.x, y, block.width, BLOCK_HEIGHT);
-            ctx.strokeStyle = '#4b5563';
-            ctx.strokeRect(block.x, y, block.width, BLOCK_HEIGHT);
-        });
-
-        // Draw Current Block
-        const currentY = height - (state.stack.length + 1) * BLOCK_HEIGHT;
-        
-        // Active block color (Nasr Blue tint)
-        const activeGrad = ctx.createLinearGradient(state.currentBlock.x, 0, state.currentBlock.x + state.currentBlock.width, 0);
-        activeGrad.addColorStop(0, '#0077be'); // Darker blue
-        activeGrad.addColorStop(0.5, '#60a5fa'); // Lighter blue
-        activeGrad.addColorStop(1, '#0077be');
-
-        ctx.fillStyle = activeGrad;
-        ctx.fillRect(state.currentBlock.x, currentY, state.currentBlock.width, BLOCK_HEIGHT);
-        ctx.strokeStyle = '#1e3a8a';
-        ctx.strokeRect(state.currentBlock.x, currentY, state.currentBlock.width, BLOCK_HEIGHT);
-
-        ctx.restore();
-
-        requestRef.current = requestAnimationFrame(gameLoop);
-    }, [isPlaying, gameOver]);
+// --- Industry Insights Page Component (Replaces Game Page) ---
+const IndustryInsightsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBack }) => {
+    const t = content[lang].insights;
+    const isRTL = lang === 'ar';
+    const [currentTime, setCurrentTime] = useState(new Date());
 
     useEffect(() => {
-        if (isPlaying && !gameOver) {
-            requestRef.current = requestAnimationFrame(gameLoop);
-        }
-        return () => cancelAnimationFrame(requestRef.current);
-    }, [isPlaying, gameOver, gameLoop]);
+        // Mock update time every minute just for clock display
+        const timer = setInterval(() => setCurrentTime(new Date()), 60000);
+        return () => clearInterval(timer);
+    }, []);
 
-    const handleAction = () => {
-        if (gameOver) {
-            resetGame();
-            return;
-        }
-        if (!isPlaying) {
-            setIsPlaying(true);
-            resetGame();
-            return;
-        }
-
-        const state = gameState.current;
-        const prevBlock = state.stack[state.stack.length - 1];
-        const curr = state.currentBlock;
-
-        // Calculate overlap
-        const overlapLeft = Math.max(prevBlock.x, curr.x);
-        const overlapRight = Math.min(prevBlock.x + prevBlock.width, curr.x + curr.width);
-        const overlapWidth = overlapRight - overlapLeft;
-
-        if (overlapWidth <= 0) {
-            // Missed completely
-            setGameOver(true);
-            setIsPlaying(false);
-            if (score > highScore) setHighScore(score);
-        } else {
-            // Success
-            // Trim the block
-            state.stack.push({ x: overlapLeft, width: overlapWidth });
-            state.currentBlock = { 
-                x: 0, 
-                width: overlapWidth, 
-                movingRight: true 
-            };
-            state.level++;
-            // Increase speed slightly
-            state.speed = Math.min(15, MOVE_SPEED_BASE + (state.level * 0.2));
-            setScore(prev => prev + 1);
-        }
-    };
-
-    return (
-        <div className="flex flex-col items-center justify-center w-full max-w-2xl mx-auto">
-            <div className="flex justify-between w-full mb-4 px-4 font-serif text-nasr-dark">
-                <div className="flex flex-col items-center bg-white p-4 rounded shadow-sm border border-gray-200 w-32">
-                    <span className="text-xs uppercase tracking-widest text-gray-500">{t.score}</span>
-                    <span className="text-3xl font-bold text-nasr-blue">{score}</span>
-                </div>
-                <div className="flex flex-col items-center bg-white p-4 rounded shadow-sm border border-gray-200 w-32">
-                    <span className="text-xs uppercase tracking-widest text-gray-500">{t.highScore}</span>
-                    <span className="text-3xl font-bold text-gray-700">{highScore}</span>
-                </div>
-            </div>
-
-            <div className="relative rounded-lg overflow-hidden shadow-2xl border-4 border-gray-800 bg-gray-900 w-full aspect-[3/4] max-w-md cursor-pointer" onClick={handleAction}>
-                <canvas 
-                    ref={canvasRef} 
-                    width={400} 
-                    height={600} 
-                    className="w-full h-full bg-gray-100"
-                />
-                
-                {/* Overlays */}
-                {!isPlaying && !gameOver && (
-                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 backdrop-blur-sm text-white p-6 text-center">
-                        <Gamepad2 size={48} className="text-nasr-accent mb-4" />
-                        <h3 className="text-2xl font-serif mb-2">{t.title}</h3>
-                        <p className="mb-6 text-gray-300">{t.instruction}</p>
-                        <button className="px-8 py-3 bg-nasr-blue hover:bg-nasr-dark text-white font-bold uppercase tracking-wider transition-colors rounded flex items-center gap-2">
-                           <Play size={20} /> {t.start}
-                        </button>
-                    </div>
-                )}
-
-                {gameOver && (
-                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-red-900/80 backdrop-blur-sm text-white p-6 text-center">
-                        <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center mb-4 animate-bounce">
-                            <Trophy size={32} className="text-nasr-dark" />
-                        </div>
-                        <h3 className="text-3xl font-serif mb-2">{t.gameOver}</h3>
-                        <p className="mb-6 text-gray-200 text-lg">{t.score}: {score}</p>
-                        <button className="px-8 py-3 bg-white text-nasr-red font-bold uppercase tracking-wider hover:bg-gray-200 transition-colors rounded flex items-center gap-2">
-                           <RefreshCw size={20} /> {t.restart}
-                        </button>
-                    </div>
-                )}
-            </div>
-             <p className="mt-4 text-gray-500 text-sm italic">{lang === 'en' ? "* Tap screen to drop block" : "* اضغط على الشاشة لإسقاط الكتلة"}</p>
-        </div>
-    )
-};
-
-// --- Game Page Component ---
-const GamePage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBack }) => {
-    const t = content[lang].game;
-    const isRTL = lang === 'ar';
+    // Calculate "Next Update" time (current time + 4 hours)
+    const nextUpdate = new Date(currentTime.getTime() + 4 * 60 * 60 * 1000).toLocaleTimeString(lang === 'ar' ? 'ar-SA' : 'en-US', {hour: '2-digit', minute: '2-digit'});
 
     return (
         <MotionDiv 
@@ -1678,7 +1548,7 @@ const GamePage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
           exit={{ opacity: 0, y: -20 }}
           className={`min-h-screen bg-gray-50 ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}
         >
-             {/* Sticky Header for Game Page */}
+             {/* Sticky Header */}
             <div className="container mx-auto px-6 mb-8 flex items-center justify-between">
                 <button onClick={goBack} className="flex items-center gap-2 text-nasr-blue hover:text-nasr-dark transition-colors font-bold uppercase text-sm tracking-wider">
                     <ChevronLeft size={20} className={isRTL ? "rotate-180" : ""} />
@@ -1688,13 +1558,113 @@ const GamePage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
                 <AlxLogo />
             </div>
 
-            <div className="container mx-auto px-6 text-center">
-                <SectionHeading title={t.title} subtitle={t.subtitle} lang={lang} />
-                <p className="max-w-2xl mx-auto text-lg text-gray-600 mb-12">
-                  {t.desc}
-                </p>
+            <div className="container mx-auto px-6">
+                <div className="text-center max-w-3xl mx-auto mb-12">
+                   <SectionHeading title={t.title} subtitle={t.subtitle} lang={lang} />
+                   <p className="text-lg text-gray-600 leading-relaxed">{t.desc}</p>
+                   <div className="mt-4 flex items-center justify-center gap-2 text-sm text-nasr-blue font-bold uppercase tracking-widest bg-blue-50 py-2 px-4 rounded-full w-fit mx-auto">
+                       <Clock size={16} /> {t.sections.update} {nextUpdate}
+                   </div>
+                </div>
+
+                {/* Top Section: Real-Time Pricing */}
+                <div className="mb-12">
+                    <MetalsPriceWidget lang={lang} />
+                </div>
                 
-                <AluminumStackerGame lang={lang} />
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    {/* Left Column: Latest News Feed */}
+                    <div className="lg:col-span-2 space-y-8">
+                        <div className="flex items-center gap-3 border-b border-gray-200 pb-4">
+                            <Newspaper size={24} className="text-nasr-dark" />
+                            <h3 className={`text-2xl font-serif font-bold text-gray-900 ${isRTL ? 'font-arabic' : ''}`}>{t.sections.news}</h3>
+                        </div>
+                        
+                        <div className="space-y-6">
+                            {t.mockNews.map((news, idx) => (
+                                <div key={idx} className="bg-white p-6 rounded-sm shadow-sm border border-gray-100 hover:shadow-md transition-all hover:border-l-4 hover:border-l-nasr-blue group">
+                                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
+                                        <div className="flex items-center gap-2">
+                                            <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-gray-100 ${
+                                                news.category === 'Global Market' ? 'text-nasr-blue' : 
+                                                news.category === 'Saudi Arabia' ? 'text-nasr-accent' : 'text-gray-600'
+                                            }`}>
+                                                {news.category}
+                                            </span>
+                                            <span className="text-xs text-gray-400 font-mono flex items-center gap-1"><Clock size={10}/> {news.time}</span>
+                                        </div>
+                                        <div className="text-xs text-gray-500 font-bold uppercase">{news.source}</div>
+                                    </div>
+                                    <h4 className={`text-xl font-bold text-gray-800 mb-3 group-hover:text-nasr-blue transition-colors ${isRTL ? 'font-arabic' : 'font-serif'}`}>
+                                        {news.title}
+                                    </h4>
+                                    <p className="text-gray-600 text-sm leading-relaxed">
+                                        {news.summary}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Right Column: Market Analysis & Stats */}
+                    <div className="space-y-8">
+                         {/* Supply/Demand Box */}
+                         <div className="bg-white p-6 rounded-sm shadow-lg border-t-4 border-nasr-dark">
+                             <div className="flex items-center gap-3 mb-6">
+                                 <BarChart3 size={24} className="text-nasr-dark" />
+                                 <h3 className={`text-xl font-serif font-bold ${isRTL ? 'font-arabic' : ''}`}>{t.sections.supply}</h3>
+                             </div>
+                             
+                             {/* Simple visual representation of demand vs supply */}
+                             <div className="space-y-6">
+                                 <div>
+                                     <div className="flex justify-between text-sm mb-1 font-bold text-gray-700">
+                                         <span>Global Demand (Forecast)</span>
+                                         <span className="text-nasr-blue">+4.2%</span>
+                                     </div>
+                                     <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                                         <div className="bg-nasr-blue h-full w-[75%] rounded-full"></div>
+                                     </div>
+                                 </div>
+                                 <div>
+                                     <div className="flex justify-between text-sm mb-1 font-bold text-gray-700">
+                                         <span>Global Production</span>
+                                         <span className="text-nasr-red">-1.5%</span>
+                                     </div>
+                                     <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                                         <div className="bg-nasr-red h-full w-[60%] rounded-full"></div>
+                                     </div>
+                                 </div>
+                                 <div className="pt-4 border-t border-gray-100">
+                                     <p className="text-xs text-gray-500 italic leading-relaxed">
+                                         * Supply deficit expected to widen in Q4 2025 due to energy curtailments in key smelting regions.
+                                     </p>
+                                 </div>
+                             </div>
+                         </div>
+
+                         {/* Saudi Focus Box */}
+                         <div className="bg-nasr-dark text-white p-6 rounded-sm shadow-lg relative overflow-hidden">
+                             <div className="absolute top-0 right-0 w-32 h-32 bg-nasr-accent opacity-10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                             
+                             <div className="flex items-center gap-3 mb-6 relative z-10">
+                                 <Globe2 size={24} className="text-nasr-accent" />
+                                 <h3 className={`text-xl font-serif font-bold ${isRTL ? 'font-arabic' : ''}`}>{t.sections.saudi}</h3>
+                             </div>
+                             
+                             <div className="space-y-4 relative z-10">
+                                 <div className="p-4 bg-white/5 rounded border border-white/10">
+                                     <div className="text-xs text-nasr-accent font-bold uppercase mb-1">Vision 2030</div>
+                                     <p className="text-sm text-gray-300">Targeting 50% renewable energy mix in industrial production by 2030.</p>
+                                 </div>
+                                 <div className="p-4 bg-white/5 rounded border border-white/10">
+                                     <div className="text-xs text-nasr-accent font-bold uppercase mb-1">Local Content</div>
+                                     <p className="text-sm text-gray-300">New regulations favor locally manufactured aluminum in government infrastructure projects.</p>
+                                 </div>
+                             </div>
+                         </div>
+                    </div>
+                </div>
             </div>
         </MotionDiv>
     );
@@ -1763,7 +1733,7 @@ const App: React.FC = () => {
 
   const goToGame = (e: React.MouseEvent) => {
     e.preventDefault();
-    setCurrentPage('game');
+    setCurrentPage('game'); // Keeping ID 'game' for internal routing simplicity, but points to Insights
     setMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -1809,7 +1779,7 @@ const App: React.FC = () => {
             </a>
             
             <a href="#game" onClick={goToGame} className={`hover:text-nasr-blue transition-colors relative group flex items-center gap-2 ${currentPage === 'game' ? 'text-nasr-blue' : ''}`}>
-               <Gamepad2 size={16} />
+               <Newspaper size={16} />
                {t.nav.game}
                <span className={`absolute -bottom-1 left-0 h-[2px] bg-nasr-blue transition-all duration-300 ${currentPage === 'game' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
             </a>
@@ -1868,7 +1838,7 @@ const App: React.FC = () => {
         ) : currentPage === 'sustainability' ? (
           <SustainabilityPage lang={lang} goBack={() => { setCurrentPage('home'); window.scrollTo(0,0); }} />
         ) : currentPage === 'game' ? (
-          <GamePage lang={lang} goBack={() => { setCurrentPage('home'); window.scrollTo(0,0); }} />
+          <IndustryInsightsPage lang={lang} goBack={() => { setCurrentPage('home'); window.scrollTo(0,0); }} />
         ) : (
           <>
             {/* Hero Section */}
