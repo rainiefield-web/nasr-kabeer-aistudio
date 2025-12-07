@@ -1554,6 +1554,7 @@ const IndustryInsightsPage: React.FC<{ lang: Language, goBack: () => void }> = (
     const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
     const [nextUpdate, setNextUpdate] = useState<Date | null>(null);
     const [isLoading, setIsLoading] = useState(true);
+    const [timeUntilUpdate, setTimeUntilUpdate] = useState<string>('');
 
     // Function to calculate relative time (e.g., "1 hour ago")
     const getRelativeTime = (timestamp: number): string => {
@@ -1631,20 +1632,56 @@ const IndustryInsightsPage: React.FC<{ lang: Language, goBack: () => void }> = (
         fetchNews();
         
         // Set up interval for auto-refresh (4 hours = 14400000 ms)
-        const interval = setInterval(fetchNews, 4 * 60 * 60 * 1000);
+        const interval = setInterval(() => {
+            fetchNews();
+        }, 4 * 60 * 60 * 1000);
         
         return () => clearInterval(interval);
-    }, [fetchNews]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []); // Only run once on mount
 
-    // Update relative times every minute
+    // Update relative times and countdown every minute
     useEffect(() => {
-        const timeInterval = setInterval(() => {
+        const updateTimes = () => {
             // Force re-render to update relative times
             setNewsData(prev => [...prev]);
-        }, 60000); // Update every minute
+            
+            // Update countdown to next update
+            if (nextUpdate) {
+                const now = new Date();
+                const diff = nextUpdate.getTime() - now.getTime();
+                
+                if (diff > 0) {
+                    const hours = Math.floor(diff / (1000 * 60 * 60));
+                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    
+                    if (lang === 'ar') {
+                        if (hours > 0) {
+                            setTimeUntilUpdate(`${hours}س ${minutes}د`);
+                        } else {
+                            setTimeUntilUpdate(`${minutes}د`);
+                        }
+                    } else {
+                        if (hours > 0) {
+                            setTimeUntilUpdate(`${hours}h ${minutes}m`);
+                        } else {
+                            setTimeUntilUpdate(`${minutes}m`);
+                        }
+                    }
+                } else {
+                    setTimeUntilUpdate(lang === 'ar' ? 'قريباً' : 'Soon');
+                }
+            }
+        };
+        
+        // Update immediately
+        updateTimes();
+        
+        // Then update every minute
+        const timeInterval = setInterval(updateTimes, 60000);
 
         return () => clearInterval(timeInterval);
-    }, []);
+    }, [nextUpdate, lang]);
 
     return (
         <MotionDiv 
@@ -1684,10 +1721,15 @@ const IndustryInsightsPage: React.FC<{ lang: Language, goBack: () => void }> = (
                             </div>
                             <div className="flex items-center gap-4">
                                 {nextUpdate && (
-                                    <div className="flex items-center gap-2 text-xs text-gray-500">
+                                    <div className="flex flex-col items-end text-xs text-gray-500">
                                         <span className="font-mono">
-                                            {t.sections.update} {nextUpdate.toLocaleTimeString(lang === 'ar' ? 'ar-SA' : 'en-US', { hour: '2-digit', minute: '2-digit' })}
+                                            {t.sections.update} {nextUpdate.toLocaleTimeString(lang === 'ar' ? 'ar-SA' : 'en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}
                                         </span>
+                                        {timeUntilUpdate && (
+                                            <span className="text-[10px] text-gray-400 mt-0.5">
+                                                ({timeUntilUpdate})
+                                            </span>
+                                        )}
                                     </div>
                                 )}
                                 <button
