@@ -66,7 +66,7 @@ const content = {
       statExport: "Export Target"
     },
     market: {
-        title: "LME Aluminum Spot",
+        title: "Aluminum Futures",
         live: "Live Connection",
         simulated: "Simulated Data",
         unit: "USD / Metric Ton",
@@ -386,38 +386,43 @@ const content = {
         mockNews: [
             {
                 category: "Global Market",
-                title: "LME Aluminum Stocks Hit 3-Month Low Amid Asian Demand Surge",
-                source: "Global Metal Bulletin",
-                time: "2 hours ago",
-                summary: "Inventory levels at LME warehouses have dropped significantly as manufacturing output in Southeast Asia ramps up post-quarter."
+                title: "Aluminum Prices Volatile as Global Energy Costs Rise",
+                source: "Bloomberg Commodities",
+                time: "1 hour ago",
+                summary: "LME aluminum futures are seeing increased volatility due to rising energy costs in key smelting regions affecting production output.",
+                url: "https://www.bloomberg.com/commodities"
             },
             {
                 category: "Saudi Arabia",
-                title: "Ma'aden Announces New Green Aluminum Initiative",
-                source: "Saudi Industrial News",
-                time: "3 hours ago",
-                summary: "Saudi Arabian Mining Company (Ma'aden) targets carbon neutrality by 2050, boosting the Kingdom's position in low-carbon metal exports."
+                title: "Ma'aden's New Aluminum Strategy Boosts Local Production",
+                source: "Saudi Press Agency",
+                time: "2 hours ago",
+                summary: "Saudi Mining Company (Ma'aden) announces new initiatives to increase domestic aluminum production capacity aligned with Vision 2030.",
+                url: "https://www.maaden.com.sa/"
             },
             {
                 category: "Technology",
-                title: "Breakthrough in Recycled Billet Casting Efficiency",
-                source: "TechMetal Daily",
-                time: "5 hours ago",
-                summary: "New European casting technology promises to reduce energy consumption in secondary aluminum production by up to 15%."
+                title: "Green Aluminum: The Shift to Low-Carbon Smelting",
+                source: "Metal Bulletin",
+                time: "4 hours ago",
+                summary: "Major producers are accelerating the adoption of inert anode technology to eliminate direct greenhouse gas emissions from the smelting process.",
+                url: "https://www.fastmarkets.com/commodities/industrial-minerals/"
             },
             {
                 category: "Global Market",
-                title: "European Automotive Sector Drives Demand for 6xxx Series",
-                source: "AutoAlloy Report",
+                title: "China's Aluminum Output Hits Record High in Q1",
+                source: "Reuters",
                 time: "Yesterday",
-                summary: "Shift towards lightweight EV chassis components is causing a supply squeeze for high-grade 6061 and 6063 alloy billets."
+                summary: "Despite environmental curbs, China's primary aluminum production reached new heights driven by strong demand from the EV sector.",
+                url: "https://www.reuters.com/commodities"
             },
             {
                 category: "Saudi Arabia",
-                title: "Dammam Industrial City Expands Logistics Capacity",
-                source: "Logistics KSA",
+                title: "Dammam Port Sees Record Aluminum Export Volumes",
+                source: "Mawani",
                 time: "Yesterday",
-                summary: "New port connectivity projects in Dammam will streamline aluminum export routes to Asian and European markets."
+                summary: "King Abdulaziz Port in Dammam reports a 15% increase in aluminum export handling efficiency following new logistics upgrades.",
+                url: "https://mawani.gov.sa/en/Pages/default.aspx"
             }
         ]
     },
@@ -466,7 +471,7 @@ const content = {
       statExport: "هدف التصدير"
     },
     market: {
-        title: "أسعار الألمنيوم LME",
+        title: "عقود الألمنيوم",
         live: "اتصال مباشر",
         simulated: "بيانات محاكاة",
         unit: "دولار / طن متري",
@@ -786,38 +791,43 @@ const content = {
         mockNews: [
             {
                 category: "السوق العالمي",
-                title: "مخزونات الألمنيوم في LME تصل لأدنى مستوى في 3 أشهر وسط زيادة الطلب الآسيوي",
-                source: "نشرة المعادن العالمية",
-                time: "منذ ساعتين",
-                summary: "انخفضت مستويات المخزون في مستودعات بورصة لندن للمعادن بشكل كبير مع زيادة الإنتاج الصناعي في جنوب شرق آسيا."
+                title: "تقلب أسعار الألمنيوم مع ارتفاع تكاليف الطاقة العالمية",
+                source: "بلومبيرغ للسلع",
+                time: "منذ ساعة",
+                summary: "تشهد العقود الآجلة للألمنيوم في بورصة لندن للمعادن تقلبات متزايدة بسبب ارتفاع تكاليف الطاقة في مناطق الصهر الرئيسية مما يؤثر على الإنتاج.",
+                url: "https://www.bloomberg.com/commodities"
             },
             {
                 category: "المملكة العربية السعودية",
-                title: "معادن تعلن عن مبادرة جديدة للألمنيوم الأخضر",
-                source: "أخبار الصناعة السعودية",
-                time: "منذ 3 ساعات",
-                summary: "تستهدف شركة التعدين العربية السعودية (معادن) الحياد الكربوني بحلول عام 2050، مما يعزز مكانة المملكة في صادرات المعادن منخفضة الكربون."
+                title: "استراتيجية الألمنيوم الجديدة لمعادن تعزز الإنتاج المحلي",
+                source: "وكالة الأنباء السعودية",
+                time: "منذ ساعتين",
+                summary: "تعلن شركة التعدين العربية السعودية (معادن) عن مبادرات جديدة لزيادة الطاقة الإنتاجية المحلية للألمنيوم تماشياً مع رؤية 2030.",
+                url: "https://www.maaden.com.sa/"
             },
             {
                 category: "التكنولوجيا",
-                title: "اختراق في كفاءة صب الكتل المعاد تدويرها",
-                source: "ديلي تيك ميتال",
-                time: "منذ 5 ساعات",
-                summary: "تكنولوجيا صب أوروبية جديدة تعد بتقليل استهلاك الطاقة في إنتاج الألمنيوم الثانوي بنسبة تصل إلى 15٪."
+                title: "الألمنيوم الأخضر: التحول إلى الصهر منخفض الكربون",
+                source: "نشرة المعادن",
+                time: "منذ 4 ساعات",
+                summary: "يسرع المنتجون الرئيسيون اعتماد تقنية الأنود الخامل للقضاء على انبعاثات الغازات الدفيئة المباشرة من عملية الصهر.",
+                url: "https://www.fastmarkets.com/commodities/industrial-minerals/"
             },
             {
                 category: "السوق العالمي",
-                title: "قطاع السيارات الأوروبي يقود الطلب على سلسلة 6xxx",
-                source: "تقرير أوتو ألوي",
+                title: "إنتاج الصين من الألمنيوم يصل إلى مستوى قياسي في الربع الأول",
+                source: "رويترز",
                 time: "الأمس",
-                summary: "التحول نحو مكونات شاسيه المركبات الكهربائية خفيفة الوزن يسبب ضغطاً على المعروض من سبائك 6061 و 6063 عالية الجودة."
+                summary: "على الرغم من القيود البيئية، وصل إنتاج الألمنيوم الأولي في الصين إلى مستويات جديدة مدفوعاً بطلب قوي من قطاع المركبات الكهربائية.",
+                url: "https://www.reuters.com/commodities"
             },
             {
                 category: "المملكة العربية السعودية",
-                title: "المدينة الصناعية بالدمام توسع قدراتها اللوجستية",
-                source: "لوجستيات المملكة",
+                title: "ميناء الدمام يشهد أحجام تصدير قياسية للألمنيوم",
+                source: "مواني",
                 time: "الأمس",
-                summary: "مشاريع الربط الجديدة بالموانئ في الدمام ستبسط طرق تصدير الألمنيوم إلى الأسواق الآسيوية والأوروبية."
+                summary: "أعلن ميناء الملك عبد العزيز بالدمام عن زيادة بنسبة 15٪ في كفاءة مناولة صادرات الألمنيوم بعد تحديثات لوجستية جديدة.",
+                url: "https://mawani.gov.sa/en/Pages/default.aspx"
             }
         ]
     },
@@ -1530,16 +1540,6 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
 const IndustryInsightsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBack }) => {
     const t = content[lang].insights;
     const isRTL = lang === 'ar';
-    const [currentTime, setCurrentTime] = useState(new Date());
-
-    useEffect(() => {
-        // Mock update time every minute just for clock display
-        const timer = setInterval(() => setCurrentTime(new Date()), 60000);
-        return () => clearInterval(timer);
-    }, []);
-
-    // Calculate "Next Update" time (current time + 4 hours)
-    const nextUpdate = new Date(currentTime.getTime() + 4 * 60 * 60 * 1000).toLocaleTimeString(lang === 'ar' ? 'ar-SA' : 'en-US', {hour: '2-digit', minute: '2-digit'});
 
     return (
         <MotionDiv 
@@ -1562,9 +1562,6 @@ const IndustryInsightsPage: React.FC<{ lang: Language, goBack: () => void }> = (
                 <div className="text-center max-w-3xl mx-auto mb-12">
                    <SectionHeading title={t.title} subtitle={t.subtitle} lang={lang} />
                    <p className="text-lg text-gray-600 leading-relaxed">{t.desc}</p>
-                   <div className="mt-4 flex items-center justify-center gap-2 text-sm text-nasr-blue font-bold uppercase tracking-widest bg-blue-50 py-2 px-4 rounded-full w-fit mx-auto">
-                       <Clock size={16} /> {t.sections.update} {nextUpdate}
-                   </div>
                 </div>
 
                 {/* Top Section: Real-Time Pricing */}
@@ -1582,7 +1579,17 @@ const IndustryInsightsPage: React.FC<{ lang: Language, goBack: () => void }> = (
                         
                         <div className="space-y-6">
                             {t.mockNews.map((news, idx) => (
-                                <div key={idx} className="bg-white p-6 rounded-sm shadow-sm border border-gray-100 hover:shadow-md transition-all hover:border-l-4 hover:border-l-nasr-blue group">
+                                <a 
+                                    key={idx} 
+                                    href={news.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block bg-white p-6 rounded-sm shadow-sm border border-gray-100 hover:shadow-md transition-all hover:border-l-4 hover:border-l-nasr-blue group cursor-pointer relative"
+                                >
+                                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity text-nasr-blue">
+                                        <ExternalLink size={16} />
+                                    </div>
+
                                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
                                         <div className="flex items-center gap-2">
                                             <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-gray-100 ${
@@ -1601,7 +1608,7 @@ const IndustryInsightsPage: React.FC<{ lang: Language, goBack: () => void }> = (
                                     <p className="text-gray-600 text-sm leading-relaxed">
                                         {news.summary}
                                     </p>
-                                </div>
+                                </a>
                             ))}
                         </div>
                     </div>
