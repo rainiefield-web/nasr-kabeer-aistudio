@@ -797,7 +797,7 @@ const MetalsPriceWidget: React.FC<{ lang: Language }> = ({ lang }) => {
   const [isSimulated, setIsSimulated] = useState(false);
   const t = content[lang].market;
 
-  const fetchPrice = async () => {
+  const fetchPrice = useCallback(async () => {
     try {
       setLoading(true);
       setError(false);
@@ -841,14 +841,16 @@ const MetalsPriceWidget: React.FC<{ lang: Language }> = ({ lang }) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [lang]);
 
   useEffect(() => {
     fetchPrice();
-    // Refresh every 30 minutes
-    const interval = setInterval(fetchPrice, 1800000); 
+    // Refresh every 30 minutes (30 * 60 * 1000 = 1800000 milliseconds)
+    const interval = setInterval(() => {
+      fetchPrice();
+    }, 1800000); 
     return () => clearInterval(interval);
-  }, []);
+  }, [fetchPrice]);
 
   return (
     <div className="w-full mt-6 bg-nasr-dark text-white rounded-sm overflow-hidden shadow-lg border border-gray-700">
