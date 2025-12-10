@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { StructureGrid, HeroScene } from './components/IndustrialScene';
-import { ProductCategoryGrid, ProductionProcessFlow, CapacityGrowthChart } from './components/Diagrams';
+import { ProductionProcessFlow, CapacityGrowthChart } from './components/Diagrams';
 import { 
   Menu, X, Download, MapPin, Mail, Linkedin, Twitter, ArrowRight, 
   CheckCircle2, Globe, FileText, Phone, ChevronLeft, Factory, 
@@ -13,13 +13,14 @@ import {
   Gamepad2, Trophy, RefreshCw, Play, ExternalLink, Recycle, Leaf, 
   Wind, Droplets, Truck, CircleDollarSign, HardHat, ClipboardCheck,
   PenTool, Beaker, Box, MoveRight, ArrowDown, TrendingUp, TrendingDown, AlertCircle, Loader2, Wifi, WifiOff,
-  Newspaper
+  Newspaper, Building2, Car
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Fix for Framer Motion types in strict environments
 const MotionDiv = motion.div as any;
 const MotionH2 = motion.h2 as any;
+const MotionImg = motion.img as any;
 
 // Add type definition for custom element
 declare global {
@@ -30,9 +31,17 @@ declare global {
   }
 }
 
+declare module 'react' {
+  namespace JSX {
+    interface IntrinsicElements {
+      'rssapp-list': any;
+    }
+  }
+}
+
 // --- TYPES & CONTENT ---
 type Language = 'en' | 'ar';
-type Page = 'home' | 'technology' | 'sustainability' | 'insights';
+type Page = 'home' | 'technology' | 'sustainability' | 'insights' | 'products';
 
 // Process Step Type
 interface ProcessStep {
@@ -74,13 +83,6 @@ const content = {
       statCapacity: "Tons/Year Capacity",
       statExport: "Export Target"
     },
-    market: {
-        title: "LME Aluminum Spot",
-        live: "Live Connection",
-        simulated: "Simulated Data",
-        unit: "USD / Metric Ton",
-        error: "Market Data Unavailable"
-    },
     park: {
       subtitle: "Industrial Ecosystem",
       title: "Everwin Industrial Park",
@@ -106,7 +108,8 @@ const content = {
     },
     products: {
       subtitle: "Product Portfolio",
-      title: "Engineered for Excellence"
+      title: "Engineered for Excellence",
+      desc: "Explore our comprehensive range of high-performance aluminum profiles designed for the most demanding applications."
     },
     process: {
       title: "Integrated Value Chain",
@@ -430,13 +433,6 @@ const content = {
       statCapacity: "طن/سنة طاقة إنتاجية",
       statExport: "هدف التصدير"
     },
-    market: {
-        title: "أسعار الألمنيوم LME",
-        live: "اتصال مباشر",
-        simulated: "بيانات محاكاة",
-        unit: "دولار / طن متري",
-        error: "بيانات السوق غير متوفرة"
-    },
     park: {
       subtitle: "نظام بيئي صناعي",
       title: "مجمع إيفروين الصناعي",
@@ -462,7 +458,8 @@ const content = {
     },
     products: {
       subtitle: "محفظة المنتجات",
-      title: "هندسة التميز"
+      title: "هندسة التميز",
+      desc: "استكشف مجموعتنا الشاملة من مقاطع الألمنيوم عالية الأداء المصممة لأكثر التطبيقات تطلباً."
     },
     process: {
       title: "سلسلة القيمة المتكاملة",
@@ -787,118 +784,6 @@ const SectionHeading = ({ title, subtitle, dark = false, lang }: { title: string
   </div>
 );
 
-// --- Real-time Metals.dev Widget ---
-const MetalsPriceWidget: React.FC<{ lang: Language }> = ({ lang }) => {
-  const [priceData, setPriceData] = useState<{ price: number; change_percent: number; updated: string } | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-  const [isSimulated, setIsSimulated] = useState(false);
-  const t = content[lang].market;
-
-  const fetchPrice = async () => {
-    try {
-      setLoading(true);
-      setError(false);
-      
-      const response = await fetch(
-        'https://api.metals.dev/v1/metal/spot?api_key=VTMD9Z6WQSGD3BR8ULNV745R8ULNV&metal=aluminum&currency=USD',
-        {
-            headers: { 'Accept': 'application/json' }
-        }
-      );
-      
-      const data = await response.json();
-      
-      if (data.status === 'success' && data.rate && data.rate.price) {
-        setPriceData({
-          price: data.rate.price,
-          change_percent: data.rate.change_percent,
-          updated: new Date().toLocaleTimeString(lang === 'ar' ? 'ar-SA' : 'en-US', {
-             hour: '2-digit', minute: '2-digit'
-          })
-        });
-        setIsSimulated(false);
-      } else {
-         throw new Error(data.error || 'API Error');
-      }
-    } catch (err) {
-      console.warn("API failed/blocked, switching to fallback simulation");
-      setIsSimulated(true);
-      // Fallback to simulation around 2900 to match user's screenshot
-      const basePrice = 2890;
-      const simulatedPrice = basePrice + (Math.random() * 20 - 10);
-      const simulatedChange = 0.49 + (Math.random() * 0.1 - 0.05); // Match approx screenshot change
-      
-      setPriceData({
-          price: simulatedPrice,
-          change_percent: simulatedChange,
-          updated: new Date().toLocaleTimeString(lang === 'ar' ? 'ar-SA' : 'en-US', {
-             hour: '2-digit', minute: '2-digit'
-          })
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchPrice();
-    // Refresh every 30 minutes
-    const interval = setInterval(fetchPrice, 1800000); 
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div className="w-full mt-6 bg-nasr-dark text-white rounded-sm overflow-hidden shadow-lg border border-gray-700">
-       <div className="flex items-center justify-between px-6 py-3 border-b border-gray-700 bg-gray-900/50">
-          <div className={`flex items-center gap-2 ${isSimulated ? 'text-orange-400' : 'text-nasr-accent'}`}>
-             <div className="relative flex h-3 w-3">
-               <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${isSimulated ? 'bg-orange-400' : 'bg-nasr-accent'}`}></span>
-               <span className={`relative inline-flex rounded-full h-3 w-3 ${isSimulated ? 'bg-orange-400' : 'bg-nasr-accent'}`}></span>
-             </div>
-             <div className="flex items-center gap-1">
-                 {isSimulated ? <WifiOff size={14} /> : <Wifi size={14} />}
-                 <span className="text-xs font-bold uppercase tracking-widest">{isSimulated ? t.simulated : t.live}</span>
-             </div>
-          </div>
-          <span className="text-gray-500 text-xs font-mono">{priceData ? priceData.updated : '--:--'}</span>
-       </div>
-       
-       <div className="p-6 flex flex-col items-center justify-center min-h-[140px]">
-          {loading && !priceData ? (
-             <div className="flex flex-col items-center gap-3 text-gray-400">
-                <Loader2 className="animate-spin" size={32} />
-                <span className="text-sm">Loading Market Data...</span>
-             </div>
-          ) : error ? (
-             <div className="flex flex-col items-center gap-2 text-nasr-red">
-                <AlertCircle size={32} />
-                <span className="text-sm font-bold">{t.error}</span>
-             </div>
-          ) : (
-             <>
-                <div className="text-sm text-gray-400 uppercase tracking-wider mb-2">{t.title}</div>
-                <div className="flex items-baseline gap-4">
-                   <span className="text-5xl font-mono font-bold text-white tracking-tighter">
-                      ${priceData?.price?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                   </span>
-                   {priceData?.change_percent !== undefined && (
-                     <div className={`flex items-center gap-1 text-lg font-bold ${priceData.change_percent >= 0 ? 'text-nasr-accent' : 'text-nasr-red'}`}>
-                        {priceData.change_percent >= 0 ? <TrendingUp size={20} /> : <TrendingDown size={20} />}
-                        <span>{priceData.change_percent > 0 ? '+' : ''}{priceData.change_percent.toFixed(2)}%</span>
-                     </div>
-                   )}
-                </div>
-                <div className="mt-3 flex items-center gap-2 text-gray-400 text-xs font-bold bg-gray-800 px-3 py-1 rounded-full">
-                   <span>{t.unit}</span>
-                </div>
-             </>
-          )}
-       </div>
-    </div>
-  );
-};
-
 // --- Integrated Route Diagram Component ---
 const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
   const [activeTab, setActiveTab] = useState<'core' | 'die' | 'powder' | 'strip'>('core');
@@ -1104,6 +989,176 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
     </div>
   );
 };
+
+// --- Products Page Component ---
+const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBack }) => {
+  const isRTL = lang === 'ar';
+  
+  const productData = {
+    en: [
+      {
+        id: 'arch',
+        title: "Architectural Profiles",
+        subtitle: "Construction & Infrastructure",
+        desc: "Meeting the demands of Saudi Arabia's mega-projects with high-performance profiles for skyscrapers and smart cities.",
+        items: ["Curtain Wall Systems", "Thermal Break Windows", "Structural Glazing", "Decorative Facades", "Sun Control Louvers"],
+        img: "https://images.pexels.com/photos/18729291/pexels-photo-18729291.jpeg",
+        icon: Building2
+      },
+      {
+        id: 'ind',
+        title: "Industrial Profiles",
+        subtitle: "Automation & Energy",
+        desc: "Precision engineering for the renewable energy sector and automated manufacturing lines.",
+        items: ["Solar Mounting Structures", "Heat Sinks & Cooling", "Automation Framing", "Modular Conveyors", "Electronic Enclosures"],
+        img: "https://images.pexels.com/photos/25285744/pexels-photo-25285744.jpeg",
+        icon: Factory
+      },
+      {
+        id: 'trans',
+        title: "Transportation Profiles",
+        subtitle: "Mobility & Aerospace",
+        desc: "Lightweight, high-strength alloys driving the future of EVs and rail transit in the Kingdom.",
+        items: ["EV Battery Trays", "Rail Transit Car Bodies", "Chassis Components", "Aerospace Interiors", "Marine Structures"],
+        img: "https://plus.unsplash.com/premium_photo-1661877074629-a74292667b72?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        icon: Car
+      }
+    ],
+    ar: [
+      {
+        id: 'arch',
+        title: "المقاطع المعمارية",
+        subtitle: "البناء والبنية التحتية",
+        desc: "تلبية متطلبات المشاريع الضخمة في المملكة العربية السعودية بمقاطع عالية الأداء لناطحات السحاب والمدن الذكية.",
+        items: ["أنظمة الجدران الستائرية", "نوافذ العزل الحراري", "التزجيج الهيكلي", "الواجهات الزخرفية", "كاسرات الشمس"],
+        img: "https://images.pexels.com/photos/18729291/pexels-photo-18729291.jpeg",
+        icon: Building2
+      },
+      {
+        id: 'ind',
+        title: "المقاطع الصناعية",
+        subtitle: "الأتمتة والطاقة",
+        desc: "هندسة دقيقة لقطاع الطاقة المتجددة وخطوط التصنيع الآلي.",
+        items: ["هياكل تثبيت الطاقة الشمسية", "المشتتات الحرارية والتبريد", "إطارات الأتمتة", "السيور الناقلة المعيارية", "حاويات الإلكترونيات"],
+        img: "https://images.pexels.com/photos/25285744/pexels-photo-25285744.jpeg",
+        icon: Factory
+      },
+      {
+        id: 'trans',
+        title: "مقاطع النقل",
+        subtitle: "التنقل والطيران",
+        desc: "سبائك خفيفة الوزن وعالية القوة تقود مستقبل المركبات الكهربائية والسكك الحديدية في المملكة.",
+        items: ["صواني بطاريات المركبات الكهربائية", "هياكل عربات السكك الحديدية", "مكونات الشاسيه", "التصميم الداخلي للطائرات", "الهياكل البحرية"],
+        img: "https://plus.unsplash.com/premium_photo-1661877074629-a74292667b72?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        icon: Car
+      }
+    ]
+  };
+
+  const currentData = productData[lang];
+  const t = content[lang].products;
+
+  return (
+    <MotionDiv 
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 50 }}
+      className={`min-h-screen bg-white ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}
+    >
+      {/* Sticky Header */}
+      <div className="container mx-auto px-6 mb-8 flex items-center justify-between">
+         <button onClick={goBack} className="flex items-center gap-2 text-nasr-blue hover:text-nasr-dark transition-colors font-bold uppercase text-sm tracking-wider">
+            <ChevronLeft size={20} className={isRTL ? "rotate-180" : ""} />
+            {content[lang].nav.back}
+         </button>
+         <div className="hidden md:block h-[1px] flex-1 bg-gray-200 mx-8"></div>
+         <AlxLogo />
+      </div>
+
+      <div className="container mx-auto px-6">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <MotionH2 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className={`font-serif font-bold mb-6 text-nasr-dark ${isRTL ? 'font-arabic text-4xl md:text-6xl' : 'text-4xl md:text-5xl'}`}
+          >
+            {t.title}
+          </MotionH2>
+          <p className="text-gray-600 text-lg">{t.desc}</p>
+        </div>
+
+        <div className="space-y-24">
+          {currentData.map((category, index) => (
+            <div key={category.id} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-20 items-center`}>
+              {/* Image Section */}
+              <MotionDiv 
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="w-full lg:w-1/2"
+              >
+                <div className="relative aspect-[4/3] rounded-sm overflow-hidden shadow-2xl group">
+                   <img 
+                    src={category.img} 
+                    alt={category.title} 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                   />
+                   <div className="absolute inset-0 bg-gradient-to-t from-nasr-dark/60 to-transparent opacity-60"></div>
+                   
+                   {/* Icon Overlay */}
+                   <div className={`absolute bottom-6 ${isRTL ? 'right-6' : 'left-6'} bg-white/90 backdrop-blur p-4 rounded-sm shadow-lg`}>
+                      <category.icon size={32} className="text-nasr-blue" />
+                   </div>
+                </div>
+              </MotionDiv>
+
+              {/* Text Content */}
+              <div className="w-full lg:w-1/2">
+                <MotionDiv
+                  initial={{ opacity: 0, x: index % 2 === 0 ? 30 : -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7 }}
+                >
+                  <span className="text-nasr-blue font-bold tracking-widest uppercase text-sm mb-2 block">
+                    {category.subtitle}
+                  </span>
+                  <h3 className={`font-serif text-3xl md:text-4xl font-bold text-nasr-dark mb-6 ${isRTL ? 'font-arabic' : ''}`}>
+                    {category.title}
+                  </h3>
+                  <p className={`text-lg text-gray-600 mb-8 leading-relaxed ${isRTL ? 'border-r-4 pr-6' : 'border-l-4 pl-6'} border-gray-200`}>
+                    {category.desc}
+                  </p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {category.items.map((item, i) => (
+                      <div key={i} className="flex items-center gap-3 bg-gray-50 p-3 rounded-sm border border-gray-100 hover:border-nasr-blue hover:bg-white transition-all duration-300">
+                        <CheckCircle2 size={18} className="text-nasr-accent shrink-0" />
+                        <span className="font-medium text-gray-800 text-sm">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </MotionDiv>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        {/* CTA */}
+        <div className="mt-24 text-center">
+            <button 
+              onClick={() => { goBack(); setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 100); }} 
+              className="inline-flex items-center gap-3 px-8 py-4 bg-nasr-dark text-white font-bold uppercase tracking-wider hover:bg-nasr-blue transition-colors rounded-sm"
+            >
+              {content[lang].nav.contact} <ArrowRight size={20} className={isRTL ? "rotate-180" : ""} />
+            </button>
+        </div>
+      </div>
+    </MotionDiv>
+  );
+};
+
 
 // --- Technology Page Component ---
 const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBack }) => {
@@ -1573,6 +1628,13 @@ const App: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const goToProducts = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setCurrentPage('products');
+    setMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleBrochureClick = () => {
     alert(lang === 'en' ? 'Coming Soon' : 'قريباً');
   };
@@ -1600,8 +1662,12 @@ const App: React.FC = () => {
               {t.nav.about}
               <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-nasr-blue transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="#products" onClick={(e) => scrollToSection(e, 'products')} className="hover:text-nasr-blue transition-colors relative group">
+            <a href="#products" onClick={goToProducts} className={`hover:text-nasr-blue transition-colors relative group ${currentPage === 'products' ? 'text-nasr-blue' : ''}`}>
               {t.nav.products}
+              <span className={`absolute -bottom-1 left-0 h-[2px] bg-nasr-blue transition-all duration-300 ${currentPage === 'products' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+            </a>
+            <a href="#phases" onClick={(e) => scrollToSection(e, 'phases')} className="hover:text-nasr-blue transition-colors relative group">
+              {t.nav.expansion}
               <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-nasr-blue transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a href="#technology" onClick={goToTechnology} className={`hover:text-nasr-blue transition-colors relative group ${currentPage === 'technology' ? 'text-nasr-blue' : ''}`}>
@@ -1655,7 +1721,7 @@ const App: React.FC = () => {
             className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center gap-8 text-2xl font-serif text-nasr-dark"
           >
               <a href="#about" onClick={(e) => scrollToSection(e, 'about')}>{t.nav.about}</a>
-              <a href="#products" onClick={(e) => scrollToSection(e, 'products')}>{t.nav.products}</a>
+              <a href="#products" onClick={goToProducts} className={currentPage === 'products' ? 'text-nasr-blue' : ''}>{t.nav.products}</a>
               <a href="#phases" onClick={(e) => scrollToSection(e, 'phases')}>{t.nav.expansion}</a>
               <a href="#technology" onClick={goToTechnology} className={currentPage === 'technology' ? 'text-nasr-blue' : ''}>{t.nav.technology}</a>
               <a href="#sustainability" onClick={goToSustainability} className={currentPage === 'sustainability' ? 'text-nasr-blue' : ''}>{t.nav.sustainability}</a>
@@ -1672,6 +1738,8 @@ const App: React.FC = () => {
           <SustainabilityPage lang={lang} goBack={() => { setCurrentPage('home'); window.scrollTo(0,0); }} />
         ) : currentPage === 'insights' ? (
           <IndustryInsightsPage lang={lang} goBack={() => { setCurrentPage('home'); window.scrollTo(0,0); }} />
+        ) : currentPage === 'products' ? (
+          <ProductsPage lang={lang} goBack={() => { setCurrentPage('home'); window.scrollTo(0,0); }} />
         ) : (
           <>
             {/* Hero Section */}
@@ -1712,7 +1780,7 @@ const App: React.FC = () => {
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-6">
-                     <a href="#products" onClick={(e) => scrollToSection(e, 'products')} className="group flex items-center justify-center gap-3 px-8 py-4 bg-white text-nasr-dark font-bold uppercase tracking-wider hover:bg-nasr-accent hover:text-white transition-all duration-300">
+                     <a href="#products" onClick={goToProducts} className="group flex items-center justify-center gap-3 px-8 py-4 bg-white text-nasr-dark font-bold uppercase tracking-wider hover:bg-nasr-accent hover:text-white transition-all duration-300">
                         {t.hero.btnProduct}
                         <ArrowRight size={20} className={`transition-transform ${isRTL ? 'group-hover:-translate-x-1 rotate-180' : 'group-hover:translate-x-1'}`} />
                      </a>
@@ -1745,9 +1813,6 @@ const App: React.FC = () => {
                             <div className="text-xs font-bold uppercase tracking-widest text-gray-500">{t.about.statExport}</div>
                           </div>
                        </div>
-
-                       {/* REAL-TIME LME MARKET WIDGET */}
-                       <MetalsPriceWidget lang={lang} />
                      </div>
                   </div>
                   <div className="relative">
@@ -1857,16 +1922,6 @@ const App: React.FC = () => {
                 </div>
             </section>
 
-            {/* Products Showcase */}
-            <section id="products" className="py-24 bg-gray-50">
-                <div className="container mx-auto px-6">
-                    <SectionHeading title={t.products.title} subtitle={t.products.subtitle} lang={lang} />
-                    <div className="mt-12 lg:h-[600px]">
-                        <ProductCategoryGrid lang={lang} />
-                    </div>
-                </div>
-            </section>
-
             {/* Process Flow */}
             <section className="py-24 bg-white border-t border-gray-100">
                 <div className="container mx-auto px-6">
@@ -1918,7 +1973,7 @@ const App: React.FC = () => {
                         <h4 className="text-white font-bold uppercase tracking-widest mb-8 text-sm">{t.footer.navTitle}</h4>
                         <ul className="space-y-4 text-sm">
                             <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="hover:text-nasr-accent transition-colors">{t.nav.about}</a></li>
-                            <li><a href="#products" onClick={(e) => scrollToSection(e, 'products')} className="hover:text-nasr-accent transition-colors">{t.nav.products}</a></li>
+                            <li><a href="#products" onClick={goToProducts} className="hover:text-nasr-accent transition-colors">{t.nav.products}</a></li>
                             <li><a href="#phases" onClick={(e) => scrollToSection(e, 'phases')} className="hover:text-nasr-accent transition-colors">{t.nav.expansion}</a></li>
                             <li><a href="#technology" onClick={goToTechnology} className="hover:text-nasr-accent transition-colors">{t.nav.technology}</a></li>
                             <li><a href="#sustainability" onClick={goToSustainability} className="hover:text-nasr-accent transition-colors">{t.nav.sustainability}</a></li>
