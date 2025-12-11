@@ -272,7 +272,16 @@ const content = {
             "Tolerance: Extremely tight controls.",
             "Surface Roughness: Achieved for specific applications."
           ]
-        }
+        },
+        {
+          title: "Extrusion Forming",
+          desc: "Creating complex cross-sections.",
+          details: [
+            "Methods: Direct, Indirect, and Hydrostatic extrusion.",
+            "Control: Precise ram speed, pressure, and temperature management.",
+            "Die Design: Specialized dies for intricate industrial shapes."
+          ]
+        },
       ],
       autoSteps: [
         {
@@ -1269,11 +1278,13 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
                  exit={{ opacity: 0, y: -20 }}
                  className="space-y-8"
                >
-                 {getSteps().map((step, idx) => (
+                 {getSteps().map((step, idx) => {
+                   const StepIcon = step.icon;
+                   return (
                     <div key={idx} className="bg-white p-8 rounded-sm shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 group">
                        <div className="flex items-start gap-6">
                           <div className="p-4 bg-gray-50 text-nasr-blue rounded-sm group-hover:bg-nasr-blue group-hover:text-white transition-colors duration-300">
-                             <step.icon size={32} />
+                             <StepIcon size={32} />
                           </div>
                           <div>
                              <h3 className="text-2xl font-serif text-nasr-dark mb-2">{step.title}</h3>
@@ -1289,7 +1300,7 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
                           </div>
                        </div>
                     </div>
-                 ))}
+                 )})}
                </MotionDiv>
              </AnimatePresence>
           </div>
@@ -1746,11 +1757,13 @@ const App: React.FC = () => {
             <header className="relative h-screen flex items-center overflow-hidden bg-nasr-dark">
               {/* Static Background Image */}
               <div className="absolute inset-0 z-0">
-                  <img 
-                      src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=2058&auto=format&fit=crop"
-                      alt="High-End Aluminum Profiles"
-                      className="w-full h-full object-cover opacity-90"
-                  />
+                  <div className="absolute inset-0 transform scale-110 -rotate-2 origin-center">
+                      <img 
+                          src="https://i.postimg.cc/fb6MLTJn/Gemini-Generated-Image-vxqzfcvxqzfcvxqz.png"
+                          alt="High-End Aluminum Profiles"
+                          className="w-full h-full object-cover opacity-90"
+                      />
+                  </div>
                   {/* Overlays for text readability - refined for better visibility */}
                   <div className="absolute inset-0 bg-gradient-to-r from-nasr-dark via-nasr-dark/70 to-transparent/20"></div>
               </div>
