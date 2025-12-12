@@ -28,25 +28,6 @@ declare global {
   }
 }
 
-declare module 'react' {
-  namespace JSX {
-    interface IntrinsicElements {
-      ambientLight: any;
-      pointLight: any;
-      spotLight: any;
-      directionalLight: any;
-      group: any;
-      mesh: any;
-      meshStandardMaterial: any;
-      meshPhysicalMaterial: any;
-      boxGeometry: any;
-      cylinderGeometry: any;
-      extrudeGeometry: any;
-      [elemName: string]: any;
-    }
-  }
-}
-
 // Represents an Aluminum Profile (Extrusion)
 const AluminumProfile = ({ position, rotation, scale = 1, type = 'tube' }: { position: [number, number, number]; rotation: [number, number, number]; scale?: number; type?: 'tube' | 'beam' }) => {
   const ref = useRef<THREE.Mesh>(null);

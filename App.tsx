@@ -13,7 +13,7 @@ import {
   Gamepad2, Trophy, RefreshCw, Play, ExternalLink, Recycle, Leaf, 
   Wind, Droplets, Truck, CircleDollarSign, HardHat, ClipboardCheck,
   PenTool, Beaker, Box, MoveRight, ArrowDown, TrendingUp, TrendingDown, AlertCircle, Loader2, Wifi, WifiOff,
-  Newspaper, Building2, Car
+  Newspaper, Building2, Car, Disc
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -24,14 +24,6 @@ const MotionImg = motion.img as any;
 
 // Add type definition for custom element
 declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'rssapp-list': any;
-    }
-  }
-}
-
-declare module 'react' {
   namespace JSX {
     interface IntrinsicElements {
       'rssapp-list': any;
@@ -272,16 +264,7 @@ const content = {
             "Tolerance: Extremely tight controls.",
             "Surface Roughness: Achieved for specific applications."
           ]
-        },
-        {
-          title: "Extrusion Forming",
-          desc: "Creating complex cross-sections.",
-          details: [
-            "Methods: Direct, Indirect, and Hydrostatic extrusion.",
-            "Control: Precise ram speed, pressure, and temperature management.",
-            "Die Design: Specialized dies for intricate industrial shapes."
-          ]
-        },
+        }
       ],
       autoSteps: [
         {
@@ -631,7 +614,16 @@ const content = {
             "التفاوت: ضوابط ضيقة للغاية.",
             "خشونة السطح: تتحقق لتطبيقات محددة."
           ]
-        }
+        },
+        {
+          title: "Extrusion Forming",
+          desc: "Creating complex cross-sections.",
+          details: [
+            "Methods: Direct, Indirect, and Hydrostatic extrusion.",
+            "Control: Precise ram speed, pressure, and temperature management.",
+            "Die Design: Specialized dies for intricate industrial shapes."
+          ]
+        },
       ],
       autoSteps: [
         {
@@ -1072,15 +1064,18 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
       initial={{ opacity: 0, x: 50 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 50 }}
-      className={`min-h-screen bg-white ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}
+      className={`min-h-screen bg-gradient-to-b from-gray-50 to-gray-200 ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}
     >
-      {/* Sticky Header */}
+      {/* Sticky Header with "Alumine" Style Button */}
       <div className="container mx-auto px-6 mb-8 flex items-center justify-between">
-         <button onClick={goBack} className="flex items-center gap-2 text-nasr-blue hover:text-nasr-dark transition-colors font-bold uppercase text-sm tracking-wider">
-            <ChevronLeft size={20} className={isRTL ? "rotate-180" : ""} />
+         <button 
+           onClick={goBack} 
+           className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-md border border-gray-200 text-nasr-blue hover:text-nasr-dark hover:shadow-lg transition-all font-bold uppercase text-xs tracking-wider group"
+         >
+            <ChevronLeft size={16} className={`transition-transform ${isRTL ? "rotate-180 group-hover:translate-x-1" : "group-hover:-translate-x-1"}`} />
             {content[lang].nav.back}
          </button>
-         <div className="hidden md:block h-[1px] flex-1 bg-gray-200 mx-8"></div>
+         <div className="hidden md:block h-[1px] flex-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent mx-8"></div>
          <AlxLogo />
       </div>
 
@@ -1089,78 +1084,103 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
           <MotionH2 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className={`font-serif font-bold mb-6 text-nasr-dark ${isRTL ? 'font-arabic text-4xl md:text-6xl' : 'text-4xl md:text-5xl'}`}
+            className={`font-serif font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-b from-gray-700 to-gray-900 drop-shadow-sm ${isRTL ? 'font-arabic text-4xl md:text-6xl' : 'text-4xl md:text-5xl'}`}
           >
             {t.title}
           </MotionH2>
-          <p className="text-gray-600 text-lg">{t.desc}</p>
+          <p className="text-gray-600 text-lg font-medium">{t.desc}</p>
         </div>
 
-        <div className="space-y-24">
+        <div className="space-y-20">
           {currentData.map((category, index) => (
-            <div key={category.id} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-20 items-center`}>
-              {/* Image Section */}
-              <MotionDiv 
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className="w-full lg:w-1/2"
-              >
-                <div className="relative aspect-[4/3] rounded-sm overflow-hidden shadow-2xl group">
-                   <img 
-                    src={category.img} 
-                    alt={category.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                   />
-                   <div className="absolute inset-0 bg-gradient-to-t from-nasr-dark/60 to-transparent opacity-60"></div>
-                   
-                   {/* Icon Overlay */}
-                   <div className={`absolute bottom-6 ${isRTL ? 'right-6' : 'left-6'} bg-white/90 backdrop-blur p-4 rounded-sm shadow-lg`}>
-                      <category.icon size={32} className="text-nasr-blue" />
-                   </div>
-                </div>
-              </MotionDiv>
-
-              {/* Text Content */}
-              <div className="w-full lg:w-1/2">
-                <MotionDiv
-                  initial={{ opacity: 0, x: index % 2 === 0 ? 30 : -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.7 }}
-                >
-                  <span className="text-nasr-blue font-bold tracking-widest uppercase text-sm mb-2 block">
-                    {category.subtitle}
-                  </span>
-                  <h3 className={`font-serif text-3xl md:text-4xl font-bold text-nasr-dark mb-6 ${isRTL ? 'font-arabic' : ''}`}>
-                    {category.title}
-                  </h3>
-                  <p className={`text-lg text-gray-600 mb-8 leading-relaxed ${isRTL ? 'border-r-4 pr-6' : 'border-l-4 pl-6'} border-gray-200`}>
-                    {category.desc}
-                  </p>
+            <MotionDiv 
+              key={category.id} 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              {/* Industrial Panel Container */}
+              <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl border border-white p-6 lg:p-10 relative overflow-hidden group">
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {category.items.map((item, i) => (
-                      <div key={i} className="flex items-center gap-3 bg-gray-50 p-3 rounded-sm border border-gray-100 hover:border-nasr-blue hover:bg-white transition-all duration-300">
-                        <CheckCircle2 size={18} className="text-nasr-accent shrink-0" />
-                        <span className="font-medium text-gray-800 text-sm">{item}</span>
+                  {/* Decorative Rivets/Screws in Corners */}
+                  <div className="absolute top-4 left-4 w-3 h-3 rounded-full bg-gradient-to-br from-gray-300 to-gray-500 shadow-inner border border-gray-400"></div>
+                  <div className="absolute top-4 right-4 w-3 h-3 rounded-full bg-gradient-to-br from-gray-300 to-gray-500 shadow-inner border border-gray-400"></div>
+                  <div className="absolute bottom-4 left-4 w-3 h-3 rounded-full bg-gradient-to-br from-gray-300 to-gray-500 shadow-inner border border-gray-400"></div>
+                  <div className="absolute bottom-4 right-4 w-3 h-3 rounded-full bg-gradient-to-br from-gray-300 to-gray-500 shadow-inner border border-gray-400"></div>
+
+                  <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-16 items-center relative z-10`}>
+                    
+                    {/* Image "Viewport" */}
+                    <div className="w-full lg:w-1/2">
+                      <div className="relative aspect-[4/3] rounded-lg overflow-hidden border-4 border-gray-200 shadow-inner bg-gray-900">
+                         {/* Bezel Reflection */}
+                         <div className="absolute top-0 left-0 right-0 h-[1px] bg-white/50 z-20"></div>
+                         
+                         <img 
+                          src={category.img} 
+                          alt={category.title} 
+                          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+                         />
+                         
+                         {/* Scanline Overlay */}
+                         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] opacity-10 pointer-events-none z-10"></div>
+                         
+                         {/* Icon Badge */}
+                         <div className={`absolute bottom-4 ${isRTL ? 'right-4' : 'left-4'} w-12 h-12 bg-white/90 backdrop-blur rounded-full flex items-center justify-center shadow-lg border border-gray-300 z-20`}>
+                            <category.icon size={24} className="text-nasr-blue" />
+                         </div>
                       </div>
-                    ))}
+                    </div>
+
+                    {/* Text "Control Panel" */}
+                    <div className="w-full lg:w-1/2">
+                        <div className="flex flex-col h-full justify-center">
+                            <span className="text-nasr-blue font-bold tracking-[0.2em] uppercase text-xs mb-3 flex items-center gap-2">
+                               <div className="w-8 h-[2px] bg-nasr-blue"></div>
+                               {category.subtitle}
+                            </span>
+                            
+                            <h3 className={`font-serif text-3xl md:text-4xl font-bold text-gray-800 mb-6 ${isRTL ? 'font-arabic' : ''}`}>
+                              {category.title}
+                            </h3>
+                            
+                            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                              {category.desc}
+                            </p>
+                            
+                            {/* Metallic Tags List */}
+                            <div className="flex flex-wrap gap-3">
+                              {category.items.map((item, i) => (
+                                <div 
+                                  key={i} 
+                                  className="px-4 py-2 bg-gradient-to-b from-gray-50 to-gray-200 border border-gray-300 rounded-md shadow-sm text-gray-700 text-sm font-semibold flex items-center gap-2 hover:border-nasr-blue hover:text-nasr-blue transition-colors cursor-default"
+                                >
+                                  <div className="w-1.5 h-1.5 rounded-full bg-nasr-silver border border-gray-400"></div>
+                                  {item}
+                                </div>
+                              ))}
+                            </div>
+                        </div>
+                    </div>
+
                   </div>
-                </MotionDiv>
               </div>
-            </div>
+            </MotionDiv>
           ))}
         </div>
         
-        {/* CTA */}
+        {/* CTA Button - Industrial Style */}
         <div className="mt-24 text-center">
             <button 
               onClick={() => { goBack(); setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 100); }} 
-              className="inline-flex items-center gap-3 px-8 py-4 bg-nasr-dark text-white font-bold uppercase tracking-wider hover:bg-nasr-blue transition-colors rounded-sm"
+              className="relative inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-b from-nasr-dark to-gray-900 text-white font-bold uppercase tracking-wider rounded-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border-t border-gray-700"
             >
-              {content[lang].nav.contact} <ArrowRight size={20} className={isRTL ? "rotate-180" : ""} />
+              <span>{content[lang].nav.contact}</span>
+              <ArrowRight size={20} className={isRTL ? "rotate-180" : ""} />
+              {/* Button Shine */}
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
             </button>
         </div>
       </div>
