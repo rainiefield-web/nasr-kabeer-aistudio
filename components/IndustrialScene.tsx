@@ -23,24 +23,7 @@ declare global {
       boxGeometry: any;
       cylinderGeometry: any;
       extrudeGeometry: any;
-    }
-  }
-}
-
-declare module 'react' {
-  namespace JSX {
-    interface IntrinsicElements {
-      ambientLight: any;
-      pointLight: any;
-      spotLight: any;
-      directionalLight: any;
-      group: any;
-      mesh: any;
-      meshStandardMaterial: any;
-      meshPhysicalMaterial: any;
-      boxGeometry: any;
-      cylinderGeometry: any;
-      extrudeGeometry: any;
+      [elemName: string]: any;
     }
   }
 }

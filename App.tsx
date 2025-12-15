@@ -13,7 +13,7 @@ import {
   Gamepad2, Trophy, RefreshCw, Play, ExternalLink, Recycle, Leaf, 
   Wind, Droplets, Truck, CircleDollarSign, HardHat, ClipboardCheck,
   PenTool, Beaker, Box, MoveRight, ArrowDown, TrendingUp, TrendingDown, AlertCircle, Loader2, Wifi, WifiOff,
-  Newspaper, Building2, Car
+  Newspaper, Building2, Car, Disc, Aperture, Cog
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -24,14 +24,6 @@ const MotionImg = motion.img as any;
 
 // Add type definition for custom element
 declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'rssapp-list': any;
-    }
-  }
-}
-
-declare module 'react' {
   namespace JSX {
     interface IntrinsicElements {
       'rssapp-list': any;
@@ -76,7 +68,7 @@ const content = {
     },
     about: {
       subtitle: "Strategic Overview",
-      title: "The Foundation of Modern Industry",
+      title: "Beyond Extrusion. Engineering Excellence.",
       p1: "Nasr Kabeer Aluminum Co., Ltd. (NKAC) is a premier manufacturer of high-performance aluminum extrusions, strategically positioned in the Kingdom of Saudi Arabia to serve global industrial and transportation sectors.",
       p2: "We specialize in a diverse, high-end portfolio, ranging from advanced architectural systems to large-scale profiles for industrial and transportation applications, backed by a total designed capacity of 200,000 tons per year. Our operations are anchored by a state-of-the-art facility, utilizing large-tonnage extrusion presses and CNC precision machining to ensure superior strength-to-weight ratios and complex profile geometries.",
       p3: "We uphold the highest international benchmarks, certified to ISO 9001, ISO 14001, and ISO 45001, reflecting our unwavering commitment to quality, sustainability, and safety. Aligned with Saudi Vision 2030, NKAC is dedicated to driving local value creation and supporting export diversification for both domestic and international markets.",
@@ -272,16 +264,7 @@ const content = {
             "Tolerance: Extremely tight controls.",
             "Surface Roughness: Achieved for specific applications."
           ]
-        },
-        {
-          title: "Extrusion Forming",
-          desc: "Creating complex cross-sections.",
-          details: [
-            "Methods: Direct, Indirect, and Hydrostatic extrusion.",
-            "Control: Precise ram speed, pressure, and temperature management.",
-            "Die Design: Specialized dies for intricate industrial shapes."
-          ]
-        },
+        }
       ],
       autoSteps: [
         {
@@ -409,356 +392,6 @@ const content = {
       privacy: "Privacy Policy",
       terms: "Terms of Use",
       park: "Everwin Industrial Park"
-    }
-  },
-  ar: {
-    nav: {
-      about: "عن الشركة",
-      products: "المنتجات",
-      expansion: "التوسع",
-      technology: "التقنية",
-      sustainability: "الاستدامة",
-      insights: "رؤى الصناعة",
-      contact: "تواصل معنا",
-      back: "العودة للرئيسية"
-    },
-    hero: {
-      vision: "شريك رؤية 2030",
-      titleLine1: "صياغة",
-      titleLine2: "التميز",
-      titleLine3: "في كل",
-      desc: "منشأة تصنيع عالمية المستوى في مجمع إيفروين الصناعي بالمدينة الصناعية الثالثة بالدمام، تنتج 200,000 طن من المقاطع عالية الجودة للقطاعات المعمارية والصناعية وقطاع النقل.",
-      btnProduct: "اكتشف منتجاتنا",
-      btnProfile: "الملف التعريفي",
-      btnTech: "تقنياتنا",
-      scroll: "تمرير"
-    },
-    about: {
-      subtitle: "نظرة استراتيجية",
-      title: "أساس الصناعة الحديثة",
-      p1: "شركة نصر كبير للألمنيوم المحدودة (NKAC) هي شركة رائدة في تصنيع مقاطع الألمنيوم عالية الأداء، وتتمتع بموقع استراتيجي في المملكة العربية السعودية لخدمة القطاعات الصناعية وقطاع النقل عالمياً.",
-      p2: "نحن متخصصون في محفظة متنوعة وعالية الجودة، تتراوح من الأنظمة المعمارية المتقدمة إلى المقاطع واسعة النطاق للتطبيقات الصناعية والنقل، مدعومة بطاقة تصميمية إجمالية تبلغ 200,000 طن سنوياً. ترتكز عملياتنا على منشأة حديثة تستخدم مكابس بثق ذات حمولة كبيرة وآلات تشغيل دقيقة CNC لضمان نسب قوة إلى وزن فائقة وهندسة مقاطع معقدة.",
-      p3: "نحن نلتزم بأعلى المعايير الدولية، وحاصلون على شهادات ISO 9001 و ISO 14001 و ISO 45001، مما يعكس التزامنا الراسخ بالجودة والاستدامة والسلامة. تماشياً مع رؤية السعودية 2030، تكرس NKAC جهودها لدفع عجلة خلق القيمة المحلية ودعم تنويع الصادرات لكل من الأسواق المحلية والدولية.",
-      statCapacity: "طن/سنة طاقة إنتاجية",
-      statExport: "هدف التصدير"
-    },
-    park: {
-      subtitle: "نظام بيئي صناعي",
-      title: "مجمع إيفروين الصناعي",
-      desc: "تعمل شركة نصر كبير للألمنيوم داخل مجمع إيفروين الصناعي، وهو مركز صناعي متطور في المدينة الصناعية الثالثة بالدمام، يوفر بنية تحتية عالمية المستوى للتصنيع المتقدم.",
-      link: "زيارة موقع المجمع"
-    },
-    phases: {
-      subtitle: "خارطة الطريق للنمو",
-      title: "التوسع الصناعي المرحلي",
-      desc: "نهج مدروس للهيمنة على السوق، يتدرج من الأساسيات المعمارية إلى مكونات النقل المتقدمة.",
-      p1Title: "الأساس المعماري",
-      p1Desc: "تأسيس طاقة إنتاجية بـ 50,000 طن تركز على الجدران الستائرية الراقية والنوافذ والقطاعات الإنشائية لمشاريع نيوم والبحر الأحمر.",
-      p1Item1: "واجهات راقية",
-      p1Item2: "أنظمة العزل الحراري",
-      p2Title: "التنوع الصناعي",
-      p2Desc: "توسع إلى 100,000 طن بإضافة قدرات صناعية للأتمتة وأنظمة تثبيت الطاقة الشمسية والآلات الثقيلة.",
-      p2Item1: "إطارات الطاقة الشمسية",
-      p2Item2: "قطاعات الأتمتة",
-      p3Title: "التنقل والنقل",
-      p3Desc: "التوسع النهائي إلى 200,000 طن مستهدفاً قطاعات السيارات (المركبات الكهربائية) والسكك الحديدية بقطاعات ضخمة عالية القوة.",
-      p3Item1: "صواني بطاريات السيارات الكهربائية",
-      p3Item2: "هياكل السكك الحديدية"
-    },
-    products: {
-      subtitle: "محفظة المنتجات",
-      title: "هندسة التميز",
-      desc: "استكشف مجموعتنا الشاملة من مقاطع الألمنيوم عالية الأداء المصممة لأكثر التطبيقات تطلباً."
-    },
-    process: {
-      title: "سلسلة القيمة المتكاملة",
-      desc: "تحكم داخلي كامل من الصب إلى التشطيب يضمن جودة فائقة وتتبعاً دقيقاً."
-    },
-    techRoute: {
-        title: "مسار تقني متكامل",
-        subtitle: "التكامل الرأسي",
-        tabs: {
-            core: "العملية الأساسية",
-            die: "تصنيع القوالب (ملحق أ)",
-            powder: "طلاء البودرة (ملحق ب)",
-            strip: "شرائط العزل (ملحق ج)"
-        },
-        core: {
-            title: "الجزء الأول: تصنيع مقاطع الألمنيوم الأساسية",
-            desc: "التدفق المركزي والمتسلسل للإنتاج من السبائك الخام إلى المقطع النهائي.",
-            steps: [
-                { id: "1", title: "الصب (الكتل)", desc: "الصهر عند 690-720 درجة مئوية والصب المستمر لكتل عالية الجودة." },
-                { id: "2", title: "البثق (التشكيل)", desc: "تسخين الكتل (450-500 درجة مئوية) والتشكيل الدقيق بالمكبس." },
-                { id: "3", title: "التقوية", desc: "المعالجة الحرارية والتقادم (T6/T7 عند 530-540 درجة مئوية)." },
-                { id: "4", title: "المعالجة السطحية", desc: "طلاء البودرة، الأنودة، أو PVDF للجماليات والحماية." },
-                { id: "5", title: "التشطيب والجودة", desc: "تشغيل CNC، تجميع العزل الحراري وفحص ثلاثي الأبعاد." }
-            ]
-        },
-        auxA: {
-            title: "الجزء الثاني-أ: تصنيع القوالب داخلياً",
-            desc: "يصنع القوالب المخصصة المستخدمة في الخطوة 2 (البثق).",
-            steps: [
-                "التصميم والمحاكاة (CAD)",
-                "تحضير فولاذ الأدوات H13",
-                "تشغيل CNC دقيق",
-                "المعالجة الحرارية (تصلب)",
-                "تلميع (EDM)"
-            ],
-            connection: "يورد القوالب للبثق"
-        },
-        auxB: {
-            title: "الجزء الثاني-ب: إنتاج طلاء البودرة داخلياً",
-            desc: "ينتج البودرة المستخدمة في الخطوة 4 (السطح).",
-            steps: [
-                "تحضير المواد الخام (الراتنجات)",
-                "البثق الساخن والتشتت",
-                "التبريد والتكسير",
-                "الطحن والغربلة",
-                "اختبار الجودة"
-            ],
-            connection: "يورد البودرة للسطح"
-        },
-        auxC: {
-            title: "الجزء الثاني-ج: إنتاج شرائط العزل الحراري",
-            desc: "ينتج شرائط عازلة تستخدم في الخطوة 5 (التشطيب).",
-            steps: [
-                "التوريد (PA66 + GF)",
-                "التركيب والصهر",
-                "بثق الشرائط",
-                "التبريد والمعايرة",
-                "القطع والفحص"
-            ],
-            connection: "يورد الشرائط للتجميع"
-        },
-    },
-    techPage: {
-      title: "المسار التقني المتقدم",
-      subtitle: "التصنيع الدقيق",
-      desc: "نحن نوظف مسارات تقنية متميزة ومحسنة للتطبيقات المعمارية والصناعية والسيارات، مما يضمن تلبية كل مقطع للمعايير الدولية الصارمة.",
-      tabs: {
-        arch: "معماري",
-        ind: "صناعي",
-        auto: "سيارات"
-      },
-      archSteps: [
-        {
-          title: "معالجة المواد الخام",
-          desc: "سبائك دقيقة وصب كتل.",
-          details: [
-            "الصهروالصب: صهر سبائك خام مع عناصر دقيقة (مغنيسيوم، سيليكون).",
-            "صب الكتل: تقنيات صب حديثة لهيكل حبيبي موحد.",
-            "تحكم داخلي في السبائك: تخصيص للقوة الهيكلية."
-          ]
-        },
-        {
-          title: "تصنيع القوالب داخلياً",
-          desc: "تشغيل CNC متقدم للحلول المخصصة.",
-          details: [
-            "دورات تصميم أسرع وتحكم أفضل في التكلفة.",
-            "حلول مخصصة للمقاطع المعقدة.",
-            "تصنيع عالي الدقة يضمن تفاوتات ضيقة."
-          ]
-        },
-        {
-          title: "عملية البثق",
-          desc: "تشكيل عالي الدقة للمقاطع المعقدة.",
-          details: [
-            "تسخين الكتل: تسخين لدرجات حرارة دقيقة.",
-            "بثق عالي الدقة: محسن لإطارات النوافذ والجدران الستائرية.",
-            "التبريد: تبريد فوري بالهواء/الماء لتثبيت الخواص الميكانيكية."
-          ]
-        },
-        {
-          title: "المعالجة السطحية",
-          desc: "تشطيبات متينة للبيئات القاسية.",
-          details: [
-            "طلاء البودرة: رش الكهروستاتيكي لتشطيبات مقاومة للطقس.",
-            "الأنودة: تعزيز مقاومة التآكل والجاذبية الجمالية.",
-            "طلاء PVDF: فلوروكربون لمقاومة فائقة في البيئات الصعبة."
-          ]
-        },
-        {
-          title: "التجميع والملحقات",
-          desc: "تكامل ذو قيمة مضافة.",
-          details: [
-            "شرائط العزل الحراري: تنتج داخلياً لكفاءة الطاقة.",
-            "التكامل: توافق سلس مع مكونات الزجاج والأبواب."
-          ]
-        }
-      ],
-      indSteps: [
-        {
-          title: "اختيار المواد الخام",
-          desc: "ألمنيوم عالي النقاء للاحتياجات الصناعية.",
-          details: [
-            "نقاء > 99.7٪.",
-            "سبائك: 6061، 6063، 5052، 7075.",
-            "تركيبات مخصصة للمتطلبات الصناعية."
-          ]
-        },
-        {
-          title: "الصهروالصب",
-          desc: "تقنيات تكرير متقدمة.",
-          details: [
-            "التحكم في الحرارة: 690-720 درجة مئوية.",
-            "التكرير: تكرير التدفق، تفريغ الغاز، التحريك الكهرومغناطيسي.",
-            "النتيجة: قاعدة منصهرة عالية الجودة."
-          ]
-        },
-        {
-          title: "تشكيل البثق",
-          desc: "إنشاء مقاطع عرضية معقدة.",
-          details: [
-            "الطرق: بثق مباشر، غير مباشر، وهيدروستاتيكي.",
-            "التحكم: إدارة دقيقة لسرعة المكبس والضغط.",
-            "تصميم القوالب: قوالب متخصصة للأشكال الصناعية."
-          ]
-        },
-        {
-          title: "المعالجة الحرارية",
-          desc: "تعزيز الخواص الميكانيكية.",
-          details: [
-            "معالجة حرارية للمحلول: 530-540 درجة مئوية.",
-            "التقادم: تقادم اصطناعي لتعزيز القوة (T6/T7).",
-            "النتيجة: سلامة هيكلية للتطبيقات الصعبة."
-          ]
-        },
-        {
-          title: "التشغيل الدقيق",
-          desc: "تلبية المواصفات الدقيقة.",
-          details: [
-            "تقنيات CNC: القطع، الحفر، الطحن.",
-            "التفاوت: ضوابط ضيقة للغاية.",
-            "خشونة السطح: تتحقق لتطبيقات محددة."
-          ]
-        }
-      ],
-      autoSteps: [
-        {
-          title: "تطوير السبائك والصب",
-          desc: "مصممة لمقاومة التصادم والقوة العالية.",
-          details: [
-            "سلسلة 6xxx و 7xxx المخصصة: مطورة لتحقيق أفضل نسب قوة إلى وزن.",
-            "التحكم في الشوائب: رقابة صارمة على مستويات الحديد (Fe) لضمان الليونة لامتصاص طاقة التصادم.",
-            "التجانس: هيكل موحد للكتل لمنع عيوب البثق اللاحقة."
-          ]
-        },
-        {
-          title: "البثق الدقيق",
-          desc: "عملية متساوية الحرارة لخواص متسقة.",
-          details: [
-            "بثق متعدد الفتحات: إنشاء مقاطع مجوفة معقدة لتبريد البطاريات والصلابة الهيكلية.",
-            "التحكم المتساوي الحرارة: الحفاظ على سرعة خروج ودرجة حرارة ثابتة لضمان تجانس الخواص الميكانيكية.",
-            "التبريد المتدرج: تبريد دقيق برذاذ الماء للتحكم في التشوه مع تثبيت البنية المجهرية."
-          ]
-        },
-        {
-          title: "التشكيل المتقدم",
-          desc: "تشكيل بدون المساس بالسلامة الهيكلية.",
-          details: [
-            "الثني بالتمدد ثلاثي الأبعاد: ثني المقاطع لتناسب انحناءات المركبة الديناميكية دون التواء.",
-            "التشكيل الهيدروليكي: استخدام سائل عالي الضغط لتشكيل هندسة معقدة.",
-            "المعايرة: تمدد ما بعد البثق لتحقيق تفاوتات استقامة فائقة."
-          ]
-        },
-        {
-          title: "تشغيل CNC والتصنيع",
-          desc: "دقة خماسية المحاور لتكامل المكونات.",
-          details: [
-            "طحن خماسي المحاور (5-Axis): لنقاط التثبيت المعقدة وميزات صينية البطارية.",
-            "الحفر والتثقيب الآلي: خلايا روبوتية عالية السرعة لكفاءة الإنتاج الضخم.",
-            "تفاوتات ضيقة: الحفاظ على دقة +/- 0.05 مم لملاءمة التجميع."
-          ]
-        },
-        {
-          title: "معالجة حرارية متخصصة",
-          desc: "موازنة القوة وامتصاص الطاقة.",
-          details: [
-            "تقادم محسن للتصادم: دورات T6/T7 محددة لتعظيم امتصاص الطاقة (الليونة) جنباً إلى جنب مع قوة الخضوع.",
-            "تصلب الخبز: سبائك مصممة لاكتساب قوتها النهائية أثناء عملية خبز الطلاء."
-          ]
-        },
-        {
-          title: "الربط والتجميع",
-          desc: "الجيل القادم من تقنيات الربط لهياكل المركبات الكهربائية.",
-          details: [
-            "لحام الاحتكاك (FSW): إنشاء وصلات مانعة للتسرب وعالية القوة لحاويات بطاريات السيارات الكهربائية.",
-            "اللحام بالليزر: مدخلات حرارة منخفضة لتقليل التشوه.",
-            "الربط الهيكلي: تحضير السطح لتطبيقات المواد اللاصقة المتقدمة."
-          ]
-        }
-      ]
-    },
-    sustainability: {
-      title: "مستقبل مستدام",
-      subtitle: "قيمنا الجوهرية",
-      values: {
-        p1: "في شركة نصر كبير، الاستدامة ليست مجرد ميزة إضافية — بل هي جوهر أسلوبنا في العمل. إنها توجه هويتنا وكيفية عملنا كل يوم.",
-        p2: "عندما نصمم ونطور منتجاتنا، نركز على ابتكار حلول تعود بالنفع على عملائنا وشركائنا وموظفينا ومجتمعاتنا المحلية. نحن نؤمن بأن التقدم الحقيقي يتحقق فقط عندما تكون الاستدامة هي المحرك لكل قرار نتخذه.",
-        p3: "تدعم قيمنا الجوهرية هذا الالتزام، وتشكل ثقافتنا وتلهمنا لبناء مستقبل مسؤول ومستدام."
-      },
-      stats: [
-        { value: "95%", label: "توفير الطاقة", sub: "مقارنة بالألمنيوم الأولي" },
-        { value: "90%", label: "خفض الكربون", sub: "تقليل الانبعاثات" },
-        { value: "30%", label: "محتوى معاد تدويره", sub: "مزيج المواد المستهدف" }
-      ],
-      dammam: {
-        title: "وحدة إعادة تدوير نفايات الألمنيوم بالدمام",
-        status: "قيد الإنشاء",
-        desc: "تقع داخل مجمع إيفروين الصناعي، وهي وحدة معالجة أولية ميكانيكية مخصصة لفرز وتقطيع وضغط خردة الألمنيوم. تعمل بنظام جاف ومغلق بالكامل وغير ملوث، مما يضمن عدم وجود أي تصريف كيميائي.",
-        features: [
-          "طاقة سنوية 10,000 طن",
-          "انبعاثات كيميائية صفرية",
-          "معالجة أولية ميكانيكية",
-          "دعم 50 وظيفة محلية"
-        ]
-      },
-      riyadh: {
-        title: "قاعدة الرياض لإعادة تدوير الألمنيوم",
-        status: "مرحلة التخطيط والترخيص",
-        desc: "قاعدة استراتيجية مخطط لها في المنطقة الوسطى للتعامل مع جمع خردة الألمنيوم والخدمات اللوجستية. تخضع حالياً لعمليات الترخيص البلدي وتصاريح المركز الوطني لإدارة النفايات (MWAN).",
-        features: [
-          "مركز جمع الخردة",
-          "مركز لوجستي",
-          "مرحلة ترخيص MWAN",
-          "نقطة توسع مستقبلية"
-        ]
-      },
-      process: {
-        title: "نظام الحلقة المغلقة",
-        steps: [
-          { title: "الجمع الحضري", desc: "استعادة الخردة من البلديات." },
-          { title: "القواعد الإقليمية", desc: "الفرز، التنظيف، والتقطيع." },
-          { title: "اللوجستيات", desc: "نقل فعال إلى الدمام." },
-          { title: "مصنع البثق", desc: "الصهر، التكرير، والإنتاج." },
-          { title: "حياة جديدة", desc: "مقاطع عالية الجودة للمدن والصناعة." }
-        ]
-      },
-      impact: {
-        title: "الأثر الاستراتيجي",
-        items: [
-          { title: "إزالة الكربون", desc: "التوافق مع الاستراتيجية الوطنية لإزالة الكربون الصناعي عن طريق خفض كثافة الكربون." },
-          { title: "الفوائد البلدية", desc: "تقليل النفايات الصلبة وأعباء المكبات مع خلق فرص عمل محلية." },
-          { title: "كفاءة الموارد", desc: "إغلاق حلقة المواد وتقليل الاعتماد على تعدين البوكسيت." }
-        ]
-      }
-    },
-    insights: {
-        title: "رؤى الصناعة",
-        subtitle: "أخبار واتجاهات عالمية",
-        desc: "ابق على اطلاع بأحدث التطورات وتحليلات السوق والاختراقات التكنولوجية في قطاعات الألمنيوم والتصنيع الصناعي العالمية."
-    },
-    footer: {
-      desc: "صياغة مستقبل القطاع الصناعي في المملكة العربية السعودية بحلول ألمنيوم دقيقة. نقع في قلب المركز الصناعي بالدمام.",
-      navTitle: "التصفح",
-      contactTitle: "اتصل بنا",
-      brochure: "كتيب الشركة",
-      cr: "سجل تجاري",
-      unified: "الرقم الموحد",
-      rights: "© 2025 شركة نصر كبير للألمنيوم.",
-      privacy: "سياسة الخصوصية",
-      terms: "شروط الاستخدام",
-      park: "مجمع إيفروين الصناعي"
     }
   }
 };
@@ -1067,100 +700,182 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
   const currentData = productData[lang];
   const t = content[lang].products;
 
+  // Reusable Component for Heavy Industrial Bezels
+  const IndustrialBezel = ({ children, className = '' }: { children?: React.ReactNode, className?: string }) => (
+    <div className={`relative ${className}`}>
+        {/* Outer Bezel */}
+        <div className="p-[12px] md:p-[16px] rounded-2xl bg-gradient-to-b from-[#e8e8e8] to-[#999999] shadow-[0_10px_20px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.8),inset_0_-2px_4px_rgba(0,0,0,0.3)] border-b border-gray-600">
+            {/* Inner "Groove" */}
+            <div className="bg-[#2a2a2a] p-[1px] rounded-xl shadow-[inset_0_2px_6px_rgba(0,0,0,0.8)]">
+                {/* Main Surface */}
+                <div className="h-full w-full rounded-xl bg-gradient-to-br from-[#f2f2f2] via-[#dcdcdc] to-[#b3b3b3] shadow-[inset_0_1px_2px_rgba(255,255,255,0.5)] border border-gray-400/50 p-6 md:p-10 relative overflow-hidden">
+                    {/* Brushed Texture Overlay */}
+                    <div className="absolute inset-0 opacity-10 pointer-events-none mix-blend-multiply" 
+                         style={{ backgroundImage: `repeating-linear-gradient(135deg, transparent, transparent 2px, #000 2px, #000 3px)` }}>
+                    </div>
+                    {/* Inner Content */}
+                    <div className="relative z-10">
+                        {children}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  );
+
+  // Reusable Rivet Component
+  const Rivet = ({ className }: { className?: string }) => (
+    <div className={`absolute w-4 h-4 rounded-full bg-gradient-to-br from-gray-200 via-gray-400 to-gray-500 shadow-[2px_2px_4px_rgba(0,0,0,0.4),inset_1px_1px_2px_rgba(255,255,255,0.8)] flex items-center justify-center border border-gray-400 z-20 ${className}`}>
+       {/* Indent */}
+       <div className="w-[60%] h-[60%] rounded-full bg-gradient-to-tl from-gray-300 to-gray-600 shadow-inner flex items-center justify-center">
+          <div className="w-full h-[1px] bg-gray-700/50 rotate-45"></div>
+          <div className="absolute w-full h-[1px] bg-gray-700/50 -rotate-45"></div>
+       </div>
+    </div>
+  );
+
   return (
     <MotionDiv 
       initial={{ opacity: 0, x: 50 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 50 }}
-      className={`min-h-screen bg-white ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}
+      className={`min-h-screen bg-[#E0E0E0] ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}
     >
-      {/* Sticky Header */}
-      <div className="container mx-auto px-6 mb-8 flex items-center justify-between">
-         <button onClick={goBack} className="flex items-center gap-2 text-nasr-blue hover:text-nasr-dark transition-colors font-bold uppercase text-sm tracking-wider">
-            <ChevronLeft size={20} className={isRTL ? "rotate-180" : ""} />
+      {/* Sticky Header with "Alumine" Style Button */}
+      <div className="container mx-auto px-6 mb-12 flex items-center justify-between">
+         <button 
+           onClick={goBack} 
+           className="flex items-center gap-2 px-6 py-3 bg-gradient-to-b from-gray-100 to-gray-300 rounded-lg shadow-[0_4px_6px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,1)] border border-gray-400 text-nasr-dark hover:brightness-105 active:scale-95 active:shadow-inner transition-all font-bold uppercase text-xs tracking-wider"
+         >
+            <ChevronLeft size={16} className={isRTL ? "rotate-180" : ""} />
             {content[lang].nav.back}
          </button>
-         <div className="hidden md:block h-[1px] flex-1 bg-gray-200 mx-8"></div>
+         {/* Top Bar Metallic Strip */}
+         <div className="hidden md:block h-12 flex-1 mx-8 rounded-lg bg-gradient-to-b from-[#e0e0e0] to-[#bdbdbd] shadow-[inset_0_1px_3px_rgba(0,0,0,0.2),0_1px_2px_rgba(255,255,255,0.8)] border border-gray-400/50 relative overflow-hidden">
+             <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `repeating-linear-gradient(90deg, transparent, transparent 2px, #000 2px, #000 3px)` }}></div>
+         </div>
          <AlxLogo />
       </div>
 
       <div className="container mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-20">
           <MotionH2 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className={`font-serif font-bold mb-6 text-nasr-dark ${isRTL ? 'font-arabic text-4xl md:text-6xl' : 'text-4xl md:text-5xl'}`}
+            className={`font-serif font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-b from-[#4a4a4a] to-[#1a1a1a] drop-shadow-sm ${isRTL ? 'font-arabic text-4xl md:text-6xl' : 'text-4xl md:text-5xl'}`}
           >
             {t.title}
           </MotionH2>
-          <p className="text-gray-600 text-lg">{t.desc}</p>
+          <p className="text-gray-600 text-lg font-medium">{t.desc}</p>
         </div>
 
         <div className="space-y-24">
           {currentData.map((category, index) => (
-            <div key={category.id} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-20 items-center`}>
-              {/* Image Section */}
-              <MotionDiv 
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className="w-full lg:w-1/2"
-              >
-                <div className="relative aspect-[4/3] rounded-sm overflow-hidden shadow-2xl group">
-                   <img 
-                    src={category.img} 
-                    alt={category.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                   />
-                   <div className="absolute inset-0 bg-gradient-to-t from-nasr-dark/60 to-transparent opacity-60"></div>
-                   
-                   {/* Icon Overlay */}
-                   <div className={`absolute bottom-6 ${isRTL ? 'right-6' : 'left-6'} bg-white/90 backdrop-blur p-4 rounded-sm shadow-lg`}>
-                      <category.icon size={32} className="text-nasr-blue" />
-                   </div>
-                </div>
-              </MotionDiv>
+            <MotionDiv 
+              key={category.id} 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+            >
+              {/* HEAVY INDUSTRIAL BEZEL */}
+              <IndustrialBezel>
+                  {/* Screws */}
+                  <Rivet className="top-3 left-3" />
+                  <Rivet className="top-3 right-3" />
+                  <Rivet className="bottom-3 left-3" />
+                  <Rivet className="bottom-3 right-3" />
 
-              {/* Text Content */}
-              <div className="w-full lg:w-1/2">
-                <MotionDiv
-                  initial={{ opacity: 0, x: index % 2 === 0 ? 30 : -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.7 }}
-                >
-                  <span className="text-nasr-blue font-bold tracking-widest uppercase text-sm mb-2 block">
-                    {category.subtitle}
-                  </span>
-                  <h3 className={`font-serif text-3xl md:text-4xl font-bold text-nasr-dark mb-6 ${isRTL ? 'font-arabic' : ''}`}>
-                    {category.title}
-                  </h3>
-                  <p className={`text-lg text-gray-600 mb-8 leading-relaxed ${isRTL ? 'border-r-4 pr-6' : 'border-l-4 pl-6'} border-gray-200`}>
-                    {category.desc}
-                  </p>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {category.items.map((item, i) => (
-                      <div key={i} className="flex items-center gap-3 bg-gray-50 p-3 rounded-sm border border-gray-100 hover:border-nasr-blue hover:bg-white transition-all duration-300">
-                        <CheckCircle2 size={18} className="text-nasr-accent shrink-0" />
-                        <span className="font-medium text-gray-800 text-sm">{item}</span>
+                  <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-16 items-center`}>
+                    
+                    {/* Recessed Image Container */}
+                    <div className="w-full lg:w-1/2">
+                      <div className="relative aspect-[4/3] rounded-lg overflow-hidden border-[8px] border-[#d1d5db] shadow-[inset_0_10px_20px_rgba(0,0,0,0.5),0_1px_2px_rgba(255,255,255,0.8)] bg-[#1a1a1a]">
+                         {/* Screen Glare */}
+                         <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-tr from-transparent via-white/10 to-transparent pointer-events-none z-20"></div>
+                         
+                         <img 
+                          src={category.img} 
+                          alt={category.title} 
+                          className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-700"
+                         />
+                         
+                         {/* Digital Overlay */}
+                         <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-black/80 to-transparent p-4 flex items-end justify-between">
+                            <div className="text-xs font-mono text-nasr-blue uppercase tracking-widest flex items-center gap-2">
+                               <div className="w-2 h-2 bg-nasr-blue rounded-full animate-pulse"></div>
+                               System Active
+                            </div>
+                         </div>
                       </div>
-                    ))}
+                    </div>
+
+                    {/* Control Panel Area */}
+                    <div className="w-full lg:w-1/2">
+                        <div className="flex flex-col h-full justify-center">
+                            {/* Metallic Label Plate */}
+                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-b from-gray-200 to-gray-400 rounded border border-gray-500 shadow-[0_2px_4px_rgba(0,0,0,0.2)] mb-6 self-start">
+                               <div className="w-1.5 h-1.5 bg-black rounded-full inset-shadow"></div>
+                               <span className="text-[#333] font-bold tracking-[0.15em] uppercase text-xs">
+                                  {category.subtitle}
+                               </span>
+                               <div className="w-1.5 h-1.5 bg-black rounded-full inset-shadow"></div>
+                            </div>
+                            
+                            <h3 className={`font-serif text-3xl md:text-5xl font-bold text-[#222] mb-6 drop-shadow-sm ${isRTL ? 'font-arabic' : ''} tracking-tight`}>
+                              {category.title}
+                            </h3>
+                            
+                            <p className="text-lg text-[#444] mb-8 leading-relaxed font-medium">
+                              {category.desc}
+                            </p>
+                            
+                            {/* Stamped Metal Tags */}
+                            <div className="flex flex-wrap gap-3">
+                              {category.items.map((item, i) => (
+                                <div 
+                                  key={i} 
+                                  className="px-5 py-3 bg-gradient-to-b from-[#f0f0f0] to-[#d0d0d0] border-t border-white border-b border-gray-500 rounded shadow-[0_4px_6px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.8)] text-gray-800 text-sm font-bold flex items-center gap-2 hover:-translate-y-0.5 active:translate-y-0 active:shadow-inner active:bg-[#e0e0e0] transition-all cursor-default"
+                                >
+                                  <div className="w-2 h-2 rounded-full bg-nasr-blue shadow-[0_0_4px_rgba(0,159,227,0.6)]"></div>
+                                  {item}
+                                </div>
+                              ))}
+                            </div>
+                        </div>
+                    </div>
+
                   </div>
-                </MotionDiv>
-              </div>
-            </div>
+              </IndustrialBezel>
+            </MotionDiv>
           ))}
         </div>
         
-        {/* CTA */}
-        <div className="mt-24 text-center">
+        {/* "GET A QUOTE" CTA Button - Replicating Reference */}
+        <div className="mt-32 text-center pb-12 flex justify-center">
             <button 
               onClick={() => { goBack(); setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 100); }} 
-              className="inline-flex items-center gap-3 px-8 py-4 bg-nasr-dark text-white font-bold uppercase tracking-wider hover:bg-nasr-blue transition-colors rounded-sm"
+              className="relative group active:scale-95 transition-transform duration-150"
             >
-              {content[lang].nav.contact} <ArrowRight size={20} className={isRTL ? "rotate-180" : ""} />
+              {/* Button Container - Thick Metallic Slab */}
+              <div className="relative px-12 py-5 bg-gradient-to-b from-[#e0e0e0] via-[#cfcfcf] to-[#b0b0b0] rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.4),0_6px_6px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.8)] border border-gray-400 flex items-center gap-6 overflow-hidden">
+                  
+                  {/* Inner Border/Bezel */}
+                  <div className="absolute inset-1 rounded-lg border border-gray-500/30"></div>
+                  
+                  {/* Text */}
+                  <span className="relative z-10 text-3xl font-serif font-bold text-[#444] uppercase tracking-wider drop-shadow-sm group-hover:text-nasr-blue transition-colors">
+                    {content[lang].nav.contact}
+                  </span>
+                  
+                  {/* Gear Icon - Machined Look */}
+                  <div className="relative z-10 w-12 h-12 flex items-center justify-center">
+                     <Cog size={40} className="text-[#666] drop-shadow-md group-hover:rotate-90 transition-transform duration-700" />
+                  </div>
+
+                  {/* Shine Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
+              </div>
             </button>
         </div>
       </div>
@@ -1836,7 +1551,7 @@ const App: React.FC = () => {
                         className="aspect-[4/5] bg-gray-200 overflow-hidden shadow-2xl relative z-10"
                      >
                         <img 
-                          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" 
+                          src="https://images.pexels.com/photos/17650039/pexels-photo-17650039.jpeg" 
                           alt="Modern Skyscraper Facade" 
                           className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out" 
                         />
