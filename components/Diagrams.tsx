@@ -38,7 +38,7 @@ const diagramContent = {
         { title: "Casting", desc: "Customized alloys, energy-efficient and eco-friendly casting." },
         { title: "Die Shop", desc: "In-house precision mold manufacturing." },
         { title: "Extrusion", desc: "Full range of extrusion equipment." },
-        { title: "Finishing", desc: "Anodizing, Powder Coating & PVDF." },
+        { title: "Finishing", desc: "Powder Coating, Anodizing & PVDF." },
         { title: "Logistics", desc: "Global distribution from King Abdulaziz Port." },
     ],
     chart: {
@@ -69,7 +69,7 @@ const diagramContent = {
         { title: "الصب", desc: "سبائك مخصصة، وعمليات صب صديقة للبيئة وموفرة للطاقة." },
         { title: "ورشة القوالب", desc: "تصنيع قوالب دقيقة داخلياً." },
         { title: "البثق", desc: "مجموعة كاملة من معدات البثق." },
-        { title: "التشطيب", desc: "الأنودة، طلاء البودرة و PVDF." },
+        { title: "التشطيب", desc: "طلاء البودرة، الأنودة و PVDF." },
         { title: "اللوجستيات", desc: "توزيع عالمي من ميناء الملك عبد العزيز." },
     ],
     chart: {
@@ -202,7 +202,7 @@ export const ProductionProcessFlow: React.FC<DiagramProps> = ({ lang }) => {
     }));
 
   return (
-    <div className="relative w-full overflow-x-auto pb-10">
+    <div className="relative w-full overflow-x-auto pb-10 pt-4">
       <div className="flex min-w-max md:min-w-0 justify-between items-start relative px-4">
         {/* Connecting Line */}
         <div className="absolute top-10 left-0 right-0 h-1 bg-gray-100 -z-10"></div>

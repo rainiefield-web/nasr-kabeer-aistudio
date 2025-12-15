@@ -23,7 +23,7 @@ declare global {
       boxGeometry: any;
       cylinderGeometry: any;
       extrudeGeometry: any;
-      [elemName: string]: any;
+      // Index signature removed to avoid "Duplicate index signature" error
     }
   }
 }
