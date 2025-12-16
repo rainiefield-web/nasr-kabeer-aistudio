@@ -924,7 +924,7 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
       <div className="relative mb-16 min-h-[500px] h-auto overflow-hidden flex items-center py-12">
         <div className="absolute inset-0">
              <img 
-               src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?q=80&w=2070&auto=format&fit=crop" 
+               src="https://i.postimg.cc/BZSsGmLj/c2b9d738-c3fd-4b64-a35e-c018629e21c0.png" 
                alt="Advanced Aluminum Manufacturing" 
                className="w-full h-full object-cover"
              />
@@ -1249,7 +1249,7 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
               
               {t.process.steps.map((step, i) => (
                  <div key={i} className="flex flex-col items-center text-center group">
-                    <div className={`w-16 h-16 rounded-full border-4 bg-white flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 z-10 ${i === 0 || i === 4 ? 'border-nasr-dark text-nasr-dark' : 'border-nasr-accent text-nasr-accent'}`}>
+                    <div className={`w-16 h-16 rounded-full border-4 bg-white flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 z-10 relative ${i === 0 || i === 4 ? 'border-nasr-dark text-nasr-dark' : 'border-nasr-accent text-nasr-accent'}`}>
                        {i === 0 ? <Recycle size={24} /> : 
                         i === 1 ? <Settings size={24} /> : 
                         i === 2 ? <Truck size={24} /> : 
