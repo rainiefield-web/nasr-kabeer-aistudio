@@ -700,76 +700,35 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
   const currentData = productData[lang];
   const t = content[lang].products;
 
-  // Reusable Component for Heavy Industrial Bezels
-  const IndustrialBezel = ({ children, className = '' }: { children?: React.ReactNode, className?: string }) => (
-    <div className={`relative ${className}`}>
-        {/* Outer Bezel */}
-        <div className="p-[12px] md:p-[16px] rounded-2xl bg-gradient-to-b from-[#e8e8e8] to-[#999999] shadow-[0_10px_20px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.8),inset_0_-2px_4px_rgba(0,0,0,0.3)] border-b border-gray-600">
-            {/* Inner "Groove" */}
-            <div className="bg-[#2a2a2a] p-[1px] rounded-xl shadow-[inset_0_2px_6px_rgba(0,0,0,0.8)]">
-                {/* Main Surface */}
-                <div className="h-full w-full rounded-xl bg-gradient-to-br from-[#f2f2f2] via-[#dcdcdc] to-[#b3b3b3] shadow-[inset_0_1px_2px_rgba(255,255,255,0.5)] border border-gray-400/50 p-6 md:p-10 relative overflow-hidden">
-                    {/* Brushed Texture Overlay */}
-                    <div className="absolute inset-0 opacity-10 pointer-events-none mix-blend-multiply" 
-                         style={{ backgroundImage: `repeating-linear-gradient(135deg, transparent, transparent 2px, #000 2px, #000 3px)` }}>
-                    </div>
-                    {/* Inner Content */}
-                    <div className="relative z-10">
-                        {children}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-  );
-
-  // Reusable Rivet Component
-  const Rivet = ({ className }: { className?: string }) => (
-    <div className={`absolute w-4 h-4 rounded-full bg-gradient-to-br from-gray-200 via-gray-400 to-gray-500 shadow-[2px_2px_4px_rgba(0,0,0,0.4),inset_1px_1px_2px_rgba(255,255,255,0.8)] flex items-center justify-center border border-gray-400 z-20 ${className}`}>
-       {/* Indent */}
-       <div className="w-[60%] h-[60%] rounded-full bg-gradient-to-tl from-gray-300 to-gray-600 shadow-inner flex items-center justify-center">
-          <div className="w-full h-[1px] bg-gray-700/50 rotate-45"></div>
-          <div className="absolute w-full h-[1px] bg-gray-700/50 -rotate-45"></div>
-       </div>
-    </div>
-  );
-
   return (
     <MotionDiv 
       initial={{ opacity: 0, x: 50 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 50 }}
-      className={`min-h-screen bg-[#E0E0E0] ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}
+      className={`min-h-screen bg-gray-50 ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}
     >
       {/* Sticky Header with "Alumine" Style Button */}
       <div className="container mx-auto px-6 mb-12 flex items-center justify-between">
          <button 
            onClick={goBack} 
-           className="flex items-center gap-2 px-6 py-3 bg-gradient-to-b from-gray-100 to-gray-300 rounded-lg shadow-[0_4px_6px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,1)] border border-gray-400 text-nasr-dark hover:brightness-105 active:scale-95 active:shadow-inner transition-all font-bold uppercase text-xs tracking-wider"
+           className="flex items-center gap-2 text-nasr-blue hover:text-nasr-dark transition-colors font-bold uppercase text-sm tracking-wider"
          >
-            <ChevronLeft size={16} className={isRTL ? "rotate-180" : ""} />
+            <ChevronLeft size={20} className={isRTL ? "rotate-180" : ""} />
             {content[lang].nav.back}
          </button>
-         {/* Top Bar Metallic Strip */}
-         <div className="hidden md:block h-12 flex-1 mx-8 rounded-lg bg-gradient-to-b from-[#e0e0e0] to-[#bdbdbd] shadow-[inset_0_1px_3px_rgba(0,0,0,0.2),0_1px_2px_rgba(255,255,255,0.8)] border border-gray-400/50 relative overflow-hidden">
-             <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `repeating-linear-gradient(90deg, transparent, transparent 2px, #000 2px, #000 3px)` }}></div>
-         </div>
+         <div className="hidden md:block h-[1px] flex-1 bg-gray-200 mx-8"></div>
          <AlxLogo />
       </div>
 
       <div className="container mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <MotionH2 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className={`font-serif font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-b from-[#4a4a4a] to-[#1a1a1a] drop-shadow-sm ${isRTL ? 'font-arabic text-4xl md:text-6xl' : 'text-4xl md:text-5xl'}`}
-          >
-            {t.title}
-          </MotionH2>
-          <p className="text-gray-600 text-lg font-medium">{t.desc}</p>
+        <div className="mb-20">
+           <SectionHeading title={t.title} subtitle={t.subtitle} lang={lang} />
+           <p className={`text-gray-600 text-lg leading-relaxed max-w-3xl ${isRTL ? 'border-r-4 pr-6' : 'border-l-4 pl-6'} border-nasr-blue`}>
+             {t.desc}
+           </p>
         </div>
 
-        <div className="space-y-24">
+        <div className="space-y-32">
           {currentData.map((category, index) => (
             <MotionDiv 
               key={category.id} 
@@ -777,105 +736,57 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
+              className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-20 items-center`}
             >
-              {/* HEAVY INDUSTRIAL BEZEL */}
-              <IndustrialBezel>
-                  {/* Screws */}
-                  <Rivet className="top-3 left-3" />
-                  <Rivet className="top-3 right-3" />
-                  <Rivet className="bottom-3 left-3" />
-                  <Rivet className="bottom-3 right-3" />
-
-                  <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-16 items-center`}>
-                    
-                    {/* Recessed Image Container */}
-                    <div className="w-full lg:w-1/2">
-                      <div className="relative aspect-[4/3] rounded-lg overflow-hidden border-[8px] border-[#d1d5db] shadow-[inset_0_10px_20px_rgba(0,0,0,0.5),0_1px_2px_rgba(255,255,255,0.8)] bg-[#1a1a1a]">
-                         {/* Screen Glare */}
-                         <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-tr from-transparent via-white/10 to-transparent pointer-events-none z-20"></div>
-                         
-                         <img 
-                          src={category.img} 
-                          alt={category.title} 
-                          className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-700"
-                         />
-                         
-                         {/* Digital Overlay */}
-                         <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-gradient-to-t from-black/80 to-transparent p-4 flex items-end justify-between">
-                            <div className="text-xs font-mono text-nasr-blue uppercase tracking-widest flex items-center gap-2">
-                               <div className="w-2 h-2 bg-nasr-blue rounded-full animate-pulse"></div>
-                               System Active
-                            </div>
+               {/* Image Side */}
+               <div className="w-full lg:w-1/2">
+                  <div className="relative aspect-[4/3] rounded-sm overflow-hidden shadow-2xl group">
+                     <div className="absolute inset-0 bg-nasr-blue/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                     <img 
+                        src={category.img} 
+                        alt={category.title} 
+                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                     />
+                     {/* Clean overlay */}
+                     <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent z-20">
+                         <div className="flex items-center gap-2 text-white/90 font-mono text-xs uppercase tracking-widest">
+                            <category.icon size={16} />
+                            {category.subtitle}
                          </div>
-                      </div>
-                    </div>
-
-                    {/* Control Panel Area */}
-                    <div className="w-full lg:w-1/2">
-                        <div className="flex flex-col h-full justify-center">
-                            {/* Metallic Label Plate */}
-                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-b from-gray-200 to-gray-400 rounded border border-gray-500 shadow-[0_2px_4px_rgba(0,0,0,0.2)] mb-6 self-start">
-                               <div className="w-1.5 h-1.5 bg-black rounded-full inset-shadow"></div>
-                               <span className="text-[#333] font-bold tracking-[0.15em] uppercase text-xs">
-                                  {category.subtitle}
-                               </span>
-                               <div className="w-1.5 h-1.5 bg-black rounded-full inset-shadow"></div>
-                            </div>
-                            
-                            <h3 className={`font-serif text-3xl md:text-5xl font-bold text-[#222] mb-6 drop-shadow-sm ${isRTL ? 'font-arabic' : ''} tracking-tight`}>
-                              {category.title}
-                            </h3>
-                            
-                            <p className="text-lg text-[#444] mb-8 leading-relaxed font-medium">
-                              {category.desc}
-                            </p>
-                            
-                            {/* Stamped Metal Tags */}
-                            <div className="flex flex-wrap gap-3">
-                              {category.items.map((item, i) => (
-                                <div 
-                                  key={i} 
-                                  className="px-5 py-3 bg-gradient-to-b from-[#f0f0f0] to-[#d0d0d0] border-t border-white border-b border-gray-500 rounded shadow-[0_4px_6px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.8)] text-gray-800 text-sm font-bold flex items-center gap-2 hover:-translate-y-0.5 active:translate-y-0 active:shadow-inner active:bg-[#e0e0e0] transition-all cursor-default"
-                                >
-                                  <div className="w-2 h-2 rounded-full bg-nasr-blue shadow-[0_0_4px_rgba(0,159,227,0.6)]"></div>
-                                  {item}
-                                </div>
-                              ))}
-                            </div>
-                        </div>
-                    </div>
-
+                     </div>
                   </div>
-              </IndustrialBezel>
+               </div>
+
+               {/* Content Side */}
+               <div className="w-full lg:w-1/2">
+                   <h3 className={`text-3xl lg:text-4xl font-serif font-bold text-nasr-dark mb-6 ${isRTL ? 'font-arabic' : ''}`}>
+                      {category.title}
+                   </h3>
+                   <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                      {category.desc}
+                   </p>
+                   
+                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {category.items.map((item, i) => (
+                         <div key={i} className="flex items-center gap-3 p-3 rounded-sm bg-white border border-gray-100 hover:border-nasr-blue hover:shadow-md transition-all duration-300">
+                             <div className="w-2 h-2 rounded-full bg-nasr-blue"></div>
+                             <span className="text-gray-800 font-medium text-sm">{item}</span>
+                         </div>
+                      ))}
+                   </div>
+               </div>
             </MotionDiv>
           ))}
         </div>
         
-        {/* "GET A QUOTE" CTA Button - Replicating Reference */}
-        <div className="mt-32 text-center pb-12 flex justify-center">
+        {/* Simple CTA Button */}
+        <div className="mt-32 text-center pb-12">
             <button 
               onClick={() => { goBack(); setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 100); }} 
-              className="relative group active:scale-95 transition-transform duration-150"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-nasr-blue text-white font-bold uppercase tracking-wider hover:bg-nasr-dark transition-colors rounded-sm shadow-lg hover:shadow-xl"
             >
-              {/* Button Container - Thick Metallic Slab */}
-              <div className="relative px-12 py-5 bg-gradient-to-b from-[#e0e0e0] via-[#cfcfcf] to-[#b0b0b0] rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.4),0_6px_6px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.8)] border border-gray-400 flex items-center gap-6 overflow-hidden">
-                  
-                  {/* Inner Border/Bezel */}
-                  <div className="absolute inset-1 rounded-lg border border-gray-500/30"></div>
-                  
-                  {/* Text */}
-                  <span className="relative z-10 text-3xl font-serif font-bold text-[#444] uppercase tracking-wider drop-shadow-sm group-hover:text-nasr-blue transition-colors">
-                    {content[lang].nav.contact}
-                  </span>
-                  
-                  {/* Gear Icon - Machined Look */}
-                  <div className="relative z-10 w-12 h-12 flex items-center justify-center">
-                     <Cog size={40} className="text-[#666] drop-shadow-md group-hover:rotate-90 transition-transform duration-700" />
-                  </div>
-
-                  {/* Shine Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
-              </div>
+              {content[lang].nav.contact}
+              <ArrowRight size={20} />
             </button>
         </div>
       </div>
