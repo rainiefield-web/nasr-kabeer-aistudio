@@ -900,7 +900,7 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
         subtitle: "Construction & Infrastructure",
         desc: "Meeting the demands of Saudi Arabia's mega-projects with high-performance profiles for skyscrapers and smart cities.",
         items: ["Curtain Wall Systems", "Thermal Break Windows", "Structural Glazing", "Decorative Facades", "Sun Control Louvers"],
-        img: "https://images.pexels.com/photos/18729291/pexels-photo-18729291.jpeg",
+        img: "https://i.postimg.cc/DymyPGYz/437a075a-1478-4f12-a23b-363e73d7e325.png",
         icon: Building2
       },
       {
@@ -909,7 +909,7 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
         subtitle: "Automation & Energy",
         desc: "Precision engineering for the renewable energy sector and automated manufacturing lines.",
         items: ["Solar Mounting Structures", "Heat Sinks & Cooling", "Automation Framing", "Modular Conveyors", "Electronic Enclosures"],
-        img: "https://images.pexels.com/photos/25285744/pexels-photo-25285744.jpeg",
+        img: "https://i.postimg.cc/jj6sS4Ld/978bc791-0832-41fe-a3ad-485c0400b0ba.png",
         icon: Factory
       },
       {
@@ -918,7 +918,7 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
         subtitle: "Mobility & Aerospace",
         desc: "Lightweight, high-strength alloys driving the future of EVs and rail transit in the Kingdom.",
         items: ["EV Battery Trays", "Rail Transit Car Bodies", "Chassis Components", "Aerospace Interiors", "Marine Structures"],
-        img: "https://plus.unsplash.com/premium_photo-1661877074629-a74292667b72?q=80&w=1740&auto=format&fit=crop",
+        img: "https://i.postimg.cc/MpTPT6Hq/2714a0ad-43e3-4ff6-8299-3fa50fa81462.png",
         icon: Car
       }
     ],
@@ -929,7 +929,7 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
         subtitle: "البناء والبنية التحتية",
         desc: "تلبية متطلبات المشاريع الضخمة في المملكة العربية السعودية بمقاطع عالية الأداء لناطحات السحاب والمدن الذكية.",
         items: ["أنظمة الجدران الستائرية", "نوافذ العزل الحراري", "التزجيج الهيكلي", "الواجهات الزخرفية", "كاسرات الشمس"],
-        img: "https://images.pexels.com/photos/18729291/pexels-photo-18729291.jpeg",
+        img: "https://i.postimg.cc/DymyPGYz/437a075a-1478-4f12-a23b-363e73d7e325.png",
         icon: Building2
       },
       {
@@ -938,7 +938,7 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
         subtitle: "الأتمتة والطاقة",
         desc: "هندسة دقيقة لقطاع الطاقة المتجددة وخطوط التصنيع الآلي.",
         items: ["هياكل تثبيت الطاقة الشمسية", "المشتتات الحرارية والتبريد", "إطارات الأتمتة", "السيور الناقلة المعيارية", "حاويات الإلكترونيات"],
-        img: "https://images.pexels.com/photos/25285744/pexels-photo-25285744.jpeg",
+        img: "https://i.postimg.cc/jj6sS4Ld/978bc791-0832-41fe-a3ad-485c0400b0ba.png",
         icon: Factory
       },
       {
@@ -947,7 +947,7 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
         subtitle: "التنقل والطيران",
         desc: "سبائك خفيفة الوزن وعالية القوة تقود مستقبل المركبات الكهربائية والسكك الحديدية في المملكة.",
         items: ["صواني بطاريات المركبات الكهربائية", "هياكل عربات السكك الحديدية", "مكونات الشاسيه", "التصميم الداخلي للطائرات", "الهياكل البحرية"],
-        img: "https://plus.unsplash.com/premium_photo-1661877074629-a74292667b72?q=80&w=1740&auto=format&fit=crop",
+        img: "https://i.postimg.cc/MpTPT6Hq/2714a0ad-43e3-4ff6-8299-3fa50fa81462.png",
         icon: Car
       }
     ]
