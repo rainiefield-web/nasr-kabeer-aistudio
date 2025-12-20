@@ -1,26 +1,28 @@
 import os
-import google.generativeai as genai
-import feedparser
-from datetime import datetime
+from google import genai
 
-# 1. 配置 AI
-genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-model = genai.GenerativeModel('gemini-pro')
+def main():
+    # The client automatically looks for the GEMINI_API_KEY environment variable
+    # If you use a different name, use: client = genai.Client(api_key=os.environ['YOUR_VAR'])
+    client = genai.Client()
 
-# 2. 抓取铝行业新闻 (使用 SMM 英文版 RSS)
-news_feed = feedparser.parse("https://rss.metal.com/news/industry_news.xml")
-entries = news_feed.entries[:5]  # 只取前 5 条最新的
+    prompt = "Summarize the latest AI news from the last 24 hours into 5 bullet points."
 
-news_text = ""
-for entry in entries:
-    news_text += f"Title: {entry.title}\nLink: {entry.link}\n\n"
+    try:
+        # Switching to gemini-2.0-flash (Faster and more reliable than the old 'pro')
+        response = client.models.generate_content(
+            model="gemini-2.0-flash", 
+            contents=prompt
+        )
+        
+        print(response.text)
+        
+        # Save to file or proceed with your logic
+        with open("news_summary.txt", "w") as f:
+            f.write(response.text)
 
-# 3. 让 AI 总结
-prompt = f"You are a professional Aluminum Industry Analyst. Summarize the following news into a clean, professional English report for international readers. Use bullet points and include the original links. \n\nNews:\n{news_text}"
-response = model.generate_content(prompt)
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
-# 4. 把结果写入文件
-now = datetime.now().strftime("%Y-%m-%d %H:%M")
-header = f"# Global Aluminum Industry Daily Update\n*Last updated: {now} (UTC)*\n\n"
-with open("AL_NEWS.md", "w", encoding="utf-8") as f:
-    f.write(header + response.text)
+if __name__ == "__main__":
+    main()
