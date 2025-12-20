@@ -13,7 +13,10 @@ except ImportError as e:
 
 def extract_json_payload(text):
     """
-    专门针对 Gemini 返回重复 JSON 或带 Markdown 标签的解析器
+    极致容错版解析器：
+    1. 移除 Markdown 标签和搜索引用。
+    2. 仅提取第一个闭合的 JSON 对象，防止重复对象干扰。
+    3. 处理 JSON 内部的非法换行。
     """
     if not text:
         return None
@@ -22,29 +25,29 @@ def extract_json_payload(text):
     print(text)
     print("--- [DEBUG] API Original Response End ---\n")
 
-    # 1. 基础清洗：移除 Markdown 标识符
-    cleaned = text.replace("```json", "").replace("```", "").strip()
-    
-    # 2. 移除搜索引用标记如 [1], [2]
+    # 1. 预清洗：剥离所有 Markdown 符号和搜索来源引用
+    # 移除 ```json, ```,, [1] 等
+    cleaned = text.replace("```json", "").replace("```", "")
+    cleaned = re.sub(r'\', '', cleaned)
     cleaned = re.sub(r'\[\d+\]', '', cleaned)
+    cleaned = cleaned.strip()
 
-    # 3. 核心修复逻辑：使用非贪婪匹配 (.*?) 只提取第一个完整的 JSON 对象
-    # 这样即使模型返回了两个 {...} {...}，我们也只取第一个
+    # 2. 核心提取：非贪婪匹配第一个 { ... }
+    # 使用 (\{.*?\}) 确保在遇到第一个 '}' 时就停止匹配
     match = re.search(r'(\{.*?\})', cleaned, re.DOTALL)
     
     if match:
         json_str = match.group(1)
         try:
-            # 尝试解析提取出的第一个 JSON 对象
+            # 尝试标准解析
             return json.loads(json_str)
         except json.JSONDecodeError:
-            # 最后的尝试：如果解析失败，可能是内部有非法换行或多余逗号
             try:
-                # 移除 JSON 键值对之间的多余换行
-                fixed_str = re.sub(r'\n\s*', ' ', json_str)
-                # 移除 JSON 末尾可能存在的多余逗号 (e.g., [1, 2,])
-                fixed_str = re.sub(r',\s*([\]}])', r'\1', fixed_str)
-                return json.loads(fixed_str)
+                # 进阶修复：移除 JSON 内部可能存在的硬回车（换行符）
+                sanitized_str = re.sub(r'\n\s*', ' ', json_str)
+                # 移除键值对末尾可能多出的逗号
+                sanitized_str = re.sub(r',\s*([\]}])', r'\1', sanitized_str)
+                return json.loads(sanitized_str)
             except:
                 return None
     return None
@@ -57,16 +60,15 @@ def main():
 
     client = genai.Client(api_key=api_key)
     
-    # 优化后的 Prompt：增加搜索指令和格式约束
+    # 优化 Prompt：明确要求翻译，不准留空，不准重复
     prompt = """
-    Search for the latest global aluminum industry news (LME prices, corporate updates, trends). 
-    If today's specific data isn't out yet, use the most recent data from the past 24-48 hours.
+    Search for today's global aluminum industry news (LME prices, corporate, trends).
+    Requirement:
+    1. Provide key points in English.
+    2. TRANSLATE all English points into professional Arabic. Do NOT leave the 'ar' section empty.
+    3. Output ONCE as a single JSON object. No Markdown.
     
-    OUTPUT INSTRUCTIONS:
-    - You MUST return a valid JSON object.
-    - DO NOT repeat the JSON object. Output it ONCE.
-    - DO NOT use markdown code blocks.
-    - Structure:
+    Structure:
     {
       "date": "YYYY-MM-DD",
       "en": { "lme": [], "corporate": [], "trends": [], "factors": [] },
@@ -75,6 +77,7 @@ def main():
     """
 
     try:
+        # 使用 Gemini 2.0 Flash 配合 Google Search
         response = client.models.generate_content(
             model="gemini-2.0-flash",
             contents=prompt,
@@ -88,61 +91,66 @@ def main():
         data = extract_json_payload(text_content)
 
         if not data:
-            print("Error: Could not parse a valid JSON object from the response.")
-            # 强制抛出异常以便在 GitHub Actions 中标记为失败
+            print("Error: Failed to extract a valid JSON object.")
             exit(1)
 
-        # 检查并修正日期
+        # 校验日期
         if not data.get("date") or "YYYY" in data["date"]:
             data["date"] = time.strftime('%Y-%m-%d')
 
-        # 路径设置
+        # 文件操作
         base_dir = os.path.dirname(os.path.abspath(__file__))
         public_dir = os.path.join(base_dir, "public")
         os.makedirs(public_dir, exist_ok=True)
 
-        # 1. 保存 JSON
+        # 1. 保存 JSON 数据
         json_path = os.path.join(public_dir, "news_data.json")
         with open(json_path, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
-        print(f"JSON data saved to {json_path}")
+        print(f"JSON data successfully updated at: {json_path}")
 
-        # 2. 生成 Markdown
+        # 2. 生成 Markdown 报告
         updated_at = time.strftime('%Y-%m-%d %H:%M:%S')
-        lines = [
-            f"# Aluminum Industry Insights ({data['date']})",
+        md_lines = [
+            f"# Aluminum Industry News Summary ({data['date']})",
             f"Last Updated: {updated_at} UTC",
             "",
-            "## English",
+            "## English Analysis",
         ]
         
-        def append_section(target_lines, title, items):
-            target_lines.append(f"### {title}")
+        def add_md_section(lines, title, items):
+            lines.append(f"### {title}")
             if not items:
-                target_lines.append("- No data available for this section.")
+                lines.append("- (No specific data found for this section)")
             else:
                 for item in items:
-                    target_lines.append(f"- {item}")
-            target_lines.append("")
+                    lines.append(f"- {item}")
+            lines.append("")
 
-        for section in [("LME Analysis", "lme"), ("Corporate", "corporate"), ("Trends", "trends"), ("Factors", "factors")]:
-            append_section(lines, section[0], data["en"].get(section[1], []))
-        
-        lines.append("## Arabic")
-        for section in [("تحليل LME", "lme"), ("تحديثات الشركات", "corporate"), ("التوجهات", "trends"), ("العوامل", "factors")]:
-            append_section(lines, section[0], data["ar"].get(section[1], []))
+        sections = [("lme", "LME Price & Market"), ("corporate", "Corporate Updates"), 
+                    ("trends", "Industry Trends"), ("factors", "Strategic Factors")]
 
-        # 写入两个位置的 Markdown 文件
-        for path in [os.path.join(base_dir, "aluminum_industry_news.md"), 
-                     os.path.join(public_dir, "aluminum_industry_news.md")]:
-            with open(path, "w", encoding="utf-8") as f:
-                f.write("\n".join(lines))
+        for key, title in sections:
+            add_md_section(md_lines, title, data["en"].get(key, []))
         
-        print("Markdown reports generated successfully.")
+        md_lines.append("## Arabic Summary (الملخص العربي)")
+        ar_sections = [("lme", "تحليل بورصة لندن"), ("corporate", "تحديثات الشركات"), 
+                       ("trends", "توجهات الصناعة"), ("factors", "العوامل الاستراتيجية")]
+        
+        for key, title in ar_sections:
+            add_md_section(md_lines, title, data["ar"].get(key, []))
+
+        # 写入文件
+        for target in [os.path.join(base_dir, "aluminum_industry_news.md"),
+                       os.path.join(public_dir, "aluminum_industry_news.md")]:
+            with open(target, "w", encoding="utf-8") as f:
+                f.write("\n".join(md_lines))
+        
+        print("Markdown reports updated successfully.")
 
     except Exception as e:
         if "429" in str(e):
-            print("QUOTA_EXHAUSTED: Free tier limit reached.")
+            print("QUOTA_EXHAUSTED: Free tier limit reached. Skipping.")
             exit(0)
         else:
             traceback.print_exc()
