@@ -827,21 +827,34 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
   const [newsData, setNewsData] = useState<NewsData>(defaultNewsData);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const newsHashRef = useRef<string | null>(null);
+  const newsDataRef = useRef<NewsData | null>(null);
 
   useEffect(() => {
     const fetchLatestNews = async (isBackgroundUpdate = false) => {
+      let markdown = "";
       try {
         if (!isBackgroundUpdate) setLoading(true);
 
         // 1. Fetch the raw markdown file
         // Add timestamp to prevent browser caching of the file itself
-        const mdResponse = await fetch(`./aluminum_industry_news.md?t=${Date.now()}`);
+        const mdResponse = await fetch(`./aluminum_industry_news.md?t=${Date.now()}`, {
+          cache: "no-store"
+        });
         if (!mdResponse.ok) throw new Error("Failed to fetch news file");
-        const markdown = await mdResponse.text();
+        markdown = await mdResponse.text();
 
         // 2. Check Cache
-        const cachedHash = localStorage.getItem('news_md_cache');
-        const cachedData = localStorage.getItem('news_data_cache');
+        const cachedHash = newsHashRef.current ?? localStorage.getItem('news_md_cache');
+        const cachedDataRaw = newsDataRef.current ? JSON.stringify(newsDataRef.current) : localStorage.getItem('news_data_cache');
+        const cachedData = cachedDataRaw ? JSON.parse(cachedDataRaw) as NewsData : null;
+
+        if (!newsHashRef.current && cachedHash) {
+          newsHashRef.current = cachedHash;
+        }
+        if (!newsDataRef.current && cachedData) {
+          newsDataRef.current = cachedData;
+        }
 
         // Use full markdown content as hash to ensure any change is detected
         const currentHash = markdown;
@@ -849,7 +862,7 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
         if (cachedHash === currentHash && cachedData) {
           if (!isBackgroundUpdate) {
             console.log("Using cached news data");
-            setNewsData(JSON.parse(cachedData));
+            setNewsData(cachedData);
             setLoading(false);
           }
           return;
@@ -912,6 +925,8 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
         setNewsData(parsedData);
 
         // Update Cache
+        newsHashRef.current = currentHash;
+        newsDataRef.current = parsedData;
         localStorage.setItem('news_md_cache', currentHash);
         localStorage.setItem('news_data_cache', JSON.stringify(parsedData));
 
@@ -919,12 +934,27 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
         console.error("News sync error:", err);
         if (!isBackgroundUpdate) setError(true);
 
-        // Fallback: try to load the static JSON file if AI fails
+        // Fallback: prioritize latest parsed results, then static JSON
         try {
-          const staticResponse = await fetch('./news_data.json');
-          if (staticResponse.ok) {
-            const staticData = await staticResponse.json();
-            setNewsData(staticData);
+          let fallbackData = newsDataRef.current;
+          if (!fallbackData) {
+            const cachedDataRaw = localStorage.getItem('news_data_cache');
+            fallbackData = cachedDataRaw ? JSON.parse(cachedDataRaw) as NewsData : null;
+          }
+
+          if (!fallbackData) {
+            const staticResponse = await fetch('./news_data.json', { cache: "no-store" });
+            if (staticResponse.ok) {
+              fallbackData = await staticResponse.json();
+            }
+          }
+
+          if (fallbackData) {
+            setNewsData(fallbackData);
+            newsHashRef.current = markdown;
+            newsDataRef.current = fallbackData;
+            localStorage.setItem('news_md_cache', markdown);
+            localStorage.setItem('news_data_cache', JSON.stringify(fallbackData));
           }
         } catch (e) {
           console.error("Static fallback failed", e);
@@ -1767,5 +1797,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
-
