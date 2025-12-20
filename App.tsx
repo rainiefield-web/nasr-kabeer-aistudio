@@ -4,10 +4,9 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { StructureGrid, HeroScene } from './components/IndustrialScene';
 import { ProductionProcessFlow, CapacityGrowthChart } from './components/Diagrams';
-import { GoogleGenerativeAI, SchemaType } from "@google/generative-ai";
 import {
   Menu, X, Download, MapPin, Mail, Linkedin, Twitter, ArrowRight,
   CheckCircle2, Globe, FileText, Phone, ChevronLeft, Factory,
@@ -31,19 +30,6 @@ interface ProcessStep {
   desc: string;
   details: string[];
   icon: React.ElementType;
-}
-
-interface NewsContent {
-  lme: string[];
-  corporate: string[];
-  trends: string[];
-  factors: string[];
-}
-
-interface NewsData {
-  date: string;
-  en: NewsContent;
-  ar: NewsContent;
 }
 
 const content = {
@@ -370,6 +356,8 @@ const content = {
       subtitle: "Global Market Pulse",
       desc: "Stay updated with the latest trends, market shifts, and corporate developments in the global aluminum sector.",
       lastUpdated: "Last Updated",
+      fullReport: "Full Update",
+      unavailable: "No updates available.",
       priceAnalysis: "Market Analysis & LME",
       corporateUpdates: "Corporate Updates",
       trends: "Industry Trends",
@@ -713,6 +701,8 @@ const content = {
       subtitle: "نبض السوق العالمي",
       desc: "ابق على اطلاع بآخر التوجهات، تقلبات السوق، والتطورات المؤسسية في قطاع الألمنيوم العالمي.",
       lastUpdated: "آخر تحديث",
+      fullReport: "التحديث الكامل",
+      unavailable: "لا توجد تحديثات متاحة.",
       priceAnalysis: "تحليل السوق وبورصة لندن (LME)",
       corporateUpdates: "تحديثات الشركات",
       trends: "توجهات الصناعة",
@@ -732,61 +722,6 @@ const content = {
       terms: "شروط الاستخدام",
       park: "مجمع إيفروين الصناعي"
     }
-  }
-};
-
-// --- DEFAULT NEWS DATA (Fallback) ---
-const defaultNewsData: NewsData = {
-  date: "2025-12-20",
-  en: {
-    lme: [
-      "Aluminum rose to $2,958.90 USD/T on December 19, 2025 (+1.47%).",
-      "The price has risen 5.20% over the past month and 16.35% year-over-year.",
-      "Expected to trade at $3,019.99 in 12 months.",
-      "Supply deficit of 108,700 mt in October 2025."
-    ],
-    corporate: [
-      "Tomago Aluminium: Australia's largest smelter securing renewable energy beyond 2028 with $1B investment planned.",
-      "Emirates Global Aluminium (EGA): $4B grant for US primary smelter (Oklahoma), first in 45 years.",
-      "Rio Tinto: Ongoing talks for low-cost energy solutions for Australian operations.",
-      "Norsk Hydro: Strategic alignment in joint venture smelters for decarbonization."
-    ],
-    trends: [
-      "Global primary aluminum market supply deficit reached 955,500 mt (Jan-Oct 2025).",
-      "Europe's smelting capacity fell to 2.9 million tonnes annually due to structural decline.",
-      "Extrusion usage expected to reach 35.25 million tonnes, with China accounting for 65% of global usage.",
-      "Construction aluminum market projected to reach $120B by 2032 with 6.17% CAGR."
-    ],
-    factors: [
-      "China's influence: Consumption expansion at 3.16% annual growth through 2032.",
-      "Supply Disruption: Potline suspension at Iceland's Grundartangi smelter.",
-      "Government Intervention: Prioritizing access to low-cost, firmed renewables globally."
-    ]
-  },
-  ar: {
-    lme: [
-      "ارتفع سعر الألمنيوم إلى 2,958.90 دولار أمريكي/طن في 19 ديسمبر 2025 (+1.47%).",
-      "ارتفع السعر بنسبة 5.20% خلال الشهر الماضي و 16.35% على أساس سنوي.",
-      "من المتوقع أن يتم تداوله عند 3,019.99 دولاراً خلال 12 شهراً.",
-      "عجز في العرض بلغ 108,700 طن متري في أكتوبر 2025."
-    ],
-    corporate: [
-      "Tomago Aluminium: أكبر مصهر في أستراليا يؤمن طاقة متجددة لما بعد 2028 باستثمار مخطط له بقيمة مليار دولار.",
-      "الإمارات العالمية للألمنيوم (EGA): منحة بقيمة 4 مليارات دولار لمصهر أولي في الولايات المتحدة (أوكلاهوما)، الأول منذ 45 عاماً.",
-      "ريو تينتو: محادثات جارية لحلول طاقة منخفضة التكلفة للعمليات الأسترالية.",
-      "نورسك هيدرو: توافق استراتيجي في مصاهر المشاريع المشتركة لإزالة الكربون."
-    ],
-    trends: [
-      "وصل عجز العرض في سوق الألمنيوم الأولي العالمي إلى 955,500 طن متري (يناير-أكتوبر 2025).",
-      "انخفضت قدرة الصهر في أوروبا إلى 2.9 مليون طن سنوياً بسبب التراجع الهيكلي.",
-      "من المتوقع أن يصل استخدام البثق إلى 35.25 مليون طن، وتمثل الصين 65% من الاستخدام العالمي.",
-      "من المتوقع أن يصل سوق ألمنيوم البناء إلى 120 مليار دولار بحلول عام 2032 بمعدل نمو سنوي مركب 6.17%."
-    ],
-    factors: [
-      "تأثير الصين: توسع الاستهلاك بمعدل نمو سنوي 3.16% حتى عام 2032.",
-      "اضطراب العرض: تعليق خط الإنتاج في مصهر Grundartangi في أيسلندا.",
-      "التدخل الحكومي: إعطاء الأولوية للوصول إلى طاقة متجددة منخفضة التكلفة ومؤكدة عالمياً."
-    ]
   }
 };
 
@@ -824,11 +759,12 @@ const SectionHeading = ({ title, subtitle, dark = false, lang }: { title: string
 const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBack }) => {
   const isRTL = lang === 'ar';
   const t = content[lang].news;
-  const [newsData, setNewsData] = useState<NewsData>(defaultNewsData);
+  const [newsMarkdown, setNewsMarkdown] = useState("");
+  const [lastUpdated, setLastUpdated] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const newsHashRef = useRef<string | null>(null);
-  const newsDataRef = useRef<NewsData | null>(null);
+  const newsMarkdownRef = useRef<string | null>(null);
 
   useEffect(() => {
     const fetchLatestNews = async (isBackgroundUpdate = false) => {
@@ -846,115 +782,66 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
 
         // 2. Check Cache
         const cachedHash = newsHashRef.current ?? localStorage.getItem('news_md_cache');
-        const cachedDataRaw = newsDataRef.current ? JSON.stringify(newsDataRef.current) : localStorage.getItem('news_data_cache');
-        const cachedData = cachedDataRaw ? JSON.parse(cachedDataRaw) as NewsData : null;
+        const cachedMarkdown = newsMarkdownRef.current ?? localStorage.getItem('news_raw_cache');
 
         if (!newsHashRef.current && cachedHash) {
           newsHashRef.current = cachedHash;
         }
-        if (!newsDataRef.current && cachedData) {
-          newsDataRef.current = cachedData;
+        if (!newsMarkdownRef.current && cachedMarkdown) {
+          newsMarkdownRef.current = cachedMarkdown;
         }
 
         // Use full markdown content as hash to ensure any change is detected
         const currentHash = markdown;
 
-        if (cachedHash === currentHash && cachedData) {
+        if (cachedHash === currentHash && cachedMarkdown) {
           if (!isBackgroundUpdate) {
             console.log("Using cached news data");
-            setNewsData(cachedData);
+            setNewsMarkdown(cachedMarkdown);
+            const cachedMatch = cachedMarkdown.match(/Last Updated:\s*(.+)/i);
+            setLastUpdated(cachedMatch ? cachedMatch[1].trim() : null);
             setLoading(false);
           }
           return;
         }
 
-        console.log("Content changed, regenerating news...");
-
-        // 3. Use Gemini to parse and translate
-        const genAI = new GoogleGenerativeAI(process.env.API_KEY || "");
-        const model = genAI.getGenerativeModel({
-          model: "gemini-1.5-flash",
-          generationConfig: {
-            responseMimeType: "application/json",
-            responseSchema: {
-              type: SchemaType.OBJECT,
-              properties: {
-                date: { type: SchemaType.STRING },
-                en: {
-                  type: SchemaType.OBJECT,
-                  properties: {
-                    lme: { type: SchemaType.ARRAY, items: { type: SchemaType.STRING } },
-                    corporate: { type: SchemaType.ARRAY, items: { type: SchemaType.STRING } },
-                    trends: { type: SchemaType.ARRAY, items: { type: SchemaType.STRING } },
-                    factors: { type: SchemaType.ARRAY, items: { type: SchemaType.STRING } }
-                  },
-                  required: ["lme", "corporate", "trends", "factors"]
-                },
-                ar: {
-                  type: SchemaType.OBJECT,
-                  properties: {
-                    lme: { type: SchemaType.ARRAY, items: { type: SchemaType.STRING } },
-                    corporate: { type: SchemaType.ARRAY, items: { type: SchemaType.STRING } },
-                    trends: { type: SchemaType.ARRAY, items: { type: SchemaType.STRING } },
-                    factors: { type: SchemaType.ARRAY, items: { type: SchemaType.STRING } }
-                  },
-                  required: ["lme", "corporate", "trends", "factors"]
-                }
-              },
-              required: ["date", "en", "ar"]
-            }
-          }
-        });
-
-        const prompt = `
-        You are an expert financial news editor. 
-        Parse the following Aluminum Industry News Markdown.
-        1. Extract key points into the JSON structure.
-        2. "en" should be the English summary.
-        3. "ar" MUST be a high-quality Arabic translation of the English summary.
-        4. "date" should be the "Last Updated" date found in the text or today's date (YYYY-MM-DD).
-
-        Markdown Content:
-        ${markdown}
-        `;
-
-        const result = await model.generateContent(prompt);
-        const resultText = result.response.text();
-        const parsedData = JSON.parse(resultText);
-
-        setNewsData(parsedData);
+        console.log("Content changed, updating markdown content...");
+        setNewsMarkdown(markdown);
+        const lastUpdatedMatch = markdown.match(/Last Updated:\s*(.+)/i);
+        setLastUpdated(lastUpdatedMatch ? lastUpdatedMatch[1].trim() : null);
 
         // Update Cache
         newsHashRef.current = currentHash;
-        newsDataRef.current = parsedData;
+        newsMarkdownRef.current = markdown;
         localStorage.setItem('news_md_cache', currentHash);
-        localStorage.setItem('news_data_cache', JSON.stringify(parsedData));
+        localStorage.setItem('news_raw_cache', markdown);
 
       } catch (err) {
         console.error("News sync error:", err);
         if (!isBackgroundUpdate) setError(true);
 
-        // Fallback: prioritize latest parsed results, then static JSON
+        // Fallback: prioritize latest markdown results, then static file
         try {
-          let fallbackData = newsDataRef.current;
-          if (!fallbackData) {
-            const cachedDataRaw = localStorage.getItem('news_data_cache');
-            fallbackData = cachedDataRaw ? JSON.parse(cachedDataRaw) as NewsData : null;
+          let fallbackMarkdown = newsMarkdownRef.current;
+          if (!fallbackMarkdown) {
+            fallbackMarkdown = localStorage.getItem('news_raw_cache');
           }
 
-          if (!fallbackData) {
-            const staticResponse = await fetch('./news_data.json', { cache: "no-store" });
+          if (!fallbackMarkdown) {
+            const staticResponse = await fetch('./aluminum_industry_news.md', { cache: "no-store" });
             if (staticResponse.ok) {
-              fallbackData = await staticResponse.json();
+              fallbackMarkdown = await staticResponse.text();
             }
           }
 
-          if (fallbackData) {
-            setNewsData(fallbackData);
-            newsHashRef.current = markdown;
-            newsDataRef.current = fallbackData;
-            localStorage.setItem('news_md_cache', markdown);
-            localStorage.setItem('news_data_cache', JSON.stringify(fallbackData));
+          if (fallbackMarkdown) {
+            setNewsMarkdown(fallbackMarkdown);
+            const fallbackMatch = fallbackMarkdown.match(/Last Updated:\s*(.+)/i);
+            setLastUpdated(fallbackMatch ? fallbackMatch[1].trim() : null);
+            newsHashRef.current = fallbackMarkdown;
+            newsMarkdownRef.current = fallbackMarkdown;
+            localStorage.setItem('news_md_cache', fallbackMarkdown);
+            localStorage.setItem('news_raw_cache', fallbackMarkdown);
           }
         } catch (e) {
           console.error("Static fallback failed", e);
@@ -973,15 +860,6 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
 
     return () => clearInterval(intervalId);
   }, []);
-
-  const currentNews = newsData[lang] || defaultNewsData[lang];
-
-  const categories = [
-    { title: t.priceAnalysis, icon: BarChart3, items: currentNews.lme, color: 'text-nasr-blue', bg: 'bg-blue-50' },
-    { title: t.corporateUpdates, icon: Building2, items: currentNews.corporate, color: 'text-nasr-red', bg: 'bg-red-50' },
-    { title: t.trends, icon: TrendingUp, items: currentNews.trends, color: 'text-nasr-accent', bg: 'bg-emerald-50' },
-    { title: t.additionalFactors, icon: Zap, items: currentNews.factors, color: 'text-nasr-dark', bg: 'bg-gray-100' },
-  ];
 
   if (loading) {
     return (
@@ -1018,62 +896,23 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
             <Clock className="text-nasr-blue" size={20} />
             <div>
               <div className="text-[10px] uppercase font-bold text-gray-400 tracking-widest">{t.lastUpdated}</div>
-              <div className="text-sm font-bold text-nasr-dark">{newsData.date}</div>
+              <div className="text-sm font-bold text-nasr-dark">{lastUpdated || t.unavailable}</div>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {categories.map((cat, i) => (
-            <MotionDiv
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              className="group bg-white p-8 rounded-sm border border-gray-100 shadow-sm hover:shadow-xl hover:border-nasr-blue/30 transition-all duration-300"
-            >
-              <div className="flex items-center gap-4 mb-8">
-                <div className={`p-4 ${cat.bg} ${cat.color} rounded-sm group-hover:bg-nasr-blue group-hover:text-white transition-colors duration-300`}>
-                  <cat.icon size={28} />
-                </div>
-                <h3 className="text-2xl font-serif font-bold text-nasr-dark">{cat.title}</h3>
-              </div>
-              <ul className="space-y-6">
-                {cat.items.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-4">
-                    <div className={`mt-2 w-1.5 h-1.5 rounded-full shrink-0 ${cat.color}`}></div>
-                    <span className="text-gray-600 leading-relaxed text-sm md:text-base font-medium">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </MotionDiv>
-          ))}
-        </div>
-
-        {/* LME Featured Stat (Driven by dynamic data if possible) */}
-        <div className="mt-20 p-10 bg-nasr-dark text-white rounded-sm relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-nasr-blue/20 blur-[100px] -z-10"></div>
-          <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-10">
-            <div className="max-w-xl">
-              <div className="flex items-center gap-3 text-nasr-blue font-bold uppercase tracking-[0.3em] text-xs mb-4">
-                <BarChart3 size={16} /> LME Live Analysis
-              </div>
-              <h2 className="text-3xl md:text-4xl font-serif mb-4">Market settling near a multi-year high by the end of 2025</h2>
-              <p className="text-gray-400 leading-relaxed">The LME primary aluminum cash price is closing in on USD 2,800, with expectations of further increases in the coming year.</p>
-            </div>
-            <div className="flex items-center gap-6">
-              <div className="text-center">
-                <div className="text-4xl md:text-6xl font-serif font-bold text-white mb-1">~$3k</div>
-                <div className="text-[10px] text-nasr-accent font-bold uppercase tracking-widest">12-Mo Forecast</div>
-              </div>
-              <div className="h-20 w-[1px] bg-gray-700 hidden md:block"></div>
-              <div className="text-center">
-                <div className="text-4xl md:text-6xl font-serif font-bold text-white mb-1">+16.3%</div>
-                <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Year-to-Date</div>
-              </div>
-            </div>
+        <MotionDiv
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="bg-white border border-gray-100 shadow-sm rounded-sm p-6 md:p-10"
+        >
+          <div className="text-xs font-bold uppercase tracking-[0.3em] text-nasr-blue mb-6">
+            {t.fullReport}
           </div>
-        </div>
+          <div className={`whitespace-pre-wrap text-gray-700 text-sm md:text-base leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>
+            {newsMarkdown || t.unavailable}
+          </div>
+        </MotionDiv>
       </div>
     </MotionDiv>
   );
