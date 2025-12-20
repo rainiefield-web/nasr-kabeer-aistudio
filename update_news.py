@@ -65,13 +65,15 @@ def main():
 
     client = genai.Client(api_key=api_key)
     
-    # 优化 Prompt：明确要求翻译，不准留空，不准重复
+    # 优化 Prompt：明确要求翻译，不准留空，不准重复，必须真实可核验
     prompt = """
-    Search for today's global aluminum industry news (LME prices, corporate, trends).
+    Search for today's REAL, verifiable global aluminum industry news.
     Requirement:
-    1. Provide key points in English.
-    2. TRANSLATE all English points into professional Arabic. Do NOT leave the 'ar' section empty.
-    3. Output ONCE as a single JSON object. No Markdown.
+    1. Include DAILY LME aluminum cash price and intraday change (numeric values required).
+    2. Provide key points in English with REAL companies/exchanges (no placeholders).
+    3. Each bullet MUST include a source name and a clickable URL (https://...).
+    4. TRANSLATE all English points into professional Arabic. Do NOT leave the 'ar' section empty.
+    5. Output ONCE as a single JSON object. No Markdown.
     
     Structure:
     {
@@ -97,6 +99,31 @@ def main():
 
         if not data:
             print("Error: Failed to extract a valid JSON object.")
+            exit(1)
+
+        placeholder_pattern = re.compile(r"\bCompany\s+[A-Z]\b")
+        url_pattern = re.compile(r"https?://\S+")
+
+        def ensure_entries(section_key, language_key):
+            entries = data.get(language_key, {}).get(section_key, [])
+            if not isinstance(entries, list):
+                return False
+            for entry in entries:
+                if not isinstance(entry, str) or not url_pattern.search(entry):
+                    return False
+                if language_key == "en" and placeholder_pattern.search(entry):
+                    return False
+            return True
+
+        required_sections = ["lme", "corporate", "trends", "factors"]
+        for section in required_sections:
+            if not ensure_entries(section, "en") or not ensure_entries(section, "ar"):
+                print(f"Error: Section {section} is missing valid entries with URLs.")
+                exit(1)
+
+        lme_entries = data.get("en", {}).get("lme", [])
+        if not any(re.search(r"\d", entry) and "LME" in entry for entry in lme_entries):
+            print("Error: LME section must include numeric price and LME reference.")
             exit(1)
 
         # 校验日期
