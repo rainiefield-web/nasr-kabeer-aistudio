@@ -28,7 +28,7 @@ def extract_json_payload(text):
     # 1. 预清洗：剥离所有 Markdown 符号和搜索来源引用
     # 移除 ```json, ```,, [1] 等
     cleaned = text.replace("```json", "").replace("```", "")
-    cleaned = re.sub(r"\\", "", cleaned)
+    cleaned = cleaned.replace("\\", "")
     cleaned = re.sub(r'\[\d+\]', '', cleaned)
     cleaned = cleaned.strip()
 
