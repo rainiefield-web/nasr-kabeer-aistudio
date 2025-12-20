@@ -32,76 +32,141 @@ interface ProcessStep {
   icon: React.ElementType;
 }
 
-interface NewsContent {
-  lme: string[];
-  corporate: string[];
-  trends: string[];
-  factors: string[];
-}
+const NEWS_MARKDOWN_PATH = `${import.meta.env.BASE_URL}aluminum_industry_news.md`;
 
-interface NewsData {
-  date: string;
-  en: NewsContent;
-  ar: NewsContent;
-}
+const extractMarkdownSection = (markdown: string, sectionTitle: string) => {
+  const headingPattern = new RegExp(`^##\\s+${sectionTitle}\\s*$`, 'im');
+  const match = headingPattern.exec(markdown);
+  if (!match) return markdown.trim();
 
-const isNewsData = (data: any): data is NewsData => (
-  data
-  && typeof data === 'object'
-  && typeof data.date === 'string'
-  && data.en
-  && data.ar
-  && Array.isArray(data.en.lme)
-  && Array.isArray(data.en.corporate)
-  && Array.isArray(data.en.trends)
-  && Array.isArray(data.en.factors)
-  && Array.isArray(data.ar.lme)
-  && Array.isArray(data.ar.corporate)
-  && Array.isArray(data.ar.trends)
-  && Array.isArray(data.ar.factors)
-);
-
-const tryParseNewsData = (text: string): NewsData | null => {
-  try {
-    const parsed = JSON.parse(text);
-    return isNewsData(parsed) ? parsed : null;
-  } catch {
-    return null;
-  }
+  const afterHeading = markdown.slice(match.index + match[0].length);
+  const nextHeadingIndex = afterHeading.search(/^##\s+/m);
+  const section = nextHeadingIndex === -1
+    ? afterHeading
+    : afterHeading.slice(0, nextHeadingIndex);
+  return section.trim();
 };
 
-const parseNewsDataCandidates = (source: string): NewsData | null => {
-  const cleaned = source.replace(/```/g, '').trim();
-  const direct = tryParseNewsData(cleaned);
-  if (direct) return direct;
-
-  const chunks = cleaned.split(/}\s*{/);
-  if (chunks.length > 1) {
-    for (let i = 0; i < chunks.length; i += 1) {
-      const candidate = chunks.length === 1
-        ? chunks[i]
-        : i === 0
-          ? `${chunks[i]}}`
-          : i === chunks.length - 1
-            ? `{${chunks[i]}`
-            : `{${chunks[i]}}`;
-      const parsed = tryParseNewsData(candidate);
-      if (parsed) return parsed;
+const formatInlineMarkdown = (text: string) => {
+  const parts = text.split(/(\*\*[^*]+\*\*|`[^`]+`)/g).filter(Boolean);
+  return parts.map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={index}>{part.slice(2, -2)}</strong>;
     }
-  }
-
-  return null;
+    if (part.startsWith('`') && part.endsWith('`')) {
+      return <code key={index} className="px-1 py-0.5 bg-gray-100 rounded text-xs">{part.slice(1, -1)}</code>;
+    }
+    return <span key={index}>{part}</span>;
+  });
 };
 
-const extractNewsDataFromMarkdown = (markdown: string): NewsData | null => {
-  const codeBlockRegex = /```json\s*([\s\S]*?)```/gi;
-  let match: RegExpExecArray | null;
-  while ((match = codeBlockRegex.exec(markdown)) !== null) {
-    const parsed = parseNewsDataCandidates(match[1]);
-    if (parsed) return parsed;
-  }
+const renderMarkdown = (markdown: string, isRTL: boolean) => {
+  const lines = markdown.split(/\r?\n/);
+  const blocks: React.ReactNode[] = [];
+  let paragraphLines: string[] = [];
+  let listItems: string[] = [];
+  let codeLines: string[] = [];
+  let inCodeBlock = false;
 
-  return parseNewsDataCandidates(markdown);
+  const flushParagraph = () => {
+    if (paragraphLines.length === 0) return;
+    const paragraphText = paragraphLines.join(' ').trim();
+    if (paragraphText) {
+      blocks.push(
+        <p key={`p-${blocks.length}`} className="mb-4 text-gray-700 leading-relaxed">
+          {formatInlineMarkdown(paragraphText)}
+        </p>
+      );
+    }
+    paragraphLines = [];
+  };
+
+  const flushList = () => {
+    if (listItems.length === 0) return;
+    blocks.push(
+      <ul
+        key={`ul-${blocks.length}`}
+        className={`mb-6 space-y-2 ${isRTL ? 'list-disc list-inside pr-5' : 'list-disc pl-5'}`}
+      >
+        {listItems.map((item, index) => (
+          <li key={index} className="text-gray-700 leading-relaxed">
+            {formatInlineMarkdown(item)}
+          </li>
+        ))}
+      </ul>
+    );
+    listItems = [];
+  };
+
+  const flushCode = () => {
+    if (codeLines.length === 0) return;
+    blocks.push(
+      <pre key={`code-${blocks.length}`} className="mb-6 bg-gray-900 text-gray-100 p-4 rounded-sm overflow-x-auto text-xs">
+        <code>{codeLines.join('\n')}</code>
+      </pre>
+    );
+    codeLines = [];
+  };
+
+  lines.forEach((line) => {
+    if (line.trim().startsWith('```')) {
+      if (inCodeBlock) {
+        flushCode();
+        inCodeBlock = false;
+      } else {
+        flushParagraph();
+        flushList();
+        inCodeBlock = true;
+      }
+      return;
+    }
+
+    if (inCodeBlock) {
+      codeLines.push(line);
+      return;
+    }
+
+    const headingMatch = line.match(/^(#{1,4})\s+(.*)$/);
+    if (headingMatch) {
+      flushParagraph();
+      flushList();
+      const level = headingMatch[1].length;
+      const text = headingMatch[2];
+      const HeadingTag = level === 1 ? 'h1' : level === 2 ? 'h2' : level === 3 ? 'h3' : 'h4';
+      const headingClass = level === 1
+        ? 'text-2xl md:text-3xl font-serif font-semibold text-nasr-dark mb-4'
+        : level === 2
+          ? 'text-xl md:text-2xl font-serif font-semibold text-nasr-dark mb-3'
+          : 'text-lg font-semibold text-nasr-dark mb-3';
+      blocks.push(
+        <HeadingTag key={`h-${blocks.length}`} className={headingClass}>
+          {formatInlineMarkdown(text)}
+        </HeadingTag>
+      );
+      return;
+    }
+
+    const listMatch = line.match(/^[-*]\s+(.*)$/);
+    if (listMatch) {
+      flushParagraph();
+      listItems.push(listMatch[1]);
+      return;
+    }
+
+    if (!line.trim()) {
+      flushParagraph();
+      flushList();
+      return;
+    }
+
+    paragraphLines.push(line.trim());
+  });
+
+  flushParagraph();
+  flushList();
+  flushCode();
+
+  return blocks;
 };
 
 const content = {
@@ -837,6 +902,9 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
   const [error, setError] = useState(false);
   const newsHashRef = useRef<string | null>(null);
   const newsMarkdownRef = useRef<string | null>(null);
+  const displayMarkdown = newsMarkdown
+    ? extractMarkdownSection(newsMarkdown, lang === 'ar' ? 'Arabic' : 'English')
+    : '';
 
   useEffect(() => {
     const fetchLatestNews = async (isBackgroundUpdate = false) => {
@@ -846,7 +914,7 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
 
         // 1. Fetch the raw markdown file
         // Add timestamp to prevent browser caching of the file itself
-        const mdResponse = await fetch(`./aluminum_industry_news.md?t=${Date.now()}`, {
+        const mdResponse = await fetch(`${NEWS_MARKDOWN_PATH}?t=${Date.now()}`, {
           cache: "no-store"
         });
         if (!mdResponse.ok) throw new Error("Failed to fetch news file");
@@ -881,15 +949,6 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
         setNewsMarkdown(markdown);
         const lastUpdatedMatch = markdown.match(/Last Updated:\s*(.+)/i);
         setLastUpdated(lastUpdatedMatch ? lastUpdatedMatch[1].trim() : null);
-        console.log("Content changed, parsing updated news...");
-
-        const parsedData = extractNewsDataFromMarkdown(markdown);
-        if (!parsedData) {
-          throw new Error("Unable to parse news markdown");
-        }
-
-        setNewsData(parsedData);
-
         // Update Cache
         newsHashRef.current = currentHash;
         newsMarkdownRef.current = markdown;
@@ -908,7 +967,7 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
           }
 
           if (!fallbackMarkdown) {
-            const staticResponse = await fetch('./aluminum_industry_news.md', { cache: "no-store" });
+            const staticResponse = await fetch(NEWS_MARKDOWN_PATH, { cache: "no-store" });
             if (staticResponse.ok) {
               fallbackMarkdown = await staticResponse.text();
             }
@@ -989,8 +1048,8 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
           <div className="text-xs font-bold uppercase tracking-[0.3em] text-nasr-blue mb-6">
             {t.fullReport}
           </div>
-          <div className={`whitespace-pre-wrap text-gray-700 text-sm md:text-base leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>
-            {newsMarkdown || t.unavailable}
+          <div className={`text-gray-700 text-sm md:text-base leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>
+            {newsMarkdown ? renderMarkdown(displayMarkdown, isRTL) : t.unavailable}
           </div>
         </MotionDiv>
       </div>
