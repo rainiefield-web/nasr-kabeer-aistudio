@@ -12,9 +12,10 @@ import {
   CheckCircle2, Globe, FileText, Phone, ChevronLeft, Factory, 
   Thermometer, Settings, Layers, ShieldCheck, Zap, Cpu, PaintBucket,
   PenTool, Beaker, Box, ExternalLink, Recycle, Leaf, 
-  Wind, Droplets, Building2, Car, Newspaper, TrendingUp, BarChart3, Clock
+  Wind, Droplets, Building2, Car, Newspaper, TrendingUp, BarChart3, Clock, Loader2
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { GoogleGenAI, Type } from "@google/genai";
 
 // Fix for Framer Motion types in strict environments
 const MotionDiv = motion.div as any;
@@ -30,6 +31,14 @@ interface ProcessStep {
   desc: string;
   details: string[];
   icon: React.ElementType;
+}
+
+interface NewsData {
+  date: string;
+  lme: string[];
+  corporate: string[];
+  trends: string[];
+  factors: string[];
 }
 
 const content = {
@@ -359,7 +368,9 @@ const content = {
         priceAnalysis: "Market Analysis & LME",
         corporateUpdates: "Corporate Updates",
         trends: "Industry Trends",
-        additionalFactors: "Strategic Factors"
+        additionalFactors: "Strategic Factors",
+        loading: "Syncing with global market data...",
+        error: "Failed to load latest news. Showing offline records."
     },
     footer: {
       desc: "Forging the future of Saudi Arabia's industrial sector with precision aluminum solutions. Located in the heart of Dammam's industrial hub.",
@@ -700,7 +711,9 @@ const content = {
         priceAnalysis: "تحليل السوق وبورصة لندن (LME)",
         corporateUpdates: "تحديثات الشركات",
         trends: "توجهات الصناعة",
-        additionalFactors: "عوامل استراتيجية"
+        additionalFactors: "عوامل استراتيجية",
+        loading: "جاري المزامنة مع بيانات السوق العالمية...",
+        error: "فشل في تحميل آخر الأخبار. يتم عرض السجلات المخزنة."
     },
     footer: {
       desc: "نصيغ مستقبل القطاع الصناعي في المملكة العربية السعودية بمحاليل ألمنيوم دقيقة. تقع في قلب المركز الصناعي بالدمام.",
@@ -717,8 +730,8 @@ const content = {
   }
 };
 
-// --- NEWS DATA ---
-const newsData = {
+// --- DEFAULT NEWS DATA (Fallback) ---
+const defaultNewsData: NewsData = {
     date: "2025-12-20",
     lme: [
         "Aluminum rose to $2,958.90 USD/T on December 19, 2025 (+1.47%).",
@@ -779,13 +792,79 @@ const SectionHeading = ({ title, subtitle, dark = false, lang }: { title: string
 const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBack }) => {
   const isRTL = lang === 'ar';
   const t = content[lang].news;
+  const [news, setNews] = useState<NewsData>(defaultNewsData);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    const fetchLatestNews = async () => {
+      try {
+        setLoading(true);
+        // 1. Fetch the raw markdown file
+        const response = await fetch('./aluminum_industry_news.md');
+        if (!response.ok) throw new Error("Failed to fetch news file");
+        const markdown = await response.text();
+
+        // 2. Use Gemini to parse the Markdown into the required JSON structure
+        const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+        const result = await ai.models.generateContent({
+          model: 'gemini-3-flash-preview',
+          contents: `Parse the following Aluminum Industry News Markdown into a JSON object matching this schema:
+          {
+            "date": "string (last updated date)",
+            "lme": ["list of price related points"],
+            "corporate": ["list of company related updates"],
+            "trends": ["list of industry trends"],
+            "factors": ["list of additional factors"]
+          }
+
+          Markdown Content:
+          ${markdown}`,
+          config: {
+            responseMimeType: "application/json",
+            responseSchema: {
+              type: Type.OBJECT,
+              properties: {
+                date: { type: Type.STRING },
+                lme: { type: Type.ARRAY, items: { type: Type.STRING } },
+                corporate: { type: Type.ARRAY, items: { type: Type.STRING } },
+                trends: { type: Type.ARRAY, items: { type: Type.STRING } },
+                factors: { type: Type.ARRAY, items: { type: Type.STRING } }
+              },
+              required: ["date", "lme", "corporate", "trends", "factors"]
+            }
+          }
+        });
+
+        const parsedData = JSON.parse(result.text || "{}");
+        setNews(parsedData);
+      } catch (err) {
+        console.error("News sync error:", err);
+        setError(true);
+        // Fallback already set via useState default
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchLatestNews();
+  }, []);
 
   const categories = [
-    { title: t.priceAnalysis, icon: BarChart3, items: newsData.lme, color: 'text-nasr-blue', bg: 'bg-blue-50' },
-    { title: t.corporateUpdates, icon: Building2, items: newsData.corporate, color: 'text-nasr-red', bg: 'bg-red-50' },
-    { title: t.trends, icon: TrendingUp, items: newsData.trends, color: 'text-nasr-accent', bg: 'bg-emerald-50' },
-    { title: t.additionalFactors, icon: Zap, items: newsData.factors, color: 'text-nasr-dark', bg: 'bg-gray-100' },
+    { title: t.priceAnalysis, icon: BarChart3, items: news.lme, color: 'text-nasr-blue', bg: 'bg-blue-50' },
+    { title: t.corporateUpdates, icon: Building2, items: news.corporate, color: 'text-nasr-red', bg: 'bg-red-50' },
+    { title: t.trends, icon: TrendingUp, items: news.trends, color: 'text-nasr-accent', bg: 'bg-emerald-50' },
+    { title: t.additionalFactors, icon: Zap, items: news.factors, color: 'text-nasr-dark', bg: 'bg-gray-100' },
   ];
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-white flex flex-col items-center justify-center p-6 text-center">
+         <Loader2 className="w-12 h-12 text-nasr-blue animate-spin mb-4" />
+         <p className="text-gray-500 font-serif uppercase tracking-widest text-sm">{t.loading}</p>
+      </div>
+    );
+  }
 
   return (
     <MotionDiv initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 50 }} className={`min-h-screen bg-white ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}>
@@ -799,6 +878,11 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
       </div>
 
       <div className="container mx-auto px-6">
+        {error && (
+            <div className="mb-8 p-4 bg-amber-50 border-l-4 border-amber-400 text-amber-800 text-sm font-medium flex items-center gap-3">
+                <ShieldCheck size={18} /> {t.error}
+            </div>
+        )}
         <div className="flex flex-col lg:flex-row gap-12 items-end mb-20">
             <div className="flex-1">
                 <SectionHeading title={t.title} subtitle={t.subtitle} lang={lang} />
@@ -808,7 +892,7 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
                 <Clock className="text-nasr-blue" size={20} />
                 <div>
                     <div className="text-[10px] uppercase font-bold text-gray-400 tracking-widest">{t.lastUpdated}</div>
-                    <div className="text-sm font-bold text-nasr-dark">{newsData.date}</div>
+                    <div className="text-sm font-bold text-nasr-dark">{news.date}</div>
                 </div>
             </div>
         </div>
@@ -840,7 +924,7 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
             ))}
         </div>
 
-        {/* LME Featured Stat */}
+        {/* LME Featured Stat (Driven by dynamic data if possible) */}
         <div className="mt-20 p-10 bg-nasr-dark text-white rounded-sm relative overflow-hidden">
              <div className="absolute top-0 right-0 w-64 h-64 bg-nasr-blue/20 blur-[100px] -z-10"></div>
              <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-10">
@@ -848,13 +932,13 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
                     <div className="flex items-center gap-3 text-nasr-blue font-bold uppercase tracking-[0.3em] text-xs mb-4">
                         <BarChart3 size={16} /> LME Live Analysis
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-serif mb-4">LME primary aluminum cash price is closing in on USD 2,800</h2>
-                    <p className="text-gray-400 leading-relaxed">The market is rebounding from earlier weakness, trading within a varied price range and settling near a multi-year high by the end of 2025.</p>
+                    <h2 className="text-3xl md:text-4xl font-serif mb-4">Market settling near a multi-year high by the end of 2025</h2>
+                    <p className="text-gray-400 leading-relaxed">The LME primary aluminum cash price is closing in on USD 2,800, with expectations of further increases in the coming year.</p>
                  </div>
                  <div className="flex items-center gap-6">
                      <div className="text-center">
-                         <div className="text-4xl md:text-6xl font-serif font-bold text-white mb-1">$2,958</div>
-                         <div className="text-[10px] text-nasr-accent font-bold uppercase tracking-widest">+1.47% (1D)</div>
+                         <div className="text-4xl md:text-6xl font-serif font-bold text-white mb-1">~$3k</div>
+                         <div className="text-[10px] text-nasr-accent font-bold uppercase tracking-widest">12-Mo Forecast</div>
                      </div>
                      <div className="h-20 w-[1px] bg-gray-700 hidden md:block"></div>
                      <div className="text-center">
@@ -1588,3 +1672,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+
