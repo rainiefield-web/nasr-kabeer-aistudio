@@ -1,30 +1,18 @@
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
 */
 
 import React, { useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas, useFrame, ThreeElements } from '@react-three/fiber';
 import { Float, MeshDistortMaterial, Cylinder, Box, Environment, Lightformer } from '@react-three/drei';
 import * as THREE from 'three';
 
-// Fix for missing JSX definitions in some environments
+// Fix for missing JSX definitions in some environments by extending the global JSX namespace with Three.js elements
 declare global {
   namespace JSX {
-    interface IntrinsicElements {
-      ambientLight: any;
-      pointLight: any;
-      spotLight: any;
-      directionalLight: any;
-      group: any;
-      mesh: any;
-      meshStandardMaterial: any;
-      meshPhysicalMaterial: any;
-      boxGeometry: any;
-      cylinderGeometry: any;
-      extrudeGeometry: any;
-      [elemName: string]: any;
-    }
+    interface IntrinsicElements extends ThreeElements {}
   }
 }
 
@@ -52,17 +40,19 @@ const AluminumProfile = ({ position, rotation, scale = 1, type = 'tube' }: { pos
   if (type === 'beam') {
     // I-Beam simulation using a Box (simplified)
     return (
-      <Box ref={ref} args={[0.5, 4, 0.5]} position={position} rotation={rotation} scale={scale}>
+      <mesh ref={ref} position={position} rotation={rotation} scale={scale}>
+         <boxGeometry args={[0.5, 4, 0.5]} />
          <meshStandardMaterial {...materialProps} />
-      </Box>
+      </mesh>
     )
   }
 
   // Default Cylinder/Tube
   return (
-    <Cylinder ref={ref} args={[0.2, 0.2, 4, 32]} position={position} rotation={rotation} scale={scale}>
+    <mesh ref={ref} position={position} rotation={rotation} scale={scale}>
+      <cylinderGeometry args={[0.2, 0.2, 4, 32]} />
       <meshStandardMaterial {...materialProps} />
-    </Cylinder>
+    </mesh>
   );
 };
 
@@ -79,14 +69,24 @@ const StructuredLattice = () => {
   return (
     <group ref={ref}>
       {/* Create a structural aesthetic */}
-      <Box args={[8, 0.1, 0.1]} position={[0, 0, 0]}><meshStandardMaterial color="#4B5563" /></Box>
-      <Box args={[0.1, 8, 0.1]} position={[0, 0, 0]}><meshStandardMaterial color="#4B5563" /></Box>
-      <Box args={[0.1, 0.1, 8]} position={[0, 0, 0]}><meshStandardMaterial color="#4B5563" /></Box>
+      <mesh position={[0, 0, 0]}>
+        <boxGeometry args={[8, 0.1, 0.1]} />
+        <meshStandardMaterial color="#4B5563" />
+      </mesh>
+      <mesh position={[0, 0, 0]}>
+        <boxGeometry args={[0.1, 8, 0.1]} />
+        <meshStandardMaterial color="#4B5563" />
+      </mesh>
+      <mesh position={[0, 0, 0]}>
+        <boxGeometry args={[0.1, 0.1, 8]} />
+        <meshStandardMaterial color="#4B5563" />
+      </mesh>
       
       {/* Floating details */}
-      <Box args={[1, 1, 1]} position={[2, 2, 2]} rotation={[0.5, 0.5, 0]}>
+      <mesh position={[2, 2, 2]} rotation={[0.5, 0.5, 0]}>
+        <boxGeometry args={[1, 1, 1]} />
         <meshStandardMaterial color="#10B981" transparent opacity={0.2} wireframe />
-      </Box>
+      </mesh>
     </group>
   );
 }
