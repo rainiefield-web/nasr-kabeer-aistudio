@@ -1,45 +1,49 @@
 import os
+import time
 from google import genai
 from google.genai import types
 
 def main():
+    # 自动获取环境变量 GEMINI_API_KEY
     client = genai.Client()
 
-    # 针对铝行业的详细提示词
     prompt = """
-    Search for the most important news from the last 24 hours regarding the global aluminum industry. 
-    Focus on:
-    1. LME (London Metal Exchange) aluminum prices and trends.
-    2. Major supply chain updates, mining news, and smelter activities.
-    3. Sustainability and green aluminum news.
-    4. Key corporate announcements from companies like Alcoa, Rio Tinto, or Rusal.
-    
-    Please provide a concise summary in English with 5-8 bullet points, 
-    and include the source links for each news item.
+    Search for the latest news (Dec 20, 2025) about the global aluminum industry.
+    Focus on LME prices, green aluminum, and corporate updates (Alcoa, Rio Tinto).
+    Provide a summary in English with source links.
     """
 
     try:
-        # 启用 Google 搜索工具以获取最新行业动态
+        print("Fetching aluminum industry news...")
+        
+        # 修正后的 Gemini 2.0 搜索工具语法
         response = client.models.generate_content(
             model="gemini-2.0-flash",
             contents=prompt,
             config=types.GenerateContentConfig(
-                tools=[types.Tool(google_search=types.GoogleSearchRetrieval())]
+                tools=[types.Tool(google_search=types.GoogleSearch())]
             )
         )
         
-        content = response.text
-        
-        # 将内容写入文件
-        # 使用 'w' 模式覆盖旧内容，如果你想保留历史，请改为 'a' (append)
-        with open("aluminum_industry_news.md", "w", encoding="utf-8") as f:
-            f.write(f"# Aluminum Industry News Update ({os.popen('date').read().strip()})\n\n")
-            f.write(content)
+        if not response.text:
+            print("Received empty response. It might still be 'loading' internally.")
+            return
+
+        # 保存到文件
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        file_path = os.path.join(base_dir, "aluminum_industry_news.md")
+
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write(f"Last Updated: {time.strftime('%Y-%m-%d %H:%M:%S')} UTC\n\n")
+            f.write(response.text)
             
-        print("News successfully fetched and saved.")
+        print("Success: aluminum_industry_news.md updated.")
 
     except Exception as e:
-        print(f"An error occurred: {e}")
+        if "429" in str(e):
+            print("Error: API Quota exhausted (429). Please wait a few minutes before trying again.")
+        else:
+            print(f"An unexpected error occurred: {e}")
 
 if __name__ == "__main__":
     main()
