@@ -32,12 +32,12 @@ def extract_json_payload(text):
     cleaned = re.sub(r'\[\d+\]', '', cleaned)
     cleaned = cleaned.strip()
 
-    # 2. 核心提取：非贪婪匹配第一个 { ... }
-    # 使用 (\{.*?\}) 确保在遇到第一个 '}' 时就停止匹配
-    match = re.search(r'(\{.*?\})', cleaned, re.DOTALL)
-    
-    if match:
-        json_str = match.group(1)
+    # 2. 核心提取：使用首尾括号截取完整 JSON，避免嵌套对象被截断
+    start = cleaned.find("{")
+    end = cleaned.rfind("}")
+
+    if start != -1 and end != -1 and end > start:
+        json_str = cleaned[start:end + 1]
         try:
             # 尝试标准解析
             return json.loads(json_str)
