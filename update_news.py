@@ -53,6 +53,7 @@ def main():
             json_path = os.path.join(base_dir, "public", "news_data.json")
             
             # Parse to ensure validity before saving (and for pretty printing)
+            data = None
             try:
                 data = json.loads(response.text)
                 # Ensure date is set if model didn't provide it strictly
@@ -66,16 +67,39 @@ def main():
             except json.JSONDecodeError:
                 print("Error: Model did not return valid JSON")
                 # Fallback or error handling could go here
+                return
                 
             # Optional: Keep the markdown file for reference (simplified)
-            md_path = os.path.join(base_dir, "aluminum_industry_news.md")
-            with open(md_path, "w", encoding="utf-8") as f:
-                f.write(f"Last Updated: {time.strftime('%Y-%m-%d %H:%M:%S')} UTC\n\n")
-                f.write("News is now generated in `public/news_data.json`.\n\n")
-                f.write("### Raw JSON Content\n")
-                f.write("```json\n")
-                f.write(response.text)
-                f.write("\n```")
+            updated_at = time.strftime('%Y-%m-%d %H:%M:%S')
+
+            def append_section(lines, title, items):
+                lines.append(f"### {title}")
+                for item in items:
+                    lines.append(f"- {item}")
+                lines.append("")
+
+            lines = [
+                "# Industry Insights",
+                f"Last Updated: {updated_at} UTC",
+                "",
+                "## English",
+            ]
+            append_section(lines, "LME Price Analysis", data["en"]["lme"])
+            append_section(lines, "Corporate Updates", data["en"]["corporate"])
+            append_section(lines, "Industry Trends", data["en"]["trends"])
+            append_section(lines, "Strategic Factors", data["en"]["factors"])
+            lines.append("## Arabic")
+            append_section(lines, "تحليل السوق وبورصة لندن (LME)", data["ar"]["lme"])
+            append_section(lines, "تحديثات الشركات", data["ar"]["corporate"])
+            append_section(lines, "توجهات الصناعة", data["ar"]["trends"])
+            append_section(lines, "عوامل استراتيجية", data["ar"]["factors"])
+
+            for md_path in [
+                os.path.join(base_dir, "aluminum_industry_news.md"),
+                os.path.join(base_dir, "public", "aluminum_industry_news.md"),
+            ]:
+                with open(md_path, "w", encoding="utf-8") as f:
+                    f.write("\n".join(lines))
 
         else:
             print("API returned empty text.")
