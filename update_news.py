@@ -36,6 +36,26 @@ def main():
     Ensure the Arabic translation is professional and accurate for the aluminum industry context.
     """
 
+    def extract_json_payload(text):
+        if not text:
+            return None
+        cleaned = text.strip()
+        if cleaned.startswith("```"):
+            cleaned = cleaned.strip("`")
+            cleaned = cleaned.replace("json", "", 1).strip()
+        try:
+            return json.loads(cleaned)
+        except json.JSONDecodeError:
+            pass
+        start = cleaned.find("{")
+        end = cleaned.rfind("}")
+        if start != -1 and end != -1 and end > start:
+            try:
+                return json.loads(cleaned[start:end + 1])
+            except json.JSONDecodeError:
+                return None
+        return None
+
     try:
         response = client.models.generate_content(
             model="gemini-2.0-flash",
@@ -45,30 +65,27 @@ def main():
                 tools=[types.Tool(google_search=types.GoogleSearch())]
             )
         )
-        
+
         if response.text:
             base_dir = os.path.dirname(os.path.abspath(__file__))
-            
+
             # Save JSON to public directory
             json_path = os.path.join(base_dir, "public", "news_data.json")
-            
+
             # Parse to ensure validity before saving (and for pretty printing)
-            data = None
-            try:
-                data = json.loads(response.text)
-                # Ensure date is set if model didn't provide it strictly
-                if not data.get("date") or data["date"] == "YYYY-MM-DD":
-                    data["date"] = time.strftime('%Y-%m-%d')
-                
-                with open(json_path, "w", encoding="utf-8") as f:
-                    json.dump(data, f, ensure_ascii=False, indent=2)
-                print(f"Successfully updated news JSON at {json_path}")
-                
-            except json.JSONDecodeError:
+            data = extract_json_payload(response.text)
+            if not data:
                 print("Error: Model did not return valid JSON")
-                # Fallback or error handling could go here
                 return
-                
+
+            # Ensure date is set if model didn't provide it strictly
+            if not data.get("date") or data["date"] == "YYYY-MM-DD":
+                data["date"] = time.strftime('%Y-%m-%d')
+
+            with open(json_path, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+            print(f"Successfully updated news JSON at {json_path}")
+
             # Optional: Keep the markdown file for reference (simplified)
             updated_at = time.strftime('%Y-%m-%d %H:%M:%S')
 
