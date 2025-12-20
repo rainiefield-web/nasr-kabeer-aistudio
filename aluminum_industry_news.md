@@ -5,7 +5,7 @@ News is now generated in `public/news_data.json`.
 ### Raw JSON Content
 ```json
 ```{
-  "date": "2025-12-20",
+  "date": "2025-12-19",
   "en": {
     "lme": [
       "LME aluminum prices are influenced by global economic conditions, supply chain disruptions, and demand from key sectors like construction and automotive.",
