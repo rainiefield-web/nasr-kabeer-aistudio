@@ -36,7 +36,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add aluminum_industry_news.md
+          git add aluminum_industry_news.md public/aluminum_industry_news.md
           # 如果内容没变，commit 会报错，所以用 || exit 0 忽略
           git commit -m "Update Aluminum News: $(date -u +'%Y-%m-%d')" || exit 0
           git push
