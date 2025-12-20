@@ -1,42 +1,99 @@
 import os
 import time
-from google import genai
-from google.genai import types
+import json
+try:
+    from google import genai
+    from google.genai import types
+except ImportError as e:
+    with open("debug_error.log", "w") as f:
+        f.write(f"ImportError: {e}")
+    print(f"ImportError: {e}")
+    exit(1)
 
 def main():
     client = genai.Client()
     
-    # 铝行业搜索提示词
-    prompt = "Provide a summary of the latest global aluminum industry news (Dec 20, 2025) including LME prices and key company updates with source links."
+    # Updated prompt for bilingual JSON output
+    prompt = """
+    Provide a summary of the latest global aluminum industry news (current date) including LME prices, corporate updates, industry trends, and strategic factors.
+    
+    Output MUST be a valid JSON object with the following structure:
+    {
+      "date": "YYYY-MM-DD",
+      "en": {
+        "lme": ["point 1", "point 2", ...],
+        "corporate": ["point 1", "point 2", ...],
+        "trends": ["point 1", "point 2", ...],
+        "factors": ["point 1", "point 2", ...]
+      },
+      "ar": {
+        "lme": ["point 1 (Arabic)", "point 2 (Arabic)", ...],
+        "corporate": ["point 1 (Arabic)", "point 2 (Arabic)", ...],
+        "trends": ["point 1 (Arabic)", "point 2 (Arabic)", ...],
+        "factors": ["point 1 (Arabic)", "point 2 (Arabic)", ...]
+      }
+    }
+    Ensure the Arabic translation is professional and accurate for the aluminum industry context.
+    """
 
     try:
-        # 核心修复：使用正确的 GoogleSearch() 工具
         response = client.models.generate_content(
             model="gemini-2.0-flash",
             contents=prompt,
             config=types.GenerateContentConfig(
+                response_mime_type="application/json",
                 tools=[types.Tool(google_search=types.GoogleSearch())]
             )
         )
         
         if response.text:
             base_dir = os.path.dirname(os.path.abspath(__file__))
-            file_path = os.path.join(base_dir, "aluminum_industry_news.md")
-            with open(file_path, "w", encoding="utf-8") as f:
+            
+            # Save JSON to public directory
+            json_path = os.path.join(base_dir, "public", "news_data.json")
+            
+            # Parse to ensure validity before saving (and for pretty printing)
+            try:
+                data = json.loads(response.text)
+                # Ensure date is set if model didn't provide it strictly
+                if not data.get("date") or data["date"] == "YYYY-MM-DD":
+                    data["date"] = time.strftime('%Y-%m-%d')
+                
+                with open(json_path, "w", encoding="utf-8") as f:
+                    json.dump(data, f, ensure_ascii=False, indent=2)
+                print(f"Successfully updated news JSON at {json_path}")
+                
+            except json.JSONDecodeError:
+                print("Error: Model did not return valid JSON")
+                # Fallback or error handling could go here
+                
+            # Optional: Keep the markdown file for reference (simplified)
+            md_path = os.path.join(base_dir, "aluminum_industry_news.md")
+            with open(md_path, "w", encoding="utf-8") as f:
                 f.write(f"Last Updated: {time.strftime('%Y-%m-%d %H:%M:%S')} UTC\n\n")
+                f.write("News is now generated in `public/news_data.json`.\n\n")
+                f.write("### Raw JSON Content\n")
+                f.write("```json\n")
                 f.write(response.text)
-            print("Successfully updated news.")
+                f.write("\n```")
+
         else:
             print("API returned empty text.")
 
     except Exception as e:
         if "429" in str(e):
             print("QUOTA_EXHAUSTED: Today's free limit reached. Skipping update.")
-            # 正常退出，不触发 GitHub Action 报错红叉
             exit(0) 
         else:
             print(f"Error: {e}")
             exit(1)
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        with open("debug_error.log", "w") as f:
+            f.write(str(e))
+            import traceback
+            f.write(traceback.format_exc())
+        print(f"Failed with error: {e}")
