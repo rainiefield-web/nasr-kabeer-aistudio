@@ -1,51 +1,45 @@
-Last Updated: 2025-12-20 09:13:18 UTC
+Last Updated: 2025-12-20 16:01:25 UTC
 
 News is now generated in `public/news_data.json`.
 
 ### Raw JSON Content
 ```json
 ```{
-  "date": "2025-12-19",
+  "date": "2025-12-20",
   "en": {
     "lme": [
-      "LME aluminum prices are influenced by global economic conditions, supply chain disruptions, and demand from key sectors like construction and automotive.",
-      "Keep an eye on benchmark aluminum prices on the London Metal Exchange (LME) for real-time market movements."
+      "LME aluminum prices are influenced by global economic conditions, supply chain disruptions, and inventory levels.",
+      "Geopolitical events and trade policies can significantly impact LME aluminum price volatility."
     ],
     "corporate": [
-      "Company X announced expansion plans in Southeast Asia to capitalize on growing regional demand.",
-      "Company Y reported increased earnings due to higher aluminum prices and efficient production processes.",
-      "Merger and acquisition activities are shaping the competitive landscape."
+      "Major aluminum producers are focusing on sustainable production methods to reduce their carbon footprint.",
+      "Companies are investing in recycling technologies to increase the use of recycled aluminum in production."
     ],
     "trends": [
-      "Growing demand for sustainable and low-carbon aluminum is driving innovation in production technologies.",
-      "The automotive industry's shift towards electric vehicles (EVs) is boosting aluminum demand for lightweighting.",
-      "Recycling initiatives and circular economy models are gaining prominence in the aluminum industry."
+      "The demand for aluminum in the electric vehicle (EV) industry is growing rapidly due to its lightweight properties.",
+      "There is an increasing trend towards using aluminum in construction and infrastructure projects."
     ],
     "factors": [
-      "Geopolitical tensions and trade policies can significantly impact aluminum supply chains and prices.",
-      "Energy costs play a crucial role in aluminum production, particularly for energy-intensive smelting processes.",
-      "Environmental regulations are influencing production practices and driving investments in cleaner technologies."
+      "Energy costs play a crucial role in aluminum production, affecting overall prices and profitability.",
+      "Government regulations and environmental policies are shaping the future of the aluminum industry."
     ]
   },
   "ar": {
     "lme": [
-      "تتأثر أسعار الألومنيوم في بورصة لندن للمعادن (LME) بالظروف الاقتصادية العالمية واضطرابات سلسلة التوريد والطلب من القطاعات الرئيسية مثل البناء والسيارات.",
-      "راقب أسعار الألومنيوم القياسية في بورصة لندن للمعادن (LME) لمعرفة تحركات السوق في الوقت الفعلي."
+      "تتأثر أسعار الألومنيوم في بورصة لندن للمعادن بالظروف الاقتصادية العالمية واضطرابات سلسلة التوريد ومستويات المخزون.",
+      "يمكن للأحداث الجيوسياسية والسياسات التجارية أن تؤثر بشكل كبير على تقلبات أسعار الألومنيوم في بورصة لندن للمعادن."
     ],
     "corporate": [
-      "أعلنت الشركة X عن خطط توسع في جنوب شرق آسيا للاستفادة من الطلب الإقليمي المتزايد.",
-      "أبلغت الشركة Y عن زيادة الأرباح بسبب ارتفاع أسعار الألومنيوم وعمليات الإنتاج الفعالة.",
-      "تشكل أنشطة الاندماج والاستحواذ المشهد التنافسي."
+      "يركز كبار منتجي الألومنيوم على طرق الإنتاج المستدامة لتقليل بصمتهم الكربونية.",
+      "تستثمر الشركات في تقنيات إعادة التدوير لزيادة استخدام الألومنيوم المعاد تدويره في الإنتاج."
     ],
     "trends": [
-      "إن الطلب المتزايد على الألومنيوم المستدام ومنخفض الكربون يدفع الابتكار في تقنيات الإنتاج.",
-      "إن تحول صناعة السيارات نحو السيارات الكهربائية يعزز الطلب على الألومنيوم لتقليل الوزن.",
-      "تكتسب مبادرات إعادة التدوير ونماذج الاقتصاد الدائري مكانة بارزة في صناعة الألومنيوم."
+      "الطلب على الألومنيوم في صناعة السيارات الكهربائية ينمو بسرعة بسبب خصائصه خفيفة الوزن.",
+      "هناك اتجاه متزايد نحو استخدام الألومنيوم في مشاريع البناء والبنية التحتية."
     ],
     "factors": [
-      "يمكن أن تؤثر التوترات الجيوسياسية والسياسات التجارية بشكل كبير على سلاسل توريد الألومنيوم وأسعاره.",
-      "تلعب تكاليف الطاقة دورًا حاسمًا في إنتاج الألومنيوم، لا سيما بالنسبة لعمليات الصهر كثيفة الاستهلاك للطاقة.",
-      "تؤثر اللوائح البيئية على ممارسات الإنتاج وتدفع الاستثمارات في التقنيات الأنظف."
+      "تلعب تكاليف الطاقة دورًا حاسمًا في إنتاج الألومنيوم، مما يؤثر على الأسعار والربحية الإجمالية.",
+      "تعمل اللوائح الحكومية والسياسات البيئية على تشكيل مستقبل صناعة الألومنيوم."
     ]
   }
 }
@@ -53,44 +47,38 @@ News is now generated in `public/news_data.json`.
   "date": "2025-12-20",
   "en": {
     "lme": [
-      "LME aluminum prices are influenced by global economic conditions, supply chain disruptions, and demand from key sectors like construction and automotive.",
-      "Keep an eye on benchmark aluminum prices on the London Metal Exchange (LME) for real-time market movements."
+      "LME aluminum prices are influenced by global economic conditions, supply chain disruptions, and inventory levels [cite: 1].",
+      "Geopolitical events and trade policies can significantly impact LME aluminum price volatility [cite: 1]."
     ],
     "corporate": [
-      "Company X announced expansion plans in Southeast Asia to capitalize on growing regional demand.",
-      "Company Y reported increased earnings due to higher aluminum prices and efficient production processes.",
-      "Merger and acquisition activities are shaping the competitive landscape."
+      "Major aluminum producers are focusing on sustainable production methods to reduce their carbon footprint [cite: 2].",
+      "Companies are investing in recycling technologies to increase the use of recycled aluminum in production [cite: 2]."
     ],
     "trends": [
-      "Growing demand for sustainable and low-carbon aluminum is driving innovation in production technologies.",
-      "The automotive industry's shift towards electric vehicles (EVs) is boosting aluminum demand for lightweighting.",
-      "Recycling initiatives and circular economy models are gaining prominence in the aluminum industry."
+      "The demand for aluminum in the electric vehicle (EV) industry is growing rapidly due to its lightweight properties [cite: 3].",
+      "There is an increasing trend towards using aluminum in construction and infrastructure projects [cite: 3]."
     ],
     "factors": [
-      "Geopolitical tensions and trade policies can significantly impact aluminum supply chains and prices.",
-      "Energy costs play a crucial role in aluminum production, particularly for energy-intensive smelting processes.",
-      "Environmental regulations are influencing production practices and driving investments in cleaner technologies."
+      "Energy costs play a crucial role in aluminum production, affecting overall prices and profitability [cite: 4].",
+      "Government regulations and environmental policies are shaping the future of the aluminum industry [cite: 4]."
     ]
   },
   "ar": {
     "lme": [
-      "تتأثر أسعار الألومنيوم في بورصة لندن للمعادن (LME) بالظروف الاقتصادية العالمية واضطرابات سلسلة التوريد والطلب من القطاعات الرئيسية مثل البناء والسيارات.",
-      "راقب أسعار الألومنيوم القياسية في بورصة لندن للمعادن (LME) لمعرفة تحركات السوق في الوقت الفعلي."
+      "تتأثر أسعار الألومنيوم في بورصة لندن للمعادن بالظروف الاقتصادية العالمية واضطرابات سلسلة التوريد ومستويات المخزون [cite: 1].",
+      "يمكن للأحداث الجيوسياسية والسياسات التجارية أن تؤثر بشكل كبير على تقلبات أسعار الألومنيوم في بورصة لندن للمعادن [cite: 1]."
     ],
     "corporate": [
-      "أعلنت الشركة X عن خطط توسع في جنوب شرق آسيا للاستفادة من الطلب الإقليمي المتزايد.",
-      "أبلغت الشركة Y عن زيادة الأرباح بسبب ارتفاع أسعار الألومنيوم وعمليات الإنتاج الفعالة.",
-      "تشكل أنشطة الاندماج والاستحواذ المشهد التنافسي."
+      "يركز كبار منتجي الألومنيوم على طرق الإنتاج المستدامة لتقليل بصمتهم الكربونية [cite: 2].",
+      "تستثمر الشركات في تقنيات إعادة التدوير لزيادة استخدام الألومنيوم المعاد تدويره في الإنتاج [cite: 2]."
     ],
     "trends": [
-      "إن الطلب المتزايد على الألومنيوم المستدام ومنخفض الكربون يدفع الابتكار في تقنيات الإنتاج.",
-      "إن تحول صناعة السيارات نحو السيارات الكهربائية يعزز الطلب على الألومنيوم لتقليل الوزن.",
-      "تكتسب مبادرات إعادة التدوير ونماذج الاقتصاد الدائري مكانة بارزة في صناعة الألومنيوم."
+      "الطلب على الألومنيوم في صناعة السيارات الكهربائية ينمو بسرعة بسبب خصائصه خفيفة الوزن [cite: 3].",
+      "هناك اتجاه متزايد نحو استخدام الألومنيوم في مشاريع البناء والبنية التحتية [cite: 3]."
     ],
     "factors": [
-      "يمكن أن تؤثر التوترات الجيوسياسية والسياسات التجارية بشكل كبير على سلاسل توريد الألومنيوم وأسعاره.",
-      "تلعب تكاليف الطاقة دورًا حاسمًا في إنتاج الألومنيوم، لا سيما بالنسبة لعمليات الصهر كثيفة الاستهلاك للطاقة.",
-      "تؤثر اللوائح البيئية على ممارسات الإنتاج وتدفع الاستثمارات في التقنيات الأنظف."
+      "تلعب تكاليف الطاقة دورًا حاسمًا في إنتاج الألومنيوم، مما يؤثر على الأسعار والربحية الإجمالية [cite: 4].",
+      "تعمل اللوائح الحكومية والسياسات البيئية على تشكيل مستقبل صناعة الألومنيوم [cite: 4]."
     ]
   }
 }
