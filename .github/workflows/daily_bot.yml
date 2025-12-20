@@ -1,0 +1,28 @@
+name: Daily Aluminum News
+on:
+  schedule:
+    - cron: '0 2,14 * * *' # 每天北京时间 10点和22点自动运行
+  workflow_dispatch: # 允许你手动点击运行
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install feedparser google-generativeai
+      - name: Run script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python update_news.py
+      - name: Update Repo
+        run: |
+          git config --global user.name "AluminumBot"
+          git config --global user.email "bot@github.com"
+          git add AL_NEWS.md
+          git commit -m "Update industry news" || exit 0
+          git push
