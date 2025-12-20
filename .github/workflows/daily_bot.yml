@@ -1,9 +1,13 @@
-name: Daily News Bot
+name: Daily Aluminum News Bot
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs daily at midnight (adjust as needed)
-  workflow_dispatch:      # Allows you to run it manually for testing
+    - cron: '0 2 * * *' # 每天凌晨 2 点运行 (UTC 时间)
+  workflow_dispatch:
+
+# 必须增加写入权限，否则推送会失败
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -16,15 +20,23 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11' # Fixed: Moving from 3.9 to 3.11
+          python-version: '3.11'
 
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install google-genai # Updated to the new SDK
+          pip install google-genai
 
       - name: Run Update Script
         env:
-          # Ensure this name matches what you saved in GitHub Settings > Secrets
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} 
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python update_news.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add aluminum_industry_news.md
+          # 如果内容没变，commit 会报错，所以用 || exit 0 忽略
+          git commit -m "Update Aluminum News: $(date -u +'%Y-%m-%d')" || exit 0
+          git push
