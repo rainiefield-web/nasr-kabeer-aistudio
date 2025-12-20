@@ -69,12 +69,17 @@ def main():
     prompt = """
     Search for today's REAL, verifiable global aluminum industry news.
     Requirement:
-    1. Include DAILY LME aluminum cash price and intraday change (numeric values required).
-    2. Provide key points in English with REAL companies/exchanges (no placeholders).
-    3. Each bullet MUST include a source name and a clickable URL (https://...).
-    4. TRANSLATE all English points into professional Arabic. Do NOT leave the 'ar' section empty.
-    5. Output ONCE as a single JSON object. No Markdown.
-    
+    1. ONLY use information from these sources:
+       - https://www.aluminium-journal.com/news
+       - https://www.investing.com/commodities/aluminum-news
+       - https://aluminiumtoday.com/news
+       - https://news.metal.com/list/latest/aluminium
+    2. Include DAILY LME aluminum cash price and intraday change (numeric values required).
+    3. Provide key points in English with REAL companies/exchanges (no placeholders).
+    4. Each bullet MUST include a source name and a clickable URL (https://...).
+    5. TRANSLATE all English points into professional Arabic. Do NOT leave the 'ar' section empty.
+    6. Output ONCE as a single JSON object. No Markdown.
+
     Structure:
     {
       "date": "YYYY-MM-DD",
