@@ -915,7 +915,11 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
         // 1. Fetch the raw markdown file
         // Add timestamp to prevent browser caching of the file itself
         const mdResponse = await fetch(`${NEWS_MARKDOWN_PATH}?t=${Date.now()}`, {
-          cache: "no-store"
+          cache: "no-store",
+          headers: {
+            "Cache-Control": "no-cache",
+            Pragma: "no-cache"
+          }
         });
         if (!mdResponse.ok) throw new Error("Failed to fetch news file");
         markdown = await mdResponse.text();
@@ -997,7 +1001,18 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
       fetchLatestNews(true);
     }, 30000);
 
-    return () => clearInterval(intervalId);
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        fetchLatestNews(true);
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      clearInterval(intervalId);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
   }, []);
 
   if (loading) {
