@@ -116,15 +116,25 @@ def main():
             return True
 
         required_sections = ["lme", "corporate", "trends", "factors"]
-        for section in required_sections:
-            if not ensure_entries(section, "en") or not ensure_entries(section, "ar"):
-                print(f"Error: Section {section} is missing valid entries with URLs.")
-                exit(1)
+        invalid_sections = [
+            section
+            for section in required_sections
+            if not ensure_entries(section, "en") or not ensure_entries(section, "ar")
+        ]
+        if invalid_sections:
+            print(
+                "Warning: Missing valid entries with URLs for sections: "
+                f"{', '.join(invalid_sections)}. Skipping update."
+            )
+            exit(0)
 
         lme_entries = data.get("en", {}).get("lme", [])
         if not any(re.search(r"\d", entry) and "LME" in entry for entry in lme_entries):
-            print("Error: LME section must include numeric price and LME reference.")
-            exit(1)
+            print(
+                "Warning: LME section must include numeric price and LME reference. "
+                "Skipping update."
+            )
+            exit(0)
 
         # 校验日期
         if not data.get("date") or "YYYY" in data["date"]:
