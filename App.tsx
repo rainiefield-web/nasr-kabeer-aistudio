@@ -32,6 +32,78 @@ interface ProcessStep {
   icon: React.ElementType;
 }
 
+interface NewsContent {
+  lme: string[];
+  corporate: string[];
+  trends: string[];
+  factors: string[];
+}
+
+interface NewsData {
+  date: string;
+  en: NewsContent;
+  ar: NewsContent;
+}
+
+const isNewsData = (data: any): data is NewsData => (
+  data
+  && typeof data === 'object'
+  && typeof data.date === 'string'
+  && data.en
+  && data.ar
+  && Array.isArray(data.en.lme)
+  && Array.isArray(data.en.corporate)
+  && Array.isArray(data.en.trends)
+  && Array.isArray(data.en.factors)
+  && Array.isArray(data.ar.lme)
+  && Array.isArray(data.ar.corporate)
+  && Array.isArray(data.ar.trends)
+  && Array.isArray(data.ar.factors)
+);
+
+const tryParseNewsData = (text: string): NewsData | null => {
+  try {
+    const parsed = JSON.parse(text);
+    return isNewsData(parsed) ? parsed : null;
+  } catch {
+    return null;
+  }
+};
+
+const parseNewsDataCandidates = (source: string): NewsData | null => {
+  const cleaned = source.replace(/```/g, '').trim();
+  const direct = tryParseNewsData(cleaned);
+  if (direct) return direct;
+
+  const chunks = cleaned.split(/}\s*{/);
+  if (chunks.length > 1) {
+    for (let i = 0; i < chunks.length; i += 1) {
+      const candidate = chunks.length === 1
+        ? chunks[i]
+        : i === 0
+          ? `${chunks[i]}}`
+          : i === chunks.length - 1
+            ? `{${chunks[i]}`
+            : `{${chunks[i]}}`;
+      const parsed = tryParseNewsData(candidate);
+      if (parsed) return parsed;
+    }
+  }
+
+  return null;
+};
+
+const extractNewsDataFromMarkdown = (markdown: string): NewsData | null => {
+  const codeBlockRegex = /```json\s*([\s\S]*?)```/gi;
+  let match: RegExpExecArray | null;
+  while ((match = codeBlockRegex.exec(markdown)) !== null) {
+    const parsed = parseNewsDataCandidates(match[1]);
+    if (parsed) return parsed;
+  }
+
+  return parseNewsDataCandidates(markdown);
+};
+
 const content = {
   en: {
     nav: {
@@ -809,6 +881,14 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
         setNewsMarkdown(markdown);
         const lastUpdatedMatch = markdown.match(/Last Updated:\s*(.+)/i);
         setLastUpdated(lastUpdatedMatch ? lastUpdatedMatch[1].trim() : null);
+        console.log("Content changed, parsing updated news...");
+
+        const parsedData = extractNewsDataFromMarkdown(markdown);
+        if (!parsedData) {
+          throw new Error("Unable to parse news markdown");
+        }
+
+        setNewsData(parsedData);
 
         // Update Cache
         newsHashRef.current = currentHash;
