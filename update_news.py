@@ -15,7 +15,7 @@ def extract_json_payload(text):
     """
     极致容错版解析器：
     1. 移除 Markdown 标签和搜索引用。
-    2. 仅提取第一个闭合的 JSON 对象，防止重复对象干扰。
+    2. 解析文本中的第一个有效 JSON 对象，防止重复对象干扰。
     3. 处理 JSON 内部的非法换行。
     """
     if not text:
@@ -28,27 +28,32 @@ def extract_json_payload(text):
     # 1. 预清洗：剥离所有 Markdown 符号和搜索来源引用
     # 移除 ```json, ```,, [1] 等
     cleaned = text.replace("```json", "").replace("```", "")
-    cleaned = re.sub(r'\\', '', cleaned)
     cleaned = re.sub(r'\[\d+\]', '', cleaned)
     cleaned = cleaned.strip()
 
-    # 2. 核心提取：使用首尾括号截取完整 JSON，避免嵌套对象被截断
+    # 2. 核心提取：优先用 JSONDecoder 抽取第一个完整对象
+    decoder = json.JSONDecoder()
+    start = cleaned.find("{")
+    while start != -1 and start < len(cleaned):
+        try:
+            obj, _ = decoder.raw_decode(cleaned[start:])
+            return obj
+        except json.JSONDecodeError:
+            start = cleaned.find("{", start + 1)
+
+    # 3. 兜底：截取首尾括号并做简单修复
     start = cleaned.find("{")
     end = cleaned.rfind("}")
-
     if start != -1 and end != -1 and end > start:
         json_str = cleaned[start:end + 1]
         try:
-            # 尝试标准解析
             return json.loads(json_str)
         except json.JSONDecodeError:
             try:
-                # 进阶修复：移除 JSON 内部可能存在的硬回车（换行符）
                 sanitized_str = re.sub(r'\n\s*', ' ', json_str)
-                # 移除键值对末尾可能多出的逗号
                 sanitized_str = re.sub(r',\s*([\]}])', r'\1', sanitized_str)
                 return json.loads(sanitized_str)
-            except:
+            except json.JSONDecodeError:
                 return None
     return None
 
