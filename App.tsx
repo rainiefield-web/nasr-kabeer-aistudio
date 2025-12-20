@@ -829,12 +829,13 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    const fetchLatestNews = async () => {
+    const fetchLatestNews = async (isBackgroundUpdate = false) => {
       try {
-        setLoading(true);
+        if (!isBackgroundUpdate) setLoading(true);
 
         // 1. Fetch the raw markdown file
-        const mdResponse = await fetch('./aluminum_industry_news.md');
+        // Add timestamp to prevent browser caching of the file itself
+        const mdResponse = await fetch(`./aluminum_industry_news.md?t=${Date.now()}`);
         if (!mdResponse.ok) throw new Error("Failed to fetch news file");
         const markdown = await mdResponse.text();
 
@@ -842,13 +843,15 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
         const cachedHash = localStorage.getItem('news_md_cache');
         const cachedData = localStorage.getItem('news_data_cache');
 
-        // Simple hash (using length + first 100 chars as proxy for invalidation to keep it simple)
-        const currentHash = `${markdown.length}-${markdown.substring(0, 50)}`;
+        // Use full markdown content as hash to ensure any change is detected
+        const currentHash = markdown;
 
         if (cachedHash === currentHash && cachedData) {
-          console.log("Using cached news data");
-          setNewsData(JSON.parse(cachedData));
-          setLoading(false);
+          if (!isBackgroundUpdate) {
+            console.log("Using cached news data");
+            setNewsData(JSON.parse(cachedData));
+            setLoading(false);
+          }
           return;
         }
 
@@ -914,7 +917,8 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
 
       } catch (err) {
         console.error("News sync error:", err);
-        setError(true);
+        if (!isBackgroundUpdate) setError(true);
+
         // Fallback: try to load the static JSON file if AI fails
         try {
           const staticResponse = await fetch('./news_data.json');
@@ -926,11 +930,18 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
           console.error("Static fallback failed", e);
         }
       } finally {
-        setLoading(false);
+        if (!isBackgroundUpdate) setLoading(false);
       }
     };
 
-    fetchLatestNews();
+    fetchLatestNews(false); // Initial load
+
+    // Poll every 30 seconds
+    const intervalId = setInterval(() => {
+      fetchLatestNews(true);
+    }, 30000);
+
+    return () => clearInterval(intervalId);
   }, []);
 
   const currentNews = newsData[lang] || defaultNewsData[lang];
