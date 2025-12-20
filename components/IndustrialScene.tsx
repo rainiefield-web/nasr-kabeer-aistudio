@@ -1,30 +1,18 @@
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
 */
 
 import React, { useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas, useFrame, ThreeElements } from '@react-three/fiber';
 import { Float, Environment, Lightformer, PerspectiveCamera } from '@react-three/drei';
 import * as THREE from 'three';
 
-// Fix for missing JSX definitions in some environments
+// Fix for missing JSX definitions in some environments by extending the global JSX namespace with Three.js elements
 declare global {
   namespace JSX {
-    interface IntrinsicElements {
-      ambientLight: any;
-      pointLight: any;
-      spotLight: any;
-      directionalLight: any;
-      group: any;
-      mesh: any;
-      meshStandardMaterial: any;
-      meshPhysicalMaterial: any;
-      boxGeometry: any;
-      cylinderGeometry: any;
-      extrudeGeometry: any;
-      // Index signature removed to avoid "Duplicate index signature" error
-    }
+    interface IntrinsicElements extends ThreeElements {}
   }
 }
 
@@ -54,19 +42,16 @@ const AluminumProfile = ({
     }
   });
 
-  // High-end "Silver" Physical Material
-  // Clearcoat adds a layer of polish, high metalness + low roughness gives it that precision look
-  const material = (
-    <meshPhysicalMaterial 
-      color={color}
-      roughness={0.15} 
-      metalness={1.0}
-      clearcoat={1.0}
-      clearcoatRoughness={0.1}
-      reflectivity={1}
-      envMapIntensity={2.0}
-    />
-  );
+  // Material configuration for re-use
+  const materialProps = {
+    color: color,
+    roughness: 0.15,
+    metalness: 1.0,
+    clearcoat: 1.0,
+    clearcoatRoughness: 0.1,
+    reflectivity: 1,
+    envMapIntensity: 2.0,
+  };
 
   if (type === 'beam') {
     // I-Beam Shape
@@ -87,12 +72,12 @@ const AluminumProfile = ({
     shape.lineTo(-t/2, -h/2 + t);
     shape.lineTo(-w/2, -h/2 + t);
     
-    const extrudeSettings = { depth: 4, bevelEnabled: true, bevelSegments: 4, steps: 1, bevelSize: 0.01, bevelThickness: 0.01 }; // Reduced bevel for more precision look
+    const extrudeSettings = { depth: 4, bevelEnabled: true, bevelSegments: 4, steps: 1, bevelSize: 0.01, bevelThickness: 0.01 };
 
     return (
       <mesh ref={ref} position={position} rotation={rotation} scale={scale}>
         <extrudeGeometry args={[shape, extrudeSettings]} />
-        {material}
+        <meshPhysicalMaterial {...materialProps} />
       </mesh>
     )
   }
@@ -101,7 +86,7 @@ const AluminumProfile = ({
       return (
         <mesh ref={ref} position={position} rotation={rotation} scale={scale}>
             <boxGeometry args={[0.8, 4, 0.8]} />
-            {material}
+            <meshPhysicalMaterial {...materialProps} />
         </mesh>
       )
   }
@@ -110,7 +95,7 @@ const AluminumProfile = ({
   return (
     <mesh ref={ref} position={position} rotation={rotation} scale={scale}>
       <cylinderGeometry args={[0.3, 0.3, 5, 64, 1, true]} />
-      <meshPhysicalMaterial {...material.props} side={THREE.DoubleSide} />
+      <meshPhysicalMaterial {...materialProps} side={THREE.DoubleSide} />
     </mesh>
   );
 };
@@ -123,7 +108,7 @@ export const HeroScene: React.FC = () => {
         
         <ambientLight intensity={0.8} />
         <spotLight position={[20, 20, 10]} angle={0.15} penumbra={1} intensity={2} color="#ffffff" />
-        <spotLight position={[-20, -10, -10]} angle={0.2} penumbra={1} intensity={1.5} color="#E0F2FE" /> {/* Subtle cool tone */}
+        <spotLight position={[-20, -10, -10]} angle={0.2} penumbra={1} intensity={1.5} color="#E0F2FE" />
         
         <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
           {/* Main Elements */}
