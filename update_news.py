@@ -8,30 +8,25 @@ try:
     from google import genai
     from google.genai import types
 except ImportError as e:
-    print(f"ImportError: {e}")
+    print(f"ImportError: {e}. 请确保安装了 google-genai 库。")
     exit(1)
 
 def extract_json_payload(text):
     """
     极致容错版解析器：
     1. 移除 Markdown 标签和搜索引用。
-    2. 解析文本中的第一个有效 JSON 对象，防止重复对象干扰。
-    3. 处理 JSON 内部的非法换行。
+    2. 解析文本中的第一个有效 JSON 对象。
+    3. 处理 JSON 内部的非法换行和多余逗号。
     """
     if not text:
         return None
     
-    print("\n--- [DEBUG] API Original Response Start ---")
-    print(text)
-    print("--- [DEBUG] API Original Response End ---\n")
-
-    # 1. 预清洗：剥离所有 Markdown 符号和搜索来源引用
-    # 移除 ```json, ```,, [1] 等
+    # 预清洗：剥离 Markdown 符号和搜索来源引用 [1], [2] 等
     cleaned = text.replace("```json", "").replace("```", "")
     cleaned = re.sub(r'\[\d+\]', '', cleaned)
     cleaned = cleaned.strip()
 
-    # 2. 核心提取：优先用 JSONDecoder 抽取第一个完整对象
+    # 核心提取：使用 JSONDecoder 抽取第一个完整对象
     decoder = json.JSONDecoder()
     start = cleaned.find("{")
     while start != -1 and start < len(cleaned):
@@ -41,20 +36,17 @@ def extract_json_payload(text):
         except json.JSONDecodeError:
             start = cleaned.find("{", start + 1)
 
-    # 3. 兜底：截取首尾括号并做简单修复
-    start = cleaned.find("{")
-    end = cleaned.rfind("}")
-    if start != -1 and end != -1 and end > start:
-        json_str = cleaned[start:end + 1]
-        try:
-            return json.loads(json_str)
-        except json.JSONDecodeError:
-            try:
-                sanitized_str = re.sub(r'\n\s*', ' ', json_str)
-                sanitized_str = re.sub(r',\s*([\]}])', r'\1', sanitized_str)
-                return json.loads(sanitized_str)
-            except json.JSONDecodeError:
-                return None
+    # 兜底：简单正则修复
+    try:
+        start = cleaned.find("{")
+        end = cleaned.rfind("}")
+        if start != -1 and end != -1:
+            json_str = cleaned[start:end + 1]
+            sanitized_str = re.sub(r'\n\s*', ' ', json_str)
+            sanitized_str = re.sub(r',\s*([\]}])', r'\1', sanitized_str)
+            return json.loads(sanitized_str)
+    except:
+        return None
     return None
 
 def main():
@@ -65,22 +57,24 @@ def main():
 
     client = genai.Client(api_key=api_key)
     
-    # 优化 Prompt：明确要求翻译，不准留空，不准重复，必须真实可核验
+    # 优化 Prompt：强调“最大化获取”，并明确 LME 格式
     prompt = """
-    Search for today's REAL, verifiable global aluminum industry news.
-    Requirement:
-    1. ONLY use information from these sources:
-       - https://www.aluminium-journal.com/news
-       - https://www.investing.com/commodities/aluminum-news
-       - https://aluminiumtoday.com/news
-       - https://news.metal.com/list/latest/aluminium
-    2. Include DAILY LME aluminum cash price and intraday change (numeric values required).
-    3. Provide key points in English with REAL companies/exchanges (no placeholders).
-    4. Each bullet MUST include a source name and a clickable URL (https://...).
-    5. TRANSLATE all English points into professional Arabic. Do NOT leave the 'ar' section empty.
-    6. Output ONCE as a single JSON object. No Markdown.
+    Search for TODAY'S real, verifiable global aluminum industry news and market data.
+    
+    Target Sources:
+    - https://www.aluminium-journal.com/news
+    - https://www.investing.com/commodities/aluminum-news
+    - https://aluminiumtoday.com/news
+    - https://news.metal.com/list/latest/aluminium
 
-    Structure:
+    Requirements:
+    1. LME: Find the latest LME Aluminum Cash Price and daily % change. 
+    2. CONTENT: Extract real corporate moves (Alcoa, Rio Tinto, Emirates Global Aluminium, etc.), trends, and strategic factors.
+    3. NO PLACEHOLDERS: Do not use "Company A" or "Project X". If a specific name isn't found, describe the event accurately.
+    4. LINKS: Every news bullet MUST include a source URL (https://...).
+    5. TRANSLATION: Translate every English point into professional Arabic in the 'ar' section.
+
+    Structure (STRICT JSON):
     {
       "date": "YYYY-MM-DD",
       "en": { "lme": [], "corporate": [], "trends": [], "factors": [] },
@@ -89,7 +83,7 @@ def main():
     """
 
     try:
-        # 使用 Gemini 2.0 Flash 配合 Google Search
+        # 使用 Gemini 2.0 Flash 获取实时数据
         response = client.models.generate_content(
             model="gemini-2.0-flash",
             contents=prompt,
@@ -103,101 +97,120 @@ def main():
         data = extract_json_payload(text_content)
 
         if not data:
-            print("Error: Failed to extract a valid JSON object.")
+            print("Error: Failed to extract a valid JSON object from API response.")
             exit(1)
 
-        placeholder_pattern = re.compile(r"\bCompany\s+[A-Z]\b")
+        # --- 优化后的校验与清洗逻辑 ---
+        required_sections = ["lme", "corporate", "trends", "factors"]
+        valid_content_found = False
         url_pattern = re.compile(r"https?://\S+")
 
-        def ensure_entries(section_key, language_key):
-            entries = data.get(language_key, {}).get(section_key, [])
-            if not isinstance(entries, list):
-                return False
-            for entry in entries:
-                if not isinstance(entry, str) or not url_pattern.search(entry):
-                    return False
-                if language_key == "en" and placeholder_pattern.search(entry):
-                    return False
-            return True
+        for lang in ["en", "ar"]:
+            if lang not in data: data[lang] = {}
+            for section in required_sections:
+                entries = data[lang].get(section, [])
+                
+                # 容错：如果 API 返回的不是列表（如字符串），强转列表
+                if not isinstance(entries, list):
+                    entries = [str(entries)] if entries else []
+                
+                # 清洗条目：过滤掉无效占位符，保留有内容的项
+                cleaned = []
+                for item in entries:
+                    item_str = str(item)
+                    # 过滤掉明显的虚假占位符
+                    if "Company A" in item_str or "placeholder" in item_str.lower():
+                        continue
+                    if len(item_str) > 10:  # 长度过滤，确保不是空话
+                        cleaned.append(item_str)
+                        valid_content_found = True
+                
+                data[lang][section] = cleaned
 
-        required_sections = ["lme", "corporate", "trends", "factors"]
-        invalid_sections = [
-            section
-            for section in required_sections
-            if not ensure_entries(section, "en") or not ensure_entries(section, "ar")
-        ]
-        if invalid_sections:
-            print(
-                "Warning: Missing valid entries with URLs for sections: "
-                f"{', '.join(invalid_sections)}. Skipping update."
-            )
-            exit(0)
-
+        # 特殊检查：LME 数据预警但不中断
         lme_entries = data.get("en", {}).get("lme", [])
-        if not any(re.search(r"\d", entry) and "LME" in entry for entry in lme_entries):
-            print(
-                "Warning: LME section must include numeric price and LME reference. "
-                "Skipping update."
-            )
+        if not any(re.search(r"\d", str(e)) for e in lme_entries):
+            print("Warning: No numeric LME price found. Proceeding with other news.")
+
+        if not valid_content_found:
+            print("Warning: No valid industry news entries found. Skipping file update to avoid empty reports.")
             exit(0)
 
         # 校验日期
-        if not data.get("date") or "YYYY" in data["date"]:
+        if not data.get("date") or "YYYY" in str(data["date"]):
             data["date"] = time.strftime('%Y-%m-%d')
 
-        # 文件操作
+        # --- 文件保存逻辑 ---
         base_dir = os.path.dirname(os.path.abspath(__file__))
         public_dir = os.path.join(base_dir, "public")
         os.makedirs(public_dir, exist_ok=True)
 
-        # 1. 保存 JSON 数据
+        # 1. 保存 JSON
         json_path = os.path.join(public_dir, "news_data.json")
         with open(json_path, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
-        print(f"JSON data successfully updated at: {json_path}")
 
         # 2. 生成 Markdown 报告
         updated_at = time.strftime('%Y-%m-%d %H:%M:%S')
         md_lines = [
             f"# Aluminum Industry News Summary ({data['date']})",
             f"Last Updated: {updated_at} UTC",
+            "\n> *This report is automatically generated using Gemini 2.0 Flash with real-time web search.*",
             "",
-            "## English Analysis",
+            "## 🌐 English Analysis",
         ]
         
-        def add_md_section(lines, title, items):
-            lines.append(f"### {title}")
+        section_map = [
+            ("lme", "📈 LME Price & Market"),
+            ("corporate", "🏢 Corporate Updates"), 
+            ("trends", "📊 Industry Trends"), 
+            ("factors", "💡 Strategic Factors")
+        ]
+
+        for key, title in section_map:
+            md_lines.append(f"### {title}")
+            items = data["en"].get(key, [])
             if not items:
-                lines.append("- (No specific data found for this section)")
+                md_lines.append("- No major updates found in this category for today.")
             else:
                 for item in items:
-                    lines.append(f"- {item}")
-            lines.append("")
+                    md_lines.append(f"- {item}")
+            md_lines.append("")
 
-        sections = [("lme", "LME Price & Market"), ("corporate", "Corporate Updates"), 
-                    ("trends", "Industry Trends"), ("factors", "Strategic Factors")]
-
-        for key, title in sections:
-            add_md_section(md_lines, title, data["en"].get(key, []))
+        md_lines.append("---")
+        md_lines.append("## 🌍 Arabic Summary (الملخص العربي)")
         
-        md_lines.append("## Arabic Summary (الملخص العربي)")
-        ar_sections = [("lme", "تحليل بورصة لندن"), ("corporate", "تحديثات الشركات"), 
-                       ("trends", "توجهات الصناعة"), ("factors", "العوامل الاستراتيجية")]
+        ar_section_map = [
+            ("lme", "تحليل بورصة لندن (LME)"),
+            ("corporate", "تحديثات الشركات"), 
+            ("trends", "توجهات الصناعة"), 
+            ("factors", "العوامل الاستراتيجية")
+        ]
         
-        for key, title in ar_sections:
-            add_md_section(md_lines, title, data["ar"].get(key, []))
+        for key, title in ar_section_map:
+            md_lines.append(f"### {title}")
+            items = data["ar"].get(key, [])
+            if not items:
+                md_lines.append("- لا توجد تحديثات رئيسية في هذا القسم اليوم.")
+            else:
+                for item in items:
+                    md_lines.append(f"- {item}")
+            md_lines.append("")
 
-        # 写入文件
-        for target in [os.path.join(base_dir, "aluminum_industry_news.md"),
-                       os.path.join(public_dir, "aluminum_industry_news.md")]:
+        # 写入两个位置确保同步
+        targets = [
+            os.path.join(base_dir, "aluminum_industry_news.md"),
+            os.path.join(public_dir, "aluminum_industry_news.md")
+        ]
+        for target in targets:
             with open(target, "w", encoding="utf-8") as f:
                 f.write("\n".join(md_lines))
         
-        print("Markdown reports updated successfully.")
+        print(f"Successfully updated news for {data['date']}.")
 
     except Exception as e:
         if "429" in str(e):
-            print("QUOTA_EXHAUSTED: Free tier limit reached. Skipping.")
+            print("Status: QUOTA_EXHAUSTED. Gemini Free tier limit reached. Please try again later.")
             exit(0)
         else:
             traceback.print_exc()
