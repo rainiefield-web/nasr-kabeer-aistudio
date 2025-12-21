@@ -81,4 +81,54 @@ def main():
 
     final_data = {
         "date": datetime.utcnow().strftime('%Y-%m-%d'),
-        "en": {"lme": lme_data.get("en", {}).get("lme", []) if lme_data else [], "corporate": [], "trends": [], "factors
+        "en": {"lme": lme_data.get("en", {}).get("lme", []) if lme_data else [], "corporate": [], "trends": [], "factors": []},
+        "ar": {"lme": [], "corporate": [], "trends": [], "factors": []}
+    }
+    
+    if news_data:
+        for lang in ["en", "ar"]:
+            for sec in ["corporate", "trends", "factors"]:
+                raw_items = news_data.get(lang, {}).get(sec, [])
+                cleaned_items = []
+                for item in raw_items:
+                    bullet = clean_text(item.get("bullet", ""))
+                    url = item.get("url", "")
+                    if bullet and "hypothetical" not in str(url).lower():
+                        cleaned_items.append({"bullet": bullet, "url": url})
+                final_data[lang][sec] = cleaned_items
+
+    # --- 渲染逻辑 ---
+    def render_md(data):
+        lines = [f"# 🛠️ Aluminum Global Intelligence Report", 
+                 f"**Last Updated:** `{current_time_utc} UTC`", 
+                 "> *Verified Primary Aluminum Market Data & Global Industry News*", ""]
+        
+        for lang, title in [("en", "Global English Report"), ("ar", "التقرير العربي المحترف")]:
+            lines.append(f"## {title}")
+            mapping = [("lme", "💰 LME Market Data"), ("corporate", "🏢 Corporate Updates"), ("trends", "📊 Market Trends")]
+            for key, sec_title in mapping:
+                lines.append(f"### {sec_title}")
+                items = data[lang].get(key, [])
+                if not items:
+                    lines.append("- *Data verification in progress (Market may be closed)...*")
+                else:
+                    for item in items:
+                        if key == "lme":
+                            p, c, d = item.get('price'), item.get('change'), item.get('date')
+                            lines.append(f"> **LME Cash Price:** `{p}` | **Change:** `{c}` | **Date:** {d}")
+                        else:
+                            txt, url = item.get('bullet', ''), item.get('url', '')
+                            lines.append(f"- {txt} [🔗 Source]({url})" if url and "http" in url else f"- {txt}")
+                lines.append("")
+        return "\n".join(lines)
+
+    md_content = render_md(final_data)
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    for p in [os.path.join(base_dir, "aluminum_industry_news.md"), 
+              os.path.join(base_dir, "public", "aluminum_industry_news.md")]:
+        os.makedirs(os.path.dirname(p), exist_ok=True)
+        with open(p, "w", encoding="utf-8") as f:
+            f.write(md_content)
+
+if __name__ == "__main__":
+    main()
