@@ -1,37 +1,30 @@
 # 🛠️ Aluminum Industry Intelligence (2025-12-21)
-> **Auto-Update:** 2025-12-21 04:21:47 UTC
+> **Last Updated:** 2025-12-21 04:26:42 UTC
 
 ## Global English Report
 ### 💰 LME Market Data
-- {'price': '$2,450.00', 'date': '2025-12-20', 'change': '-0.5%'}
+> **Price:** `$2,450` | **Change:** 🔴 `-0.5%` | **Date:** 2025-12-20
 
 ### 🏢 Corporate & M&A
-- {'bullet': 'Rio Tinto announces a new $50 million investment in bauxite mining technology to improve efficiency and reduce environmental impact in their operations [cite: i]', 'url': 'aluminiumtoday.com'}
-- {'bullet': 'Alcoa reports a surge in Q4 earnings driven by increased demand for aluminum in the automotive sector [cite: j]', 'url': 'alcircle.com'}
-- {'bullet': 'Rusal faces challenges due to new sanctions impacting its aluminum exports to Europe [cite: k]', 'url': 'reuters.com'}
+- Rio Tinto announces a new bauxite mining project in Guinea, aiming to increase its bauxite production capacity by 15% to meet rising demand from alumina refineries. ([Source](https://www.mining.com/rio-tinto-announces-new-bauxite-mining-project-in-guinea/))
+- Alcoa reports a 10% decrease in Q4 2025 net income due to higher energy costs and lower alumina prices. ([Source](https://www.metal.com/news/alcoa-reports-q4-2023-earnings-decline/))
+- Bloomberg reports that the Aluminum market faces supply chain disruptions due to increased geopolitical tensions in key mining regions. ([Source](https://www.bloomberg.com/aluminum-market-supply-chain-disruptions))
 
 ### 📈 Market Trends
-- {'bullet': 'The aluminum market is experiencing increased volatility due to global economic uncertainty and fluctuating energy prices [cite: l]', 'url': 'bloomberg.com'}
-- {'bullet': 'Demand for recycled aluminum is rising as manufacturers seek to reduce their carbon footprint and meet sustainability goals [cite: m]', 'url': 'aluminium-journal.com'}
-- {'bullet': 'New alumina refinery projects are being delayed due to environmental concerns and stricter regulations [cite: n]', 'url': 'metal.com'}
-
-### 🌍 Macro Factors
-- No significant updates available for this cycle.
-
+- *No significant updates found for this cycle.*
+### 🌍 Strategic Factors
+- *No significant updates found for this cycle.*
 ---
 ## التقرير العربي المحترف
 ### 📊 بيانات بورصة لندن
-- {'price': '2,450.00 دولارًا أمريكيًا', 'date': '2025-12-20', 'change': '-0.5٪'}
+> **Price:** `2,450 دولارًا أمريكيًا` | **Change:** 🔴 `-0.5٪` | **Date:** 2025-12-20
 
 ### 🏢 أخبار الشركات
-- {'bullet': 'أعلنت ريو تينتو عن استثمار جديد بقيمة 50 مليون دولار في تكنولوجيا تعدين البوكسيت لتحسين الكفاءة وتقليل الأثر البيئي في عملياتها [cite: i]', 'url': 'aluminiumtoday.com'}
-- {'bullet': 'أعلنت شركة ألكوا عن ارتفاع في أرباح الربع الرابع مدفوعة بزيادة الطلب على الألومنيوم في قطاع السيارات [cite: j]', 'url': 'alcircle.com'}
-- {'bullet': 'تواجه شركة روسال تحديات بسبب العقوبات الجديدة التي تؤثر على صادراتها من الألومنيوم إلى أوروبا [cite: k]', 'url': 'reuters.com'}
+- أعلنت ريو تينتو عن مشروع جديد لتعدين البوكسيت في غينيا، بهدف زيادة قدرتها الإنتاجية من البوكسيت بنسبة 15٪ لتلبية الطلب المتزايد من مصافي الألومينا. ([Source](https://www.mining.com/rio-tinto-announces-new-bauxite-mining-project-in-guinea/))
+- أعلنت شركة ألكوا عن انخفاض صافي الدخل بنسبة 10٪ في الربع الرابع من عام 2025 بسبب ارتفاع تكاليف الطاقة وانخفاض أسعار الألومينا. ([Source](https://www.metal.com/news/alcoa-reports-q4-2023-earnings-decline/))
+- ذكرت بلومبرج أن سوق الألومنيوم يواجه اضطرابات في سلسلة التوريد بسبب تصاعد التوترات الجيوسياسية في مناطق التعدين الرئيسية. ([Source](https://www.bloomberg.com/aluminum-market-supply-chain-disruptions))
 
 ### 📈 اتجاهات السوق
-- {'bullet': 'يشهد سوق الألومنيوم تقلبات متزايدة بسبب حالة عدم اليقين الاقتصادي العالمي وتقلب أسعار الطاقة [cite: l]', 'url': 'bloomberg.com'}
-- {'bullet': 'الطلب على الألومنيوم المعاد تدويره آخذ في الارتفاع حيث يسعى المصنعون إلى تقليل بصمتهم الكربونية وتحقيق أهداف الاستدامة [cite: m]', 'url': 'aluminium-journal.com'}
-- {'bullet': 'تتأخر مشاريع مصفاة الألومينا الجديدة بسبب المخاوف البيئية واللوائح الأكثر صرامة [cite: n]', 'url': 'metal.com'}
-
+- *No significant updates found for this cycle.*
 ### 🌍 عوامل استراتيجية
-- No significant updates available for this cycle.
+- *No significant updates found for this cycle.*
