@@ -19,7 +19,7 @@ def clean_text(text):
     """清理 AI 幻觉生成的引用标签和假设性 URL"""
     if not text: return ""
     # 使用双引号包裹正则字符串，增加稳健性
-    text = re.sub(r"\", "", text)
+    text = text.replace('"', '')
     text = re.sub(r"hypothetical\S+", "", text)
     return text.strip()
 
