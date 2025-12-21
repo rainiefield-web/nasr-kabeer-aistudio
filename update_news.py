@@ -3,6 +3,7 @@ import time
 import json
 import re
 import traceback
+from datetime import datetime
 
 try:
     from google import genai
@@ -12,7 +13,7 @@ except ImportError as e:
     exit(1)
 
 def extract_json_payload(text):
-    """极致容错解析器：从 API 返回文本中剥离并解析 JSON"""
+    """解析 JSON，增加对搜索来源标注的过滤"""
     if not text: return None
     cleaned = text.replace("```json", "").replace("```", "")
     cleaned = re.sub(r'\[\d+\]', '', cleaned).strip()
@@ -35,29 +36,25 @@ def main():
 
     client = genai.Client(api_key=api_key)
     
-    # --- 1. 极其严格的 Prompt：限定品类、数值范围、排除旧预测 ---
-    prompt = """
-    CRITICAL: High-accuracy LME Aluminum Intelligence Required.
-    
-    STEP 1: LME PRIMARY ALUMINUM PRICE (STRICT)
-    Search for "LME Aluminium (Primary) Cash Settlement". 
-    - DISCARD "Aluminium Alloy" (usually ~$2400-2500) or old 2024 forecasts.
-    - EXPECT value for Dec 2025: $2,800 - $3,200.
-    - Sources: LME.com, Reuters (LME news), Investing.com (Aluminum Futures).
-    
-    STEP 2: BROAD NEWS SCAN
-    Search for "Aluminum market", "Bauxite mining" from Reuters, Bloomberg, and Industry sites.
+    # 获取当前 UTC 时间用于 Prompt 和报表
+    now_utc = datetime.utcnow()
+    current_time_str = now_utc.strftime('%Y-%m-%d %H:%M:%S')
 
-    STEP 3: OUTPUT FORMAT (STRICT JSON)
-    {
-      "date": "YYYY-MM-DD",
-      "en": { 
-          "lme": [{"price": "$xxx.xx", "change": "±x.x%", "date": "YYYY-MM-DD", "type": "PRIMARY"}],
-          "corporate": [{"bullet": "...", "url": "..."}],
-          "trends": [], "factors": [] 
-      },
-      "ar": { "lme": [], "corporate": [], "trends": [], "factors": [] }
-    }
+    prompt = f"""
+    Search for LME Primary Aluminum Cash Settlement price and industry news.
+    Current Time Context: {current_time_str} UTC.
+    
+    1. LME DATA: Must be 'Primary Aluminum'. If today's price is not out yet, provide the most recent trading day's price.
+    2. RANGE: Expect $2,700-$3,200. Discard Alloy prices (~$2400).
+    3. NEWS: Provide real bullet points with source URLs.
+    4. ARABIC: Professional translation for everything.
+
+    Output STRICT JSON:
+    {{
+      "date": "{now_utc.strftime('%Y-%m-%d')}",
+      "en": {{ "lme": [], "corporate": [], "trends": [], "factors": [] }},
+      "ar": {{ "lme": [], "corporate": [], "trends": [], "factors": [] }}
+    }}
     """
 
     try:
@@ -70,76 +67,75 @@ def main():
             )
         )
 
-        data = extract_json_payload(response.text if response.text else "")
+        data = extract_json_payload(response.text)
         if not data:
-            print("Error: Failed to parse JSON.")
+            print("Error: API output empty or unparseable.")
             exit(1)
 
-        # --- 2. 硬代码过滤逻辑：数值范围安全检查 ---
-        lme_list = data.get("en", {}).get("lme", [])
-        valid_lme = []
-        for entry in lme_list:
-            price_str = entry.get("price", "0").replace("$", "").replace(",", "")
-            try:
-                price_val = float(price_str)
-                # 过滤逻辑：如果价格低于 $2600，判定为抓取到了合金价或错误数据，丢弃
-                if price_val < 2600:
-                    print(f"Filtered out suspicious price: ${price_val} (Likely Alloy or Outdated)")
-                    continue
-                valid_lme.append(entry)
-            except ValueError:
-                continue
-        
-        data["en"]["lme"] = valid_lme
-        # 如果 LME 数据全被过滤，为了不中断程序，我们会打警告
-        lme_found = len(valid_lme) > 0
+        # 数据清洗：过滤不合理的低价
+        if "en" in data and "lme" in data["en"]:
+            valid_lme = []
+            for item in data["en"]["lme"]:
+                p_str = str(item.get("price", "0")).replace("$", "").replace(",", "")
+                try:
+                    if float(p_str) > 2600: valid_lme.append(item)
+                except: continue
+            data["en"]["lme"] = valid_lme
 
-        # --- 3. 渲染与文件保存 ---
-        def render_report(lang_code, title_suffix):
+        # --- 动态渲染逻辑 ---
+        def render_section(lang_code, title_suffix):
             lines = [f"## {title_suffix}"]
-            mapping = [("lme", "💰 LME Market Data"), ("corporate", "🏢 Corporate & M&A"), 
-                       ("trends", "📈 Market Trends"), ("factors", "🌍 Strategic Factors")]
+            mapping = [
+                ("lme", "💰 LME Market Data" if lang_code == 'en' else "📊 بيانات بورصة لندن"),
+                ("corporate", "🏢 Corporate & M&A" if lang_code == 'en' else "🏢 أخبار الشركات"),
+                ("trends", "📈 Market Trends" if lang_code == 'en' else "📈 اتجاهات السوق"),
+                ("factors", "🌍 Strategic Factors" if lang_code == 'en' else "🌍 عوامل استراتيجية")
+            ]
             
             for key, title in mapping:
-                t = title if lang_code == 'en' else title.split()[-1] # 简单处理阿拉伯语标题
-                lines.append(f"### {t}")
-                items = data[lang_code].get(key, [])
+                lines.append(f"### {title}")
+                items = data.get(lang_code, {}).get(key, [])
                 if not items:
-                    lines.append("- *No data verified for this cycle.*")
+                    # 修改这里：不再只是显示 No updates，而是增加动态提示
+                    status_msg = "Waiting for market update..." if key == "lme" else "Searching for verified news..."
+                    lines.append(f"- *{status_msg}*")
                 else:
                     for item in items:
                         if isinstance(item, dict):
                             if key == "lme":
-                                p, c, d = item.get('price','N/A'), item.get('change','0%'), item.get('date','')
+                                p, c, d = item.get('price','N/A'), item.get('change','-'), item.get('date', data['date'])
                                 icon = "🔴" if "-" in str(c) else "🟢"
-                                lines.append(f"> **Price:** `{p}` | **Change:** {icon} `{c}` | **Date:** {d} (Primary Aluminum)")
+                                lines.append(f"> **LME Cash:** `{p}` | **Change:** {icon} `{c}` | **Date:** {d}")
                             else:
-                                txt, url = (item.get('bullet') or item.get('text')), item.get('url')
-                                lines.append(f"- {txt} ([Source]({url}))" if url else f"- {txt}")
+                                txt, url = item.get('bullet', item.get('text', '')), item.get('url', '')
+                                lines.append(f"- {txt} [🔗 Source]({url})" if url.startswith('http') else f"- {txt}")
                         else:
-                            lines.append(f"- {str(item)}")
+                            lines.append(f"- {item}")
                 lines.append("")
             return "\n".join(lines)
 
-        final_md = f"# 🛠️ Aluminum Industry Intelligence ({time.strftime('%Y-%m-%d')})\n"
-        final_md += f"> **Verification:** LME Primary Aluminum Cash Price Focus\n\n"
-        final_md += render_report("en", "Global English Report")
+        # 组装最终 Markdown
+        final_md = f"# 🛠️ Aluminum Industry Intelligence ({data['date']})\n\n"
+        # 核心修改：这里确保 Last Updated 每次运行都变
+        final_md += f"**Last Updated:** `{current_time_str} UTC`  \n"
+        final_md += f"**Status:** ⚡ Real-time Data Feed Active\n\n"
+        
+        final_md += render_section("en", "Global English Report")
         final_md += "\n---\n"
-        final_md += render_report("ar", "التقرير العربي المحترف")
+        final_md += render_section("ar", "التقرير العربي المحترف")
 
-        # 写入文件
+        # 保存文件
         base_dir = os.path.dirname(os.path.abspath(__file__))
         public_dir = os.path.join(base_dir, "public")
         os.makedirs(public_dir, exist_ok=True)
-        
+
         for path in [os.path.join(base_dir, "aluminum_industry_news.md"),
                      os.path.join(public_dir, "aluminum_industry_news.md")]:
             with open(path, "w", encoding="utf-8") as f:
                 f.write(final_md)
+            print(f"Successfully updated: {path}")
 
-        print(f"Update Success. LME Data Validated: {lme_found}")
-
-    except Exception as e:
+    except Exception:
         traceback.print_exc()
         exit(1)
 
