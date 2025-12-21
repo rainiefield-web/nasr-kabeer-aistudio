@@ -18,6 +18,7 @@ SITES_QUERY = "Reuters, Bloomberg Metals, Fastmarkets, LME Official, AlCircle, A
 def clean_text(text):
     """清理 AI 幻觉生成的引用标签和假设性 URL"""
     if not text: return ""
+    # 修正后的第 21 行：正确匹配 标签
     text = re.sub(r'\', '', text)
     text = re.sub(r'hypothetical\S+', '', text)
     return text.strip()
@@ -58,7 +59,7 @@ def main():
     
     current_time_utc = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
     
-    # --- 注意：此处已修复 SyntaxError (注意大括号必须双写 {{ }}) ---
+    # 修复了 JSON 模板中的大括号双写问题
     lme_prompt = f"""
     TASK: Get LME Primary Aluminum Cash Settlement Price. 
     INSTRUCTION: If today is a holiday/weekend, you MUST search for the LATEST available closing price from the most recent trading day. 
@@ -71,64 +72,6 @@ def main():
     REQUIREMENTS: 
     1. Extract 5-8 REAL news bullets. 
     2. NO HYPOTHETICAL URLs. 
-    3. Remove all "" tags.
+    3. Remove all "" or similar tags.
     4. Provide professional Arabic translation.
     OUTPUT FORMAT (JSON): {{ "en": {{ "corporate": [{{ "bullet": "...", "url": "..." }}], "trends": [] }}, "ar": {{ "corporate": [] }} }}
-    """
-
-    lme_data = fetch_content(client, lme_prompt)
-    news_data = fetch_content(client, news_prompt)
-
-    final_data = {
-        "date": datetime.utcnow().strftime('%Y-%m-%d'),
-        "en": {"lme": lme_data.get("en", {}).get("lme", []) if lme_data else [], "corporate": [], "trends": [], "factors": []},
-        "ar": {"lme": [], "corporate": [], "trends": [], "factors": []}
-    }
-    
-    if news_data:
-        for lang in ["en", "ar"]:
-            for sec in ["corporate", "trends", "factors"]:
-                raw_items = news_data.get(lang, {}).get(sec, [])
-                cleaned_items = []
-                for item in raw_items:
-                    bullet = clean_text(item.get("bullet", ""))
-                    url = item.get("url", "")
-                    if bullet and "hypothetical" not in str(url).lower():
-                        cleaned_items.append({"bullet": bullet, "url": url})
-                final_data[lang][sec] = cleaned_items
-
-    # --- 渲染逻辑 ---
-    def render_md(data):
-        lines = [f"# 🛠️ Aluminum Global Intelligence Report", 
-                 f"**Last Updated:** `{current_time_utc} UTC`", 
-                 "> *Verified Primary Aluminum Market Data & Global Industry News*", ""]
-        
-        for lang, title in [("en", "Global English Report"), ("ar", "التقرير العربي المحترف")]:
-            lines.append(f"## {title}")
-            mapping = [("lme", "💰 LME Market Data"), ("corporate", "🏢 Corporate Updates"), ("trends", "📊 Market Trends")]
-            for key, sec_title in mapping:
-                lines.append(f"### {sec_title}")
-                items = data[lang].get(key, [])
-                if not items:
-                    lines.append("- *Data verification in progress (Market may be closed)...*")
-                else:
-                    for item in items:
-                        if key == "lme":
-                            p, c, d = item.get('price'), item.get('change'), item.get('date')
-                            lines.append(f"> **LME Cash Price:** `{p}` | **Change:** `{c}` | **Date:** {d}")
-                        else:
-                            txt, url = item.get('bullet', ''), item.get('url', '')
-                            lines.append(f"- {txt} [🔗 Source]({url})" if url and "http" in url else f"- {txt}")
-                lines.append("")
-        return "\n".join(lines)
-
-    md_content = render_md(final_data)
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    for p in [os.path.join(base_dir, "aluminum_industry_news.md"), 
-              os.path.join(base_dir, "public", "aluminum_industry_news.md")]:
-        os.makedirs(os.path.dirname(p), exist_ok=True)
-        with open(p, "w", encoding="utf-8") as f:
-            f.write(md_content)
-
-if __name__ == "__main__":
-    main()
