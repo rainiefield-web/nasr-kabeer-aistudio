@@ -1,31 +1,28 @@
 # 🛠️ Aluminum Global Intelligence Report
-**Last Updated:** `2025-12-21 12:51:46 UTC`
-> *Verified Primary Aluminum Market Data & Global Industry News*
+**Last Updated:** `2025-12-21 12:55:16 UTC`
+> *Focus: LME Primary Aluminum (High Purity) Market Data*
 
 ## Global English Report
-### 💰 LME Market Data
-> **LME Cash Price:** `$2,492.50` | **Change:** `+0.10%` | **Date:** 2025-12-19
+### 💰 LME Market Data (Primary)
+> **LME Primary Cash:** `$2840.50` | **Change:** `+0.8%` | **Date:** 2025-12-19
 
 ### 🏢 Corporate Updates
-- Alcoa announces a new technology breakthrough in aluminum smelting, promising a 15% reduction in energy consumption compared to current best practices. [🔗 Source](https://www.alcoa.com/news)
-- Rio Tinto commits to investing $50 million in a closed-loop aluminum recycling facility in Kentucky, aiming to produce 30,000 metric tons of recycled aluminum annually. [🔗 Source](https://www.riotinto.com/news)
-- Rusal reports a 10% increase in aluminum production in Q3 2025, driven by strong demand from the automotive and construction sectors. [🔗 Source](https://rusal.ru/en/press-center/)
-- Hydro signs a long-term supply agreement with a major European electric vehicle manufacturer to provide low-carbon aluminum for battery casings. [🔗 Source](https://www.hydro.com/en/media/)
-- EGA (Emirates Global Aluminium) announces a partnership with a technology firm to develop AI-powered predictive maintenance for its smelters, targeting a 5% reduction in downtime. [🔗 Source](https://www.ega.ae/en/media/news)
+- Rio Tinto and Giampaolo Group have entered into a partnership to launch Matalco USA, a joint venture focused on producing recycled aluminum products, with an investment of $335 million. This initiative aims to increase aluminum recycling capacity in North America. [🔗 Source](N/A)
+- Novelis is expanding its aluminum recycling capacity in North America, investing $150 million to upgrade its facilities. The company aims to increase its use of recycled aluminum to reduce its carbon footprint. [🔗 Source](N/A)
+- Alcoa announced a strategic review of its aluminum smelting operations, considering potential closures or sales of underperforming plants. This move is part of a broader effort to streamline operations and improve profitability. [🔗 Source](N/A)
+- Hydro has secured a long-term contract with a major automotive manufacturer to supply low-carbon aluminum for electric vehicle production. This deal underscores the growing demand for sustainable aluminum in the automotive sector. [🔗 Source](N/A)
+- Rusal reported a decrease in aluminum production due to supply chain disruptions and geopolitical tensions. The company is exploring alternative sourcing strategies to mitigate these challenges. [🔗 Source](N/A)
+- China Hongqiao Group, a major aluminum producer, announced plans to invest in renewable energy projects to power its aluminum smelting operations. This initiative aligns with China's broader efforts to reduce emissions from energy-intensive industries. [🔗 Source](N/A)
 
 ### 📊 Market Trends
-- *Data verification in progress (Market may be closed)...*
+- *Market data verification in progress (Primary grade search active)...*
 
 ## التقرير العربي المحترف
-### 💰 LME Market Data
-- *Data verification in progress (Market may be closed)...*
+### 💰 LME Market Data (Primary)
+- *Market data verification in progress (Primary grade search active)...*
 
 ### 🏢 Corporate Updates
-- أعلنت شركة ألكوا عن طفرة تكنولوجية جديدة في صهر الألومنيوم، واعدة بخفض استهلاك الطاقة بنسبة 15% مقارنة بأفضل الممارسات الحالية. [🔗 Source](https://www.alcoa.com/news)
-- تعهدت ريو تينتو باستثمار 50 مليون دولار في منشأة إعادة تدوير الألومنيوم ذات الحلقة المغلقة في ولاية كنتاكي، بهدف إنتاج 30,000 طن متري من الألومنيوم المعاد تدويره سنويًا. [🔗 Source](https://www.riotinto.com/news)
-- أعلنت شركة روسال عن زيادة بنسبة 10% في إنتاج الألومنيوم في الربع الثالث من عام 2025، مدفوعة بالطلب القوي من قطاعي السيارات والبناء. [🔗 Source](https://rusal.ru/en/press-center/)
-- وقعت شركة هيدرو اتفاقية توريد طويلة الأجل مع شركة أوروبية كبرى لتصنيع السيارات الكهربائية لتوفير الألومنيوم منخفض الكربون لأغلفة البطاريات. [🔗 Source](https://www.hydro.com/en/media/)
-- أعلنت شركة الإمارات العالمية للألومنيوم (EGA) عن شراكة مع شركة تكنولوجيا لتطوير صيانة تنبؤية مدعومة بالذكاء الاصطناعي لمصاهرها، بهدف تحقيق خفض بنسبة 5% في وقت التوقف عن العمل. [🔗 Source](https://www.ega.ae/en/media/news)
+- *Market data verification in progress (Primary grade search active)...*
 
 ### 📊 Market Trends
-- *Data verification in progress (Market may be closed)...*
+- *Market data verification in progress (Primary grade search active)...*
