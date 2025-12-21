@@ -2,10 +2,12 @@ name: Daily Aluminum News Bot
 
 on:
   schedule:
-    - cron: '0 2 * * *' # 每天凌晨 2 点运行 (UTC 时间)
-  workflow_dispatch:
+    # 每天在 UTC 时间 00:00, 06:00, 12:00, 18:00 运行 (共4次)
+    # 对应北京时间: 08:00, 14:00, 20:00, 02:00
+    - cron: '0 0,6,12,18 * * *' 
+  workflow_dispatch: # 允许手动触发
 
-# 必须增加写入权限，否则推送会失败
+# 必须增加写入权限
 permissions:
   contents: write
 
@@ -36,7 +38,15 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add aluminum_industry_news.md public/aluminum_industry_news.md
-          # 如果内容没变，commit 会报错，所以用 || exit 0 忽略
-          git commit -m "Update Aluminum News: $(date -u +'%Y-%m-%d')" || exit 0
+          
+          # 添加生成的所有相关文件
+          git add aluminum_industry_news.md public/aluminum_industry_news.md public/news_data.json
+          
+          # 检查是否有文件更改，避免空提交报错
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          
+          git commit -m "Automated Aluminum News Update: $(date -u +'%Y-%m-%d %H:%M:%S') UTC"
           git push
