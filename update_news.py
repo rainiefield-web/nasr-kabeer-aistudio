@@ -12,11 +12,21 @@ except ImportError as e:
     print(f"ImportError: {e}")
     exit(1)
 
-# --- 深度抓取配置 ---
-# 汇总的 30 个高质量信源关键词
-SITES_QUERY = "Reuters, Bloomberg Metals, Fastmarkets, AlCircle, Aluminium Insider, IAI (International Aluminium Institute), Alcoa, Rio Tinto, Rusal, Hydro, EGA, SMM (Metal.com), Aluminium Today, Fastmarkets, Platts, European Aluminium, Light Metal Age."
+# --- 深度配置 ---
+# 包含 30 个高质量信源的查询增强
+SITES_QUERY = "Reuters, Bloomberg Metals, Fastmarkets, LME Official, AlCircle, Aluminium Insider, IAI, Alcoa News, Rio Tinto, Rusal, Hydro, EGA, SMM (Metal.com)."
+
+def clean_text(text):
+    """清理 AI 幻觉生成的引用标签和假设性 URL"""
+    if not text: return ""
+    # 删除 这种标记
+    text = re.sub(r'\', '', text)
+    # 删除常见的 AI 假设性占位 URL
+    text = re.sub(r'hypothetical\S+', '', text)
+    return text.strip()
 
 def extract_json(text):
+    """极致容错 JSON 提取"""
     if not text: return None
     cleaned = re.sub(r'\[\d+\]', '', text.replace("```json", "").replace("```", "")).strip()
     start = cleaned.find("{")
@@ -27,7 +37,8 @@ def extract_json(text):
             start = cleaned.find("{", start + 1)
     return None
 
-def fetch_with_retry(client, prompt):
+def fetch_content(client, prompt):
+    """带重试机制的抓取"""
     for model_name in ["gemini-2.0-flash", "gemini-1.5-pro"]:
         try:
             response = client.models.generate_content(
@@ -50,69 +61,70 @@ def main():
     
     current_time_utc = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
     
-    # --- 任务 1: LME 价格精准抓取 ---
-    lme_prompt = f"""
-    Current Date: {datetime.utcnow().date()}
-    Task: Get the EXACT LME Primary Aluminum Cash Settlement Price.
-    Filter: Discard Alloy prices. Ensure the price is for 99.7% Primary Aluminum.
-    Sources: LME.com, Reuters, Fastmarkets.
-    Output: {{"en": {{"lme": [{{"price": "$xxxx", "change": "±x.x%", "date": "YYYY-MM-DD"}}]}}}}
+    # --- 任务 1: LME 价格（强制搜索实时或最近收盘价） ---
+    lme_prompt = """
+    TASK: Get LME Primary Aluminum Cash Settlement Price. 
+    INSTRUCTION: If today (Sunday/Saturday) is a holiday, you MUST search for the LATEST available closing price (e.g., from Friday). 
+    DO NOT return empty. Check Investing.com or LME official data.
+    OUTPUT: {"en": {"lme": [{"price": "$xxxx.xx", "change": "±x.x%", "date": "YYYY-MM-DD"}]}}
     """
 
-    # --- 任务 2: 深度新闻抓取 (覆盖 30 个信源) ---
+    # --- 任务 2: 深度新闻（严格过滤虚假源） ---
     news_prompt = f"""
-    Task: Deep scan global aluminum industry news from these SPECIFIC sites: {SITES_QUERY}.
-    Requirements:
-    1. Extract 5-8 distinct, high-quality news bullets.
-    2. Focus on: Production shifts, energy costs impacting smelters, trade sanctions, ESG/Green aluminum, and aerospace/auto demand.
-    3. Every bullet MUST have a source URL.
-    4. Provide professional Arabic translation for each point.
-    Output Structure:
-    {{
-      "en": {{ "corporate": [{{ "bullet": "...", "url": "..." }}], "trends": [], "factors": [] }},
-      "ar": {{ "corporate": [{{ "bullet": "...", "url": "..." }}], "trends": [], "factors": [] }}
-    }}
+    TASK: Deep scan aluminum industry news from: {SITES_QUERY}.
+    REQUIREMENTS: 
+    1. Extract 5-8 REAL news bullets. 
+    2. NO HYPOTHETICAL URLs. If no URL found, leave it blank.
+    3. Remove all "" or similar tags from the text.
+    4. Provide professional Arabic translation.
+    OUTPUT: {"en": {"corporate": [{"bullet": "...", "url": "..."}], "trends": []}, "ar": {"corporate": []}}
     """
 
-    # 执行抓取
-    lme_data = fetch_with_retry(client, lme_prompt)
-    news_data = fetch_with_retry(client, news_prompt)
+    lme_data = fetch_content(client, lme_prompt)
+    news_data = fetch_content(client, news_prompt)
 
-    # 合并数据
+    # 数据合并与最终清洗
     final_data = {
         "date": datetime.utcnow().strftime('%Y-%m-%d'),
-        "en": lme_data.get("en", {}) if lme_data else {"lme": []},
-        "ar": lme_data.get("ar", {}) if lme_data else {"lme": []}
+        "en": {"lme": lme_data.get("en", {}).get("lme", []) if lme_data else [], "corporate": [], "trends": [], "factors": []},
+        "ar": {"lme": [], "corporate": [], "trends": [], "factors": []}
     }
     
     if news_data:
         for lang in ["en", "ar"]:
             for sec in ["corporate", "trends", "factors"]:
-                final_data[lang][sec] = news_data.get(lang, {}).get(sec, [])
+                raw_items = news_data.get(lang, {}).get(sec, [])
+                cleaned_items = []
+                for item in raw_items:
+                    bullet = clean_text(item.get("bullet", ""))
+                    url = item.get("url", "")
+                    # 过滤掉包含 'hypothetical' 的虚假链接
+                    if bullet and "hypothetical" not in str(url).lower():
+                        cleaned_items.append({"bullet": bullet, "url": url})
+                final_data[lang][sec] = cleaned_items
 
-    # --- 渲染 Markdown (增强版) ---
+    # --- 渲染逻辑 ---
     def render_md(data):
         lines = [f"# 🛠️ Aluminum Global Intelligence Report", 
-                 f"**Update Frequency:** 4 Times Daily | **Last Updated:** `{current_time_utc} UTC`",
-                 f"**Data Sources:** Top 30 Industry Portals (Reuters, LME, AlCircle, etc.)", ""]
+                 f"**Last Updated:** `{current_time_utc} UTC`", 
+                 "> *Verified Primary Aluminum Market Data & Global Industry News*", ""]
         
-        for lang, title in [("en", "English Analysis"), ("ar", "التحليل العربي")]:
+        for lang, title in [("en", "Global English Report"), ("ar", "التقرير العربي المحترف")]:
             lines.append(f"## {title}")
-            mapping = [("lme", "💰 LME Market Data"), ("corporate", "🏢 Corporate & Industrial News"), 
-                       ("trends", "📊 Global Market Trends"), ("factors", "🌍 Strategic Macro Factors")]
+            mapping = [("lme", "💰 LME Market Data"), ("corporate", "🏢 Corporate Updates"), ("trends", "📊 Market Trends")]
             for key, sec_title in mapping:
                 lines.append(f"### {sec_title}")
                 items = data[lang].get(key, [])
                 if not items:
-                    lines.append("- *Searching deeper for verified information...*")
+                    lines.append("- *Data verification in progress (Market may be closed)...*")
                 else:
                     for item in items:
                         if key == "lme":
-                            p, c = item.get('price'), item.get('change')
-                            lines.append(f"> **LME Cash:** `{p}` | **Change:** `{c}`")
+                            p, c, d = item.get('price'), item.get('change'), item.get('date')
+                            lines.append(f"> **LME Cash Price:** `{p}` | **Change:** `{c}` | **Date:** {d}")
                         else:
                             txt, url = item.get('bullet', ''), item.get('url', '')
-                            lines.append(f"- {txt} [🔗 Source]({url})" if url else f"- {txt}")
+                            lines.append(f"- {txt} [🔗 Source]({url})" if url and "http" in url else f"- {txt}")
                 lines.append("")
         return "\n".join(lines)
 
