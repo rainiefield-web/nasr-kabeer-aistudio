@@ -6,12 +6,7 @@ import traceback
 import requests
 from datetime import datetime, timedelta
 
-try:
-    # 使用你截图中展示的、最新的 SDK 结构
-    import google.generativeai as genai
-except ImportError as e:
-    print(f"ImportError: {e}")
-    exit(1)
+from google import genai
 
 # --- 核心配置 ---
 MIN_PRICE_THRESHOLD = 2700.0
@@ -65,12 +60,10 @@ def extract_json(text):
     return None
 
 # --- Gemini AI 调用函数 (根据你的截图进行最终修正) ---
-def fetch_content_from_genai(prompt):
-    # FINAL FIX: 使用你截图确认的 'gemini-pro' 模型，并采用 'GenerativeModel' 模式
-    model_name = "gemini-pro" 
+def fetch_content_from_genai(client, prompt):
+    model_name = "gemini-1.5-flash"
     try:
-        model = genai.GenerativeModel(model_name)
-        generation_config = genai.types.GenerationConfig(
+        generation_config = genai.types.GenerateContentConfig(
             response_mime_type="application/json"
         )
         tools = None
@@ -80,17 +73,17 @@ def fetch_content_from_genai(prompt):
             if tool_cls and search_cls:
                 tools = [tool_cls(google_search=search_cls())]
         if tools:
-            response = model.generate_content(
-                contents=prompt,
-                generation_config=generation_config,
+            generation_config = genai.types.GenerateContentConfig(
+                response_mime_type="application/json",
                 tools=tools,
             )
-        else:
-            response = model.generate_content(
-                contents=prompt,
-                generation_config=generation_config,
-            )
-        data = extract_json(response.text)
+        response = client.models.generate_content(
+            model=model_name,
+            contents=prompt,
+            config=generation_config,
+        )
+        response_text = getattr(response, "text", None)
+        data = extract_json(response_text) if response_text else None
         if data: return data
     except Exception as e:
         print(f"使用模型 {model_name} 时出错: {e}")
@@ -102,8 +95,7 @@ def main():
         print("错误：GEMINI_API_KEY 未设置。程序退出。")
         exit(1)
     
-    # 采用你截图中展示的初始化方式
-    genai.configure(api_key=gemini_api_key)
+    client = genai.Client(api_key=gemini_api_key)
 
     now = datetime.utcnow()
     current_time_utc = now.strftime('%Y-%m-%d %H:%M:%S')
@@ -126,8 +118,8 @@ def main():
     
     print("正在通过 Gemini 获取价格和深度新闻...")
     # 注意: 我们不再需要传递 client 对象
-    lme_data = fetch_content_from_genai(lme_prompt)
-    news_data = fetch_content_from_genai(news_prompt)
+    lme_data = fetch_content_from_genai(client, lme_prompt)
+    news_data = fetch_content_from_genai(client, news_prompt)
 
     # --- 数据整合与渲染 (无需改动) ---
     valid_lme = []
