@@ -3,7 +3,7 @@ import time
 import json
 import re
 import traceback
-import requests  # <--- 新增: 用于 NewsAPI 请求
+import requests
 from datetime import datetime, timedelta
 
 try:
@@ -17,11 +17,8 @@ except ImportError as e:
 MIN_PRICE_THRESHOLD = 2700.0
 CORE_SITES = "LME Official, Reuters Commodities, Bloomberg Metals, Fastmarkets, AlCircle, Aluminium Insider, IAI, Mining.com"
 
-# --- NewsAPI 专属函数 (新增) ---
+# --- NewsAPI 专属函数 ---
 def fetch_news_from_api(query: str, language: str = 'en', page_size: int = 10):
-    """
-    使用 NewsAPI 直接获取新闻。
-    """
     api_key = os.getenv("NEWS_API_KEY")
     if not api_key:
         print("警告：NEWS_API_KEY 未设置，跳过 NewsAPI 的新闻获取。")
@@ -30,7 +27,7 @@ def fetch_news_from_api(query: str, language: str = 'en', page_size: int = 10):
     url = (f"https://newsapi.org/v2/everything?"
            f"q={query}&"
            f"language={language}&"
-           f"sortBy=publishedAt&" # 按最新发布排序
+           f"sortBy=publishedAt&"
            f"pageSize={page_size}&"
            f"apiKey={api_key}")
 
@@ -43,7 +40,7 @@ def fetch_news_from_api(query: str, language: str = 'en', page_size: int = 10):
         print(f"从 NewsAPI 请求新闻时发生错误: {e}")
         return []
 
-# --- 你的已有函数 (保持不变) ---
+# --- 已有函数 (保持不变) ---
 def clean_text(text):
     if not text: return ""
     text = text.replace("\\\\", "")
@@ -63,7 +60,7 @@ def extract_json(text):
     return None
 
 def fetch_content_from_genai(client, prompt):
-    for model_name in ["gemini-1.5-flash", "gemini-1.5-pro"]: # 优先使用Flash
+    for model_name in ["gemini-1.5-flash", "gemini-1.5-pro"]:
         try:
             response = client.generate_content(
                 model=model_name,
@@ -91,21 +88,32 @@ def main():
     now = datetime.utcnow()
     current_time_utc = now.strftime('%Y-%m-%d %H:%M:%S')
 
-    # --- 任务 1: Gemini 智能抓取价格 ---
+    # --- 任务 1: Gemini 智能抓取价格 (英文，无需修改) ---
     lme_prompt = f"Get LME Primary Aluminum (High Grade) Cash Settlement Price from the last 4 hours. Strict: Price must be over $2700. Source: Prefer Investing.com, Fastmarkets, or Reuters. Output JSON: {{ \"en\": {{ \"lme\": [{{ \"price\": \"$xxxx.xx\", \"change\": \"±x.x%\", \"date\": \"YYYY-MM-DD\" }}] }} }}"
     
-    # --- 任务 2: Gemini 深度新闻分析 ---
-    news_prompt = f"Deep scan aluminum industry news from these portals: {CORE_SITES}. Focus: Smelter production, Bauxite supply, ESG, Automotive demand. Extract 8 high-quality news bullets. Use REAL URLs. Output JSON: {{ \"en\": {{ \"corporate\": [], \"trends\": [], \"factors\": [] }} }}"
+    # --- 任务 2: Gemini 深度新闻分析 (优化: 明确要求英文) ---
+    news_prompt = f"""
+    Deep scan English-language aluminum industry news from these portals: {CORE_SITES}.
+    Language Requirement: Must be in English.
+    Focus: Smelter production, Bauxite supply, ESG, Automotive demand.
+    Extract 8 high-quality news bullets. Use REAL URLs.
+    Output JSON: {{ "en": {{ "corporate": [], "trends": [], "factors": [] }} }}
+    """
     
-    # --- 任务 3: NewsAPI 直接新闻抓取 (新增) ---
-    print("正在从 NewsAPI 获取最新新闻...")
-    newsapi_articles = fetch_news_from_api(query="aluminum OR aluminium", page_size=8)
+    # --- 任务 3: NewsAPI 直接新闻抓取 (优化: 明确指定英文和关键词) ---
+    print("正在从 NewsAPI 获取最新英文新闻...")
+    # 使用 OR 逻辑，增加关键词覆盖面
+    newsapi_articles = fetch_news_from_api(
+        query="(aluminum OR aluminium) AND (industry OR market OR price)", 
+        language='en', 
+        page_size=8
+    )
     
     print("正在通过 Gemini 获取价格和深度新闻...")
     lme_data = fetch_content_from_genai(client, lme_prompt)
     news_data = fetch_content_from_genai(client, news_prompt)
 
-    # --- 数据整合与校验 ---
+    # --- 数据整合与校验 (保持不变) ---
     valid_lme = []
     if lme_data and "en" in lme_data and "lme" in lme_data["en"]:
         for entry in lme_data["en"]["lme"]:
@@ -118,7 +126,7 @@ def main():
         "date": now.strftime('%Y-%m-%d'),
         "en": {
             "lme": valid_lme,
-            "newsapi_headlines": newsapi_articles,  # <--- 新增: 存放 NewsAPI 的结果
+            "newsapi_headlines": newsapi_articles,
             "corporate": [],
             "trends": [],
             "factors": []
@@ -131,7 +139,7 @@ def main():
             final_data["en"][sec] = [{"bullet": clean_text(i.get("bullet","")), "url": i.get("url","")} 
                                      for i in raw_items if i.get("bullet") and "hypothetical" not in str(i.get("url")).lower()]
 
-    # --- 渲染 Markdown (已升级) ---
+    # --- 渲染 Markdown (保持不变) ---
     def render_md(data):
         lines = [f"# 🛠️ Aluminum Global Intelligence Report",
                  f"**Last Updated:** `{current_time_utc} UTC`",
@@ -139,10 +147,9 @@ def main():
 
         lines.append("## Global English Report")
         
-        # 调整了渲染顺序，让 LME 价格和最新头条在最前面
         sections = [
             ("lme", "💰 LME Primary Aluminum Data"),
-            ("newsapi_headlines", "⚡️ Latest Headlines (from NewsAPI)"), # <--- 新增
+            ("newsapi_headlines", "⚡️ Latest Headlines (from NewsAPI)"),
             ("corporate", "🏢 Industry & Corporate Insights (from Gemini)"),
             ("trends", "📊 Market Trends (from Gemini)"),
             ("factors", "🌍 Strategic Factors (from Gemini)")
@@ -156,7 +163,7 @@ def main():
             for item in items:
                 if key == "lme":
                     lines.append(f"> **LME Cash:** `{item.get('price')}` | **Change:** `{item.get('change')}` | **Ref Date:** {item.get('date')}")
-                elif key == "newsapi_headlines":  # <--- 新增: NewsAPI 结果的渲染逻辑
+                elif key == "newsapi_headlines":
                     source_name = item.get('source', {}).get('name', 'N/A')
                     lines.append(f"- {item.get('title')} (*Source: {source_name}*) [🔗 Link]({item.get('url')})")
                 else:
@@ -176,6 +183,6 @@ def main():
     
     print(f"报告已成功生成: {output_path}")
 
-
 if __name__ == "__main__":
     main()
+
