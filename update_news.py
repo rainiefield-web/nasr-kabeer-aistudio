@@ -7,8 +7,8 @@ import requests
 from datetime import datetime, timedelta
 
 try:
-    from google import genai
-    from google.genai import types
+    # 使用你截图中展示的、最新的 SDK 结构
+    import google.generativeai as genai
 except ImportError as e:
     print(f"ImportError: {e}")
     exit(1)
@@ -18,7 +18,7 @@ MIN_PRICE_THRESHOLD = 2700.0
 CORE_SITES = "Reuters, Bloomberg, Fastmarkets, AlCircle, Aluminium Insider, Mining.com, S&P Global"
 NEWSAPI_DOMAINS = "reuters.com,bloomberg.com,fastmarkets.com,alcircle.com,aluminiuminsider.com,mining.com,spglobal.com"
 
-# --- NewsAPI 函数 ---
+# --- NewsAPI 函数 (无需改动) ---
 def fetch_news_from_api(query: str, domains: str, language: str = 'en', page_size: int = 10):
     api_key = os.getenv("NEWS_API_KEY")
     if not api_key:
@@ -39,13 +39,13 @@ def fetch_news_from_api(query: str, domains: str, language: str = 'en', page_siz
         data = response.json()
         articles = data.get('articles', [])
         if not articles:
-            print(f"NewsAPI 在指定域名 {domains} 未找到关于 '{query}' 的新闻。这可能是正常的，表示近期无相关报道。")
+            print(f"NewsAPI 在指定域名 {domains} 未找到关于 '{query}' 的新闻。")
         return articles
     except requests.exceptions.RequestException as e:
         print(f"从 NewsAPI 请求新闻时发生错误: {e}")
         return []
 
-# --- 辅助函数 ---
+# --- 辅助函数 (无需改动) ---
 def clean_text(text):
     if not text: return ""
     text = text.replace("\\\\", "")
@@ -64,18 +64,18 @@ def extract_json(text):
             start = cleaned.find("{", start + 1)
     return None
 
-# --- Gemini AI 调用函数 (最终修正) ---
-def fetch_content_from_genai(client, prompt):
-    # --- FINAL FIX: Using the standard 'gemini-pro' model to resolve 404 NOT_FOUND errors. ---
-    model_name = "gemini-pro"
+# --- Gemini AI 调用函数 (根据你的截图进行最终修正) ---
+def fetch_content_from_genai(prompt):
+    # FINAL FIX: 使用你截图确认的 'gemini-pro' 模型，并采用 'GenerativeModel' 模式
+    model_name = "gemini-pro" 
     try:
-        response = client.models.generate_content(
-            model=model_name,
+        model = genai.GenerativeModel(model_name)
+        response = model.generate_content(
             contents=prompt,
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json",
-                tools=[types.Tool(google_search=types.GoogleSearch())]
-            )
+            generation_config=genai.types.GenerationConfig(
+                response_mime_type="application/json"
+            ),
+            tools=[genai.types.Tool(google_search=genai.types.GoogleSearch())]
         )
         data = extract_json(response.text)
         if data: return data
@@ -89,7 +89,9 @@ def main():
         print("错误：GEMINI_API_KEY 未设置。程序退出。")
         exit(1)
     
-    client = genai.Client(api_key=gemini_api_key)
+    # 采用你截图中展示的初始化方式
+    genai.configure(api_key=gemini_api_key)
+
     now = datetime.utcnow()
     current_time_utc = now.strftime('%Y-%m-%d %H:%M:%S')
 
@@ -110,9 +112,11 @@ def main():
     )
     
     print("正在通过 Gemini 获取价格和深度新闻...")
-    lme_data = fetch_content_from_genai(client, lme_prompt)
-    news_data = fetch_content_from_genai(client, news_prompt)
+    # 注意: 我们不再需要传递 client 对象
+    lme_data = fetch_content_from_genai(lme_prompt)
+    news_data = fetch_content_from_genai(news_prompt)
 
+    # --- 数据整合与渲染 (无需改动) ---
     valid_lme = []
     if lme_data and "en" in lme_data and "lme" in lme_data["en"]:
         for entry in lme_data["en"]["lme"]:
