@@ -70,13 +70,26 @@ def fetch_content_from_genai(prompt):
     model_name = "gemini-pro" 
     try:
         model = genai.GenerativeModel(model_name)
-        response = model.generate_content(
-            contents=prompt,
-            generation_config=genai.types.GenerationConfig(
-                response_mime_type="application/json"
-            ),
-            tools=[genai.types.Tool(google_search=genai.types.GoogleSearch())]
+        generation_config = genai.types.GenerationConfig(
+            response_mime_type="application/json"
         )
+        tools = None
+        if hasattr(genai, "types"):
+            tool_cls = getattr(genai.types, "Tool", None)
+            search_cls = getattr(genai.types, "GoogleSearch", None)
+            if tool_cls and search_cls:
+                tools = [tool_cls(google_search=search_cls())]
+        if tools:
+            response = model.generate_content(
+                contents=prompt,
+                generation_config=generation_config,
+                tools=tools,
+            )
+        else:
+            response = model.generate_content(
+                contents=prompt,
+                generation_config=generation_config,
+            )
         data = extract_json(response.text)
         if data: return data
     except Exception as e:
