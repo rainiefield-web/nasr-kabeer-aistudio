@@ -27,10 +27,8 @@ jobs:
       - name: Install All Dependencies
         run: |
           python -m pip install --upgrade pip
-          # 1. 安装 Gemini 和 NewsAPI 需要的库
-          pip install google-generativeai requests
-          # 2. 强制安装兼容的 protobuf 版本，以解决之前的 'Descriptor' 错误
-          pip install protobuf==3.20.3 --force-reinstall
+          # 1. Install Google GenAI SDK (new version) and requests
+          pip install google-genai requests
 
       - name: Run Update Script
         env:
