@@ -23,13 +23,13 @@ jobs:
         with:
           python-version: '3.11'
 
-      # --- 关键修正 ---
-      - name: Install Dependencies with Pinned Version
+      # --- 关键修正: 确保所有依赖都被正确安装 ---
+      - name: Install All Dependencies
         run: |
           python -m pip install --upgrade pip
-          # 正常安装 google-genai 和 requests
-          pip install google-genai requests
-          # 强制安装一个已知的、兼容的 protobuf 版本来解决 "Descriptor" 错误
+          # 1. 安装 Gemini 和 NewsAPI 需要的库
+          pip install google-generativeai requests
+          # 2. 强制安装兼容的 protobuf 版本，以解决之前的 'Descriptor' 错误
           pip install protobuf==3.20.3 --force-reinstall
 
       - name: Run Update Script
@@ -52,4 +52,3 @@ jobs:
           
           git commit -m "Automated Aluminum News Update: $(date -u +'%Y-%m-%d %H:%M:%S') UTC"
           git push
-
