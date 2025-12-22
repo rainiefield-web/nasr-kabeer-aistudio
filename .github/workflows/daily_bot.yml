@@ -3,7 +3,6 @@ name: Daily Aluminum News Bot
 on:
   schedule:
     # 每天在 UTC 时间 00:00, 06:00, 12:00, 18:00 运行 (共4次)
-    # 对应北京时间: 08:00, 14:00, 20:00, 02:00
     - cron: '0 0,6,12,18 * * *' 
   workflow_dispatch: # 允许手动触发
 
@@ -27,11 +26,14 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install google-genai
+          # 新增了 requests 库
+          pip install google-genai requests
 
       - name: Run Update Script
         env:
+          # 关键: 将两个 Secrets 都注入到环境中
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
         run: python update_news.py
 
       - name: Commit and Push Changes
@@ -39,8 +41,8 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
-          # 添加生成的所有相关文件
-          git add aluminum_industry_news.md public/aluminum_industry_news.md public/news_data.json
+          # 根据你的脚本，主要确认 aluminum_industry_news.md 是否存在
+          git add aluminum_industry_news.md
           
           # 检查是否有文件更改，避免空提交报错
           if git diff --cached --quiet; then
@@ -50,3 +52,4 @@ jobs:
           
           git commit -m "Automated Aluminum News Update: $(date -u +'%Y-%m-%d %H:%M:%S') UTC"
           git push
+
