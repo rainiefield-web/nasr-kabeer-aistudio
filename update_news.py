@@ -66,22 +66,21 @@ def extract_json(text):
 
 # --- Gemini AI 调用函数 (最终修正) ---
 def fetch_content_from_genai(client, prompt):
-    for model_name in ["gemini-1.5-flash", "gemini-1.5-pro"]:
-        try:
-            # --- FINAL FIX: Moved 'tools' argument inside the GenerateContentConfig object ---
-            response = client.models.generate_content(
-                model=model_name,
-                contents=prompt,
-                config=types.GenerateContentConfig( # 使用 'config'
-                    response_mime_type="application/json",
-                    tools=[types.Tool(google_search=types.GoogleSearch())] # 'tools' 参数的正确位置
-                )
+    # --- FINAL FIX: Using the standard 'gemini-pro' model to resolve 404 NOT_FOUND errors. ---
+    model_name = "gemini-pro"
+    try:
+        response = client.models.generate_content(
+            model=model_name,
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                response_mime_type="application/json",
+                tools=[types.Tool(google_search=types.GoogleSearch())]
             )
-            data = extract_json(response.text)
-            if data: return data
-        except Exception as e:
-            print(f"使用模型 {model_name} 时出错: {e}")
-            continue
+        )
+        data = extract_json(response.text)
+        if data: return data
+    except Exception as e:
+        print(f"使用模型 {model_name} 时出错: {e}")
     return None
 
 def main():
