@@ -76,8 +76,7 @@ def main():
     Deep scan aluminum industry news from these 30+ portals: {CORE_SITES} and other mining journals.
     Focus: Smelter production news, Bauxite supply, ESG, and Automotive aluminum demand.
     Requirement: 8-12 high-quality news bullets. Use REAL URLs.
-    Provide professional Arabic translation for all content.
-    Output JSON: {{ "en": {{ "corporate": [], "trends": [], "factors": [] }}, "ar": {{ "corporate": [], "trends": [], "factors": [] }} }}
+    Output JSON: {{ "en": {{ "corporate": [], "trends": [], "factors": [] }} }}
     """
 
     lme_data = fetch_content(client, lme_prompt)
@@ -95,15 +94,13 @@ def main():
     final_data = {
         "date": now.strftime('%Y-%m-%d'),
         "en": {"lme": valid_lme, "corporate": [], "trends": [], "factors": []},
-        "ar": {"lme": [], "corporate": [], "trends": [], "factors": []}
     }
 
     if news_data:
-        for lang in ["en", "ar"]:
-            for sec in ["corporate", "trends", "factors"]:
-                raw_items = news_data.get(lang, {}).get(sec, [])
-                final_data[lang][sec] = [{"bullet": clean_text(i.get("bullet","")), "url": i.get("url","")} 
-                                         for i in raw_items if i.get("bullet") and "hypothetical" not in str(i.get("url")).lower()]
+        for sec in ["corporate", "trends", "factors"]:
+            raw_items = news_data.get("en", {}).get(sec, [])
+            final_data["en"][sec] = [{"bullet": clean_text(i.get("bullet","")), "url": i.get("url","")} 
+                                     for i in raw_items if i.get("bullet") and "hypothetical" not in str(i.get("url")).lower()]
 
     # --- 渲染逻辑 ---
     def render_md(data):
@@ -111,23 +108,21 @@ def main():
                  f"**Last Updated:** `{current_time_utc} UTC` (Delayed Feed OK)", 
                  f"**Status:** 🟢 Data Integrity Verified | **Frequency:** 4x Daily", ""]
         
-        for lang, title in [("en", "Global English Report"), ("ar", "التقرير العربي المحترف")]:
-            lines.append(f"## {title}")
-            sections = [("lme", "💰 LME Primary Aluminum Data"), ("corporate", "🏢 Industry & Corporate News"), 
-                        ("trends", "📊 Market Trends"), ("factors", "🌍 Strategic Factors")]
-            for key, sec_title in sections:
-                lines.append(f"### {sec_title}")
-                items = data[lang].get(key, [])
-                if not items:
-                    lines.append("- *Fetching verified industry data... (Usually updates within 2 hours)*")
+        lines.append("## Global English Report")
+        sections = [("lme", "💰 LME Primary Aluminum Data"), ("corporate", "🏢 Industry & Corporate News"), 
+                    ("trends", "📊 Market Trends"), ("factors", "🌍 Strategic Factors")]
+        for key, sec_title in sections:
+            items = data["en"].get(key, [])
+            if not items:
+                continue
+            lines.append(f"### {sec_title}")
+            for item in items:
+                if key == "lme":
+                    lines.append(f"> **LME Cash:** `{item.get('price')}` | **Change:** `{item.get('change')}` | **Ref Date:** {item.get('date')}")
                 else:
-                    for item in items:
-                        if key == "lme":
-                            lines.append(f"> **LME Cash:** `{item.get('price')}` | **Change:** `{item.get('change')}` | **Ref Date:** {item.get('date')}")
-                        else:
-                            url = item.get('url')
-                            lines.append(f"- {item.get('bullet')} [🔗 Source]({url})" if url and "http" in url else f"- {item.get('bullet')}")
-                lines.append("")
+                    url = item.get('url')
+                    lines.append(f"- {item.get('bullet')} [🔗 Source]({url})" if url and "http" in url else f"- {item.get('bullet')}")
+            lines.append("")
         return "\n".join(lines)
 
     # 写入文件
