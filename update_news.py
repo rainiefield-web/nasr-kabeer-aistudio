@@ -19,7 +19,7 @@ CORE_SITES = "LME Official, Reuters Commodities, Bloomberg Metals, Fastmarkets, 
 def clean_text(text):
     if not text: return ""
     # 彻底删除 AI 的各种幻觉标签和伪引用
-    text = re.sub(r"\", "", text)
+    text = text.replace("\\", "")
     text = re.sub(r"\[\d+\]", "", text)
     text = re.sub(r"hypothetical\S+", "", text)
     return text.strip()
