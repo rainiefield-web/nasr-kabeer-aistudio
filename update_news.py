@@ -10,8 +10,8 @@ from google import genai
 
 # --- 核心配置 ---
 MIN_PRICE_THRESHOLD = 2700.0
-CORE_SITES = "Reuters, Bloomberg, Fastmarkets, AlCircle, Aluminium Insider, Mining.com, S&P Global"
-NEWSAPI_DOMAINS = "reuters.com,bloomberg.com,fastmarkets.com,alcircle.com,aluminiuminsider.com,mining.com,spglobal.com"
+CORE_SITES = "Reuters, Bloomberg, Fastmarkets, AlCircle, Aluminium Insider, Mining.com, S&P Global, Aluminium Today, Metal.com, Investing.com, Trading Economics, Harbor Aluminum, SteelOnTheNet, LME"
+NEWSAPI_DOMAINS = "reuters.com,bloomberg.com,fastmarkets.com,alcircle.com,aluminiuminsider.com,mining.com,spglobal.com,aluminiumtoday.com,metal.com,investing.com,tradingeconomics.com,harboraluminum.com,steelonthenet.com,lme.com"
 
 # --- NewsAPI 函数 (无需改动) ---
 def fetch_news_from_api(query: str, domains: str, language: str = 'en', page_size: int = 10):
