@@ -18,17 +18,16 @@ MIN_PRICE_THRESHOLD = 2700.0
 CORE_SITES = "Reuters, Bloomberg, Fastmarkets, AlCircle, Aluminium Insider, Mining.com, S&P Global"
 NEWSAPI_DOMAINS = "reuters.com,bloomberg.com,fastmarkets.com,alcircle.com,aluminiuminsider.com,mining.com,spglobal.com"
 
-# --- NewsAPI 专属函数 (已修正) ---
+# --- NewsAPI 函数 ---
 def fetch_news_from_api(query: str, domains: str, language: str = 'en', page_size: int = 10):
     api_key = os.getenv("NEWS_API_KEY")
     if not api_key:
         print("警告：NEWS_API_KEY 未设置，跳过 NewsAPI 的新闻获取。")
         return []
 
-    # --- FIX #1: Relaxed query from qInTitle to q, but kept the crucial domain filter ---
     url = (f"https://newsapi.org/v2/everything?"
-           f"q={query}&"             # 在全文中搜索，而不是仅在标题
-           f"domains={domains}&"      # 仍然只搜索指定的权威域名
+           f"q={query}&"
+           f"domains={domains}&"
            f"language={language}&"
            f"sortBy=publishedAt&"
            f"pageSize={page_size}&"
@@ -46,7 +45,7 @@ def fetch_news_from_api(query: str, domains: str, language: str = 'en', page_siz
         print(f"从 NewsAPI 请求新闻时发生错误: {e}")
         return []
 
-# --- Gemini AI 及其他辅助函数 ---
+# --- 辅助函数 ---
 def clean_text(text):
     if not text: return ""
     text = text.replace("\\\\", "")
@@ -65,18 +64,18 @@ def extract_json(text):
             start = cleaned.find("{", start + 1)
     return None
 
-# --- Gemini AI 调用函数 (已修正) ---
+# --- Gemini AI 调用函数 (最终修正) ---
 def fetch_content_from_genai(client, prompt):
     for model_name in ["gemini-1.5-flash", "gemini-1.5-pro"]:
         try:
-            # --- FIX #2: Changed 'generation_config' back to the correct keyword 'config' ---
+            # --- FINAL FIX: Moved 'tools' argument inside the GenerateContentConfig object ---
             response = client.models.generate_content(
                 model=model_name,
                 contents=prompt,
-                config=types.GenerateContentConfig( # 使用 'config' 而不是 'generation_config'
+                config=types.GenerateContentConfig( # 使用 'config'
                     response_mime_type="application/json",
-                ),
-                tools=[types.Tool(google_search=types.GoogleSearch())]
+                    tools=[types.Tool(google_search=types.GoogleSearch())] # 'tools' 参数的正确位置
+                )
             )
             data = extract_json(response.text)
             if data: return data
