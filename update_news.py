@@ -13,28 +13,22 @@ except ImportError as e:
     print(f"ImportError: {e}")
     exit(1)
 
-# --- 核心配置 (新增了 NEWSAPI_DOMAINS) ---
+# --- 核心配置 ---
 MIN_PRICE_THRESHOLD = 2700.0
 CORE_SITES = "Reuters, Bloomberg, Fastmarkets, AlCircle, Aluminium Insider, Mining.com, S&P Global"
-
-# --- OPTIMIZATION 1: 限定 NewsAPI 的搜索范围 ---
-# 只在这些权威的、与行业相关的域名下搜索，从根源上过滤噪音
 NEWSAPI_DOMAINS = "reuters.com,bloomberg.com,fastmarkets.com,alcircle.com,aluminiuminsider.com,mining.com,spglobal.com"
 
-# --- NewsAPI 专属函数 (已升级) ---
+# --- NewsAPI 专属函数 (已修正) ---
 def fetch_news_from_api(query: str, domains: str, language: str = 'en', page_size: int = 10):
-    """
-    使用 NewsAPI 直接获取新闻，增加了 domains 和 searchIn=title 参数以提高精度。
-    """
     api_key = os.getenv("NEWS_API_KEY")
     if not api_key:
         print("警告：NEWS_API_KEY 未设置，跳过 NewsAPI 的新闻获取。")
         return []
 
-    # --- OPTIMIZATION 2: 构建更精准的请求 URL ---
+    # --- FIX #1: Relaxed query from qInTitle to q, but kept the crucial domain filter ---
     url = (f"https://newsapi.org/v2/everything?"
-           f"qInTitle={query}&"  # 强制在标题中搜索关键词
-           f"domains={domains}&"      # 只搜索指定的域名
+           f"q={query}&"             # 在全文中搜索，而不是仅在标题
+           f"domains={domains}&"      # 仍然只搜索指定的权威域名
            f"language={language}&"
            f"sortBy=publishedAt&"
            f"pageSize={page_size}&"
@@ -44,18 +38,15 @@ def fetch_news_from_api(query: str, domains: str, language: str = 'en', page_siz
         response = requests.get(url)
         response.raise_for_status()
         data = response.json()
-        
-        # 增加一个健全性检查，以防返回空的文章列表
         articles = data.get('articles', [])
         if not articles:
-            print(f"NewsAPI 在指定域名 {domains} 未找到关于 '{query}' 的新闻。")
+            print(f"NewsAPI 在指定域名 {domains} 未找到关于 '{query}' 的新闻。这可能是正常的，表示近期无相关报道。")
         return articles
-
     except requests.exceptions.RequestException as e:
         print(f"从 NewsAPI 请求新闻时发生错误: {e}")
         return []
 
-# --- Gemini AI 及其他辅助函数 (保持不变) ---
+# --- Gemini AI 及其他辅助函数 ---
 def clean_text(text):
     if not text: return ""
     text = text.replace("\\\\", "")
@@ -74,13 +65,15 @@ def extract_json(text):
             start = cleaned.find("{", start + 1)
     return None
 
+# --- Gemini AI 调用函数 (已修正) ---
 def fetch_content_from_genai(client, prompt):
     for model_name in ["gemini-1.5-flash", "gemini-1.5-pro"]:
         try:
+            # --- FIX #2: Changed 'generation_config' back to the correct keyword 'config' ---
             response = client.models.generate_content(
                 model=model_name,
                 contents=prompt,
-                generation_config=types.GenerateContentConfig(
+                config=types.GenerateContentConfig( # 使用 'config' 而不是 'generation_config'
                     response_mime_type="application/json",
                 ),
                 tools=[types.Tool(google_search=types.GoogleSearch())]
@@ -99,13 +92,10 @@ def main():
         exit(1)
     
     client = genai.Client(api_key=gemini_api_key)
-
     now = datetime.utcnow()
     current_time_utc = now.strftime('%Y-%m-%d %H:%M:%S')
 
-    # --- 任务 prompts (保持不变) ---
     lme_prompt = f"Get LME Primary Aluminum (High Grade) Cash Settlement Price from the last 4 hours. Strict: Price must be over $2700. Source: Prefer Investing.com, Fastmarkets, or Reuters. Output JSON: {{ \"en\": {{ \"lme\": [{{ \"price\": \"$xxxx.xx\", \"change\": \"±x.x%\", \"date\": \"YYYY-MM-DD\" }}] }} }}"
-    
     news_prompt = f"""
     Deep scan English-language aluminum industry news from these portals: {CORE_SITES}.
     Language Requirement: Must be in English.
@@ -114,11 +104,10 @@ def main():
     Output JSON: {{ "en": {{ "corporate": [], "trends": [], "factors": [] }} }}
     """
     
-    # --- API 调用 (已使用新的优化策略) ---
     print("正在从 NewsAPI 的指定域名中，精确获取最新英文新闻...")
     newsapi_articles = fetch_news_from_api(
-        query="aluminum OR aluminium", # 关键词现在可以在标题中查找
-        domains=NEWSAPI_DOMAINS,       # 传入我们限定的域名列表
+        query="aluminum OR aluminium",
+        domains=NEWSAPI_DOMAINS,
         page_size=8
     )
     
@@ -126,7 +115,6 @@ def main():
     lme_data = fetch_content_from_genai(client, lme_prompt)
     news_data = fetch_content_from_genai(client, news_prompt)
 
-    # --- 数据整合与渲染 (保持不变) ---
     valid_lme = []
     if lme_data and "en" in lme_data and "lme" in lme_data["en"]:
         for entry in lme_data["en"]["lme"]:
