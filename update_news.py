@@ -40,7 +40,7 @@ def fetch_news_from_api(query: str, language: str = 'en', page_size: int = 10):
         print(f"从 NewsAPI 请求新闻时发生错误: {e}")
         return []
 
-# --- 已有函数 (保持不变) ---
+# --- 已有函数 ---
 def clean_text(text):
     if not text: return ""
     text = text.replace("\\\\", "")
@@ -59,13 +59,15 @@ def extract_json(text):
             start = cleaned.find("{", start + 1)
     return None
 
+# --- Gemini AI 调用函数 (已修正) ---
 def fetch_content_from_genai(client, prompt):
     for model_name in ["gemini-1.5-flash", "gemini-1.5-pro"]:
         try:
-            response = client.generate_content(
+            # 修正: 使用 client.models.generate_content，而不是 client.generate_content
+            response = client.models.generate_content(
                 model=model_name,
                 contents=prompt,
-                generation_config=genai.types.GenerationConfig(
+                generation_config=types.GenerateContentConfig( # 修正: 使用 types.GenerateContentConfig
                     response_mime_type="application/json",
                 ),
                 tools=[types.Tool(google_search=types.GoogleSearch())]
@@ -82,16 +84,17 @@ def main():
     if not gemini_api_key:
         print("错误：GEMINI_API_KEY 未设置。程序退出。")
         exit(1)
-        
-    client = genai.GenerativeModel(model_name="gemini-1.5-pro", api_key=gemini_api_key)
+    
+    # --- 关键修正 ---
+    # 修正: 恢复使用 genai.Client 进行初始化
+    client = genai.Client(api_key=gemini_api_key)
 
     now = datetime.utcnow()
     current_time_utc = now.strftime('%Y-%m-%d %H:%M:%S')
 
-    # --- 任务 1: Gemini 智能抓取价格 (英文，无需修改) ---
+    # --- 任务 prompts (保持不变) ---
     lme_prompt = f"Get LME Primary Aluminum (High Grade) Cash Settlement Price from the last 4 hours. Strict: Price must be over $2700. Source: Prefer Investing.com, Fastmarkets, or Reuters. Output JSON: {{ \"en\": {{ \"lme\": [{{ \"price\": \"$xxxx.xx\", \"change\": \"±x.x%\", \"date\": \"YYYY-MM-DD\" }}] }} }}"
     
-    # --- 任务 2: Gemini 深度新闻分析 (优化: 明确要求英文) ---
     news_prompt = f"""
     Deep scan English-language aluminum industry news from these portals: {CORE_SITES}.
     Language Requirement: Must be in English.
@@ -100,9 +103,8 @@ def main():
     Output JSON: {{ "en": {{ "corporate": [], "trends": [], "factors": [] }} }}
     """
     
-    # --- 任务 3: NewsAPI 直接新闻抓取 (优化: 明确指定英文和关键词) ---
+    # --- API 调用 (保持不变) ---
     print("正在从 NewsAPI 获取最新英文新闻...")
-    # 使用 OR 逻辑，增加关键词覆盖面
     newsapi_articles = fetch_news_from_api(
         query="(aluminum OR aluminium) AND (industry OR market OR price)", 
         language='en', 
@@ -113,7 +115,7 @@ def main():
     lme_data = fetch_content_from_genai(client, lme_prompt)
     news_data = fetch_content_from_genai(client, news_prompt)
 
-    # --- 数据整合与校验 (保持不变) ---
+    # --- 数据整合与渲染 (保持不变) ---
     valid_lme = []
     if lme_data and "en" in lme_data and "lme" in lme_data["en"]:
         for entry in lme_data["en"]["lme"]:
@@ -139,7 +141,6 @@ def main():
             final_data["en"][sec] = [{"bullet": clean_text(i.get("bullet","")), "url": i.get("url","")} 
                                      for i in raw_items if i.get("bullet") and "hypothetical" not in str(i.get("url")).lower()]
 
-    # --- 渲染 Markdown (保持不变) ---
     def render_md(data):
         lines = [f"# 🛠️ Aluminum Global Intelligence Report",
                  f"**Last Updated:** `{current_time_utc} UTC`",
@@ -172,7 +173,6 @@ def main():
             lines.append("")
         return "\n".join(lines)
 
-    # --- 写入文件 (保持不变) ---
     content = render_md(final_data)
     base_dir = os.path.dirname(os.path.abspath(__file__)) if '__file__' in locals() else os.getcwd()
     output_path = os.path.join(base_dir, "aluminum_industry_news.md")
@@ -185,4 +185,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
