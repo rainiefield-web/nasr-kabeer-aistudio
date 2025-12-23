@@ -66,21 +66,21 @@ def select_model_name(client):
         return env_model
     try:
         models = client.models.list()
-        preferred_keywords = ["gemini-1.5-flash", "gemini-1.5-pro", "gemini"]
+        preferred_keywords = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini"]
         for keyword in preferred_keywords:
             for model in models:
                 name = getattr(model, "name", "")
                 supported_methods = getattr(model, "supported_generation_methods", [])
                 if keyword in name and "generateContent" in supported_methods:
-                    return name.replace("models/", "")
+                    return name
         for model in models:
             name = getattr(model, "name", "")
             supported_methods = getattr(model, "supported_generation_methods", [])
             if "generateContent" in supported_methods:
-                return name.replace("models/", "")
+                return name
     except Exception as e:
         print(f"无法列出模型以进行回退选择: {e}")
-    return "gemini-1.5-flash"
+    return "models/gemini-2.5-flash"
 
 
 def fetch_content_from_genai(client, prompt):
