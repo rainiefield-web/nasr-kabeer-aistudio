@@ -48,13 +48,30 @@ const extractMarkdownSection = (markdown: string, sectionTitle: string) => {
 };
 
 const formatInlineMarkdown = (text: string) => {
-  const parts = text.split(/(\*\*[^*]+\*\*|`[^`]+`)/g).filter(Boolean);
+  const parts = text.split(/(\*\*[^*]+\*\*|`[^`]+`|\[[^\]]+\]\([^)]+\))/g).filter(Boolean);
   return parts.map((part, index) => {
     if (part.startsWith('**') && part.endsWith('**')) {
       return <strong key={index}>{part.slice(2, -2)}</strong>;
     }
     if (part.startsWith('`') && part.endsWith('`')) {
       return <code key={index} className="px-1 py-0.5 bg-gray-100 rounded text-xs">{part.slice(1, -1)}</code>;
+    }
+    if (part.startsWith('[') && part.includes('](') && part.endsWith(')')) {
+      const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+      if (match) {
+        const [, label, href] = match;
+        return (
+          <a
+            key={index}
+            href={href}
+            target="_blank"
+            rel="noreferrer"
+            className="text-nasr-blue underline underline-offset-2 hover:text-nasr-dark transition-colors"
+          >
+            {label}
+          </a>
+        );
+      }
     }
     return <span key={index}>{part}</span>;
   });
