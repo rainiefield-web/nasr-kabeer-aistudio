@@ -959,7 +959,7 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
           if (!isBackgroundUpdate) {
             console.log("Using cached news data");
             setNewsMarkdown(cachedMarkdown);
-            const cachedMatch = cachedMarkdown.match(/Last Updated:\s*(.+)/i);
+            const cachedMatch = cachedMarkdown.match(/Last Updated(?:\s*\(UTC\))?:\s*(.+)/i);
             setLastUpdated(cachedMatch ? cachedMatch[1].trim() : null);
             setLoading(false);
           }
@@ -968,7 +968,7 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
 
         console.log("Content changed, updating markdown content...");
         setNewsMarkdown(markdown);
-        const lastUpdatedMatch = markdown.match(/Last Updated:\s*(.+)/i);
+        const lastUpdatedMatch = markdown.match(/Last Updated(?:\s*\(UTC\))?:\s*(.+)/i);
         setLastUpdated(lastUpdatedMatch ? lastUpdatedMatch[1].trim() : null);
         // Update Cache
         newsHashRef.current = currentHash;
@@ -996,7 +996,7 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
 
           if (fallbackMarkdown) {
             setNewsMarkdown(fallbackMarkdown);
-            const fallbackMatch = fallbackMarkdown.match(/Last Updated:\s*(.+)/i);
+            const fallbackMatch = fallbackMarkdown.match(/Last Updated(?:\s*\(UTC\))?:\s*(.+)/i);
             setLastUpdated(fallbackMatch ? fallbackMatch[1].trim() : null);
             newsHashRef.current = fallbackMarkdown;
             newsMarkdownRef.current = fallbackMarkdown;
