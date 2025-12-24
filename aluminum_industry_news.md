@@ -1,8 +1,11 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2025-12-24 06:15:31`
+Last Updated (UTC): `2025-12-24 12:17:07`
 Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
 
 ## Global English Report
+
+### LME Primary Aluminum Data
+- LME Cash: `$2960.80` | Change: `+0.45%` | Ref Date: 2025-12-24
 
 ### Latest Headlines (from NewsAPI)
 - India’s options traders rethink strategies for the calmest stock market in the world (Source: Bloomberg) [Link](https://www.bloomberg.com/news/articles/2025-12-21/world-s-calmest-stock-market-challenges-options-traders-in-india)
@@ -22,15 +25,15 @@ Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
 - Aluminium prices may touch $3,000 per tonne next year, says Nalco CMD (Source: CNBC TV18) [Link](https://www.cnbctv18.com/business/companies/aluminium-prices-touch-3000-us-dollar-per-tonne-next-year-nalco-cmd-alpha-article-19798536.htm)
 
 ### Industry & Corporate Insights (from Gemini)
-- Alcoa's Alumar smelter in Brazil has restarted production, contributing to a 3.7% year-over-year increase in South American primary aluminum production by February 2024. [Source](https://www.metal.com/news/1400624/Global-Aluminium-Production-Holds-Steady-in-February-with-Notable-Regional-Developments)
-- Vedanta is expanding its alumina refinery at Lanjigarh, India, with the goal of increasing its operation to 5 million tonnes per year, as new refining capacities in Asia aim to stabilize alumina supply. [Source](https://www.fastmarkets.com/commodities/minor-metals/bauxite-alumina/key-talking-points-ahead-of-fastmarkets-bauxite-alumina-conference-in-miami/)
-- The New Madrid primary aluminum smelter in the United States ceased full production in January 2024, with no scheduled restart, impacting North American output. [Source](https://www.metal.com/news/1400624/Global-Aluminium-Production-Holds-Steady-in-February-with-Notable-Regional-Developments)
+- Alcoa aims for net-zero emissions by 2050 and targets a 30% reduction in smelting and refining emissions by 2025, actively developing zero-carbon smelting technology like ELYSIS. [Source](https://www.alcoa.com/global/en/news/news-releases/news-detail/2021/Alcoa-Sets-Ambitious-Goal-to-Achieve-Net-Zero-Greenhouse-Gas-Emissions-by-2050/default.aspx)
+- Vedanta Aluminium has achieved a 28.5% reduction in greenhouse gas emissions intensity since FY2012 and introduced low-carbon "Restora" and "Restora Ultra" products, ranking second in the S&P Global Corporate Sustainability Assessment. [Source](https://www.vedantaaluminium.com/media/annual-reports/Vedanta-Aluminium-Sustainable-Development-Report-FY-23-24.pdf)
+- Rio Tinto has updated its 2025 bauxite production forecast to exceed 59-61 million tonnes and anticipates aluminum production to be at the upper end of its 3.25-3.45 million tonne guidance. [Source](https://www.riotinto.com/news/releases/2025/Rio-Tinto-announces-production-results-for-third-quarter-2025)
 
 ### Market Trends (from Gemini)
-- The global bauxite market is projected to grow at a CAGR of 2.7% by 2032, reaching USD 19.6 billion, with Guinea and Australia intensifying their export efforts and aiming for significant shipment volumes in 2025. [Source](https://www.alcircle.com/news/global-bauxite-upswing-triggers-exports-expansions-and-collaborations-across-the-aluminium-ecosystem-heres-whats-unfolding-115814)
-- Recycled aluminum consumption is forecast to increase from 28.9 million tonnes in 2024 to 29.9 million tonnes in 2025, driven by regulatory pressures, cost advantages, and downstream demand for lower-carbon inputs, becoming a crucial competitive lever. [Source](https://www.alcircle.com/blog/global-economy-meets-aluminium-market-outlook-across-extruded-rolled-cast-and-recycled-aluminium-115383)
-- China's primary aluminum production growth is expected to slow to around 2% in 2025, as the country's output nears its government-imposed cap of 45 million metric tons. [Source](https://www.metal.com/news/1400762/Looking-Ahead-to-2025-Will-Aluminium-Prices-Stay-Supported)
+- The global aluminum market is projected to shift from a slight surplus in 2024 to a supply deficit in 2025, with ING forecasting a 400,000 metric ton shortfall due to capacity constraints and recovering demand. [Source](https://think.ing.com/articles/aluminium-deficit-to-support-prices-in-2025-11-december-2024/)
+- The automotive aluminum market is forecast to grow significantly, driven by the increasing need for lightweight vehicles, including EVs, contributing to a projected market size of USD 61.3 billion by 2033. [Source](https://www.globenewswire.com/news-release/2025/02/27/3889012/0/en/Growth-Trends-in-the-Automotive-Aluminum-Industry-2025-2033-Alcoa-Novelis-and-Rio-Tinto-Alcan-Dominate.html)
+- Recycled aluminum is expected to constitute over 50% of the total aluminum supply by 2025, highlighting a significant industry shift towards a more circular economy and reduced reliance on primary smelting. [Source](https://www.alcircle.com/news/the-future-flow-of-aluminium-a-deep-dive-into-the-2025-outlook-for-downstream-end-use-and-recycled-sectors-108849)
 
 ### Strategic Factors (from Gemini)
-- Alumina prices, which rallied throughout 2024 to record-breaking numbers due to persistent supply-side pressures, have seen a 42.1% decline in 2025 due to excess supply and reduced concerns over bauxite availability. [Source](https://www.fastmarkets.com/commodities/minor-metals/bauxite-alumina/key-talking-points-ahead-of-fastmarkets-bauxite-alumina-conference-in-miami/)
-- US trade policy changes, specifically the increase in Section 232 aluminum tariffs from 10% to 25% effective March 12, 2025, led to a rush by buyers to secure supplies before higher duties, impacting LME aluminum alloy prices. [Source](https://www.alcircle.com/news/why-aluminium-alloy-prices-are-higher-in-2025-vs-2024-115714)
+- High alumina prices, at times exceeding half the cost of aluminum production, have significantly squeezed smelter profitability and led major producers like Rusal to announce output cuts. [Source](https://think.ing.com/articles/aluminium-deficit-to-support-prices-in-2025-11-december-2024/)
+- Geopolitical factors, including potential disruptions from Guinea's bauxite supply due to government policy changes and trade tensions, continue to reshape supply chains and contribute to aluminum price volatility. [Source](https://agmetalminer.com/2025/09/02/how-the-united-states-and-china-are-battling-for-control-of-global-bauxite-supplies/)
