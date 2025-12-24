@@ -74,28 +74,28 @@ def fetch_news_from_gnews(
     search_in: str = "title,description,content",
     from_date: str | None = None,
     to_date: str | None = None,
+    allow_date_fallback: bool = True,
 ):
     api_key = os.getenv("GNEWS")
     if not api_key:
         print("Warning: GNEWS API key is not set. Skipping GNews fetch.")
         return [], "GNEWS key missing"
 
-    url = (
-        f"https://gnews.io/api/v4/search?"
-        f"q={query}&"
-        f"lang={language}&"
-        f"in={search_in}&"
-        f"max={max_results}&"
-        f"sortby=publishedAt"
-    )
+    params = {
+        "q": query,
+        "lang": language,
+        "in": search_in,
+        "max": max_results,
+        "sortby": "publishedAt",
+        "apikey": api_key,
+    }
     if from_date:
-        url += f"&from={from_date}"
+        params["from"] = from_date
     if to_date:
-        url += f"&to={to_date}"
-    url += f"&apikey={api_key}"
+        params["to"] = to_date
 
     try:
-        response = requests.get(url, timeout=30)
+        response = requests.get("https://gnews.io/api/v4/search", params=params, timeout=30)
         response.raise_for_status()
         data = response.json()
         articles = data.get("articles", [])
@@ -103,6 +103,28 @@ def fetch_news_from_gnews(
             print(f"GNews found no results for query='{query}'.")
             return articles, "GNews returned no articles for query"
         return articles, None
+    except requests.exceptions.HTTPError as e:
+        status = e.response.status_code if e.response else None
+        body_preview = ""
+        if e.response is not None:
+            body_preview = e.response.text[:300].replace("\n", " ")
+
+        # Free GNews tiers often reject `from`/`to` filters with 400s; retry once without them.
+        if status in (400, 422) and (from_date or to_date) and allow_date_fallback:
+            print("GNews returned a client error with date filters; retrying without from/to parameters.")
+            return fetch_news_from_gnews(
+                query=query,
+                language=language,
+                max_results=max_results,
+                search_in=search_in,
+                from_date=None,
+                to_date=None,
+                allow_date_fallback=False,
+            )
+
+        error_detail = f"HTTP {status}; body: {body_preview}" if status else str(e)
+        print(f"Error fetching GNews articles: {error_detail}")
+        return [], f"GNews request failed: {error_detail}"
     except requests.exceptions.RequestException as e:
         print(f"Error fetching GNews articles: {e}")
         return [], f"GNews request failed: {e}"
