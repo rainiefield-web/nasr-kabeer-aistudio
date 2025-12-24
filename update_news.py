@@ -23,7 +23,7 @@ NEWSAPI_DOMAINS = (
 )
 
 # -----------------------------
-# NewsAPI (no change required)
+# NewsAPI
 # -----------------------------
 def fetch_news_from_api(
     query: str,
@@ -67,10 +67,13 @@ def fetch_news_from_api(
         return [], f"NewsAPI request failed: {e}"
 
 
+# -----------------------------
+# GNews
+# -----------------------------
 def fetch_news_from_gnews(
     query: str,
     language: str = "en",
-    max_results: int = 12,
+    max_results: int = 10,
     search_in: str = "title,description,content",
     from_date: str | None = None,
     to_date: str | None = None,
@@ -80,6 +83,14 @@ def fetch_news_from_gnews(
     if not api_key:
         print("Warning: GNEWS API key is not set. Skipping GNews fetch.")
         return [], "GNEWS key missing"
+
+    # Defensive: some GNews plans are strict about query length. Keep a diagnostic.
+    if len(query) > 200:
+        print(f"Warning: GNews query length is {len(query)} (>200). This may cause 400. Query: {query[:200]}...")
+
+    # Defensive: set max<=10 to avoid plan-based cap issues.
+    if max_results > 10:
+        max_results = 10
 
     params = {
         "q": query,
@@ -109,7 +120,7 @@ def fetch_news_from_gnews(
         if e.response is not None:
             body_preview = e.response.text[:300].replace("\n", " ")
 
-        # Free GNews tiers often reject `from`/`to` filters with 400s; retry once without them.
+        # Retry once without date filters (many tiers reject from/to or strict parsing)
         if status in (400, 422) and (from_date or to_date) and allow_date_fallback:
             print("GNews returned a client error with date filters; retrying without from/to parameters.")
             return fetch_news_from_gnews(
@@ -130,8 +141,67 @@ def fetch_news_from_gnews(
         return [], f"GNews request failed: {e}"
 
 
+def fetch_gnews_aggregated(
+    queries: list[str],
+    from_date: str | None,
+    max_total: int = 12,
+    per_query_max: int = 10,
+):
+    """
+    Runs multiple shorter GNews queries, aggregates results, de-duplicates by URL,
+    and returns up to max_total articles.
+    """
+    all_articles: list[dict] = []
+    errors: list[str] = []
+
+    for q in queries:
+        if not q.strip():
+            continue
+        arts, err = fetch_news_from_gnews(
+            query=q,
+            max_results=per_query_max,
+            from_date=from_date,
+            to_date=None,
+        )
+        if err:
+            errors.append(err)
+        if arts:
+            all_articles.extend(arts)
+
+    # Deduplicate by URL
+    seen = set()
+    deduped = []
+    for a in all_articles:
+        u = (a or {}).get("url")
+        if not u:
+            continue
+        if u in seen:
+            continue
+        seen.add(u)
+        deduped.append(a)
+
+    # Keep newest-ish order (API already sortBy=publishedAt, but merged lists can interleave).
+    # We’ll do a safe sort on publishedAt when present.
+    def _ts(item: dict):
+        t = (item or {}).get("publishedAt", "") or ""
+        return t
+
+    deduped.sort(key=_ts, reverse=True)
+    deduped = deduped[:max_total]
+
+    combined_error = None
+    if errors and not deduped:
+        # Only return an error if we got nothing at all
+        combined_error = "; ".join(errors[:3])
+    elif errors:
+        # Partial errors are non-fatal
+        combined_error = f"Partial errors: {'; '.join(errors[:3])}"
+
+    return deduped, combined_error
+
+
 # -----------------------------
-# Helpers (light improvements)
+# Helpers
 # -----------------------------
 def clean_text(text: str) -> str:
     if not text:
@@ -143,19 +213,12 @@ def clean_text(text: str) -> str:
 
 
 def extract_json(text: str):
-    """
-    Attempts to extract the first valid JSON object from a text blob.
-    Handles cases where the model adds pre/post text or Markdown fences.
-    """
     if not text:
         return None
 
     cleaned = text.strip()
-
-    # Remove common fenced code blocks (```json ... ```), if any
     cleaned = cleaned.replace("```json", "").replace("```JSON", "").replace("```", "").strip()
 
-    # Heuristic: find first "{" then attempt raw_decode from there; if fails, keep searching
     start = cleaned.find("{")
     while start != -1:
         try:
@@ -171,10 +234,6 @@ def extract_json(text: str):
 # Gemini model selection
 # -----------------------------
 def select_model_name(client) -> str:
-    """
-    Picks a model that supports generateContent.
-    Priority: env GEMINI_MODEL -> gemini-2.5-flash -> gemini-2.0-flash -> any generateContent model.
-    """
     env_model = os.getenv("GEMINI_MODEL")
     if env_model:
         return env_model
@@ -202,13 +261,9 @@ def select_model_name(client) -> str:
 
 
 # -----------------------------
-# Gemini content fetch (KEY FIX HERE)
+# Gemini content fetch
 # -----------------------------
 def build_tools_if_supported():
-    """
-    Attempts to enable GoogleSearch tool if supported by the installed SDK.
-    Returns tools list or None.
-    """
     try:
         tool_cls = getattr(genai.types, "Tool", None)
         search_cls = getattr(genai.types, "GoogleSearch", None)
@@ -220,25 +275,14 @@ def build_tools_if_supported():
 
 
 def fetch_content_from_genai(client, prompt: str):
-    """
-    Scheme A:
-    - If tools are enabled: do NOT set response_mime_type to application/json (prevents 400 error).
-    - If tools are not available: you may set response_mime_type="application/json".
-    - Always parse JSON from response.text using extract_json().
-    """
     model_name = select_model_name(client)
     tools = build_tools_if_supported()
 
     try:
         if tools:
-            # IMPORTANT: Do NOT set response_mime_type when tool use is enabled
-            generation_config = genai.types.GenerateContentConfig(
-                tools=tools
-            )
+            generation_config = genai.types.GenerateContentConfig(tools=tools)
         else:
-            generation_config = genai.types.GenerateContentConfig(
-                response_mime_type="application/json"
-            )
+            generation_config = genai.types.GenerateContentConfig(response_mime_type="application/json")
 
         response = client.models.generate_content(
             model=model_name,
@@ -251,7 +295,6 @@ def fetch_content_from_genai(client, prompt: str):
         if data is not None:
             return data
 
-        # If parsing fails, print a short diagnostic (avoid dumping huge text)
         print(f"Gemini returned non-JSON or unparsable output for model={model_name}.")
         if response_text:
             snippet = response_text[:500].replace("\n", "\\n")
@@ -259,8 +302,6 @@ def fetch_content_from_genai(client, prompt: str):
 
     except Exception as e:
         print(f"Error using model {model_name}: {e}")
-        # Optional: print stack for debugging
-        # traceback.print_exc()
 
     return None
 
@@ -272,7 +313,7 @@ def render_md(data, current_time_utc: str, status: dict) -> str:
     lines = [
         "# Aluminum Global Intelligence Report",
         f"Last Updated (UTC): `{current_time_utc}`",
-        f"Data Status: LME={status.get('lme_status')} | GeminiNews={status.get('gemini_news_status')} | NewsAPI={status.get('newsapi_status')}",
+        f"Data Status: LME={status.get('lme_status')} | GeminiNews={status.get('gemini_news_status')} | NewsAPI={status.get('newsapi_status')} | GNews={status.get('gnews_status')}",
         "",
         "## Global English Report",
         ""
@@ -306,6 +347,15 @@ def render_md(data, current_time_utc: str, status: dict) -> str:
                     lines.append(f"- {headline} (Source: {source_name}) [Link]({url})")
                 elif headline:
                     lines.append(f"- {headline} (Source: {source_name})")
+            elif key == "gnews_headlines":
+                # GNews format: {title, description, url, publishedAt, source:{name,url}}
+                source_name = (item.get("source", {}) or {}).get("name", "N/A")
+                url = item.get("url")
+                headline = (item.get("title") or "").strip()
+                if url and headline:
+                    lines.append(f"- {headline} (Source: {source_name}) [Link]({url})")
+                elif headline:
+                    lines.append(f"- {headline} (Source: {source_name})")
             else:
                 bullet = item.get("bullet", "").strip()
                 url = item.get("url", "")
@@ -334,7 +384,6 @@ def main():
     now = datetime.utcnow()
     current_time_utc = now.strftime("%Y-%m-%d %H:%M:%S")
 
-    # Stronger JSON-only instruction to improve parse stability
     lme_prompt = f"""
 Get LME Primary Aluminum (High Grade) Cash Settlement Price from the last 4 hours.
 Strict requirements:
@@ -358,7 +407,9 @@ Return ONLY valid JSON (no markdown, no extra text):
 {{ "en": {{ "corporate": [{{"bullet":"...", "url":"https://..."}}], "trends": [{{"bullet":"...", "url":"https://..."}}], "factors": [{{"bullet":"...", "url":"https://..."}}] }} }}
 """.strip()
 
-    # Fetch NewsAPI
+    # -----------------------------
+    # NewsAPI fetch (same approach)
+    # -----------------------------
     print("Fetching latest English news via NewsAPI (restricted domains)...")
     primary_query = (
         "(aluminum OR aluminium) AND "
@@ -392,31 +443,41 @@ Return ONLY valid JSON (no markdown, no extra text):
             newsapi_error = err
             break
         newsapi_error = err
+
     if not newsapi_articles:
         print("NewsAPI attempts summary:")
         for label, err, count in newsapi_attempts_log:
             print(f"- {label} query -> {count} articles; error: {err}")
 
-    # Fetch GNews (new source)
+    # -----------------------------
+    # GNews fetch (FIXED: split queries + aggregate)
+    # -----------------------------
     print("Fetching latest English news via GNews (broad Google News index)...")
-    gnews_query = (
-        "(aluminum OR aluminium) AND "
-        "(smelter OR bauxite OR extrusion OR profile OR rolling OR billet OR \"aluminum profile\" OR \"aluminum extrusion\" "
-        "OR Alcoa OR Rusal OR Hydro OR Chalco OR \"Rio Tinto\" OR Novelis OR Constellium OR Hindalco)"
-    )
+
+    # Keep each query short to avoid GNews q length limits
+    gnews_queries = [
+        '("aluminum" OR "aluminium") AND (smelter OR bauxite OR billet)',
+        '("aluminum" OR "aluminium") AND (extrusion OR "aluminum extrusion" OR rolling)',
+        '("Alcoa" OR "Rusal" OR "Hydro" OR "Chalco" OR "Rio Tinto") AND (aluminum OR aluminium)',
+        '("Novelis" OR "Constellium" OR "Hindalco") AND (aluminum OR aluminium)',
+    ]
+
     gnews_from = (now - timedelta(days=5)).strftime("%Y-%m-%dT00:00:00Z")
-    gnews_articles, gnews_error = fetch_news_from_gnews(
-        query=gnews_query,
-        max_results=12,
+    gnews_articles, gnews_error = fetch_gnews_aggregated(
+        queries=gnews_queries,
         from_date=gnews_from,
-        to_date=None,
+        max_total=12,
+        per_query_max=10,
     )
     gnews_api_key_provided = bool(os.getenv("GNEWS"))
 
-    # Fetch Gemini content
+    # -----------------------------
+    # Gemini fetch (core)
+    # -----------------------------
     print("Fetching price and deep news via Gemini...")
     lme_data = fetch_content_from_genai(client, lme_prompt)
     news_data = fetch_content_from_genai(client, news_prompt)
+
     news_api_key_provided = bool(os.getenv("NEWS_API_KEY"))
 
     # Status markers
@@ -427,25 +488,32 @@ Return ONLY valid JSON (no markdown, no extra text):
         "gemini_news_status": "OK" if news_data else "FAIL",
     }
 
-    # Hard fail when upstream sources return nothing to avoid pushing hallucinated content
+    # -----------------------------
+    # Hard fail policy (FIXED):
+    # Only fail if Gemini core outputs are missing.
+    # NewsAPI/GNews are best-effort and should not break the workflow.
+    # -----------------------------
     errors = []
     if not lme_data:
         errors.append("Gemini LME request returned no usable data. Check GEMINI_API_KEY and model availability.")
     if not news_data:
         errors.append("Gemini news request returned no usable data. Verify GEMINI_API_KEY, network, or model quota.")
+
+    # Soft warnings for external news APIs
     if news_api_key_provided and (not newsapi_articles or newsapi_error):
-        base_msg = "NewsAPI returned no articles even though NEWS_API_KEY is set. Confirm the key and domain allowance."
+        msg = "Warning: NewsAPI returned no articles or had an error."
         if newsapi_error:
-            base_msg = f"{base_msg} Detail: {newsapi_error}"
-        errors.append(base_msg)
+            msg += f" Detail: {newsapi_error}"
+        print(msg)
+
     if gnews_api_key_provided and (not gnews_articles or gnews_error):
-        base_msg = "GNews returned no articles even though GNEWS key is set. Check query scope or quota."
+        msg = "Warning: GNews returned no articles or had an error."
         if gnews_error:
-            base_msg = f"{base_msg} Detail: {gnews_error}"
-        errors.append(base_msg)
+            msg += f" Detail: {gnews_error}"
+        print(msg)
 
     if errors:
-        print("Fatal validation errors detected:")
+        print("Fatal validation errors detected (Gemini core only):")
         for err in errors:
             print(f"- {err}")
         raise SystemExit(1)
