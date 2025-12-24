@@ -25,21 +25,32 @@ NEWSAPI_DOMAINS = (
 # -----------------------------
 # NewsAPI (no change required)
 # -----------------------------
-def fetch_news_from_api(query: str, domains: str, language: str = "en", page_size: int = 10):
+def fetch_news_from_api(
+    query: str,
+    domains: str,
+    language: str = "en",
+    page_size: int = 10,
+    search_in: str = "title,description",
+    sort_by: str = "publishedAt",
+    from_date: str | None = None,
+):
     api_key = os.getenv("NEWS_API_KEY")
     if not api_key:
         print("Warning: NEWS_API_KEY is not set. Skipping NewsAPI fetch.")
-        return []
+        return [], "NEWS_API_KEY missing"
 
     url = (
         f"https://newsapi.org/v2/everything?"
         f"q={query}&"
         f"domains={domains}&"
         f"language={language}&"
-        f"sortBy=publishedAt&"
-        f"pageSize={page_size}&"
-        f"apiKey={api_key}"
+        f"searchIn={search_in}&"
+        f"sortBy={sort_by}&"
+        f"pageSize={page_size}"
     )
+    if from_date:
+        url += f"&from={from_date}"
+    url += f"&apiKey={api_key}"
 
     try:
         response = requests.get(url, timeout=30)
@@ -48,10 +59,11 @@ def fetch_news_from_api(query: str, domains: str, language: str = "en", page_siz
         articles = data.get("articles", [])
         if not articles:
             print(f"NewsAPI found no results for query='{query}' within domains='{domains}'.")
-        return articles
+            return articles, "NewsAPI returned no articles for given query/domains"
+        return articles, None
     except requests.exceptions.RequestException as e:
         print(f"Error fetching NewsAPI articles: {e}")
-        return []
+        return [], f"NewsAPI request failed: {e}"
 
 
 # -----------------------------
@@ -283,16 +295,24 @@ Return ONLY valid JSON (no markdown, no extra text):
 
     # Fetch NewsAPI
     print("Fetching latest English news via NewsAPI (restricted domains)...")
-    newsapi_articles = fetch_news_from_api(
-        query="aluminum OR aluminium",
+    focus_query = (
+        "(aluminum OR aluminium) AND "
+        "(smelter OR bauxite OR extrusion OR profile OR \"aluminum profile\" OR \"aluminum extrusion\" OR rolling OR billet "
+        "OR Alcoa OR Rusal OR Hydro OR Chalco OR Rio Tinto OR Novelis OR Constellium OR Hindalco)"
+    )
+    from_date = (now.date()).isoformat()
+    newsapi_articles, newsapi_error = fetch_news_from_api(
+        query=focus_query,
         domains=NEWSAPI_DOMAINS,
-        page_size=8
+        page_size=12,
+        from_date=from_date,
     )
 
     # Fetch Gemini content
     print("Fetching price and deep news via Gemini...")
     lme_data = fetch_content_from_genai(client, lme_prompt)
     news_data = fetch_content_from_genai(client, news_prompt)
+    news_api_key_provided = bool(os.getenv("NEWS_API_KEY"))
 
     # Status markers
     status = {
@@ -300,6 +320,24 @@ Return ONLY valid JSON (no markdown, no extra text):
         "lme_status": "OK" if lme_data else "FAIL",
         "gemini_news_status": "OK" if news_data else "FAIL",
     }
+
+    # Hard fail when upstream sources return nothing to avoid pushing hallucinated content
+    errors = []
+    if not lme_data:
+        errors.append("Gemini LME request returned no usable data. Check GEMINI_API_KEY and model availability.")
+    if not news_data:
+        errors.append("Gemini news request returned no usable data. Verify GEMINI_API_KEY, network, or model quota.")
+    if news_api_key_provided and (not newsapi_articles or newsapi_error):
+        base_msg = "NewsAPI returned no articles even though NEWS_API_KEY is set. Confirm the key and domain allowance."
+        if newsapi_error:
+            base_msg = f"{base_msg} Detail: {newsapi_error}"
+        errors.append(base_msg)
+
+    if errors:
+        print("Fatal validation errors detected:")
+        for err in errors:
+            print(f"- {err}")
+        raise SystemExit(1)
 
     # Validate and normalize LME
     valid_lme = []
