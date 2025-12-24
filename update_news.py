@@ -3,7 +3,7 @@ import json
 import re
 import traceback
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from google import genai
 
@@ -27,10 +27,10 @@ NEWSAPI_DOMAINS = (
 # -----------------------------
 def fetch_news_from_api(
     query: str,
-    domains: str,
+    domains: str | None,
     language: str = "en",
     page_size: int = 10,
-    search_in: str = "title,description",
+    search_in: str = "title,description,content",
     sort_by: str = "publishedAt",
     from_date: str | None = None,
 ):
@@ -42,12 +42,13 @@ def fetch_news_from_api(
     url = (
         f"https://newsapi.org/v2/everything?"
         f"q={query}&"
-        f"domains={domains}&"
         f"language={language}&"
         f"searchIn={search_in}&"
         f"sortBy={sort_by}&"
         f"pageSize={page_size}"
     )
+    if domains:
+        url += f"&domains={domains}"
     if from_date:
         url += f"&from={from_date}"
     url += f"&apiKey={api_key}"
@@ -64,6 +65,47 @@ def fetch_news_from_api(
     except requests.exceptions.RequestException as e:
         print(f"Error fetching NewsAPI articles: {e}")
         return [], f"NewsAPI request failed: {e}"
+
+
+def fetch_news_from_gnews(
+    query: str,
+    language: str = "en",
+    max_results: int = 12,
+    search_in: str = "title,description,content",
+    from_date: str | None = None,
+    to_date: str | None = None,
+):
+    api_key = os.getenv("GNEWS")
+    if not api_key:
+        print("Warning: GNEWS API key is not set. Skipping GNews fetch.")
+        return [], "GNEWS key missing"
+
+    url = (
+        f"https://gnews.io/api/v4/search?"
+        f"q={query}&"
+        f"lang={language}&"
+        f"in={search_in}&"
+        f"max={max_results}&"
+        f"sortby=publishedAt"
+    )
+    if from_date:
+        url += f"&from={from_date}"
+    if to_date:
+        url += f"&to={to_date}"
+    url += f"&apikey={api_key}"
+
+    try:
+        response = requests.get(url, timeout=30)
+        response.raise_for_status()
+        data = response.json()
+        articles = data.get("articles", [])
+        if not articles:
+            print(f"GNews found no results for query='{query}'.")
+            return articles, "GNews returned no articles for query"
+        return articles, None
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching GNews articles: {e}")
+        return [], f"GNews request failed: {e}"
 
 
 # -----------------------------
@@ -217,6 +259,7 @@ def render_md(data, current_time_utc: str, status: dict) -> str:
     sections = [
         ("lme", "LME Primary Aluminum Data"),
         ("newsapi_headlines", "Latest Headlines (from NewsAPI)"),
+        ("gnews_headlines", "Latest Headlines (from GNews)"),
         ("corporate", "Industry & Corporate Insights (from Gemini)"),
         ("trends", "Market Trends (from Gemini)"),
         ("factors", "Strategic Factors (from Gemini)"),
@@ -295,18 +338,58 @@ Return ONLY valid JSON (no markdown, no extra text):
 
     # Fetch NewsAPI
     print("Fetching latest English news via NewsAPI (restricted domains)...")
-    focus_query = (
+    primary_query = (
         "(aluminum OR aluminium) AND "
         "(smelter OR bauxite OR extrusion OR profile OR \"aluminum profile\" OR \"aluminum extrusion\" OR rolling OR billet "
         "OR Alcoa OR Rusal OR Hydro OR Chalco OR Rio Tinto OR Novelis OR Constellium OR Hindalco)"
     )
-    from_date = (now.date()).isoformat()
-    newsapi_articles, newsapi_error = fetch_news_from_api(
-        query=focus_query,
-        domains=NEWSAPI_DOMAINS,
-        page_size=12,
-        from_date=from_date,
+    fallback_query = (
+        "aluminum OR aluminium OR \"aluminum alloy\" OR \"aluminum extrusion\" OR \"aluminum profile\" OR smelter OR bauxite "
+        "OR billet OR rolling OR Alcoa OR Rusal OR Hydro OR Chalco OR \"Rio Tinto\" OR Novelis OR Constellium OR Hindalco"
     )
+    from_date = (now.date() - timedelta(days=3)).isoformat()
+
+    newsapi_articles = []
+    newsapi_error = None
+    newsapi_attempts_log = []
+    attempts = [
+        ("primary", primary_query, NEWSAPI_DOMAINS),
+        ("fallback-narrow", fallback_query, NEWSAPI_DOMAINS),
+        ("fallback-broad-domains", fallback_query, None),
+    ]
+    for label, q, domains in attempts:
+        articles, err = fetch_news_from_api(
+            query=q,
+            domains=domains,
+            page_size=12,
+            from_date=from_date,
+        )
+        newsapi_attempts_log.append((label, err, len(articles)))
+        if articles:
+            newsapi_articles = articles
+            newsapi_error = err
+            break
+        newsapi_error = err
+    if not newsapi_articles:
+        print("NewsAPI attempts summary:")
+        for label, err, count in newsapi_attempts_log:
+            print(f"- {label} query -> {count} articles; error: {err}")
+
+    # Fetch GNews (new source)
+    print("Fetching latest English news via GNews (broad Google News index)...")
+    gnews_query = (
+        "(aluminum OR aluminium) AND "
+        "(smelter OR bauxite OR extrusion OR profile OR rolling OR billet OR \"aluminum profile\" OR \"aluminum extrusion\" "
+        "OR Alcoa OR Rusal OR Hydro OR Chalco OR \"Rio Tinto\" OR Novelis OR Constellium OR Hindalco)"
+    )
+    gnews_from = (now - timedelta(days=5)).strftime("%Y-%m-%dT00:00:00Z")
+    gnews_articles, gnews_error = fetch_news_from_gnews(
+        query=gnews_query,
+        max_results=12,
+        from_date=gnews_from,
+        to_date=None,
+    )
+    gnews_api_key_provided = bool(os.getenv("GNEWS"))
 
     # Fetch Gemini content
     print("Fetching price and deep news via Gemini...")
@@ -317,6 +400,7 @@ Return ONLY valid JSON (no markdown, no extra text):
     # Status markers
     status = {
         "newsapi_status": "OK" if newsapi_articles else "EMPTY/FAIL",
+        "gnews_status": "OK" if gnews_articles else "EMPTY/FAIL",
         "lme_status": "OK" if lme_data else "FAIL",
         "gemini_news_status": "OK" if news_data else "FAIL",
     }
@@ -331,6 +415,11 @@ Return ONLY valid JSON (no markdown, no extra text):
         base_msg = "NewsAPI returned no articles even though NEWS_API_KEY is set. Confirm the key and domain allowance."
         if newsapi_error:
             base_msg = f"{base_msg} Detail: {newsapi_error}"
+        errors.append(base_msg)
+    if gnews_api_key_provided and (not gnews_articles or gnews_error):
+        base_msg = "GNews returned no articles even though GNEWS key is set. Check query scope or quota."
+        if gnews_error:
+            base_msg = f"{base_msg} Detail: {gnews_error}"
         errors.append(base_msg)
 
     if errors:
@@ -357,6 +446,7 @@ Return ONLY valid JSON (no markdown, no extra text):
         "en": {
             "lme": valid_lme,
             "newsapi_headlines": newsapi_articles,
+            "gnews_headlines": gnews_articles,
             "corporate": [],
             "trends": [],
             "factors": [],
