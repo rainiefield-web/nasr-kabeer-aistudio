@@ -22,6 +22,52 @@ NEWSAPI_DOMAINS = (
     "tradingeconomics.com,harboraluminum.com,steelonthenet.com,lme.com"
 )
 
+# Terms used to enforce aluminum industry relevance (beyond a single "aluminum" mention)
+NEWSAPI_INDUSTRY_TERMS = [
+    "smelter",
+    "smelting",
+    "smelters",
+    "alumina",
+    "bauxite",
+    "mine",
+    "mining",
+    "refinery",
+    "refining",
+    "ingot",
+    "billet",
+    "extrusion",
+    "extrusions",
+    "rolling",
+    "coil",
+    "sheet",
+    "foil",
+    "recycling",
+    "scrap",
+    "lme",
+    "premium",
+    "price",
+    "capacity",
+    "production",
+    "anode",
+    "cathode",
+]
+
+NEWSAPI_COMPANY_TERMS = [
+    "alcoa",
+    "rusal",
+    "norsk hydro",
+    "hydro",
+    "rio tinto",
+    "chalco",
+    "chinalco",
+    "hindalco",
+    "nalco",
+    "novelis",
+    "constellium",
+    "ega",
+    "emirates global aluminium",
+]
+
 # Keywords used to score aluminum relevance for NewsAPI results (title/description only).
 NEWSAPI_KEY_TERMS = [
     "aluminum",
@@ -259,6 +305,32 @@ def _compute_newsapi_relevance(article: dict) -> int:
     return score
 
 
+def _is_aluminum_industry_article(article: dict) -> bool:
+    """
+    Filter out consumer/electronics noise by requiring aluminum + industry/company cues.
+    """
+    title = (article or {}).get("title") or ""
+    desc = (article or {}).get("description") or ""
+    text = f"{title} {desc}".lower()
+    if not text.strip():
+        return False
+
+    aluminum_hits = any(t in text for t in ("aluminum", "aluminium", "alumina", "bauxite"))
+    industry_hits = any(term in text for term in NEWSAPI_INDUSTRY_TERMS)
+    company_hits = any(term in text for term in NEWSAPI_COMPANY_TERMS)
+
+    if not (aluminum_hits or company_hits):
+        return False
+
+    if aluminum_hits and (industry_hits or company_hits):
+        return True
+
+    if company_hits and industry_hits:
+        return True
+
+    return False
+
+
 def dedupe_and_rank_newsapi(articles: list[dict], top_n: int = 12) -> list[dict]:
     seen_urls = set()
     deduped: list[dict] = []
@@ -269,7 +341,8 @@ def dedupe_and_rank_newsapi(articles: list[dict], top_n: int = 12) -> list[dict]
             continue
         if url:
             seen_urls.add(url)
-        deduped.append(art)
+        if _is_aluminum_industry_article(art):
+            deduped.append(art)
 
     def _sort_key(item: dict):
         score = _compute_newsapi_relevance(item)
@@ -527,6 +600,11 @@ Return ONLY valid JSON (no markdown, no extra text):
 
     if newsapi_raw_articles:
         newsapi_articles = dedupe_and_rank_newsapi(newsapi_raw_articles, top_n=12)
+        if not newsapi_articles:
+            print(
+                f"NewsAPI relevance filter removed {len(newsapi_raw_articles)} articles; "
+                "consider adjusting query or terms if this persists."
+            )
     else:
         print("NewsAPI attempts summary:")
         for label, err, count in newsapi_attempts_log:
