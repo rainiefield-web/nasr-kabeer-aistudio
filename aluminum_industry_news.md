@@ -1,13 +1,11 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2025-12-27 12:15:45`
+Last Updated (UTC): `2025-12-27 18:01:16`
 Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 
 ## Global English Report
 
-### LME Primary Aluminum Data
-- LME Cash: `$2956.90` | Change: `+0.32%` | Ref Date: 2025-12-27
-
 ### Latest Headlines (from GNews)
+- Silver topped gold in 2025. It’s copper’s turn. (Source: Livemint) [Link](https://www.livemint.com/market/commodities/silver-topped-gold-in-2025-it-s-copper-s-turn-11766802089243.html)
 - threats that put Quebec economy on hold (Source: EUROPE SAYS) [Link](https://www.europesays.com/2658828/)
 - When green energy threatens what it is meant to save (Source: ABC (Australian Broadcasting Corporation)) [Link](https://www.abc.net.au/news/2025-12-27/nelson-wetlands-green-energy-boom-planning-protections/106097868)
 - Guinea elections: Who’s running and what’s at stake? (Source: Al Jazeera) [Link](https://www.aljazeera.com/news/2025/12/26/guinea-elections-whos-running-and-whats-at-stake)
@@ -19,18 +17,18 @@ Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 - Mines secy urges Nalco to meet production targets, boost efficiency (Source: The Hindu Business Line) [Link](https://www.thehindubusinessline.com/companies/mines-secy-urges-nalco-to-meet-production-targets-boost-efficiency/article70435965.ece)
 - Shyam Metalics shares: Five year vision likely to drive four digit stock price target, more details (Source: Business Today) [Link](https://www.businesstoday.in/markets/stocks/story/shyam-metalics-shares-five-year-vision-four-digit-stock-price-target-508117-2025-12-25)
 - Donald Trump's tariff gamble: Who blinked, who pushed back & did it 'make America great again'? (Source: EUROPE SAYS) [Link](https://www.europesays.com/2654954/)
-- Aluminium outlook 2026: Tight supply, structural demand may keep prices elevated (Source: CNBC TV18) [Link](https://www.cnbctv18.com/market/commodities/aluminium-demand-ev-renewables-year-ender-outlook-2026-19802558.htm)
 
 ### Industry & Corporate Insights (from Gemini)
-- Alumil has outlined an ambitious ESG plan until 2025, targeting a 12% reduction in carbon emissions, a 10% decrease in paper and aluminium scrap consumption, and a 38% increase in renewable energy use. [Source](https://www.alumil.com/global/en/esg-2025-goals-we-promote-sustainability-by-setting-ambitious-goals-that-bring-measurable-results)
-- Vedanta's Balco expansion, adding 435kt capacity, and Indonesia's Huatsing Aluminium's 220kt capacity project are both on track for completion or resumption in 2025, contributing to global primary aluminium output. [Source](https://www.shanghaimetalmarket.com/news/1739506-aluminium-price-trends-price-overview-and-what-to-expect-in-2025)
+- Fastmarkets launched low-carbon aluminum differentials for Europe, the US, and Asia, reflecting growing demand for transparency and sustainability in the evolving market. [Source](https://www.fastmarkets.com/insights/green-aluminium-production-market-trends/)
 
 ### Market Trends (from Gemini)
-- The global automotive aluminum market is projected to reach USD 61.3 billion by 2033, exhibiting a compound annual growth rate (CAGR) of 7.3% from 2025, driven by the increasing demand for lightweight vehicles, especially electric vehicles (EVs). [Source](https://www.globenewswire.com/news-release/2025/02/27/2947113/0/en/Growth-Trends-in-the-Automotive-Aluminum-Industry-2025-2033-Alcoa-Novelis-and-Rio-Tinto-Alcan-Dominate.html)
-- Global primary aluminium production is forecasted to reach over 74 million tonnes in 2025, up from 72.6 million tonnes in 2024, with overall world primary aluminium output showing a 1.4% year-on-year growth in Q2 2025. [Source](https://www.alcircle.com/news/global-aluminium-industry-outlook-2025-110057)
-- The aluminium industry is increasingly treating low-carbon aluminium as a distinct and valuable commodity class in 2025, influenced by greenhouse gas (GHG) targets, expanded pricing benchmarks for low-emission products, and regulations like the EU's Carbon Border Adjustment Mechanism (CBAM). [Source](https://carbonchain.com/blog/2025-state-of-low-carbon-aluminium)
+- LME aluminum prices hit a three-year high in 2025, reaching USD 2,800-2,900 per tonne by November, driven by tightening fundamentals and supply concerns. [Source](https://news.smm.cn/news/10323348)
+- Global primary aluminum production is forecasted to reach over 74 million tonnes in 2025, up from 72.6 million tonnes in 2024, with demand driven by transportation, electrical, and consumer durables sectors. [Source](https://www.alcircle.com/news/global-aluminium-industry-outlook-2025-whats-ahead-and-why-it-matters-114006)
+- The global aluminum market recorded a deficit of nearly 985,300 tonnes between January and July 2025, according to data published by the World Bureau of Metal Statistics (WBMS). [Source](https://www.alcircle.com/news/a-week-of-highs-for-the-upstream-aluminium-industry-prices-policies-and-projects-take-the-centre-stage-116314)
+- Global automotive demand is a significant driver for aluminum, particularly for lightweighting vehicles to improve fuel efficiency and reduce emissions, with electric vehicle (EV) production leading growth. [Source](https://www.alcircle.com/news/the-future-flow-of-aluminium-a-deep-dive-into-the-2025-outlook-for-downstream-end-use-and-recycled-sectors-112702)
 
 ### Strategic Factors (from Gemini)
-- Global bauxite production growth is expected to slow to 2% in 2025, reaching 451.3 million tonnes, primarily due to weaker data from Mainland China and escalating political and regulatory risks in Guinea, a key supplier. [Source](https://www.miningweekly.com/article/global-bauxite-production-outlook-lowered-for-2025-2025-11-28)
-- Aluminium smelters in the US, Europe, and Africa are encountering difficulties in securing long-term power contracts, impacting new supply, with instances like Century Aluminium in Iceland facing partial shutdowns and Mozal smelter in Mozambique being placed under care and maintenance. [Source](https://www.cnbctv18.com/market/aluminium-prices-ending-2025-at-its-highs-more-steam-left-18635848.htm)
-- Tariff policies and China's capacity constraints are expected to be main forces pushing global aluminum prices higher in the second half of 2025, even as LME inventories increased in July 2025, suggesting complex market dynamics beyond simple supply/demand. [Source](https://www.investing.com/news/commodities-news/aluminum-price-analysis-report-july-2025-and-outlook-for-the-second-half-of-the-year-3571253)
+- Aluminium's role in decarbonization efforts for electric vehicles and renewable energy infrastructure is growing, despite its production being energy-intensive and a significant contributor to carbon emissions. [Source](https://www.alcircle.com/news/global-aluminium-industry-outlook-2025-whats-ahead-and-why-it-matters-114006)
+- Bauxite supply chain resilience is becoming a premium feature in 2025, with Guinea expanding mining capacities and growing commitments to responsible mining practices. [Source](https://www.alcircle.com/news/inside-the-upstream-aluminium-shift-bauxite-alumina-and-primary-aluminium-in-2025-112349)
+- China's aluminum production is approaching its government-imposed capacity ceiling of 45 million tonnes, contributing to global supply tightness. [Source](https://news.smm.cn/news/10323348)
+- High European energy costs are significantly impacting smelter operating rates and production costs, influencing global supply dynamics. [Source](https://news.smm.cn/news/10323348)
