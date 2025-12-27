@@ -22,6 +22,31 @@ NEWSAPI_DOMAINS = (
     "tradingeconomics.com,harboraluminum.com,steelonthenet.com,lme.com"
 )
 
+# Keywords used to score aluminum relevance for NewsAPI results (title/description only).
+NEWSAPI_KEY_TERMS = [
+    "aluminum",
+    "aluminium",
+    "bauxite",
+    "smelter",
+    "smelting",
+    "billet",
+    "extrusion",
+    "rolling",
+    "anode",
+    "cathode",
+    "ingot",
+    "metal price",
+    "lme",
+    "alcoa",
+    "rusal",
+    "hydro",
+    "chalco",
+    "rio tinto",
+    "novelis",
+    "constellium",
+    "hindalco",
+]
+
 # -----------------------------
 # NewsAPI
 # -----------------------------
@@ -30,7 +55,7 @@ def fetch_news_from_api(
     domains: str | None,
     language: str = "en",
     page_size: int = 10,
-    search_in: str = "title,description,content",
+    search_in: str = "title,description",
     sort_by: str = "publishedAt",
     from_date: str | None = None,
 ):
@@ -198,6 +223,62 @@ def fetch_gnews_aggregated(
         combined_error = f"Partial errors: {'; '.join(errors[:3])}"
 
     return deduped, combined_error
+
+
+def _parse_published_at(article: dict) -> datetime | None:
+    value = (article or {}).get("publishedAt") or ""
+    if not isinstance(value, str):
+        return None
+    value = value.strip()
+    if not value:
+        return None
+    try:
+        # NewsAPI uses ISO 8601 with Z sometimes; normalize to offset-aware.
+        return datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except Exception:
+        return None
+
+
+def _compute_newsapi_relevance(article: dict) -> int:
+    """
+    Lightweight relevance scoring to prioritize true aluminum stories.
+    Counts keyword hits in title/description only (matching reduced search scope).
+    """
+    title = (article or {}).get("title") or ""
+    desc = (article or {}).get("description") or ""
+    text = f"{title} {desc}".lower()
+
+    score = 0
+    for term in NEWSAPI_KEY_TERMS:
+        if term in text:
+            # Core metal terms count more than company names.
+            if term in ("aluminum", "aluminium", "bauxite", "smelter", "smelting", "lme"):
+                score += 3
+            else:
+                score += 1
+    return score
+
+
+def dedupe_and_rank_newsapi(articles: list[dict], top_n: int = 12) -> list[dict]:
+    seen_urls = set()
+    deduped: list[dict] = []
+
+    for art in articles:
+        url = (art or {}).get("url")
+        if url and url in seen_urls:
+            continue
+        if url:
+            seen_urls.add(url)
+        deduped.append(art)
+
+    def _sort_key(item: dict):
+        score = _compute_newsapi_relevance(item)
+        ts = _parse_published_at(item)
+        ts_val = ts.timestamp() if ts else 0
+        return (-score, -ts_val)
+
+    deduped.sort(key=_sort_key)
+    return deduped[:top_n]
 
 
 # -----------------------------
@@ -422,7 +503,8 @@ Return ONLY valid JSON (no markdown, no extra text):
     )
     from_date = (now.date() - timedelta(days=3)).isoformat()
 
-    newsapi_articles = []
+    newsapi_articles: list[dict] = []
+    newsapi_raw_articles: list[dict] = []
     newsapi_error = None
     newsapi_attempts_log = []
     attempts = [
@@ -438,13 +520,14 @@ Return ONLY valid JSON (no markdown, no extra text):
             from_date=from_date,
         )
         newsapi_attempts_log.append((label, err, len(articles)))
-        if articles:
-            newsapi_articles = articles
+        if err:
             newsapi_error = err
-            break
-        newsapi_error = err
+        if articles:
+            newsapi_raw_articles.extend(articles)
 
-    if not newsapi_articles:
+    if newsapi_raw_articles:
+        newsapi_articles = dedupe_and_rank_newsapi(newsapi_raw_articles, top_n=12)
+    else:
         print("NewsAPI attempts summary:")
         for label, err, count in newsapi_attempts_log:
             print(f"- {label} query -> {count} articles; error: {err}")
