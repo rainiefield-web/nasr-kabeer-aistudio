@@ -46,6 +46,8 @@ NEWSAPI_INDUSTRY_TERMS = [
     "lme",
     "premium",
     "price",
+    "profile",
+    "profiles",
     "capacity",
     "production",
     "anode",
@@ -68,7 +70,7 @@ NEWSAPI_COMPANY_TERMS = [
     "emirates global aluminium",
 ]
 
-# Keywords used to score aluminum relevance for NewsAPI results (title/description only).
+# Keywords used to score aluminum relevance for NewsAPI results (title/description/content).
 NEWSAPI_KEY_TERMS = [
     "aluminum",
     "aluminium",
@@ -91,6 +93,25 @@ NEWSAPI_KEY_TERMS = [
     "novelis",
     "constellium",
     "hindalco",
+    "aluminum profile",
+    "aluminium profile",
+    "aluminum extrusion",
+    "aluminium extrusion",
+    "aluminum price",
+    "aluminium price",
+    "lme aluminum",
+    "lme aluminium",
+]
+
+NEWSAPI_FOCUS_PHRASES = [
+    "LME aluminium",
+    "LME aluminum",
+    "aluminum price",
+    "aluminium price",
+    "aluminum profile",
+    "aluminium profile",
+    "aluminum extrusion",
+    "aluminium extrusion",
 ]
 
 # -----------------------------
@@ -101,7 +122,7 @@ def fetch_news_from_api(
     domains: str | None,
     language: str = "en",
     page_size: int = 10,
-    search_in: str = "title,description",
+    search_in: str = "title,description,content",
     sort_by: str = "publishedAt",
     from_date: str | None = None,
 ):
@@ -288,11 +309,9 @@ def _parse_published_at(article: dict) -> datetime | None:
 def _compute_newsapi_relevance(article: dict) -> int:
     """
     Lightweight relevance scoring to prioritize true aluminum stories.
-    Counts keyword hits in title/description only (matching reduced search scope).
+    Counts keyword hits across title/description/content.
     """
-    title = (article or {}).get("title") or ""
-    desc = (article or {}).get("description") or ""
-    text = f"{title} {desc}".lower()
+    text = _article_text(article)
 
     score = 0
     for term in NEWSAPI_KEY_TERMS:
@@ -302,6 +321,9 @@ def _compute_newsapi_relevance(article: dict) -> int:
                 score += 3
             else:
                 score += 1
+    for phrase in NEWSAPI_FOCUS_PHRASES:
+        if phrase.lower() in text:
+            score += 4
     return score
 
 
@@ -309,11 +331,13 @@ def _is_aluminum_industry_article(article: dict) -> bool:
     """
     Filter out consumer/electronics noise by requiring aluminum + industry/company cues.
     """
-    title = (article or {}).get("title") or ""
-    desc = (article or {}).get("description") or ""
-    text = f"{title} {desc}".lower()
+    text = _article_text(article)
     if not text.strip():
         return False
+
+    # Allow direct pass-through if highly focused phrase is present
+    if any(phrase.lower() in text for phrase in NEWSAPI_FOCUS_PHRASES):
+        return True
 
     aluminum_hits = any(t in text for t in ("aluminum", "aluminium", "alumina", "bauxite"))
     industry_hits = any(term in text for term in NEWSAPI_INDUSTRY_TERMS)
@@ -329,6 +353,16 @@ def _is_aluminum_industry_article(article: dict) -> bool:
         return True
 
     return False
+
+
+def _article_text(article: dict) -> str:
+    """
+    Combine title/description/content for consistent filtering and scoring.
+    """
+    title = (article or {}).get("title") or ""
+    desc = (article or {}).get("description") or ""
+    content = (article or {}).get("content") or ""
+    return f"{title} {desc} {content}".lower()
 
 
 def dedupe_and_rank_newsapi(articles: list[dict], top_n: int = 12) -> list[dict]:
@@ -565,14 +599,19 @@ Return ONLY valid JSON (no markdown, no extra text):
     # NewsAPI fetch (same approach)
     # -----------------------------
     print("Fetching latest English news via NewsAPI (restricted domains)...")
+    focus_phrase_block = (
+        "\"LME aluminium\" OR \"LME aluminum\" OR \"aluminum price\" OR \"aluminium price\" OR "
+        "\"aluminum profile\" OR \"aluminium profile\" OR \"aluminum extrusion\" OR \"aluminium extrusion\""
+    )
+    company_block = "Alcoa OR Rusal OR Hydro OR Chalco OR \"Rio Tinto\" OR Novelis OR Constellium OR Hindalco"
     primary_query = (
-        "(aluminum OR aluminium) AND "
-        "(smelter OR bauxite OR extrusion OR profile OR \"aluminum profile\" OR \"aluminum extrusion\" OR rolling OR billet "
-        "OR Alcoa OR Rusal OR Hydro OR Chalco OR Rio Tinto OR Novelis OR Constellium OR Hindalco)"
+        f"({focus_phrase_block}) OR "
+        f"((aluminum OR aluminium) AND (smelter OR bauxite OR extrusion OR profile OR rolling OR billet OR {company_block}))"
     )
     fallback_query = (
-        "aluminum OR aluminium OR \"aluminum alloy\" OR \"aluminum extrusion\" OR \"aluminum profile\" OR smelter OR bauxite "
-        "OR billet OR rolling OR Alcoa OR Rusal OR Hydro OR Chalco OR \"Rio Tinto\" OR Novelis OR Constellium OR Hindalco"
+        f"({focus_phrase_block}) OR "
+        f"(aluminum OR aluminium OR \"aluminum alloy\" OR \"aluminum extrusion\" OR \"aluminum profile\" OR smelter OR bauxite "
+        f"OR billet OR rolling OR {company_block})"
     )
     from_date = (now.date() - timedelta(days=3)).isoformat()
 
