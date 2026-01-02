@@ -1,14 +1,11 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-01-02 00:44:35`
-Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
+Last Updated (UTC): `2026-01-02 06:15:35`
+Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$2995.90` | Change: `+0.29%` | Ref Date: 2026-01-01
-
-### Latest Headlines (from NewsAPI)
-- 3 takeaways from Utah’s domination of Nebraska in the Las Vegas Bowl (Source: Deseret News) [Link](https://www.deseret.com/sports/2025/12/31/three-takeaways-las-vegas-bowl-utah-nebraska/)
+- LME Cash: `$2968.00` | Change: `+0.78%` | Ref Date: 2025-12-31
 
 ### Latest Headlines (from GNews)
 - The innovations I'd like to see deep-sixed in 2026 (Source: Chicago Tribune) [Link](https://www.chicagotribune.com/2026/01/01/opinion-bad-innovations-drywall-start-stop/)
@@ -25,15 +22,15 @@ Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
 - India’s mining sector surges ahead on the back of radical reforms in 2025 (Source: Lokmat Times) [Link](https://www.lokmattimes.com/business/indias-mining-sector-surges-ahead-on-the-back-of-radical-reforms-in-2025/)
 
 ### Industry & Corporate Insights (from Gemini)
-- Mozal aluminum smelter, operated by South32, aims to maintain its 2025 annual production target of 350,000 tons of aluminum, despite a reduction in Q1 sales due to raw material management. [Source](https://360mozambique.com/mozambique/mozals-annual-production-to-reach-350000-tonnes-by-2025/)
-- Indonesia's PT Alamtri Minerals Indonesia Tbk (ADMR.JK) is set to commence phased operations of its new smelter by the end of 2025, targeting an initial annual capacity of 500,000 tonnes of aluminum ingots, to address domestic demand. [Source](https://phintraco.com/id/news-detail?id=5165)
-- Novelis has pledged that near-zero aluminum will constitute 10% of its primary aluminum purchases by 2030, alongside a commitment to source at least 50% of its total aluminum from recycled materials by the same year, as part of the First Movers Coalition. [Source](https://esgtoday.com/novelis-to-scale-use-of-low-carbon-recycled-aluminum/)
+- Indonesia's Inalum is targeting 2029 for the commissioning of a new $2.5 billion aluminum plant with an annual production capacity of 600,000 metric tons. [Source](https://www.mining.com/inalum-targets-2029-to-commission-new-aluminum-plant/)
+- UAE-based Emirates Global Aluminium (EGA) is actively seeking investors for a proposed $6 billion aluminum plant in the U.S., projected to produce 750,000 tons of primary aluminum annually. [Source](https://www.mining.com/uae-aluminum-maker-seeks-investors-for-6-billion-us-plant/)
+- South32 has announced that its Mozal aluminum smelter in Mozambique will enter a maintenance shutdown around March 15, 2026, primarily due to an impasse in securing a new power supply agreement. [Source](https://www.alcircle.com/news/new-aluminium-projects-in-indonesia-ramp-up-boosting-daily-average-aluminium-production-outside-china-119106)
+- Axis is pursuing a $29 billion lawsuit against Guinea over the revocation of a bauxite mining permit, highlighting ongoing geopolitical tensions affecting raw material supply. [Source](https://www.mining.com/axis-sues-guinea-for-29b-over-bauxite-permit-revocation/)
 
 ### Market Trends (from Gemini)
-- China continues to dominate global aluminum smelter production, accounting for nearly 60% of the world's capacity based on 2023 data, with India being the second-largest producer. [Source](https://www.mining.com/web/where-the-worlds-aluminum-is-smelted-by-country/)
-- The global aluminum market is projected to shift from a slight surplus in 2024 to a supply deficit in 2025, driven by capacity constraints in China and a gradual recovery in global demand. [Source](https://devere-group.com/news/aluminium-price-forecast-2025-supply-shortfall-to-drive-bullish-outlook/)
-- Demand for aluminum in clean energy sectors, including electric vehicles (EVs), solar panels, and power lines, is rapidly increasing, with the International Aluminium Institute (IAI) forecasting a 40% rise in demand by 2030. [Source](https://einvesting.com/aluminum-prices-hit-3-year-high-is-it-the-next-key-metal-in-the-clean-energy-shift/)
+- Overseas aluminum production, excluding China, saw a 2.2% year-on-year increase in December 2025, largely driven by the ramp-up of new capacities in Indonesia. [Source](https://www.alcircle.com/news/new-aluminium-projects-in-indonesia-ramp-up-boosting-daily-average-aluminium-production-outside-china-119106)
+- The European P1020 aluminum market is anticipating price increases and a more dynamic trading environment in 2026, potentially reversing the downward trajectory experienced for much of 2025. [Source](https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/metals/122925-commodities-2026-mexican-aluminum-prices-poised-to-rise-after-atypical-year-sources-say)
+- The automotive sector experienced a significant shift towards low-carbon aluminum throughout 2025, driven by global sustainability goals and increasing regulatory pressures. [Source](https://www.alcircle.com/news/low-carbon-aluminium-and-the-automotive-sector-2025-saw-a-transition-built-in-tandem-119098)
 
 ### Strategic Factors (from Gemini)
-- Global bauxite prices declined in June 2025, primarily due to reduced import volumes in China and higher alumina refinery and port inventory levels, reflecting an oversupplied market. [Source](https://www.alcircle.com/news/bauxite-prices-dip-owing-to-declined-demand-and-supply-in-first-half-of-2025-112005)
-- Alumina prices declined by 42.1% in 2025 from the beginning of the year, driven by excess supply, muted consumer demand, and reduced concern over bauxite supply. [Source](https://www.fastmarkets.com/insights/key-talking-points-ahead-of-fastmarkets-bauxite-alumina-conference-in-miami/)
+- The European Union's Carbon Border Adjustment Mechanism (CBAM) is projected to impose over €12 billion in costs on importers in 2026, significantly reshaping global aluminum trade flows and production strategies. [Source](https://www.fastmarkets.com/insights/cbam-could-impose-over-e12-billion-in-costs-on-importers-in-2026/)
