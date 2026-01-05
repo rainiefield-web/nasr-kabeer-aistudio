@@ -1,13 +1,16 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-01-04 18:01:30`
+Last Updated (UTC): `2026-01-05 06:20:47`
 Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$3023.10` | Change: `+0.91%` | Ref Date: 2026-01-03
+- LME Cash: `$3023.10` | Change: `+0.91%` | Ref Date: 2026-01-05
 
 ### Latest Headlines (from GNews)
+- Trump attacks Venezuela, drops drug war excuse and focuses on oil (Source: The Philadelphia Inquirer) [Link](https://www.inquirer.com/opinion/commentary/us-strikes-venezuela-oil-reserves-trump-petro-colombia-20260104.html)
+- The eight dirt cheap British stocks tipped by experts to soar in 2026... and they ALL pay a dividend: JEFF PRESTRIDGE (Source: Daily Mail Online) [Link](https://www.dailymail.co.uk/money/article-15432859/Dirt-cheap-British-stocks-tipped-experts-soar.html)
+- Madras High Court Allows Vedanta to File Fresh Application for Green Copper Plant in Tamil Nadu (Source: scanx.trade) [Link](https://scanx.trade/stock-market-news/stocks/madras-high-court-allows-vedanta-to-file-fresh-application-for-green-copper-plant-in-tamil-nadu/29064490)
 - Indian Stock Market Hits New Highs as Q3 Earnings Season Approaches (Source: scanx.trade) [Link](https://scanx.trade/stock-market-news/stocks/indian-stock-market-hits-new-highs-as-q3-earnings-season-approaches/29050577)
 - Ready to Install Handgun Components for Shooters (Source: TechBullion) [Link](https://techbullion.com/ready-to-install-handgun-components-for-shooters/)
 - Vedanta Limited Reports Record Quarterly Aluminium and Alumina Production in Q3FY26 (Source: scanx.trade) [Link](https://scanx.trade/stock-market-news/earnings/vedanta-limited-reports-record-quarterly-aluminium-and-alumina-production-in-q3fy26/28987084)
@@ -17,20 +20,17 @@ Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 - India Approves ₹41,863 Crore Investment From Foxconn, Dixon, Tata, & Samsung (Source: Free Press Journal) [Link](https://www.freepressjournal.in/tech/india-approves-41863-crore-investment-from-foxconn-dixon-tata-samsung)
 - Aditya Vikram Birla: The industrial titan who outran the Licence Raj (Source: Livemint) [Link](https://www.livemint.com/opinion/online-views/aditya-birla-industrial-titan-outran-licence-raj-india-global-empire-11767352173391.html)
 - Electronics production plugs into over Rs 41.5k crore investments (Source: The Economic Times) [Link](https://economictimes.indiatimes.com/tech/technology/electronics-production-plugs-into-over-rs-41-5k-crore-investments/articleshow/126310994.cms)
-- 3.2% yield & 45% margins: The high-growth PSU defying the ‘valuation trap’ warning (Source: The Financial Express) [Link](https://www.financialexpress.com/market/stock-insights/3-2-yield-amp-45-margins-the-high-growth-psu-defying-the-valuation-trap-warning/4095764/)
-- Today’s Paper News (Source: The Hindu Business Line) [Link](https://www.thehindubusinessline.com/todays-paper/2026-01-03/bl_chennai/articleGLHFCULO1-12968411.ece)
-- Flaky puff crust pizza named King Arthur Baking's 2026 Recipe of the Year (Source: ABC News) [Link](https://abcnews.go.com/GMA/Food/flaky-puff-crust-pizza-named-king-arthur-baking/story?id=128848747)
 
 ### Industry & Corporate Insights (from Gemini)
-- Iran Alumina Company increased its output of alumina powder, aluminum hydroxide, and bauxite by 2%, 2%, and 40% respectively in 2025, showcasing growth in its raw material and intermediate product sectors. [Source](https://www.alcircle.com/news/supply-controls-rising-production-trade-realignments-and-cbam-redefine-aluminium-market-signals-for-2026-120785)
-- China's operating aluminum capacity is projected to increase month-on-month in January 2026, with new aluminum projects stabilizing and ramping up production. [Source](https://www.metal.com/news/1628795/SMM-Analysis-Off-Season-Coupled-with-High-Aluminum-Prices-Proportion-of-Liquid-Aluminum-Declined-in-December)
+- A monumental RMB 63.5 billion (USD 8.75 billion) merger between Hongchuang Holdings and Hongtuo Industrial in China creates a new "aluminum king" in the A-share market, consolidating significant global aluminum electrolysis capacity. [Source](https://www.alcircle.com/news/tian-yuan-law-firm-mediates-the-countrys-largest-a-share-aluminium-merger-114400)
+- Saudi aluminum giant ALUPCO, in collaboration with China Hong Kong's Asia Aluminum Group (AAG), has launched a $500 million aluminum deep-processing base in Riyadh, signaling the Middle East's strategic shift towards high-value manufacturing beyond primary aluminum exports. [Source](https://news.metal.com/newscontent/102570085/Recently--an-aluminum-industry-collaboration-with-a-total-investment-of-$500-million-was-established-in-Riyadh)
 
 ### Market Trends (from Gemini)
-- The global aluminum recycling market reached approximately 41.9 million tonnes in 2025, primarily due to enhanced domestic recovery and processing capabilities, indicating a strategic shift towards internal scrap retention. [Source](https://www.alcircle.com/news/what-2025-revealed-about-aluminium-s-real-pressure-points-120779)
-- Demand for low-carbon aluminium in the automotive sector is anticipated to become a distinct and valuable segment in 2026 and beyond, driven by specific price signals, market incentives, and compliance requirements. [Source](https://www.alcircle.com/news/low-carbon-aluminium-and-the-automotive-sector-2025-saw-a-transition-built-in-tandem-120778)
-- LME aluminium prices experienced a volatile upward trend in 2025, reaching three-year highs, with expectations for continued volatility in 2026 influenced by geopolitics, energy transition, and trade policies. [Source](https://www.metal.com/news/1628286/SMM-Analysis-LME-Aluminium-Prices-Hit-a-Three-Year-High-in-2025-Overseas-Views-on-2026-Outlook)
+- Analysts forecast the aluminum market to face a deficit in 2025, intensifying in 2026, which could drive prices towards $3,000 per ton, supported by constrained Chinese primary supply. [Source](https://www.investing.com/news/commodities-news/aluminum-price-forecast-for-2026-according-to-bca-research-3759623)
+- New smelting capacity in Indonesia is expected to come online in 2026, supporting alumina demand, while uncertainty around existing smelters could impact global supply dynamics. [Source](https://www.alcoa.com/global/en/news/news-releases/news-release-detail/2025/10/22/alcoa-reports-third-quarter-2025-results)
+- China's primary aluminum output is nearing its 45 million metric tonne annual capacity cap, constraining supply and providing near-term support for aluminum prices, as outlined in China's 2025-2027 Action Plan. [Source](https://www.investing.com/news/commodities-news/aluminum-price-forecast-for-2026-according-to-bca-research-3759623)
 
 ### Strategic Factors (from Gemini)
-- China's bauxite imports surged by 29.4% year-on-year to 186 million tonnes between January and November 2025, highlighting the country's strategic efforts to secure raw materials for its aluminum industry. [Source](https://www.alcircle.com/news/supply-controls-rising-production-trade-realignments-and-cbam-redefine-aluminium-market-signals-for-2026-120785)
-- Europe's Carbon Border Adjustment Mechanism (CBAM) is set for full implementation by 2026, introducing carbon tariffs on energy-intensive imports like aluminum, thereby influencing primary aluminum output and trade dynamics. [Source](https://www.alcircle.com/news/supply-controls-rising-production-trade-realignments-and-cbam-redefine-aluminium-market-signals-for-2026-120785)
-- Platts, a division of S&P Global Energy, revised its methodology for the US Midwest Aluminum Transaction Premium assessment, including changes to average-freight locations, effective January 2, 2026, to reflect evolving market practices. [Source](https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/metals/010226-platts-revises-average-freight-locations-list-for-us-midwest-aluminum-premium-assessment)
+- Political instability and heightened resource nationalism in Guinea, a critical bauxite supplier, including the recent revocation of major foreign mining licenses, are causing significant disruptions and forcing global aluminum producers to diversify their sourcing strategies. [Source](https://www.alcircle.com/news/guineas-ega-licence-revocation-2025s-most-impactful-move-in-global-bauxite-114441)
+- High energy costs in the U.S. continue to impede the expansion of domestic aluminum smelting capacity and the restart of idle pot lines, making the nation reliant on imports and hindering efforts to increase local production. [Source](https://www.alcoa.com/global/en/news/news-releases/news-release-detail/2025/10/22/alcoa-reports-third-quarter-2025-results)
+- Bauxite prices remain firm, supported by seasonal supply disruptions in Guinea and the global market's efforts to work through stockpiles accumulated earlier in 2025. [Source](https://www.alcoa.com/global/en/news/news-releases/news-release-detail/2025/10/22/alcoa-reports-third-quarter-2025-results)
