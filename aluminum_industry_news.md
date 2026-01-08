@@ -1,13 +1,15 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-01-08 12:19:28`
+Last Updated (UTC): `2026-01-08 18:13:09`
 Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$3079.00` | Change: `-1.6%` | Ref Date: 2026-01-08
+- LME Cash: `$3057.30` | Change: `-0.95%` | Ref Date: 2026-01-08
 
 ### Latest Headlines (from GNews)
+- With mining to kick off next month, this bauxite miner's stock is on the rise (Source: The Motley Fool Australia) [Link](https://www.fool.com.au/2026/01/08/with-mining-to-kick-off-next-month-this-bauxite-miners-stock-is-on-the-rise/)
+- Kentbruck Green Energy Hub passes planning hurdle but report highlights environmental concerns (Source: ABC (Australian Broadcasting Corporation)) [Link](https://www.abc.net.au/news/2026-01-08/kentbruck-wind-project-environmental-effects-approval/106206224)
 - Novelis exec: Cause of fires at Oswego County aluminum plant still unknown (Source: syracuse.com) [Link](https://www.syracuse.com/business/2026/01/novelis-exec-cause-of-fires-at-oswego-county-aluminum-plant-still-unknown.html)
 - CSIR-NML pacts with NALCO for red mud recycling pilot plant (Source: Times of India) [Link](https://timesofindia.indiatimes.com/city/ranchi/csir-nml-pacts-with-nalco-for-red-mud-recycling-pilot-plant/articleshow/126400316.cms)
 - CES 2026 Live: Breaking News and Everything Announced in Tech (Source: CNET) [Link](https://www.cnet.com/news-live/ces-2026-news-live-updates/)
@@ -18,19 +20,17 @@ Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 - CES 2026: UGREEN just rolled out the most powerful NAS servers yet with dual 10GbE and Thunderbolt 4, 64GB RAM, fully local AI, and Intel Core Ultra 7 — this is a NAS upgrade you cannot miss (Source: Android Central) [Link](https://www.androidcentral.com/accessories/smart-home/ugreen-just-rolled-out-the-most-powerful-ai-nas-servers-yet-idx6011-pro)
 - Why I keep this Bluetooth tracker tag on my keychain instead of an AirTag - and don't regret it (Source: ZDNet) [Link](https://www.zdnet.com/article/rolling-square-android-tracker-tags-review/)
 - How to use different types of food storage wraps and mistakes to avoid (Source: Times of India) [Link](https://timesofindia.indiatimes.com/life-style/food-news/how-to-use-different-types-of-food-storage-wraps-and-mistakes-to-avoid/photostory/126390003.cms)
-- NALCO Shares Hit Fresh 52-Week High Amid Global Aluminium Price Rally and Strong Q2 Performance (Source: scanx.trade) [Link](https://scanx.trade/stock-market-news/stocks/nalco-shares-hit-fresh-52-week-high-amid-global-aluminium-price-rally-and-strong-q2-performance/29313797)
-- NALCO shares scale fresh record high after 14% jump in 4 days. Can the aluminium-backed momentum last? (Source: The Economic Times) [Link](https://economictimes.indiatimes.com/markets/stocks/news/nalco-shares-scale-fresh-record-high-after-14-jump-in-4-days-can-the-aluminium-backed-momentum-last/articleshow/126388433.cms)
 
 ### Industry & Corporate Insights (from Gemini)
-- Aluminium Corporation of China (Chalco) has revised the capital structure for its joint venture, Chinalco Qianxing (Chengdu) Technology Co., Ltd., which has been formally incorporated. [Source](https://www.alcircle.com/news/capital-structure-revised-by-aluminium-corporation-of-china-for-chinalco-led-joint-venture-120038)
-- PT Kalimantan Aluminium Industry (KAI), a subsidiary of Adaro Minerals, is set to commence staged operations for its 500,000-tonne-per-year aluminum smelter before the end of 2025. [Source](https://www.alcircle.com/news/adaro-minerals-subsidiary-aims-to-launch-aluminium-smelter-operations-by-december-2025-119335)
-- The International Bauxite, Alumina & Aluminium Society (IBAAS), in collaboration with CETIZION Verifica, has instituted the 2026 ESG Awards to recognize industry efforts in sustainable development across the aluminum value chain. [Source](https://www.alcircle.com/news/ibaas-2026-esg-awards-120027)
+- The growing demand for 'Green Aluminium' is driving companies to secure ASI (Aluminium Stewardship Initiative) certifications, enabling them to meet international ESG standards across the global aluminium value chain. [Source](https://www.alcircle.com/news/top-15-downstream-aluminium-players-move-into-asi-certified-league-in-2025-117329)
+- PT Kalimantan Aluminum Industry (KAI), a joint venture, is scheduled to commission its greenfield smelter with a Phase I capacity of 500,000 metric tons per year between Q4 2025 and early Q1 2026 in Indonesia. [Source](https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/metals/101725-trade-review-supply-surplus-anticipated-to-weigh-on-alumina-market-in-q4)
+- Alcoa is pursuing innovations in aluminum smelting and offers a significant portfolio of low-carbon products under its Sustana brand, emphasizing its commitment to ESG practices. [Source](https://www.alcoa.com/)
 
 ### Market Trends (from Gemini)
-- The automotive sector continues to drive aluminium demand, with new models like the Mercedes-Benz GLC200 4Matic incorporating aluminium built-ins, highlighting the metal's role in vehicle manufacturing. [Source](https://www.alcircle.com/news/mercedes-benz-malaysia-adds-locally-assembled-glc200-4matic-with-aluminium-built-ins-120037)
-- S&P Global Commodity Insights introduced new daily US Low-Carbon Aluminum Premium (US-LCAP) price assessments in January 2024, reflecting the market's growing demand and willingness to pay for certified low-emission aluminum. [Source](https://www.spglobal.com/commodityinsights/en/market-insights/blogs/metals/010824-us-low-carbon-aluminum-premium-us-lcap-platts)
-- The aluminum market is experiencing tightening fundamentals and sustained supply concerns, leading to resilient prices in 2025 with expectations of further increases into 2026. [Source](https://www.alcircle.com/news/lme-aluminium-price-trend-historical-context-2025-market-dynamics-2026-price-outlook-119934)
+- Global primary aluminum production is forecast to increase to approximately 75.7 million tonnes in 2026, with new smelter capacity and restarts emerging across Indonesia, Vietnam, Malaysia, Brazil, the Middle East, and Africa. [Source](https://alcircle.com/news/global-aluminium-market-outlook-bauxite-alumina-prices-al-circle-blog-113333)
+- Some new aluminum projects are expected to start pot commissioning from the end of 2025 to early 2026, indicating a growth in global smelting capacity. [Source](https://www.alcircle.com/news/smm-review-of-alumina-and-aluminium-production-in-november-and-forecast-for-december-2025-117282)
+- Global aluminum consumption (primary and secondary combined) is projected to reach approximately 105 million tonnes by 2026, with significant demand growth driven by the electric and new-energy vehicle sectors. [Source](https://alcircle.com/news/global-aluminium-market-outlook-bauxite-alumina-prices-al-circle-blog-113333)
 
 ### Strategic Factors (from Gemini)
-- China's primary aluminum production is nearing its self-imposed 45 million tonnes annual capacity cap, a limit reiterated under the 2025-2027 Action Plan, which constrains global primary supply growth. [Source](https://ng.investing.com/news/commodities-news/aluminum-price-forecast-for-2026-according-to-bca-research-3243177)
-- Analysts anticipate a gradual easing of supply-side challenges for bauxite and alumina in 2025, following a volatile 2024. [Source](https://www.spglobal.com/commodityinsights/en/research-analysis/featured-topics/aluminum-market-trends)
+- High energy costs continue to threaten aluminum smelters in Europe and Australia, potentially accounting for up to 40% of total production costs, contributing to idle capacity. [Source](https://alcircle.com/news/global-aluminium-market-outlook-bauxite-alumina-prices-al-circle-blog-113333)
+- Alumina prices face potential downside risk due to anticipated softer raw material costs stemming from increasing bauxite supply, especially with the end of Guinea's rainy season and possible resumption of suspended operations. [Source](https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/metals/101725-trade-review-supply-surplus-anticipated-to-weigh-on-alumina-market-in-q4)
