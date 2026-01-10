@@ -1,13 +1,18 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-01-10 12:15:16`
-Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
+Last Updated (UTC): `2026-01-10 18:01:34`
+Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
 - LME Cash: `$3147.80` | Change: `+1.9%` | Ref Date: 2026-01-10
 
+### Latest Headlines (from NewsAPI)
+- Fortescue, Rio Tinto or BHP shares? Guess which ASX mining stock paid the most passive income in 2025 (Source: Motley Fool Australia) [Link](https://www.fool.com.au/2026/01/10/fortescue-rio-tinto-or-bhp-shares-guess-which-asx-mining-stock-paid-the-most-passive-income-in-2025/)
+
 ### Latest Headlines (from GNews)
+- Ashapura Minechem Reports Strong H1FY26 Growth Driven by Guinea Bauxite Operations (Source: scanx.trade) [Link](https://scanx.trade/stock-market-news/stocks/ashapura-minechem-reports-strong-h1fy26-growth-driven-by-guinea-bauxite-operations/29554650)
+- The Aluminium War: Why Ashapura Minechem is dominating the global bauxite shift (Source: Livemint) [Link](https://www.livemint.com/market/stock-market-news/the-aluminium-war-why-ashapura-minechem-is-dominating-the-global-bauxite-shift-11767956403616.html)
 - Ottawa will only have limited regulatory power over Rio buying Glencore, despite heavy Canadian footprint (Source: The Globe and Mail) [Link](https://www.theglobeandmail.com/business/article-rio-tinto-glencore-merger-deal-mining-ottawa-canadian-footprint/)
 - Rio Tinto could buy Glencore and Glencore's Sudbury operations (Source: The North Bay Nugget) [Link](https://www.nugget.ca/news/rio-tinto-could-buy-glencore-and-glencores-sudbury-operations-take-our-poll)
 - Fourth time lucky? Rio Tinto and Glencore attempt another deal to create the world’s top mining company (Source: The Globe and Mail) [Link](https://www.theglobeandmail.com/business/commentary/article-rio-tinto-glencore-deal-merger-mining-company-copper/)
@@ -18,19 +23,17 @@ Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 - Glencore's trading arm part of the appeal for Rio Tinto in merger talks, sources say (Source: Reuters) [Link](https://www.reuters.com/business/glencores-trading-arm-part-appeal-rio-tinto-merger-talks-sources-say-2026-01-09/)
 - Iran Protests Put Supply Risk Back on the Oil Radar (Source: OilPrice) [Link](https://oilprice.com/Energy/Energy-General/Iran-Protests-Put-Supply-Risk-Back-on-the-Oil-Radar.html)
 - The Daily Chase: Canadian economy adds jobs but unemployment rate rises (Source: Bnn Bloomberg) [Link](https://www.bnnbloomberg.ca/business/economics/2026/01/09/the-daily-chase-canadian-economy-adds-jobs-but-unemployment-rate-rises/)
-- The 3 Best Copper Stocks to Buy for 2026 (Source: Barchart) [Link](https://www.barchart.com/story/news/36967647/the-3-best-copper-stocks-to-buy-for-2026)
-- Futures Muted Ahead Of Two Key Events (Source: ZeroHedge) [Link](https://www.zerohedge.com/markets/futures-muted-ahead-two-key-events)
 
 ### Industry & Corporate Insights (from Gemini)
-- RUSAL and South32 faced production cuts and guidance withdrawals in late 2024 and early 2025, driven by high alumina prices and civil unrest, leading to tighter global aluminum supplies and higher Japanese premiums. [Source](https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/metals/012225-japanese-q1-aluminum-premium-jumps-30-to-228mt-cif-japan)
-- Metro Mining secured significant bauxite offtake agreements for 2025 and 2026 with major Chinese partners like Xinfa Aluminium Group and China Aluminium International Trading Group, reinforcing its supply position. [Source](https://www.alcircle.com/news/metro-minings-2025-2026-bauxite-contracts-highlight-expanding-chinese-partnerships-118159)
-- Guinea is negotiating a bauxite supply agreement with Emirates Global Aluminium (EGA) for its state-owned Nimba Mining to supply feedstock, following the revocation of EGA subsidiary Guinea Alumina Corporation's license in July 2025 over refinery construction disputes. [Source](https://www.mining.com/guinea-ega-in-bauxite-supply-deal-talks/)
+- Alcoa's CEO has provided market flow data to the US and Canadian governments to inform decisions on aluminum tariffs, while noting the lack of consistently competitive long-term energy prices in the U.S. for smelter restarts. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNv2YEy5kzVgDahFFk7gUFd0USDhga43AE_BkesrbATHOiNn1gFrHgpZjLQASEa7Nv3jmxIZmh1pTqQ3ZpY5lZjPxI7W7RG8UjMR8oSpPoKgJ_qe2G5du723clwfbzs3cGLZhBjiQsEwDFt4PlcVZFew==)
 
 ### Market Trends (from Gemini)
-- Global aluminum demand is projected to increase by 33.3 million tonnes by 2030, reaching 119.5 million tonnes, largely driven by the shift towards renewable energy and electrification, with green energy applications accounting for 15.6 million tonnes. [Source](https://www.alcircle.com/news/guinea-led-bauxite-boom-reinforces-capesize-freight-prospects-in-2026-118844)
-- Guinea's bauxite exports are projected to maintain a strong growth trajectory in 2026, solidifying its position as the leading global exporter and a key driver for capesize freight, contrasting with Australia's focus on domestic alumina processing. [Source](https://www.alcircle.com/news/guinea-led-bauxite-boom-reinforces-capesize-freight-prospects-in-2026-118844)
-- Bauxite prices saw significant volatility in late 2024 and early 2025, reaching all-time highs of $115-130/dmt CIF China in January 2025 before trending downwards, highlighting supply chain security concerns given China's reliance on Guinea. [Source](https://www.fastmarkets.com/news/key-talking-points-ahead-of-fastmarkets-bauxite-alumina-conference-in-miami)
+- Investing.com projects that aluminum prices will remain resilient in the near term due to constrained Chinese primary supply, but a downturn in global manufacturing could weigh on prices in 2026. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5PV04sAws5jpDDW7LvO7pDtlp-MZWSCZVHqHDrFrPee632-sNtoat-53NrrRiyw_BFYoq6A8Xs5xXNOzZpmr2TaNY5IqXuldGTuj5PH82JUJKc8qbwf3v_fp7hC-Ljl_WlbFjFwRdBAGaO4RUlVR4HBc7HjEYzXsiIVDmRabEaq1m8l1D1NByggkIrdYayZmLyfuGHYJj-7NFW2v15D-4ZRFq2zS4TQAg0IOJBA==)
+- S&P Global highlights the ongoing technological evolution in automotive manufacturing, focusing on advanced applications of lightweight aluminum materials and giga-casting processes for vehicle electrification. [Source](https://ihsmarkit.com/events/automotive-events.html)
 
 ### Strategic Factors (from Gemini)
-- Bauxite prices declined in H1 2025 due to reduced Chinese imports and increased inventories, while Australian producers like ABx and Rio Tinto ramped up production amidst supply uncertainties, with demand expected to rebound in H2 2025 driven by infrastructure projects. [Source](https://www.alcircle.com/news/bauxite-prices-dip-owing-to-declined-demand-and-supply-in-first-half-of-2025-alcircle-116817)
-- Bauxite demand is expected to grow significantly in H2 2025, driven by the increasing demand for sustainable materials and the global transition to green energy, highlighting its critical role in key industrial sectors under stringent environmental regulations. [Source](https://www.alcircle.com/news/bauxite-prices-dip-owing-to-declined-demand-and-supply-in-first-half-of-2025-alcircle-116817)
+- S&P Global reports that analysts anticipate a recovery in bauxite and alumina supply in 2025 following a volatile 2024. [Source](https://www.spglobal.com/commodityinsights/en/ci/industry-news/metals/aluminum-market-trends.html)
+- Uncertainty surrounds US aluminum pricing due to discussions on reimposing or increasing import tariffs on Canadian aluminum, according to S&P Global. [Source](https://www.spglobal.com/commodityinsights/en/ci/industry-news/metals/aluminum-market-trends.html)
+- Guinea solidified its position as the world's leading bauxite producer in 2025, with surging exports to China, prompting calls for more transparent pricing mechanisms from Fastmarkets. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETQ-Cpr-jG3Umt_Xwwi7lkdY-Kakab2hOT6zp7exUETzRXrNHayJdBPp83wt082N14lB8bqPqDiGPKVmSABVKONHnJm-oKgB3yVh9nc1wYMssAi7C1q-Fzk1656kdsVGE1JeV2rZ8W5hMqtsXGEzbCOSHwclH5jVrmkE3KdJmyagrXSbNYEe1V8GgnEDh7B1qYjCU=)
+- LME data reveals that off-warrant aluminum stocks fell 56% in 2025, contributing to a total LME aluminum inventory of 669,140 tons, the lowest since mid-2022. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvMpDkjyUxkJzVooQ6A9gvkWy4I26Uq-_UbEH4oQifWVkkOqW4myKkyt4QT56NYJigOPR1PcACOPXV9XjuorTzTi0oQ_scXGJit5eXW6m0S9E76uP1uq_n2S51Qj3bnySUb7UNMiCCarTEjypeLPGhkxpztj-R3wSyB39IG9ks9fM_GsoAGfYZ)
+- Industry analysis, as suggested by S&P Global, indicates that EU scrap export restrictions set for Spring 2026 could significantly slow investments in green aluminum initiatives. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0lgrGtqpUO9SBD_YFJRDeIbgDeidLW7cx9MtsVUwrtfCGNvJGcIc90oKTKkvslxL5q9tgO4tgZwjUgC62CfwJwERm0skbGRo0ZE4DiF5Hd7nqP4R8seZD5NAQ6vpytzHpxPsgRlfrwLsda9fQZyYK9c2J6zaHbFa8S_SlfMdsXQYT4St8)
