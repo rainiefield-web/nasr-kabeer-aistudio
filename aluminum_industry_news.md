@@ -1,13 +1,18 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-01-11 06:01:20`
-Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
+Last Updated (UTC): `2026-01-11 12:01:10`
+Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$3147.85` | Change: `+1.90%` | Ref Date: 2026-01-09
+- LME Cash: `$3147.80` | Change: `+1.9%` | Ref Date: 2026-01-10
+
+### Latest Headlines (from NewsAPI)
+- 5 things I like about the Hydrow Wave smart rowing machine — and 2 I don't (Source: TechRadar) [Link](https://www.techradar.com/health-fitness/5-things-i-like-about-the-hydrow-wave-smart-rowing-machine-and-2-i-dont)
 
 ### Latest Headlines (from GNews)
+- Tim Marshall: The cold logic of Trump’s quest to carve up the globe (Source: The Sunday Times) [Link](https://www.thetimes.com/us/american-politics/article/tim-marshall-the-cold-logic-of-trumps-quest-to-carve-up-the-globe-m89cmvw3l)
+- ASX 200 materials sector dominates as scores of mining shares hit new highs (Source: The Motley Fool Australia) [Link](https://www.fool.com.au/2026/01/11/asx-200-materials-sector-dominates-as-scores-of-mining-shares-hit-new-highs-week-02-2026/)
 - Manufacturing Funds Stumble in 2025 (Source: The Hindu Business Line) [Link](https://www.thehindubusinessline.com/portfolio/mutual-funds/manufacturing-funds-stumble-in-2025/article70489785.ece)
 - Golkonda Aluminium Extrusions Limited Announces Independent Director Resignation (Source: scanx.trade) [Link](https://scanx.trade/stock-market-news/stocks/golkonda-aluminium-extrusions-limited-announces-independent-director-resignation/29596672)
 - Ashapura Minechem Reports Strong H1FY26 Growth Driven by Guinea Bauxite Operations (Source: scanx.trade) [Link](https://scanx.trade/stock-market-news/stocks/ashapura-minechem-reports-strong-h1fy26-growth-driven-by-guinea-bauxite-operations/29554650)
@@ -18,19 +23,17 @@ Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 - USA TODAY's 50 Top Picks for CES 2026 (Source: USA TODAY) [Link](https://www.usatoday.com/story/tech/gadgets/2026/01/09/ces-2026-top-products/88069073007/)
 - CES 2026 Live: Breaking News and Everything Announced in Tech (Source: CNET) [Link](https://www.cnet.com/news-live/ces-2026-news-live-updates/)
 - Glencore and Rio Tinto are at it again - and it seems the markets smell action (Source: The Guardian) [Link](https://www.theguardian.com/business/nils-pratley-on-finance/2026/jan/09/glencore-and-rio-tinto-are-at-it-again-and-it-seems-the-markets-smell-action)
-- Glencore's trading arm part of the appeal for Rio Tinto in merger talks, sources say (Source: MarketScreener) [Link](https://www.marketscreener.com/news/glencore-s-trading-arm-part-of-the-appeal-for-rio-tinto-in-merger-talks-sources-say-ce7e59d3da89f62d)
-- Glencore's trading arm part of the appeal for Rio Tinto in merger talks, sources say (Source: Reuters) [Link](https://www.reuters.com/business/glencores-trading-arm-part-appeal-rio-tinto-merger-talks-sources-say-2026-01-09/)
 
 ### Industry & Corporate Insights (from Gemini)
-- The Mozal aluminum smelter in Mozambique is expected to maintain its annual production target of 350,000 tonnes in 2025, despite an 18% reduction in sales in Q1 2025 due to a temporary amperage reduction. [Source](https://360mozambique.com/mining-energy/mozals-annual-production-to-reach-350000-tonnes-by-2025/)
-- Alcoa incurred $115 million in tariff costs during Q2 2025, a significant increase following the U.S. decision to raise aluminum tariffs to 50% in June 2025. [Source](https://discoveryalert.com/discovery-news/trumps-tariffs-push-aluminium-costs-to-115-million-for-alcoa/)
-- Novelis aims to achieve a 30% carbon footprint reduction by 2026 and carbon neutrality by 2050 or sooner, alongside commitments to increase recycled aluminum use. [Source](https://esgtoday.com/novelis-to-scale-use-of-low-carbon-recycled-aluminum/)
-- Rusal produced 3.8 million tons of low-carbon aluminum in 2023, significantly below the industry average carbon footprint, as part of its goal to become a carbon-neutral company by 2050.
+- Novelis' Oswego, New York, aluminum rolling plant experienced a second fire in November 2025, just two months after a major September blaze, impacting its hot mill operations crucial for the U.S. auto sector, with Ford estimating up to a $1 billion loss from the initial disruption. [Source](https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/metals/112125-major-novelis-aluminum-plant-in-new-york-experiences-second-fire-in-two-months)
+- Century Aluminum's subsidiary, Norðurál Grundartangi ehf, temporarily halted production on one of its two potlines at the Grundartangi smelter in Iceland in October 2025 due to an electrical equipment failure, reducing output by two-thirds, though the company expects insurance to cover losses. [Source](https://www.investing.com/news/stock-market-news/century-aluminum-subsidiary-halts-production-on-iceland-potline-3564993)
+- Press Metal Aluminium Holdings Berhad appointed Amnah Apasra Emir Binti Moehamad Izat Emir as an independent non-executive director, effective January 2, 2026, reinforcing the company's commitment to governance and ESG priorities. [Source](https://www.alcircle.com/news/quiet-moves-strong-signals-aluminium-downstream-sets-the-tone-for-2026-117282)
 
 ### Market Trends (from Gemini)
-- China continues to dominate global primary aluminum smelter production, accounting for nearly 60% of the world's capacity, with India as the second-largest producer. [Source](https://www.visualcapitalist.com/cp/where-the-worlds-aluminum-is-smelted-by-country/)
-- Global aluminum smelting market size is projected to grow from USD 118.87 billion in 2025 to approximately USD 199.97 billion by 2034, driven by industrialization and demand for lightweight materials. [Source](https://www.precedenceresearch.com/aluminum-smelting-market)
-- The automotive and transportation sector accounted for 35% of the major market share in aluminum smelting applications in 2024, highlighting its significant demand for aluminum. [Source](https://www.precedenceresearch.com/aluminum-smelting-market)
+- Global primary aluminium production is forecast to increase to around 75.7 million tonnes in 2026, driven by new smelter capacity in Indonesia, Vietnam, Malaysia, Brazil, the Middle East, and Africa, despite a projected slowdown in global GDP growth. [Source](https://www.alcircle.com/news/global-aluminium-market-outlook-bauxite-alumina-prices-116812)
+- Global bauxite production is expected to cross 450 million tonnes in 2025 and continue to be supported into 2026 by sustained Chinese demand and strong export momentum from Guinea, which now supplies approximately 69% of global bauxite exports. [Source](https://www.alcircle.com/news/global-aluminium-market-outlook-bauxite-alumina-prices-116812)
+- Global aluminum consumption is expected to reach approximately 105 million tonnes by 2026, with demand growth driven significantly by electric and new-energy vehicles due to aluminum's role in lightweighting and energy transition. [Source](https://www.alcircle.com/news/global-aluminium-market-outlook-bauxite-alumina-prices-116812)
 
 ### Strategic Factors (from Gemini)
-- Guinea's bauxite exports are projected to be a critical stabilizing factor for the capesize freight market in 2026, with an anticipated 22% rise in exports for 2025. [Source](https://www.alcircle.com/news/guinea-led-bauxite-boom-reinforces-capesize-freight-prospects-in-2026-118544)
+- High energy costs continue to threaten aluminum smelters in Europe and Australia, where power can account for up to 40% of total production costs, contributing to significant idle capacity in Europe following the energy crisis. [Source](https://www.alcircle.com/news/global-aluminium-market-outlook-bauxite-alumina-prices-116812)
+- Resource nationalism in West Africa, particularly Guinea, is impacting international aluminum producers' bauxite sourcing, with Guinea's plans to develop alumina capacity by 2030 potentially diverting bauxite from export markets and raising longer-term supply risks. [Source](https://www.mining.com.au/bauxites-2026-outlook-steadies-capesize-market/)
