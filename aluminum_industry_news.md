@@ -1,13 +1,14 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-01-12 12:19:18`
+Last Updated (UTC): `2026-01-12 18:01:30`
 Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$3167.00` | Change: `+0.61%` | Ref Date: 2026-01-12
+- LME Cash: `$3184.50` | Change: `+1.16%` | Ref Date: 2026-01-12
 
 ### Latest Headlines (from GNews)
+- Hindalco May Outperform On Aluminium Price Tailwinds, Says HSBC; Bets On Earnings Upside (Source: NDTV Profit) [Link](https://www.ndtvprofit.com/markets/hindalco-may-outperform-on-aluminium-price-tailwinds-says-hsbc-bets-on-earnings-upside-check-revised-target)
 - Mukul Agarwal portfolio: Why he’s betting Rs 160 crore on these 2 contrasting stocks (Source: The Financial Express) [Link](https://www.financialexpress.com/market/stock-insights/mukul-agarwal-portfolio-why-hes-betting-rs-160-crore-on-these-2-contrasting-stocks/4104197/)
 - The Army Corps of Engineers Wants to Dredge the Cape Fear River. Environmentalists Tally the Costs. (Source: Inside Climate News) [Link](https://insideclimatenews.org/news/11012026/cape-fear-river-dredging-environmental-impact/)
 - Venezuela has a ton of oil. It also has something else America needs (Source: ABC17News.com) [Link](https://abc17news.com/money/cnn-business-consumer/2026/01/11/venezuela-has-a-ton-of-oil-it-also-has-something-else-america-needs/)
@@ -19,18 +20,17 @@ Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 - Golkonda Aluminium Extrusions Limited Announces Independent Director Resignation (Source: scanx.trade) [Link](https://scanx.trade/stock-market-news/stocks/golkonda-aluminium-extrusions-limited-announces-independent-director-resignation/29596672)
 - Ashapura Minechem Reports Strong H1FY26 Growth Driven by Guinea Bauxite Operations (Source: scanx.trade) [Link](https://scanx.trade/stock-market-news/stocks/ashapura-minechem-reports-strong-h1fy26-growth-driven-by-guinea-bauxite-operations/29554650)
 - The Aluminium War: Why Ashapura Minechem is dominating the global bauxite shift (Source: Livemint) [Link](https://www.livemint.com/market/stock-market-news/the-aluminium-war-why-ashapura-minechem-is-dominating-the-global-bauxite-shift-11767956403616.html)
-- Ottawa will only have limited regulatory power over Rio buying Glencore, despite heavy Canadian footprint (Source: The Globe and Mail) [Link](https://www.theglobeandmail.com/business/article-rio-tinto-glencore-merger-deal-mining-ottawa-canadian-footprint/)
 
 ### Industry & Corporate Insights (from Gemini)
-- Platts, a division of S&P Global Energy, has launched a weekly calculated cost for the EU's Carbon Border Adjustment Mechanism (CBAM) impacting European aluminum assessments, effective January 2, 2026. [Source](https://www.spglobal.com/commodityinsights/en/ci/products/platts-aluminum-market-service.html)
-- AL Circle has released its "Global Aluminium Industry Outlook 2026" report, providing in-depth analysis and data-backed insights across the entire aluminum value chain from bauxite mining to secondary aluminum. [Source](https://www.alcircle.com/admin/reports/global-aluminium-industry-outlook-2026-1681)
+- Global primary aluminium production is forecast to increase to around 75.7 million tonnes in 2026, with new smelter capacities and restarts emerging across Indonesia, Vietnam, Malaysia, Brazil, the Middle East, and Africa, indicating significant corporate investment and expansion in these regions. [Source](https://www.alcircle.com/news/global-aluminium-market-outlook-bauxite-alumina-prices-114494)
 
 ### Market Trends (from Gemini)
-- Global primary aluminum production is projected to increase to approximately 73.9 million tonnes in 2025 and 75.7 million tonnes in 2026, with new smelter capacity emerging in regions such as Indonesia, Vietnam, and Brazil. [Source](https://www.alcircle.com/news/global-aluminium-market-outlook-bauxite-alumina-prices-109407)
-- The alumina market is forecast to maintain a surplus of around 0.8–1.0 million tonnes in 2025, driven by new refinery capacity coming online and limited shutdowns despite elevated energy costs. [Source](https://www.alcircle.com/news/global-aluminium-market-outlook-bauxite-alumina-prices-109407)
-- Global bauxite production is expected to exceed 450 million tonnes in 2025, rebounding significantly since 2021, with Guinea remaining a critical global bauxite supplier. [Source](https://www.alcircle.com/news/what-will-be-the-global-bauxite-outlook-for-2026-after-bmi-cuts-its-2025-forecast-109726)
+- Aluminum prices are forecast to reach $3,000 per ton by 2026, with analysts predicting a market deficit in 2025 that could significantly increase in 2026 due to falling output and rising demand. [Source](https://www.devere-group.com/news/aluminium-price-forecast-to-reach-3000-in-2026-analysts)
+- Global demand for aluminum is rising rapidly, driven by clean energy sectors such as electric vehicles (EVs), renewable power, and construction, with the International Aluminium Institute (IAI) expecting demand to rise by 40% by 2030. [Source](https://carboncredits.com/aluminum-prices-hit-3-year-high-is-it-the-next-key-metal-in-the-clean-energy-shift/)
+- Global bauxite production is expected to cross the 450 million tonne threshold in 2025, reaching around 451 million tonnes, with Guinea continuing as a leading producer. [Source](https://www.alcircle.com/news/global-aluminium-market-outlook-bauxite-alumina-prices-114494)
+- LME aluminum inventories ended 2025 at 669,140 tons, the lowest since mid-2022, indicating a tight physical market, with the US Midwest premium hitting a record 96 cents per pound after tariffs. [Source](https://www.riotimesonline.com/brazil-news/rio-business/aluminium-rally-tests-a-tight-physical-market-and-a-policy-driven-price-map/)
 
 ### Strategic Factors (from Gemini)
-- China's primary aluminum production is close to its self-imposed capacity cap of 45 million tonnes, which significantly constrains global supply growth and is a key determinant for the 2026 supply outlook. [Source](https://www.alcircle.com/news/bca-shares-2026-aluminium-production-outlook-a-journey-through-ups-and-downs-109778)
-- The increasing global adoption of recycled aluminum is a significant ESG and cost-efficiency driver, with its usage expected to rise sharply by 2025, leveraging only 5% of the energy required for primary production. [Source](https://www.alcircle.com/news/the-future-flow-of-aluminium-a-deep-dive-into-the-2025-outlook-for-downstream-end-use-and-recycled-sectors-108863)
-- High energy costs continue to pose a threat to aluminum smelters in Europe and Australia, where power can account for up to 40% of production expenses, leading to idle capacity and limiting potential restarts. [Source](https://www.alcircle.com/news/global-aluminium-market-outlook-bauxite-alumina-prices-109407)
+- China's primary aluminum output is nearing its self-imposed 45 million metric tonne annual capacity cap (reiterated in the 2025–2027 Action Plan), marking the end of a multi-decade expansion and limiting global supply growth. [Source](https://www.investing.com/news/commodities-news/aluminum-price-forecast-for-2026-according-to-bca-research-432SI2003-3801211)
+- The European Union's Carbon Border Adjustment Mechanism (CBAM), effective in 2026, will tax imports based on embedded CO2, pressuring high-emission producers to decarbonize faster and increasing investment in low-carbon aluminum. [Source](https://carboncredits.com/aluminum-prices-hit-3-year-high-is-it-the-next-key-metal-in-the-clean-energy-shift/)
+- Aluminum smelters face significant challenges in securing long-term power contracts at viable prices, competing with AI data centers willing to pay substantially higher rates, which limits restarts and new capacity outside China. [Source](https://www.ing.com/sites/content/Aluminium-deficit-will-support-prices-in-2026.htm)
