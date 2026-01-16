@@ -1,39 +1,41 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-01-16 12:18:02`
+Last Updated (UTC): `2026-01-16 18:01:46`
 Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$3149.65` | Change: `-0.65%` | Ref Date: 2026-01-16
+- LME Cash: `$3132.20` | Change: `-1.2%` | Ref Date: 2026-01-16
 
 ### Latest Headlines (from NewsAPI)
 - Aluminium, copper settle after bull run into 2026 (Source: Bloomberg) [Link](https://www.bloomberg.com/news/articles/2026-01-13/aluminum-near-record-high-and-tin-extends-surge-on-supply-angst)
+- 30k-Mile 2010 Ford Mustang Premium Convertible (Source: Bringatrailer.com) [Link](https://bringatrailer.com/listing/2010-ford-mustang-convertible-2/)
+- Rio Tinto to supply copper to Amazon for AI data centers (Source: CNA) [Link](https://www.channelnewsasia.com/business/rio-tinto-supply-copper-amazon-ai-data-centers-5862251)
 
 ### Latest Headlines (from GNews)
+- Rio Tinto-Glencore merger may need asset sales to win over China (Source: Reuters) [Link](https://www.reuters.com/world/china/rio-tinto-glencore-merger-may-need-asset-sales-win-over-china-2026-01-16/)
 - Mining momentum: 2 ASX stocks that could surprise investors this January (Source: The Motley Fool Australia) [Link](https://www.fool.com.au/2026/01/16/mining-momentum-2-asx-stocks-that-could-surprise-investors-this-january/)
 - ‘Aluminium Fixers’ by day, burglars by night: Inter-State gang busted (Source: The Hitavada) [Link](https://www.thehitavada.com//Encyc/2026/1/16/aluminium-fixers-by-day-burglars-by-night-inter-state-gang-busted.html)
 - ‘Aluminium Fixers’ by day, burglars by night: Inter-State gang busted (Source: The Hitavada) [Link](https://www.thehitavada.com/Encyc/2026/1/16/aluminium-fixers-by-day-burglars-by-night-inter-state-gang-busted.html)
+- Stronger Iron Ore, Copper, and Aluminum Prices See Rio Tinto's Fair Value Estimate Increased (Source: Morningstar) [Link](https://www.morningstar.com/company-reports/1418029-stronger-iron-ore-copper-and-aluminum-prices-see-rio-tintos-fair-value-estimate-increased)
 - Alstom to provide New Subway Train (NST) fleet (Source: GlobeNewswire) [Link](https://www.globenewswire.com/news-release/2026/01/15/3219835/0/en/ALSTOM-S-A-Alstom-to-provide-New-Subway-Train-NST-fleet-for-Toronto-s-subway.html)
-- Argos January sale deals 2026: the 9 best bargains, picked by a savvy shopping expert (Source: The Sun) [Link](https://www.thesun.co.uk/money/24879318/best-argos-boxing-day-deals/)
 - How a billionaire with interests in Greenland encouraged Trump to acquire the territory (Source: The Guardian) [Link](https://www.theguardian.com/us-news/2026/jan/15/ronald-lauder-billionaire-donor-donald-trump-ukraine-greenland)
 - Rolling Square’s AirNotch Pro And AirCard Pro Trackers For Apple And Android Phones (Source: Forbes) [Link](https://www.forbes.com/sites/marksparrow/2026/01/15/rolling-squares-airnotch-pro-and-aircard-pro-trackers-for-apple-and-android-phones/)
 - US taps industrial waste to cut reliance on China for rare earths (Source: CNA) [Link](https://www.channelnewsasia.com/world/usa-rare-earths-race-industrial-waste-5857821)
 - Gallium has been earmarked as a critical mineral. Here's how you can get exposure on the ASX (Source: The Motley Fool Australia) [Link](https://www.fool.com.au/2026/01/15/gallium-has-been-earmarked-as-a-critical-mineral-heres-how-you-can-get-exposure-on-the-asx/)
 - IIT Bhubaneswar team pioneers satellite method for bauxite exploration (Source: Times of India) [Link](https://timesofindia.indiatimes.com/city/bhubaneswar/iit-bhubaneswar-team-pioneers-satellite-method-for-bauxite-exploration/articleshow/126531532.cms)
 - Quebec premier resigns with Separatist opponent surging in polls (Source: Financial Post) [Link](https://financialpost.com/news/quebec-premier-resigns-with-separatist-opponent-surging-in-polls)
-- Wall Street Lunch: Gold, Silver Hit All-Time Highs As Safe-Haven Demand Surges (Source: Seeking Alpha) [Link](https://seekingalpha.com/article/4859744-wall-street-lunch-gold-silver-hit-all-time-highs-as-safe-haven-demand-surges)
 
 ### Industry & Corporate Insights (from Gemini)
-- Alcoa, the largest US aluminum producer, forecasts stronger annual aluminum shipments for 2025, expecting between 2.6-2.8 million tons due to rising demand, outpacing the 2.59 million tons shipped in 2024, despite potential disruptions from tariffs. [Source](https://www.reuters.com/markets/commodities/alcoa-forecasts-stronger-2025-aluminum-shipments-2025-01-23/)
-- Almatis broke ground on its new Huangdao Calcined Alumina Plant in China, aiming to double its regional production capacity to meet rising demand for raw materials in critical industries, including electric vehicles, while adhering to its "Mission NeutrAL" sustainability strategy. [Source](https://www.alcircle.com/news/almatis-gears-up-to-double-production-capacity-with-the-huangdao-calcined-alumina-plant-116631)
+- Tomago Aluminium plans to invest at least A$1 billion to extend its New South Wales smelter operations beyond 2028, with a strategic focus on decarbonization opportunities. [Source](https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/metals/121225-tomago-aluminium-to-invest-a-1-bil-to-extend-new-south-wales-smelter-beyond-2028)
+- Century Aluminium temporarily halted one of two potlines at its Grundartangi smelter in Iceland due to an electrical equipment failure, impacting Q4 2025 shipments. [Source](https://www.alcircle.com/news/smm-review-of-alumina-and-aluminium-production-in-november-and-forecast-for-december-2025-116631)
 
 ### Market Trends (from Gemini)
-- The intensification of electric vehicle (EV) production is driving increased aluminum demand, with modern EVs requiring 250-350 kg of aluminum, significantly more than traditional internal combustion vehicles, supporting elevated pricing regardless of cyclical economic conditions. [Source](https://aluminiuminsider.com/electrification-drives-automotive-aluminium-demand-in-2025-and-beyond/)
-- China's bauxite imports from Guinea are experiencing rapid growth, contributing significantly to capesize vessel demand, with Guinea's total bauxite shipments expected to reach 199 million tonnes in 2025. [Source](https://www.alcircle.com/news/bauxite-drives-on-the-capesize-demand-keeps-the-export-ship-afloat-116819)
-- Global aluminum prices reached $3,008 per tonne on the London Metal Exchange (LME) as of January 2026, marking the first breach above $3,000 since mid-2022, driven by global supply concerns, environmental regulations, energy transition challenges, and supply chain realignments. [Source](https://tradingeconomics.com/commodity/aluminum)
+- Aluminum prices reached multi-year highs in Q4 2025, with the LME noting a 7.3% increase, and are forecast to continue rising in 2026 due to the global transition to clean energy boosting demand from electric vehicles (EVs) and renewable energy sectors. [Source](https://www.mining.com.au/aluminium-moulds-2026-with-higher-prices-disr/)
+- Aluminum scrap has become a strategic commodity in the critical minerals race, prompting the European Commission to prepare measures to keep more recyclable material within Europe's borders to meet decarbonization goals and reduce import dependence. [Source](https://www.mining.com/column-aluminum-scrap-is-the-new-battle-front-in-critical-minerals-war/)
+- The global automotive aluminum alloy market is expected to grow significantly, driven by stringent fuel efficiency regulations and the rapid proliferation of electric vehicles (EVs), which are increasing demand for lightweight components. [Source](https://www.aluminiumtoday.com/news/automotive-aluminium-alloy-market-size-and-outlook-2031-techsci-research)
 
 ### Strategic Factors (from Gemini)
-- Resource nationalism across West Africa is fundamentally altering global bauxite supply chains, with Guinea revoking some mining licenses in 2025 to signal stricter supervision of major operators and enforce development agreements. [Source](https://www.mining.com/guinea-revokes-some-of-mining-licenses-including-bauxite-amid-growing-resource-nationalism/)
-- The European aluminum billet market in 2026 faces weak demand and significant uncertainty due to the definitive phase of the EU's Carbon Border Adjustment Mechanism (CBAM), leading market participants to adopt a 'wait-and-see' approach and delay long-term contracts. [Source](https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/metals/121825-commodities-2026-european-aluminum-billet-faces-weak-demand-duty-changes-cbam)
-- China, the world's largest aluminum producer, is expected to maintain its 45 million ton output cap in 2026 to prevent overcapacity, a policy that will force smelters to refrain from increasing production. [Source](https://tradingeconomics.com/commodity/aluminum)
+- China's strict 45 million tonnes per year output cap on aluminum, combined with increasing competition for power from new sectors like AI data centers, is a key factor in tightening global aluminum supply and supporting prices. [Source](https://tradingeconomics.com/commodity/aluminum)
+- Geopolitical developments and persistent supply-side constraints are significantly shaping the European primary aluminum market, with ongoing trade measures and tariffs influencing global aluminum flows and premiums. [Source](https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/metals/011025-commodities-2025-geopolitics-supply-challenges-shape-eu-p1020-aluminum-outlook)
+- Guinea's bauxite exports are projected to reach 199 million tonnes in 2025, yet the long-term risk of increased domestic processing within Guinea aims to cut global bauxite exports by approximately 5% by 2030, impacting international supply dynamics. [Source](https://www.alcircle.com/news/bauxite-drives-on-the-capesize-demand-keeps-the-export-ship-afloat-117006)
