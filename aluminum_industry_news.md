@@ -1,18 +1,20 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-01-16 18:01:46`
+Last Updated (UTC): `2026-01-17 00:43:15`
 Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$3132.20` | Change: `-1.2%` | Ref Date: 2026-01-16
+- LME Cash: `$3171.50` | Change: `-0.56%` | Ref Date: 2026-01-16
 
 ### Latest Headlines (from NewsAPI)
 - Aluminium, copper settle after bull run into 2026 (Source: Bloomberg) [Link](https://www.bloomberg.com/news/articles/2026-01-13/aluminum-near-record-high-and-tin-extends-surge-on-supply-angst)
-- 30k-Mile 2010 Ford Mustang Premium Convertible (Source: Bringatrailer.com) [Link](https://bringatrailer.com/listing/2010-ford-mustang-convertible-2/)
-- Rio Tinto to supply copper to Amazon for AI data centers (Source: CNA) [Link](https://www.channelnewsasia.com/business/rio-tinto-supply-copper-amazon-ai-data-centers-5862251)
+- Mining momentum: 2 ASX stocks that could surprise investors this January (Source: Motley Fool Australia) [Link](https://www.fool.com.au/2026/01/16/mining-momentum-2-asx-stocks-that-could-surprise-investors-this-january/)
 
 ### Latest Headlines (from GNews)
+- Coated Steel Market Volume to Worth 421.7 Million Metric (Source: GlobeNewswire) [Link](https://www.globenewswire.com/news-release/2026/01/16/3220254/0/en/Coated-Steel-Market-Volume-to-Worth-421-7-Million-Metric-Tons-by-2035.html)
+- How Trump policies are landing for Michiganders, 1 year in (Source: Lansing State Journal) [Link](https://www.lansingstatejournal.com/story/news/politics/2026/01/16/how-trump-policies-are-landing-for-michiganders-one-year-in/88064878007/)
+- EIB Approves €90M to METLEN to Secure Europe’s Supply of Gallium and Bauxite for the Green and Digital Transitions (Source: Devdiscourse) [Link](https://www.devdiscourse.com/article/business/3771821-eib-approves-90m-to-metlen-to-secure-europes-supply-of-gallium-and-bauxite-for-the-green-and-digital-transitions)
 - Rio Tinto-Glencore merger may need asset sales to win over China (Source: Reuters) [Link](https://www.reuters.com/world/china/rio-tinto-glencore-merger-may-need-asset-sales-win-over-china-2026-01-16/)
 - Mining momentum: 2 ASX stocks that could surprise investors this January (Source: The Motley Fool Australia) [Link](https://www.fool.com.au/2026/01/16/mining-momentum-2-asx-stocks-that-could-surprise-investors-this-january/)
 - ‘Aluminium Fixers’ by day, burglars by night: Inter-State gang busted (Source: The Hitavada) [Link](https://www.thehitavada.com//Encyc/2026/1/16/aluminium-fixers-by-day-burglars-by-night-inter-state-gang-busted.html)
@@ -22,20 +24,17 @@ Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
 - How a billionaire with interests in Greenland encouraged Trump to acquire the territory (Source: The Guardian) [Link](https://www.theguardian.com/us-news/2026/jan/15/ronald-lauder-billionaire-donor-donald-trump-ukraine-greenland)
 - Rolling Square’s AirNotch Pro And AirCard Pro Trackers For Apple And Android Phones (Source: Forbes) [Link](https://www.forbes.com/sites/marksparrow/2026/01/15/rolling-squares-airnotch-pro-and-aircard-pro-trackers-for-apple-and-android-phones/)
 - US taps industrial waste to cut reliance on China for rare earths (Source: CNA) [Link](https://www.channelnewsasia.com/world/usa-rare-earths-race-industrial-waste-5857821)
-- Gallium has been earmarked as a critical mineral. Here's how you can get exposure on the ASX (Source: The Motley Fool Australia) [Link](https://www.fool.com.au/2026/01/15/gallium-has-been-earmarked-as-a-critical-mineral-heres-how-you-can-get-exposure-on-the-asx/)
-- IIT Bhubaneswar team pioneers satellite method for bauxite exploration (Source: Times of India) [Link](https://timesofindia.indiatimes.com/city/bhubaneswar/iit-bhubaneswar-team-pioneers-satellite-method-for-bauxite-exploration/articleshow/126531532.cms)
-- Quebec premier resigns with Separatist opponent surging in polls (Source: Financial Post) [Link](https://financialpost.com/news/quebec-premier-resigns-with-separatist-opponent-surging-in-polls)
 
 ### Industry & Corporate Insights (from Gemini)
-- Tomago Aluminium plans to invest at least A$1 billion to extend its New South Wales smelter operations beyond 2028, with a strategic focus on decarbonization opportunities. [Source](https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/metals/121225-tomago-aluminium-to-invest-a-1-bil-to-extend-new-south-wales-smelter-beyond-2028)
-- Century Aluminium temporarily halted one of two potlines at its Grundartangi smelter in Iceland due to an electrical equipment failure, impacting Q4 2025 shipments. [Source](https://www.alcircle.com/news/smm-review-of-alumina-and-aluminium-production-in-november-and-forecast-for-december-2025-116631)
+- Novelis anticipates a slower-than-expected growth rate in automotive aluminum demand for 2025, primarily due to a less rapid electrification of vehicles than initially projected. [Source](https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/metals/120424-interview-novelis-bullish-on-aluminum-demand-going-into-2025-amid-sustainability-push)
+- Century Aluminum's corporate family rating was upgraded by Moody's Ratings from B3 to B2, with a positive outlook for strong operating earnings and cash flows in 2025, partly driven by accrued tax credits. [Source](https://www.investing.com/news/century-aluminum-svp-robert-hoffman-sells-101199-in-stock-3701267)
 
 ### Market Trends (from Gemini)
-- Aluminum prices reached multi-year highs in Q4 2025, with the LME noting a 7.3% increase, and are forecast to continue rising in 2026 due to the global transition to clean energy boosting demand from electric vehicles (EVs) and renewable energy sectors. [Source](https://www.mining.com.au/aluminium-moulds-2026-with-higher-prices-disr/)
-- Aluminum scrap has become a strategic commodity in the critical minerals race, prompting the European Commission to prepare measures to keep more recyclable material within Europe's borders to meet decarbonization goals and reduce import dependence. [Source](https://www.mining.com/column-aluminum-scrap-is-the-new-battle-front-in-critical-minerals-war/)
-- The global automotive aluminum alloy market is expected to grow significantly, driven by stringent fuel efficiency regulations and the rapid proliferation of electric vehicles (EVs), which are increasing demand for lightweight components. [Source](https://www.aluminiumtoday.com/news/automotive-aluminium-alloy-market-size-and-outlook-2031-techsci-research)
+- China continues to lead global aluminum smelter production, accounting for nearly 60% of the world's smelter capacity based on 2023 data used as a 2025 snapshot. [Source](https://www.mining.com/web/where-the-worlds-aluminum-is-smelted-by-country/)
 
 ### Strategic Factors (from Gemini)
-- China's strict 45 million tonnes per year output cap on aluminum, combined with increasing competition for power from new sectors like AI data centers, is a key factor in tightening global aluminum supply and supporting prices. [Source](https://tradingeconomics.com/commodity/aluminum)
-- Geopolitical developments and persistent supply-side constraints are significantly shaping the European primary aluminum market, with ongoing trade measures and tariffs influencing global aluminum flows and premiums. [Source](https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/metals/011025-commodities-2025-geopolitics-supply-challenges-shape-eu-p1020-aluminum-outlook)
-- Guinea's bauxite exports are projected to reach 199 million tonnes in 2025, yet the long-term risk of increased domestic processing within Guinea aims to cut global bauxite exports by approximately 5% by 2030, impacting international supply dynamics. [Source](https://www.alcircle.com/news/bauxite-drives-on-the-capesize-demand-keeps-the-export-ship-afloat-117006)
+- Guinea solidified its position as the largest exporter of bauxite, securing 69% of global bauxite exports as of 2025, with China remaining its primary customer. [Source](https://www.alcircle.com/news/bauxite-drives-on-the-capesize-demand-keeps-the-export-ship-afloat-116447)
+- BMI revised global bauxite growth downward for 2025 due to supply chain uncertainty, though steady growth is projected for 2026, driven by contributions from Indonesia, Guinea, and Australia. [Source](https://www.alcircle.com/news/what-will-be-the-global-bauxite-outlook-for-2026-after-bmi-cuts-its-2025-forecast-116465)
+- Alumina prices experienced a significant decline of 42.1% in Q1 2025, primarily due to excess supply and muted consumer demand, coupled with reduced concerns over bauxite supply. [Source](https://www.fastmarkets.com/commodities/bauxite-alumina/key-talking-points-ahead-of-fastmarkets-bauxite-alumina-conference-in-miami/)
+- The LME aluminum cash price approached $2,800 per tonne by the end of 2025, with forecasts indicating further increases in 2026 driven by tightening fundamentals and persistent supply concerns. [Source](https://www.alcircle.com/news/lme-aluminium-price-trend-historical-context-2025-market-dynamics-2026-price-outlook-116441)
+- China imported 86% of its bauxite from Guinea in 2025, highlighting the critical role of this trade relationship in meeting China's aluminum industry raw material demands. [Source](https://www.alcircle.com/news/bauxite-drives-on-the-capesize-demand-keeps-the-export-ship-afloat-116447)
