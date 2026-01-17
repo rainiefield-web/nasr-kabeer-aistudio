@@ -1,17 +1,18 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-01-17 00:43:15`
+Last Updated (UTC): `2026-01-17 06:13:46`
 Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$3171.50` | Change: `-0.56%` | Ref Date: 2026-01-16
+- LME Cash: `$3140.70` | Change: `-0.93%` | Ref Date: 2026-01-16
 
 ### Latest Headlines (from NewsAPI)
 - Aluminium, copper settle after bull run into 2026 (Source: Bloomberg) [Link](https://www.bloomberg.com/news/articles/2026-01-13/aluminum-near-record-high-and-tin-extends-surge-on-supply-angst)
-- Mining momentum: 2 ASX stocks that could surprise investors this January (Source: Motley Fool Australia) [Link](https://www.fool.com.au/2026/01/16/mining-momentum-2-asx-stocks-that-could-surprise-investors-this-january/)
 
 ### Latest Headlines (from GNews)
+- High Strength Aluminum Alloys Market worth $115.29 billion by 2030 - Exclusive Report by MarketsandMarkets™ (Source: PR Newswire UK) [Link](https://www.prnewswire.co.uk/news-releases/high-strength-aluminum-alloys-market-worth-115-29-billion-by-2030---exclusive-report-by-marketsandmarkets-302663260.html)
+- Halliburton and Its Rivals Can't Wait to Get Back Into Venezuela -- Commodities Roundup (Source: MarketScreener) [Link](https://www.marketscreener.com/news/halliburton-and-its-rivals-can-t-wait-to-get-back-into-venezuela-commodities-roundup-ce7e58ded081f022)
 - Coated Steel Market Volume to Worth 421.7 Million Metric (Source: GlobeNewswire) [Link](https://www.globenewswire.com/news-release/2026/01/16/3220254/0/en/Coated-Steel-Market-Volume-to-Worth-421-7-Million-Metric-Tons-by-2035.html)
 - How Trump policies are landing for Michiganders, 1 year in (Source: Lansing State Journal) [Link](https://www.lansingstatejournal.com/story/news/politics/2026/01/16/how-trump-policies-are-landing-for-michiganders-one-year-in/88064878007/)
 - EIB Approves €90M to METLEN to Secure Europe’s Supply of Gallium and Bauxite for the Green and Digital Transitions (Source: Devdiscourse) [Link](https://www.devdiscourse.com/article/business/3771821-eib-approves-90m-to-metlen-to-secure-europes-supply-of-gallium-and-bauxite-for-the-green-and-digital-transitions)
@@ -22,19 +23,17 @@ Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
 - Stronger Iron Ore, Copper, and Aluminum Prices See Rio Tinto's Fair Value Estimate Increased (Source: Morningstar) [Link](https://www.morningstar.com/company-reports/1418029-stronger-iron-ore-copper-and-aluminum-prices-see-rio-tintos-fair-value-estimate-increased)
 - Alstom to provide New Subway Train (NST) fleet (Source: GlobeNewswire) [Link](https://www.globenewswire.com/news-release/2026/01/15/3219835/0/en/ALSTOM-S-A-Alstom-to-provide-New-Subway-Train-NST-fleet-for-Toronto-s-subway.html)
 - How a billionaire with interests in Greenland encouraged Trump to acquire the territory (Source: The Guardian) [Link](https://www.theguardian.com/us-news/2026/jan/15/ronald-lauder-billionaire-donor-donald-trump-ukraine-greenland)
-- Rolling Square’s AirNotch Pro And AirCard Pro Trackers For Apple And Android Phones (Source: Forbes) [Link](https://www.forbes.com/sites/marksparrow/2026/01/15/rolling-squares-airnotch-pro-and-aircard-pro-trackers-for-apple-and-android-phones/)
-- US taps industrial waste to cut reliance on China for rare earths (Source: CNA) [Link](https://www.channelnewsasia.com/world/usa-rare-earths-race-industrial-waste-5857821)
 
 ### Industry & Corporate Insights (from Gemini)
-- Novelis anticipates a slower-than-expected growth rate in automotive aluminum demand for 2025, primarily due to a less rapid electrification of vehicles than initially projected. [Source](https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/metals/120424-interview-novelis-bullish-on-aluminum-demand-going-into-2025-amid-sustainability-push)
-- Century Aluminum's corporate family rating was upgraded by Moody's Ratings from B3 to B2, with a positive outlook for strong operating earnings and cash flows in 2025, partly driven by accrued tax credits. [Source](https://www.investing.com/news/century-aluminum-svp-robert-hoffman-sells-101199-in-stock-3701267)
+- Indonesia is transforming its bauxite, alumina, and aluminum industry with aggressive regulatory reforms, stronger environmental enforcement, and digital transparency tools, aiming for resource nationalism and significant domestic value addition, driven by surging demand from electric vehicles (EVs) and renewable energy sectors. [Source](https://www.metal.com/)
+- China has released an "Implementation Plan for High-Quality Development of the Aluminum Industry (2025–2027)," targeting a 3-5% increase in domestic bauxite reserves and pushing recycled aluminum output past 15 million metric tons by 2027, alongside integrating AI into the entire industrial chain. [Source](https://www.metal.com/)
 
 ### Market Trends (from Gemini)
-- China continues to lead global aluminum smelter production, accounting for nearly 60% of the world's smelter capacity based on 2023 data used as a 2025 snapshot. [Source](https://www.mining.com/web/where-the-worlds-aluminum-is-smelted-by-country/)
+- The global aluminum market size is poised to grow from USD 205.99 Billion in 2025 to USD 323.39 Billion by 2033, growing at a CAGR of 5.8%, driven by demand across construction, transportation, packaging, and renewable energy sectors. [Source](https://www.alcircle.com/)
+- The global primary aluminium market is projected to remain in deficit through 2026, with supply becoming less flexible due to structural constraints, China's capacity cap, and challenges in securing stable, affordable power for smelters. [Source](https://www.alcircle.com/)
+- The accelerating shift to a green economy is a major long-term driver for aluminum demand, with low-carbon aluminum commanding a premium and new projects in Europe, Canada, and the Middle East expected to increase global capacity for low-carbon aluminum by 3–4 million tons in 2025. [Source](https://www.alcircle.com/)
+- Global alumina and bauxite market demand is projected to exceed 375 million tons by 2026, propelled by infrastructure projects and undergoing transformation due to decarbonization, digitalization, and sustainability priorities. [Source](https://www.alcircle.com/)
+- The automotive segment is projected to account for 34.7% of the global aluminum smelting market share in 2025, driven by the industry's pursuit of lightweight materials to improve fuel efficiency and reduce emissions. [Source](https://www.alcircle.com/)
 
 ### Strategic Factors (from Gemini)
-- Guinea solidified its position as the largest exporter of bauxite, securing 69% of global bauxite exports as of 2025, with China remaining its primary customer. [Source](https://www.alcircle.com/news/bauxite-drives-on-the-capesize-demand-keeps-the-export-ship-afloat-116447)
-- BMI revised global bauxite growth downward for 2025 due to supply chain uncertainty, though steady growth is projected for 2026, driven by contributions from Indonesia, Guinea, and Australia. [Source](https://www.alcircle.com/news/what-will-be-the-global-bauxite-outlook-for-2026-after-bmi-cuts-its-2025-forecast-116465)
-- Alumina prices experienced a significant decline of 42.1% in Q1 2025, primarily due to excess supply and muted consumer demand, coupled with reduced concerns over bauxite supply. [Source](https://www.fastmarkets.com/commodities/bauxite-alumina/key-talking-points-ahead-of-fastmarkets-bauxite-alumina-conference-in-miami/)
-- The LME aluminum cash price approached $2,800 per tonne by the end of 2025, with forecasts indicating further increases in 2026 driven by tightening fundamentals and persistent supply concerns. [Source](https://www.alcircle.com/news/lme-aluminium-price-trend-historical-context-2025-market-dynamics-2026-price-outlook-116441)
-- China imported 86% of its bauxite from Guinea in 2025, highlighting the critical role of this trade relationship in meeting China's aluminum industry raw material demands. [Source](https://www.alcircle.com/news/bauxite-drives-on-the-capesize-demand-keeps-the-export-ship-afloat-116447)
+- US tariffs on aluminum imports are expected to cause Mexican aluminum prices to rise in 2026, though a more dynamic market is anticipated as tariffs face possible renegotiations by mid-year. [Source](https://www.spglobal.com/)
