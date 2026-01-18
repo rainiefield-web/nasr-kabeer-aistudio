@@ -1,16 +1,14 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-01-18 06:13:53`
-Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
+Last Updated (UTC): `2026-01-18 12:01:17`
+Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$3140.70` | Change: `-0.92%` | Ref Date: 2026-01-18
-
-### Latest Headlines (from NewsAPI)
-- Aluminium’s spectacular rally in India: What’s driving the rally above ₹320/kg and what lies ahead (Source: The Times of India) [Link](https://economictimes.indiatimes.com/markets/commodities/news/aluminiums-spectacular-rally-in-india-whats-driving-the-rally-above-320/kg-and-what-lies-ahead/articleshow/126603056.cms)
+- LME Cash: `$3147.00` | Change: `-0.85%` | Ref Date: 2026-01-16
 
 ### Latest Headlines (from GNews)
+- ASX 200 materials sector outperforms as mining shares continue their ascent (Source: The Motley Fool Australia) [Link](https://www.fool.com.au/2026/01/18/asx-200-materials-sector-outperforms-as-mining-shares-continue-their-ascent/)
 - Why Choose Akos Smart Railings As Your Glass Railing Manufacturer? (Source: TechBullion) [Link](https://techbullion.com/why-choose-akos-smart-railings-as-your-glass-railing-manufacturer/)
 - Aluminium’s spectacular rally in India: What’s driving the rally above ₹320/kg and what lies ahead (Source: The Economic Times) [Link](https://economictimes.indiatimes.com/markets/commodities/news/aluminiums-spectacular-rally-in-india-whats-driving-the-rally-above-320/kg-and-what-lies-ahead/articleshow/126603056.cms)
 - Military man to be sworn in as a civilian president (Source: BBC News) [Link](https://www.bbc.com/news/articles/cpv70mek448o)
@@ -22,13 +20,17 @@ Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
 - EIB Approves €90M to METLEN to Secure Europe’s Supply of Gallium and Bauxite for the Green and Digital Transitions (Source: Devdiscourse) [Link](https://www.devdiscourse.com/article/business/3771821-eib-approves-90m-to-metlen-to-secure-europes-supply-of-gallium-and-bauxite-for-the-green-and-digital-transitions)
 - Rio Tinto-Glencore merger may need asset sales to win over China (Source: Reuters) [Link](https://www.reuters.com/world/china/rio-tinto-glencore-merger-may-need-asset-sales-win-over-china-2026-01-16/)
 - Mining momentum: 2 ASX stocks that could surprise investors this January (Source: The Motley Fool Australia) [Link](https://www.fool.com.au/2026/01/16/mining-momentum-2-asx-stocks-that-could-surprise-investors-this-january/)
-- ‘Aluminium Fixers’ by day, burglars by night: Inter-State gang busted (Source: The Hitavada) [Link](https://www.thehitavada.com//Encyc/2026/1/16/aluminium-fixers-by-day-burglars-by-night-inter-state-gang-busted.html)
 
 ### Industry & Corporate Insights (from Gemini)
-- Speira announced a €40 million investment to upgrade its Rheinwerk plant and increase aluminum recycling capacity, aiming to reduce its carbon footprint by up to 1.5 million tonnes of CO2 annually. [Source](https://aluminiuminsider.com/speira-invests-e40m-to-boost-rheinwerk-aluminium-recycling-capacity/)
+- Century Aluminum is restarting approximately 50 kilotonnes per annum (ktpa) of idled capacity at its Mount Holly smelter by the second quarter of 2026, having secured power through 2031. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlq3E7UQS987KtyujEUTylFSMwlIjMINVLnWOFVSk7VzujzUut8ic62tJddgXCD-e6v0N8Cp__yePzG4g6ltNH8eQrjd8mIyCZuyCSOWAdZW0I0gzmCeIBGlb_JK_gUI7WfXjurGYktZXqNzQaWZIkfYzvThHr_70WAhzo7tPi5ITz1aNbXz9j)
+- Maan Aluminium's share price increased following the acquisition of land in India for expanding extrusion capacity, targeting an annual capacity of 24,000 tonnes, with a new production line starting commercially in 2025. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJdLlgPKJazDO0FbpuJotF847xZJeq0Yd4PqwcPsjqNJrPZXXPOmUyoJXbTXX0cspMI-kco8T-W928wrNMuGlwj27IGj19jDcKrmeVuPu2NtS7AMWoWYEQW0dmuBL6jgkRaRNyF5nnkhLQENkE-qafzCny6NrTJKTcmrhh8_iOyHoGwVIWDKHbJwNJfxxYP8dSbO7qwmwRdLjjz7CEJxCVYjA=)
 
 ### Market Trends (from Gemini)
-- The global aluminum market is expected to shift from a slight surplus in 2024 to a supply deficit in 2025, driven by capacity constraints in China and a gradual recovery in global demand. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZvMUdV8alfg2AasL0wk7pDyEF9baxTyQqV1qTO7zdunShxrg4HPLVATEIhjI9BqXlUKdHlUjjosCgjYV7C-U7rfmmddIyC_xfkvPN3yRKxsBttrcy67G-2bTemaKVLOq_4txUnJ7Wi8pzx5FvD0qKZWgMNUknAVfd1Uxtwvi35lz70RBeAwGRauA8qVSq5gYUttqloHZlyo52B09Iz4LL8ZiCATyALWXAnstuV5HNwr8=)
+- The global aluminum industry in 2025 prioritized carbon metrics alongside cost and quality, leading to increased demand for low-carbon aluminum, especially in the automotive sector, driven by new pricing benchmarks and regulations like the EU's CBAM. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHniuT2qyugnbmlspQ1WNaUh5VyIn1ujNcUl03kPH-_UQrJohqfDv90z6NGogDeWr0Z2zO45nueP9p031CyYfhyetlhbqoGD3O9E7r5Vmi1-Gnn96R80zN3TxBqpa-4hw3wXRyIfmxDT_8uq753I7VJQnIZ7jpigPYYAGfHPqVnT2kJrWISuV82HsZ2hglC_U2HOar3JUlfegGQK9fXHV3Y6fUTmJcx9FEV3qZOqyMq7-D9OA=)
+- Aluminum prices reached over $3,140 per tonne on the LME by January 16, 2026, continuing a rally into the new year, which was also reflected by a 7.3% increase in Q4 2025 according to the Department of Industry, Science and Resources (DISR). [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBZUIpVKCLICwcZC8dQOxmIbYRoJ2z410s_Zcw5G3If0lTuDywppoqdK94aY3-tFggqg1xGNpI-xx9G8EJrtllpdmxfEvV_XjA2ZuqY3ScY0xtRCAxtQXhARs6p8zGlWrQG3YHCl4WrXJfaKg4omkxnKsULBs1dD6E8qBxDeLU)
+- Analysts, including those cited by Harbor Aluminum, anticipate aluminum will enter a deficit in 2026, with production underperforming in China and India, contributing to a tightening market and potentially reaching $3,000 per ton. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2WsJZ7EzKgqwy618SS6TF1-7hBvRPlbvADwap-FDuwXE6UvsR-gsQvD5ANQhySRvHhO1C6_zAtwt8BTxk2P1XQXpgLu_nsbL8C98FDz5nRKeZjtNaYO9BsXA7RPtSUsH39GTEYgvnc5l4r3mp4cAHPL2Jq0JkwHB5KcTFVYguNRqODGRE_WQxyENuagJMe8=)
 
 ### Strategic Factors (from Gemini)
-- Global bauxite production growth is expected to slow to 2% in 2025, reaching 451.3 million tonnes, with BMI revising Guinea's production growth forecast down to 4% from 5.5% due to various risks. [Source](https://www.alcircle.com/news/global-bauxite-outlook-2026-after-bmi-cuts-2025-forecast-116049)
+- High energy costs in Europe continue to significantly affect aluminum smelter operating rates and production costs, with about 800 kilotonnes of capacity remaining offline since the 2022 energy crisis. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlq3E7UQS987KtyujEUTylFSMwlIjMINVLnWOFVSk7VzujzUut8ic62tJddgXCD-e6v0N8Cp__yePzG4g6ltNH8eQrjd8mIyCZuyCSOWAdZW0I0gzmCeIBGlb_JK_gUI7WfXjurGYktZXqNzQaWZIkfYzvThHr_70WAhzo7tPi5ITz1aNbXz9j)
+- China's primary aluminum output is approaching its self-imposed annual capacity cap of 45 million metric tonnes, acting as a significant structural factor in limiting global primary aluminum supply growth. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFWtVYImJBRJPC7WW0GxrMuEDK8Nq00dA0fi45xW6vlqMhpVh60WDRb_pJUTdISIkd0TdFraeY1Sdvj-fSbIqbutsD0L_kRsaVstei6KXNn2t9_OPpzFN4dydPLoJJykOSx58y8Msrg_kKyGY3HI-ZW7uQkoEyXVg-di0PW8ar-KkY9aAuyNIN4saTzncMDRmNF6oBAHnNkEXBy_9ScSNoPj8gQNX4NrkDvFFzcw==)
+- Aluminum smelters are facing increasing competition for electricity from AI data centers, with technology companies willing to pay significantly higher prices for long-term power, impacting smelters' ability to secure viable energy contracts. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlq3E7UQS987KtyujEUTylFSMwlIjMINVLnWOFVSk7VzujzUut8ic62tJddgXCD-e6v0N8Cp__yePzG4g6ltNH8eQrjd8mIyCZuyCSOWAdZW0I0gzmCeIBGlb_JK_gUI7WfXjurGYktZXqNzQaWZIkfYzvThHr_70WAhzo7tPi5ITz1aNbXz9j)
