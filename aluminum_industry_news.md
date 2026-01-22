@@ -1,11 +1,14 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-01-22 06:17:01`
-Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
+Last Updated (UTC): `2026-01-22 12:20:39`
+Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$3119.60` | Change: `+0.06%` | Ref Date: 2026-01-22
+- LME Cash: `$3122.80` | Change: `+0.1%` | Ref Date: 2026-01-22
+
+### Latest Headlines (from NewsAPI)
+- AMD eyes $1 billion data center deal in this small Texas town (Source: Austin American-Statesman) [Link](https://www.statesman.com/business/technology/article/amd-data-center-rockdale-texas-21305481.php)
 
 ### Latest Headlines (from GNews)
 - NITI Aayog unveils roadmap for cutting emissions in cement, aluminium, MSME sectors (Source: Lokmat Times) [Link](https://www.lokmattimes.com/national/niti-aayog-unveils-roadmap-for-cutting-emissions-in-cement-aluminium-msme-sectors/)
@@ -22,15 +25,15 @@ Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 - Ducati Panigale V4 Tricolore Launched in India at ₹77 Lakh, Limited to 1,000 Units Worldwide (Source: Hindustan Times) [Link](https://www.hindustantimes.com/car-bike/ducati-panigale-v4-tricolore-launched-in-india-at-rs-77-lakh-limited-to-1-000-units-worldwide-101768972259246.html)
 
 ### Industry & Corporate Insights (from Gemini)
-- Nanshan Aluminium International received a Grade A ESG rating from Wind in 2025, recognizing its outstanding environmental protection, social responsibility, and corporate governance. [Source](https://www.alcircle.com/news/nanshan-aluminium-international-awarded-grade-a-esg-rating-80945)
-- Century Aluminum plans to restart approximately 50 kilotons per annum of idled capacity at its Mount Holly smelter by Q2 2026, a move enabled by securing a new long-term power agreement. [Source](https://www.fastmarkets.com/news/metals/aluminium/century-aluminum-mount-holly-restart-2026-power-deal/)
+- Overseas metallurgical-grade alumina production saw a 5.6% year-on-year growth in October 2025, with Indonesia's new electrolytic aluminum projects expected to ramp up and Alcoa's San Ciprián plant restart progressing. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-5O67N6U10fw0CSWQHf6N2MZcgWXG-yrTo-ElH8kYLLaiT5trliyZg4M0KmVz490z2ObFrdMp8yMWgERw4jVUWyekRGn5AQeZirPuoXLu3V3i9LMHlzSFrf11KrMfAOItuH1XBypm6w==)
+- Kaiser Aluminum is strategically investing in its Trentwood and Warrick rolling mills, with Trentwood's Phase VII expected to complete by early Q4 2025 to meet aerospace and general engineering plate demand in 2026 and beyond. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYg-6FNMHJtJWg_6OVrosyqxKUUUJKyj2QlTOBHbZP3CwBaU15G6e523zkwr8YGWCilKxHsUsmkR9R-sp5_9cSrkwsCfJs7wf5kvKFd6hacMaZIWcRDZjsmi45Dortl_qrw2gN_ead7i8N8KU3gYBEy_16Cw==)
+- South32's Mozal Alumina in Mozambique is set to enter care and maintenance from March 2026 due to unresolved electricity supply agreements, which will significantly impact European aluminum supply. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYc7flrJtFpiuD0Xf20M6W_9S2Bb-t8a4MFD7BcUnh_MizF8oxxrj0cFgZfl6ors3M40z6AMW-TuXYyW4GHQhGsNygns4NMhrjv2gay1RDyijzVQANbR3GE5_5Y9HqHXw3VFJ2wLb4QY9fXFYsYb40cwGCqx9FdOGOnXP9pjnpVtcrMlh8VgQYSVpQ2My1Zx914fVdjl5f9odUcQpRfAhapUSyxUzJTSqEEYnQQL9D4nqvwvnGLe2aKs2J8b5ARGLxQihjaJoxbVYBv1MDZSMaEbmm)
 
 ### Market Trends (from Gemini)
-- Global automotive aluminum content is projected to reach 514 pounds per vehicle by 2026, marking a 12% increase from 2020, driven by the shift towards multi-material vehicle construction and electrified powertrains. [Source](https://www.spglobal.com/mobility/research-analysis/automotive-aluminum-content-growth-2026.html)
-- The global aluminum market is expected to face a persistent supply deficit through 2026, attributed to China's enforced production cap and ongoing difficulties in securing affordable long-term power contracts for European smelters. [Source](https://www.reuters.com/markets/commodities/global-aluminum-deficit-outlook-2026-01-XX/)
-- The accelerating adoption of recycled aluminum, which offers up to 95% energy savings and nearly 90% carbon emission reductions, is a key trend driven by stricter ESG mandates and a focus on sustainable production. [Source](https://www.aluminiumtoday.com/news/recycled-aluminum-sustainability-and-esg-push-2025)
+- The global bauxite supply is expected to see an increment of 40-50 million tons in 2026, primarily concentrated in Guinea, following the resumption of operations in the Axis mining area and Nimba Mining Company. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpQ3OQ8WSf1Qed-rxwNMTrXRW4Vw7YPJbKAr6a3U0NbYeSnXYNVDbdaB9NJgbyOyDpdb5mCZoC5GmubuOHN9vxsTHzeGcWDjL2BGKpGG8WnwnDiTwgOXWXLrXsspLr5Fx9jvG_XoBS65ntpmRrImw3SEfFfJd15CRVTfUD2dkfaiFa1rGabvwniAtcJf41CsivNeCQ==)
+- The Global Automotive Aluminium Alloy Market is projected to grow from USD 37.78 Billion in 2025 to USD 71.78 Billion by 2031 at an 11.29% CAGR, driven by stricter fuel efficiency regulations and the accelerating shift towards electric mobility. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYloek79QcNT__q3Su91YgtVF8zcJtnzsj2-YQSfqOES9pQdmIZCQzXeOU2ep8a4f-Q9ye1UTmNjrjUjI-02KAGXBpd_xEo7x47SrN2beffowXCW0kJZbLlH37QamFr44ezdg5OCeJqlPeMdU5wUA3Pf69gwlmhhRRvrKjYJyuWZroSvd9l3wS3WbsfQ==)
+- The CRU World Aluminium Conference 2026 in London will focus on critical industry themes such as transparency in data, sustainability metrics, decarbonization pathways, and regulatory compliance. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFihrInknM1-CEksaa2EV1UwIizY8VSAaGwhqgs-22MXQkYnXN4_lNEhR9-8KrPfjlgmx7_61wSdVh8z-ZCVK2YPmFyt7N-ZY0U3k-T6oLSQRiUHgvEJObt4UZzaGyPu3yaxqnZ-GNhskwB8k_WE17P7e7vBSSGfA==)
 
 ### Strategic Factors (from Gemini)
-- Aluminum prices surged near multi-year highs in early 2026, primarily due to tightening global supply from record Chinese output exceeding its cap and temporary smelter suspensions in regions like Iceland, Mozambique, and Australia. [Source](https://www.lme.com/en/news/articles/aluminum-prices-surge-on-supply-constraints-2026)
-- Global bauxite production is projected to exceed 410 million metric tons by 2026, with Australia and Guinea maintaining dominance as key suppliers, crucial for meeting the rising demand for primary aluminum. [Source](https://www.mining.com/news/global-bauxite-production-outlook-2026-key-suppliers/)
-- Competition for long-term power contracts between energy-intensive aluminum smelters and rapidly expanding AI data centers is emerging as a significant constraint on smelter restarts and expansions in the US and Europe. [Source](https://www.bloomberg.com/news/articles/2026-01-XX/aluminum-smelters-ai-data-centers-vie-for-power)
+- New rules for flexibility in the Aluminium Stewardship Initiative (ASI) assurance framework, aimed at GHG Emissions Reduction, became effective on January 1, 2025, indicating a growing focus on environmental responsibility in the industry. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGG276zjvCuzuPqPI8svU5rVLTs0_Jc6sajiyHNnz2UdZ7AiZUwHQO29kWj6WQJvb2KLDvTDC-F6AzJJW3rv1PcmKswnbsMD8dqp0L1jam-23v35iBG8bmD17eMtw==)
+- The European aluminum billet market anticipates a challenging 2026 with tepid demand and the significant influence of the EU's Carbon Border Adjustment Mechanism (CBAM), impacting long-term contracts. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmgsT4CdUMX5UHV3aRxDYbekKG_sMpr2TuGvo8w2PRmVoeMHuatsdWji-eep1j0oEyoSHBFzQanA1-9697nE5zMaLnjaBk1qPwuCYV_7fvAwS8hUy2fN5NLXy17oHb5R_59TgU4VWtWNx1nnRxmi27yeRNi7S03vAD84gQ6QuJjtIqakIZnFYjQZ5wkd1puNP_ny8j2i5JKkypOckZIYXMZOJF3KeHNMDgaPPkUdFxak2a8tl8yPECYaVI5nTlm3GOHaNRD2y6yqRGR4xjFWKxFQTF)
