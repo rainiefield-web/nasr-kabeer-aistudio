@@ -1,13 +1,14 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-01-25 06:01:07`
+Last Updated (UTC): `2026-01-25 12:16:45`
 Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$3175.35` | Change: `+1.10%` | Ref Date: 2026-01-23
+- LME Cash: `$3175.30` | Change: `+1.1%` | Ref Date: 2026-01-25
 
 ### Latest Headlines (from GNews)
+- Toyota Built A Hemi Engine 60 Years Ago - And Almost No One Remembers (Source: SlashGear) [Link](https://www.slashgear.com/2081979/toyota-forgotten-hemi-engine-built-60-years-ago/)
 - Vedanta Aluminium secures 18 BIS certifications for smelting ops in Jharsuguda, Korba (Source: The Hindu Business Line) [Link](https://www.thehindubusinessline.com/markets/commodities/vedanta-aluminium-secures-18-bis-certifications-for-smelting-ops-in-jharsuguda-korba/article70546156.ece)
 - Hindustan Copper Limited Promotes Four Executives to General Manager Positions (Source: scanx.trade) [Link](https://scanx.trade/stock-market-news/stocks/hindustan-copper-limited-promotes-four-executives-to-general-manager-positions/30802093)
 - Global Mining Stocks On Cusp Of Supercycle As AI Boom Stokes Metals (Source: NDTV Profit) [Link](https://www.ndtvprofit.com/business/mining-stocks-on-cusp-of-supercycle-as-ai-boom-stokes-metals-10878126)
@@ -19,18 +20,17 @@ Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 - 'Don't fear anything’: Why speed skater Jordan Stolz could be unstoppable at Milan Olympics (Source: Nbc Sports) [Link](https://www.nbcsports.com/olympics/news/dont-fear-anything-why-speed-skater-jordan-stolz-could-be-unstoppable-at-milan-olympics)
 - Aluminum-Extruded Products Market Size to Reach USD 88.92 (Source: GlobeNewswire) [Link](https://www.globenewswire.com/news-release/2026/01/23/3224961/0/en/Aluminum-Extruded-Products-Market-Size-to-Reach-USD-88-92-Billion-by-2033-Owing-to-the-Increasing-Adoption-of-Lightweight-Aluminum-Solutions-Globally-SNS-Insider.html)
 - Automotive Aluminum Market Analysis Report 2026 (Source: GlobeNewswire) [Link](https://www.globenewswire.com/news-release/2026/01/23/3224891/28124/en/Automotive-Aluminum-Market-Analysis-Report-2026-Global-Industry-Size-Share-Trends-Opportunity-and-Forecast-2021-2031.html)
-- Markets Are Struggling to Price Trump’s Rapid Policy Swings (Source: OilPrice) [Link](https://oilprice.com/Energy/Energy-General/Markets-Are-Struggling-to-Price-Trumps-Rapid-Policy-Swings.html)
 
 ### Industry & Corporate Insights (from Gemini)
-- Alcoa's Q3 2025 earnings call highlighted record aluminum production and firm bauxite prices, despite an incident at the Alumar smelter and seasonal supply disruptions in Guinea. [Source](https://www.investing.com/news/earnings/earnings-call-transcript-alcoas-q3-2025-results-miss-expectations-stock-rises-3543110)
-- New refining capacity expected in Indonesia in 2025, alongside additional smelting capacity anticipated in late 2025 or early 2026, is leading to a short-term imbalance in the alumina market but will support long-term demand. [Source](https://www.investing.com/news/stock-market-news/earnings-call-transcript-alcoa-q3-2025-results-miss-forecasts-stock-dips-3540866)
+- Alcoa Corporation reported strong fourth-quarter and full-year 2025 results, including record smelter output and guidance for increased alumina and aluminum volumes in 2026, while also advancing low-carbon technologies like ELYSIS for greenhouse gas-free aluminum production. [Source](https://www.alcoa.com/global/en/news/news-releases.asp)
+- The Slovak government is actively seeking EU support to restart the mothballed Slovalco aluminum plant, formerly a major European raw aluminum producer, underlining the strategic importance of aluminum. [Source](https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/metals/011326-slovak-pm-seeks-eu-support-to-restart-major-aluminum-plant)
 
 ### Market Trends (from Gemini)
-- Guinea continued to increase its bauxite shipments to China in 2025, meeting approximately three-quarters of China's demand and playing a crucial role in China's record primary aluminum output of 40.4 million tonnes. [Source](https://www.alcircle.com/news/another-year-of-record-bauxite-shipments-from-guinea-to-china-119139)
-- The global bauxite market is expected to maintain a positive outlook from 2024 to 2030, driven by rising aluminum demand and new mining projects, with anticipated production growth in Guinea and Australia. [Source](https://www.mining.com/growing-demand-for-bauxite-highlights-risks-of-dependence-on-guineas-supplies/)
+- Global primary aluminium production is forecast to increase to approximately 75.7 million tonnes in 2026, driven by the emergence of new smelter capacities and restarts in key regions such as Indonesia, Vietnam, and Brazil. [Source](https://www.alcircle.com/news/global-aluminium-market-outlook-bauxite-alumina-prices-al-circle-blog-113204)
+- The demand for low-carbon aluminum is significantly rising, particularly within the automotive industry, establishing it as a valuable market segment in 2026 and beyond due to new pricing benchmarks and regulations like the EU's Carbon Border Adjustment Mechanism (CBAM). [Source](https://www.alcircle.com/news/low-carbon-aluminium-and-the-automotive-sector-2025-saw-a-transition-built-in-tandem-113274)
+- Global aluminium consumption is projected to reach 106.8 million tonnes by 2026, reflecting a structural demand shift towards its integral role in long-life infrastructure and clean-energy systems. [Source](https://www.alcircle.com/news/global-aluminium-industry-outlook-2026-from-bauxite-to-recycling-one-integrated-view-113331)
 
 ### Strategic Factors (from Gemini)
-- The US plans to implement a 50% tariff on Chinese steel and aluminum products by September 2025, a measure expected to significantly influence the global aluminum supply dynamics. [Source](https://news.metal.com/newscontent/102559595/US-To-Impose-50-Tariff-On-Chinese-Steel-And-Aluminum-Products)
-- The upcoming HARBOR's Aluminum Summit in June 2026 is set to address critical industry issues, including policy changes, sanctions, logistical risks, the competition for aluminum scrap, and the accelerating trends in decarbonization and recycling technologies. [Source](https://10times.com/harbor-aluminum-summit-chicago)
-- Aluminum producers are increasingly shifting their focus towards creating a sustainable environment, driven by national policies and climate agreements, reflecting an ongoing industry emphasis on ESG initiatives. [Source](https://www.alcircle.com/news/global-aluminium-industry-outlook-2022-81498)
-- Goldman Sachs forecasts LME aluminum prices to fall to $2,350 per ton by Q4 2026, indicating potential market adjustments and impacts on smelter profitability. [Source](https://news.metal.com/newscontent/102559595/US-To-Impose-50-Tariff-On-Chinese-Steel-And-Aluminum-Products)
+- China's primary aluminium output is approaching its self-imposed 45 million tonne capacity ceiling, creating a structural global supply tightness and prompting Chinese firms to invest in overseas aluminium projects. [Source](https://www.metal.com/Aluminium/2025-LME-Aluminium-Prices-Hit-a-Three-Year-High-in-2025-Overseas-Views-on-2026-Outlook-20251127-160100)
+- Global bauxite production growth is expected to slow in 2025, attributed to weaker data from Mainland China and escalating political and regulatory risks in Guinea, a significant bauxite supplier. [Source](https://www.alcircle.com/news/what-will-be-the-global-bauxite-outlook-for-2026-after-bmi-cuts-its-2025-forecast-112817)
+- Persistently high energy costs in Europe are significantly impacting smelter operating rates, leading to increased competition for long-term electricity contracts between aluminum smelters and burgeoning AI data centers. [Source](https://www.metal.com/Aluminium/2025-LME-Aluminium-Prices-Hit-a-Three-Year-High-in-2025-Overseas-Views-on-2026-Outlook-20251127-160100)
