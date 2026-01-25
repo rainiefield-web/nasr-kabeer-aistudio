@@ -1,5 +1,5 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-01-25 12:16:45`
+Last Updated (UTC): `2026-01-25 18:13:19`
 Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 
 ## Global English Report
@@ -8,6 +8,7 @@ Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 - LME Cash: `$3175.30` | Change: `+1.1%` | Ref Date: 2026-01-25
 
 ### Latest Headlines (from GNews)
+- Nalco eyes 200-300 MW green power capacity backed by battery storage for low-carbon aluminium (Source: The Economic Times) [Link](https://economictimes.indiatimes.com/industry/renewables/nalco-eyes-200-300-mw-green-power-capacity-backed-by-battery-storage-for-low-carbon-aluminium/articleshow/127455585.cms)
 - Toyota Built A Hemi Engine 60 Years Ago - And Almost No One Remembers (Source: SlashGear) [Link](https://www.slashgear.com/2081979/toyota-forgotten-hemi-engine-built-60-years-ago/)
 - Vedanta Aluminium secures 18 BIS certifications for smelting ops in Jharsuguda, Korba (Source: The Hindu Business Line) [Link](https://www.thehindubusinessline.com/markets/commodities/vedanta-aluminium-secures-18-bis-certifications-for-smelting-ops-in-jharsuguda-korba/article70546156.ece)
 - Hindustan Copper Limited Promotes Four Executives to General Manager Positions (Source: scanx.trade) [Link](https://scanx.trade/stock-market-news/stocks/hindustan-copper-limited-promotes-four-executives-to-general-manager-positions/30802093)
@@ -19,18 +20,17 @@ Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 - Materials Up as Precious Metals Rally - Materials Roundup (Source: MarketScreener) [Link](https://www.marketscreener.com/news/materials-up-as-precious-metals-rally-materials-roundup-ce7e5bdadf89f127)
 - 'Don't fear anything’: Why speed skater Jordan Stolz could be unstoppable at Milan Olympics (Source: Nbc Sports) [Link](https://www.nbcsports.com/olympics/news/dont-fear-anything-why-speed-skater-jordan-stolz-could-be-unstoppable-at-milan-olympics)
 - Aluminum-Extruded Products Market Size to Reach USD 88.92 (Source: GlobeNewswire) [Link](https://www.globenewswire.com/news-release/2026/01/23/3224961/0/en/Aluminum-Extruded-Products-Market-Size-to-Reach-USD-88-92-Billion-by-2033-Owing-to-the-Increasing-Adoption-of-Lightweight-Aluminum-Solutions-Globally-SNS-Insider.html)
-- Automotive Aluminum Market Analysis Report 2026 (Source: GlobeNewswire) [Link](https://www.globenewswire.com/news-release/2026/01/23/3224891/28124/en/Automotive-Aluminum-Market-Analysis-Report-2026-Global-Industry-Size-Share-Trends-Opportunity-and-Forecast-2021-2031.html)
 
 ### Industry & Corporate Insights (from Gemini)
-- Alcoa Corporation reported strong fourth-quarter and full-year 2025 results, including record smelter output and guidance for increased alumina and aluminum volumes in 2026, while also advancing low-carbon technologies like ELYSIS for greenhouse gas-free aluminum production. [Source](https://www.alcoa.com/global/en/news/news-releases.asp)
-- The Slovak government is actively seeking EU support to restart the mothballed Slovalco aluminum plant, formerly a major European raw aluminum producer, underlining the strategic importance of aluminum. [Source](https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/metals/011326-slovak-pm-seeks-eu-support-to-restart-major-aluminum-plant)
+- Alcoa projects increased alumina production to between 9.7 and 9.9 million metric tons and aluminum production to between 2.4 and 2.6 million metric tons by 2026, driven by enhanced productivity and smelter restarts. [Source](https://www.gurufocus.com/news/2479009/alcoa-aa-projects-increased-alumina-and-aluminum-production-for-2026)
+- Norsk Hydro's Mozal smelter in Mozambique is transitioning to care-and-maintenance status by March 2026, removing 560,000 tonnes of annual capacity from global markets due to power constraints. [Source](https://www.discoveryalert.com/aluminium-price-spikes-driven-by-global-supply-concerns-in-2026/)
 
 ### Market Trends (from Gemini)
-- Global primary aluminium production is forecast to increase to approximately 75.7 million tonnes in 2026, driven by the emergence of new smelter capacities and restarts in key regions such as Indonesia, Vietnam, and Brazil. [Source](https://www.alcircle.com/news/global-aluminium-market-outlook-bauxite-alumina-prices-al-circle-blog-113204)
-- The demand for low-carbon aluminum is significantly rising, particularly within the automotive industry, establishing it as a valuable market segment in 2026 and beyond due to new pricing benchmarks and regulations like the EU's Carbon Border Adjustment Mechanism (CBAM). [Source](https://www.alcircle.com/news/low-carbon-aluminium-and-the-automotive-sector-2025-saw-a-transition-built-in-tandem-113274)
-- Global aluminium consumption is projected to reach 106.8 million tonnes by 2026, reflecting a structural demand shift towards its integral role in long-life infrastructure and clean-energy systems. [Source](https://www.alcircle.com/news/global-aluminium-industry-outlook-2026-from-bauxite-to-recycling-one-integrated-view-113331)
+- Global aluminum consumption is projected to rise from 101.6 million tonnes in 2024 to approximately 106.8 million tonnes by 2026, with strong structural demand from electric vehicles, renewable energy, and grid modernization. [Source](https://www.alcircle.com/news/global-aluminium-industry-outlook-2026-from-bauxite-to-recycling-one-integrated-view-122904)
+- The global automotive aluminum market is forecast to expand from USD 31.91 billion in 2025 to USD 45.14 billion by 2031, reflecting a CAGR of 5.95%, primarily driven by electrification and lightweighting mandates. [Source](https://www.globenewswire.com/news-release/2026/01/23/3052046/0/en/Automotive-Aluminum-Market-Analysis-Report-2026-Global.html)
+- ESG disclosure standards are converging globally, with IFRS S1 and S2, CSRD, and GRI 14: Mining Sector 2024 standards taking effect from 2025-2026, emphasizing comparable and assured performance data for miners. [Source](https://www.mining.com/minings-top-ten-esg-trends-for-2026/)
 
 ### Strategic Factors (from Gemini)
-- China's primary aluminium output is approaching its self-imposed 45 million tonne capacity ceiling, creating a structural global supply tightness and prompting Chinese firms to invest in overseas aluminium projects. [Source](https://www.metal.com/Aluminium/2025-LME-Aluminium-Prices-Hit-a-Three-Year-High-in-2025-Overseas-Views-on-2026-Outlook-20251127-160100)
-- Global bauxite production growth is expected to slow in 2025, attributed to weaker data from Mainland China and escalating political and regulatory risks in Guinea, a significant bauxite supplier. [Source](https://www.alcircle.com/news/what-will-be-the-global-bauxite-outlook-for-2026-after-bmi-cuts-its-2025-forecast-112817)
-- Persistently high energy costs in Europe are significantly impacting smelter operating rates, leading to increased competition for long-term electricity contracts between aluminum smelters and burgeoning AI data centers. [Source](https://www.metal.com/Aluminium/2025-LME-Aluminium-Prices-Hit-a-Three-Year-High-in-2025-Overseas-Views-on-2026-Outlook-20251127-160100)
+- US aluminum consumers are paying a substantial 68% premium over the London Metal Exchange (LME) price for physical metal, largely due to import tariffs that have suppressed supply and limited domestic primary aluminum production growth. [Source](https://www.mining.com/column-us-aluminum-consumers-pay-the-spiraling-cost-of-tariffs/)
+- China's aluminum output reached a record 45.02 million tons in 2025, effectively nearing its government-imposed capacity cap, which limits the country's ability to significantly increase global supply further despite rising demand from renewable energy and EVs. [Source](https://www.discoveryalert.com/chinas-aluminium-production-soars-to-record-45-02-million-tonnes/)
+- Outside of China, power availability and high energy costs are limiting new smelter capacity investments and restarts, as aluminum smelters now compete with energy-intensive AI data centers for long-term power contracts. [Source](https://think.ing.com/articles/aluminium-deficit-will-support-prices-in-2026)
