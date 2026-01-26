@@ -2,8 +2,8 @@ name: Daily Aluminum News Bot
 
 on:
   schedule:
-    # 每天在 UTC 时间 00:00, 06:00, 12:00, 18:00 运行 (共4次)
-    - cron: '0 0,6,12,18 * * *' 
+    # 每天在 UTC 时间 08:00 运行 (共1次)
+    - cron: '0 8 * * *' 
   workflow_dispatch: # 允许手动触发
 
 # 必须增加写入权限
