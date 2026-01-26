@@ -428,7 +428,7 @@ def select_model_name(client) -> str:
 
     try:
         models = client.models.list()
-        preferred_keywords = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini"]
+        preferred_keywords = ["gemini-3-flash", "gemini-2.5-flash", "gemini-2.0-flash", "gemini"]
         for keyword in preferred_keywords:
             for model in models:
                 name = getattr(model, "name", "") or ""
@@ -572,27 +572,28 @@ def main():
     now = datetime.utcnow()
     current_time_utc = now.strftime("%Y-%m-%d %H:%M:%S")
 
-    lme_prompt = f"""
-Get LME Primary Aluminum (High Grade) Cash Settlement Price from the last 4 hours.
-Strict requirements:
-- Price must be over $2700.
-- Use real sources; prefer Investing.com, Fastmarkets, or Reuters.
-Return ONLY valid JSON (no markdown, no extra text):
-{{ "en": {{ "lme": [{{ "price": "$xxxx.xx", "change": "±x.x%", "date": "YYYY-MM-DD", "url": "https://..." }}] }} }}
-""".strip()
+    prompt = f"""
+Get LME Primary Aluminum (High Grade) Cash Settlement Price from the last 4 hours AND scan English-language aluminum industry news.
 
-    news_prompt = f"""
-Deep scan English-language aluminum industry news from these portals:
-{CORE_SITES}
+Pricing Requirements:
+- Source: Investing.com, Fastmarkets, or Reuters.
+- Price > $2700.
 
-Constraints:
-- Must be in English.
+News Requirements:
+- Portals: {CORE_SITES}
 - Focus: smelter production, bauxite supply, ESG, automotive demand.
 - Extract 8 high-quality bullets across corporate/trends/factors.
 - Use REAL URLs.
 
 Return ONLY valid JSON (no markdown, no extra text):
-{{ "en": {{ "corporate": [{{"bullet":"...", "url":"https://..."}}], "trends": [{{"bullet":"...", "url":"https://..."}}], "factors": [{{"bullet":"...", "url":"https://..."}}] }} }}
+{{
+  "en": {{
+    "lme": [{{ "price": "$xxxx.xx", "change": "±x.x%", "date": "YYYY-MM-DD", "url": "https://..." }}],
+    "corporate": [{{ "bullet": "...", "url": "https://..." }}],
+    "trends": [{{ "bullet": "...", "url": "https://..." }}],
+    "factors": [{{ "bullet": "...", "url": "https://..." }}]
+  }}
+}}
 """.strip()
 
     # -----------------------------
@@ -674,9 +675,10 @@ Return ONLY valid JSON (no markdown, no extra text):
     # -----------------------------
     # Gemini fetch (core)
     # -----------------------------
-    print("Fetching price and deep news via Gemini...")
-    lme_data = fetch_content_from_genai(client, lme_prompt)
-    news_data = fetch_content_from_genai(client, news_prompt)
+    print("Fetching combined price and deep news via Gemini...")
+    combined_data = fetch_content_from_genai(client, prompt)
+    lme_data = combined_data
+    news_data = combined_data
 
     news_api_key_provided = bool(os.getenv("NEWS_API_KEY"))
 
