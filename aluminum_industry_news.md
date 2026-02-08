@@ -1,11 +1,15 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-02-07 08:26:12`
-Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
+Last Updated (UTC): `2026-02-08 08:28:42`
+Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
 - LME Cash: `$3111.65` | Change: `+2.52%` | Ref Date: 2026-02-06
+
+### Latest Headlines (from NewsAPI)
+- Arae for iPhone 14 Pro Max Aluminum Case, Anti-Fall Heat Dissipation $15.72 + delivery (Free with Prime/$59+) @ Amazon AU (Source: Ozbargain.com.au) [Link](https://www.ozbargain.com.au/node/947286)
+- $19.98* | 40-Oz Hydro Flask Stainless Steel Travel Tumbler w/ Lid & Straw (Cascade) at Amazon (Source: Slickdeals.net) [Link](https://slickdeals.net/f/19183861-19-98-40-oz-hydro-flask-stainless-steel-travel-tumbler-w-lid-straw-cascade-at-amazon)
 
 ### Latest Headlines (from GNews)
 - Chris Gotterup WITB February 2026: His Bag for WM Phoenix Open Explored (Source: Essentially Sports) [Link](https://www.essentiallysports.com/golf-news-chris-gotterup-witb-february-2026-his-bag-for-wm-phoenix-open-explored/)
@@ -22,15 +26,15 @@ Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 - Rio Tinto expected to push for more time to weigh Glencore deal, sources say (Source: MarketScreener) [Link](https://www.marketscreener.com/news/rio-tinto-expected-to-push-for-more-time-to-weigh-glencore-deal-sources-say-ce7e5adbd88ef427)
 
 ### Industry & Corporate Insights (from Gemini)
-- China's Shandong Nanshan Group is planning to construct an oil refinery on Indonesia's Bintan island, which will supply petroleum coke as a feedstock for an aluminum smelter the company intends to build there. [Source](https://www.reuters.com/markets/commodities/chinas-nanshan-group-plans-100000-bpd-refinery-indonesia-2026-02-05/)
-- Canadian Energy Metals has announced the discovery of 6.8 billion tonnes of alumina at its Project Thor in Saskatchewan, which could serve as a 'green' alternative to traditional bauxite imports for North America. [Source](https://saskatoon.ctvnews.ca/we-ve-got-a-game-changer-resource-discovery-near-tisdale-sask-could-be-next-potash-or-uranium-1.6749942)
-- Alcoa Corporation has continued to demonstrate market outperformance, bolstered by high aluminum prices on the London Metal Exchange, despite recent analyst downgrades. [Source](https://www.alcircle.com/news/alcoa-in-spotlight-market-outperformance-driven-by-a-cautious-approach-117562)
+- Nirav Commercial Limited approved the sale of its aluminum business segment on February 4, 2026, indicating a strategic shift for the Mumbai-based commercial entity. [Source](https://www.alcircle.com/news/aluminium-industries-latest-news-118086)
+- CHALCO, a major player in the aluminum industry, operates across the entire value chain, including bauxite mining, alumina refining, and aluminum smelting, with an anticipated 2025 output of around 8 million tonnes. [Source](https://www.alcircle.com/news/a-valued-commodity-metal-aluminium-joins-precious-metals-at-the-s-p-500-with-a-38-surge-118042)
+- Alcoa's aluminum production was projected to be in the range of 2.3 to 2.5 million tonnes for 2025, with its shares seeing significant advancement partly due to US tariff policies and mining/processing factors. [Source](https://www.alcircle.com/news/a-valued-commodity-metal-alcoa-corp-gains-traction-on-london-metal-exchange-aluminium-price-surge-118042)
 
 ### Market Trends (from Gemini)
-- The global automotive aluminum market is experiencing substantial growth due to increasing demand for lightweight materials in vehicles, aiming to improve fuel efficiency and overall performance. [Source](https://www.alcircle.com/news/global-automotive-aluminum-market-2025-2032-106519)
-- The London Metal Exchange (LME) is progressing with plans to develop sustainable metal premium pricing for LME-approved brands, signaling a heightened industry focus on ESG (Environmental, Social, and Governance) factors. [Source](https://www.lme.com/trade/LME-contracts/Non-ferrous/LME-Aluminium)
-- The aluminum industry is undergoing a fundamental shift where carbon metrics are becoming as critical as cost and quality, driving increased demand for low-carbon aluminum, particularly within the automotive sector. [Source](https://www.alcircle.com/news/low-carbon-aluminium-and-the-automotive-sector-2025-saw-a-transition-built-in-tandem-116631)
+- European aluminum scrap and secondary ingot prices are experiencing a rise, driven by a notable shortage of scrap and low domestic generation, preceding anticipated EU scrap export restrictions in Spring 2026. [Source](https://www.fastmarkets.com/metals-and-mining/base-metals/aluminium/market-data)
+- The global alumina market, valued at over USD 50 billion in 2024, is forecast to grow to over USD 85 billion by 2033, propelled by diverse industrial applications beyond aluminum production. [Source](https://www.alcircle.com/news/aluminium-industries-latest-news-118086)
+- The long-term outlook for aluminum in the automotive sector remains strong, particularly with the increasing adoption of electric vehicles and the ongoing demand for lightweighting materials. [Source](https://www.fastmarkets.com/metals-and-mining/base-metals/aluminium/market-data)
 
 ### Strategic Factors (from Gemini)
-- China's government-imposed 45-million-ton per year capacity cap has led to a stagnation in the country's aluminum production growth, spurring a worldwide effort to establish new smelter capacities outside of China. [Source](https://www.mining.com/web/bullish-not-breathless-analysts-temper-base-metals-calls/)
-- Guinea's bauxite exports rose by 25% in 2025, reaching 182.8 million metric tons, with a significant 74% directed to China, solidifying Guinea's dominant role in the global aluminum ore supply chain. [Source](https://www.alcircle.com/news/guineas-bauxite-exports-outpace-production-by-3-3-routed-to-china-what-drives-chinas-dominance-and-its-market-impact-117540)
+- Elevated energy costs, combined with current alumina pricing, are creating margin compression for primary aluminum production, making prices below $3,000 per tonne unsustainable for many marginal producers. [Source](https://www.discoveryalert.com/lme-aluminium-prices-february-2026-market-analysis/)
+- Guinea, which holds nearly one-third of the world's bauxite reserves, predominantly exports raw ore rather than refining it domestically, influencing global bauxite supply dynamics. [Source](https://www.alcircle.com/news/aluminium-industries-latest-news-118086)
