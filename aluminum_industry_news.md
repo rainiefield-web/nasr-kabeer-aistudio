@@ -1,13 +1,16 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-02-15 08:28:02`
+Last Updated (UTC): `2026-02-16 08:41:15`
 Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$3095.75` | Change: `-0.05%` | Ref Date: 2026-02-13
+- LME Cash: `$3075.20` | Change: `-0.66%` | Ref Date: 2026-02-16
 
 ### Latest Headlines (from GNews)
+- Commodities enter a corrective phase: Will it last or is it just a pause? (Source: The Economic Times) [Link](https://economictimes.indiatimes.com/markets/commodities/commodities-enter-a-corrective-phase-will-it-last-or-is-it-just-a-pause/articleshow/128375091.cms)
+- Why it’s troubling that Hong Kong board-member pay ranges from US$850 to US$1.67 million (Source: South China Morning Post) [Link](https://www.scmp.com/business/companies/article/3343485/why-its-troubling-hong-kong-board-member-pay-ranges-us850-us167-million)
+- Bitcoin Mining & The Electricity Grid: A Quiet Savior (Source: ZeroHedge) [Link](https://www.zerohedge.com/crypto/bitcoin-mining-electricity-grid-quiet-savior)
 - Balance Beats Bravado When Cycles Turn (Source: The Hindu Business Line) [Link](https://www.thehindubusinessline.com/portfolio/big-story/does-your-portfolio-really-need-multi-asset-allocation-funds/article70627699.ece)
 - Mandelson took secretive flight on Russian oligarch's private jet whilst EU Trade Commissioner (Source: LBC) [Link](https://www.lbc.co.uk/article/peter-mandelson-flight-russian-oligarch-5HjdSMD_2/)
 - Peter Mandelson breaks cover for first time since Epstein scandal broke as news emerges of 'ghost flight' to see Putin and calls grow for him to testify to US Congress (Source: Daily Mail Online) [Link](https://www.dailymail.co.uk/news/article-15559983/Peter-Mandelson-breaks-cover-time-Epstein-scandal-broke-news-emerges-ghost-flight-Putin-calls-grow-testify-US-Congress.html)
@@ -17,20 +20,17 @@ Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 - S&P 500 ends up slightly as tech dips, inflation cools (Source: Moneycontrol) [Link](https://www.moneycontrol.com/news/business/markets/s-p-500-ends-up-slightly-as-tech-dips-inflation-cools-13828218.html)
 - US Stocks Today | S&P 500 ends up slightly as tech dips, inflation cools (Source: The Economic Times) [Link](https://economictimes.indiatimes.com/markets/us-stocks/news/us-stocks-today-sp-500-ends-up-slightly-as-tech-dips-inflation-cools/articleshow/128332192.cms)
 - Mandelson's 'ghost flights' on oligarch jet: Russian billionaire flew ex-Labour peer to summit with Putin (Source: Daily Mail Online) [Link](https://www.dailymail.co.uk/news/article-15559223/Mandelson-ghost-flights-oligarch-jet-Russian-billionaire-Putin.html)
-- Stocks Settle Slightly Higher as Bond Yields Fall (Source: Barchart) [Link](https://www.barchart.com/story/news/216021/stocks-settle-slightly-higher-as-bond-yields-fall)
-- S&P 500 ends up slightly as tech dips, inflation cools (Source: The Straits Times) [Link](https://www.straitstimes.com/business/companies-markets/sp-500-ends-up-slightly-as-tech-dips-inflation-cools)
-- S&P 500 ends up slightly as tech dips, inflation cools (Source: MarketScreener) [Link](https://www.marketscreener.com/news/s-p-500-ends-up-slightly-as-tech-dips-inflation-cools-ce7e5ddad089f425)
 
 ### Industry & Corporate Insights (from Gemini)
-- CME Group is exploring the approval of new warehouses for aluminium storage in Taiwan and Hong Kong, which could impact global supply chain logistics. [Source](https://www.investing.com/commodities/aluminium)
+- Century Aluminum and Emirates Global Aluminium have formed a joint development agreement to build the first new primary aluminum smelter in the United States since 1980, located in Inola, Oklahoma, with an expected annual production of over 500,000 metric tons. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6DQs3flYydVI3b-pwUZQQbelwxN4BZFg4T3HbcnI2Q1a1-_JEPpFac2UAQRb2rNHN0HRl3ZCjxrnSzJWdPjqk7K41gHV3BAE-ifimWtEZTVIWsTVbNntHGbz2PxLvjI9zpndEqXHPTZNWTrnivZGArjE1XTtvlOBfX-iBVVLuY-M_iJQspFAr2HzLxEBSArOg3vofxkj9ColCmN5LZ02uh4fXgh2LxPHtfULnzjEIk5ZdBkdUDslul_-MR2aALEUkkc9VRV6cOh3yyc-defE=)
+- AM Green of India and Japan's Mitsui are exploring a potential investment and offtake partnership to scale low-carbon aluminum production powered by renewable energy. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErAe78w66_l0oNw2FlmhwebqwDj7_XkVHrfRF_XTFELESlJeqc97mCyfcR_2EYR-jEUElyAA9fTYH_lUzDIu0CLwTxf6e3Vn1ChviLrdV0Fd-DfCbauQRcDlp_ksZAzXC3zX88HVmtw9gID-0X1S1oDLEP0V9zP2599TwEM-587Q==)
+- Rio Tinto and Norsk Hydro have partnered to invest approximately $45 million over the next five years in exploring carbon capture technologies to reduce emissions in the aluminum production process. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdf7diC8AVDm2eP74kaiGB8OdVQ0hsdNyPmVPsA4fQxsYomPaC-XA01Di6ypKZrRvr74tDQloyOJfvn6dEhMOm8SByNlzeHWBmRAtLyAYHd-Fm9rufoflfVFY7BecHcmO-hGaKT7dcNdVA9T8wnDh9szGrzAjCfW6jCIhnIQjWpo2ZzS_x5nBIU-8nuCnGoQ7Y6CUmyHL7zWBGDAq4WTnMp79GUGe__A_Q29asOpI=)
 
 ### Market Trends (from Gemini)
-- The global aluminium market experienced heightened volatility with a sharp decline in LME cash, futures, and inventories on January 30. [Source](https://www.alcircle.com/news/lme-aluminium-jolts-the-market-as-cash-offer-slides-to-3-110-per-tonne-119102)
-- Aluminium futures in the UK have pulled back towards $3,100 per tonne from a three-year high of $3,270 reached on January 28, indicating a re-evaluation by traders of speculative positions. [Source](https://tradingeconomics.com/commodity/aluminum)
-- European aluminium scrap and secondary ingot prices are increasing due to significant scrap shortages, a situation expected to intensify with impending EU scrap export restrictions in Spring 2026. [Source](https://www.fastmarkets.com/commodities/base-metals/aluminium)
+- Aluminum consumption in China's automotive industry is projected to reach nearly 7.5-8 million tonnes by 2025, driven by modern vehicle design's increasing reliance on the metal to counterbalance battery weight and improve range. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvXiWJTAdGjf6V9lhSbdQsZ5KBVVAahvatK6kH0fP8z8rapLEUHWJMaXsFHXBVhrzB5dVN291tPwkkjSRymLqSw4bT9i_qujJ4Q33AZ8MYRmBlfLa-rnJWCrgub5hagIH3cwmr7r44oNC0WHS5ojFJSOLakS8hAHjaH7P9YKv1JWtve25ZDka7PZNvh3UqoFLPWxCGdJ_pl4YRcXs9TOOZxJektybe_zj62LA6z2lYjPs5qsan-Ong3gZSTBbjkAikcI6i)
+- The global automotive aluminum industry is experiencing significant growth due to increasing demand for fuel-efficient vehicles, environmental regulations, and the rise of electric vehicle (EV) production, where aluminum's lightweight properties are crucial for battery efficiency and driving range. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfl-CbPAK4aLvB8nMIEn112fMncyKTU-yFsidmyeGYJtlVh3bLEFvDKPr3gEqGsZ6dKrFtwiNFCVbQRFa46zNTMpIsKr2ZP8XjLHCa7AZCXYTHsaX9g_71ww6-nZ9Dd6z2b85G7aaUznA49VKFDRtYmkFkJxGU)
+- The U.S. aluminum industry has seen a fundamental shift towards recycled production, with secondary production accounting for 78% of US aluminum output by 2021, signifying efforts to improve circularity and reduce emissions. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3tedsp8dx1JvDUz_0LsoQxfTy_hnoXmneOdE13hie5y6BP-2vnAl3-uTo8z-C2vlE-ysKENGspMvlpL0grELdZ9bNFHxIf5VEn492tJycdAUkHQ3SeQcpy6T3bhRtnbAKJ4kIwHdBgcHiG1LPs6GnZsjpZ1fVr338PcYFGEnY)
 
 ### Strategic Factors (from Gemini)
-- China's primary aluminum output is projected to remain stagnant after hitting its 45 million tons production cap last year, posing implications for the global supply landscape. [Source](https://tradingeconomics.com/commodity/aluminum)
-- Efforts by Chinese smelters to develop new facilities in Indonesia are encountering difficulties, primarily due to escalating energy costs and complex local regulations. [Source](https://tradingeconomics.com/commodity/aluminum)
-- Operational suspensions in key smelters across Iceland, Mozambique, and Australia are attributed to high energy costs, equipment malfunctions, challenges in bauxite sourcing, and broader geopolitical risks. [Source](https://tradingeconomics.com/commodity/aluminum)
-- The LME cash offer for aluminium saw a significant drop of 6.5% on January 30, falling from $3,325 to $3,110 per tonne. [Source](https://www.alcircle.com/news/lme-aluminium-jolts-the-market-as-cash-offer-slides-to-3-110-per-tonne-119102)
+- Guinea's bauxite production oversupply is significantly exceeding downstream demand in 2026, leading to sustained downward pressure on bauxite pricing mechanisms. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgz_hm7PTNCLIbBI-JcmWZAs2I5ScAWIM6BO7DvGYBs7LE0iDk45v1TfLY2TvKAGvSSje5J9wUffOpJDum3vZYQ3chK-O-qeHaOWW9Eg-mEMVqhW2vd2NRSRLGq_AkKwdldU663xoqEQcmQSBlJ95X_YFL75nbjUXA-xJKuwsuY5oWyFCnMND8Vf4)
+- A structural mismatch exists in China where alumina refining capacity (over 110 million tonnes annually) significantly surpasses domestic primary aluminum production caps (45 million tonnes), driving global alumina oversupply and impacting bauxite markets. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgz_hm7PTNCLIbBI-JcmWZAs2I5ScAWIM6BO7DvGYBs7LE0iDk45v1TfLY2TvKAGvSSje5J9wUffOpJDum3vZYQ3chK-O-qeHaOWW9Eg-mEMVqhW2vd2NRSRLGq_AkKwdldU663xoqEQcmQSBlJ95X_YFL75nbjUXA-xJKuwsuY5oWyFCnMND8Vf4)
