@@ -1,39 +1,36 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-02-20 08:35:32`
-Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
+Last Updated (UTC): `2026-02-21 08:25:36`
+Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$3089.70` | Change: `+0.58%` | Ref Date: 2026-02-20
-
-### Latest Headlines (from NewsAPI)
-- Kaushik Basu: India brims with talent and promise but there seems no escape from politics and pollution (Source: Livemint) [Link](https://www.livemint.com/opinion/online-views/kaushik-basu-india-talent-promise-politics-pollution-poverty-students-academics-11771424000738.html)
+- LME Cash: `$3101.90` | Change: `+0.98%` | Ref Date: 2026-02-20
 
 ### Latest Headlines (from GNews)
-- European Stocks Steady After Mixed Earnings From Nestle, Airbus (Source: Livemint) [Link](https://www.livemint.com/market/european-stocks-steady-after-mixed-earnings-from-nestle-airbus-11771530403239.html)
-- Everything you need to know about the latest Rio Tinto dividend (Source: The Motley Fool Australia) [Link](https://www.fool.com.au/2026/02/20/everything-you-need-to-know-about-the-latest-rio-tinto-dividend-2/)
-- Dharmendra Pradhan pitches for two more city-based eco regions (Source: Times of India) [Link](https://timesofindia.indiatimes.com/city/bhubaneswar/dharmendra-pradhan-pitches-for-two-more-city-based-eco-regions/articleshow/128572222.cms)
-- Pradhan pitches for Sambalpur-Bargarh, Angul-Dhenkanal as city economic regions (Source: Times of India) [Link](https://timesofindia.indiatimes.com/city/bhubaneswar/pradhan-pitches-for-sambalpur-bargarh-angul-dhenkanal-as-city-economic-regions/articleshow/128572090.cms)
-- Gamuda eyes further expansion in Sarawak (Source: The Star) [Link](https://www.thestar.com.my/business/business-news/2026/02/20/gamuda-eyes-further-expansion-in-sarawak)
-- Vedanta trades at discount to peers; well placed to benefit from strong aluminium prices, says Kotak Securities (Source: Livemint) [Link](https://www.livemint.com/market/stock-market-news/vedanta-trades-at-discount-to-peers-well-placed-to-benefit-from-strong-aluminium-prices-says-kotak-securities-11771503015917.html)
-- Rio Tinto annual earnings flat as iron ore weakens, copper cushions blow (Source: The Globe and Mail) [Link](https://www.theglobeandmail.com/investing/article-rio-tinto-earnings-results-iron-ore-copper/)
-- What's Going On With Rio Tinto Stock Thursday? (Source: Benzinga) [Link](https://www.benzinga.com/markets/large-cap/26/02/50713582/rio-tinto-grabs-majority-control-of-nemaska-lithium)
-- Stocks Slip Before the Open on U.S.-Iran Fears, Economic Data and Walmart Earnings on Tap (Source: Barchart) [Link](https://www.barchart.com/story/news/299571/stocks-slip-before-the-open-on-u-s-iran-fears-economic-data-and-walmart-earnings-on-tap)
-- Aluminium long-term fundamentals constructive: Kotak Institutional Equities (Source: Business Standard) [Link](https://www.business-standard.com/markets/news/aluminium-long-term-fundamentals-constructive-kotak-institutional-equities-126021900827_1.html)
-- Big savings on fitness bands: Get huge discounts on WHOOP, Galaxy Fit3, and more (Source: Hindustan Times) [Link](https://www.hindustantimes.com/technology/big-savings-on-fitness-bands-get-huge-discounts-on-whoop-galaxy-fit3-and-more-101771485919383.html)
-- The Vivo V70 Smartphone Has a Trio of Zeiss Cameras (Source: PetaPixel) [Link](https://petapixel.com/2026/02/18/the-vivo-v70-smartphone-has-a-trio-of-zeiss-cameras/)
+- US Companies Cheer Win Over Trump Tariffs (Source: Newsmax) [Link](https://www.newsmax.com/streettalk/u-s-companies-tariffs-supreme-court/2026/02/20/id/1246833/)
+- US Companies Cheer Win Over Trump Tariffs (Source: Newsmax) [Link](https://www.newsmax.com/finance/streettalk/u-s-companies-tariffs-supreme-court/2026/02/20/id/1246833/)
+- Business celebrates win over Trump tariffs, but refunds will take time (Source: The Straits Times) [Link](https://www.straitstimes.com/world/united-states/business-celebrates-win-over-trump-tariffs-but-refunds-will-take-time)
+- Trump tariffs trashed: US businesses fret as court ruling 'worryingly silent' over refunds (Source: Times of India) [Link](https://timesofindia.indiatimes.com/business/international-business/trump-tariffs-trashed-us-businesses-fret-as-court-ruling-worryingly-silent-over-refunds/articleshow/128617060.cms)
+- Business celebrates win over Trump tariffs, but refunds may take time (Source: Business Standard) [Link](https://www.business-standard.com/world-news/business-celebrates-win-over-trump-tariffs-but-refunds-may-take-time-126022001361_1.html)
+- What happens next after US tariff ruling? (Source: RTE.ie) [Link](https://www.rte.ie/news/business/2026/0220/1559580-us-tariffs-what-happens/)
+- Businesses celebrates win over Trump tariffs (Source: Bnn Bloomberg) [Link](https://www.bnnbloomberg.ca/business/2026/02/20/businesses-celebrates-win-over-trump-tariffs-but-refunds-will-take-time/)
+- Businesses celebrates win over Trump tariffs (Source: CP24 Toronto) [Link](https://www.cp24.com/news/canada/2026/02/20/businesses-celebrates-win-over-trump-tariffs-but-refunds-will-take-time/)
+- Business Celebrates Win Over Trump Tariffs, but Refunds Will Take Time (Source: U.S. News & World Report) [Link](https://www.usnews.com/news/top-news/articles/2026-02-20/business-celebrates-win-over-trump-tariffs-but-refunds-will-take-time)
+- Business celebrates win over Trump tariffs, but refunds will take time (Source: MarketScreener) [Link](https://www.marketscreener.com/news/business-celebrates-win-over-trump-tariffs-but-refunds-will-take-time-ce7e5dddde8cf220)
+- The Domino Effect: How a U.S. Attack on Iran Could Unleash Global Catastrophe (Source: Natural News) [Link](https://www.naturalnews.com/2026-02-20-us-attack-on-iran-unleash-global-catastrophe.html)
+- Century Aluminum Company Reports Fourth Quarter 2025 Results (Source: The Manila Times) [Link](https://www.manilatimes.net/2026/02/20/tmt-newswire/globenewswire/century-aluminum-company-reports-fourth-quarter-2025-results/2281577)
 
 ### Industry & Corporate Insights (from Gemini)
-- US aluminum producer Century Aluminum expects its Grundartangi smelter in Iceland to restart by the end of April, six months sooner than anticipated, following electrical equipment failure. [Source](https://www.mining.com/centurys-iceland-aluminum-smelter-to-return-sooner-than-expected/)
-- Australian miner South32 confirmed it would put its Mozambique aluminum plant (Mozal) on care and maintenance next month due to a drought affecting power supply. [Source](https://www.reuters.com/markets/commodities/australias-south32-confirms-mozambique-plant-wind-down-after-profit-beat-2026-02-12/)
+- Norsk Hydro has been in the news for job cuts, plant closures, and positive financial results in 2025, affirming positive financial performance. [Source](https://alcircle.com/news/aluminium-industries-latest-news-113396)
+- Australia's South32 confirmed the closure of its Mozambique Aluminium plant next month due to a power shortage, impacting global smelter production. [Source](https://www.reuters.com/markets/commodities/aluminium-prices-fall-two-week-highs-other-markets-plunge-2026-02-13/)
+- Vedanta's Aluminium business, India's largest producer, is positioned to benefit from India's 6% annual growth in aluminum demand. [Source](https://alcircle.com/news/aluminium-industries-latest-news-113396)
 
 ### Market Trends (from Gemini)
-- Aluminum consumption in China's automotive industry is projected to reach 7.5-8 million tonnes by 2025, driven by vehicle lightweighting and electrification, with new energy vehicles consuming significant volumes by 2030. [Source](https://www.alcircle.com/news/inside-chinas-automotive-shift-aluminium-becoming-integral-to-vehicle-design-with-usage-nearing-8mt-119159)
-- The rising demand for low-carbon aluminum, influenced by new pricing benchmarks and regulations like the EU's Carbon Border Adjustment Mechanism (CBAM), is becoming a distinct and valuable market segment. [Source](https://www.alcircle.com/news/low-carbon-aluminium-and-the-automotive-sector-2025-saw-a-transition-built-in-tandem-119420)
-- Reports suggested a potential rollback of some US tariffs on aluminum products to ease surging consumer prices, although the White House has denied plans for broad rollbacks. [Source](https://www.investing.com/news/commodities-news/aluminum-prices-fall-after-report-of-curbs-to-tariffs-3773193)
+- The automotive and transportation industries are increasingly incorporating aluminum into new vehicles, especially EVs, to reduce emissions, increase fuel economy, and improve driving range. [Source](https://www.fortunebusinessinsights.com/aluminium-market-106579)
+- Global consumption of recycled aluminum is increasing due to its cost-effectiveness and environmental benefits, with a growing focus on sustainably sourced products. [Source](https://www.fortunebusinessinsights.com/aluminium-market-106579)
+- Traders, including Mercuria Energy Group, have significantly impacted the LME aluminum market by vying for control of exchange inventories, leading to new rules for futures positions. [Source](https://www.mining.com/aluminum-price-holds-gain-as-withdrawals-from-warehouses-in-asia-surge/)
 
 ### Strategic Factors (from Gemini)
-- China's primary aluminum output is expected to remain capped at 45 million tons, limiting global supply growth and influencing market dynamics. [Source](https://www.alcircle.com/news/a-valued-commodity-metal-aluminium-joins-precious-metals-at-the-sp-500-with-a-38-surge-119460)
-- High energy costs and equipment failures, along with difficulties in bauxite sourcing, have led to suspensions or closures of key aluminum smelters in various countries, tightening global supply. [Source](https://tradingeconomics.com/commodity/aluminum)
-- LME aluminum opening stocks declined to 475,550 tonnes on February 18, representing a 0.42% daily decrease, indicating market tightness and contributing to price appreciation. [Source](https://www.alcircle.com/news/lme-aluminium-cash-offer-increases-to-3035-t-on-february-18-as-opening-stocks-decline-0-42-to-475550t-119493)
+- China's aluminum output is expected to stall due to hitting its 45 million-ton cap and government campaigns against expanding manufacturing capacity, while Indonesian expansion efforts by Chinese smelters face energy and regulatory hurdles. [Source](https://tradingeconomics.com/commodity/aluminum)
+- High energy costs, equipment failure, bauxite sourcing difficulties, and geopolitical risks have led to the suspension of key aluminum smelters in countries like Iceland, Mozambique, and Australia. [Source](https://tradingeconomics.com/commodity/aluminum)
