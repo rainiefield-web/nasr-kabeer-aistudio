@@ -1,36 +1,40 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-02-23 08:43:24`
-Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
+Last Updated (UTC): `2026-02-24 08:41:29`
+Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$3101.90` | Change: `+0.98%` | Ref Date: 2026-02-20
+- LME Cash: `$3107.20` | Change: `+0.47%` | Ref Date: 2026-02-24
+
+### Latest Headlines (from NewsAPI)
+- Keebmon: Kickstarter smash hits $4.8 million with Ryzen AI-powered keyboard PC (Source: Notebookcheck.net) [Link](https://www.notebookcheck.net/Keebmon-Kickstarter-smash-hits-4-8-million-with-Ryzen-AI-powered-keyboard-PC.1232549.0.html)
+- Keebmon: Kickstarter smash hits $804,024 with Ryzen AI-powered keyboard PC (Source: Notebookcheck.net) [Link](https://www.notebookcheck.net/Keebmon-Kickstarter-smash-hits-804-024-with-Ryzen-AI-powered-keyboard-PC.1232549.0.html)
 
 ### Latest Headlines (from GNews)
-- They Did Deals With Trump to Get Lower Tariffs. Now They Are Stuck. (Source: St. Paul Pioneer Press) [Link](https://www.twincities.com/2026/02/22/they-did-deals-with-trump-to-get-lower-tariffs-now-they-are-stuck/)
+- Stocks to watch as Trump’s new tariffs spell more uncertainty (Source: The Globe and Mail) [Link](https://www.theglobeandmail.com/investing/article-stocks-to-watch-as-trumps-new-tariffs-spell-more-uncertainty/)
+- FACTBOX-Stocks to watch as Trump's new tariffs spell more uncertainty (Source: Devdiscourse) [Link](https://www.devdiscourse.com/article/business/3815129-factbox-stocks-to-watch-as-trumps-new-tariffs-spell-more-uncertainty)
+- Stocks to watch as Trump's new tariffs spell more uncertainty (Source: MarketScreener) [Link](https://www.marketscreener.com/news/stocks-to-watch-as-trump-s-new-tariffs-spell-more-uncertainty-ce7e5dd3d888f224)
+- Car Prices Aren't High by Accident — They're the Cost of Government Control (Source: Newsmax) [Link](https://www.newsmax.com/finance/laurenfix/car-prices-auto/2026/02/23/id/1247100/)
+- Isuzu D-Max Overland build showcased at Overland Kings Campout 2026 (Source: The Manila Times) [Link](https://www.manilatimes.net/2026/02/24/fast-times/isuzu-d-max-overland-build-showcased-at-overland-kings-campout-2026/2282772)
+- Trump tariffs allow Highland firm to ship to the States (Source: The Herald) [Link](https://www.heraldscotland.com/news/25879114.trump-tariffs-allow-highland-firm-ship-us/)
+- Insolation Energy Limited Reports Strong Q3 FY26 Results with 77% Revenue Growth (Source: scanx.trade) [Link](https://scanx.trade/stock-market-news/earnings/insolation-energy-limited-reports-strong-q3-fy26-results-with-77-revenue-growth/33387992)
+- Weekly Climate and Energy News Roundup #680 (Source: Watts Up With That) [Link](https://wattsupwiththat.com/2026/02/23/weekly-climate-and-energy-news-roundup-680/)
+- Barclays raises Vistry; Rio Tinto cut (Source: MarketScreener) [Link](https://www.marketscreener.com/news/barclays-raises-vistry-rio-tinto-cut-ce7e5dd2df89f421)
+- They did deals with Trump to get lower tariffs. Now they are stuck. (Source: St. Paul Pioneer Press) [Link](https://www.twincities.com/2026/02/22/they-did-deals-with-trump-to-get-lower-tariffs-now-they-are-stuck/)
 - Novelis project to help fund $300 million Baldwin Beach Express II expansion (Source: AL.com) [Link](https://www.al.com/news/2026/02/novelis-project-to-help-fund-300-million-baldwin-beach-express-ii-expansion.html)
 - OK Gov. Stitt: Trump Tariffs Were Bringing Back Manufacturing in Oklahoma (Source: Breitbart News Network) [Link](https://www.breitbart.com/politics/2026/02/22/gov-kevin-stitt/)
-- JNARDDC to set up India’s first Gallium extraction plant in city for R&D soon (Source: The Hitavada) [Link](https://www.thehitavada.com/Encyc/2026/2/22/jnarddc-to-set-up-indias-first-gallium-extraction-plant-in-city-for-rd-soon.html)
-- JNARDDC to set up India’s first Gallium extraction plant in city for R&D soon (Source: The Hitavada) [Link](https://www.thehitavada.com//Encyc/2026/2/22/jnarddc-to-set-up-indias-first-gallium-extraction-plant-in-city-for-rd-soon.html)
-- Businesses celebrate win at Supreme Court over Trump on tariffs (Source: USA TODAY) [Link](https://www.usatoday.com/story/news/politics/2026/02/21/supreme-court-tariffs-businesses/88799217007/)
-- Google I/O 2026 confirmed for May 19: Here's what to expect (Source: Android Central) [Link](https://www.androidcentral.com/phones/google-pixel/google-io-2026-what-to-expect)
-- Supreme Court Topples Trump Tariffs. Here Are 5 Things You Need to Know. (Source: Barchart) [Link](https://www.barchart.com/story/news/344816/supreme-court-topples-trump-tariffs-here-are-5-things-you-need-to-know)
-- Supreme Court Topples Trump Tariffs. Here Are 5 Things You Need to Know. (Source: Barchart) [Link](https://www.barchart.com/story/news/344815/supreme-court-topples-trump-tariffs-here-are-5-things-you-need-to-know)
-- Embraer Sets High Bar for Making in India, FAL Contingent on 200 Domestic Orders (Source: Outlook Business) [Link](https://www.outlookbusiness.com/corporate/embraer-sets-high-bar-for-making-in-india-fal-contingent-on-200-domestic-orders)
-- Embraer sets sights on India with 200-jet order target for local assembly (Source: The Economic Times) [Link](https://economictimes.indiatimes.com/industry/transportation/airlines-/-aviation/embraer-sets-sights-on-india-with-200-jet-order-target-for-local-assembly/articleshow/128633505.cms)
-- Trump Unveils Alternative Trade Arsenal: Section 122, 301, 232 Tariffs Set to Redefine U.S. Trade Policy | EXPLAINED (Source: Republic World) [Link](https://www.republicworld.com/world-news/trump-unveils-alternative-trade-arsenal-section-122-301-232-tariffs-set-to-redefine-us-trade-policy-explained)
 
 ### Industry & Corporate Insights (from Gemini)
-- Vedanta Aluminium achieved the second global rank in the S&P Global Corporate Sustainability Assessment (CSA) for the aluminium industry, scoring 84/100 and highlighting its commitment to sustainability and low-carbon aluminium. [Source](https://energeticaindia.com/)
-- US aluminum producer Century Aluminum anticipates restarting the shuttered capacity at its Grundartangi smelter in Iceland by the end of April, approximately six months earlier than initially projected following electrical equipment failure. [Source](https://www.mining.com/)
-- Novelis's New York aluminum plant is still operating with limited production due to a fire more than four months ago, which has specifically affected Ford's F-Series pickup manufacturing. [Source](https://mexiconow.mx/)
+- Century Aluminum expects to restore shuttered capacity at its Grundartangi smelter in Iceland significantly ahead of schedule, with operations now set to resume by the end of April 2026. [Source](https://alcircle.com/news/century-aluminum-company-statement-on-us-supreme-court-ieepa-ruling-118043)
+- Vedanta Aluminium, India's largest producer, has deployed Odisha's first all-women power operations team responsible for managing a 135 MW power unit at its Jharsuguda facility. [Source](https://alcircle.com/news/vedanta-aluminium-deploys-odishas-first-all-women-power-operations-team-at-jharsuguda-118037)
+- Alcoa is set to pay $39 million after illegally clearing nearly 2,100 hectares of Australian native forest between 2019 and 2025. [Source](https://www.mining.com/alcoa-to-pay-39-million-after-illegally-clearing-australian-native-forest/)
 
 ### Market Trends (from Gemini)
-- The global automotive aluminum market is forecasted to grow from USD 35.0 billion in 2025 to USD 63.8 billion by 2034, driven by the increasing demand for lightweight materials in electric vehicles and stricter fuel efficiency regulations. [Source](https://www.imarcgroup.com/)
-- Global aluminium consumption in end-user sectors is projected to increase to 106.8 million tonnes in 2026, with transportation being a primary driver due to the rapid scale-up of electric vehicle production requiring more aluminium. [Source](https://www.alcircle.com/)
-- Fastmarkets has launched a new low-carbon aluminium differential price in Asia, responding to the increasing demand for sustainable materials in the automotive and manufacturing sectors in Japan and and South Korea. [Source](https://www.prnewswire.com/news-releases/fastmarkets-launches-low-carbon-aluminium-differential-responding-to-growing-demand-for-green-metal-in-japan-and-south-korea-302078652.html)
+- The demand for green aluminium is steadily rising, driven by environmental concerns and regulatory pressures, particularly in the automotive, construction, and packaging industries. [Source](https://www.fastmarkets.com/commodities/metals/aluminium/how-green-aluminium-is-transforming-the-metal-industry/)
+- The automotive industry's increasing shift towards electric vehicles is driving a surge in aluminum demand due to its lightweight properties and suitability for sustainable manufacturing practices. [Source](https://www.fortunebusinessinsights.com/aluminium-market-106519)
+- The London Metal Exchange (LME) is developing sustainable metal premium pricing for LME-approved brands, reflecting growing market interest in low-carbon aluminum. [Source](https://www.lme.com/en/Trade-with-us/Products/Sustainability/LME-Sustainable-Metal-Premium-Pricing)
 
 ### Strategic Factors (from Gemini)
-- China's primary aluminum output is expected to stagnate after reaching its 45 million tons capacity cap in 2025, with challenges in establishing new smelters in Indonesia due to high energy costs and regulatory hurdles. [Source](https://tradingeconomics.com/commodity/aluminum)
-- Difficulty in sourcing bauxite, coupled with high energy costs and equipment failure, has led to the suspension of key smelters in various countries, including Iceland, Mozambique, and Australia. [Source](https://tradingeconomics.com/commodity/aluminum)
+- Chinese primary aluminum output is expected to stall after hitting its 45 million tons cap in 2025, with attempts by Chinese smelters to build new plants in Indonesia facing issues due to higher energy costs and local regulations. [Source](https://tradingeconomics.com/commodity/aluminum)
+- The Gulf Cooperation Council's aluminum output fell by 2.9% in the first ten months of 2025, as smelters adjusted to shifting bauxite sourcing following Guinea's export suspension, leading to reliance on new suppliers in Australia and Turkey. [Source](https://www.youtube.com/watch?v=F7iW806yJdI)
