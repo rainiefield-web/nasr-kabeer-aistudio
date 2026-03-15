@@ -1,36 +1,40 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-03-14 08:29:18`
-Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
+Last Updated (UTC): `2026-03-15 08:32:10`
+Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$3420.00` | Change: `-2.82%` | Ref Date: 2026-03-13
+- LME Cash: `$3500.00` | Change: `+1.85%` | Ref Date: 2026-03-12
+
+### Latest Headlines (from NewsAPI)
+- Hindalco halts aluminium product sales as Iran war roils market (Source: Bloomberg) [Link](https://www.bloomberg.com/news/articles/2026-03-13/hindalco-halts-aluminum-product-sales-as-iran-war-roils-market)
+- $34.98 | 12L Hydro Flask Cooler Bag at Amazon (Source: Slickdeals.net) [Link](https://slickdeals.net/f/19304766-34-98-12l-hydro-flask-cooler-bag-at-amazon)
 
 ### Latest Headlines (from GNews)
+- PM Modi inaugurates APSEZ's Haldia terminal; India's first fully automated dry bulk facility (Source: Times of India) [Link](https://timesofindia.indiatimes.com/india/pm-modi-inaugurates-apsezs-haldia-terminal-indias-first-fully-automated-dry-bulk-facility/articleshow/129578880.cms)
+- Aditya Birla Group bets on scale, new sectors for next decade, says KM Birla (Source: CNBC TV18) [Link](https://www.cnbctv18.com/business/aditya-birla-group-bets-on-scale-new-sectors-for-next-decade-kumar-mangalam-birla-ibla-ws-l-19868454.htm)
+- PM Modi inaugurates APSEZ’s fully automated Haldia bulk terminal (Source: The Hindu Business Line) [Link](https://www.thehindubusinessline.com/news/national/pm-modi-inaugurates-apsezs-fully-automated-haldia-bulk-terminal/article70743179.ece)
+- Prime Minister Modi Inaugurates APSEZ’s Haldia Terminal - India’s First Fully Automated Dry Bulk Facility (Source: Free Press Journal) [Link](https://www.freepressjournal.in/business/prime-minister-modi-inaugurates-apsezs-haldia-terminal-indias-first-fully-automated-dry-bulk-facility)
+- Middles East Crisis Ups Aluminium Prices, New Battery Tech To Support Long-Term demand (Source: Deccan Chronicle) [Link](https://www.deccanchronicle.com/business/middles-east-crisis-ups-aluminium-prices-new-battery-tech-to-support-long-term-demand-1943781)
+- Middle East Tensions, Shipping Disruptions Fuel Aluminium Price Rally (Source: Deccan Chronicle) [Link](https://www.deccanchronicle.com/business/aluminium-prices-up-on-middle-east-crisis-emerging-battery-technologies-support-long-term-demand-1943778)
+- PM Modi inaugurates APSEZ's Haldia terminal; India's first fully automated dry bulk facility (Source: The Tribune) [Link](https://www.tribuneindia.com/news/business/pm-modi-inaugurates-apsezs-haldia-terminal-indias-first-fully-automated-dry-bulk-facility/)
+- PM Modi inaugurates Adani Ports’ Haldia Bulk Terminal to strengthen eastern maritime corridor (Source: Lokmat Times) [Link](https://www.lokmattimes.com/business/pm-modi-inaugurates-adani-ports-haldia-bulk-terminal-to-strengthen-eastern-maritime-corridor/)
+- The damage to the world economy from the Iran war will be severe, but uneven (Source: Hindustan Times) [Link](https://www.hindustantimes.com/world-news/the-damage-to-the-world-economy-from-the-iran-war-will-be-severe-but-uneven-101773484611356.html)
+- International Ambassadors Summit 2026 Convenes Over 200 Diplomats and Leaders from More Than 40 Nations in New Delhi (Source: The Tribune) [Link](https://www.tribuneindia.com/news/business/international-ambassadors-summit-2026-convenes-over-200-diplomats-and-leaders-from-more-than-40-nations-in-new-delhi/)
 - President Trump's tariffs could cost US households $2,500 (Source: Chicago Tribune) [Link](https://www.chicagotribune.com/2026/03/13/congressional-democrats-trump-tariffs-cost/)
-- Congressional Democrats say Trump tariffs will cost households over $2,500 (Source: The Denver Post) [Link](https://www.denverpost.com/2026/03/13/congressional-democrats-trump-tariffs/)
-- Congressional Democrats say Trump tariffs will cost households over $2,500 (Source: The Boston Herald) [Link](https://www.bostonherald.com/2026/03/13/congressional-democrats-trump-tariffs/)
-- Congressional Democrats say Trump tariffs will cost households over $2,500 (Source: Norfolk Virginian-Pilot) [Link](https://www.pilotonline.com/2026/03/13/congressional-democrats-trump-tariffs/)
-- Congressional Democrats say Trump tariffs will cost households over $2,500 (Source: St. Paul Pioneer Press) [Link](https://www.twincities.com/2026/03/13/congressional-democrats-trump-tariffs/)
-- Congressional Democrats say Trump tariffs will cost households over $2,500 (Source: Hartford Courant) [Link](https://www.courant.com/2026/03/13/congressional-democrats-trump-tariffs/)
-- Congressional Democrats say Trump tariffs will cost households over $2,500 (Source: Boulder Daily Camera) [Link](https://www.dailycamera.com/2026/03/13/congressional-democrats-trump-tariffs/)
-- Congressional Democrats say Trump tariffs will cost households over $2,500 (Source: Baltimore Sun) [Link](https://www.baltimoresun.com/2026/03/13/congressional-democrats-trump-tariffs/)
-- Congressional Democrats say Trump tariffs will cost households over $2,500 (Source: The Mercury News) [Link](https://www.mercurynews.com/2026/03/13/congressional-democrats-trump-tariffs/)
-- Congressional Democrats say Trump tariffs will cost households over $2,500 (Source: Reading Eagle) [Link](https://www.readingeagle.com/2026/03/13/congressional-democrats-trump-tariffs/)
-- Commercial gas crunch puts India Inc’s production under strain (Source: The Financial Express) [Link](https://www.financialexpress.com/business/news/commercial-gas-crunch-puts-india-incs-production-under-strain/4171863/)
-- Why Relaxing Russia Sanctions Won't Ease Oil Prices Much -- Commodities Roundup (Source: MarketScreener) [Link](https://www.marketscreener.com/news/why-relaxing-russia-sanctions-won-t-ease-oil-prices-much-commodities-roundup-ce7e5fd3d88af721)
+- Congressional Democrats say Trump tariffs will cost households over $2,500 (Source: Santa Ana Orange County Register) [Link](https://www.ocregister.com/2026/03/13/congressional-democrats-trump-tariffs/)
 
 ### Industry & Corporate Insights (from Gemini)
-- Vedanta Aluminium, India's largest aluminium producer, was featured among the Top 10% of global companies in the S&P Global Sustainability Yearbook 2026, backed by a robust Corporate Sustainability Assessment (CSA) score of 84/100. [Source](https://www.alcircle.com/news/vedanta-aluminium-enters-top-10-per-cent-of-global-companies-in-sp-s-sustainability-yearbook-2026-118809)
-- Aluminium Bahrain (Alba) announced the promotion of Shoji Takeuchi to Manager Sales - Asia Pacific, as part of its ongoing efforts to strengthen its presence in high-growth markets. [Source](https://www.alcircle.com/news/alba-promotes-shoji-takeuchi-to-manager-sales-asia-pacific-to-strengthen-its-presence-in-high-growth-markets-118810)
-- Rio Tinto offered to supply aluminum at a premium of $350 per tonne to Japanese buyers for second-quarter shipments, representing a 40% increase over its previous proposal and the highest since 2015. [Source](https://www.mining.com/aluminum-price-climbs-as-asia-premium-offer-spikes/)
+- Hydro's joint venture Qatalum is maintaining aluminium production at approximately 60% capacity due to reduced gas supply. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8IbNYzIxGFlpDtbGfIuMacq0nrQFO2hAQWAKlhOc_Q6_iObl2Ts99NrxH0nkEqELsUECUfA8VhYFf8hlOncpoZmRlq8Q8kgN__TXHdPobtygkrRBV4-BvMkWWJqI4dG4Jla4HH-F7PZgHXu2jkDaleAE=)
+- Aluminium Bahrain (Alba) held its 16th Annual General Meeting on March 12, 2026, and appointed Bahraini talent to key leadership positions. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8IbNYzIxGFlpDtbGfIuMacq0nrQFO2hAQWAKlhOc_Q6_iObl2Ts99NrxH0nkEqELsUECUfA8VhYFf8hlOncpoZmRlq8Q8kgN__TXHdPobtygkrRBV4-BvMkWWJqI4dG4Jla4HH-F7PZgHXu2jkDaleAE=)
+- Hindalco Industries Ltd (Aditya Aluminium) achieved ASI Performance Standard V3.1 (2023) certification for its primary aluminium manufacturing and export. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFi9Zv3sEEYewM_I5P9rkyCEiR_uBidy_w0MzC7HI-dwlBuSZXIRPgn-JMO_3NO3IFSrr_skcYXjLPLF7BLKn9rv_gNdQ1fObO1kYuCHrADRPj8u4UC-hfW)
 
 ### Market Trends (from Gemini)
-- Global demand for aluminium is rising rapidly, driven by decarbonisation policies, vehicle electrification, renewable energy deployment, and the growth of sustainable packaging. [Source](https://www.sfa-oxford.com/commodities/aluminium/the-aluminium-market)
-- Global bauxite production is estimated at 475–480 million tonnes in 2025, with output projected to rise by 6 per cent year-on-year in 2026. [Source](https://www.alcircle.com/news/2025-global-bauxite-production-stands-at-around-480mt-from-weipa-to-paragominas-whos-powered-the-growth-118749)
-- The automotive sector's energy transition has created unprecedented demand for verified low-carbon metals, with regulatory frameworks increasingly favoring renewable energy-powered production facilities. [Source](https://www.discoveryalert.com/news/rio-tinto-chinalco-cba-acquisition-brazil-deal-update)
+- The global primary aluminium market is expected to remain in a deficit through 2026, with supply being less flexible due to structural constraints. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHexW23pEwrKC4mf25vD1U6k2DAimDmCfK_1xbnDlXMhsPfI8wTp9Xn5La1Md-qTu8ZLEbOT2Wc5B0vNKzW1FL8gXt7uTvhbY6EQnHoLDVAsW4Xd1G09PHoBFtLDRWMk1Qbil_MbvFjCAsMFwsjAMYtX2L20MkFKEC4rHs4gn9BlRI3iKdCGNTNDbdhmPRFkpuutds0yus_z_Q_Gkcw4r-zJ5QFwWUFPvT2hSVNHyRP3-I4)
+- Global bauxite production is projected to rise by 6% in 2026, reaching an estimated 475–480 million tonnes in 2025, driven by demand from infrastructure, mobility, packaging, and energy transition sectors. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtPzBbTQb1Rj94rq9cjfgpGl1I_VmbQuVhMUWSP5iKEEPQ2I1YNNAixGcNNLity_LZumnC-GP_Xvp7tiOVI59DOPjdTg_rfprn8aruBGo8q7c8JcKeal1QZx-0VnbRP-vwKUgG4trdommIxtMHD02Qy4rBSVhXXW2yQ4_8QZ-WGHY9Nlu5tNNnA3dkBYTFpbLOu3em13bJ9MqGiY-YT-RzomYWVZK8KdjYADAAgKt57bOdU7u69iGpM8Mqr0GwG11Ji48gpoo=)
+- The automotive industry's electrification transition is significantly increasing demand for aluminium, with electric vehicles requiring approximately 180 kg more aluminium than conventional vehicles. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgT66VWk-aEexVS4zdrSp-VqqN1o7M_fyUgkQx1XVTvqhVkKfGaPwuItwiKffHVmn4hpG2u7nr4EQ8f1f8PhFJqJs9gFG4cREgcKc9m6jg4gTrpSmGbLg2uxGRSjx3g8F-UAUtoUn1aGWIWmn5RKkH-TtK5AP-Njd_y408fSKl4FRWllUZVHUL3hA=)
 
 ### Strategic Factors (from Gemini)
-- Aluminium prices jumped to near four-year highs (approx. $3,544/ton) due to the effective closure of the Strait of Hormuz, disrupting Gulf imports/exports (8% of global output) and leading to force majeure declarations by smelters like Aluminium Bahrain and Qatalum. [Source](https://whalesbook.com/news/aluminium-prices-jump-on-gulf-trade-route-disruption)
-- A potential 3-month raw material disruption in the GCC region may lead to a 1–1.25 million tonne shortage in primary aluminium production. [Source](https://www.alcircle.com/news/3-month-raw-material-disruption-in-gcc-may-lead-to-a-1-1-25-mt-shortage-in-primary-aluminium-production-heres-how-118790)
+- Middle East tensions are driving LME aluminium prices, with fears of supply disruptions from the Strait of Hormuz affecting producers in Qatar and Bahrain, which together account for a significant portion of global supply. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtPzBbTQb1Rj94rq9cjfgpGl1I_VmbQuVhMUWSP5iKEEPQ2I1YNNAixGcNNLity_LZumnC-GP_Xvp7tiOVI59DOPjdTg_rfprn8aruBGo8q7c8JcKeal1QZx-0VnbRP-vwKUgG4trdommIxtMHD02Qy4rBSVhXXW2yQ4_8QZ-WGHY9Nlu5tNNnA3dkBYTFpbLOu3em13bJ9MqGiY-YT-RzomYWVZK8KdjYADAAgKt57bOdU7u69iGpM8Mqr0GwG11Ji48gpoo=)
+- China's environmental policy framework, including stringent carbon emission controls and energy availability constraints, is limiting domestic aluminium production growth despite strong internal demand, with output expected to stall after reaching its 45 million tonne cap in 2025. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaYwrB35n6lb7Obb4vebTmFVD5n8YpL5edickaxm_SiH2O6gWLKGvCOfxRB3a508dFt_Ye4mmUAl_FZUhc9JjjOJrWlwoKi_c-YvItvtgbVsZ0U2aYTDy_x7ToBBa_mEXc08WZIa2lciQm0KuVsUUZkoBUZn6n7Mw)
