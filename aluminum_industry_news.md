@@ -1,36 +1,39 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-03-18 08:42:25`
-Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
+Last Updated (UTC): `2026-03-19 08:37:33`
+Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$3369.60` | Change: `-0.64%` | Ref Date: 2026-03-17
+- LME Cash: `$3364.00` | Change: `-1.04%` | Ref Date: 2026-03-19
+
+### Latest Headlines (from NewsAPI)
+- Iran-Israel war, pricey valuations drag metals, stocks plunge up to 15% since conflict began. Buy or sell 2025’s top sector? (Source: The Times of India) [Link](https://economictimes.indiatimes.com/markets/stocks/news/iran-israel-war-pricey-valuations-drag-metals-stocks-plunge-up-to-15-since-conflict-began-buy-or-sell-2025s-top-sector/articleshow/129651088.cms)
 
 ### Latest Headlines (from GNews)
-- Google's Windows rival could redefine laptops, and it's almost here (Source: Digital Trends) [Link](https://www.digitaltrends.com/computing/googles-windows-rival-could-redefine-laptops-and-its-almost-here/)
-- appointed judge twice shut down by SCOTUS faces 'activist' fire after latest Trump policy block (Source: NewsBreak) [Link](https://www.newsbreak.com/fox-news-510075/4544902768244-biden-appointed-judge-twice-shut-down-by-scotus-faces-activist-fire-after-latest-trump-policy-block)
-- Companies diverting imports and exports (Source: Bnn Bloomberg) [Link](https://www.bnnbloomberg.ca/business/2026/03/17/ega-to-export-aluminum-via-oman-amid-gulf-disruption-reuters-sources-say/)
-- Alcoa Draws New Aluminum Orders as Gulf States Curb Production (Source: Bloomberg) [Link](https://www.bloomberg.com/news/articles/2026-03-17/alcoa-draws-new-aluminum-orders-as-gulf-states-curb-production)
-- EGA to export aluminium via Oman amid Gulf disruption, sources say (Source: MarketScreener) [Link](https://www.marketscreener.com/news/ega-to-export-aluminium-via-oman-amid-gulf-disruption-sources-say-ce7e5ed8d888f021)
-- Exclusive-EGA to Export Aluminium Via Oman Amid Gulf Disruption, Sources Say (Source: U.S. News & World Report) [Link](https://www.usnews.com/news/top-news/articles/2026-03-17/exclusive-ega-to-export-aluminium-via-oman-amid-gulf-disruption-sources-say)
-- How to Choose the Right Wheelchair Lightweight Model for Active Users (Source: TechBullion) [Link](https://techbullion.com/how-to-choose-the-right-wheelchair-lightweight-model-for-active-users/)
-- Oil Holds Above $100 as Iran Escalates Attacks Against Key Infrastructure -- Commodities Roundup (Source: MarketScreener) [Link](https://www.marketscreener.com/news/oil-holds-above-100-as-iran-escalates-attacks-against-key-infrastructure-commodities-roundup-ce7e5edbd089ff2c)
-- hour delivery as ultrafast shipping trend grows in the U.S. (Source: NewsBreak) [Link](https://www.newsbreak.com/news/4544115730668-amazon-rolls-out-1-hour-3-hour-delivery-as-ultrafast-shipping-trend-grows-in-the-u-s)
-- The Iran war is roiling commodities far beyond oil (Source: Hindustan Times) [Link](https://www.hindustantimes.com/business/the-iran-war-is-roiling-commodities-far-beyond-oil-101773729114828.html)
-- The Iran war is roiling commodities far beyond oil (Source: Livemint) [Link](https://www.livemint.com/global/the-iran-war-is-roiling-commodities-far-beyond-oil-11773715019823.html)
-- Motilal Oswal remains structurally positive on Hindalco stock; raises target (Source: Business Standard) [Link](https://www.business-standard.com/markets/news/motilal-oswal-remains-structurally-positive-on-hindalco-raises-target-126031700144_1.html)
+- hour walkout over failed contract negotiations with management (Source: NewsBreak) [Link](https://www.newsbreak.com/fox-business-1600402/4546944524775-cbs-news-union-members-hold-24-hour-walkout-over-failed-contract-negotiations-with-management)
+- Aluminum Prices Rise Amid Iran War (Source: Newsmax) [Link](https://www.newsmax.com/newsfront/aluminum-iran-israel/2026/03/18/id/1249976/)
+- Everett police identify suspect in connection with stolen fire engine in July (Source: Everett Herald) [Link](https://www.heraldnet.com/2026/03/18/everett-police-identify-suspect-in-connection-with-stolen-fire-engine-in-july/)
+- Iran War Upends Global Markets, Trade & Supply Chains (Source: Newsmax) [Link](https://www.newsmax.com/finance/streettalk/iran-war-oil-trade/2026/03/18/id/1249926/)
+- 10 best stainless steel pans, tested by an expert (Source: The Independent) [Link](https://www.independent.co.uk/extras/indybest/house-garden/kitchen-accessories/best-stainless-steel-pans-b2921899.html)
+- Alcoa nears first sale of property for potential data center (Source: Pittsburgh Tribune-Review) [Link](https://triblive.com/business/alcoa-nears-first-sale-of-property-for-potential-data-center/)
+- How US-Israeli war on Iran is upending global business (Source: MarketScreener) [Link](https://www.marketscreener.com/news/how-us-israeli-war-on-iran-is-upending-global-business-ce7e5ed9da8cfe22)
+- Ontario Premier Doug Ford says electric vehicle mandates putting jobs at risk (Source: CP24 Toronto) [Link](https://www.cp24.com/politics/queens-park/2026/03/18/ontario-premier-says-electric-vehicle-mandates-putting-jobs-at-risk-urges-quebec-bc-to-scrap-policies/)
+- Aluminum prices surge as Iran conflict disrupts supply (Source: CNBC) [Link](https://www.cnbc.com/2026/03/18/why-aluminum-surged-iran-war.html)
+- Solar-to-X could redefine Iran’s energy future (Source: pv magazine) [Link](https://www.pv-magazine.com/2026/03/18/solar-to-x-could-redefine-irans-energy-future/)
+- Guinea to curb bauxite exports by April to stabilize prices, minister says (Source: MarketScreener) [Link](https://www.marketscreener.com/news/guinea-to-curb-bauxite-exports-by-april-to-stabilize-prices-minister-says-ce7e5ed9d889fe21)
+- Guinea to curb bauxite exports by April to stabilize prices, minister says (Source: Reuters) [Link](https://www.reuters.com/world/africa/guinea-curb-bauxite-exports-by-april-stabilize-prices-minister-says-2026-03-18/)
 
 ### Industry & Corporate Insights (from Gemini)
-- Aluminium Bahrain (Alba) has begun a phased shutdown of three production lines, representing 19% of its total output capacity, due to disruptions caused by the Middle East conflict. [Source](https://seekingalpha.com/news/4080183-aluminum-stocks-in-focus-as-prices-rise-after-major-smelter-cuts-output)
-- Norsk Hydro's Qatalum smelter is set to maintain 60% of its aluminium production capacity following reduced gas supply amidst Middle East tensions. [Source](https://www.alcircle.com/news/aluminium-industries-latest-news-119106)
-- Vedanta Limited has been granted preferred bidder status for the Karnapodikonda bauxite block through an auction conducted by the Government of Odisha. [Source](https://www.alcircle.com/news/aluminium-weekly-recap-from-bauxite-mines-to-rising-aluminium-prices-hormuz-tensions-shape-the-market-119113)
+- Aluminium Bahrain (Alba) has initiated a controlled shutdown of three of its aluminium smelting lines, representing 19% of its total production capacity, due to persistent disruptions in the Strait of Hormuz. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtuQvt5xVyc__Pr1wusiX4o1crd-lhOIA0dCBxpwm5LmEce0O-N4XXxwupy88J7BcwykyL3K9NTow3lO3KUmkIEEITnn0tgQPs2HdaAsHmex248BhBhZwdKIP-vOzwlMbe5EX1nA3OM7FtiqnLpUNyNHUKbiYRzQFhnvmMH8IPMGoO9OgIaj9jgN5feYxMt4cXFnA==)
+- Emirates Global Aluminium (EGA) will route its aluminum exports and raw materials through Oman's Port of Sohar due to the effective closure of the Strait of Hormuz. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyj_Qj-_AHLZbcNC5hCp695OJvJxHAiiX_JdGE4rP-VBgR7rJaZNisdrszqFaALvTd70LBzg6FLhiuX7YFa9BkCl1zcLdEozacVuC6D-PVIlHXMClHLTjr6ZfN9OCu8TrjMw==)
+- U.S. Aluminum Company has partnered with EGA and Century Aluminum to explore developing an aluminum fabrication plant in Inola, Oklahoma, aiming to double U.S. primary aluminum production. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnGGQ5yrfLJt6hYXCAnbFzoHFfxMdHkUq6CcAAOD_m_eVF9nRcXIXRdS3ZU-hGFF7noiax5NV24pvBa6eBfGj0VmlALOAFg6PolKdeA40MCk0vlvg23NXp6YbAuAloxAdsIUGCl1D2wIIB-rypVrQEe-CXW8ScdDhx1Yk==)
 
 ### Market Trends (from Gemini)
-- The growing demand for lightweight materials in electric vehicles (EVs) is a significant driver for the aluminum market, with aluminum projected to constitute over 40% of material usage in EVs by 2025. [Source](https://www.technavio.com/report/aluminum-market-size-2025-2029)
-- Global bauxite production is anticipated to increase by approximately 6% in 2026, with Guinea and Australia expected to continue holding substantial shares of the world's output. [Source](https://www.alcircle.com/news/aluminium-weekly-recap-from-bauxite-mines-to-rising-aluminium-prices-hormuz-tensions-shape-the-market-119113)
-- LME aluminium prices have escalated, surpassing $3,400 per tonne and reaching near 4-year highs, primarily driven by ongoing geopolitical tensions. [Source](https://www.alcircle.com/news/aluminium-industries-latest-news-119106)
+- The global aluminum industry is witnessing a significant shift towards low-carbon aluminum, driven by new pricing benchmarks, market incentives, and regulations like the EU's Carbon Border Adjustment Mechanism (CBAM), particularly in the automotive sector. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbZAjew4F7w4aijrZMxQNKnDIsEUthYmq9p-XZPumnuh1n9QEJh2DKTnlQPFeRP3DBcAu3HGhakd1B-GajNIjnV8UPC0JdzMTUeLmJj1IP5RzsCB0vnKE-L_U4FzJKod4JeNXnSis0UaZu6wN5i03LEhszvMsUk0yUo0MlCgNyg6Lj-CHpXKzCd7-Cwed3pOF3CP_TbCsjG0tLxgYWKY22QQYsaVlshdQHswGTy444aCKWOFE==)
+- North American light vehicle aluminum content is projected to increase by nearly 100 net pounds per vehicle between 2020 and 2030, driven by the proliferation of more aluminum-intensive Battery Electric Vehicles (BEVs) and more stringent CO2 and MPG regulatory targets. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_CL9F73LsHz6YgJsGUMM4LB2ptJsTw7xscJQ0t_PiWcArcCxv3tHi4a_2OMeNPUpqPpQ560RGsf14i8ZUsTPVwnrvOJs4LNCs7sSqgM6pYnKIGvS-Ide9cYWkO7tLa92lVpS9KlsbrYlyd6b-q_JkyAMzePjkuPpR-GjDJXoj9g8ycTuOG8TQLsrEqdOhazwYkS1HnU0lHKHybS-z-b548nrAD4Aodg8==)
 
 ### Strategic Factors (from Gemini)
-- The temporary closure of the Strait of Hormuz is causing notable supply disruptions, leading to tighter aluminum supplies in Europe and the US, and prompting commodity traders like Mercuria to withdraw aluminium from LME warehouses. [Source](https://www.alcircle.com/news/aluminium-industries-latest-news-119106)
-- China's primary aluminium output increased by 3% year-on-year during January-February; however, overall production is expected to stabilize this year after exceeding the government's 45 million tonnes capacity cap in 2025. [Source](https://www.alcircle.com/news/primary-aluminium-latest-news-for-market-price-project-technology-119129)
+- Geopolitical tensions in the Middle East, particularly the effective closure of the Strait of Hormuz, have led to major disruptions in global aluminum supply, forcing production cuts and the search for alternative shipping routes. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyj_Qj-_AHLZbcNC5hCp695OJvJxHAiiX_JdGE4rP-VBgR7rJaZNisdrszqFaALvTd70LBzg6FLhiuX7YFa9BkCl1zcLdEozacVuC6D-PVIlHXMClHLTjr6ZfN9OCu8TrjMw==)
+- The Middle East, while producing 9% of global aluminum, accounts for only 3% of global alumina and 1.3% of bauxite, making its smelters highly vulnerable to bauxite and alumina import disruptions through the Strait of Hormuz. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1rX__1MC5qKtJDUjHHAPKHTDjOfOjlo1zFOZy62-tW95PmBwnvqZQ3cZWVULhpzsS2WRp1IlVUU6z66SUCaPH40oXuUpS3KSL2vLNThfGqAgaDHHXttz-mIkuFFEEWa6-h59-wq7D6z5VBr3FOs7MsItNn5SPMG0OrkxMBlIcbCYFGVQrlcEvbUwnDFjRjM73JPZPTy5Lp3qTLNFl-FInuD4tGAn0XNXb)
+- China's primary aluminum output is nearing its 45 million metric tonne annual capacity cap, limiting global supply growth, while rising electricity costs and challenges in expanding production outside China contribute to market tightness. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFox8uErkR6qPBBy_tV0n8kPc_lY5z42BtoDhHqE_vr722kLzGcp7lyNMUGAYNJnyvLRATwH7vNe_tx7hYkUZPEdZi5YFB9-OjJZ4IAdUj_TNOataQd3KSpvN-BYHAf7CfbPFYiMzWXtsmRnOiLMZkXWZbaPQQVaGUh-t1zEZPhK9YSl7a5xTfpTPrqQx2Bhar92mRJBJVFU-ilt_CoWHqpnoqvuQlWigW2hgQ7g==)
