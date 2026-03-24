@@ -1,36 +1,36 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-03-23 08:50:04`
+Last Updated (UTC): `2026-03-24 08:46:28`
 Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$3193.40` | Change: `-0.02%` | Ref Date: 2026-03-23
+- LME Cash: `$3215.50` | Change: `-0.37%` | Ref Date: 2026-03-24
 
 ### Latest Headlines (from GNews)
-- Fuel crisis from West Asia shuts aluminium units, halves output in India (Source: Business Standard) [Link](https://www.business-standard.com/economy/news/west-asia-fuel-crisis-hits-aluminium-extrusion-output-india-126032200422_1.html)
-- For Carney, the time for talk is done (Source: The Globe and Mail) [Link](https://www.theglobeandmail.com/opinion/editorials/article-mark-carney-prime-minister-time-for-talk-done/)
+- Upside risk to prices as West Asia simmers: RBI (Source: Times of India) [Link](https://timesofindia.indiatimes.com/business/india-business/upside-risk-to-prices-as-west-asia-simmers-rbi/articleshow/129762301.cms)
+- Check Out These 43+ Deals on Home, Tech and More (Source: NBC News) [Link](https://www.nbcnews.com/select/shopping/amazon-big-spring-sale-deals-2026-rcna264759)
+- Helium Supply Disruption Due To Iran War Can Hit Semiconductor Chip Availability (Source: Deccan Chronicle) [Link](https://www.deccanchronicle.com/business/helium-supply-disruption-due-to-iran-war-can-hit-semiconductor-chip-availability-1945830)
+- Industries turning to alternative fuel as West Asia crisis hits LPG supply (Source: The Hindu) [Link](https://www.thehindu.com/business/Industry/industries-turning-to-alternative-fuel-as-west-asia-crisis-hits-lpg-supply/article70776378.ece)
+- Best luggage brands for your 2026 holiday, chosen by experts (Source: The Independent) [Link](https://www.independent.co.uk/extras/indybest/travel-outdoors/luggage/best-luggage-brands-uk-b2530420.html)
+- WATCH LIVE: Trump joins Memphis Safe Task Force roundtable, initiative aimed at combating crime (Source: NewsBreak) [Link](https://www.newsbreak.com/pbs-newshour-513240/4554350445163-watch-live-trump-joins-memphis-safe-task-force-roundtable-initiative-aimed-at-combating-crime)
+- West Asia war pushes industry to ammonia as LPG substitute; supply delays hit labourers: Govt sources (Source: CNBC TV18) [Link](https://www.cnbctv18.com/india/west-asia-war-pushes-industry-to-ammonia-as-lpg-substitute-supply-delays-hit-labourers-govt-sources-ws-l-19873722.htm)
+- Industries turning to alternative fuel as West Asia crisis hits LPG supply (Source: News18) [Link](https://www.news18.com/agency-feeds/industries-turning-to-alternative-fuel-as-west-asia-crisis-hits-lpg-supply-9993159.html)
+- Ripple Effects of the West Asia Crisis on Industry Fuel Supplies (Source: Devdiscourse) [Link](https://www.devdiscourse.com/article/headlines/3847647-ripple-effects-of-the-west-asia-crisis-on-industry-fuel-supplies)
+- A Plunge in Aluminum Futures Sends Alcoa Stock Below Its 50-Day Moving Average. Should You Buy the Dip? (Source: Barchart) [Link](https://www.barchart.com/story/news/899436/a-plunge-in-aluminum-futures-sends-alcoa-stock-below-its-50-day-moving-average-should-you-buy-the-dip)
 - Inola aluminum smelter environmental concerns: A breakdown (Source: Tulsa World) [Link](https://tulsaworld.com/news/local/business/article_974ac492-3258-4813-bb0c-28e3281c1aae.html)
-- Asia's EVolution: Indonesia’s nickel powers global electric vehicle boom but at what cost to the country? (Source: CNA) [Link](https://www.channelnewsasia.com/asia/electric-vehicles-indonesia-nickel-mining-environment-5983106)
-- Why Might The World’s Game-Changing Single-Aisle Aircraft Have Boeing Worried? (Source: Simple Flying) [Link](https://simpleflying.com/why-worlds-game-changing-single-aisle-aircraft-has-boeing-worried/)
-- Australian Shares Close Lower as ASX 200 Falls 0.82% to 8,428 on Mining Weakness (Source: International Business Times) [Link](https://www.ibtimes.com/australian-shares-close-lower-asx-200-falls-082-8428-mining-weakness-3799854)
-- CFAC Damage Assessment Plan finalized; will test for 'forever chemicals' (Source: Kalispell Inter Lake) [Link](https://dailyinterlake.com/news/2026/mar/21/cfac-damage-assessment-plan-finalized-will-test-fo/)
-- Rising oil prices are the worst of all worlds (Source: The Telegraph) [Link](https://www.telegraph.co.uk/business/2026/03/21/lloyd-blankfein-rising-oil-prices-worst-all-worlds-sachs/)
-- How the Iran war has sent shocks rippling across the globe (Source: The Guardian) [Link](https://www.theguardian.com/world/2026/mar/20/iran-war-shocks-across-globe-effects-key-takeaways)
-- Yankee Brett Gardner's family files lawsuit against Costa Rica resort after son's carbon monoxide death (Source: NewsBreak) [Link](https://www.newsbreak.com/fox-news-510075/4550385630294-ex-yankee-brett-gardner-s-family-files-lawsuit-against-costa-rica-resort-after-son-s-carbon-monoxide-death)
-- Oil Extends Rally as Hormuz Stays Closed (Source: OilPrice) [Link](https://oilprice.com/Energy/Energy-General/Oil-Extends-Rally-as-Hormuz-Stays-Closed.html)
-- Hawaii dam at risk of ‘imminent’ failure as catastrophic flash flooding hits Oahu (Source: NewsBreak) [Link](https://www.newsbreak.com/cnn-510076/4550062797190-hawaii-dam-at-risk-of-imminent-failure-as-catastrophic-flash-flooding-hits-oahu)
+- Australian shares drop to 10-month low as traders gauge Middle East jitters (Source: Livemint) [Link](https://www.livemint.com/market/australian-shares-drop-to-10-month-low-as-traders-gauge-middle-east-jitters-11774229091795.html)
 
 ### Industry & Corporate Insights (from Gemini)
-- Local producers like Alcoa and Century Aluminum are expected to benefit from surging U.S. aluminum premiums, which have reached historical peaks. [Source](https://www.investing.com/news/commodities-news/aluminium-prices-soar-as-tariffs-and-energy-costs-reshape-the-market-93CH-3306002)
-- Emirates Global Aluminium plans to increase its output capacity in 2026, primarily through recycling expansions, with primary smelter growth being more measured. [Source](https://www.investing.com/news/commodities-news/aluminium-prices-soar-as-tariffs-and-energy-costs-reshape-the-market-93CH-3306002)
+- Emirates Global Aluminium (EGA) is rerouting its aluminum exports and raw materials through Oman's port of Sohar due to the closure of the Strait of Hormuz amid Middle East conflicts. [Source](https://www.bnnbloomberg.ca/ega-to-export-aluminum-via-oman-amid-gulf-disruption-reuters-sources-say-1.2047814)
+- South32's Mozal smelter in Mozambique is being placed under care and maintenance by March 2026 due to an inability to secure a new power agreement, which will tighten global aluminum supplies. [Source](https://tradingeconomics.com/commodity/aluminum)
+- Rio Tinto and Prysmian have partnered on an industrial trial to produce low-carbon aluminium cables designed for the rapidly growing data centre market, aiming to reduce the carbon footprint of critical IT infrastructure. [Source](https://www.steelonthenet.com/aluminium_news.html)
 
 ### Market Trends (from Gemini)
-- The American aluminum industry is undergoing a new phase, influenced by sustained high energy costs, capacity closures, ongoing trade disputes, and increasing demand across various sectors. [Source](https://www.investing.com/news/commodities-news/aluminium-prices-soar-as-tariffs-and-energy-costs-reshape-the-market-93CH-3306002)
-- In response to elevated aluminum prices, companies are cutting capacity, redesigning products to reduce aluminum usage, or switching to substitutes like steel or plastics. [Source](https://www.investing.com/news/commodities-news/aluminium-prices-soar-as-tariffs-and-energy-costs-reshape-the-market-93CH-3306002)
-- LME aluminium inventory showed a slight decline on March 20, 2026, with opening stocks shifting from 440,325 tonnes to 436,625 tonnes. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvha3E-SLybzfSTZU6JYS--muJO-KTsqfi7KQtI8XyIA83YZv9BXXnsoI92z6Awjscfs5TIobdpvGbXLGNbLdzfx3eOA_ixZfsL0znnfTo7SoCj56Q536X3hRXKydWQZ4mIidbms62NHTyAIgbRzt-bwxxhk4jwHB9DgMKXGA0JIbegaWh1ZZlO9FbwAEp1grggG2aeFapij8v25_B8my5OgNz6WUPKWnXE4c-yJNp_zzQeI0Dka97ileuvFNualwbi5TaQ7NEtIpQl3UnKDOyOjM6gg==)
-- Manufacturing sectors are adapting to energy transition requirements and shifting geopolitical supply chains, which are impacting LME aluminium cash offers. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGE9xQ7CmQp3upH6XwBY0zHFojO3tHg2FRqqEfWivNFiYoj2AajgNr6JykHrw2eLg1PdM0FYo74kCK2zyqoHnlCS282yumUQWKBS0jHrCE03OpM5kcRp1O27fpbxeBDsTLMQXgHedkksjdt-1Kz7Cef5pZbrT2SCyeekd3NCemCo2W2h5QqDrA==)
+- Global aluminium consumption is projected to reach 106.8 million tonnes in 2026, driven by consistent, broad-based expansion across sectors like transportation and construction. [Source](https://www.alcircle.com/news/as-global-aluminium-consumption-heads-towards-1068-mt-in-2026-whats-driving-the-growth-and-which-region-leads-the-way-119133)
+- The rapid scale-up of electric vehicle (EV) production is significantly boosting aluminum demand, with EVs requiring greater aluminum content for lightweighting and battery housings, and global EV sales projected to exceed 22.5 million units in 2026. [Source](https://www.alcircle.com/news/as-global-aluminium-consumption-heads-towards-1068-mt-in-2026-whats-driving-the-growth-and-which-region-leads-the-way-119133)
+- The market for green aluminium is evolving, with a significant increase expected in low-carbon aluminium output; however, green premiums may erode as greener production becomes mainstream, especially in Europe due to regulations like CBAM. [Source](https://www.fastmarkets.com/insights/ten-key-points-on-low-carbon-steel-aluminium-markets)
 
 ### Strategic Factors (from Gemini)
-- Geopolitical tensions, specifically a temporary halt to the passage of goods through the Strait of Hormuz, caused LME aluminium prices to soar. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvha3E-SLybzfSTZU6JYS--muJO-KTsqfi7KQtI8XyIA83YZv9BXXnsoI92z6Awjscfs5TIobdpvGbXLGNbLdzfx3eOA_ixZfsL0znnfTo7SoCj56Q536X3hRXKydWQZ4mIidbms62NHTyAIgbRzt-bwxxhk4jwHB9DgMKXGA0JIbegaWh1ZZlO9FbwAEp1grggG2aeFapij8v25_B8my5OgNz6WUPKWnXE4c-yJNp_zzQeI0Dka97ileuvFNualwbi5TaQ7NEtIpQl3UnKDOyOjM6gg==)
-- Forecasts indicate that an escalation of the Middle East conflict could push aluminum prices above $4,000 per ton. [Source](https://www.investing.com/news/commodities-news/lng-supply-disruptions-now-a-longterm-problem-as-iran-hits-qatari-facilities-3330105)
+- Guinea, the world's largest bauxite producer, is considering export controls to regulate the volume of ore supplied to the market and stabilize prices, which could inject additional uncertainty into global aluminum supply chains. [Source](https://www.mining.com/worlds-top-bauxite-producer-guinea-seeks-to-control-prices/)
+- Geopolitical tensions in the Middle East, including the closure of the Strait of Hormuz, are causing supply chain disruptions, temporary production curtailments at smelters in Qatar and Bahrain, and are a key factor in current high aluminum prices. [Source](https://tradingeconomics.com/commodity/aluminum)
