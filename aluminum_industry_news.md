@@ -1,36 +1,39 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-03-25 08:43:55`
-Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
+Last Updated (UTC): `2026-03-26 08:49:01`
+Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$3200.00` | Change: `-6.0%` | Ref Date: 2026-03-20
+- LME Cash: `$3223.55` | Change: `-0.68%` | Ref Date: 2026-03-26
+
+### Latest Headlines (from NewsAPI)
+- Revelations about Aughinish Alumina leave Government in awkward position (Source: The Irish Times) [Link](https://www.irishtimes.com/politics/2026/03/25/revelations-about-limerick-plants-exports-to-russia-leave-government-in-awkward-position/)
 
 ### Latest Headlines (from GNews)
-- 'Bridgerton' season 5 in production, show announces 1st queer lead couple (Source: NewsBreak) [Link](https://www.newsbreak.com/news/4556515669181-bridgerton-season-5-in-production-show-announces-1st-queer-lead-couple)
-- Report details cause of death for woman found in Ahwatukee baseball field (Source: NewsBreak) [Link](https://www.newsbreak.com/news/4556422812605-report-details-cause-of-death-for-woman-found-in-ahwatukee-baseball-field)
-- Barrow Neurological Institute begins Alzheimer’s clinical trials (Source: NewsBreak) [Link](https://www.newsbreak.com/news/4556754932553-barrow-neurological-institute-begins-alzheimer-s-clinical-trials)
-- Why is LME Aluminum Outperforming LME Copper In March 2026? (Source: Barchart) [Link](https://www.barchart.com/story/news/927334/why-is-lme-aluminum-outperforming-lme-copper-in-march-2026)
-- Investigation reveals links between raw materials from Limerick and Russian weapon manufacturers (Source: Limerick Leader) [Link](https://www.limerickleader.ie/news/business/2046335/investigation-reveals-links-between-raw-materials-from-limerick-and-russian-weapon-manufacturers.html)
-- Jamie Dimon says Iran war makes Middle East peace prospects better in the long term (Source: NewsBreak) [Link](https://www.newsbreak.com/news/4556129973315-jamie-dimon-says-iran-war-makes-middle-east-peace-prospects-better-in-the-long-term)
-- Taoiseach wants review of ‘concerning’ findings in Irish Times Aughinish investigation (Source: The Irish Times) [Link](https://www.irishtimes.com/politics/2026/03/24/taoiseach-review-irish-times-aughinish-investigation-russia-arms-supply-chain/)
-- ‘India will need 500 regional jets in over 20 years,’ Q&A with Adity Shekhar at Embraer (Source: The Financial Express) [Link](https://www.financialexpress.com/business/news-india-will-need-500-regional-jets-in-over-20-years-qampa-with-adity-shekhar-at-embraer-4182953/)
-- The ripple effect: Metal SMEs stall as fuel, freight shocks bite (Source: The Financial Express) [Link](https://www.financialexpress.com/business/news/the-ripple-effect-metal-smes-stall-as-fuel-freight-shocks-bite/4182889/)
-- Aluminium extrusion industry grappling with severe LPG, PNG shortages amid West Asia crisis (Source: The Economic Times) [Link](https://economictimes.indiatimes.com/industry/indl-goods/svs/metals-mining/aluminium-extrusion-industry-grappling-with-severe-lpg-png-shortages-amid-west-asia-crisis/articleshow/129771343.cms)
-- Florida Democrats hope in special election to flip a state legislative district that includes Mar (Source: NewsBreak) [Link](https://www.newsbreak.com/cnn-510076/4555486537027-florida-democrats-hope-in-special-election-to-flip-a-state-legislative-district-that-includes-mar-a-lago)
-- red Florida House district that includes Mar (Source: NewsBreak) [Link](https://www.newsbreak.com/cnn-510076/4555486537027-democrat-emily-gregory-will-flip-deep-red-florida-house-district-that-includes-mar-a-lago-cnn-projects)
+- Disruption hits chemicals, steel, aluminium, textile, breweries (Source: The Indian Express) [Link](https://indianexpress.com/article/business/disruption-hits-chemicals-steel-aluminium-textile-breweries-10601545/)
+- West Asia war: Disruption hits chemicals, steel, aluminium, textile, breweries (Source: The Indian Express) [Link](https://indianexpress.com/article/business/iran-us-israel-west-asia-war-iran-us-disruption-hits-chemicals-steel-aluminium-textile-breweries-10601545/)
+- West Asia war: Disruption hits chemicals, steel, aluminium, textile, breweries (Source: The Indian Express) [Link](https://indianexpress.com/article/business/west-asia-war-iran-us-disruption-hits-chemicals-steel-aluminium-textile-breweries-10601545/)
+- Best solar chargers 2026, tested for camping and backpacking (Source: The Independent) [Link](https://www.independent.co.uk/extras/indybest/gadgets-tech/phones-accessories/best-solar-chargers-panels-battery-b2531435.html)
+- It Is Being Projected That “Peak War Panic” Could Hit The Global Financial System In 1 To 3 Weeks (Source: Activist Post) [Link](https://www.activistpost.com/it-is-being-projected-that-peak-war-panic-could-hit-the-global-financial-system-in-1-to-3-weeks/)
+- Shares advance but oil volatile as markets weigh US plan to end Iran war (Source: The Irish Times) [Link](https://www.irishtimes.com/business/2026/03/25/shares-advance-but-oil-volatile-as-markets-weigh-us-plan-to-end-iran-war/)
+- ASX to open higher, S&P 500 rallies broadly on ceasefire hopes (Source: Australian Financial Review) [Link](https://www.afr.com/markets/equity-markets/asx-to-rise-s-and-p-500-rallies-broadly-on-ceasefire-hopes-20260326-p5zcsk)
+- 13 Highly Rated Harbor Freight Hand Tools For Your Starter Kit (Source: SlashGear) [Link](https://www.slashgear.com/2129893/harbor-freight-hand-tools-for-starter-kit/)
+- Roborock F25 Ace Pro Stick Vacuum Review: Simple And Effective (Source: BGR) [Link](https://www.bgr.com/2130573/roborock-f25-ace-pro-review/)
+- Recycled Copper Market to Reach US$ 105.1 Billion by 2033 Driven by Sustainability Trends and Industrial Demand - Persistence Market Research (Source: PR Newswire UK) [Link](https://www.prnewswire.co.uk/news-releases/recycled-copper-market-to-reach-us-105-1-billion-by-2033-driven-by-sustainability-trends-and-industrial-demand---persistence-market-research-302724925.html)
+- Explained: How did an Irish alumina refinery become linked to the Russian military? (Source: BreakingNews.ie) [Link](https://www.breakingnews.ie/explained/explained-how-did-an-irish-alumina-refinery-become-linked-to-the-russian-military-1879082.html)
+- Amazon's spring sale knocks up to 50% off patio furniture and gardening essentials - 13 deals I'd buy for my backyard (Source: Tom's Guide) [Link](https://www.tomsguide.com/sales-events/amazons-spring-sale-knocks-up-to-50-percent-off-patio-furniture-and-gardening-essentials-13-deals-id-buy-for-my-backyard)
 
 ### Industry & Corporate Insights (from Gemini)
-- Rio Tinto is aiming for a broader aluminium footprint, according to comments from its division CEO. [Source](https://www.fastmarkets.com/commodities/aluminium/news/)
-- Guinea, the world's largest bauxite producer, is considering measures to compel miners to reduce bauxite exports in an effort to counter a price slump for the raw material. [Source](https://www.fastmarkets.com/commodities/aluminium/news/)
+- Alvance British Aluminium boosted output at its Lochaber smelter by about 10% following US tariff changes. [Source](https://tradingeconomics.com/commodity/aluminum)
+- Bahrain's Alba, the world's largest single-site aluminum producer, shut down 19% of its 1.6 million tonne-a-year production capacity, while Qatalum reduced operations. [Source](https://tradingeconomics.com/commodity/aluminum)
 
 ### Market Trends (from Gemini)
-- Aluminium prices have risen above $3,000 per tonne and are projected to see further increases in 2026. [Source](https://www.fastmarkets.com/insights/monthly-base-metals-market-update)
-- Demand for aluminium is growing due to the ongoing trend of lightweighting in electric vehicles and China's market reopening following three years of strict COVID-19 restrictions. [Source](https://www.fastmarkets.com/commodities/aluminium/news/)
-- The premium for European aluminium P1020A has seen a decline from its peak levels observed in late 2024. [Source](https://www.fastmarkets.com/commodities/aluminium/prices/)
+- Global aluminum inventories have risen above 1.3 million tons, reaching the highest level since 2020, indicating ample supply. [Source](https://tradingeconomics.com/commodity/aluminum)
+- China's social inventory of aluminum reached a nearly five-year high, with the inventory buildup cycle not yet concluded, and weak spot fundamentals suppressing upward momentum. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsYbHyUdtHaSdhmF0EcvgeW7DClSmXAi2OHbxm4jsfpHrPkvT9fEriRvuz74X9XCkKoqkyNyKAmXHs5S2avWSBL9QOaRP2AfA9Fo-PrfeLfM5mU3imS0ihNk5kxtjOamsqSrFu_sM2ZC4n-N9A42eqVMQ_q-6YT3f__Ias4eIbTy_ok0A9NgN7TH6s_hTu1ba-h0Jdct8Sd6oqZadIfVvh_SUZG7XFX0G1ER0bigk957moD5JJkXWKQk8-EoedPAN-rMHdW-GvarP8R5u8DwtVDbc=)
 
 ### Strategic Factors (from Gemini)
-- Geopolitical risks, particularly the Middle East conflict, pose a threat to aluminium supply lines, especially through the Strait of Hormuz. [Source](https://www.fastmarkets.com/insights/monthly-base-metals-market-update)
-- Costs associated with the EU Carbon Border Adjustment Mechanism (CBAM) are expected to drive up Rotterdam aluminium premiums in 2026. [Source](https://www.fastmarkets.com/insights/monthly-base-metals-market-update)
-- The LME aluminium cash offer dropped by $200 per tonne to $3,200 per tonne on March 20, 2026, reflecting an easing of geopolitical tensions following the situation in Hormuz. [Source](https://www.alcircle.com/news/from-peak-to-pullback-lme-aluminium-cash-offer-retreats-from-3400-t-to-3200-t-as-tensions-ease-and-prices-retreat-120044)
+- Geopolitical disruptions and a stronger dollar have contributed to volatile and pressured aluminum prices. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsYbHyUdtHaSdhmF0EcvgeW7DClSmXAi2OHbxm4jsfpHrPkvT9fEriRvuz74X9XCkKoqkyNyKAmXHs5S2avWSBL9QOaRP2AfA9Fo-PrfeLfM5mU3imS0ihNk5kxtjOamsqSrFu_sM2ZC4n-N9A42eqVMQ_q-6YT3f__Ias4eIbTy_ok0A9NgN7TH6s_hTu1ba-h0Jdct8Sd6oqZadIfVvh_SUZG7XFX0G1ER0bigk957moD5JJkXWKQk8-EoedPAN-rMHdW-GvarP8R5u8DwtVDbc=)
+- Concerns about the potential impact of the ongoing Middle East conflict on metals demand led to aluminum futures falling below $3,250 per tonne. [Source](https://tradingeconomics.com/commodity/aluminum)
+- Guinea is considering introducing bauxite export quotas, adding uncertainty to the supply side of the aluminum market. [Source](https://tradingeconomics.com/commodity/aluminum)
+- Continued destocking of LME inventory provided some support for LME aluminum, but tighter capital liquidity and profit-taking activities weakened upward momentum and the backwardation structure. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsYbHyUdtHaSdhmF0EcvgeW7DClSmXAi2OHbxm4jsfpHrPkvT9fEriRvuz74X9XCkKoqkyNyKAmXHs5S2avWSBL9QOaRP2AfA9Fo-PrfeLfM5mU3imS0ihNk5kxtjOamsqSrFu_sM2ZC4n-N9A42eqVMQ_q-6YT3f__Ias4eIbTy_ok0A9NgN7TH6s_hTu1ba-h0Jdct8Sd6oqZadIfVvh_SUZG7XFX0G1ER0bigk957moD5JJkXWKQk8-EoedPAN-rMHdW-GvarP8R5u8DwtVDbc=)
