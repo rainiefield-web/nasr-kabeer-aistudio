@@ -1,39 +1,36 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-03-26 08:49:01`
-Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
+Last Updated (UTC): `2026-03-27 08:44:04`
+Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$3223.55` | Change: `-0.68%` | Ref Date: 2026-03-26
-
-### Latest Headlines (from NewsAPI)
-- Revelations about Aughinish Alumina leave Government in awkward position (Source: The Irish Times) [Link](https://www.irishtimes.com/politics/2026/03/25/revelations-about-limerick-plants-exports-to-russia-leave-government-in-awkward-position/)
+- LME Cash: `$3248.95` | Change: `+0.11%` | Ref Date: 2026-03-26
 
 ### Latest Headlines (from GNews)
-- Disruption hits chemicals, steel, aluminium, textile, breweries (Source: The Indian Express) [Link](https://indianexpress.com/article/business/disruption-hits-chemicals-steel-aluminium-textile-breweries-10601545/)
-- West Asia war: Disruption hits chemicals, steel, aluminium, textile, breweries (Source: The Indian Express) [Link](https://indianexpress.com/article/business/iran-us-israel-west-asia-war-iran-us-disruption-hits-chemicals-steel-aluminium-textile-breweries-10601545/)
-- West Asia war: Disruption hits chemicals, steel, aluminium, textile, breweries (Source: The Indian Express) [Link](https://indianexpress.com/article/business/west-asia-war-iran-us-disruption-hits-chemicals-steel-aluminium-textile-breweries-10601545/)
-- Best solar chargers 2026, tested for camping and backpacking (Source: The Independent) [Link](https://www.independent.co.uk/extras/indybest/gadgets-tech/phones-accessories/best-solar-chargers-panels-battery-b2531435.html)
+- ‘Significant role’ of Aughinish Alumina for civilian use must be considered in further Russian sanctions (Source: The Irish Times) [Link](https://www.irishtimes.com/politics/2026/03/26/significant-role-of-aughinish-alumina-for-civilian-use-must-be-considered-in-further-russian-sanctions/)
 - It Is Being Projected That “Peak War Panic” Could Hit The Global Financial System In 1 To 3 Weeks (Source: Activist Post) [Link](https://www.activistpost.com/it-is-being-projected-that-peak-war-panic-could-hit-the-global-financial-system-in-1-to-3-weeks/)
-- Shares advance but oil volatile as markets weigh US plan to end Iran war (Source: The Irish Times) [Link](https://www.irishtimes.com/business/2026/03/25/shares-advance-but-oil-volatile-as-markets-weigh-us-plan-to-end-iran-war/)
-- ASX to open higher, S&P 500 rallies broadly on ceasefire hopes (Source: Australian Financial Review) [Link](https://www.afr.com/markets/equity-markets/asx-to-rise-s-and-p-500-rallies-broadly-on-ceasefire-hopes-20260326-p5zcsk)
-- 13 Highly Rated Harbor Freight Hand Tools For Your Starter Kit (Source: SlashGear) [Link](https://www.slashgear.com/2129893/harbor-freight-hand-tools-for-starter-kit/)
-- Roborock F25 Ace Pro Stick Vacuum Review: Simple And Effective (Source: BGR) [Link](https://www.bgr.com/2130573/roborock-f25-ace-pro-review/)
-- Recycled Copper Market to Reach US$ 105.1 Billion by 2033 Driven by Sustainability Trends and Industrial Demand - Persistence Market Research (Source: PR Newswire UK) [Link](https://www.prnewswire.co.uk/news-releases/recycled-copper-market-to-reach-us-105-1-billion-by-2033-driven-by-sustainability-trends-and-industrial-demand---persistence-market-research-302724925.html)
-- Explained: How did an Irish alumina refinery become linked to the Russian military? (Source: BreakingNews.ie) [Link](https://www.breakingnews.ie/explained/explained-how-did-an-irish-alumina-refinery-become-linked-to-the-russian-military-1879082.html)
-- Amazon's spring sale knocks up to 50% off patio furniture and gardening essentials - 13 deals I'd buy for my backyard (Source: Tom's Guide) [Link](https://www.tomsguide.com/sales-events/amazons-spring-sale-knocks-up-to-50-percent-off-patio-furniture-and-gardening-essentials-13-deals-id-buy-for-my-backyard)
+- 3 spins on this tasty, eggy anytime meal (Source: The Mercury News) [Link](https://www.mercurynews.com/2026/03/26/3-quiche-recipes-easter/)
+- TCL NXTPAPER Android tablet, Idea Tab, Nothing, more (Source: 9to5Google) [Link](https://9to5google.com/2026/03/26/deals-tcl-nxtpaper-android-tablet-idea-tab-nothing/)
+- Rain Industries: Promoter Entity Nivee Holdings Acquires Additional Shares Worth ₹87.81 Lakh (Source: scanx.trade) [Link](https://scanx.trade/stock-market-news/companies/rain-industries-promoter-entity-nivee-holdings-acquires-4-lakh-shares-from-open-market/36004658)
+- Jefferies names the stocks that can win in the AI humanoid robot boom (Source: CNBC) [Link](https://www.cnbc.com/2026/03/26/jefferies-names-the-stocks-that-can-win-in-the-ai-humanoid-robot-boom.html)
+- EU parliament backs Trump tariff deal -- with conditions (Source: The Manila Times) [Link](https://www.manilatimes.net/2026/03/26/world/eu-parliament-backs-trump-tariff-deal-with-conditions/2308589)
+- Rare deals on Stanley Tumblers, other essentials for Amazon’s Big Spring Sale (Source: The Mercury News) [Link](https://www.mercurynews.com/2026/03/26/rare-deals-on-stanley-tumblers-other-essentials-for-amazons-big-spring-sale/)
+- Rio Tinto calls time on diamond business as Diavik mine closes (Source: Financial Post) [Link](https://financialpost.com/commodities/mining/rio-tinto-diamond-business-last-mine-closes)
+- Ford's top-selling F-150 is in short supply, driving up costs (Source: Detroit Free Press) [Link](https://www.freep.com/story/money/cars/ford/2026/03/26/fords-top-selling-f-150-is-in-short-supply-driving-up-costs/89304128007/)
+- India initiates probe against imports of subsidised Chinese, Indonesian paperboards (Source: The Economic Times) [Link](https://economictimes.indiatimes.com/news/economy/foreign-trade/india-initiates-probe-against-imports-of-subsidised-chinese-indonesian-paperboards/articleshow/129822110.cms)
+- India Initiates Probe Against Imports of Subsidised Chinese, Indonesian Paperboards (Source: Outlook Business) [Link](https://www.outlookbusiness.com/economy-and-policy/india-initiates-probe-against-imports-of-subsidised-chinese-indonesian-paperboards)
 
 ### Industry & Corporate Insights (from Gemini)
-- Alvance British Aluminium boosted output at its Lochaber smelter by about 10% following US tariff changes. [Source](https://tradingeconomics.com/commodity/aluminum)
-- Bahrain's Alba, the world's largest single-site aluminum producer, shut down 19% of its 1.6 million tonne-a-year production capacity, while Qatalum reduced operations. [Source](https://tradingeconomics.com/commodity/aluminum)
+- Alcoa's San Ciprián smelter in Spain has ramped up to 90% capacity and is expected to reach full capacity by mid-year after experiencing previous cutbacks. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpG-WoGbfVjqqhdFKmC2yoppwg5j9L8rMmRe0WQ7g7qgOKN5iF5mxrSE4Yvyjor8jI5zXPl1QgdNjwCAjC1NxXkmt7ONNwPUjmWHPHiLLQdI3_B9qjJpej)
+- Aluminium Bahrain BSC (Alba) has initiated a phased shutdown of three production lines, accounting for 19% of its total output capacity, due to disruptions stemming from the Middle East conflict. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFSuq3995j4R6e7_2EILdtPXrw0W_O2Vmv7l6ZyhbMrVRNtOzgs8qJWhsGRVsrLB0sZ6ATykZenv9sLMSkDsoSn8-Mj0bz_l4s1IwVFRmYXTluk3REOywLFNT3n4BzGtK_jbpYE4u-cTn-yWJQ4lrsX_4XYgIIb55qE2D9r4UU_PfnHQ1onnnObB0tFhZolNWyfRCY32mK5z7yB5_7j8B9nELZBpQzf0Jv)
+- Rio Tinto Aluminium is expanding its footprint beyond its historic hydro-powered Canadian base, actively targeting Europe, Asia, and Latin America as part of a strategic diversification. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFl7fglUi_H6Cv1-GhvyHz7XdZgm91W3XpVjtREWix8-8rTxBVjGcLiVVCl0MPedrjQ7h3H4pPnKI0fFY6uKiB-XHOR8dck8KPSJWNnSp5jOh1H-nB9xQJTE9w1i6toTXJn0aibJnyfQjaqMrEvub2_xsNIKdbJir6vtJjRyqhR)
 
 ### Market Trends (from Gemini)
-- Global aluminum inventories have risen above 1.3 million tons, reaching the highest level since 2020, indicating ample supply. [Source](https://tradingeconomics.com/commodity/aluminum)
-- China's social inventory of aluminum reached a nearly five-year high, with the inventory buildup cycle not yet concluded, and weak spot fundamentals suppressing upward momentum. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsYbHyUdtHaSdhmF0EcvgeW7DClSmXAi2OHbxm4jsfpHrPkvT9fEriRvuz74X9XCkKoqkyNyKAmXHs5S2avWSBL9QOaRP2AfA9Fo-PrfeLfM5mU3imS0ihNk5kxtjOamsqSrFu_sM2ZC4n-N9A42eqVMQ_q-6YT3f__Ias4eIbTy_ok0A9NgN7TH6s_hTu1ba-h0Jdct8Sd6oqZadIfVvh_SUZG7XFX0G1ER0bigk957moD5JJkXWKQk8-EoedPAN-rMHdW-GvarP8R5u8DwtVDbc=)
+- The Tomago aluminium smelter is planning to shift to 50% renewable electricity by 2030 and achieve 100% by 2035, aligning with global ESG initiatives for sustainable production. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpG-WoGbfVjqqhdFKmC2yoppwg5j9L8rMmRe0WQ7g7qgOKN5iF5mxrSE4Yvyjor8jI5zXPl1QgdNjwCAjC1NxXkmt7ONNwPUjmWHPHiLLQdI3_B9qjJpej)
+- Demand for aluminum is being bolstered by the increasing adoption of lightweight materials in electric vehicles and the economic reopening of China following three years of strict COVID-19 restrictions. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFl7fglUi_H6Cv1-GhvyHz7XdZgm91W3XpVjtREWix8-8rTxBVjGcLiVVCl0MPedrjQ7h3H4pPnKI0fFY6uKiB-XHOR8dck8KPSJWNnSp5jOh1H-nB9xQJTE9w1i6toTXJn0aibJnyfQjaqMrEvub2_xsNIKdbJir6vtJjRyqhR)
+- Alumina production across Africa and Asia (excluding China) saw a 4.8% increase, climbing from 13,859 thousand tonnes in 2024 to 14,529 thousand tonnes in 2025. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpG-WoGbfVjqqhdFKmC2yoppwg5j9L8rMmRe0WQ7g7qgOKN5iF5mxrSE4Yvyjor8jI5zXPl1QgdNjwCAjC1NxXkmt7ONNwPUjmWHPHiLLQdI3_B9qjJpej)
 
 ### Strategic Factors (from Gemini)
-- Geopolitical disruptions and a stronger dollar have contributed to volatile and pressured aluminum prices. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsYbHyUdtHaSdhmF0EcvgeW7DClSmXAi2OHbxm4jsfpHrPkvT9fEriRvuz74X9XCkKoqkyNyKAmXHs5S2avWSBL9QOaRP2AfA9Fo-PrfeLfM5mU3imS0ihNk5kxtjOamsqSrFu_sM2ZC4n-N9A42eqVMQ_q-6YT3f__Ias4eIbTy_ok0A9NgN7TH6s_hTu1ba-h0Jdct8Sd6oqZadIfVvh_SUZG7XFX0G1ER0bigk957moD5JJkXWKQk8-EoedPAN-rMHdW-GvarP8R5u8DwtVDbc=)
-- Concerns about the potential impact of the ongoing Middle East conflict on metals demand led to aluminum futures falling below $3,250 per tonne. [Source](https://tradingeconomics.com/commodity/aluminum)
-- Guinea is considering introducing bauxite export quotas, adding uncertainty to the supply side of the aluminum market. [Source](https://tradingeconomics.com/commodity/aluminum)
-- Continued destocking of LME inventory provided some support for LME aluminum, but tighter capital liquidity and profit-taking activities weakened upward momentum and the backwardation structure. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsYbHyUdtHaSdhmF0EcvgeW7DClSmXAi2OHbxm4jsfpHrPkvT9fEriRvuz74X9XCkKoqkyNyKAmXHs5S2avWSBL9QOaRP2AfA9Fo-PrfeLfM5mU3imS0ihNk5kxtjOamsqSrFu_sM2ZC4n-N9A42eqVMQ_q-6YT3f__Ias4eIbTy_ok0A9NgN7TH6s_hTu1ba-h0Jdct8Sd6oqZadIfVvh_SUZG7XFX0G1ER0bigk957moD5JJkXWKQk8-EoedPAN-rMHdW-GvarP8R5u8DwtVDbc=)
+- Guinea, the world's largest bauxite producer, is reportedly considering plans to compel miners to curb bauxite exports to address a slump in the raw material's price. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFl7fglUi_H6Cv1-GhvyHz7XdZgm91W3XpVjtREWix8-8rTxBVjGcLiVVCl0MPedrjQ7h3H4pPnKI0fFY6uKiB-XHOR8dck8KPSJWNnSp5jOh1H-nB9xQJTE9w1i6toTXJn0aibJnyfQjaqMrEvub2_xsNIKdbJir6vtJjRyqhR)
+- The ongoing Middle East conflict and the temporary closure of the Strait of Hormuz are causing significant supply disruptions, contributing to rising global aluminum prices and increasing premiums in affected markets like Mexico. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwJJipzeL3RNwULXvApLffIa9DHn3aAcdIxZBDTK2gkaUzGq7Eh1ri9_2thiALp93zMsolShu_muNGZ79eh9EEiVtbqCIA9YTPrLPOgoD67wm48O1UWmozodmruw0tlPUWKzQFG3SuawVo)
