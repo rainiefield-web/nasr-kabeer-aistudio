@@ -1,36 +1,40 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-03-27 08:44:04`
-Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
+Last Updated (UTC): `2026-03-28 08:33:47`
+Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$3248.95` | Change: `+0.11%` | Ref Date: 2026-03-26
+- LME Cash: `$3275.20` | Change: `+0.81%` | Ref Date: 2026-03-27
+
+### Latest Headlines (from NewsAPI)
+- Hydro Flask 24-oz. Water Bottle for $20 + free shipping w/ Prime (Source: Dealnews.com) [Link](https://www.dealnews.com/Hydro-Flask-24-oz-Water-Bottle-for-20-free-shipping-w-Prime/21818690.html)
 
 ### Latest Headlines (from GNews)
-- ‘Significant role’ of Aughinish Alumina for civilian use must be considered in further Russian sanctions (Source: The Irish Times) [Link](https://www.irishtimes.com/politics/2026/03/26/significant-role-of-aughinish-alumina-for-civilian-use-must-be-considered-in-further-russian-sanctions/)
-- It Is Being Projected That “Peak War Panic” Could Hit The Global Financial System In 1 To 3 Weeks (Source: Activist Post) [Link](https://www.activistpost.com/it-is-being-projected-that-peak-war-panic-could-hit-the-global-financial-system-in-1-to-3-weeks/)
-- 3 spins on this tasty, eggy anytime meal (Source: The Mercury News) [Link](https://www.mercurynews.com/2026/03/26/3-quiche-recipes-easter/)
-- TCL NXTPAPER Android tablet, Idea Tab, Nothing, more (Source: 9to5Google) [Link](https://9to5google.com/2026/03/26/deals-tcl-nxtpaper-android-tablet-idea-tab-nothing/)
-- Rain Industries: Promoter Entity Nivee Holdings Acquires Additional Shares Worth ₹87.81 Lakh (Source: scanx.trade) [Link](https://scanx.trade/stock-market-news/companies/rain-industries-promoter-entity-nivee-holdings-acquires-4-lakh-shares-from-open-market/36004658)
-- Jefferies names the stocks that can win in the AI humanoid robot boom (Source: CNBC) [Link](https://www.cnbc.com/2026/03/26/jefferies-names-the-stocks-that-can-win-in-the-ai-humanoid-robot-boom.html)
-- EU parliament backs Trump tariff deal -- with conditions (Source: The Manila Times) [Link](https://www.manilatimes.net/2026/03/26/world/eu-parliament-backs-trump-tariff-deal-with-conditions/2308589)
-- Rare deals on Stanley Tumblers, other essentials for Amazon’s Big Spring Sale (Source: The Mercury News) [Link](https://www.mercurynews.com/2026/03/26/rare-deals-on-stanley-tumblers-other-essentials-for-amazons-big-spring-sale/)
-- Rio Tinto calls time on diamond business as Diavik mine closes (Source: Financial Post) [Link](https://financialpost.com/commodities/mining/rio-tinto-diamond-business-last-mine-closes)
-- Ford's top-selling F-150 is in short supply, driving up costs (Source: Detroit Free Press) [Link](https://www.freep.com/story/money/cars/ford/2026/03/26/fords-top-selling-f-150-is-in-short-supply-driving-up-costs/89304128007/)
-- India initiates probe against imports of subsidised Chinese, Indonesian paperboards (Source: The Economic Times) [Link](https://economictimes.indiatimes.com/news/economy/foreign-trade/india-initiates-probe-against-imports-of-subsidised-chinese-indonesian-paperboards/articleshow/129822110.cms)
-- India Initiates Probe Against Imports of Subsidised Chinese, Indonesian Paperboards (Source: Outlook Business) [Link](https://www.outlookbusiness.com/economy-and-policy/india-initiates-probe-against-imports-of-subsidised-chinese-indonesian-paperboards)
+- BREAKING: Taoiseach says he understands 'concern and anger' over treatment of cleared Limerick gardai (Source: Limerick Leader) [Link](https://www.limerickleader.ie/news/home/2049082/breaking-taoiseach-says-he-understands-concern-and-anger-over-treatment-of-cleared-limerick-gardai.html)
+- Top discounts of Amazon’s biggest clearance sale of the year (Source: The Mercury News) [Link](https://www.mercurynews.com/2026/03/27/top-discounts-of-amazons-biggest-clearance-sale-of-the-year/)
+- Australia’s fuel crisis is just the first domino to fall (Source: Australian Financial Review) [Link](https://www.afr.com/politics/federal/australia-s-fuel-crisis-is-just-the-first-domino-to-fall-20260327-p5zj7z)
+- Top discounts of Amazon’s biggest clearance sale of the year (Source: San Diego Union-Tribune) [Link](https://www.sandiegouniontribune.com/2026/03/26/top-discounts-of-amazons-biggest-clearance-sale-of-the-year/)
+- Top discounts of Amazon’s biggest clearance sale of the year (Source: Boulder Daily Camera) [Link](https://www.dailycamera.com/2026/03/27/top-discounts-of-amazons-biggest-clearance-sale-of-the-year/)
+- Top discounts of Amazon’s biggest clearance sale of the year (Source: Reading Eagle) [Link](https://www.readingeagle.com/2026/03/27/top-discounts-of-amazons-biggest-clearance-sale-of-the-year/)
+- Top discounts of Amazon’s biggest clearance sale of the year (Source: Santa Rosa Press Democrat) [Link](https://www.pressdemocrat.com/2026/03/26/top-discounts-of-amazons-biggest-clearance-sale-of-the-year/)
+- Top discounts of Amazon’s biggest clearance sale of the year (Source: Santa Ana Orange County Register) [Link](https://www.ocregister.com/2026/03/26/top-discounts-of-amazons-biggest-clearance-sale-of-the-year/)
+- Top discounts of Amazon’s biggest clearance sale of the year (Source: St. Paul Pioneer Press) [Link](https://www.twincities.com/2026/03/27/top-discounts-of-amazons-biggest-clearance-sale-of-the-year/)
+- How is West Asia conflict impacting metal companies? Axis Sec decodes (Source: Business Standard) [Link](https://www.business-standard.com/markets/news/how-is-west-asia-conflict-impacting-metal-companies-axis-securities-decodes-jsw-steel-jindal-stainless-hindalco-126032700316_1.html)
+- India initiates probe against imports of subsidised Chinese, Indonesian paperboards (Source: Daily Excelsior) [Link](https://www.dailyexcelsior.com/india-initiates-probe-against-imports-of-subsidised-chinese-indonesian-paperboards-2/)
+- North Carolina woman who vanished 24 years ago tearfully reunites with daughter outside court (Source: NewsBreak) [Link](https://www.newsbreak.com/fox-news-510075/4560617694238-north-carolina-woman-who-vanished-24-years-ago-tearfully-reunites-with-daughter-outside-court)
 
 ### Industry & Corporate Insights (from Gemini)
-- Alcoa's San Ciprián smelter in Spain has ramped up to 90% capacity and is expected to reach full capacity by mid-year after experiencing previous cutbacks. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpG-WoGbfVjqqhdFKmC2yoppwg5j9L8rMmRe0WQ7g7qgOKN5iF5mxrSE4Yvyjor8jI5zXPl1QgdNjwCAjC1NxXkmt7ONNwPUjmWHPHiLLQdI3_B9qjJpej)
-- Aluminium Bahrain BSC (Alba) has initiated a phased shutdown of three production lines, accounting for 19% of its total output capacity, due to disruptions stemming from the Middle East conflict. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFSuq3995j4R6e7_2EILdtPXrw0W_O2Vmv7l6ZyhbMrVRNtOzgs8qJWhsGRVsrLB0sZ6ATykZenv9sLMSkDsoSn8-Mj0bz_l4s1IwVFRmYXTluk3REOywLFNT3n4BzGtK_jbpYE4u-cTn-yWJQ4lrsX_4XYgIIb55qE2D9r4UU_PfnHQ1onnnObB0tFhZolNWyfRCY32mK5z7yB5_7j8B9nELZBpQzf0Jv)
-- Rio Tinto Aluminium is expanding its footprint beyond its historic hydro-powered Canadian base, actively targeting Europe, Asia, and Latin America as part of a strategic diversification. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFl7fglUi_H6Cv1-GhvyHz7XdZgm91W3XpVjtREWix8-8rTxBVjGcLiVVCl0MPedrjQ7h3H4pPnKI0fFY6uKiB-XHOR8dck8KPSJWNnSp5jOh1H-nB9xQJTE9w1i6toTXJn0aibJnyfQjaqMrEvub2_xsNIKdbJir6vtJjRyqhR)
+- Rio Tinto has secured A$2 billion (approximately $1.4 billion USD) in government funding to sustain the Boyne aluminium smelter in Australia until at least 2040, aligning with a transition towards renewable electricity. [Source](https://www.moneyweb.co.za/news/companies-and-deals/rio-tinto-secures-bailout-for-aluminium-smelter-in-australia/)
+- Alcoa's San Ciprián aluminium smelter in Spain has reportedly ramped up to about 90% of its capacity and is expected to achieve full production by mid-2026, contingent on a reliable and competitive power supply. [Source](https://www.alcircle.com/news/bauxite-surge-freight-strain-and-premium-spikes-signal-aluminium-market-shift-118839)
+- Century Aluminum is reactivating idle capacity at its Mt. Holly smelter and is pursuing expansion plans, including a new 750,000 tonnes per year smelter in the United States in collaboration with Emirates Global Aluminium. [Source](https://www.alcircle.com/news/bauxite-surge-freight-strain-and-premium-spikes-signal-aluminium-market-shift-118839)
+- Aluminium Bahrain (Alba) has initiated a phased shutdown of three production lines, which collectively account for 19% of its 1.6 million tonnes annual capacity, amid escalating disruptions stemming from the Middle East conflict. [Source](https://seekingalpha.com/news/4082859-aluminum-stocks-in-focus-as-prices-rise-after-major-smelter-cuts-output)
 
 ### Market Trends (from Gemini)
-- The Tomago aluminium smelter is planning to shift to 50% renewable electricity by 2030 and achieve 100% by 2035, aligning with global ESG initiatives for sustainable production. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpG-WoGbfVjqqhdFKmC2yoppwg5j9L8rMmRe0WQ7g7qgOKN5iF5mxrSE4Yvyjor8jI5zXPl1QgdNjwCAjC1NxXkmt7ONNwPUjmWHPHiLLQdI3_B9qjJpej)
-- Demand for aluminum is being bolstered by the increasing adoption of lightweight materials in electric vehicles and the economic reopening of China following three years of strict COVID-19 restrictions. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFl7fglUi_H6Cv1-GhvyHz7XdZgm91W3XpVjtREWix8-8rTxBVjGcLiVVCl0MPedrjQ7h3H4pPnKI0fFY6uKiB-XHOR8dck8KPSJWNnSp5jOh1H-nB9xQJTE9w1i6toTXJn0aibJnyfQjaqMrEvub2_xsNIKdbJir6vtJjRyqhR)
-- Alumina production across Africa and Asia (excluding China) saw a 4.8% increase, climbing from 13,859 thousand tonnes in 2024 to 14,529 thousand tonnes in 2025. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpG-WoGbfVjqqhdFKmC2yoppwg5j9L8rMmRe0WQ7g7qgOKN5iF5mxrSE4Yvyjor8jI5zXPl1QgdNjwCAjC1NxXkmt7ONNwPUjmWHPHiLLQdI3_B9qjJpej)
+- Global bauxite shipments saw a 16% increase in the first 11 weeks of 2026, primarily driven by rising demand from China for Guinean supplies, leading to shifts in trade patterns and higher freight costs. [Source](https://www.alcircle.com/news/bauxite-surge-freight-strain-and-premium-spikes-signal-aluminium-market-shift-118839)
+- The European aluminium premium surged to a record $472 per tonne in March 2026, indicating a tightening regional supply and escalating costs, potentially exacerbated by the Strait of Hormuz crisis. [Source](https://www.alcircle.com/news/aluminium-industries-latest-news-118671)
+- Automakers are accelerating their aluminum procurement efforts as the ongoing Middle East conflict continues to disrupt supply chains, raising concerns about immediate shortages and increasing expenses. [Source](https://www.alcircle.com/news/aluminium-smelters-latest-news-for-market-price-project-technology-118832)
 
 ### Strategic Factors (from Gemini)
-- Guinea, the world's largest bauxite producer, is reportedly considering plans to compel miners to curb bauxite exports to address a slump in the raw material's price. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFl7fglUi_H6Cv1-GhvyHz7XdZgm91W3XpVjtREWix8-8rTxBVjGcLiVVCl0MPedrjQ7h3H4pPnKI0fFY6uKiB-XHOR8dck8KPSJWNnSp5jOh1H-nB9xQJTE9w1i6toTXJn0aibJnyfQjaqMrEvub2_xsNIKdbJir6vtJjRyqhR)
-- The ongoing Middle East conflict and the temporary closure of the Strait of Hormuz are causing significant supply disruptions, contributing to rising global aluminum prices and increasing premiums in affected markets like Mexico. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwJJipzeL3RNwULXvApLffIa9DHn3aAcdIxZBDTK2gkaUzGq7Eh1ri9_2thiALp93zMsolShu_muNGZ79eh9EEiVtbqCIA9YTPrLPOgoD67wm48O1UWmozodmruw0tlPUWKzQFG3SuawVo)
+- Guinea, a major global bauxite producer, is reportedly considering implementing export quotas to address a slump in prices, which introduces additional uncertainty regarding the availability of raw materials for global aluminum production. [Source](https://www.fastmarkets.com/commodities/metals/aluminium/)
+- The escalating conflict in the Middle East and associated disruptions in the Strait of Hormuz are causing significant supply constraints, leading to operational cutbacks at smelters and a notable rise in regional aluminium premiums. [Source](https://www.spglobal.com/commodityinsights/en/market-insights/metals/aluminium-market-trends)
