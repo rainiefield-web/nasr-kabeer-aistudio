@@ -1,35 +1,36 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-04-01 08:58:54`
+Last Updated (UTC): `2026-04-02 08:51:46`
 Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$3452.70` | Change: `+0.67%` | Ref Date: 2026-04-01
+- LME Cash: `$3496.00` | Change: `-0.79%` | Ref Date: 2026-04-02
 
 ### Latest Headlines (from GNews)
+- Trump seeks war off-ramp, threatening more attacks to press Iran (Source: Hartford Courant) [Link](https://www.courant.com/2026/04/01/trump-seeks-war-off-ramp-threatening-more-attacks-to-press-iran-2/)
+- With Aluminum Prices in the Spotlight, 1 Analyst Thinks Constellium Stock Can Still Gain 22% from Here (Source: Barchart) [Link](https://www.barchart.com/story/news/1097416/with-aluminum-prices-in-the-spotlight-1-analyst-thinks-constellium-stock-can-still-gain-22-from-here)
+- Aluminum Supply Shock: Top Gulf Producer Halts Operations After Iran Strike, Price To Spike (Source: ZeroHedge) [Link](https://www.zerohedge.com/commodities/aluminum-supply-shock-top-gulf-producer-halts-operations-after-iran-strike-price-spike)
+- Operations halted at top Persian Gulf aluminum smelter after Iran strike - Bloomberg (Source: Seeking Alpha) [Link](https://seekingalpha.com/news/4571477-operations-halted-at-top-persian-gulf-aluminum-smelter-after-iran-strike-bloomberg)
+- Alcoa Stock Has Surged Higher on Aluminum Price Spike. 1 Analyst Still Thinks It Can Gain 14%. (Source: Barchart) [Link](https://www.barchart.com/story/news/1092208/alcoa-stock-has-surged-higher-on-aluminum-price-spike-1-analyst-still-thinks-it-can-gain-14)
+- Amazon Spring Sale may be over, but these golf deals are still going (Source: New York Post) [Link](https://nypost.com/shopping/amazon-big-spring-sale-golf-deals-2026/)
+- Taoiseach concerned at reports Aughinish plant supplying ‘Russian war effort’ (Source: The Irish Times) [Link](https://www.irishtimes.com/ireland/2026/04/01/taoiseach-concerned-at-reports-aughinish-plant-supplying-russian-war-effort/)
+- Who is Shelly Kittleson? Award-winning American journalist kidnapped in Iraq (Source: The Financial Express) [Link](https://www.financialexpress.com/shorts/world-news/who-is-shelly-kittleson-award-winning-american-journalist-kidnapped-in-iraq-search-operation-underway-4191174/)
+- Commercial LPG Cylinder price hiked by Rs 195.50 in Delhi; Check updated rates (Source: The Financial Express) [Link](https://www.financialexpress.com/shorts/india-news/news/commercial-lpg-cylinder-price-hiked-by-rs-195-50-in-delhi-check-updated-rates-in-mumbai-bengaluru-and-other-cities-4191133/)
+- ‘Oil prices will go down’: Trump says US to exit Iran war in ‘2-3 weeks’- Key Points (Source: The Financial Express) [Link](https://www.financialexpress.com/shorts/world-news/donald-trump-says-us-could-exit-iran-war-in-23-weeks-calls-deal-with-tehran-irrelevant-oil-price-europe-strait-of-hormuz-update-4191086/)
+- 3 reasons why the Rio Tinto share price could be a buy (Source: The Motley Fool Australia) [Link](https://www.fool.com.au/2026/04/01/3-reasons-why-the-rio-tinto-share-price-could-be-a-buy-2/)
 - Why Gen Z rejects vague ads and demands specificity (Source: The Financial Express) [Link](https://www.financialexpress.com/shorts/business/brandwagon/why-gen-z-rejects-vague-ads-and-demands-specificity-4190807/)
-- Colorado tried to silence me for helping gender (Source: NewsBreak) [Link](https://www.newsbreak.com/fox-news-510075/4569318758632-colorado-tried-to-silence-me-for-helping-gender-confused-kids-the-supreme-court-just-ruled-8-1-in-my-favor)
-- Last chance to save $1,500+ on Amazon’s best TV deals of the season (Source: New York Post) [Link](https://nypost.com/shopping/amazon-big-spring-sale-tv-deals-2026/)
-- The 5 Best Multi-Color 3D Printers You Can Buy In 2026 (Source: BGR) [Link](https://www.bgr.com/2132145/best-multi-color-3d-printers/)
-- Tiger Woods found with opioids in pocket after DUI rollover crash: Police arrest affidavit (Source: NewsBreak) [Link](https://www.newsbreak.com/news/4568971577050-tiger-woods-found-with-opioids-in-pocket-after-dui-rollover-crash-police-arrest-affidavit)
-- Up 53% in 2026, Does Century Aluminum Stock Have Any Room Left to Run? (Source: Barchart) [Link](https://www.barchart.com/story/news/1067739/up-53-in-2026-does-century-aluminum-stock-have-any-room-left-to-run)
-- Tiger Woods had hydrocodone pills in his pocket and bloodshot eyes at crash scene, authorities say (Source: NewsBreak) [Link](https://www.newsbreak.com/news/4568922327610-tiger-woods-had-hydrocodone-pills-in-his-pocket-and-bloodshot-eyes-at-crash-scene-authorities-say)
-- Alcoa Stock Is Surging as Iran War Boosts Aluminum Prices. Should You Buy AA Here? (Source: Barchart) [Link](https://www.barchart.com/story/news/1066139/alcoa-stock-is-surging-as-iran-war-boosts-aluminum-prices-should-you-buy-aa-here)
-- SRK buys Mercedes-Benz V-Class worth Rs 1.4 crore - A look at King Khan’s luxury garage (Source: The Financial Express) [Link](https://www.financialexpress.com/shorts/life/shah-rukh-khan-buys-mercedes-benz-v-class-worth-rs-1-4-crore-a-look-at-king-khans-luxury-garage-4190744/)
-- Zinc Oxide Market worth $8.17 billion by 2031 - Exclusive Report by MarketsandMarkets™ (Source: PR Newswire UK) [Link](https://www.prnewswire.co.uk/news-releases/zinc-oxide-market-worth-8-17-billion-by-2031---exclusive-report-by-marketsandmarkets-302730042.html)
-- Dems who ran on affordability now face backlash as costs climb in NY, Virginia (Source: NewsBreak) [Link](https://www.newsbreak.com/fox-news-510075/4568769048993-dems-who-ran-on-affordability-now-face-backlash-as-costs-climb-in-ny-virginia)
-- Why India’s steel SMEs must prepare for CBAM (Source: The Hindu Business Line) [Link](https://www.thehindubusinessline.com/opinion/why-indias-steel-smes-must-prepare-for-cbam/article70807347.ece)
 
 ### Industry & Corporate Insights (from Gemini)
-- Emirates Global Aluminium's Al Taweelah plant in Abu Dhabi (1.5 million metric tons/year) and Aluminium Bahrain's 1.6 million ton/year plant reportedly suffered significant damage from Iranian attacks on Saturday, impacting global supply. [Source](https://www.mining.com/iran-smelter-attacks-hole-us-aluminum-supply-chain/)
+- Aluminium Bahrain is currently assessing the damage to its smelter following recent Iranian strikes. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEinq1G-JmZSNBzZa7ZsuT_T5RBp7Rvy7ke4cX9uts7f7WAwhGs-WgIMAkan5wudnOyEERURNA8Q1bhiLYHOvlauSg65oR-PK-PTMGDPwz9EkADYr6wLF-OGNtE7JGNio0o16oSGuA_QVLRF4N6o6DOXZt9ZAvdiQCatUcqvNvc2Ml1hCBtcMF4mA7h942xdhy0mUFpdxtkbQwrILnoRnhCZri3_dhxgRd6I3rsgyAJyjivBFX6)
+- Emirates Global Aluminium's facilities sustained significant damage from missile and drone strikes. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEinq1G-JmZSNBzZa7ZsuT_T5RBp7Rvy7ke4cX9uts7f7WAwhGs-WgIMAkan5wudnOyEERURNA8Q01xVHbZZ6fpszs_nF1GLYX0jwG46x14UIdcs2OGBNFt41_5MsvNhPTC3aEgqefLTWtZU=)
+- Goldman Sachs increased its second-quarter aluminum price forecast to $3,450, citing further supply disruptions. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFir8m4IDFpoeq7UjLkU58-xxnTUIjT5W1xdc9LuXZsvOEDg7KN5ZE0FyzIbiuGUa-zaQb_MvZrgAISKRCU9gNJghAGy59tfCvIMcchs1YjqZqkwZRGw__lLzkuLpNxig8XD38bIUUfp9jhdp3reLUj-p8q4r0lSgVuZ1wVYH3CpOdA0k_1K6arHYNSTqgSrpW52GXS-lXdknin0k4TQ1HklChZn1Y_Da0)
 
 ### Market Trends (from Gemini)
-- The closure of the Strait of Hormuz by Tehran due to geopolitical events has escalated the aluminum supply risk from temporary shipping delays to a more serious threat for regional production. [Source](https://www.mining.com/iran-smelter-attacks-hole-us-aluminum-supply-chain/)
-- Aluminium prices on the London Metal Exchange jumped 6% on Monday, March 30, 2026, closing in on four-year highs following reports of Iran's attacks on Gulf smelters.
+- Aluminum prices are nearing four-year highs, driven by fears of continued supply shortages following recent attacks. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFir8m4IDFpoeq7UjLkU58-xxnTUIjT5W1xdc9LuXZsvOEDg7KN5ZE0FyzIbiuGUa-zaQb_MvZrgAISKRCU9gNJghAGy59tfCvIMcchs1YjqZqkwZRGw__lLzkuLpNxig8XD38bIUUfp9jhdp3reLUj-p8q4r0lSgVuZ1wVYH3CpOdA0k_1K6arHYNSTqgSrpW52GXS-lXdknin0k4TQ1HklChZn1Y_Da0)
+- The global aluminum market is projected to face a deficit of 570,000 tonnes in 2026, a significant reversal from a previously expected surplus. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFir8m4IDFpoeq7UjLkU58-xxnTUIjT5W1xdc9LuXZsvOEDg7KN5ZE0FyzIbiuGUa-zaQb_MvZrgAISKRCU9gNJghAGy59tfCvIMcchs1YjqZqkwZRGw__lLzkuLpNxig8XD38bIUUfp9jhdp3reLUj-p8q4r0lSgVuZ1wVYH3CpOdA0k_1K6arHYNSTqgSrpW52GXS-lXdknin0k4TQ1HklChZn1Y_Da0)
+- LME warehouse inventories have fallen to their lowest level since July 2025, indicating tightening physical supply in the market. [Source](https://tradingeconomics.com/commodity/aluminum)
 
 ### Strategic Factors (from Gemini)
-- LME aluminium prices neared a four-year peak after reported Iranian attacks on Gulf smelters on March 30, 2026. [Source](https://www.investing.com/commodities/aluminium)
-- Aluminum prices jumped following strikes that disrupted key Middle East smelters and slowed Gulf shipping, raising concerns about prolonged supply outages. [Source](https://finimize.com/finimize-app/news/aluminum-prices-jump-as-middle-east-supply-lines-take-a-hit)
-- Reported attacks on two major Middle East aluminum smelters have caused significant damage and created a hole in the US aluminum supply chain. [Source](https://www.mining.com/iran-smelter-attacks-hole-us-aluminum-supply-chain/)
-- The US is 60% dependent on aluminium imports, with nearly 22% of its primary and alloyed aluminum imports in 2025 coming from the Middle East, highlighting significant supply chain risk due to recent attacks. [Source](https://www.mining.com/iran-smelter-attacks-hole-us-aluminum-supply-chain/)
+- Iranian strikes on key Gulf smelters have significantly impacted aluminum output, exacerbating supply concerns. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFir8m4IDFpoeq7UjLkU58-xxnTUIjT5W1xdc9LuXZsvOEDg7KN5ZE0FyzIbiuGUa-zaQb_MvZrgAISKRCU9gNJghAGy59tfCvIMcchs1YjqZqkwZRGw__lLzkuLpNxig8XD38bIUUfp9jhdp3reLUj-p8q4r0lSgVuZ1wVYH3CpOdA0k_1K6arHYNSTqgSrpW52GXS-lXdknin0k4TQ1HklChZn1Y_Da0)
+- China's factory activity rebounded in March, signaling increased demand for industrial metals, including aluminum. [Source](https://tradingeconomics.com/commodity/aluminum)
