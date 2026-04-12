@@ -1,36 +1,37 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-04-06 09:03:48`
-Data Status: LME=OK | GeminiNews=OK | NewsAPI=EMPTY/FAIL | GNews=OK
+Last Updated (UTC): `2026-04-12 08:42:06`
+Data Status: LME=OK | GeminiNews=OK | NewsAPI=OK | GNews=OK
 
 ## Global English Report
 
 ### LME Primary Aluminum Data
-- LME Cash: `$3468.50` | Change: `-1.57%` | Ref Date: 2026-04-02
+- LME Cash: `$3511.25` | Change: `+1.88%` | Ref Date: 2026-04-10
+
+### Latest Headlines (from NewsAPI)
+- UGREEN 40Gbps M.2 NVMe Enclosure Aluminum, USB 4 $87.99 @ UGREEN GROUP LIMITED AU via Amazon AU (Source: Ozbargain.com.au) [Link](https://www.ozbargain.com.au/node/955244)
 
 ### Latest Headlines (from GNews)
-- The war’s economic impact could get worse for Americans (Source: Anchorage Daily News) [Link](https://www.adn.com/nation-world/2026/04/05/the-wars-economic-impact-could-get-worse-for-americans/)
-- 13 of the best bank holiday deals with big savings on power tools and garden equipment (Source: South Wales Echo) [Link](https://www.walesonline.co.uk/whats-on/shopping/13-best-bank-holiday-deals-33719337)
-- Chetak Screen Awards 2026: Alia Bhatt owns the stage as host in a power-packed pantsuit (Source: The Indian Express) [Link](https://indianexpress.com/shorts/entertainment/bollywood/chetak-screen-awards-2026-alia-bhatt-owns-the-stage-as-host-in-a-power-packed-pantsuit-10620500/)
-- Assam CM’s Bold Poll Vow as Thousands Displaced by Mass Evictions Head to the Booths (Source: The Indian Express) [Link](https://indianexpress.com/shorts/political-pulse/assam-elections-2026-evictions-miya-politics-goalpara-hasila-beel-himanta-biswa-sarma-10620511/)
-- Iran war: Air India, Air India Express plan 30 West Asia flights on April 6 (Source: The Indian Express) [Link](https://indianexpress.com/shorts/india/iran-war-air-india-air-india-express-plan-30-west-asia-flights-on-april-6-check-routes-10620326/)
-- Hell and Stone Age: As rhetoric on Iran intensifies, war veteran explains possible endgame (Source: The Indian Express) [Link](https://indianexpress.com/shorts/explained/explained-global/iran-war-endgame-options-us-10620468/)
-- Shami starts with a bang, Pant finishes with three fours as LSG record first win (Source: The Indian Express) [Link](https://indianexpress.com/shorts/sports/cricket/mohammed-shami-rishabh-pant-lsg-first-win-srh-ipl-2026-10620448/)
-- Rising oil gains, resistance: 2 months into the war, why Iran may be an unlikely winner (Source: The Indian Express) [Link](https://indianexpress.com/shorts/explained/explained-global/iran-unlikely-winner-us-war-oil-hormuz-10620447/)
-- Six animal superpowers humans can only dream of (Source: The Indian Express) [Link](https://indianexpress.com/shorts/lifestyle/six-animal-superpowers-humans-can-only-dream-of-10062794/)
-- After loss in rabi season, farmers head for difficult khariff season commencing June (Source: The Indian Express) [Link](https://indianexpress.com/shorts/cities/mumbai/unseasonal-rain-after-loss-in-rabi-season-farmers-head-for-difficult-khariff-season-commencing-june-10620413/)
-- Iran attacks Gulf energy sites, warns of more strikes if US doesn't hold back (Source: India Today) [Link](https://www.indiatoday.in/world/story/iran-attacks-gulf-energy-sites-as-trumps-48-hour-ultimatum-to-reopen-hormuz-nears-2891871-2026-04-05)
-- The Week That Was, The Week Ahead: Macro and Markets, April 5 (Source: Markets Insider) [Link](https://markets.businessinsider.com/news/stocks/the-week-that-was-the-week-ahead-macro-and-markets-april-5-1035994865)
+- Experts Push Aluminium-Led Growth Strategy To Power Odisha’s Next Industrial Phase (Source: Deccan Chronicle) [Link](https://www.deccanchronicle.com/nation/experts-push-aluminium-led-growth-strategy-to-power-odishas-next-industrial-phase-1949967)
+- Metal Shock: Gulf's Largest Aluminum Producer Declares Force Majeure (Source: ZeroHedge) [Link](https://www.zerohedge.com/commodities/metal-shock-gulfs-largest-aluminum-producer-declares-force-majeure)
+- Environment and Geography (Week 157) (Source: The Indian Express) [Link](https://indianexpress.com/article/upsc-current-affairs/upsc-essentials/upsc-prelims-subject-quiz-mcq-environment-geography-week-157-10629965/)
+- Road to Odisha's Sijimali yet to get Stage-II forest clearance (Source: The New Indian Express) [Link](https://www.newindianexpress.com/states/odisha/2026/Apr/11/road-to-odishas-sijimali-yet-to-get-stage-ii-forest-clearance)
+- NHL forward Bill Riley was a willing pugilist and trailblazing Black player (Source: The Globe and Mail) [Link](https://www.theglobeandmail.com/canada/article-bill-riley-nhl-player-obituary/)
+- Hezbollah, Great Nicobar Project and Back channel diplomacy (Source: The Indian Express) [Link](https://indianexpress.com/article/upsc-current-affairs/upsc-key-hezbollah-great-nicobar-project-and-back-channel-diplomacy-10629948/)
+- What are the future prospects of Hindalco Share Price? (Source: The Financial Express) [Link](https://www.financialexpress.com/market/stock-insights/what-are-the-future-prospects-of-share-price-of-hindalco/4202579/)
+- Iran war disrupts global aluminum supply, prolonging shortages for months (Source: Washington Examiner) [Link](https://www.washingtonexaminer.com/policy/energy-and-environment/4522765/iran-war-disrupts-global-aluminum-supply-prolongs-shortages/)
+- In Odisha clashes between police & tribals, bauxite mining in focus (Source: The Indian Express) [Link](https://indianexpress.com/article/explained/in-odisha-clashes-between-police-tribals-bauxite-mining-in-focus-10628546/)
+- Aluminium makers, end users feel the squeeze as caustic soda prices spikes (Source: Livemint) [Link](https://www.livemint.com/economy/caustic-soda-aluminium-west-asia-war-energy-space-auto-packaging-11775652789523.html)
 
 ### Industry & Corporate Insights (from Gemini)
-- Emirates Global Aluminium (EGA) halted operations at its Al Taweelah smelter in Abu Dhabi following an Iranian attack, with indications that full restoration of primary aluminum production could take up to 12 months. [Source](https://www.mining.com/web/top-gulf-aluminum-producer-ega-halted-output-after-iran-strike/)
-- Aluminium Bahrain (Alba) reduced production by 19% by shutting down three production lines due to heightened regional tensions and challenges in receiving shipments via the Strait of Hormuz. [Source](https://www.thestrategist.co.nz/worlds-largest-aluminum-smelter-starts-cutting-production/)
-- Emirates Global Aluminium (EGA) and Century Aluminum announced plans to build the first new primary aluminum smelter in the United States since 1980 in Inola, Oklahoma, with construction slated to begin by the end of 2026, aiming to nearly double existing U.S. primary aluminum output. [Source](https://www.mining.com/web/bechtel-to-lead-preparatory-engineering-work-on-oklahoma-aluminum-project/)
+- Rio Tinto and Century Aluminium increased US aluminium billet premiums by approximately 12% on April 8, 2026, due to supply disruptions linked to the Iran war. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqZybX8mtf5Y1Z7WLQB4oC4Jz9g6cUcV4LArJ3vM0-1WFyhrdEsKK0SKV9bp09dIuyI2b9VszTG6_xWCs0MkN1LACKvXPLtucZm7MJb0FCO1lha6om7G42)
+- Russia's RUSAL is reportedly planning to redirect some aluminium shipments, initially intended for China, to Japan and other Asian customer bases due to ongoing geopolitical tensions. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqZybX8mtf5Y1Z7WLQB4oC4Jz9g6cUcV4LArJ3vM0-1WFyhrdEsKK0SKV9bp09dIuyI2b9VszTG6_xWCs0MkN1LACKvXPLtucZm7MJb0FCO1lha6om7G42)
 
 ### Market Trends (from Gemini)
-- Global automakers are accelerating aluminum procurement and building emergency reserves due to ongoing Middle East conflicts disrupting supply chains, raising concerns about near-term shortages and escalating costs, potentially leading to production cuts by mid-2026 if disruptions persist. [Source](https://www.alcircle.com/news/automakers-accelerate-to-stockpile-aluminium-as-middle-east-conflict-disrupts-supply-117502)
-- Global aluminum consumption is projected to reach 106.8 million tonnes in 2026, primarily driven by increasing demand in the transportation sector, especially electric vehicles, as well as construction and the accelerating green transition. [Source](https://www.alcircle.com/news/as-global-aluminium-consumption-heads-towards-1068-mt-in-2026-whats-driving-the-growth-and-which-region-leads-the-way-117379)
+- The global aluminium value chain is experiencing fragmented changes, from policy shifts and price pressure in bauxite to sudden supply shocks in primary aluminium. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqZybX8mtf5Y1Z7WLQB4oC4Jz9g6cUcV4LArJ3vM0-1WFyhrdEsKK0SKV9bp09dIuyI2b9VszTG6_WCs0MkN1LACKvXPLtucZm7MJb0FCO1lha6om7G42)
+- Global aluminium markets are facing "elevated" prices due to geopolitical tensions in the Gulf region disrupting supply chains. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqZybX8mtf5Y1Z7WLQB4oC4Jz9g6cUcV4LArJ3vM0-1WFyhrdEsKK0SKV9bp09dIuyI2b9VszTG6_WCs0MkN1LACKvXPLtucZm7MJb0FCO1lha6om7G42)
+- The continued industry shift towards lightweighting in electric vehicles and China's economic reopening are driving increased demand for aluminium. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHV3dNJoLegnRcIRh7itV4B3UmVt6G-ERh6eOwScbNWMvgIv5INZDrSGTM_3kchPQfUQBJxscb9Bg_lBBZOJZ3I5BCcCj0iq_gcRb5qdznNLrq2N_tV6ZJapY75tHajgQI780SXXiloW1bqPflyTDgZzIXZQx2wxv7ljhSDXa5_)
 
 ### Strategic Factors (from Gemini)
-- Geopolitical conflicts in the Middle East and the effective closure of the Strait of Hormuz are causing severe disruptions to alumina and aluminum supply chains, impacting global trade flows and contributing to higher prices. [Source](https://www.fastmarkets.com/insights/aluminium-in-energy-crossfire-as-hormuz-uncertainty-drags-on/)
-- High energy costs and natural gas shortages are forcing production curtailments at aluminum smelters from the Gulf to Europe and Australia, thereby limiting global supply-side flexibility. [Source](https://www.fastmarkets.com/insights/aluminium-in-energy-crossfire-as-hormuz-uncertainty-drags-on/)
-- China's primary aluminum capacity remains capped at 45 million tonnes, which is expected to limit supply growth despite robust domestic demand from sectors like new energy vehicles, solar power, and grid infrastructure. [Source](https://www.fastmarkets.com/insights/what-will-2026-bring-for-base-metals-prices/)
+- Emirates Global Aluminium's Al Taweelah smelter ceased operations after being struck by Iranian missiles last month, affecting primary aluminum supply. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbCeBzRr9iYM08FvrmzqR-NNOCamc7hLkiMRTYZfPRejvBz5vWmjYwlqeCqXSEZtYFDCem5itNxT5pSVFn2jSLjtKPvRdn7X5zRD65ldxl7UO8_EtPSZuxscmixVwtjc_k3z1Ff_EKGhVC)
+- Uncertainty regarding Guinea's bauxite export policy and disruptions to alumina supply chains caused by the closure of the Strait of Hormuz are leading to heightened price volatility. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHV3dNJoLegnRcIRh7itV4B3UmVt6G-ERh6eOwScbNWMvgIv5INZDrSGTM_3kchPQfUQBJxscb9Bg_lBBZOJZ3I5BCcCj0iq_gcRb5qdznNLrq2N_tV6ZJapY75tHajgQI780SXXiloW1bqPflyTDgZzIXZQx2wxv7ljhSDXa5_)
+- The European Commission published the first-quarter 2026 Carbon Border Adjustment Mechanism (CBAM) certificate price on April 7, applicable to EU imports for January-March 2026, impacting ESG considerations. [Source](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHV3dNJoLegnRcIRh7itV4B3UmVt6G-ERh6eOwScbNWMvgIv5INZDrSGTM_3kchPQfUQBJxscb9Bg_lBBZOJZ3I5BCcCj0iq_gcRb5qdznNLrq2N_tV6ZJapY75tHajgQI780SXXiloW1bqPflyTDgZzIXZQx2wxv7ljhSDXa5_)
