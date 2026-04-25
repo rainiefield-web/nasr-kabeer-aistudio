@@ -732,7 +732,12 @@ def main():
     current_time_utc = now.strftime("%Y-%m-%d %H:%M:%S")
 
     prompt = f"""
-Get LME Primary Aluminum (High Grade) Cash Settlement Price from the last 4 hours AND scan English-language aluminum industry news.
+Get the CURRENT/LATEST LME Primary Aluminum (High Grade) Cash Settlement Price from TODAY {current_time_utc} AND scan latest aluminum industry news.
+
+IMPORTANT: 
+- You MUST get real-time data from TODAY {current_time_utc}, not cached/historical data
+- The date in the response MUST be today's date: {now.strftime('%Y-%m-%d')}
+- If you cannot find today's price, explicitly state the data is unavailable
 
 Pricing Requirements:
 - Source: Investing.com, Fastmarkets, or Reuters.
