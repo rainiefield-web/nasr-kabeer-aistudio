@@ -2,13 +2,22 @@ import os
 import json
 import re
 import traceback
+import time
 import requests
 from datetime import datetime, timedelta
+from functools import wraps
 
-from google import genai
+import anthropic
 
 # --- Core Config ---
 MIN_PRICE_THRESHOLD = 2700.0
+MAX_RETRIES = 3
+RETRY_BASE_DELAY = 2
+
+# MiniMax API config - set via environment variable in GitHub Secrets
+_MINIMAX_API_KEY = os.getenv("MINIMAX_API_KEY")  # Must set in GitHub secrets
+_MINIMAX_BASE_URL = "https://api.minimax.com/anthropic"
+_MINIMAX_MODEL = "MiniMax-M2.7"
 
 CORE_SITES = (
     "Reuters, Bloomberg, Fastmarkets, AlCircle, Aluminium Insider, Mining.com, "
@@ -199,6 +208,17 @@ def fetch_news_from_gnews(
 
     try:
         response = requests.get("https://gnews.io/api/v4/search", params=params, timeout=30)
+        
+        # Handle rate limiting (429) with retry
+        if response.status_code == 429:
+            for attempt in range(MAX_RETRIES):
+                delay = RETRY_BASE_DELAY * (2 ** attempt)
+                print(f"GNews 429 rate limited. Retry {attempt + 1}/{MAX_RETRIES} after {delay}s...")
+                time.sleep(delay)
+                response = requests.get("https://gnews.io/api/v4/search", params=params, timeout=30)
+                if response.status_code != 429:
+                    break
+            
         response.raise_for_status()
         data = response.json()
         articles = data.get("articles", [])
@@ -249,16 +269,22 @@ def fetch_gnews_aggregated(
     for q in queries:
         if not q.strip():
             continue
-        arts, err = fetch_news_from_gnews(
-            query=q,
-            max_results=per_query_max,
-            from_date=from_date,
-            to_date=None,
-        )
-        if err:
-            errors.append(err)
-        if arts:
-            all_articles.extend(arts)
+        try:
+            arts, err = fetch_news_from_gnews(
+                query=q,
+                max_results=per_query_max,
+                from_date=from_date,
+                to_date=None,
+            )
+            if err:
+                # Log error but continue to next query (skip failed ones)
+                print(f"GNews query skipped due to error: {err}")
+                errors.append(err)
+            if arts:
+                all_articles.extend(arts)
+        except Exception as e:
+            print(f"GNews query exception, skipping: {e}")
+            errors.append(str(e))
 
     # Deduplicate by URL
     seen = set()
@@ -391,6 +417,38 @@ def dedupe_and_rank_newsapi(articles: list[dict], top_n: int = 12) -> list[dict]
 # -----------------------------
 # Helpers
 # -----------------------------
+def retry_with_backoff(max_retries=MAX_RETRIES, base_delay=RETRY_BASE_DELAY, backoff_factor=2, retriable_codes=None):
+    """Retry decorator with exponential backoff for API calls."""
+    if retriable_codes is None:
+        retriable_codes = {429, 500, 502, 503, 504}
+
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            last_exception = None
+            for attempt in range(max_retries):
+                try:
+                    result = func(*args, **kwargs)
+                    # Check if result indicates failure
+                    if isinstance(result, tuple):
+                        articles, error = result
+                        if error and any(code in str(error) for code in ["429", "503", "500", "Too Many Requests", "UNAVAILABLE"]):
+                            delay = base_delay * (backoff_factor ** attempt)
+                            print(f"Retryable error {attempt + 1}/{max_retries}: {error}. Waiting {delay}s...")
+                            time.sleep(delay)
+                            continue
+                        return result
+                    return result
+                except Exception as e:
+                    last_exception = e
+                    delay = base_delay * (backoff_factor ** attempt)
+                    print(f"Exception {attempt + 1}/{max_retries}: {e}. Waiting {delay}s...")
+                    time.sleep(delay)
+            if last_exception:
+                raise last_exception
+            return func(*args, **kwargs)
+        return wrapper
+    return decorator
 def clean_text(text: str) -> str:
     if not text:
         return ""
@@ -462,35 +520,137 @@ def build_tools_if_supported():
     return None
 
 
-def fetch_content_from_genai(client, prompt: str):
-    model_name = select_model_name(client)
-    tools = build_tools_if_supported()
+def fetch_content_from_genai(prompt: str):
+    """Fetch content - tries Gemini first, then MiniMax fallback."""
+    from google import genai
+    
+    # Try Gemini first
+    gemini_key = os.environ.get("GEMINI_API_KEY")
+    if gemini_key:
+        print("Trying Gemini primary...")
+        result = _fetch_from_gemini(prompt, gemini_key)
+        if result:
+            return result
+        print("Gemini failed. Trying MiniMax fallback...")
+    else:
+        print("GEMINI_API_KEY not set. Trying MiniMax fallback...")
+    
+    # Fallback to MiniMax
+    return _fetch_from_minimax(prompt)
 
+
+def _fetch_from_gemini_fallback(prompt: str):
+    """Gemini fallback if MiniMax fails."""
+    from google import genai
+    
+    gemini_key = os.environ.get("GEMINI_API_KEY")
+    if not gemini_key:
+        print("Warning: GEMINI_API_KEY not set. Skipping Gemini fallback.")
+        return None
+    
     try:
-        if tools:
-            generation_config = genai.types.GenerateContentConfig(tools=tools)
-        else:
-            generation_config = genai.types.GenerateContentConfig(response_mime_type="application/json")
-
+        client = genai.Client(api_key=gemini_key)
+        model_name = "models/gemini-2.5-flash"
+        
         response = client.models.generate_content(
             model=model_name,
             contents=prompt,
-            config=generation_config,
+            config=genai.types.GenerateContentConfig(response_mime_type="application/json"),
         )
-
+        
         response_text = getattr(response, "text", None)
-        data = extract_json(response_text) if response_text else None
-        if data is not None:
-            return data
-
-        print(f"Gemini returned non-JSON or unparsable output for model={model_name}.")
         if response_text:
-            snippet = response_text[:500].replace("\n", "\\n")
-            print(f"Response snippet (first 500 chars): {snippet}")
-
+            data = extract_json(response_text)
+            if data is not None:
+                return data
+            print(f"Gemini fallback returned (first 300 chars): {response_text[:300]}...")
     except Exception as e:
-        print(f"Error using model {model_name}: {e}")
+        print(f"Gemini fallback error: {e}")
+    
+    return None
 
+
+def _fetch_from_gemini(prompt: str, api_key: str):
+    """Primary: Gemini fetch."""
+    from google import genai
+    
+    try:
+        client = genai.Client(api_key=api_key)
+        model_name = "models/gemini-2.5-flash"
+        
+        response = client.models.generate_content(
+            model=model_name,
+            contents=prompt,
+            config=genai.types.GenerateContentConfig(response_mime_type="application/json"),
+        )
+        
+        response_text = getattr(response, "text", None)
+        if response_text:
+            data = extract_json(response_text)
+            if data is not None:
+                return data
+            print(f"Gemini response (first 300 chars): {response_text[:300]}...")
+    except Exception as e:
+        print(f"Gemini error: {e}")
+    
+    return None
+
+
+def _fetch_from_minimax(prompt: str):
+    """Fallback: MiniMax fetch."""
+    import anthropic
+    
+    minimax_key = os.getenv("MINIMAX_API_KEY")
+    if not minimax_key:
+        print("Warning: MINIMAX_API_KEY not set. Skipping MiniMax fallback.")
+        return None
+    
+    minimax_models = [
+        "MiniMax-M2.7",
+        "MiniMax-M2.7-highspeed",
+        "MiniMax-M2.5",
+    ]
+    
+    for model_name in minimax_models:
+        for attempt in range(MAX_RETRIES):
+            try:
+                client = anthropic.Anthropic(
+                    api_key=minimax_key,
+                    base_url=_MINIMAX_BASE_URL,
+                    max_retries=2,
+                )
+                
+                response = client.messages.create(
+                    model=model_name,
+                    max_tokens=4096,
+                    messages=[{"role": "user", "content": prompt}],
+                )
+                
+                response_text = None
+                if hasattr(response, 'content') and response.content:
+                    for block in response.content:
+                        if hasattr(block, 'text') and block.text:
+                            response_text = block.text
+                            break
+                
+                if response_text:
+                    data = extract_json(response_text)
+                    if data is not None:
+                        return data
+                    print(f"MiniMax {model_name} returned non-JSON")
+
+            except Exception as e:
+                error_msg = str(e)
+                if "503" in error_msg or "429" in error_msg or "rate_limit" in error_msg.lower():
+                    delay = RETRY_BASE_DELAY * (2 ** attempt)
+                    print(f"MiniMax {model_name} rate limited. Retry {attempt + 1}/{MAX_RETRIES} after {delay}s...")
+                    time.sleep(delay)
+                    continue
+                print(f"MiniMax {model_name} error: {e}")
+                break
+        
+        print(f"Failed with {model_name}, trying next model...")
+    
     return None
 
 
@@ -562,12 +722,11 @@ def render_md(data, current_time_utc: str, status: dict) -> str:
 # Main
 # -----------------------------
 def main():
-    gemini_api_key = os.environ.get("GEMINI_API_KEY")
-    if not gemini_api_key:
+    # Gemini is primary (required), MiniMax is fallback (optional)
+    gemini_key = os.environ.get("GEMINI_API_KEY")
+    if not gemini_key:
         print("Error: GEMINI_API_KEY is not set. Exiting.")
         raise SystemExit(1)
-
-    client = genai.Client(api_key=gemini_api_key)
 
     now = datetime.utcnow()
     current_time_utc = now.strftime("%Y-%m-%d %H:%M:%S")
@@ -673,10 +832,16 @@ Return ONLY valid JSON (no markdown, no extra text):
     gnews_api_key_provided = bool(os.getenv("GNEWS"))
 
     # -----------------------------
-    # Gemini fetch (core)
+    # Gemini fetch (core) - with fallback if unavailable
     # -----------------------------
-    print("Fetching combined price and deep news via Gemini...")
-    combined_data = fetch_content_from_genai(client, prompt)
+    print("Fetching combined price and deep news via MiniMax M2.7...")
+    combined_data = None
+    
+    try:
+        combined_data = fetch_content_from_genai(prompt)
+    except Exception as e:
+        print(f"MiniMax fetch failed: {e}")
+    
     lme_data = combined_data
     news_data = combined_data
 
@@ -687,21 +852,19 @@ Return ONLY valid JSON (no markdown, no extra text):
         "newsapi_status": "OK" if newsapi_articles else "EMPTY/FAIL",
         "gnews_status": "OK" if gnews_articles else "EMPTY/FAIL",
         "lme_status": "OK" if lme_data else "FAIL",
-        "gemini_news_status": "OK" if news_data else "FAIL",
+        "minimax_news_status": "OK" if news_data else "FAIL",
     }
 
     # -----------------------------
-    # Hard fail policy (FIXED):
-    # Only fail if Gemini core outputs are missing.
-    # NewsAPI/GNews are best-effort and should not break the workflow.
+    # Graceful degradation:
+    # If Gemini fails, generate report with available data (news headlines only).
+    # No longer hard-fail on API errors - this prevents workflow crashes.
     # -----------------------------
-    errors = []
-    if not lme_data:
-        errors.append("Gemini LME request returned no usable data. Check GEMINI_API_KEY and model availability.")
-    if not news_data:
-        errors.append("Gemini news request returned no usable data. Verify GEMINI_API_KEY, network, or model quota.")
+    if not lme_data and not news_data:
+        print("Warning: Both Gemini LME and news failed. Proceeding with available news data only.")
+        print("Note: LME price data will be empty, but headlines from NewsAPI/GNews will still be included.")
 
-    # Soft warnings for external news APIs
+    # Soft warnings for external news APIs (non-fatal)
     if news_api_key_provided and (not newsapi_articles or newsapi_error):
         msg = "Warning: NewsAPI returned no articles or had an error."
         if newsapi_error:
@@ -713,12 +876,6 @@ Return ONLY valid JSON (no markdown, no extra text):
         if gnews_error:
             msg += f" Detail: {gnews_error}"
         print(msg)
-
-    if errors:
-        print("Fatal validation errors detected (Gemini core only):")
-        for err in errors:
-            print(f"- {err}")
-        raise SystemExit(1)
 
     # Validate and normalize LME
     valid_lme = []
