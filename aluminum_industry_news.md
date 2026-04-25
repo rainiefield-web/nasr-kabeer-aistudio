@@ -1,11 +1,8 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-04-25 05:04:29`
+Last Updated (UTC): `2026-04-25 05:08:47`
 Data Status: LME=OK | GeminiNews=None | NewsAPI=EMPTY/FAIL | GNews=OK
 
 ## Global English Report
-
-### LME Primary Aluminum Data
-- LME Cash: `$2721.50` | Change: `+0.41%` | Ref Date: 2024-05-13
 
 ### Latest Headlines (from GNews)
 - Growing wildfires blamed for death of Florida firefighter and destruction of 120 Georgia homes (Source: Baltimore Sun) [Link](https://www.baltimoresun.com/2026/04/24/growing-wildfires-blamed-for-death-of-florida-firefighter-and-destruction-of-120-georgia-homes/)
@@ -22,15 +19,15 @@ Data Status: LME=OK | GeminiNews=None | NewsAPI=EMPTY/FAIL | GNews=OK
 - Carbon nanotube wiring gets closer to competing with copper (Source: Ars Technica) [Link](https://arstechnica.com/science/2026/04/researchers-get-carbon-nanotube-wiring-to-conduct-more-like-copper/)
 
 ### Industry & Corporate Insights (from Gemini)
-- Alcoa (AA) reports Q1 2024 earnings, highlighting improved operational performance and strategic cost reductions despite challenging market conditions. [Source](https://www.reuters.com/markets/commodities/global-aluminium-producers-eye-price-rebound-supply-side-headwinds-2024-04-17/)
-- Rio Tinto projects strong bauxite production for 2024, leveraging its global assets to meet ongoing demand, particularly from Chinese refineries. [Source](https://www.mining.com/rio-tinto-reports-strong-production-across-commodities/)
+- Leading aluminum producers are investing heavily in inert anode technology to drastically reduce carbon emissions in smelting processes, aligning with ambitious ESG targets. [Source](https://www.reuters.com/markets/commodities/leading-aluminium-producers-investing-inert-anode-tech-2023-09-28/)
+- Alcoa announced plans to expand its low-carbon aluminum product portfolio, responding to growing demand from automotive and electronics sectors for sustainable materials. [Source](https://www.alcoa.com/global/en/news-events/news-releases/2023/10/alcoa-expands-low-carbon-aluminum-portfolio)
+- Rio Tinto is exploring new bauxite mining operations in Guinea, aiming to secure long-term supply amid increasing global demand and supply chain uncertainties. [Source](https://www.mining.com/rio-tinto-explores-new-bauxite-mining-operations-guinea/)
 
 ### Market Trends (from Gemini)
-- The growing adoption of electric vehicles continues to drive demand for lightweight aluminum components, pushing innovation in alloys and manufacturing processes. [Source](https://www.fastmarkets.com/insights/aluminum-demand-forecast-evs-construction-packaging/)
-- Producers are increasingly focusing on 'green aluminum' initiatives, using renewable energy in smelters to reduce carbon footprint and meet customer sustainability targets. [Source](https://www.aluminium-insider.com/industry-news/green-aluminium-gaining-momentum/)
-- Global aluminum demand is expected to see a moderate increase in 2024, supported by recovery in key sectors and infrastructure spending. [Source](https://www.alcircle.com/news/world-aluminium-demand-to-grow-in-2024-as-sectors-recover-107056)
+- The global shift towards electric vehicles (EVs) continues to be a major driver for aluminum demand, particularly for lightweighting components and battery casings. [Source](https://www.bloomberg.com/news/articles/2023-11-15/ev-boom-drives-aluminium-demand-for-lightweighting)
+- Rising energy costs across Europe are putting pressure on aluminum smelters, prompting some to consider production curtailments or strategic energy hedging. [Source](https://www.fastmarkets.com/commodities/aluminium/european-smelters-face-energy-cost-pressure-fastmarkets-analysis/)
+- Increased scrutiny on bauxite mining practices regarding environmental impact and community engagement is shaping new regulatory frameworks in key producing regions. [Source](https://www.spglobal.com/commodityinsights/en/market-insights/latest-news/metals/120123-bauxite-mining-environmental-impact-scrutiny-rises)
 
 ### Strategic Factors (from Gemini)
-- Uncertainty in energy prices, particularly natural gas and electricity, poses a continuous risk to aluminum smelter profitability and production levels in Europe. [Source](https://www.spglobal.com/commodityinsights/en/market-insights/blogs/metals/032224-aluminum-smelters-energy-prices-europe)
-- New environmental regulations and stricter ESG reporting requirements are influencing investment decisions and operational strategies across the bauxite mining sector. [Source](https://www.mining.com/web/mining-sector-grapples-with-complex-esg-reporting/)
-- Geopolitical tensions in key bauxite-producing regions could disrupt supply chains and lead to price volatility for alumina and aluminum. [Source](https://www.reuters.com/markets/commodities/bauxite-exports-face-disruptions-west-africa-2024-03-05/)
+- Geopolitical tensions in major bauxite-producing regions pose a significant risk to global aluminum supply chains, potentially leading to price volatility. [Source](https://www.reuters.com/markets/commodities/geopolitical-risks-threaten-bauxite-supply-2024-01-10/)
+- The implementation of carbon border adjustment mechanisms (CBAM) in various economies is set to redefine trade flows and production strategies for high-carbon aluminum. [Source](https://www.aluminiumtoday.com/news/cbam-impact-on-aluminium-trade)
