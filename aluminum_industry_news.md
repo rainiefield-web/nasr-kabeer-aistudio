@@ -1,19 +1,33 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-04-27 10:10:22`
-Data Status: LME=FAIL | GeminiNews=None | NewsAPI=EMPTY/FAIL | GNews=OK
+Last Updated (UTC): `2026-04-28 10:09:31`
+Data Status: LME=OK | GeminiNews=None | NewsAPI=EMPTY/FAIL | GNews=OK
 
 ## Global English Report
 
 ### Latest Headlines (from GNews)
+- Nexans to acquire Republic Wire, establishing a strategic platform in the United States (Source: The Manila Times) [Link](https://www.manilatimes.net/2026/04/28/tmt-newswire/globenewswire/nexans-to-acquire-republic-wire-establishing-a-strategic-platform-in-the-united-states/2329628)
+- Nexans to acquire Republic Wire, establishing a strategic (Source: GlobeNewswire) [Link](https://www.globenewswire.com/news-release/2026/04/27/3281952/0/en/nexans-to-acquire-republic-wire-establishing-a-strategic-platform-in-the-united-states.html)
+- With Aluminum Prices Soaring, This Stock Is Up 230% in the Past Year (Source: Barchart) [Link](https://www.barchart.com/story/news/1537477/with-aluminum-prices-soaring-this-stock-is-up-230-in-the-past-year)
+- Futures Flat At All Time Highs Ahead Of Huge Week, Semis Set For 19th Day Of Gains (Source: ZeroHedge) [Link](https://www.zerohedge.com/markets/futures-flat-all-time-highs-ahead-huge-week-semis-set-19th-day-gains)
+- What to expect from Q1 2026 earnings (Source: CNBC) [Link](https://www.cnbc.com/2026/04/27/gm-f-stla-earnings.html)
+- Sun Pharma-Organon Deal: Where Does It Rank in the List of Outgoing Acquisitions? (Source: Outlook Business) [Link](https://www.outlookbusiness.com/ampstories/corporate/sun-pharmaorganon-deal-where-does-it-rank-in-the-list-of-outgoing-acquisitions)
+- Theatre Factory to move to New Kensington arts hub; volunteers aim to fill gap in Trafford (Source: Pittsburgh Tribune-Review) [Link](https://triblive.com/local/valley-news-dispatch/theatre-factory-to-move-to-new-kensington-arts-hub-volunteers-aim-to-fill-gap-in-trafford/)
+- Lighter metal, heavier wallets: has the aluminium rally hit its melting point? (Source: Livemint) [Link](https://www.livemint.com/market/stock-market-news/lighter-metal-heavier-wallets-aluminium-rally-melting-point-metal-rally-hindalco-nalco-vedanta-aluminium-stocks-11777263938309.html)
+- Sun Pharma’s Organon Acquisition: Sun Pharma To Acquire US-Based Drugmaker Organon for $11.75 Billion (Source: NewsX) [Link](https://www.newsx.com/business/sun-pharmas-organon-acquisition-sun-pharma-to-acquire-us-based-drugmaker-organon-for-1175-billion-205763/)
+- JSW Steel vs Tata Steel vs NMDC: Goldman Sachs Initiates Coverage On Sector- Check Top Picks (Source: NDTV Profit) [Link](https://www.ndtvprofit.com/markets/jsw-steel-vs-tata-steel-vs-nmdc-goldman-sachs-initiates-coverage-on-sector-check-top-picks-11413576)
+- Economists rethink China forecasts as AI fires up import surge (Source: The Straits Times) [Link](https://www.straitstimes.com/business/economy/economists-rethink-china-forecasts-as-ai-fires-up-import-surge)
 - Q4 hit but private capital expenditure lifts FY26 investments 32% (Source: Business Standard) [Link](https://www.business-standard.com/economy/news/q4-hit-but-private-capital-expenditure-lifts-fy26-investments-32-126042700003_1.html)
-- NatWest faces AGM showdown over climate backtracking (Source: The Guardian) [Link](https://www.theguardian.com/business/2026/apr/26/natwest-agm-showdown-climate-backtracking-protest-vote)
-- Kaiser turns 80 as aluminum demand reaches new heights (Source: Spokane Spokesman-Review) [Link](https://www.spokesman.com/stories/2026/apr/26/kaiser-turns-80-as-aluminum-demand-reaches-new-hei/)
-- Can jarrah forests be recovered after bauxite mining? (Source: Phys.org) [Link](https://phys.org/news/2026-04-jarrah-forests-recovered-bauxite.html)
-- Century Extrusions Approves Rights Issue Draft Letter, Notes Director Resignation (Source: scanx.trade) [Link](https://scanx.trade/stock-market-news/companies/century-extrusions-files-draft-letter-for-4-500-lakh-rights-issue/38608868)
-- Growing wildfires blamed for death of Florida firefighter and destruction of 120 Georgia homes (Source: Baltimore Sun) [Link](https://www.baltimoresun.com/2026/04/24/growing-wildfires-blamed-for-death-of-florida-firefighter-and-destruction-of-120-georgia-homes/)
-- Why Velo3D Shares Are Up 50% This Week: Andretti Partnership And $9.8 Million Defense Contract (Source: Benzinga) [Link](https://www.benzinga.com/trading-ideas/movers/26/04/52028651/why-velo3d-shares-are-up-50-this-week-andretti-partnership-and-9-8-million-defense-contract)
-- Buy the dip, but avoid IT, back pharma & power, says Rudramurthy BV (Source: The Economic Times) [Link](https://economictimes.indiatimes.com/markets/expert-view/buy-the-dip-but-avoid-it-back-pharma-power-says-rudramurthy-bv/articleshow/130494372.cms)
-- S&P Futures Jump To Record, Oil Tumbles On Report Iran Foreign Minister Going To Pakistan (Source: ZeroHedge) [Link](https://www.zerohedge.com/markets/sp-futures-jump-record-oil-tumbles-report-iran-foreign-minister-going-pakistan)
-- The Most Overlooked Commodity Supply Shock Of 2026 (Source: Benzinga) [Link](https://www.benzinga.com/markets/commodities/26/04/52024358/the-most-overlooked-commodity-supply-shock-of-2026)
-- NQ outperforms as INTC +28% premarket, Brent on $107/bbl handle, UoM finals ahead - Newsquawk US Market Open (Source: ZeroHedge) [Link](https://www.zerohedge.com/markets/nq-outperforms-intc-28-premarket-brent-107bbl-handle-uom-finals-ahead-newsquawk-us-market)
-- Metal sector earnings may recover in March quarter on better prices, volumes (Source: CNBC TV18) [Link](https://www.cnbctv18.com/market/earnings/metal-sector-q4fy26-steel-profitability-non-ferrous-ferrous-aluminium-supply-gap-qsqt-q4-earnings-preview-results-hindalco-nalco-vedanta-tata-steel-jsw-jspl-sail-geopolitical-tensions-west-asia-confli-19892813.htm)
+
+### Industry & Corporate Insights (from Gemini)
+- As an AI, I cannot access real-time news or corporate developments from the future date of 2026-04-28. [Source](https://example.com/future-news-unavailable)
+- Information regarding future corporate announcements, such as smelter production changes or mergers for 2026-04-28, is currently unavailable. [Source](https://example.com/future-corporate-info)
+
+### Market Trends (from Gemini)
+- Future market trends, including bauxite supply shifts or automotive demand evolution on 2026-04-28, cannot be predicted or reported in real-time. [Source](https://example.com/future-trends-analysis)
+- Real-time analysis of future industry trends, like ESG initiatives impacting aluminum production in 2026, is beyond my current capabilities. [Source](https://example.com/future-esg-trends)
+- Detailed insights into future aluminum market dynamics and pricing influences for April 28, 2026, are not accessible at this time. [Source](https://example.com/future-market-dynamics)
+
+### Strategic Factors (from Gemini)
+- External factors influencing aluminum prices, such as geopolitical events or energy costs on 2026-04-28, cannot be retrieved in advance. [Source](https://example.com/future-factors-impact)
+- Specific reports on future bauxite supply disruptions or new ESG regulations set for 2026-04-28 are not available from current data sources. [Source](https://example.com/future-supply-esg)
+- Any real-time market-moving factors for the aluminum industry on the requested future date are not within my data access capabilities. [Source](https://example.com/future-market-movers)
