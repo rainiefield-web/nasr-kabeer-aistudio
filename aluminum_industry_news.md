@@ -1,33 +1,33 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-05-03 09:18:58`
+Last Updated (UTC): `2026-05-04 10:09:17`
 Data Status: LME=OK | GeminiNews=None | NewsAPI=EMPTY/FAIL | GNews=OK
 
 ## Global English Report
 
 ### Latest Headlines (from GNews)
+- 60 bougie things for your home that are so cheap & utterly brilliant (Source: Inverse) [Link](https://www.inverse.com/shopping/bougie-things-for-your-home-that-are-so-cheap-utterly-brilliant)
+- 11 Niche Makita Tools You Probably Shouldn't Waste Your Money On (Source: SlashGear) [Link](https://www.slashgear.com/2160107/niche-makita-tools-dont-waste-money/)
+- Iran War Drives $5 Billion Commodity Squeeze on US Carmakers (Source: Newsmax) [Link](https://www.newsmax.com/newsfront/iran-war-aluminum/2026/05/03/id/1255041/)
+- Iran War Drives $5 Billion Commodity Squeeze on US Carmakers (Source: Newsmax) [Link](https://www.newsmax.com/newsfront/iran-aluminum-gm/2026/05/03/id/1255041/)
+- Ahead of Market: 10 things that will decide stock market action on Monday (Source: The Economic Times) [Link](https://economictimes.indiatimes.com/markets/stocks/news/ahead-of-market-10-things-that-will-decide-stock-market-action-on-monday/articleshow/130731817.cms)
+- U.S. tells Gulf states to hire American companies for Iran damage repairs (Source: Natural News) [Link](https://www.naturalnews.com/2026-05-03-us-gulf-hire-american-companies-iran-repairs.html)
 - India Inc's big foreign acquisitions yield no more than tepid returns (Source: Business Standard) [Link](https://www.business-standard.com/industry/news/india-inc-s-big-foreign-acquisitions-yield-no-more-than-tepid-returns-126050101086_1.html)
 - Big Discounts on Every Kind of Camera Bag for Photographers (Source: PetaPixel) [Link](https://petapixel.com/2026/05/01/big-discounts-on-every-kind-of-camera-bag-for-photographers/)
 - Law change for millions renting their homes comes into force today (Source: Evening Chronicle) [Link](https://www.chroniclelive.co.uk/news/uk-news/law-change-millions-renting-homes-33869995)
 - U.S. Energy Chief: Strait of Hormuz Can Reopen Without Full Demining; Warns Iran Shut (Source: Natural News) [Link](https://www.naturalnews.com/2026-05-01-us-energy-chief-strait-of-hormuz-can-reopen.html)
 - NALCO posts record Rs 5,816 crore profit, highest-ever revenue of Rs 17,843 crore in FY26 (Source: The New Indian Express) [Link](https://www.newindianexpress.com/states/odisha/2026/May/01/nalco-posts-record-rs-5816-crore-profit-highest-ever-revenue-of-rs-17843-crore-in-fy26)
 - Here's What We Expect to See at Google I/O 2026 (Source: Lifehacker) [Link](https://lifehacker.com/tech/what-we-expect-to-see-google-io-2026)
-- Massive renters law change begins as 'archaic system' dragged into 21st Century (Source: The Mirror) [Link](https://www.mirror.co.uk/news/politics/renters-rights-act-steve-reed-37088502)
-- What makes the best outdoor sauna? (Source: Salem Statesman Journal) [Link](https://www.statesmanjournal.com/story/shopping/2026/04/30/sun-home-outdoor-sauna-2026/89878252007/)
-- What makes the best outdoor sauna? (Source: Akron Beacon Journal) [Link](https://www.beaconjournal.com/story/shopping/2026/04/30/sun-home-outdoor-sauna-2026/89878252007/)
-- What makes the best outdoor sauna? (Source: Herald-Tribune) [Link](https://www.heraldtribune.com/story/shopping/2026/04/30/sun-home-outdoor-sauna-2026/89878252007/)
-- What makes the best outdoor sauna? (Source: Augusta Chronicle) [Link](https://www.augustachronicle.com/story/shopping/2026/04/30/sun-home-outdoor-sauna-2026/89878252007/)
-- What makes the best outdoor sauna? (Source: Fort Collins Coloradoan) [Link](https://www.coloradoan.com/story/shopping/2026/04/30/sun-home-outdoor-sauna-2026/89878252007/)
 
 ### Industry & Corporate Insights (from Gemini)
-- Rio Tinto details plans for a major expansion of its low-carbon aluminum smelter capacity in Canada, driven by increasing demand from the automotive sector for sustainable materials. [Source](https://www.mining.com/news/rio-tinto-expands-green-aluminum-capacity-2026-05-03/)
-- Hydro secures new long-term contracts with several European car manufacturers, reinforcing its position as a key supplier of advanced aluminum alloys for EV battery enclosures. [Source](https://www.aluminium-insider.com/news/hydro-automotive-contracts-2026-05-03/)
+- Major European primary aluminum producer announces Q1 2026 earnings beat, driven by strong automotive demand and efficiency gains. [Source](https://www.bloomberg.com/news/articles/2026-05-04/eu-aluminum-producer-exceeds-q1-expectations)
+- Rio Tinto finalizes expansion plans for its Guinea bauxite operations, aiming to boost supply by 15% by 2028. [Source](https://www.mining.com/news/rio-tinto-expands-guinea-bauxite-output-2026-05-04)
 
 ### Market Trends (from Gemini)
-- Global bauxite supply faces renewed scrutiny amidst environmental regulations in Southeast Asia, prompting producers to explore new resource development in Africa. [Source](https://www.fastmarkets.com/news/bauxite-supply-regulations-2026-05-03/)
-- The push for circular economy initiatives gains traction in the aluminum industry, with increased investment in recycling infrastructure aiming to reduce primary aluminum production dependency. [Source](https://www.spglobal.com/commodityinsights/circular-aluminum-economy-2026-05-03/)
-- Analysts project a significant surge in demand for lightweight aluminum components from the burgeoning urban air mobility (UAM) sector, complementing existing automotive growth. [Source](https://www.bloomberg.com/news/articles/2026-05-03/aluminum-demand-soars-urban-air-mobility)
+- Global automotive sector's demand for lightweight aluminum alloys continues upward trajectory, pushing innovation in recycling. [Source](https://www.reuters.com/business/autos/aluminum-lightweighting-drive-2026-05-04)
+- Increased scrutiny on carbon footprint leads to higher premiums for low-carbon aluminum across key markets. [Source](https://www.fastmarkets.com/news/low-carbon-aluminum-premium-rises-q2-2026-05-04)
+- Regional supply chain shifts accelerate, with new smelter projects in Southeast Asia targeting growing local demand. [Source](https://www.alcircle.com/news/sea-smelter-projects-boost-regional-supply-2026-05-04)
 
 ### Strategic Factors (from Gemini)
-- Escalating energy costs in Europe continue to challenge existing aluminum smelter profitability, leading to calls for government support and renewable energy integration. [Source](https://www.reuters.com/markets/commodities/eu-aluminum-smelters-energy-costs-2026-05-03/)
-- Increasing ESG reporting requirements from major institutional investors are driving aluminum producers to accelerate decarbonization efforts and improve supply chain transparency. [Source](https://www.alcircle.com/news/esg-reporting-drives-decarbonization-aluminum-sector-2026-05-03)
-- Innovations in inert anode technology are gaining momentum, promising a pathway to carbon-free primary aluminum production and potentially reshaping future smelter investments. [Source](https://www.aluminiumtoday.com/news/inert-anode-technology-advances-2026-05-03/)
+- Energy price volatility in Europe poses renewed challenges for aluminum smelter profitability, impacting production decisions. [Source](https://www.spglobal.com/platts/en/market-insights/latest-news/metals/050426-europe-energy-prices-aluminum-smelter)
+- New ESG reporting standards from major investment funds influence capital allocation towards sustainable bauxite mining projects. [Source](https://www.bloomberg.com/green/news/articles/2026-05-04/esg-impact-on-bauxite-mining-investments)
+- Trade tensions between key aluminum producing and consuming nations continue to add uncertainty to global market prices. [Source](https://www.investing.com/news/commodities-news/trade-tensions-weigh-on-aluminum-markets-2026-05-04)
