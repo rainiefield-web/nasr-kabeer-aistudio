@@ -1,23 +1,22 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-05-10 09:25:19`
+Last Updated (UTC): `2026-05-11 10:56:58`
 Data Status: LME=OK | GeminiNews=None | NewsAPI=OK | GNews=OK
 
 ## Global English Report
 
 ### Latest Headlines (from NewsAPI)
-- Supervisor, 2 scrap vendors held for Rs 1.50 crore theft to steel, aluminium materials for railway project in Panvel (Source: The Times of India) [Link](https://timesofindia.indiatimes.com/city/mumbai/supervisor-2-scrap-vendors-held-for-rs-1-50-crore-theft-to-steel-aluminium-materials-for-railway-project-in-panvel/articleshow/130973700.cms)
-- Diet Coke Returns To India In Glass Bottles After Months Of Can Shortage Across Markets (Source: Newsd.in) [Link](https://newsd.in/diet-coke-returns-to-india-in-glass-bottles-after-months-of-can-shortage-across-markets/)
+- Nalco's alumina exports to West Asia affected due to geopolitical tensions, says CMD (Source: BusinessLine) [Link](https://www.thehindubusinessline.com/companies/nalcos-alumina-exports-to-west-asia-affected-due-to-geopolitical-tensions-says-cmd/article70962010.ece)
 
 ### Latest Headlines (from GNews)
-- China's rise came at America's and Ohio's expense (Source: Cincinnati Cincinnati Enquirer) [Link](https://www.cincinnati.com/story/opinion/contributors/2026/05/09/chinas-rise-came-at-americas-and-ohios-expense/89953726007/)
-- 14 Canadian business leaders share the best advice they got from their moms (Source: The Globe and Mail) [Link](https://www.theglobeandmail.com/business/article-ceos-mothers-day-canada-wealthsimple-president-advice/)
-- Pressure grows on Government over Aughinish Alumina as dozens of MEPs demand export ban (Source: The Irish Times) [Link](https://www.irishtimes.com/ireland/2026/05/09/pressure-grows-on-government-over-aughinish-alumina-as-dozens-of-meps-demand-export-ban/)
-- Best of the Week: The impossible balancing act for new chief ministers (Source: Livemint) [Link](https://www.livemint.com/newsletters/best-of-the-week/best-of-the-week-the-impossible-balancing-act-for-new-chief-ministers-11778241743334.html)
-- Manaksia Coated Metals Publishes NCLT Merger Meeting Ads (Source: scanx.trade) [Link](https://scanx.trade/stock-market-news/companies/manaksia-coated-metals-industries-schedules-nclt-directed-meetings-to-approve-merger-with-jpa-snacks-private-limited/39728691)
-- Thermax Grants 17,812 Stock Options to Eligible Employees Under ESOP 2021 (Source: scanx.trade) [Link](https://scanx.trade/stock-market-news/companies/thermax-grants-17-812-stock-options-to-eligible-employees-under-esop-2021/39814229)
-- Why Diet Coke Comes In Glass Bottle Now? The Iran War Connection Explained (Source: NewsX) [Link](https://www.newsx.com/middle-east/why-diet-coke-comes-in-glass-bottle-now-the-iran-war-connection-explained-215720/)
-- Gigacasting Industry Research Report 2026 (Source: GlobeNewswire) [Link](https://www.globenewswire.com/news-release/2026/05/08/3290906/28124/en/gigacasting-industry-research-report-2026-global-market-analysis-competitive-landscape-opportunities-and-forecasts-2021-2025-2025-2031.html)
-- Thermax Limited Announces Demise of Non-Executive Independent Director Dr. S.B. (Ravi) Pandit (Source: scanx.trade) [Link](https://scanx.trade/stock-market-news/companies/thermax-limited-announces-demise-of-non-executive-independent-director-dr-s-b-ravi-pandit/39767066)
-- NALCO CMD sees slower refinery ramp up and softer alumina prices in FY27 (Source: CNBC TV18) [Link](https://www.cnbctv18.com/market/earnings/nalco-q4-results-targets-higher-domestic-alumina-sales-as-new-refinery-starts-commissioning-in-june-19901680.htm)
-- PyroGenesis Announces First Quarter 2026 Results: Revenue of $4.9 Million, Up 63% Year-Over-Year for Best Quarter Since 2022 (Source: Toronto Star) [Link](https://www.thestar.com/globenewswire/pyrogenesis-announces-first-quarter-2026-results-revenue-of-4-9-million-up-63-year-over/article_596694b6-9236-509b-921c-f3187fba9808.html)
-- What India’s Diet Coke Shortage Means for the U.S. (Source: The Atlantic) [Link](https://www.theatlantic.com/newsletters/2026/05/aluminium-shortage-iran-war-soda-cans/687099/)
+- Nalco's alumina exports to West Asia affected due to geopolitical tensions, says CMD (Source: Daily Excelsior) [Link](https://www.dailyexcelsior.com/nalcos-alumina-exports-to-west-asia-affected-due-to-geopolitical-tensions-says-cmd/)
+- Markets live updates: Wall Street hits new highs, renewed Strait of Hormuz fighting lifts oils prices, ASX to slip ahead of federal budget (Source: ABC (Australian Broadcasting Corporation)) [Link](https://www.abc.net.au/news/2026-05-11/asx-markets-business-news-live-updates/106663582)
+- 10 Must-Have Gadgets To Level Up Your Gaming Space (Source: BGR) [Link](https://www.bgr.com/2163642/best-gadgets-level-up-gaming-space/)
+- Nalco's Exports To West Asia Hit by Geopolitical Tensions (Source: Deccan Chronicle) [Link](https://www.deccanchronicle.com/business/nalcos-exports-to-west-asia-hit-by-geopolitical-tensions-1955835)
+- Manufacturers Face Crunch on Industrial Metals (Source: Kiplinger) [Link](https://www.kiplinger.com/business/manufacturers-face-crunch-on-industrial-metals)
+- The factory town known as China’s furniture capital is fighting to survive (Source: Hindustan Times) [Link](https://www.hindustantimes.com/world-news/the-factory-town-known-as-china-s-furniture-capital-is-fighting-to-survive-101778414561784.html)
+- Nalco's alumina exports to West Asia affected due to geopolitical tensions, says CMD (Source: The Hindu Business Line) [Link](https://www.thehindubusinessline.com/companies/nalcos-alumina-exports-to-west-asia-affected-due-to-geopolitical-tensions-says-cmd/article70962010.ece)
+- Nalco's alumina exports to West Asia affected due to geopolitical tensions, says CMD (Source: The Economic Times) [Link](https://economictimes.indiatimes.com/industry/indl-goods/svs/metals-mining/nalcos-alumina-exports-to-west-asia-affected-due-to-geopolitical-tensions-says-cmd/articleshow/130987339.cms)
+- Nalco's alumina exports to West Asia hit by geopolitical tensions: CMD (Source: Business Standard) [Link](https://www.business-standard.com/companies/news/nalco-s-alumina-exports-to-west-asia-hit-by-geopolitical-tensions-cmd-126051000150_1.html)
+- Nalco's alumina exports to West Asia affected due to geopolitical tensions, says CMD (Source: Devdiscourse) [Link](https://www.devdiscourse.com/article/headlines/3902826-nalcos-alumina-exports-to-west-asia-affected-due-to-geopolitical-tensions-says-cmd)
+- Baumgartner meets with defense contractors, real estate agents in Spokane stop (Source: Spokane Spokesman-Review) [Link](https://www.spokesman.com/stories/2026/may/10/baumgartner-meets-with-defense-contractors-realtor/)
+- High-stakes week ahead for commodities as Iran deadline, Trump-Xi talks and inflation data loom (Source: Moneycontrol) [Link](https://www.moneycontrol.com/news/business/commodities/high-stakes-week-ahead-for-commodities-as-iran-deadline-trump-xi-talks-and-inflation-data-loom-13913968.html)
