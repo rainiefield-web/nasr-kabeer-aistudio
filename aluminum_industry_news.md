@@ -1,33 +1,31 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-05-18 11:40:38`
-Data Status: LME=OK | GeminiNews=None | NewsAPI=EMPTY/FAIL | GNews=OK
+Last Updated (UTC): `2026-05-19 10:58:19`
+Data Status: LME=OK | GeminiNews=None | NewsAPI=OK | GNews=OK
 
 ## Global English Report
 
+### Latest Headlines (from NewsAPI)
+- In 1892, A North Carolina furnace test for cheap aluminum produced an unexpected solid; that accident helped build the industrial Acetylene Age (Source: The Times of India) [Link](https://economictimes.indiatimes.com/news/international/us/in-1892-a-north-carolina-furnace-test-for-cheap-aluminum-produced-an-unexpected-solid-that-accident-helped-build-the-industrial-acetylene-age/articleshow/131173520.cms)
+
 ### Latest Headlines (from GNews)
-- Government to examine level of profit in private health insurance market, says Taoiseach (Source: The Irish Times) [Link](https://www.irishtimes.com/politics/2026/05/17/government-to-examine-level-of-profit-in-private-health-insurance-market-says-taoiseach/)
-- UPSC Prelims 2026 Revision Checklist: Geography (Source: The Indian Express) [Link](https://indianexpress.com/article/upsc-current-affairs/upsc-essentials/upsc-prelims-2026-revision-checklist-top-30-geography-topics-10690733/)
-- Trump focuses attention on Guyana (Source: Arkansas Online) [Link](https://www.arkansasonline.com/news/2026/may/17/trump-focuses-attention-on-guyana/)
-- 2027 BMW i3 predecessor tested (Source: The Canberra Times) [Link](https://www.canberratimes.com.au/story/9248306/2027-bmw-i3-predecessor-tested/)
-- Commodity markets brace for more volatility as prolonged conflict keeps inflation risks elevated (Source: Moneycontrol) [Link](https://www.moneycontrol.com/news/business/commodities/commodity-markets-brace-for-more-volatility-as-prolonged-conflict-keeps-inflation-risks-elevated-13921084.html)
-- HC Denies Extension of Bail for UAPA Accused (Source: Deccan Chronicle) [Link](https://www.deccanchronicle.com/southern-states/telangana/hc-denies-extension-of-bail-for-uapa-accused-1957242)
-- Shop the best home deals at the Lowe's Memorial Day Sale 2026 (Source: Naples Daily News) [Link](https://www.naplesnews.com/story/shopping/deals/memorial-day/2026/05/16/shop-lowes-home-deals-summer-2026/90102839007/)
-- Shop the best home deals at the Lowe's Memorial Day Sale 2026 (Source: Springfield News-Leader) [Link](https://www.news-leader.com/story/shopping/deals/memorial-day/2026/05/16/shop-lowes-home-deals-summer-2026/90102839007/)
-- Shop the best home deals at the Lowe's Memorial Day Sale 2026 (Source: Lansing State Journal) [Link](https://www.lansingstatejournal.com/story/shopping/deals/memorial-day/2026/05/16/shop-lowes-home-deals-summer-2026/90102839007/)
-- Shop the best home deals at the Lowe's Memorial Day Sale 2026 (Source: Aberdeen News) [Link](https://www.aberdeennews.com/story/shopping/deals/memorial-day/2026/05/16/shop-lowes-home-deals-summer-2026/90102839007/)
-- Shop the best home deals at the Lowe's Memorial Day Sale 2026 (Source: York Daily Record) [Link](https://www.ydr.com/story/shopping/deals/memorial-day/2026/05/16/shop-lowes-home-deals-summer-2026/90102839007/)
-- Shop the best home deals at the Lowe's Memorial Day Sale 2026 (Source: Rochester Democrat and Chronicle) [Link](https://www.democratandchronicle.com/story/shopping/deals/memorial-day/2026/05/16/shop-lowes-home-deals-summer-2026/90102839007/)
+- Can these soaring ASX materials stocks keep rising? (Source: The Motley Fool Australia) [Link](https://www.fool.com.au/2026/05/19/can-these-soaring-asx-materials-stocks-keep-rising/)
+- Here's What We Expect to See at Google I/O 2026 (Source: Lifehacker) [Link](https://lifehacker.com/tech/what-we-expect-to-see-google-io-2026)
+- After PGA win, Aaron Rai's Spider is the hottest putter on Tour (Source: GOLF.com) [Link](https://golf.com/gear/putters/aaron-rai-hot-spider-putter/)
+- 5 Cheaper Alternatives To The Ford Mustang Boss 429 (Source: SlashGear) [Link](https://www.slashgear.com/2173534/ford-mustang-boss-429-cheaper-alternatives/)
+- Walmart launches six new Android tablets starting at $97 (Source: 9to5Google) [Link](https://9to5google.com/2026/05/18/walmart-onn-new-android-tablets-2026/)
+- Higher aluminum prices are powering one former Dow component. Here's how to buy for less (Source: CNBC) [Link](https://www.cnbc.com/2026/05/18/higher-aluminum-prices-are-powering-one-former-dow-component-heres-how-to-buy-for-less.html)
+- NextEra to Buy Dominion Energy in $67 Billion Deal -- Commodities Roundup (Source: MarketScreener) [Link](https://www.marketscreener.com/news/nextera-to-buy-dominion-energy-in-67-billion-deal-commodities-roundup-ce7f5adadf8ff227)
+- Africa Is the Key to Sustained Global Growth (Source: Project Syndicate) [Link](https://www.project-syndicate.org/commentary/africa-youth-bulge-industrial-potential-could-drive-global-growth-in-21st-century-by-hippolyte-fofack-2026-05)
+- Eco-Tip for Monday, May 18, 2026 (Source: Boulder Daily Camera) [Link](https://www.dailycamera.com/2026/05/18/eco-tip-for-monday-may-18-2026/)
+- Naples businessman building traveling Vietnam War memorial (Source: Naples Daily News) [Link](https://www.naplesnews.com/story/money/business/local/2026/05/18/naples-businessman-builds-traveling-vietnam-war-wall-with-student-help/90084655007/)
+- Naples businessman building traveling Vietnam War memorial (Source: News-Press) [Link](https://eu.news-press.com/story/money/business/local/2026/05/18/naples-businessman-builds-traveling-vietnam-war-wall-with-student-help/90084655007/)
+- US Steel and Aluminum Supply is Critical to Winning the Iran War | Opinion (Source: Newsweek) [Link](https://www.newsweek.com/us-steel-and-aluminum-supply-is-critical-to-winning-the-iran-war-opinion-11952158)
 
 ### Industry & Corporate Insights (from Gemini)
-- Real-time corporate news for the aluminum industry on 2026-05-18 is unavailable as this is a future date and cannot be accessed.
-- Specific company announcements or operational updates for 2026-05-18 within the aluminum sector are not yet available.
+- Real-time corporate news or updates for the future date 2026-05-19 are not available, as news articles have not yet been published.
 
 ### Market Trends (from Gemini)
-- Analysis of current trends in aluminum smelter production for 2026-05-18 is unavailable as it requires future data.
-- Future projections or real-time updates on bauxite supply and demand dynamics for 2026-05-18 cannot be provided.
-- Discussions or reports on ESG initiatives and their impact on the aluminum industry for 2026-05-18 are not available.
+- Analysis of industry trends such as smelter production, bauxite supply, ESG developments, or automotive demand for 2026-05-19 cannot be performed, as this information is not yet public.
 
 ### Strategic Factors (from Gemini)
-- Data on automotive demand for aluminum or other market-driving factors for 2026-05-18 is beyond the scope of current knowledge.
-- Any geopolitical or economic factors influencing the aluminum market on 2026-05-18 are not retrievable as they are in the future.
-- Real-time updates on aluminum market sentiments or price drivers for 2026-05-18 are unavailable.
+- Specific market factors influencing aluminum prices or industry news for the future date of 2026-05-19 are currently unavailable. Therefore, real URLs for such news cannot be provided.
