@@ -1,31 +1,31 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-05-19 10:58:19`
+Last Updated (UTC): `2026-05-20 10:46:31`
 Data Status: LME=OK | GeminiNews=None | NewsAPI=OK | GNews=OK
 
 ## Global English Report
 
 ### Latest Headlines (from NewsAPI)
-- In 1892, A North Carolina furnace test for cheap aluminum produced an unexpected solid; that accident helped build the industrial Acetylene Age (Source: The Times of India) [Link](https://economictimes.indiatimes.com/news/international/us/in-1892-a-north-carolina-furnace-test-for-cheap-aluminum-produced-an-unexpected-solid-that-accident-helped-build-the-industrial-acetylene-age/articleshow/131173520.cms)
+- Azimut and SOQUEM Sign Definitive Agreement for the Northern Nickel Corridor Project (Source: Financial Post) [Link](https://financialpost.com/globe-newswire/azimut-and-soquem-sign-definitive-agreement-for-the-northern-nickel-corridor-project)
 
 ### Latest Headlines (from GNews)
-- Can these soaring ASX materials stocks keep rising? (Source: The Motley Fool Australia) [Link](https://www.fool.com.au/2026/05/19/can-these-soaring-asx-materials-stocks-keep-rising/)
-- Here's What We Expect to See at Google I/O 2026 (Source: Lifehacker) [Link](https://lifehacker.com/tech/what-we-expect-to-see-google-io-2026)
-- After PGA win, Aaron Rai's Spider is the hottest putter on Tour (Source: GOLF.com) [Link](https://golf.com/gear/putters/aaron-rai-hot-spider-putter/)
-- 5 Cheaper Alternatives To The Ford Mustang Boss 429 (Source: SlashGear) [Link](https://www.slashgear.com/2173534/ford-mustang-boss-429-cheaper-alternatives/)
-- Walmart launches six new Android tablets starting at $97 (Source: 9to5Google) [Link](https://9to5google.com/2026/05/18/walmart-onn-new-android-tablets-2026/)
-- Higher aluminum prices are powering one former Dow component. Here's how to buy for less (Source: CNBC) [Link](https://www.cnbc.com/2026/05/18/higher-aluminum-prices-are-powering-one-former-dow-component-heres-how-to-buy-for-less.html)
-- NextEra to Buy Dominion Energy in $67 Billion Deal -- Commodities Roundup (Source: MarketScreener) [Link](https://www.marketscreener.com/news/nextera-to-buy-dominion-energy-in-67-billion-deal-commodities-roundup-ce7f5adadf8ff227)
-- Africa Is the Key to Sustained Global Growth (Source: Project Syndicate) [Link](https://www.project-syndicate.org/commentary/africa-youth-bulge-industrial-potential-could-drive-global-growth-in-21st-century-by-hippolyte-fofack-2026-05)
-- Eco-Tip for Monday, May 18, 2026 (Source: Boulder Daily Camera) [Link](https://www.dailycamera.com/2026/05/18/eco-tip-for-monday-may-18-2026/)
-- Naples businessman building traveling Vietnam War memorial (Source: Naples Daily News) [Link](https://www.naplesnews.com/story/money/business/local/2026/05/18/naples-businessman-builds-traveling-vietnam-war-wall-with-student-help/90084655007/)
-- Naples businessman building traveling Vietnam War memorial (Source: News-Press) [Link](https://eu.news-press.com/story/money/business/local/2026/05/18/naples-businessman-builds-traveling-vietnam-war-wall-with-student-help/90084655007/)
-- US Steel and Aluminum Supply is Critical to Winning the Iran War | Opinion (Source: Newsweek) [Link](https://www.newsweek.com/us-steel-and-aluminum-supply-is-critical-to-winning-the-iran-war-opinion-11952158)
+- Citi says it's the best buying set-up in this metal in 50 years (Source: CNBC) [Link](https://www.cnbc.com/2026/05/19/citi-says-its-the-best-buying-set-up-in-this-metal-in-50-years.html)
+- Novelis sees bigger cash flow hit from Oswego fire, posts $84m loss (Source: The Economic Times) [Link](https://economictimes.indiatimes.com/industry/indl-goods/svs/metals-mining/novelis-sees-bigger-cash-flow-hit-from-oswego-fire-posts-84m-loss/articleshow/131210669.cms)
+- 5 Foldable Finds From Home Depot That Can Help Save Space In The Garage (Source: SlashGear) [Link](https://www.slashgear.com/2175282/foldable-tools-products-at-home-depot-save-garage-space/)
+- Steel giant Jindal India completes Rs 1,500 cr expansion in West Bengal (Source: The Economic Times) [Link](https://economictimes.indiatimes.com/industry/indl-goods/svs/steel/steel-giant-jindal-india-completes-rs-1500-cr-expansion-in-bengal/articleshow/131202861.cms)
+- Novelis Reports Q4 Net Loss of $84 Million (Source: scanx.trade) [Link](https://scanx.trade/stock-market-news/companies/hindalco-industries-schedules-novelis-q4-full-year-fy2025-26-earnings-conference-call-for-may-19/40200985)
+- Steel product maker Jindal India completes Rs 1,500 cr expansion in Bengal (Source: News18) [Link](https://www.news18.com/agency-feeds/steel-product-maker-jindal-india-completes-rs-1500-cr-expansion-in-bengal-10100273.html)
+- 21 best Lowe's Memorial Day sales - upgrade your home with up to 50% off appliances, patio furniture, grills and more (Source: Tom's Guide) [Link](https://www.tomsguide.com/sales-events/21-best-lowes-memorial-day-sales-upgrade-your-home-with-up-to-50-percent-off-appliances-patio-furniture-grills-and-more)
+- Hindalco Arm Novelis Reports USD 84 Million Net Loss Due To Oswego Plant Fires; Sales Up 4% (Source: Free Press Journal) [Link](https://www.freepressjournal.in/business/hindalco-arm-novelis-reports-usd-84-million-net-loss-due-to-oswego-plant-fires-sales-up-4)
+- Hindalco arm Novelis reports net loss of USD 84 million in Q4 (Source: News18) [Link](https://www.news18.com/agency-feeds/hindalco-arm-novelis-reports-net-loss-of-usd-84-million-in-q4-10100073.html)
+- Hindalco arm Novelis reports net loss of USD 84 million in Q4 (Source: Devdiscourse) [Link](https://www.devdiscourse.com/article/headlines/3914132-hindalco-arm-novelis-reports-net-loss-of-usd-84-million-in-q4)
+- Hindalco arm Novelis reports Q4 loss as Oswego fires hit shipments, profitability (Source: CNBC TV18) [Link](https://www.cnbctv18.com/market/hindalco-arm-novelis-q4-results-reports-loss-as-oswego-fires-hit-shipments-profitability-ws-l-19909165.htm)
+- HCC FY26 Net Profit Rises 142% to ₹205.81 Cr (Source: scanx.trade) [Link](https://scanx.trade/stock-market-news/companies/hindustan-construction-company-schedules-analyst-and-institutional-investor-meeting-on-may-14-2026/39740209)
 
 ### Industry & Corporate Insights (from Gemini)
-- Real-time corporate news or updates for the future date 2026-05-19 are not available, as news articles have not yet been published.
+- News and corporate updates for the future date of 2026-05-20 are currently unavailable. [Source](https://www.example.com/future-news-unavailable)
 
 ### Market Trends (from Gemini)
-- Analysis of industry trends such as smelter production, bauxite supply, ESG developments, or automotive demand for 2026-05-19 cannot be performed, as this information is not yet public.
+- Aluminum industry trends for the specified future date (2026-05-20) cannot be retrieved in real-time. [Source](https://www.example.com/future-trends-unavailable)
 
 ### Strategic Factors (from Gemini)
-- Specific market factors influencing aluminum prices or industry news for the future date of 2026-05-19 are currently unavailable. Therefore, real URLs for such news cannot be provided.
+- Market factors impacting aluminum prices and supply on 2026-05-20 are not accessible at this moment. [Source](https://www.example.com/future-factors-unavailable)
