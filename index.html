@@ -9,37 +9,11 @@
     <meta property="og:url" content="https://nkaluminum.sa/" />
 
     <title>Nasr Kabeer Aluminum Co., Ltd.</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" href="https://i.postimg.cc/Vk3c4f9g/ALX-shui-yin-hua-ban-1.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              serif: ['"Oswald"', 'sans-serif'],
-              sans: ['"Manrope"', 'sans-serif'],
-              arabic: ['"Cairo"', 'sans-serif'],
-            },
-            colors: {
-              nasr: {
-                silver: '#E5E7EB',
-                steel: '#4B5563',
-                dark: '#111827',
-                blue: '#009FE3', // Cyan/Blue from Logo
-                red: '#E60012',   // Red from Logo
-                accent: '#10B981', // Vision 2030 Green
-              }
-            },
-            backgroundImage: {
-              'metal-gradient': 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
-            }
-          }
-        }
-      }
-    </script>
+    <link rel="icon" href="/site-assets/favicon.png" type="image/png">
+    <link rel="preload" as="image" href="/hero-background-wide.png" media="(min-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="/hero-profile-mobile.png" media="(max-width: 767px)" fetchpriority="high">
+    <link href="/brochure-fonts/brochure-fonts.css" rel="stylesheet">
+    <link href="/site-fonts/cairo-fonts.css" rel="stylesheet">
     <style>
       html {
         scroll-behavior: smooth;
@@ -66,6 +40,66 @@
       ::-webkit-scrollbar-thumb:hover {
         background: #009FE3;
       }
+      .metal-cta,
+      .metal-cta-secondary {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        border: 0;
+        background-blend-mode: normal;
+        will-change: transform, box-shadow;
+        transform: translate3d(0, 0, 0) scale(1);
+        backface-visibility: hidden;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.30),
+          inset 0 -12px 24px rgba(42, 52, 58, 0.12),
+          0 14px 30px rgba(0, 0, 0, 0.22);
+        transition:
+          transform 760ms cubic-bezier(0.16, 1, 0.3, 1),
+          box-shadow 760ms cubic-bezier(0.16, 1, 0.3, 1),
+          background-color 760ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .metal-cta {
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0) 38%),
+          linear-gradient(135deg, #cdd4d8 0%, #b4bec5 46%, #a9b3ba 100%);
+        color: #101820;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.22);
+      }
+      .metal-cta-secondary {
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 40%),
+          linear-gradient(135deg, rgba(156, 168, 176, 0.38), rgba(98, 114, 124, 0.52) 100%);
+        color: #f4f7f8;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.38);
+      }
+      .metal-cta::before,
+      .metal-cta-secondary::before {
+        content: none;
+      }
+      .metal-cta::after,
+      .metal-cta-secondary::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0) 46%, rgba(0, 0, 0, 0.06) 100%);
+        pointer-events: none;
+      }
+      .metal-cta:hover,
+      .metal-cta-secondary:hover {
+        transform: translate3d(0, -1.5px, 0) scale(1.012);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.34),
+          inset 0 -12px 24px rgba(42, 52, 58, 0.10),
+          0 18px 38px rgba(0, 0, 0, 0.25);
+      }
+      .metal-cta > *,
+      .metal-cta-secondary > * {
+        position: relative;
+        z-index: 1;
+      }
     </style>
     <script type="importmap">
 {
@@ -73,9 +107,6 @@
     "react": "https://aistudiocdn.com/react@^19.2.0",
     "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "@react-three/fiber": "https://aistudiocdn.com/@react-three/fiber@^9.4.0",
-    "@react-three/drei": "https://aistudiocdn.com/@react-three/drei@^10.7.7",
-    "three": "https://aistudiocdn.com/three@^0.181.1",
     "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
     "lucide-react": "https://aistudiocdn.com/lucide-react@^0.553.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",

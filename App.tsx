@@ -5,11 +5,11 @@
 */
 
 import React, { useState, useEffect, useRef } from 'react';
-import { StructureGrid, HeroScene } from './components/IndustrialScene';
+import { StructureGrid } from './components/StructureGrid';
 import { ProductionProcessFlow, CapacityGrowthChart } from './components/Diagrams';
 import {
   Menu, X, Download, MapPin, Mail, Linkedin, Twitter, ArrowRight,
-  CheckCircle2, Globe, FileText, Phone, ChevronLeft, Factory,
+  CheckCircle2, Globe, FileText, ChevronLeft, Factory,
   Thermometer, Settings, Layers, ShieldCheck, Zap, Cpu, PaintBucket,
   PenTool, Beaker, Box, ExternalLink, Recycle, Leaf,
   Wind, Droplets, Building2, Car, Newspaper, TrendingUp, BarChart3, Clock, Loader2
@@ -186,6 +186,99 @@ const renderMarkdown = (markdown: string, isRTL: boolean) => {
   return blocks;
 };
 
+type ParsedPriceItem = {
+  label: string;
+  price: string;
+  symbol: string;
+  date: string;
+  time: string;
+  source: string;
+  url: string;
+  status?: string;
+};
+
+type ParsedNewsItem = {
+  title: string;
+  source: string;
+  published: string;
+  url: string;
+};
+
+const parseNewsReport = (markdown: string) => {
+  const result: {
+    prices: ParsedPriceItem[];
+    newsapi: ParsedNewsItem[];
+    gnews: ParsedNewsItem[];
+    googleRss: ParsedNewsItem[];
+  } = { prices: [], newsapi: [], gnews: [], googleRss: [] };
+
+  let currentSection = "";
+
+  markdown.split(/\r?\n/).forEach((rawLine) => {
+    const line = rawLine.trimEnd();
+    const heading = line.match(/^###\s+(.+)$/);
+    if (heading) {
+      currentSection = heading[1];
+      return;
+    }
+
+    if (currentSection === "Latest Aluminum Price Data") {
+      const statusMatch = line.trim().match(/^-\s+Status:\s+(.+)$/);
+      if (statusMatch && result.prices.length) {
+        result.prices[result.prices.length - 1].status = statusMatch[1];
+        return;
+      }
+
+      const priceMatch = line.match(/^-\s+(.+?):\s+`([^`]+)`\s+\|\s+Symbol:\s+`([^`]+)`\s+\|\s+Ref Date:\s+([^|]+)\|\s+Time:\s+([^|]+)\|\s+Source:\s+(.+?)\s+\[Link\]\(([^)]+)\)/);
+      if (priceMatch) {
+        result.prices.push({
+          label: priceMatch[1].trim(),
+          price: priceMatch[2].trim(),
+          symbol: priceMatch[3].trim(),
+          date: priceMatch[4].trim(),
+          time: priceMatch[5].trim(),
+          source: priceMatch[6].trim(),
+          url: priceMatch[7].trim(),
+        });
+      }
+      return;
+    }
+
+    const newsMatch = line.match(/^-\s+(.+?)\s+\|\s+Source:\s+(.+?)\s+\|\s+Published:\s+(.+?)\s+\[Link\]\(([^)]+)\)/);
+    if (!newsMatch) return;
+
+    const item = {
+      title: newsMatch[1].trim(),
+      source: newsMatch[2].trim(),
+      published: newsMatch[3].trim(),
+      url: newsMatch[4].trim(),
+    };
+
+    if (currentSection === "Latest Headlines (from NewsAPI)") {
+      result.newsapi.push(item);
+    } else if (currentSection === "Latest Headlines (from GNews)") {
+      result.gnews.push(item);
+    } else if (currentSection === "Latest Headlines (Google News RSS Fallback)") {
+      result.googleRss.push(item);
+    }
+  });
+
+  return result;
+};
+
+const formatPublishedDate = (value: string) => {
+  if (!value) return "N/A";
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) return value;
+  return parsed.toLocaleString("en-GB", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+};
+
 const content = {
   en: {
     nav: {
@@ -202,6 +295,7 @@ const content = {
       titleLine1: "SHAPING",
       titleLine2: "EXCELLENCE",
       titleLine3: "IN EVERY",
+      profileWord: "PROFILE",
       desc: "A world-class manufacturing facility in Everwin Industrial Park, Dammam Third Industrial City, delivering 200,000 tons of high-end profiles for the architectural, industrial, and transportation sectors.",
       btnProduct: "Discover Products",
       btnTech: "Our Technology",
@@ -210,9 +304,9 @@ const content = {
     about: {
       subtitle: "Strategic Overview",
       title: "Beyond Extrusion. Engineering Excellence.",
-      p1: "Nasr Kabeer Aluminum Co., Ltd. (NKAC) is a premier manufacturer of high-performance aluminum extrusions, strategically positioned in the Kingdom of Saudi Arabia to serve global industrial and transportation sectors.",
-      p2: "We specialize in a diverse, high-end portfolio, ranging from advanced architectural systems to large-scale profiles for industrial and transportation applications, backed by a total designed capacity of 200,000 tons per year. Our operations are anchored by a state-of-the-art facility, utilizing large-tonnage extrusion presses and CNC precision machining to ensure superior strength-to-weight ratios and complex profile geometries.",
-      p3: "We uphold the highest international benchmarks, certified to ISO 9001, ISO 14001, and ISO 45001, reflecting our unwavering commitment to quality, sustainability, and safety. Aligned with Saudi Vision 2030, NKAC is dedicated to driving local value creation and supporting export diversification for both domestic and international markets.",
+      p1: "Nasr Kabeer Aluminum Co., Ltd. (NKACO) is a leading Saudi manufacturer of high-performance aluminum extrusions for global industrial and transportation markets. We offer a diverse, high-end portfolio—from architectural systems to large-scale profiles—backed by a total designed capacity of 200,000 tons per year. Our state-of-the-art facility features a full range of extrusion press tonnages to accommodate various profile needs with flexibility and precision, alongside CNC machining capabilities. Certified to international standards, we are committed to quality, safety, and sustainability, and aligned with Saudi Vision 2030, NKACO drives local value creation and export diversification.",
+      p2: "",
+      p3: "",
       statCapacity: "Tons/Year Capacity",
       statExport: "Export Target"
     },
@@ -455,7 +549,7 @@ const content = {
       title: "Sustainable Future",
       subtitle: "Our Core Values",
       values: {
-        p1: "At NKAC, sustainability isn’t an extra feature — it’s our way of doing business. It guides who we are and how we work every day.",
+        p1: "At NKACO, sustainability isn’t an extra feature — it’s our way of doing business. It guides who we are and how we work every day.",
         p2: "When we design and develop our products, we focus on creating solutions that benefit our customers, partners, employees, and local communities. We believe real progress happens only when sustainability drives every decision we make.",
         p3: "Our core values support this commitment, shaping our culture and inspiring us to build a responsible and sustainable future."
       },
@@ -544,9 +638,10 @@ const content = {
     },
     hero: {
       vision: "شريك رؤية 2030",
-      titleLine1: "نصيغ",
-      titleLine2: "التميز",
-      titleLine3: "في كل",
+      titleLine1: "\u0646\u0635\u0648\u063a",
+      titleLine2: "\u0627\u0644\u062a\u0645\u064a\u0651\u0632",
+      titleLine3: "\u0641\u064a \u0643\u0644",
+      profileWord: "\u0645\u0642\u0637\u0639",
       desc: "منشأة تصنيع عالمية في مجمع إيفروين الصناعي، المدينة الصناعية الثالثة بالدمام، تنتج 200,000 طن من المقاطع الراقية لقطاعات العمارة والصناعة والنقل.",
       btnProduct: "اكتشف المنتجات",
       btnTech: "تقنياتنا",
@@ -555,7 +650,7 @@ const content = {
     about: {
       subtitle: "نظرة استراتيجية",
       title: "أبعد من البثق. التميز الهندسي.",
-      p1: "شركة نصر كبير للألمنيوم (NKAC) هي شركة رائدة في تصنيع مقاطع الألمنيوم عالية الأداء، وموقعها الاستراتيجي في المملكة العربية السعودية يخدم قطاعات الصناعة والنقل العالمية.",
+      p1: "شركة نصر كبير للألمنيوم (NKACO) هي شركة رائدة في تصنيع مقاطع الألمنيوم عالية الأداء، وموقعها الاستراتيجي في المملكة العربية السعودية يخدم قطاعات الصناعة والنقل العالمية.",
       p2: "نحن متخصصون في محفظة متنوعة وراقية، تتراوح من الأنظمة المعمارية المتقدمة إلى المقاطع واسعة النطاق للتطبيقات الصناعية والنقل، مدعومة بطاقة تصميمية إجمالية تبلغ 200,000 طن سنوياً. ترتكز عملياتنا على منشأة حديثة تستخدم مكابس بثق ذات حمولة كبيرة وآلات CNC دقيقة لضمان نسب متفوقة للقوة إلى الوزن.",
       p3: "نحن نلتزم بأعلى المعايير الدولية، وحاصلون على شهادات ISO 9001 و ISO 14001 و ISO 45001. وتماشياً مع رؤية السعودية 2030، تلتزم الشركة بتعزيز القيمة المحلية ودعم تنويع الصادرات.",
       statCapacity: "طن سنوياً سعة إنتاجية",
@@ -800,7 +895,7 @@ const content = {
       title: "مستقبل مستدام",
       subtitle: "قيمنا الجوهرية",
       values: {
-        p1: "في NKAC، الاستدامة ليست مجرد ميزة إضافية - بل هي طريقتنا في ممارسة الأعمال.",
+        p1: "في NKACO، الاستدامة ليست مجرد ميزة إضافية - بل هي طريقتنا في ممارسة الأعمال.",
         p2: "عندما نصمم ونطور منتجاتنا، نركز على إنشاء حلول تفيد عملائنا وشركائنا ومجتمعاتنا المحلية.",
         p3: "تدعم قيمنا الجوهرية هذا الالتزام، مما يشكل ثقافتنا لبناء مستقبل مسؤول."
       },
@@ -882,8 +977,9 @@ const content = {
 // Logo Component
 const AlxLogo = () => (
   <img
-    src="https://i.postimg.cc/C1YWG8vt/ALX-gao-qing-tu-hua-ban-1-fu-ben.png"
+    src="/site-assets/nkaco-logo.png"
     alt="Nasr Kabeer Logo"
+    decoding="async"
     className="h-12 w-auto object-contain"
   />
 );
@@ -922,6 +1018,7 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
   const displayMarkdown = newsMarkdown
     ? extractMarkdownSection(newsMarkdown, lang === 'ar' ? 'Arabic' : 'English')
     : '';
+  const parsedNews = parseNewsReport(displayMarkdown);
 
   useEffect(() => {
     const fetchLatestNews = async (isBackgroundUpdate = false) => {
@@ -931,13 +1028,10 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
 
         // 1. Fetch the raw markdown file
         // Add timestamp to prevent browser caching of the file itself
-        const mdResponse = await fetch(`${NEWS_MARKDOWN_PATH}?t=${Date.now()}`, {
-          cache: "no-store",
-          headers: {
-            "Cache-Control": "no-cache",
-            Pragma: "no-cache"
-          }
-        });
+        const mdResponse = await fetch(
+          isBackgroundUpdate ? NEWS_MARKDOWN_PATH : `${NEWS_MARKDOWN_PATH}?t=${Date.now()}`,
+          { cache: isBackgroundUpdate ? "default" : "no-store" }
+        );
         if (!mdResponse.ok) throw new Error("Failed to fetch news file");
         markdown = await mdResponse.text();
 
@@ -1013,10 +1107,11 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
 
     fetchLatestNews(false); // Initial load
 
-    // Poll every 30 seconds
+    // Light background refresh. The source file is updated by the scheduled job,
+    // so visitors do not need a heavy 30-second polling loop.
     const intervalId = setInterval(() => {
       fetchLatestNews(true);
-    }, 30000);
+    }, 15 * 60 * 1000);
 
     const handleVisibilityChange = () => {
       if (!document.hidden) {
@@ -1052,7 +1147,7 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
         <AlxLogo />
       </div>
 
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 max-w-7xl">
         {error && (
           <div className="mb-8 p-4 bg-amber-50 border-l-4 border-amber-400 text-amber-800 text-sm font-medium flex items-center gap-3">
             <ShieldCheck size={18} /> {t.error}
@@ -1075,14 +1170,84 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
         <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="bg-white border border-gray-100 shadow-sm rounded-sm p-6 md:p-10"
+          className="space-y-8"
         >
-          <div className="text-xs font-bold uppercase tracking-[0.3em] text-nasr-blue mb-6">
-            {t.fullReport}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {(parsedNews.prices.length ? parsedNews.prices : []).map((item, idx) => (
+              <a
+                key={`${item.symbol}-${idx}`}
+                href={item.url}
+                target="_blank"
+                rel="noreferrer"
+                className="group relative overflow-hidden bg-[#102633] text-white p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-500"
+              >
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_18%,rgba(0,159,227,0.22),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.05),transparent)]"></div>
+                <div className="relative">
+                  <div className="flex items-center justify-between gap-4 mb-8">
+                    <div className="text-xs font-bold uppercase tracking-[0.22em] text-nasr-accent">{item.label}</div>
+                    <TrendingUp size={22} className="text-nasr-accent" />
+                  </div>
+                  <div className="font-serif text-5xl md:text-6xl font-semibold mb-3">{item.price}</div>
+                  <div className="grid grid-cols-2 gap-4 text-sm text-gray-300 mb-6">
+                    <div><span className="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Symbol</span>{item.symbol}</div>
+                    <div><span className="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Source</span>{item.source}</div>
+                    <div><span className="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Ref Date</span>{item.date}</div>
+                    <div><span className="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Time</span>{item.time || "N/A"}</div>
+                  </div>
+                  {item.status && <p className="text-xs leading-relaxed text-gray-300 border-t border-white/10 pt-4">{item.status}</p>}
+                </div>
+              </a>
+            ))}
+            {!parsedNews.prices.length && (
+              <div className="lg:col-span-3 bg-gray-50 border border-gray-100 p-6 text-gray-500">{t.unavailable}</div>
+            )}
           </div>
-          <div className={`text-gray-700 text-sm md:text-base leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>
-            {newsMarkdown ? renderMarkdown(displayMarkdown, isRTL) : t.unavailable}
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {[
+              { title: "NewsAPI", items: parsedNews.newsapi },
+              { title: "GNews", items: parsedNews.gnews },
+              ...(parsedNews.googleRss.length ? [{ title: "Google News RSS", items: parsedNews.googleRss }] : []),
+            ].map((group) => (
+              <div key={group.title} className="bg-white border border-gray-100 shadow-sm p-6 md:p-8">
+                <div className="flex items-center justify-between gap-4 mb-6">
+                  <div>
+                    <div className="text-xs font-bold uppercase tracking-[0.25em] text-nasr-blue mb-2">{group.title}</div>
+                    <h3 className="font-serif text-2xl text-nasr-dark">Latest Aluminum Headlines</h3>
+                  </div>
+                  <Newspaper className="text-gray-300" size={26} />
+                </div>
+                <div className="divide-y divide-gray-100">
+                  {group.items.length ? group.items.map((item, idx) => (
+                    <a
+                      key={`${group.title}-${item.url}-${idx}`}
+                      href={item.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group block py-5 first:pt-0 last:pb-0"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <h4 className="text-base font-bold leading-snug text-nasr-dark group-hover:text-nasr-blue transition-colors">{item.title}</h4>
+                        <ExternalLink size={16} className="mt-1 shrink-0 text-gray-300 group-hover:text-nasr-blue transition-colors" />
+                      </div>
+                      <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500">
+                        <span className="font-semibold text-gray-700">{item.source}</span>
+                        <span>{formatPublishedDate(item.published)}</span>
+                      </div>
+                    </a>
+                  )) : (
+                    <div className="py-8 text-sm text-gray-500">{t.unavailable}</div>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
+
+          {newsMarkdown && !parsedNews.prices.length && !parsedNews.newsapi.length && !parsedNews.gnews.length && !parsedNews.googleRss.length && (
+            <div className={`bg-white border border-gray-100 shadow-sm p-6 md:p-10 text-gray-700 text-sm md:text-base leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>
+              {renderMarkdown(displayMarkdown, isRTL)}
+            </div>
+          )}
         </MotionDiv>
       </div>
     </MotionDiv>
@@ -1198,7 +1363,7 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
 
         {/* Details Panel */}
         <div className="lg:col-span-4 bg-white p-8 border-l border-gray-100 flex flex-col justify-center h-full relative">
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20 pointer-events-none"></div>
+          <div className="absolute inset-0 opacity-20 pointer-events-none bg-[linear-gradient(135deg,rgba(148,163,184,0.22)_1px,transparent_1px),linear-gradient(45deg,rgba(148,163,184,0.12)_1px,transparent_1px)] bg-[length:18px_18px,28px_28px]"></div>
           <AnimatePresence mode="popLayout">
             <MotionDiv key={activeTab} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.3 }} className="relative z-10">
               <div className={`w-12 h-12 rounded-sm flex items-center justify-center mb-6 text-white ${activeTab === 'core' ? 'bg-nasr-dark' :
@@ -1262,7 +1427,7 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
         subtitle: "Construction & Infrastructure",
         desc: "Meeting the demands of Saudi Arabia's mega-projects with high-performance profiles for skyscrapers and smart cities.",
         items: ["Curtain Wall Systems", "Thermal Break Windows", "Structural Glazing", "Decorative Facades", "Sun Control Louvers"],
-        img: "https://i.postimg.cc/DymyPGYz/437a075a-1478-4f12-a23b-363e73d7e325.png",
+        img: "/site-assets/product-architectural.png",
         icon: Building2
       },
       {
@@ -1271,7 +1436,7 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
         subtitle: "Automation & Energy",
         desc: "Precision engineering for the renewable energy sector and automated manufacturing lines.",
         items: ["Solar Mounting Structures", "Heat Sinks & Cooling", "Automation Framing", "Modular Conveyors", "Electronic Enclosures"],
-        img: "https://i.postimg.cc/jj6sS4Ld/978bc791-0832-41fe-a3ad-485c0400b0ba.png",
+        img: "/site-assets/product-industrial.png",
         icon: Factory
       },
       {
@@ -1280,7 +1445,7 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
         subtitle: "Mobility & Aerospace",
         desc: "Lightweight, high-strength alloys driving the future of EVs and rail transit in the Kingdom.",
         items: ["EV Battery Trays", "Rail Transit Car Bodies", "Chassis Components", "Aerospace Interiors", "Marine Structures"],
-        img: "https://i.postimg.cc/MpTPT6Hq/2714a0ad-43e3-4ff6-8299-3fa50fa81462.png",
+        img: "/site-assets/product-transportation.png",
         icon: Car
       }
     ],
@@ -1291,7 +1456,7 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
         subtitle: "البناء والبنية التحتية",
         desc: "تلبية متطلبات المشاريع الضخمة في المملكة العربية السعودية بمقاطع عالية الأداء لناطحات السحاب والمدن الذكية.",
         items: ["أنظمة الجدران الستائرية", "نوافذ العزل الحراري", "التزجيج الهيكلي", "الواجهات الزخرفية", "كاسرات الشمس"],
-        img: "https://i.postimg.cc/DymyPGYz/437a075a-1478-4f12-a23b-363e73d7e325.png",
+        img: "/site-assets/product-architectural.png",
         icon: Building2
       },
       {
@@ -1300,7 +1465,7 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
         subtitle: "الأتمتة والطاقة",
         desc: "هندسة دقيقة لقطاع الطاقة المتجددة وخطوط التصنيع الآلي.",
         items: ["هياكل تثبيت الطاقة الشمسية", "المشتتات الحرارية والتبريد", "إطارات الأتمتة", "السيور الناقلة المعيارية", "حاويات الإلكترونيات"],
-        img: "https://i.postimg.cc/jj6sS4Ld/978bc791-0832-41fe-a3ad-485c0400b0ba.png",
+        img: "/site-assets/product-industrial.png",
         icon: Factory
       },
       {
@@ -1309,7 +1474,7 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
         subtitle: "التنقل والطيران",
         desc: "سبائك خفيفة الوزن وعالية القوة تقود مستقبل المركبات الكهربائية والسكك الحديدية في المملكة.",
         items: ["صواني بطاريات المركبات الكهربائية", "هياكل عربات السكك الحديدية", "مكونات الشاسيه", "التصميم الداخلي للطائرات", "الهياكل البحرية"],
-        img: "https://i.postimg.cc/MpTPT6Hq/2714a0ad-43e3-4ff6-8299-3fa50fa81462.png",
+        img: "/site-assets/product-transportation.png",
         icon: Car
       }
     ]
@@ -1328,7 +1493,7 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
         <div className="hidden md:block h-[1px] flex-1 bg-gray-200 mx-8"></div>
         <AlxLogo />
       </div>
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 max-w-7xl">
         <div className="mb-20">
           <SectionHeading title={t.title} subtitle={t.subtitle} lang={lang} />
           <p className={`text-gray-600 text-lg leading-relaxed max-w-3xl ${isRTL ? 'border-r-4 pr-6' : 'border-l-4 pl-6'} border-nasr-blue`}>
@@ -1341,7 +1506,7 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
               <div className="w-full lg:w-1/2">
                 <div className="relative aspect-[4/3] rounded-sm overflow-hidden shadow-2xl group">
                   <div className="absolute inset-0 bg-nasr-blue/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-                  <img src={category.img} alt={category.title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                  <img src={category.img} alt={category.title} loading="lazy" decoding="async" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent z-20">
                     <div className="flex items-center gap-2 text-white/90 font-mono text-xs uppercase tracking-widest">
                       <category.icon size={16} />
@@ -1404,7 +1569,7 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
       </div>
       <div className="relative mb-16 min-h-[500px] h-auto overflow-hidden flex items-center py-12">
         <div className="absolute inset-0">
-          <img src="https://i.postimg.cc/BZSsGmLj/c2b9d738-c3fd-4b64-a35e-c018629e21c0.png" alt="Advanced Aluminum Manufacturing" className="w-full h-full object-cover" />
+          <img src="/site-assets/technology-manufacturing.png" alt="Advanced Aluminum Manufacturing" loading="lazy" decoding="async" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-gray-900/20"></div>
         </div>
         <div className="container mx-auto px-6 h-full flex flex-col justify-center relative z-10">
@@ -1497,7 +1662,7 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
       </div>
       <section className="relative h-[80vh] min-h-[600px] bg-nasr-dark overflow-hidden mb-20 flex items-center">
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop" alt="Green Forest" className="w-full h-full object-cover opacity-80" />
+          <img src="/site-assets/sustainability-forest.jpg" alt="Green Forest" loading="lazy" decoding="async" className="w-full h-full object-cover opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-nasr-dark via-nasr-dark/40 to-transparent"></div>
         </div>
         <div className="container mx-auto px-6 relative z-10">
@@ -1527,7 +1692,7 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="bg-white border border-gray-100 shadow-lg overflow-hidden group hover:border-nasr-accent transition-all duration-300">
               <div className="relative h-64 overflow-hidden">
-                <img src="https://images.pexels.com/photos/6591436/pexels-photo-6591436.jpeg" alt="Dammam Recycling" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <img src="/site-assets/recycling-dammam.jpg" alt="Dammam Recycling" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute top-4 right-4 bg-nasr-accent text-white px-3 py-1 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
                   <Zap size={14} /> {t.dammam.status}
                 </div>
@@ -1544,7 +1709,7 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
             </div>
             <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="bg-white border border-gray-100 shadow-lg overflow-hidden group hover:border-nasr-blue transition-all duration-300 opacity-90">
               <div className="relative h-64 overflow-hidden">
-                <img src="https://images.pexels.com/photos/14953330/pexels-photo-14953330.jpeg" alt="Riyadh Logistics" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <img src="/site-assets/recycling-riyadh.jpg" alt="Riyadh Logistics" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute top-4 right-4 bg-nasr-blue text-white px-3 py-1 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
                   <Box size={14} /> {t.riyadh.status}
                 </div>
@@ -1690,21 +1855,25 @@ const App: React.FC = () => {
           <NewsPage lang={lang} goBack={() => { setCurrentPage('home'); window.scrollTo(0, 0); }} />
         ) : (
           <>
-            <header className="relative h-screen flex items-center overflow-hidden bg-nasr-dark">
+            <header className="relative min-h-screen flex items-center overflow-hidden bg-[#061016]">
               <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 transform scale-110 -rotate-2 origin-center"><img src="https://i.postimg.cc/fb6MLTJn/Gemini-Generated-Image-vxqzfcvxqzfcvxqz.png" alt="High-End Aluminum" className="w-full h-full object-cover opacity-90" /></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-nasr-dark via-nasr-dark/70 to-transparent/20"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_50%,rgba(0,159,227,0.44),transparent_38%),radial-gradient(circle_at_14%_88%,rgba(202,119,41,0.42),transparent_34%),linear-gradient(120deg,#061017_0%,#071823_48%,#062334_100%)]"></div>
+                <img src="/hero-background-wide.png" alt="High-end aluminum profile" fetchPriority="high" decoding="async" className="hidden md:block absolute inset-0 h-full w-full object-cover" />
+                <img src="/hero-profile-mobile.png" alt="High-end aluminum profile" fetchPriority="high" decoding="async" className="md:hidden absolute top-24 left-1/2 w-[88vw] max-w-none -translate-x-1/2 object-contain opacity-70" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#050B10]/94 via-[#050B10]/62 md:via-[#050B10]/22 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/42 via-transparent to-black/20"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/44 to-transparent"></div>
               </div>
-              <div className="relative z-10 container mx-auto px-6 pt-20">
-                <MotionDiv initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="max-w-4xl">
-                  <div className="flex items-center gap-4 mb-6"><span className="h-[1px] w-12 bg-nasr-accent"></span><span className="text-nasr-accent text-sm font-bold tracking-[0.3em] uppercase">{t.hero.vision}</span></div>
-                  <h1 className={`font-serif font-bold leading-none mb-8 text-white ${isRTL ? 'font-arabic text-5xl md:text-7xl' : 'text-6xl md:text-8xl'}`}>
-                    {t.hero.titleLine1}<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">{t.hero.titleLine2}</span><br />{t.hero.titleLine3} {isRTL ? <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-300 to-gray-500 drop-shadow-sm">قطاع</span> : <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-300 to-gray-500 drop-shadow-sm">PROFILE</span>}
+              <div className="relative z-10 container mx-auto px-6 pt-24 pb-16 max-w-7xl">
+                <MotionDiv initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className={`max-w-[44rem] mt-44 md:mt-0 ${isRTL ? 'mr-auto text-right' : 'ml-0 text-left'}`}>
+                  <div className={`flex items-center gap-4 mb-7 ${isRTL ? 'justify-end' : ''}`}><span className="h-[2px] w-14 bg-nasr-accent"></span><span className={`text-nasr-accent text-xs md:text-sm font-bold ${isRTL ? 'tracking-normal' : 'tracking-[0.34em] uppercase'}`}>{t.hero.vision}</span></div>
+                  <h1 className={`font-bold mb-8 text-white drop-shadow-2xl ${isRTL ? 'font-arabic text-5xl md:text-7xl leading-[1.12] tracking-normal' : 'font-serif text-5xl md:text-8xl lg:text-[5.35rem] leading-[0.92]'}`}>
+                    {t.hero.titleLine1}<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">{t.hero.titleLine2}</span><br />{t.hero.titleLine3} <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-300 to-gray-500 drop-shadow-sm">{t.hero.profileWord}</span>
                   </h1>
-                  <p className={`text-lg md:text-2xl text-gray-200 font-light leading-relaxed mb-12 max-w-2xl ${isRTL ? 'border-r-2 pr-8' : 'border-l-2 pl-8'} border-gray-400/50`}>{t.hero.desc}</p>
+                  <p className={`text-base md:text-xl text-gray-200 font-light leading-relaxed mb-12 max-w-2xl ${isRTL ? 'border-r-2 pr-8' : 'border-l-2 pl-8'} border-white/35`}>{t.hero.desc}</p>
                   <div className="flex flex-col sm:flex-row gap-6">
-                    <a href="#products" onClick={goToProducts} className="group flex items-center justify-center gap-3 px-8 py-4 bg-white text-nasr-dark font-bold uppercase tracking-wider hover:bg-nasr-accent hover:text-white transition-all duration-300">{t.hero.btnProduct}<ArrowRight size={20} className={`transition-transform ${isRTL ? 'group-hover:-translate-x-1 rotate-180' : 'group-hover:translate-x-1'}`} /></a>
-                    <a href="#technology" onClick={goToTechnology} className="flex items-center justify-center gap-3 px-8 py-4 border border-gray-300 text-gray-100 font-bold uppercase tracking-wider hover:border-white hover:text-white transition-colors">{t.hero.btnTech}</a>
+                    <a href="#products" onClick={goToProducts} className={`metal-cta group flex items-center justify-center gap-3 px-8 py-4 font-bold ${isRTL ? 'tracking-normal' : 'uppercase tracking-wider'}`}>{t.hero.btnProduct}<ArrowRight size={20} className={`transition-transform duration-500 ease-out ${isRTL ? 'group-hover:-translate-x-1 rotate-180' : 'group-hover:translate-x-1'}`} /></a>
+                    <a href="#technology" onClick={goToTechnology} className={`metal-cta-secondary flex items-center justify-center gap-3 px-8 py-4 text-gray-100 font-bold ${isRTL ? 'tracking-normal' : 'uppercase tracking-wider'}`}>{t.hero.btnTech}</a>
                   </div>
                 </MotionDiv>
               </div>
@@ -1714,7 +1883,20 @@ const App: React.FC = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                   <div>
                     <SectionHeading title={t.about.title} subtitle={t.about.subtitle} lang={lang} />
-                    <div className="space-y-6 text-base md:text-lg text-gray-600 leading-relaxed"><p>{t.about.p1}</p><p>{t.about.p2}</p><p>{t.about.p3}</p>
+                    <div className="space-y-6 text-base md:text-lg text-gray-600 leading-relaxed">
+                      <MotionDiv
+                        initial={{ opacity: 0, y: 28, filter: 'blur(8px)' }}
+                        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                        viewport={{ once: true, margin: '-80px' }}
+                        transition={{ duration: 0.75, ease: 'easeOut' }}
+                        className="relative max-w-2xl"
+                      >
+                        <div className="space-y-5">
+                          {[t.about.p1, t.about.p2, t.about.p3].filter(Boolean).map((paragraph, idx) => (
+                            <p key={idx} className="text-gray-600 leading-[1.85]">{paragraph}</p>
+                          ))}
+                        </div>
+                      </MotionDiv>
                       <div className="grid grid-cols-2 gap-8 mt-8">
                         <div className={`p-6 bg-gray-50 ${isRTL ? 'border-r-4' : 'border-l-4'} border-nasr-blue`}><div className="text-4xl font-serif font-bold text-nasr-dark mb-2">200K</div><div className="text-xs font-bold uppercase tracking-widest text-gray-500">{t.about.statCapacity}</div></div>
                         <div className={`p-6 bg-gray-50 ${isRTL ? 'border-r-4' : 'border-l-4'} border-nasr-red`}><div className="text-4xl font-serif font-bold text-nasr-dark mb-2">30%</div><div className="text-xs font-bold uppercase tracking-widest text-gray-500">{t.about.statExport}</div></div>
@@ -1722,11 +1904,11 @@ const App: React.FC = () => {
                     </div>
                   </div>
                   <div className="relative">
-                    <MotionDiv initial={{ scale: 0.95, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} transition={{ duration: 0.8 }} className="aspect-[4/5] bg-gray-200 overflow-hidden shadow-2xl relative z-10"><img src="https://images.pexels.com/photos/17650039/pexels-photo-17650039.jpeg" alt="Modern Skyscraper" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out" /><div className="absolute inset-0 bg-nasr-blue/20 mix-blend-multiply"></div></MotionDiv>
+                    <MotionDiv initial={{ scale: 0.95, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} transition={{ duration: 0.8 }} className="aspect-[4/5] bg-gray-200 overflow-hidden shadow-2xl relative z-10"><img src="/site-assets/about-skyscraper.jpg" alt="Modern Skyscraper" loading="lazy" decoding="async" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out" /><div className="absolute inset-0 bg-nasr-blue/20 mix-blend-multiply"></div></MotionDiv>
                     <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.6 }} className={`relative mt-8 lg:mt-0 lg:absolute lg:-bottom-12 lg:${isRTL ? '-right-12' : '-left-12'} z-20 bg-white p-6 shadow-xl border-t-4 border-nasr-blue max-w-sm`}>
                       <div className="flex flex-col gap-4">
                         <div className="flex items-center justify-between gap-4"><div><div className="text-[10px] font-bold uppercase text-gray-400 tracking-widest mb-1">{t.park.subtitle}</div><h4 className={`font-serif text-xl leading-tight text-nasr-dark ${isRTL ? 'font-arabic' : ''}`}>{t.park.title}</h4></div><div className="p-2 bg-gray-50 rounded-full"><MapPin className="text-nasr-blue" size={20} /></div></div>
-                        <img src="https://i.postimg.cc/Kv7bY59r/3.png" alt="Everwin" className="h-10 w-auto object-contain self-start" />
+                        <img src="/site-assets/everwin-logo.png" alt="Everwin" loading="lazy" decoding="async" className="h-10 w-auto object-contain self-start" />
                         <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">{t.park.desc}</p>
                         <a href="https://www.everwin.sa/" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase text-nasr-blue hover:text-nasr-dark flex items-center gap-2 mt-1 transition-colors group">{t.park.link} <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" /></a>
                       </div>
@@ -1735,28 +1917,41 @@ const App: React.FC = () => {
                 </div>
               </div>
             </section>
-            <section className="py-24 bg-white border-t border-gray-100">
-              <div className="container mx-auto px-6">
-                <div className="text-center max-w-3xl mx-auto mb-16"><h2 className={`font-serif mb-6 text-nasr-dark ${isRTL ? 'font-arabic text-4xl md:text-6xl' : 'text-4xl md:text-5xl'}`}>{t.process.title}</h2><p className="text-gray-600">{t.process.desc}</p></div>
+            <section className="py-24 bg-[#102633] border-t border-white/10 relative overflow-hidden">
+              <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
+                <StructureGrid />
+              </div>
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(0,159,227,0.18),transparent_34%),radial-gradient(circle_at_85%_75%,rgba(156,169,176,0.14),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.03),rgba(0,0,0,0.06))] pointer-events-none"></div>
+              <div className="container mx-auto px-6 relative z-10 max-w-7xl">
+                <MotionDiv
+                  initial={{ opacity: 0, y: 34, filter: 'blur(8px)' }}
+                  whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  viewport={{ once: true, margin: '-90px' }}
+                  transition={{ duration: 0.75, ease: 'easeOut' }}
+                  className="text-center max-w-3xl mx-auto mb-16"
+                >
+                  <h2 className={`font-serif mb-6 text-white ${isRTL ? 'font-arabic text-4xl md:text-6xl' : 'text-4xl md:text-5xl'}`}>{t.process.title}</h2>
+                  <p className="text-gray-300">{t.process.desc}</p>
+                </MotionDiv>
                 <ProductionProcessFlow lang={lang} />
-                <div className="mt-12 text-center"><button onClick={goToTechnology} className="inline-flex items-center gap-2 text-nasr-blue hover:text-nasr-dark font-bold uppercase tracking-wider transition-colors">{lang === 'en' ? 'View Detailed Technical Route' : 'عرض المسار التقني التفصيلي'} <ArrowRight size={20} /></button></div>
+                <div className="mt-12 text-center"><button onClick={goToTechnology} className="inline-flex items-center gap-2 text-nasr-accent hover:text-white font-bold uppercase tracking-wider transition-colors">{lang === 'en' ? 'View Detailed Technical Route' : 'عرض المسار التقني التفصيلي'} <ArrowRight size={20} /></button></div>
               </div>
             </section>
             {/* Expansion Content Section - Restored on Home Page */}
-            <section id="expansion" className="py-24 bg-nasr-dark relative overflow-hidden">
-              <div className="absolute inset-0 opacity-10 pointer-events-none">
+            <section id="expansion" className="py-24 bg-[#F7FAFC] relative overflow-hidden">
+              <div className="absolute inset-0 opacity-[0.04] pointer-events-none text-nasr-dark">
                 <StructureGrid />
               </div>
-              <div className="container mx-auto px-6 relative z-10">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(0,159,227,0.12),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(16,185,129,0.10),transparent_26%)] pointer-events-none"></div>
+              <div className="container mx-auto px-6 relative z-10 max-w-7xl">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                   <div className="lg:col-span-5">
                     <SectionHeading
                       title={t.expansion.title}
                       subtitle={t.expansion.subtitle}
-                      dark
                       lang={lang}
                     />
-                    <p className="text-gray-400 text-lg leading-relaxed mt-8 mb-10">
+                    <p className="text-gray-600 text-lg leading-relaxed mt-8 mb-10">
                       {t.expansion.desc}
                     </p>
                   </div>
@@ -1768,9 +1963,10 @@ const App: React.FC = () => {
             </section>
           </>
         )}
-        <footer id="contact" className="bg-nasr-dark text-gray-400 pt-24 pb-12 relative overflow-hidden">
+        <footer id="contact" className="bg-[#10212B] text-gray-400 pt-24 pb-12 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-nasr-blue via-nasr-accent to-nasr-red"></div>
-          <div className="container mx-auto px-6 relative z-10">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(0,159,227,0.10),transparent_30%),radial-gradient(circle_at_88%_82%,rgba(167,176,182,0.08),transparent_32%)] pointer-events-none"></div>
+              <div className="container mx-auto px-6 relative z-10 max-w-7xl">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
               <div className="col-span-1 md:col-span-2">
                 <div className="mb-8"><AlxLogo /><div className={`mt-2 text-white font-serif text-xl tracking-wider uppercase ${isRTL ? 'font-arabic' : ''}`}>{isRTL ? 'نصر كبير للألمنيوم' : 'Nasr Kabeer Aluminum'}</div></div>
@@ -1793,8 +1989,8 @@ const App: React.FC = () => {
                   <li className="flex items-start gap-4"><MapPin size={20} className="text-nasr-accent shrink-0" /><div className="flex flex-col"><span>{isRTL ? 'المدينة الصناعية الثالثة بالدمام،' : 'Dammam Third Industrial City,'}</span><span>{isRTL ? 'المملكة العربية السعودية' : 'Kingdom of Saudi Arabia'}</span><a href="https://www.everwin.sa/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-1 text-nasr-blue hover:text-white transition-colors text-sm font-medium">{t.footer.park} <ExternalLink size={12} /></a></div></li>
                   <li className="flex items-center gap-4"><Mail size={20} className="text-nasr-accent shrink-0" /><span className="hover:text-white cursor-pointer transition-colors">Business@nkaluminum.com</span></li>
                   <li className="flex items-center gap-4"><FileText size={20} className="text-nasr-accent shrink-0" /><div className="flex flex-col"><span className="text-nasr-accent text-xs font-bold uppercase">{t.footer.cr}</span><span className="text-gray-300">2050202550</span></div></li>
-                  <li className="flex items-center gap-4"><Phone size={20} className="text-nasr-accent shrink-0" /><div className="flex flex-col"><span className="text-nasr-accent text-xs font-bold uppercase">{t.footer.unified}</span><span className="text-gray-300">7043052724</span></div></li>
-                  <li className="mt-6"><button onClick={() => alert(lang === 'en' ? 'Coming Soon' : 'قريباً')} className="flex items-center gap-2 text-white border border-gray-600 px-6 py-3 hover:bg-white hover:text-nasr-dark transition-colors text-xs uppercase tracking-widest font-bold"><Download size={16} /> {t.footer.brochure}</button></li>
+                  <li className="flex items-center gap-4"><Building2 size={20} className="text-nasr-accent shrink-0" /><div className="flex flex-col"><span className="text-nasr-accent text-xs font-bold uppercase">{t.footer.unified}</span><span className="text-gray-300">7043052724</span></div></li>
+                  <li className="mt-6"><a href="/NKACO_profile_stable_layout_v14.html" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white border border-gray-600 px-6 py-3 hover:bg-white hover:text-nasr-dark transition-colors text-xs uppercase tracking-widest font-bold w-fit"><Download size={16} /> {t.footer.brochure}</a></li>
                 </ul>
               </div>
             </div>

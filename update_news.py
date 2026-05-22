@@ -3,16 +3,64 @@ import json
 import re
 import traceback
 import time
-import requests
-from datetime import datetime, timedelta
+import urllib.parse
+import urllib.request
+import urllib.error
+import xml.etree.ElementTree as ET
+from datetime import datetime, timedelta, timezone
 from functools import wraps
 
-import anthropic
+try:
+    import requests
+except ModuleNotFoundError:
+    class _CompatHTTPError(Exception):
+        def __init__(self, response):
+            self.response = response
+            super().__init__(f"HTTP {response.status_code}")
+
+    class _CompatRequestException(Exception):
+        pass
+
+    class _CompatResponse:
+        def __init__(self, status_code: int, text: str):
+            self.status_code = status_code
+            self.text = text
+
+        def json(self):
+            return json.loads(self.text)
+
+        def raise_for_status(self):
+            if self.status_code >= 400:
+                raise _CompatHTTPError(self)
+
+    class _CompatRequests:
+        class exceptions:
+            RequestException = _CompatRequestException
+            HTTPError = _CompatHTTPError
+
+        @staticmethod
+        def get(url, params=None, timeout=30):
+            if params:
+                separator = "&" if "?" in url else "?"
+                url = f"{url}{separator}{urllib.parse.urlencode(params)}"
+            request = urllib.request.Request(url, headers={"User-Agent": "NKACO-NewsBot/1.0"})
+            try:
+                with urllib.request.urlopen(request, timeout=timeout) as response:
+                    return _CompatResponse(response.status, response.read().decode("utf-8", errors="replace"))
+            except urllib.error.HTTPError as e:
+                text = e.read().decode("utf-8", errors="replace")
+                return _CompatResponse(e.code, text)
+            except Exception as e:
+                raise _CompatRequestException(str(e))
+
+    requests = _CompatRequests()
 
 # --- Core Config ---
 MIN_PRICE_THRESHOLD = 2700.0
 MAX_RETRIES = 3
 RETRY_BASE_DELAY = 2
+STOOQ_ALUMINUM_URL = "https://stooq.com/q/l/?s=al.f&f=sd2t2ohlcv&h&e=csv"
+GOOGLE_NEWS_RSS_URL = "https://news.google.com/rss/search"
 
 # MiniMax API config - set via environment variable in GitHub Secrets
 _MINIMAX_API_KEY = os.getenv("MINIMAX_API_KEY")  # Must set in GitHub secrets
@@ -414,6 +462,159 @@ def dedupe_and_rank_newsapi(articles: list[dict], top_n: int = 12) -> list[dict]
     return deduped[:top_n]
 
 
+def _normalize_url_for_dedupe(url: str) -> str:
+    if not url:
+        return ""
+    url = url.strip().lower()
+    url = re.sub(r"^https?://", "", url)
+    url = re.sub(r"^www\.", "", url)
+    url = url.split("#", 1)[0].split("?", 1)[0]
+    return url.rstrip("/")
+
+
+def _normalize_title_for_dedupe(title: str) -> str:
+    if not title:
+        return ""
+    title = re.sub(r"\s+", " ", title.strip().lower())
+    title = re.sub(r"[^a-z0-9\u0600-\u06ff ]+", "", title)
+    return title[:140]
+
+
+def _article_identity(article: dict) -> tuple[str, str]:
+    return (
+        _normalize_url_for_dedupe((article or {}).get("url") or ""),
+        _normalize_title_for_dedupe((article or {}).get("title") or ""),
+    )
+
+
+def dedupe_cross_sources(newsapi_articles: list[dict], gnews_articles: list[dict]) -> tuple[list[dict], list[dict]]:
+    """
+    Keep NewsAPI as the primary channel, then remove GNews items that duplicate
+    an already displayed URL or headline.
+    """
+    seen_urls: set[str] = set()
+    seen_titles: set[str] = set()
+    clean_newsapi: list[dict] = []
+
+    for article in newsapi_articles:
+        url_key, title_key = _article_identity(article)
+        if url_key and url_key in seen_urls:
+            continue
+        if title_key and title_key in seen_titles:
+            continue
+        if url_key:
+            seen_urls.add(url_key)
+        if title_key:
+            seen_titles.add(title_key)
+        clean_newsapi.append(article)
+
+    clean_gnews: list[dict] = []
+    for article in gnews_articles:
+        url_key, title_key = _article_identity(article)
+        if url_key and url_key in seen_urls:
+            continue
+        if title_key and title_key in seen_titles:
+            continue
+        if url_key:
+            seen_urls.add(url_key)
+        if title_key:
+            seen_titles.add(title_key)
+        clean_gnews.append(article)
+
+    return clean_newsapi, clean_gnews
+
+
+def fetch_latest_aluminum_price() -> tuple[list[dict], str]:
+    """
+    Stable no-key market data channel. Stooq AL.F is used as an aluminum futures
+    reference because the official LME website blocks automated requests and
+    public LME cash APIs are not reliably available without a paid key.
+    """
+    today = datetime.now(timezone.utc).date()
+    try:
+        response = requests.get(STOOQ_ALUMINUM_URL, timeout=30)
+        response.raise_for_status()
+        rows = [line.strip() for line in response.text.splitlines() if line.strip()]
+        if len(rows) < 2:
+            return [], "EMPTY"
+
+        headers = [h.strip() for h in rows[0].split(",")]
+        values = [v.strip() for v in rows[1].split(",")]
+        record = dict(zip(headers, values))
+        date_text = record.get("Date") or ""
+        close_text = record.get("Close") or ""
+
+        if not date_text or date_text == "N/D" or not close_text or close_text == "N/D":
+            return [], "EMPTY"
+
+        ref_date = datetime.strptime(date_text, "%Y-%m-%d").date()
+        age_days = (today - ref_date).days
+        is_today_weekend = today.weekday() >= 5
+        note = "Latest available market close."
+        freshness = "current"
+
+        if age_days > 0:
+            freshness = "stale"
+            if is_today_weekend:
+                note = f"No weekend session. Showing latest available close from {ref_date.isoformat()}."
+            else:
+                note = f"No newer market close available yet. Showing latest available close from {ref_date.isoformat()}."
+
+        price_item = {
+            "label": "Aluminum Futures Reference",
+            "symbol": record.get("Symbol", "AL.F"),
+            "price": close_text,
+            "date": ref_date.isoformat(),
+            "time": record.get("Time", ""),
+            "source": "Stooq",
+            "url": STOOQ_ALUMINUM_URL,
+            "freshness": freshness,
+            "note": note,
+            "open": record.get("Open", ""),
+            "high": record.get("High", ""),
+            "low": record.get("Low", ""),
+        }
+        return [price_item], "OK" if freshness == "current" else "STALE"
+    except Exception as e:
+        print(f"Error fetching Stooq aluminum price: {e}")
+        return [], f"FAIL: {e}"
+
+
+def fetch_google_news_rss_fallback(max_results: int = 12) -> tuple[list[dict], str]:
+    query = '(aluminum OR aluminium OR bauxite OR alumina OR "aluminum extrusion") when:1d'
+    params = {
+        "q": query,
+        "hl": "en-US",
+        "gl": "US",
+        "ceid": "US:en",
+    }
+    url = f"{GOOGLE_NEWS_RSS_URL}?{urllib.parse.urlencode(params)}"
+    try:
+        response = requests.get(url, timeout=30)
+        response.raise_for_status()
+        root = ET.fromstring(response.text)
+        articles: list[dict] = []
+        for item in root.findall("./channel/item"):
+            title = (item.findtext("title") or "").strip()
+            link = (item.findtext("link") or "").strip()
+            published = (item.findtext("pubDate") or "").strip()
+            source_el = item.find("source")
+            source_name = source_el.text.strip() if source_el is not None and source_el.text else "Google News"
+            if title and link:
+                articles.append({
+                    "title": title,
+                    "url": link,
+                    "publishedAt": published,
+                    "source": {"name": source_name},
+                })
+            if len(articles) >= max_results:
+                break
+        return articles, "OK" if articles else "EMPTY"
+    except Exception as e:
+        print(f"Error fetching Google News RSS fallback: {e}")
+        return [], f"FAIL: {e}"
+
+
 # -----------------------------
 # Helpers
 # -----------------------------
@@ -661,19 +862,17 @@ def render_md(data, current_time_utc: str, status: dict) -> str:
     lines = [
         "# Aluminum Global Intelligence Report",
         f"Last Updated (UTC): `{current_time_utc}`",
-        f"Data Status: LME={status.get('lme_status')} | GeminiNews={status.get('gemini_news_status')} | NewsAPI={status.get('newsapi_status')} | GNews={status.get('gnews_status')}",
+        f"Data Status: Price={status.get('price_status')} | NewsAPI={status.get('newsapi_status')} | GNews={status.get('gnews_status')} | GoogleRSS={status.get('google_rss_status')}",
         "",
         "## Global English Report",
         ""
     ]
 
     sections = [
-        ("lme", "LME Primary Aluminum Data"),
+        ("lme", "Latest Aluminum Price Data"),
         ("newsapi_headlines", "Latest Headlines (from NewsAPI)"),
         ("gnews_headlines", "Latest Headlines (from GNews)"),
-        ("corporate", "Industry & Corporate Insights (from Gemini)"),
-        ("trends", "Market Trends (from Gemini)"),
-        ("factors", "Strategic Factors (from Gemini)"),
+        ("google_rss_headlines", "Latest Headlines (Google News RSS Fallback)"),
     ]
 
     for key, title in sections:
@@ -685,33 +884,30 @@ def render_md(data, current_time_utc: str, status: dict) -> str:
         for item in items:
             if key == "lme":
                 lines.append(
-                    f"- LME Cash: `{item.get('price')}` | Change: `{item.get('change')}` | Ref Date: {item.get('date')}"
+                    f"- {item.get('label', 'Aluminum Price')}: `{item.get('price')}` | Symbol: `{item.get('symbol', 'AL.F')}` | Ref Date: {item.get('date')} | Time: {item.get('time', '')} | Source: {item.get('source', 'N/A')} [Link]({item.get('url', STOOQ_ALUMINUM_URL)})"
                 )
+                note = (item.get("note") or "").strip()
+                if note:
+                    lines.append(f"  - Status: {note}")
             elif key == "newsapi_headlines":
                 source_name = item.get("source", {}).get("name", "N/A")
                 url = item.get("url")
                 headline = item.get("title", "").strip()
+                published = item.get("publishedAt", "")
                 if url and headline:
-                    lines.append(f"- {headline} (Source: {source_name}) [Link]({url})")
+                    lines.append(f"- {headline} | Source: {source_name} | Published: {published} [Link]({url})")
                 elif headline:
-                    lines.append(f"- {headline} (Source: {source_name})")
-            elif key == "gnews_headlines":
+                    lines.append(f"- {headline} | Source: {source_name} | Published: {published}")
+            elif key in ("gnews_headlines", "google_rss_headlines"):
                 # GNews format: {title, description, url, publishedAt, source:{name,url}}
                 source_name = (item.get("source", {}) or {}).get("name", "N/A")
                 url = item.get("url")
                 headline = (item.get("title") or "").strip()
+                published = item.get("publishedAt", "")
                 if url and headline:
-                    lines.append(f"- {headline} (Source: {source_name}) [Link]({url})")
+                    lines.append(f"- {headline} | Source: {source_name} | Published: {published} [Link]({url})")
                 elif headline:
-                    lines.append(f"- {headline} (Source: {source_name})")
-            else:
-                bullet = item.get("bullet", "").strip()
-                url = item.get("url", "")
-                if bullet:
-                    if url and "http" in url:
-                        lines.append(f"- {bullet} [Source]({url})")
-                    else:
-                        lines.append(f"- {bullet}")
+                    lines.append(f"- {headline} | Source: {source_name} | Published: {published}")
 
         lines.append("")
 
@@ -722,14 +918,9 @@ def render_md(data, current_time_utc: str, status: dict) -> str:
 # Main
 # -----------------------------
 def main():
-    # Gemini is primary (required), MiniMax is fallback (optional)
-    gemini_key = os.environ.get("GEMINI_API_KEY")
-    if not gemini_key:
-        print("Error: GEMINI_API_KEY is not set. Exiting.")
-        raise SystemExit(1)
-
     now = datetime.utcnow()
     current_time_utc = now.strftime("%Y-%m-%d %H:%M:%S")
+    price_data, price_status = fetch_latest_aluminum_price()
 
     prompt = f"""
 Get the CURRENT/LATEST LME Primary Aluminum (High Grade) Cash Settlement Price from TODAY {current_time_utc} AND scan latest aluminum industry news.
@@ -835,29 +1026,21 @@ Return ONLY valid JSON (no markdown, no extra text):
         per_query_max=10,
     )
     gnews_api_key_provided = bool(os.getenv("GNEWS"))
-
-    # -----------------------------
-    # Gemini fetch (core) - with fallback if unavailable
-    # -----------------------------
-    print("Fetching combined price and deep news via MiniMax M2.7...")
-    combined_data = None
-    
-    try:
-        combined_data = fetch_content_from_genai(prompt)
-    except Exception as e:
-        print(f"MiniMax fetch failed: {e}")
-    
-    lme_data = combined_data
-    news_data = combined_data
+    google_rss_articles: list[dict] = []
+    google_rss_status = "SKIPPED"
+    if not newsapi_articles and not gnews_articles:
+        google_rss_articles, google_rss_status = fetch_google_news_rss_fallback(max_results=12)
 
     news_api_key_provided = bool(os.getenv("NEWS_API_KEY"))
+    newsapi_articles, gnews_articles = dedupe_cross_sources(newsapi_articles, gnews_articles)
+    _, google_rss_articles = dedupe_cross_sources(newsapi_articles + gnews_articles, google_rss_articles)
 
     # Status markers
     status = {
         "newsapi_status": "OK" if newsapi_articles else "EMPTY/FAIL",
         "gnews_status": "OK" if gnews_articles else "EMPTY/FAIL",
-        "lme_status": "OK" if lme_data else "FAIL",
-        "minimax_news_status": "OK" if news_data else "FAIL",
+        "google_rss_status": google_rss_status,
+        "price_status": price_status,
     }
 
     # -----------------------------
@@ -865,9 +1048,8 @@ Return ONLY valid JSON (no markdown, no extra text):
     # If Gemini fails, generate report with available data (news headlines only).
     # No longer hard-fail on API errors - this prevents workflow crashes.
     # -----------------------------
-    if not lme_data and not news_data:
-        print("Warning: Both Gemini LME and news failed. Proceeding with available news data only.")
-        print("Note: LME price data will be empty, but headlines from NewsAPI/GNews will still be included.")
+    if not price_data:
+        print("Warning: latest aluminum price data is unavailable.")
 
     # Soft warnings for external news APIs (non-fatal)
     if news_api_key_provided and (not newsapi_articles or newsapi_error):
@@ -882,44 +1064,16 @@ Return ONLY valid JSON (no markdown, no extra text):
             msg += f" Detail: {gnews_error}"
         print(msg)
 
-    # Validate and normalize LME
-    valid_lme = []
-    if lme_data and isinstance(lme_data, dict) and "en" in lme_data and "lme" in lme_data["en"]:
-        for entry in lme_data["en"]["lme"]:
-            try:
-                p_raw = str(entry.get("price", "")).replace("$", "").replace(",", "").strip()
-                p_val = float(p_raw)
-                if p_val >= MIN_PRICE_THRESHOLD:
-                    valid_lme.append(entry)
-            except Exception:
-                continue
-
     # Build final data structure
     final_data = {
         "date": now.strftime("%Y-%m-%d"),
         "en": {
-            "lme": valid_lme,
+            "lme": price_data,
             "newsapi_headlines": newsapi_articles,
             "gnews_headlines": gnews_articles,
-            "corporate": [],
-            "trends": [],
-            "factors": [],
+            "google_rss_headlines": google_rss_articles,
         },
     }
-
-    # Normalize Gemini news items
-    if news_data and isinstance(news_data, dict) and "en" in news_data:
-        for sec in ["corporate", "trends", "factors"]:
-            raw_items = news_data["en"].get(sec, []) or []
-            cleaned_items = []
-            for i in raw_items:
-                if not isinstance(i, dict):
-                    continue
-                bullet = clean_text(i.get("bullet", ""))
-                url = i.get("url", "")
-                if bullet and ("hypothetical" not in str(url).lower()):
-                    cleaned_items.append({"bullet": bullet, "url": url})
-            final_data["en"][sec] = cleaned_items
 
     # Render markdown
     content = render_md(final_data, current_time_utc=current_time_utc, status=status)
