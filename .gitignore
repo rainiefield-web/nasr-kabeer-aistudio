@@ -6,11 +6,27 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+.dev-server.*
+hero-preview-*.png
+full-site-preview-*.png
+home-check.png
+news-check.png
+perf-*-check.png
+arabic-hero-*.png
+debug-*.png
+brochure-*-check.png
+brochure-*.png
+*-after-fix.png
+hero-local-preview.html
+run-local-preview.cmd
+__pycache__/
 
 node_modules
 dist
 dist-ssr
 *.local
+.npm-cache/
+.playwright-browsers/
 
 # Editor directories and files
 .vscode/*

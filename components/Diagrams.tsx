@@ -92,15 +92,15 @@ export const ProductCategoryGrid: React.FC<DiagramProps> = ({ lang }) => {
   const categories = {
     arch: {
       ...t.arch,
-      image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=1000"
+      image: "/site-assets/category-architectural.jpg"
     },
     ind: {
       ...t.ind,
-      image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=1000"
+      image: "/site-assets/category-industrial.jpg"
     },
     trans: {
       ...t.trans,
-      image: "https://images.unsplash.com/photo-1580274455191-1c62238fa333?auto=format&fit=crop&q=80&w=1000" // Automotive Chassis/Structure
+      image: "/site-assets/category-transportation.jpg"
     }
   };
 
@@ -142,6 +142,8 @@ export const ProductCategoryGrid: React.FC<DiagramProps> = ({ lang }) => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7 }}
                 src={activeData.image} 
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
               <div className={`absolute inset-0 bg-gradient-to-${isRTL ? 'l' : 'r'} from-white via-white/90 to-transparent z-10`}></div>
@@ -205,23 +207,23 @@ export const ProductionProcessFlow: React.FC<DiagramProps> = ({ lang }) => {
     <div className="relative w-full overflow-x-auto pb-10 pt-4">
       <div className="flex min-w-max md:min-w-0 justify-between items-start relative px-4">
         {/* Connecting Line */}
-        <div className="absolute top-10 left-0 right-0 h-1 bg-gray-100 -z-10"></div>
+        <div className="absolute top-10 left-0 right-0 h-px bg-white/20 -z-10"></div>
 
         {steps.map((step, idx) => (
             <div key={idx} className="flex flex-col items-center w-48 group">
-                <div className="w-20 h-20 rounded-full bg-white border-4 border-gray-100 flex items-center justify-center mb-6 group-hover:border-nasr-blue group-hover:scale-110 transition-all duration-300 shadow-sm z-10 relative">
-                    <div className="text-gray-400 group-hover:text-nasr-blue transition-colors">
+                <div className="w-20 h-20 rounded-full bg-white/95 border border-white/25 flex items-center justify-center mb-6 group-hover:border-nasr-blue group-hover:scale-105 transition-all duration-500 ease-out shadow-[0_18px_45px_rgba(0,0,0,0.18)] z-10 relative">
+                    <div className="text-[#6F7D86] group-hover:text-nasr-blue transition-colors duration-300">
                         {step.icon}
                     </div>
                     {/* Arrow */}
                     {idx < steps.length - 1 && (
-                         <div className={`absolute ${isRTL ? '-left-12 rotate-180' : '-right-12'} text-gray-300`}>
+                         <div className={`absolute ${isRTL ? '-left-12 rotate-180' : '-right-12'} text-white/35`}>
                              <ArrowRight size={24} />
                          </div>
                     )}
                 </div>
-                <h4 className={`font-serif text-xl text-nasr-dark mb-2 ${isRTL ? 'font-arabic' : ''}`}>{step.title}</h4>
-                <p className="text-center text-sm text-gray-500 px-2">{step.desc}</p>
+                <h4 className={`font-serif text-xl text-white mb-2 ${isRTL ? 'font-arabic' : ''}`}>{step.title}</h4>
+                <p className="text-center text-sm text-gray-300 px-2 leading-relaxed">{step.desc}</p>
             </div>
         ))}
       </div>
@@ -242,11 +244,11 @@ export const CapacityGrowthChart: React.FC<DiagramProps> = ({ lang }) => {
     ];
 
     return (
-        <div className="bg-gray-900 rounded-sm p-8 md:p-12 border border-gray-800">
+        <div className="bg-white rounded-sm p-8 md:p-12 border border-gray-200 shadow-xl shadow-slate-200/60">
             <div className="flex flex-col md:flex-row gap-12 items-end">
                 <div className="flex-1">
-                    <h3 className={`text-white font-serif text-3xl mb-6 ${isRTL ? 'font-arabic' : ''}`}>{t.chart.title}</h3>
-                    <p className="text-gray-400 mb-10 leading-relaxed">
+                    <h3 className={`text-nasr-dark font-serif text-3xl mb-6 ${isRTL ? 'font-arabic' : ''}`}>{t.chart.title}</h3>
+                    <p className="text-gray-600 mb-10 leading-relaxed">
                         {t.chart.desc}
                     </p>
                     
@@ -255,21 +257,21 @@ export const CapacityGrowthChart: React.FC<DiagramProps> = ({ lang }) => {
                             <button 
                                 key={phase.id}
                                 onClick={() => setActivePhase(phase.id)}
-                                className={`w-full flex items-center justify-between p-4 rounded border transition-all ${activePhase === phase.id ? 'bg-white/10 border-white' : 'bg-transparent border-gray-700 hover:bg-white/5'}`}
+                                className={`w-full flex items-center justify-between p-4 rounded border transition-all ${activePhase === phase.id ? 'bg-slate-50 border-nasr-blue shadow-sm' : 'bg-transparent border-gray-200 hover:bg-gray-50'}`}
                             >
                                 <div className="flex items-center gap-4">
-                                    <div className={`w-3 h-3 rounded-full ${activePhase === phase.id ? 'bg-nasr-accent' : 'bg-gray-600'}`}></div>
-                                    <span className={`text-white font-serif text-lg ${isRTL ? 'font-arabic' : ''}`}>{phase.label}</span>
+                                    <div className={`w-3 h-3 rounded-full ${activePhase === phase.id ? 'bg-nasr-accent' : 'bg-gray-300'}`}></div>
+                                    <span className={`text-nasr-dark font-serif text-lg ${isRTL ? 'font-arabic' : ''}`}>{phase.label}</span>
                                 </div>
-                                <span className={`text-gray-400 text-sm ${isRTL ? 'font-arabic' : ''}`}>{phase.focus}</span>
+                                <span className={`text-gray-500 text-sm ${isRTL ? 'font-arabic' : ''}`}>{phase.focus}</span>
                             </button>
                         ))}
                     </div>
                 </div>
 
-                <div className="flex-1 w-full h-80 flex items-end justify-around gap-4 relative border-b border-gray-700 pb-4">
+                <div className="flex-1 w-full h-80 flex items-end justify-around gap-4 relative border-b border-gray-200 pb-4">
                     {/* Y-Axis Labels */}
-                    <div className={`absolute ${isRTL ? '-right-8' : '-left-8'} top-0 bottom-4 flex flex-col justify-between text-xs text-gray-600 font-mono`}>
+                    <div className={`absolute ${isRTL ? '-right-8' : '-left-8'} top-0 bottom-4 flex flex-col justify-between text-xs text-gray-400 font-mono`}>
                         <span>200k</span>
                         <span>100k</span>
                         <span>50k</span>
@@ -278,18 +280,18 @@ export const CapacityGrowthChart: React.FC<DiagramProps> = ({ lang }) => {
 
                     {phases.map((phase) => (
                         <div key={phase.id} className="flex flex-col items-center w-1/3 h-full justify-end group relative">
-                            <div className="mb-3 text-white font-bold text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="mb-3 text-nasr-dark font-bold text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 {phase.capacity.toLocaleString()}
                             </div>
                             <MotionDiv 
-                                className={`w-full max-w-[60px] ${phase.id <= activePhase ? (phase.id === 3 ? 'bg-nasr-red' : phase.id === 2 ? 'bg-nasr-blue' : 'bg-gray-500') : 'bg-gray-800'} rounded-t-sm relative overflow-hidden`}
+                                className={`w-full max-w-[60px] ${phase.id <= activePhase ? (phase.id === 3 ? 'bg-nasr-red' : phase.id === 2 ? 'bg-nasr-blue' : 'bg-gray-400') : 'bg-gray-200'} rounded-t-sm relative overflow-hidden`}
                                 initial={{ height: 0 }}
                                 animate={{ height: `${(phase.capacity / 200000) * 100}%` }}
                                 transition={{ duration: 1, delay: phase.id * 0.2 }}
                             >
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                             </MotionDiv>
-                            <div className="mt-4 text-gray-400 text-sm font-mono">{phase.year}</div>
+                            <div className="mt-4 text-gray-500 text-sm font-mono">{phase.year}</div>
                         </div>
                     ))}
                 </div>
