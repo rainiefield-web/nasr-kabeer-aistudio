@@ -1873,7 +1873,7 @@ const App: React.FC = () => {
                   <p className={`text-base md:text-xl text-gray-200 font-light leading-relaxed mb-12 max-w-2xl ${isRTL ? 'border-r-2 pr-8' : 'border-l-2 pl-8'} border-white/35`}>{t.hero.desc}</p>
                   <div className="flex flex-col sm:flex-row gap-6">
                     <a href="#products" onClick={goToProducts} className={`metal-cta group flex items-center justify-center gap-3 px-8 py-4 font-bold ${isRTL ? 'tracking-normal' : 'uppercase tracking-wider'}`}>{t.hero.btnProduct}<ArrowRight size={20} className={`transition-transform duration-500 ease-out ${isRTL ? 'group-hover:-translate-x-1 rotate-180' : 'group-hover:translate-x-1'}`} /></a>
-                    <a href="#technology" onClick={goToTechnology} className={`metal-cta-secondary flex items-center justify-center gap-3 px-8 py-4 text-gray-100 font-bold ${isRTL ? 'tracking-normal' : 'uppercase tracking-wider'}`}>{t.hero.btnTech}</a>
+                    <a href="#technology" onClick={goToTechnology} className={`metal-cta-secondary flex items-center justify-center gap-3 px-8 py-4 font-bold ${isRTL ? 'tracking-normal' : 'uppercase tracking-wider'}`}>{t.hero.btnTech}</a>
                   </div>
                 </MotionDiv>
               </div>
