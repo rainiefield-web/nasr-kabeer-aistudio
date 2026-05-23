@@ -15,6 +15,27 @@
 }
 
 @layer components {
+  .laser-title {
+    position: relative;
+    width: fit-content;
+  }
+
+  .laser-line {
+    position: relative;
+    display: block;
+    width: fit-content;
+    overflow: visible;
+  }
+
+  .laser-title-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
+    overflow: visible;
+    mix-blend-mode: screen;
+  }
+
   .metal-cta,
   .metal-cta-secondary {
     position: relative;
@@ -157,6 +178,7 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .laser-title-canvas,
     .metal-cta,
     .metal-cta-secondary,
     .metal-cta::before,

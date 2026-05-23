@@ -20,6 +20,275 @@ import { motion, AnimatePresence } from 'framer-motion';
 const MotionDiv = motion.div as any;
 const MotionH2 = motion.h2 as any;
 
+const LaserTitleCanvas: React.FC<{ enabled: boolean }> = ({ enabled }) => {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
+  useEffect(() => {
+    if (!enabled) return;
+    const canvas = canvasRef.current;
+    const title = canvas?.closest('.laser-title') as HTMLElement | null;
+    const ctx = canvas?.getContext('2d');
+    if (!canvas || !title || !ctx) return;
+
+    type Point = { x: number; y: number };
+    type Spark = Point & { vx: number; vy: number; born: number; life: number; r: number };
+    type LaserLine = { chars: Array<{ points: Point[] }>; duration: number; phase: number };
+
+    let frame = 0;
+    let sparks: Spark[] = [];
+    let lines: LaserLine[] = [];
+
+    const fontFor = (el: Element) => {
+      const style = getComputedStyle(el);
+      return `${style.fontStyle} ${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+    };
+
+    const orderEdgePixels = (edgePixels: Point[]) => {
+      if (!edgePixels.length) return [];
+      const unused = new Map<string, Point>();
+      edgePixels.forEach((p) => unused.set(`${p.x},${p.y}`, p));
+      const ordered: Point[] = [];
+      let current = edgePixels.reduce((best, p) => (p.y < best.y || (p.y === best.y && p.x < best.x) ? p : best), edgePixels[0]);
+
+      while (unused.size) {
+        ordered.push(current);
+        unused.delete(`${current.x},${current.y}`);
+        let next: Point | null = null;
+        let bestDist = Infinity;
+
+        for (let radius = 1; radius <= 9 && !next; radius++) {
+          for (let y = current.y - radius; y <= current.y + radius; y++) {
+            for (let x = current.x - radius; x <= current.x + radius; x++) {
+              const candidate = unused.get(`${x},${y}`);
+              if (!candidate) continue;
+              const dist = (candidate.x - current.x) ** 2 + (candidate.y - current.y) ** 2;
+              if (dist < bestDist) {
+                bestDist = dist;
+                next = candidate;
+              }
+            }
+          }
+        }
+
+        if (!next) {
+          unused.forEach((candidate) => {
+            const dist = (candidate.x - current.x) ** 2 + (candidate.y - current.y) ** 2;
+            if (dist < bestDist) {
+              bestDist = dist;
+              next = candidate;
+            }
+          });
+        }
+        if (!next) break;
+
+        const gap = Math.hypot(next.x - current.x, next.y - current.y);
+        if (gap > 2.2) {
+          const steps = Math.min(24, Math.ceil(gap / 1.4));
+          for (let i = 1; i < steps; i++) {
+            const k = i / steps;
+            ordered.push({ x: current.x + (next.x - current.x) * k, y: current.y + (next.y - current.y) * k });
+          }
+        }
+        current = next;
+      }
+      return ordered;
+    };
+
+    const boundaryForChar = (char: string, font: string, fontSize: number) => {
+      const scratch = document.createElement('canvas');
+      const scratchCtx = scratch.getContext('2d', { willReadFrequently: true });
+      if (!scratchCtx) return { points: [] as Point[], advance: 0 };
+      scratchCtx.font = font;
+      const metrics = scratchCtx.measureText(char);
+      const pad = Math.ceil(fontSize * 0.42);
+      const width = Math.ceil(metrics.width + pad * 2);
+      const height = Math.ceil(fontSize * 1.6 + pad * 2);
+      scratch.width = width;
+      scratch.height = height;
+      scratchCtx.font = font;
+      scratchCtx.fillStyle = '#fff';
+      scratchCtx.textBaseline = 'alphabetic';
+      scratchCtx.fillText(char, pad, pad + fontSize);
+      const image = scratchCtx.getImageData(0, 0, width, height);
+      const alpha = (x: number, y: number) => image.data[(y * width + x) * 4 + 3];
+      const edgePixels: Point[] = [];
+
+      for (let y = 1; y < height - 1; y++) {
+        for (let x = 1; x < width - 1; x++) {
+          if (alpha(x, y) < 24) continue;
+          if (alpha(x - 1, y) < 24 || alpha(x + 1, y) < 24 || alpha(x, y - 1) < 24 || alpha(x, y + 1) < 24) {
+            edgePixels.push({ x, y });
+          }
+        }
+      }
+
+      const points = orderEdgePixels(edgePixels).map((p, i, arr) => {
+        const a = arr[Math.max(0, i - 2)] || p;
+        const b = arr[Math.max(0, i - 1)] || p;
+        const d = arr[Math.min(arr.length - 1, i + 1)] || p;
+        const e = arr[Math.min(arr.length - 1, i + 2)] || p;
+        return {
+          x: (a.x + b.x + p.x * 2 + d.x + e.x) / 6 - pad,
+          y: (a.y + b.y + p.y * 2 + d.y + e.y) / 6 - (pad + fontSize),
+        };
+      });
+
+      return { points, advance: metrics.width };
+    };
+
+    const rebuild = () => {
+      const rect = title.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = Math.max(1, Math.ceil(rect.width * dpr));
+      canvas.height = Math.max(1, Math.ceil(rect.height * dpr));
+      canvas.style.width = `${rect.width}px`;
+      canvas.style.height = `${rect.height}px`;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      const lineEls = Array.from(title.querySelectorAll('.laser-line')) as HTMLElement[];
+      lines = lineEls.map((lineEl, lineIndex) => {
+        const text = lineEl.textContent || '';
+        const titleRect = title.getBoundingClientRect();
+        const lineRect = lineEl.getBoundingClientRect();
+        const computed = getComputedStyle(lineEl);
+        const fontSize = parseFloat(computed.fontSize);
+        const font = fontFor(lineEl);
+        const measure = document.createElement('canvas').getContext('2d');
+        if (!measure) return { chars: [], duration: 12000, phase: 0 };
+        measure.font = font;
+        const chars: Array<{ points: Point[] }> = [];
+        let cursor = 0;
+
+        for (const char of text) {
+          const advance = measure.measureText(char).width;
+          if (char.trim()) {
+            const shape = boundaryForChar(char, font, fontSize);
+            const points = shape.points.map((p) => ({
+              x: lineRect.left - titleRect.left + cursor + p.x,
+              y: lineRect.top - titleRect.top + fontSize + p.y,
+            }));
+            if (points.length) chars.push({ points });
+          }
+          cursor += advance;
+        }
+
+        return { chars, duration: [14500, 18500, 30000][lineIndex] || 16000, phase: lineIndex * 0.19 };
+      });
+    };
+
+    const spawnSparks = (x: number, y: number, t: number) => {
+      if (Math.random() > 0.18) return;
+      const count = 1 + Math.floor(Math.random() * 3);
+      for (let i = 0; i < count; i++) {
+        const angle = -Math.PI * 0.95 + Math.random() * Math.PI * 0.8;
+        const velocity = 1.1 + Math.random() * 3.4;
+        sparks.push({ x, y, vx: Math.cos(angle) * velocity, vy: Math.sin(angle) * velocity - 0.7, born: t, life: 240 + Math.random() * 330, r: 0.5 + Math.random() * 0.85 });
+      }
+    };
+
+    const drawSparks = (t: number) => {
+      ctx.save();
+      ctx.globalCompositeOperation = 'screen';
+      for (let i = sparks.length - 1; i >= 0; i--) {
+        const spark = sparks[i];
+        const age = t - spark.born;
+        if (age > spark.life) {
+          sparks.splice(i, 1);
+          continue;
+        }
+        const k = age / spark.life;
+        ctx.shadowColor = 'rgba(255, 204, 76, 0.9)';
+        ctx.shadowBlur = 8;
+        ctx.fillStyle = `rgba(255, 196, 67, ${1 - k})`;
+        ctx.beginPath();
+        ctx.arc(spark.x + spark.vx * age / 16, spark.y + spark.vy * age / 16 + 0.025 * age * k, spark.r * (1 - k * 0.35), 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+    };
+
+    const drawLaser = (line: LaserLine, t: number) => {
+      if (!line.chars.length) return;
+      const local = ((t + line.phase * line.duration) % line.duration) / line.duration;
+      const charIndex = Math.min(line.chars.length - 1, Math.floor(local * line.chars.length));
+      const charProgress = local * line.chars.length - charIndex;
+      const points = line.chars[charIndex].points;
+      if (points.length < 10) return;
+      const idx = Math.min(points.length - 1, Math.floor(charProgress * points.length));
+      const point = points[idx];
+
+      ctx.save();
+      ctx.globalCompositeOperation = 'screen';
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+
+      const carvedStart = Math.max(0, idx - 520);
+      for (let i = carvedStart; i < idx - 1; i++) {
+        const a = points[i];
+        const b = points[i + 1];
+        const age = (i - carvedStart) / Math.max(1, idx - carvedStart);
+        ctx.strokeStyle = `rgba(255, 184, 54, ${0.03 + age * 0.2})`;
+        ctx.lineWidth = 0.55 + age * 0.72;
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.stroke();
+      }
+
+      const trail = 34;
+      for (let i = trail; i > 0; i--) {
+        const pointIndex = Math.max(0, idx - i);
+        const a = points[pointIndex];
+        const b = points[Math.min(points.length - 1, pointIndex + 1)];
+        const opacity = (trail - i) / trail;
+        ctx.strokeStyle = `rgba(255, 219, 118, ${0.05 + opacity * 0.34})`;
+        ctx.lineWidth = 0.65 + opacity * 1.35;
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.stroke();
+      }
+
+      const glow = ctx.createRadialGradient(point.x, point.y, 0, point.x, point.y, 13);
+      glow.addColorStop(0, 'rgba(255, 255, 245, 1)');
+      glow.addColorStop(0.16, 'rgba(255, 218, 112, 0.95)');
+      glow.addColorStop(0.48, 'rgba(42, 214, 255, 0.55)');
+      glow.addColorStop(1, 'rgba(42, 214, 255, 0)');
+      ctx.fillStyle = glow;
+      ctx.beginPath();
+      ctx.arc(point.x, point.y, 13, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#fffdf2';
+      ctx.beginPath();
+      ctx.arc(point.x, point.y, 1.7, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      spawnSparks(point.x, point.y, t);
+    };
+
+    const render = (t: number) => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      lines.forEach((line) => drawLaser(line, t));
+      drawSparks(t);
+      frame = requestAnimationFrame(render);
+    };
+
+    document.fonts?.ready.then(rebuild);
+    rebuild();
+    frame = requestAnimationFrame(render);
+    const resize = () => rebuild();
+    window.addEventListener('resize', resize);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener('resize', resize);
+    };
+  }, [enabled]);
+
+  if (!enabled) return null;
+  return <canvas className="laser-title-canvas" ref={canvasRef} aria-hidden="true" />;
+};
+
 // --- TYPES & CONTENT ---
 type Language = 'en' | 'ar';
 type Page = 'home' | 'technology' | 'sustainability' | 'products' | 'news';
@@ -1867,8 +2136,11 @@ const App: React.FC = () => {
               <div className="relative z-10 container mx-auto px-6 pt-24 pb-16 max-w-7xl">
                 <MotionDiv initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className={`max-w-[44rem] mt-44 md:mt-0 ${isRTL ? 'mr-auto text-right' : 'ml-0 text-left'}`}>
                   <div className={`flex items-center gap-4 mb-7 ${isRTL ? 'justify-end' : ''}`}><span className="h-[2px] w-14 bg-nasr-accent"></span><span className={`text-nasr-accent text-xs md:text-sm font-bold ${isRTL ? 'tracking-normal' : 'tracking-[0.34em] uppercase'}`}>{t.hero.vision}</span></div>
-                  <h1 className={`font-bold mb-8 text-white drop-shadow-2xl ${isRTL ? 'font-arabic text-5xl md:text-7xl leading-[1.12] tracking-normal' : 'font-serif text-5xl md:text-8xl lg:text-[5.35rem] leading-[0.92]'}`}>
-                    {t.hero.titleLine1}<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">{t.hero.titleLine2}</span><br />{t.hero.titleLine3} <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-300 to-gray-500 drop-shadow-sm">{t.hero.profileWord}</span>
+                  <h1 className={`laser-title font-bold mb-8 text-white drop-shadow-2xl ${isRTL ? 'font-arabic text-5xl md:text-7xl leading-[1.12] tracking-normal' : 'font-serif text-5xl md:text-8xl lg:text-[5.35rem] leading-[0.92]'}`}>
+                    <span className="laser-line laser-line-1">{t.hero.titleLine1}</span>
+                    <span className="laser-line laser-line-2 text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">{t.hero.titleLine2}</span>
+                    <span className="laser-line laser-line-3">{t.hero.titleLine3} <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-300 to-gray-500 drop-shadow-sm">{t.hero.profileWord}</span></span>
+                    <LaserTitleCanvas enabled={!isRTL} />
                   </h1>
                   <p className={`text-base md:text-xl text-gray-200 font-light leading-relaxed mb-12 max-w-2xl ${isRTL ? 'border-r-2 pr-8' : 'border-l-2 pl-8'} border-white/35`}>{t.hero.desc}</p>
                   <div className="flex flex-col sm:flex-row gap-6">
