@@ -2082,12 +2082,12 @@ const App: React.FC = () => {
         <div className="container mx-auto px-6 flex justify-between items-center">
           <a href="#" onClick={scrollToTop} className={`flex items-center gap-4 group ${isRTL ? 'ml-8 lg:ml-12' : 'mr-8 lg:mr-12'}`}>
             <AlxLogo />
-            <div className={`hidden md:flex flex-col ${isRTL ? 'border-r pr-5 mr-1' : 'border-l pl-5 ml-1'} border-gray-400/50 h-10 justify-center`}>
+            <div className={`hidden lg:flex flex-col ${isRTL ? 'border-r pr-5 mr-1' : 'border-l pl-5 ml-1'} border-gray-400/50 h-10 justify-center`}>
               <span className={`font-serif font-bold text-xl leading-none tracking-tight uppercase ${scrolled || currentPage !== 'home' ? 'text-nasr-dark' : 'text-white'} ${isRTL ? 'font-arabic' : ''}`}>{isRTL ? 'نصر كبير' : 'Nasr Kabeer'}</span>
               <span className={`text-[10px] tracking-[0.35em] uppercase font-medium ${scrolled || currentPage !== 'home' ? 'text-gray-500' : 'text-gray-300'} ${isRTL ? 'font-arabic tracking-wider' : ''} ml-px`}>{isRTL ? 'للألمنيوم' : 'Aluminum'}</span>
             </div>
           </a>
-          <div className={`hidden md:flex items-center gap-6 lg:gap-8 text-[11px] font-bold tracking-widest uppercase ${scrolled || currentPage !== 'home' ? 'text-gray-800' : 'text-white'}`}>
+          <div className={`hidden lg:flex items-center gap-6 lg:gap-8 text-[11px] font-bold tracking-widest uppercase ${scrolled || currentPage !== 'home' ? 'text-gray-800' : 'text-white'}`}>
             <a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="hover:text-nasr-blue transition-colors relative group">{t.nav.about}<span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-nasr-blue transition-all duration-300 group-hover:w-full"></span></a>
             <a href="#products" onClick={goToProducts} className={`hover:text-nasr-blue transition-colors relative group ${currentPage === 'products' ? 'text-nasr-blue' : ''}`}>{t.nav.products}<span className={`absolute -bottom-1 left-0 h-[2px] bg-nasr-blue transition-all duration-300 ${currentPage === 'products' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span></a>
             <a href="#technology" onClick={goToTechnology} className={`hover:text-nasr-blue transition-colors relative group ${currentPage === 'technology' ? 'text-nasr-blue' : ''}`}>{t.nav.technology}<span className={`absolute -bottom-1 left-0 h-[2px] bg-nasr-blue transition-all duration-300 ${currentPage === 'technology' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span></a>
@@ -2098,7 +2098,7 @@ const App: React.FC = () => {
               <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className={`px-5 py-2.5 border ${scrolled || currentPage !== 'home' ? 'border-nasr-dark text-nasr-dark hover:bg-nasr-dark hover:text-white' : 'border-white text-white hover:bg-white hover:text-nasr-dark'} transition-all duration-300`}>{t.nav.contact}</a>
             </div>
           </div>
-          <div className="flex md:hidden items-center gap-4"><button onClick={toggleLang} className={`${scrolled || currentPage !== 'home' ? 'text-nasr-dark' : 'text-white'}`}>{lang === 'en' ? 'AR' : 'EN'}</button><button className={`p-2 ${scrolled || currentPage !== 'home' ? 'text-nasr-dark' : 'text-white'}`} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X size={32} /> : <Menu size={32} />}</button></div>
+          <div className="flex lg:hidden items-center gap-4"><button onClick={toggleLang} className={`${scrolled || currentPage !== 'home' ? 'text-nasr-dark' : 'text-white'}`}>{lang === 'en' ? 'AR' : 'EN'}</button><button className={`p-2 ${scrolled || currentPage !== 'home' ? 'text-nasr-dark' : 'text-white'}`} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X size={32} /> : <Menu size={32} />}</button></div>
         </div>
       </nav>
       <AnimatePresence>
@@ -2128,21 +2128,21 @@ const App: React.FC = () => {
               <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_50%,rgba(0,159,227,0.44),transparent_38%),radial-gradient(circle_at_14%_88%,rgba(202,119,41,0.42),transparent_34%),linear-gradient(120deg,#061017_0%,#071823_48%,#062334_100%)]"></div>
                 <img src="/hero-background-wide.png" alt="High-end aluminum profile" fetchPriority="high" decoding="async" className="hidden md:block absolute inset-0 h-full w-full object-cover" />
-                <img src="/hero-profile-mobile.png" alt="High-end aluminum profile" fetchPriority="high" decoding="async" className="md:hidden absolute top-24 left-1/2 w-[88vw] max-w-none -translate-x-1/2 object-contain opacity-70" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#050B10]/94 via-[#050B10]/62 md:via-[#050B10]/22 to-transparent"></div>
+                <img src="/hero-profile-mobile.png" alt="High-end aluminum profile" fetchPriority="high" decoding="async" className="md:hidden absolute top-20 left-1/2 w-[68vw] max-w-none -translate-x-1/2 object-contain opacity-50" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#050B10]/94 via-[#050B10]/72 md:via-[#050B10]/70 lg:via-[#050B10]/22 to-transparent"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/42 via-transparent to-black/20"></div>
                 <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/44 to-transparent"></div>
               </div>
               <div className="relative z-10 container mx-auto px-6 pt-24 pb-16 max-w-7xl">
-                <MotionDiv initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className={`max-w-[44rem] mt-44 md:mt-0 ${isRTL ? 'mr-auto text-right' : 'ml-0 text-left'}`}>
+                <MotionDiv initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className={`max-w-[44rem] md:max-w-[40rem] lg:max-w-[44rem] mt-52 md:mt-0 ${isRTL ? 'mr-auto text-right' : 'ml-0 text-left'}`}>
                   <div className={`flex items-center gap-4 mb-7 ${isRTL ? 'justify-end' : ''}`}><span className="h-[2px] w-14 bg-nasr-accent"></span><span className={`text-nasr-accent text-xs md:text-sm font-bold ${isRTL ? 'tracking-normal' : 'tracking-[0.34em] uppercase'}`}>{t.hero.vision}</span></div>
-                  <h1 className={`laser-title font-bold mb-8 text-white drop-shadow-2xl ${isRTL ? 'font-arabic text-5xl md:text-7xl leading-[1.12] tracking-normal' : 'font-serif text-5xl md:text-8xl lg:text-[5.35rem] leading-[0.92]'}`}>
+                  <h1 className={`laser-title font-bold mb-8 text-white drop-shadow-2xl ${isRTL ? 'font-arabic text-5xl md:text-7xl leading-[1.12] tracking-normal' : 'font-serif text-5xl md:text-[4.8rem] lg:text-[5.35rem] leading-[0.92]'}`}>
                     <span className="laser-line laser-line-1">{t.hero.titleLine1}</span>
                     <span className="laser-line laser-line-2 text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">{t.hero.titleLine2}</span>
-                    <span className="laser-line laser-line-3">{t.hero.titleLine3} <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-300 to-gray-500 drop-shadow-sm">{t.hero.profileWord}</span></span>
+                    <span className="laser-line laser-line-3">{t.hero.titleLine3} <span className="block lg:inline text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-300 to-gray-500 drop-shadow-sm">{t.hero.profileWord}</span></span>
                     <LaserTitleCanvas enabled={!isRTL} />
                   </h1>
-                  <p className={`text-base md:text-xl text-gray-200 font-light leading-relaxed mb-12 max-w-2xl ${isRTL ? 'border-r-2 pr-8' : 'border-l-2 pl-8'} border-white/35`}>{t.hero.desc}</p>
+                  <p className={`text-base md:text-xl text-gray-200 font-light leading-relaxed mb-12 max-w-2xl md:max-w-[31rem] lg:max-w-2xl ${isRTL ? 'border-r-2 pr-8' : 'border-l-2 pl-8'} border-white/35`}>{t.hero.desc}</p>
                   <div className="flex flex-col sm:flex-row gap-6">
                     <a href="#products" onClick={goToProducts} className={`metal-cta group flex items-center justify-center gap-3 px-8 py-4 font-bold ${isRTL ? 'tracking-normal' : 'uppercase tracking-wider'}`}>{t.hero.btnProduct}<ArrowRight size={20} className={`transition-transform duration-500 ease-out ${isRTL ? 'group-hover:-translate-x-1 rotate-180' : 'group-hover:translate-x-1'}`} /></a>
                     <a href="#technology" onClick={goToTechnology} className={`metal-cta-secondary flex items-center justify-center gap-3 px-8 py-4 font-bold ${isRTL ? 'tracking-normal' : 'uppercase tracking-wider'}`}>{t.hero.btnTech}</a>

@@ -18,6 +18,7 @@
   .laser-title {
     position: relative;
     width: fit-content;
+    max-width: min(100%, 44rem);
   }
 
   .laser-line {
@@ -32,8 +33,14 @@
     inset: 0;
     z-index: 5;
     pointer-events: none;
-    overflow: visible;
+    overflow: hidden;
     mix-blend-mode: screen;
+  }
+
+  @media (max-width: 1023px) {
+    .laser-title {
+      max-width: 100%;
+    }
   }
 
   .metal-cta,
