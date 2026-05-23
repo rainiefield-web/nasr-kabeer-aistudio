@@ -33,23 +33,25 @@
   .metal-cta-secondary::before {
     content: "";
     position: absolute;
-    inset: -42%;
+    inset: -46%;
     z-index: -2;
     border-radius: 999px;
     background:
       conic-gradient(
         from 120deg,
-        rgba(255, 255, 255, 0.02),
-        rgba(255, 255, 255, 0.9),
-        rgba(0, 159, 227, 0.85),
-        rgba(255, 236, 194, 0.95),
-        rgba(202, 119, 41, 0.9),
-        rgba(255, 255, 255, 0.88),
-        rgba(30, 38, 52, 0.2),
-        rgba(0, 159, 227, 0.85),
-        rgba(255, 255, 255, 0.02)
+        rgba(255, 255, 255, 0.08) 0deg,
+        rgba(255, 255, 255, 0.42) 34deg,
+        rgba(147, 210, 232, 0.58) 72deg,
+        rgba(255, 236, 194, 0.66) 116deg,
+        rgba(202, 119, 41, 0.52) 158deg,
+        rgba(255, 255, 255, 0.72) 206deg,
+        rgba(54, 82, 99, 0.28) 252deg,
+        rgba(0, 159, 227, 0.44) 302deg,
+        rgba(255, 255, 255, 0.08) 360deg
       );
-    animation: metal-edge-spin 4.8s linear infinite;
+    animation: metal-edge-spin 8.5s linear infinite;
+    filter: blur(4px) saturate(0.9);
+    opacity: 0.92;
     will-change: transform;
   }
 
@@ -97,7 +99,8 @@
 
   .metal-cta-secondary::before {
     opacity: 0.78;
-    filter: saturate(0.78) brightness(1.08);
+    filter: blur(3px) saturate(0.72) brightness(1.08);
+    animation-duration: 10s;
   }
 
   .metal-cta-secondary::after {
