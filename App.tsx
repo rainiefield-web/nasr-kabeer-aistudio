@@ -157,7 +157,7 @@ const LaserTitleCanvas: React.FC<{ enabled: boolean }> = ({ enabled }) => {
           const measure = document.createElement('canvas').getContext('2d');
           if (!measure) return;
           measure.font = font;
-          const baselineY = startY + fontSize * 0.88;
+          const baselineY = startY + fontSize * 0.92;
           let cursor = 0;
 
           for (const char of text) {
@@ -184,7 +184,8 @@ const LaserTitleCanvas: React.FC<{ enabled: boolean }> = ({ enabled }) => {
 
           if (profileEl) {
             const profileRect = profileEl.getBoundingClientRect();
-            addTextRun(profileText, profileEl, profileRect.left - titleRect.left, profileRect.top - titleRect.top);
+            const profileTop = getComputedStyle(profileEl).display === 'inline' ? lineRect.top : profileRect.top;
+            addTextRun(profileText, profileEl, profileRect.left - titleRect.left, profileTop - titleRect.top);
           }
         } else {
           const lineRect = lineEl.getBoundingClientRect();
