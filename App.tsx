@@ -147,29 +147,48 @@ const LaserTitleCanvas: React.FC<{ enabled: boolean }> = ({ enabled }) => {
 
       const lineEls = Array.from(title.querySelectorAll('.laser-line')) as HTMLElement[];
       lines = lineEls.map((lineEl, lineIndex) => {
-        const text = lineEl.textContent || '';
         const titleRect = title.getBoundingClientRect();
-        const lineRect = lineEl.getBoundingClientRect();
-        const computed = getComputedStyle(lineEl);
-        const fontSize = parseFloat(computed.fontSize);
-        const font = fontFor(lineEl);
-        const measure = document.createElement('canvas').getContext('2d');
-        if (!measure) return { chars: [], duration: 12000, phase: 0 };
-        measure.font = font;
         const chars: Array<{ points: Point[] }> = [];
-        let cursor = 0;
 
-        for (const char of text) {
-          const advance = measure.measureText(char).width;
-          if (char.trim()) {
-            const shape = boundaryForChar(char, font, fontSize);
-            const points = shape.points.map((p) => ({
-              x: lineRect.left - titleRect.left + cursor + p.x,
-              y: lineRect.top - titleRect.top + fontSize + p.y,
-            }));
-            if (points.length) chars.push({ points });
+        const addTextRun = (text: string, sourceEl: HTMLElement, startX: number, startY: number) => {
+          const computed = getComputedStyle(sourceEl);
+          const fontSize = parseFloat(computed.fontSize);
+          const font = fontFor(sourceEl);
+          const measure = document.createElement('canvas').getContext('2d');
+          if (!measure) return;
+          measure.font = font;
+          const baselineY = startY + fontSize * 0.88;
+          let cursor = 0;
+
+          for (const char of text) {
+            const advance = measure.measureText(char).width;
+            if (char.trim()) {
+              const shape = boundaryForChar(char, font, fontSize);
+              const points = shape.points.map((p) => ({
+                x: startX + cursor + p.x,
+                y: baselineY + p.y,
+              }));
+              if (points.length) chars.push({ points });
+            }
+            cursor += advance;
           }
-          cursor += advance;
+        };
+
+        if (lineEl.classList.contains('laser-line-3')) {
+          const profileEl = lineEl.querySelector('span') as HTMLElement | null;
+          const profileText = profileEl?.textContent || '';
+          const leadText = (lineEl.childNodes[0]?.textContent || '').trimEnd();
+          const lineRect = lineEl.getBoundingClientRect();
+
+          addTextRun(leadText, lineEl, lineRect.left - titleRect.left, lineRect.top - titleRect.top);
+
+          if (profileEl) {
+            const profileRect = profileEl.getBoundingClientRect();
+            addTextRun(profileText, profileEl, profileRect.left - titleRect.left, profileRect.top - titleRect.top);
+          }
+        } else {
+          const lineRect = lineEl.getBoundingClientRect();
+          addTextRun(lineEl.textContent || '', lineEl, lineRect.left - titleRect.left, lineRect.top - titleRect.top);
         }
 
         return { chars, duration: [14500, 18500, 30000][lineIndex] || 16000, phase: lineIndex * 0.19 };
@@ -222,7 +241,7 @@ const LaserTitleCanvas: React.FC<{ enabled: boolean }> = ({ enabled }) => {
       ctx.lineCap = 'round';
       ctx.lineJoin = 'round';
 
-      const carvedStart = Math.max(0, idx - 520);
+      const carvedStart = 0;
       for (let i = carvedStart; i < idx - 1; i++) {
         const a = points[i];
         const b = points[i + 1];
