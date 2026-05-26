@@ -21,12 +21,12 @@ const MotionDiv = motion.div as any;
 const MotionH2 = motion.h2 as any;
 
 const aboutOrbitImages = [
-  { src: "/site-assets/about-orbit-1.jpg", alt: "NKACO gallery image 1", tint: "rgba(126, 178, 204, 0.34)" },
-  { src: "/site-assets/about-orbit-2.jpg", alt: "NKACO gallery image 2", tint: "rgba(160, 174, 183, 0.32)" },
-  { src: "/site-assets/about-orbit-3.jpg", alt: "NKACO gallery image 3", tint: "rgba(185, 197, 187, 0.34)" },
-  { src: "/site-assets/about-orbit-4.jpg", alt: "NKACO gallery image 4", tint: "rgba(112, 146, 166, 0.32)" },
-  { src: "/site-assets/about-orbit-5.jpg", alt: "NKACO gallery image 5", tint: "rgba(190, 184, 170, 0.32)" },
-  { src: "/site-assets/about-orbit-6.jpg", alt: "NKACO gallery image 6", tint: "rgba(148, 170, 178, 0.34)" }
+  { src: "/site-assets/about-showcase-main-1.webp", thumb: "/site-assets/about-showcase-thumb-1.webp", alt: "NKACO gallery image 1", tint: "rgba(126, 178, 204, 0.34)" },
+  { src: "/site-assets/about-showcase-main-2.webp", thumb: "/site-assets/about-showcase-thumb-2.webp", alt: "NKACO gallery image 2", tint: "rgba(160, 174, 183, 0.32)" },
+  { src: "/site-assets/about-showcase-main-3.webp", thumb: "/site-assets/about-showcase-thumb-3.webp", alt: "NKACO gallery image 3", tint: "rgba(185, 197, 187, 0.34)" },
+  { src: "/site-assets/about-showcase-main-4.webp", thumb: "/site-assets/about-showcase-thumb-4.webp", alt: "NKACO gallery image 4", tint: "rgba(112, 146, 166, 0.32)" },
+  { src: "/site-assets/about-showcase-main-5.webp", thumb: "/site-assets/about-showcase-thumb-5.webp", alt: "NKACO gallery image 5", tint: "rgba(190, 184, 170, 0.32)" },
+  { src: "/site-assets/about-showcase-main-6.webp", thumb: "/site-assets/about-showcase-thumb-6.webp", alt: "NKACO gallery image 6", tint: "rgba(148, 170, 178, 0.34)" }
 ];
 
 const AboutImageOrbit: React.FC = () => {
@@ -69,10 +69,10 @@ const AboutImageOrbit: React.FC = () => {
         <AnimatePresence mode="wait">
           <MotionDiv
             key={activeImage.src}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.26, ease: "easeOut" }}
             className="about-showcase-image"
           >
             <img src={activeImage.src} alt={activeImage.alt} loading={activeIndex === 0 ? "eager" : "lazy"} decoding="async" />
@@ -91,7 +91,7 @@ const AboutImageOrbit: React.FC = () => {
             aria-label={image.alt}
             aria-current={activeIndex === index}
           >
-            <img src={image.src} alt="" loading="lazy" decoding="async" />
+            <img src={image.thumb} alt="" loading="lazy" decoding="async" />
           </button>
         ))}
       </div>
@@ -2277,7 +2277,7 @@ const App: React.FC = () => {
                   <div className="relative flex flex-col items-center lg:items-stretch gap-6">
                     <AboutImageOrbit />
                     <MotionDiv initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.55 }} className="w-full max-w-md self-center lg:self-end">
-                      <a href="https://www.everwin.sa/" target="_blank" rel="noopener noreferrer" className="block rounded-2xl border border-white/55 bg-white/58 px-5 py-4 shadow-[0_18px_48px_rgba(12,38,54,0.12)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-nasr-blue/40 hover:bg-white/72 hover:shadow-[0_22px_54px_rgba(12,38,54,0.16)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-nasr-blue">
+                      <a href="https://www.everwin.sa/" target="_blank" rel="noopener noreferrer" className="block rounded-2xl border border-white/55 bg-white/70 px-5 py-4 shadow-[0_14px_34px_rgba(12,38,54,0.10)] backdrop-blur-md transition-colors duration-200 hover:border-nasr-blue/40 hover:bg-white/82 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-nasr-blue">
                       <div className="flex items-start gap-3">
                         <div className="mt-0.5 rounded-full bg-white/70 p-2 shadow-sm">
                           <MapPin className="text-nasr-blue" size={16} />
