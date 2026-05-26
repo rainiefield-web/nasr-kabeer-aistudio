@@ -184,14 +184,157 @@
     }
   }
 
+  .about-showcase {
+    --about-showcase-tint: rgba(126, 178, 204, 0.34);
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 5.4rem;
+    gap: 1rem;
+    width: min(100%, 33rem);
+    margin-inline: auto;
+    isolation: isolate;
+    contain: layout paint;
+  }
+
+  .about-showcase::before {
+    content: "";
+    position: absolute;
+    inset: 8% 9% 6% -2%;
+    z-index: -1;
+    border-radius: 2.4rem;
+    background:
+      radial-gradient(circle at 24% 24%, var(--about-showcase-tint), transparent 42%),
+      linear-gradient(145deg, rgba(245, 250, 252, 0.92), rgba(230, 239, 243, 0.52));
+    opacity: 0.9;
+    transition: background 520ms ease;
+  }
+
+  .about-showcase-main {
+    position: relative;
+    min-height: clamp(28rem, 48vw, 38rem);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    border-radius: 1.4rem;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(244, 248, 250, 0.88)),
+      radial-gradient(circle at 50% 0%, var(--about-showcase-tint), transparent 52%);
+    box-shadow: 0 22px 54px rgba(16, 38, 51, 0.14);
+    transform: translateZ(0);
+  }
+
+  .about-showcase-main::after {
+    content: "NKACO";
+    position: absolute;
+    right: 1.1rem;
+    bottom: 1rem;
+    color: rgba(16, 38, 51, 0.2);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.24em;
+    pointer-events: none;
+  }
+
+  .about-showcase-image {
+    position: absolute;
+    inset: 1rem;
+    display: grid;
+    place-items: center;
+    transform: translateZ(0);
+    will-change: opacity, transform;
+  }
+
+  .about-showcase-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 18px 28px rgba(16, 38, 51, 0.1));
+    transform: translateZ(0);
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  .about-showcase-thumbs {
+    display: grid;
+    align-content: center;
+    gap: 0.62rem;
+  }
+
+  .about-showcase-thumb {
+    width: 4.65rem;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.86);
+    border-radius: 0.95rem;
+    background: rgba(244, 248, 250, 0.92);
+    box-shadow: 0 10px 24px rgba(16, 38, 51, 0.11);
+    cursor: pointer;
+    opacity: 0.68;
+    transform: translate3d(0, 0, 0) scale(0.94);
+    transition:
+      opacity 220ms ease,
+      transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 220ms ease,
+      box-shadow 220ms ease;
+  }
+
+  .about-showcase-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: rgba(246, 249, 250, 0.9);
+  }
+
+  .about-showcase-thumb:hover,
+  .about-showcase-thumb:focus-visible,
+  .about-showcase-thumb.is-active {
+    border-color: rgba(0, 159, 227, 0.82);
+    box-shadow: 0 14px 30px rgba(16, 38, 51, 0.18);
+    opacity: 1;
+    outline: none;
+    transform: translate3d(-0.28rem, 0, 0) scale(1);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .laser-title-canvas,
     .metal-cta,
     .metal-cta-secondary,
     .metal-cta::before,
-    .metal-cta-secondary::before {
+    .metal-cta-secondary::before,
+    .about-showcase-image,
+    .about-showcase-thumb {
       animation: none;
       transition: none;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .about-showcase {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .about-showcase-main {
+      min-height: 28rem;
+    }
+
+    .about-showcase-thumbs {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 0.5rem;
+    }
+
+    .about-showcase-thumb {
+      width: 100%;
+      border-radius: 0.72rem;
+    }
+
+    .about-showcase-thumb:hover,
+    .about-showcase-thumb:focus-visible,
+    .about-showcase-thumb.is-active {
+      transform: translate3d(0, -0.18rem, 0) scale(1);
     }
   }
 }

@@ -20,6 +20,85 @@ import { motion, AnimatePresence } from 'framer-motion';
 const MotionDiv = motion.div as any;
 const MotionH2 = motion.h2 as any;
 
+const aboutOrbitImages = [
+  { src: "/site-assets/about-orbit-1.jpg", alt: "NKACO gallery image 1", tint: "rgba(126, 178, 204, 0.34)" },
+  { src: "/site-assets/about-orbit-2.jpg", alt: "NKACO gallery image 2", tint: "rgba(160, 174, 183, 0.32)" },
+  { src: "/site-assets/about-orbit-3.jpg", alt: "NKACO gallery image 3", tint: "rgba(185, 197, 187, 0.34)" },
+  { src: "/site-assets/about-orbit-4.jpg", alt: "NKACO gallery image 4", tint: "rgba(112, 146, 166, 0.32)" },
+  { src: "/site-assets/about-orbit-5.jpg", alt: "NKACO gallery image 5", tint: "rgba(190, 184, 170, 0.32)" },
+  { src: "/site-assets/about-orbit-6.jpg", alt: "NKACO gallery image 6", tint: "rgba(148, 170, 178, 0.34)" }
+];
+
+const AboutImageOrbit: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const activeImage = aboutOrbitImages[activeIndex];
+
+  useEffect(() => {
+    aboutOrbitImages.forEach((image) => {
+      const img = new Image();
+      img.decoding = "async";
+      img.src = image.src;
+      img.decode?.().catch(() => undefined);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % aboutOrbitImages.length);
+    }, 3600);
+
+    return () => window.clearInterval(timer);
+  }, [isPaused]);
+
+  return (
+    <MotionDiv
+      initial={{ opacity: 0, y: 24, scale: 0.98 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.75, ease: "easeOut" }}
+      className="about-showcase"
+      style={{ "--about-showcase-tint": activeImage.tint } as React.CSSProperties}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocus={() => setIsPaused(true)}
+      onBlur={() => setIsPaused(false)}
+    >
+      <div className="about-showcase-main" aria-live="polite">
+        <AnimatePresence mode="wait">
+          <MotionDiv
+            key={activeImage.src}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="about-showcase-image"
+          >
+            <img src={activeImage.src} alt={activeImage.alt} loading={activeIndex === 0 ? "eager" : "lazy"} decoding="async" />
+          </MotionDiv>
+        </AnimatePresence>
+      </div>
+      <div className="about-showcase-thumbs" aria-label="NKACO image selector">
+        {aboutOrbitImages.map((image, index) => (
+          <button
+            key={image.src}
+            type="button"
+            className={`about-showcase-thumb ${activeIndex === index ? "is-active" : ""}`}
+            onMouseEnter={() => setActiveIndex(index)}
+            onFocus={() => setActiveIndex(index)}
+            onClick={() => setActiveIndex(index)}
+            aria-label={image.alt}
+            aria-current={activeIndex === index}
+          >
+            <img src={image.src} alt="" loading="lazy" decoding="async" />
+          </button>
+        ))}
+      </div>
+    </MotionDiv>
+  );
+};
+
 const LaserTitleCanvas: React.FC<{ enabled: boolean }> = ({ enabled }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -602,7 +681,7 @@ const content = {
     park: {
       subtitle: "Industrial Ecosystem",
       title: "Everwin Industrial Park",
-      desc: "Nasr Kabeer Aluminum operates within Everwin Industrial Park, a state-of-the-art industrial hub in Dammam Third Industrial City, providing world-class infrastructure for advanced manufacturing.",
+      desc: "NKACO operates within Everwin Industrial Park, an industrial hub in Dammam 3rd Industrial City",
       link: "Visit Park Website"
     },
     products: {
@@ -2195,15 +2274,24 @@ const App: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="relative">
-                    <MotionDiv initial={{ scale: 0.95, opacity: 0 }} whileInView={{ scale: 1, opacity: 1 }} transition={{ duration: 0.8 }} className="aspect-[4/5] bg-gray-200 overflow-hidden shadow-2xl relative z-10"><img src="/site-assets/about-skyscraper.jpg" alt="Modern Skyscraper" loading="lazy" decoding="async" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out" /><div className="absolute inset-0 bg-nasr-blue/20 mix-blend-multiply"></div></MotionDiv>
-                    <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.6 }} className={`relative mt-8 lg:mt-0 lg:absolute lg:-bottom-12 lg:${isRTL ? '-right-12' : '-left-12'} z-20 bg-white p-6 shadow-xl border-t-4 border-nasr-blue max-w-sm`}>
-                      <div className="flex flex-col gap-4">
-                        <div className="flex items-center justify-between gap-4"><div><div className="text-[10px] font-bold uppercase text-gray-400 tracking-widest mb-1">{t.park.subtitle}</div><h4 className={`font-serif text-xl leading-tight text-nasr-dark ${isRTL ? 'font-arabic' : ''}`}>{t.park.title}</h4></div><div className="p-2 bg-gray-50 rounded-full"><MapPin className="text-nasr-blue" size={20} /></div></div>
-                        <img src="/site-assets/everwin-logo.png" alt="Everwin" loading="lazy" decoding="async" className="h-10 w-auto object-contain self-start" />
-                        <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">{t.park.desc}</p>
-                        <a href="https://www.everwin.sa/" target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase text-nasr-blue hover:text-nasr-dark flex items-center gap-2 mt-1 transition-colors group">{t.park.link} <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" /></a>
+                  <div className="relative flex flex-col items-center lg:items-stretch gap-6">
+                    <AboutImageOrbit />
+                    <MotionDiv initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.55 }} className="w-full max-w-md self-center lg:self-end">
+                      <a href="https://www.everwin.sa/" target="_blank" rel="noopener noreferrer" className="block rounded-2xl border border-white/55 bg-white/58 px-5 py-4 shadow-[0_18px_48px_rgba(12,38,54,0.12)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-nasr-blue/40 hover:bg-white/72 hover:shadow-[0_22px_54px_rgba(12,38,54,0.16)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-nasr-blue">
+                      <div className="flex items-start gap-3">
+                        <div className="mt-0.5 rounded-full bg-white/70 p-2 shadow-sm">
+                          <MapPin className="text-nasr-blue" size={16} />
+                        </div>
+                        <div className="min-w-0">
+                          <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                            <span className="text-[9px] font-bold uppercase tracking-[0.22em] text-nasr-blue/80">{t.park.subtitle}</span>
+                            <span className="text-[10px] font-semibold text-gray-400">/</span>
+                            <span className={`text-xs font-semibold text-nasr-dark ${isRTL ? 'font-arabic' : ''}`}>{t.park.title}</span>
+                          </div>
+                          <p className="mt-1.5 text-sm leading-relaxed text-gray-700">{t.park.desc}</p>
+                        </div>
                       </div>
+                      </a>
                     </MotionDiv>
                   </div>
                 </div>
