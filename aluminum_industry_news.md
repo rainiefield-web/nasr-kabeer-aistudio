@@ -1,25 +1,21 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-05-27 11:33:40`
-Data Status: Price=STALE | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
+Last Updated (UTC): `2026-05-28 11:34:15`
+Data Status: Price=STALE | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- Aluminum Futures Reference: `3688.5` | Symbol: `AL.F` | Ref Date: 2026-05-26 | Time: 23:00:00 | Source: Stooq [Link](https://stooq.com/q/l/?s=al.f&f=sd2t2ohlcv&h&e=csv)
-  - Status: No newer market close available yet. Showing latest available close from 2026-05-26.
-
-### Latest Headlines (from NewsAPI)
-- Samsung Galaxy Z Fold5 and Flip5 receiving One UI 8.5 stable update globally | Source: GSMArena.com | Published: 2026-05-26T11:09:03Z [Link](https://www.gsmarena.com/samsung_galaxy_z_fold5_flip5_one_ui_8_5_stable_update_india_global_rollout-news-72991.php)
+- Aluminum Futures Reference: `3620.75` | Symbol: `AL.F` | Ref Date: 2026-05-27 | Time: 23:00:00 | Source: Stooq [Link](https://stooq.com/q/l/?s=al.f&f=sd2t2ohlcv&h&e=csv)
+  - Status: No newer market close available yet. Showing latest available close from 2026-05-27.
 
 ### Latest Headlines (from GNews)
-- Hindalco Industries advises shareholders on TDS for FY26 dividend | Source: scanx.trade | Published: 2026-05-26T19:08:08Z [Link](https://scanx.trade/stock-market-news/companies/hindalco-industries-advises-shareholders-on-tds-for-fy26-dividend/41368076)
-- Hindalco Industries likely to gain from high aluminium, copper prices | Source: Business Standard | Published: 2026-05-26T16:29:23Z [Link](https://www.business-standard.com/markets/news/hindalco-industries-likely-to-gain-from-high-aluminium-copper-prices-126052601895_1.html)
-- Trump’s Iran Signals Send Oil Markets Into Chaos | Source: OilPrice | Published: 2026-05-26T15:23:00Z [Link](https://oilprice.com/Energy/Crude-Oil/Trumps-Iran-Signals-Send-Oil-Markets-Into-Chaos.html)
-- Nifty, Sensex tumble even as Mid-cap scales new peak | Source: The Hindu Business Line | Published: 2026-05-26T14:31:55Z [Link](https://www.thehindubusinessline.com/markets/stock-markets/nifty-sensex-tumble-even-as-mid-cap-scales-new-peak/article71024839.ece)
-- Texmaco Rail & Engineering approves LTIP Scheme 2026 with 95.97% votes | Source: scanx.trade | Published: 2026-05-26T13:45:08Z [Link](https://scanx.trade/stock-market-news/companies/texmaco-rail-engineering-approves-ltip-scheme-2026-with-95-97-votes/41348696)
-- Critical mineral buyers should avoid oversupply | Source: Bnn Bloomberg | Published: 2026-05-26T12:19:13Z [Link](https://www.bnnbloomberg.ca/business/2026/05/26/a-warning-to-critical-minerals-buyers-avoid-butter-mountains-aluminum-floods/)
-- Messed-up tariffs are hurting the carmakers they're meant to help | Source: New York Post | Published: 2026-05-26T11:39:00Z [Link](https://nypost.com/2026/05/26/opinion/messed-up-tariffs-are-hurting-the-carmakers-theyre-meant-to-help/)
-- Ford's pickup production woes ignite new truck war with GM, Ram | Source: Detroit Free Press | Published: 2026-05-26T10:08:40Z [Link](https://www.freep.com/story/money/cars/ford/2026/05/26/ford-pickup-production-gm-ram/90164939007/)
-- Voting Results from Constellium's 2026 Annual General Meeting | Source: The Manila Times | Published: 2026-05-26T09:16:45Z [Link](https://www.manilatimes.net/2026/05/26/tmt-newswire/globenewswire/voting-results-from-constelliums-2026-annual-general-meeting/2351452)
-- Buy, Sell Or Hold: Hitachi Energy, Union Bank, Aarti Pharmalabs, Coal India, Petronet, Balaji Amines - Ask Profit | Source: NDTV Profit | Published: 2026-05-26T08:07:07Z [Link](https://www.ndtvprofit.com/markets/buy-sell-or-hold-hitachi-energy-union-bank-aarti-pharmalabs-coal-india-petronet-balaji-amines-ask-profit-11548646)
-- Aluminum hits four-year high on fears of China output cuts | Source: Financial Post | Published: 2026-05-26T07:51:26Z [Link](https://financialpost.com/commodities/aluminum-heads-for-four-year-high-on-fears-of-china-output-cuts)
+- Canada pushes its aluminum to Europe | Source: Bnn Bloomberg | Published: 2026-05-27T17:39:57Z [Link](https://www.bnnbloomberg.ca/business/international/2026/05/27/canada-turns-from-us-to-europe-as-iran-war-propels-aluminum-higher/)
+- Aluminum Prices Surge as Supply Shock Fears Grip the Market | Source: OilPrice | Published: 2026-05-27T16:00:00Z [Link](https://oilprice.com/Metals/Commodities/Aluminum-Prices-Surge-as-Supply-Shock-Fears-Grip-the-Market.html)
+- Canada turns from US to Europe as Iran war propels aluminium higher | Source: The Straits Times | Published: 2026-05-27T15:34:35Z [Link](https://www.straitstimes.com/world/europe/canada-turns-from-us-to-europe-as-iran-war-propels-aluminium-higher)
+- Analysis-Canada turns from US to Europe as Iran war propels aluminium higher | Source: Al-Monitor | Published: 2026-05-27T15:32:06Z [Link](https://www.al-monitor.com/originals/2026/05/analysis-canada-turns-us-europe-iran-war-propels-aluminium-higher)
+- Aluminum Market Facing ‘Serious and Prolonged Supply Outage’ | Source: OilPrice | Published: 2026-05-27T15:00:00Z [Link](https://oilprice.com/Metals/Commodities/Aluminum-Market-Facing-Serious-and-Prolonged-Supply-Outage.html)
+- Recycled Plastic Market to Reach US$ 131.0 Bn by 2033 Driven by Circular-Economy Policies and Sustainability Commitments - Persistence Market Research | Source: PR Newswire UK | Published: 2026-05-27T14:28:00Z [Link](https://www.prnewswire.co.uk/news-releases/recycled-plastic-market-to-reach-us-131-0-bn-by-2033-driven-by-circular-economy-policies-and-sustainability-commitments---persistence-market-research-302783251.html)
+- Corporate ethics, Infiltration and Bauxite mining | Source: The Indian Express | Published: 2026-05-27T13:54:06Z [Link](https://indianexpress.com/article/upsc-current-affairs/upsc-key-corporate-ethics-infiltration-and-bauxite-mining-10711028/)
+- New Ranger LS45DS Wheel Balancer Ups Speed, Accuracy, and User-Friendliness | Source: The Manila Times | Published: 2026-05-27T12:26:03Z [Link](https://www.manilatimes.net/2026/05/27/tmt-newswire/globenewswire/new-ranger-ls45ds-wheel-balancer-ups-speed-accuracy-and-user-friendliness/2352648)
+- Indian shares end flat as HDFC Bank offsets rally in metal stocks | Source: MarketScreener | Published: 2026-05-27T10:15:34Z [Link](https://www.marketscreener.com/news/indian-shares-end-flat-as-hdfc-bank-offsets-rally-in-metal-stocks-ce7f5ad2d08af721)
+- Hindalco, Nalco shares jump up to 5% as aluminium prices hit 4-year high amid US-Iran war tensions | Source: Livemint | Published: 2026-05-27T08:22:12Z [Link](https://www.livemint.com/market/stock-market-news/hindalco-share-price-nalco-share-price-jumps-up-to-5-as-aluminium-prices-hit-4-year-high-amid-us-iran-war-tensions-11779868770433.html)
