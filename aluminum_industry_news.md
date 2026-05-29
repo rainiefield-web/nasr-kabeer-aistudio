@@ -1,21 +1,22 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-05-28 11:34:15`
+Last Updated (UTC): `2026-05-29 11:23:47`
 Data Status: Price=STALE | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- Aluminum Futures Reference: `3620.75` | Symbol: `AL.F` | Ref Date: 2026-05-27 | Time: 23:00:00 | Source: Stooq [Link](https://stooq.com/q/l/?s=al.f&f=sd2t2ohlcv&h&e=csv)
-  - Status: No newer market close available yet. Showing latest available close from 2026-05-27.
+- Aluminum Futures Reference: `3646.5` | Symbol: `AL.F` | Ref Date: 2026-05-28 | Time: 23:00:00 | Source: Stooq [Link](https://stooq.com/q/l/?s=al.f&f=sd2t2ohlcv&h&e=csv)
+  - Status: No newer market close available yet. Showing latest available close from 2026-05-28.
 
 ### Latest Headlines (from GNews)
-- Canada pushes its aluminum to Europe | Source: Bnn Bloomberg | Published: 2026-05-27T17:39:57Z [Link](https://www.bnnbloomberg.ca/business/international/2026/05/27/canada-turns-from-us-to-europe-as-iran-war-propels-aluminum-higher/)
-- Aluminum Prices Surge as Supply Shock Fears Grip the Market | Source: OilPrice | Published: 2026-05-27T16:00:00Z [Link](https://oilprice.com/Metals/Commodities/Aluminum-Prices-Surge-as-Supply-Shock-Fears-Grip-the-Market.html)
-- Canada turns from US to Europe as Iran war propels aluminium higher | Source: The Straits Times | Published: 2026-05-27T15:34:35Z [Link](https://www.straitstimes.com/world/europe/canada-turns-from-us-to-europe-as-iran-war-propels-aluminium-higher)
-- Analysis-Canada turns from US to Europe as Iran war propels aluminium higher | Source: Al-Monitor | Published: 2026-05-27T15:32:06Z [Link](https://www.al-monitor.com/originals/2026/05/analysis-canada-turns-us-europe-iran-war-propels-aluminium-higher)
-- Aluminum Market Facing ‘Serious and Prolonged Supply Outage’ | Source: OilPrice | Published: 2026-05-27T15:00:00Z [Link](https://oilprice.com/Metals/Commodities/Aluminum-Market-Facing-Serious-and-Prolonged-Supply-Outage.html)
-- Recycled Plastic Market to Reach US$ 131.0 Bn by 2033 Driven by Circular-Economy Policies and Sustainability Commitments - Persistence Market Research | Source: PR Newswire UK | Published: 2026-05-27T14:28:00Z [Link](https://www.prnewswire.co.uk/news-releases/recycled-plastic-market-to-reach-us-131-0-bn-by-2033-driven-by-circular-economy-policies-and-sustainability-commitments---persistence-market-research-302783251.html)
-- Corporate ethics, Infiltration and Bauxite mining | Source: The Indian Express | Published: 2026-05-27T13:54:06Z [Link](https://indianexpress.com/article/upsc-current-affairs/upsc-key-corporate-ethics-infiltration-and-bauxite-mining-10711028/)
-- New Ranger LS45DS Wheel Balancer Ups Speed, Accuracy, and User-Friendliness | Source: The Manila Times | Published: 2026-05-27T12:26:03Z [Link](https://www.manilatimes.net/2026/05/27/tmt-newswire/globenewswire/new-ranger-ls45ds-wheel-balancer-ups-speed-accuracy-and-user-friendliness/2352648)
-- Indian shares end flat as HDFC Bank offsets rally in metal stocks | Source: MarketScreener | Published: 2026-05-27T10:15:34Z [Link](https://www.marketscreener.com/news/indian-shares-end-flat-as-hdfc-bank-offsets-rally-in-metal-stocks-ce7f5ad2d08af721)
-- Hindalco, Nalco shares jump up to 5% as aluminium prices hit 4-year high amid US-Iran war tensions | Source: Livemint | Published: 2026-05-27T08:22:12Z [Link](https://www.livemint.com/market/stock-market-news/hindalco-share-price-nalco-share-price-jumps-up-to-5-as-aluminium-prices-hit-4-year-high-amid-us-iran-war-tensions-11779868770433.html)
+- Oura Ring 5 lands in Australia 40% smaller, with a week of battery and a new menopause toolkit | Source: iTWire | Published: 2026-05-28T23:16:11Z [Link](https://itwire.com/your-it-news/home-it/oura-ring-5-lands-in-australia-40-smaller-with-a-week-of-battery-and-a-new-menopause-toolkit)
+- 2026 Ford Ranger Black Edition review | Source: PerthNow | Published: 2026-05-28T21:05:02Z [Link](https://www.perthnow.com.au/lifestyle/motoring/2026-ford-ranger-black-edition-review-c-22353427)
+- MIT's new method can extract lithium from hard rock at room temperature | Source: Interesting Engineering | Published: 2026-05-28T20:07:44Z [Link](https://interestingengineering.com/energy/mit-extract-lithium-from-hard-rock)
+- How a new extraction process could unlock the world’s lithium | Source: MIT Technology Review | Published: 2026-05-28T18:01:00Z [Link](https://www.technologyreview.com/2026/05/28/1138096/lithium-extraction-rock-zero/)
+- Carney pitches close U.S. ties in autos, metals and minerals | Source: Financial Post | Published: 2026-05-28T16:22:40Z [Link](https://financialpost.com/news/economy/carney-pitches-us-closer-ties)
+- Gravel bikes wind tunnel tested: How does the new Specialized Crux stack up against the Argon 18 Anti Matter, Wilier Rave, Lauf Seigla, and more? | Source: Cyclingnews | Published: 2026-05-28T16:06:56Z [Link](https://www.cyclingnews.com/bikes/gravel/gravel-bikes-wind-tunnel-tested-how-does-the-new-specialized-crux-stack-up-against-the-argon-18-anti-matter-wilier-rave-lauf-seigla-and-more/)
+- Crystal Palace keep good times rolling but must now fend off more sharks | Source: The Guardian | Published: 2026-05-28T14:25:23Z [Link](https://www.theguardian.com/football/2026/may/28/crystal-palace-keep-good-times-rolling-but-must-now-fend-off-more-sharks)
+- The Smart Band 10 Pro goes global as trackers make a comeback | Source: Android Authority | Published: 2026-05-28T13:00:39Z [Link](https://www.androidauthority.com/xiaomi-smart-band-10-pro-global-launch-3670474/)
+- 23 Summer recipes for salads, sandwiches, pastas and more | Source: The Denver Post | Published: 2026-05-28T12:00:07Z [Link](https://www.denverpost.com/2026/05/28/summer-cooking-recipes-salad/)
+- ŌURA Introduces The World’s Smallest Smart Ring: Oura Ring 5 | Source: Business Wire | Published: 2026-05-28T12:00:00Z [Link](https://www.businesswire.com/news/home/20260528686853/en/URA-Introduces-The-Worlds-Smallest-Smart-Ring-Oura-Ring-5)
+- Should investors bet on metal funds in 2026 amid geopolitical crisis, rising commodity cycles? | Source: Business Today | Published: 2026-05-28T11:22:15Z [Link](https://www.businesstoday.in/mutual-funds/story/should-investors-bet-on-metal-funds-in-2026-amid-geopolitical-crisis-rising-commodity-cycles-533765-2026-05-28)
