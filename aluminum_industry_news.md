@@ -1,22 +1,23 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-06-02 12:00:58`
+Last Updated (UTC): `2026-06-03 12:38:27`
 Data Status: Price=STALE | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- Aluminum Futures Reference: `3709.75` | Symbol: `AL.F` | Ref Date: 2026-06-01 | Time: 23:00:00 | Source: Stooq [Link](https://stooq.com/q/l/?s=al.f&f=sd2t2ohlcv&h&e=csv)
-  - Status: No newer market close available yet. Showing latest available close from 2026-06-01.
+- Aluminum Futures Reference: `3776.5` | Symbol: `AL.F` | Ref Date: 2026-06-02 | Time: 23:00:00 | Source: Stooq [Link](https://stooq.com/q/l/?s=al.f&f=sd2t2ohlcv&h&e=csv)
+  - Status: No newer market close available yet. Showing latest available close from 2026-06-02.
 
 ### Latest Headlines (from GNews)
-- China's PMI data beat forecasts. Investors should be looking at these ASX resource stocks | Source: The Motley Fool Australia | Published: 2026-06-01T23:28:41Z [Link](https://www.fool.com.au/2026/06/02/chinas-pmi-data-beat-forecasts-investors-should-be-looking-at-these-asx-resource-stocks/)
-- $10,000 invested in Rio Tinto shares 12 months ago is now worth… | Source: The Motley Fool Australia | Published: 2026-06-01T22:30:00Z [Link](https://www.fool.com.au/2026/06/02/10000-invested-in-rio-tinto-shares-12-months-ago-is-now-worth/)
-- Odisha seeks two mining blocks for OMC | Source: Times of India | Published: 2026-06-01T18:03:00Z [Link](https://timesofindia.indiatimes.com/city/bhubaneswar/odisha-seeks-two-mining-blocks-for-omc/articleshow/131448331.cms)
-- Top 5 Commodities Impacted By The Iran War | Source: OilPrice | Published: 2026-06-01T17:00:00Z [Link](https://oilprice.com/Energy/Energy-General/Top-5-Commodities-Impacted-By-The-Iran-War.html)
-- Tech-Driven Dual-Mode: Addmotor U-Trike U-750 Tilting eTrike Review | Source: TechBullion | Published: 2026-06-01T12:05:56Z [Link](https://techbullion.com/tech-driven-dual-mode-addmotor-u-trike-u-750-tilting-etrike-review/)
-- BMW Industries to hold investor road show in Mumbai | Source: scanx.trade | Published: 2026-06-01T11:45:38Z [Link](https://scanx.trade/stock-market-news/companies/bmw-industries-to-attend-investor-road-show-in-mumbai/41595409)
-- Remal Appoints Ram Sandipam Adhikary as Lead, Business Development & Technical | Source: The Tribune | Published: 2026-06-01T10:16:25Z [Link](https://www.tribuneindia.com/news/business/remal-appoints-ram-sandipam-adhikary-as-lead-business-development-technical-2-2/)
-- Maan Aluminium Q4FY26 revenue rises 4% to ₹255 crore | Source: scanx.trade | Published: 2026-06-01T07:01:30Z [Link](https://scanx.trade/stock-market-news/companies/maan-aluminium-q4fy26-revenue-rises-4-to-255-crore/41842871)
-- Markets poised for a positive run if geopolitical risks ease: Ambareesh Baliga | Source: The Economic Times | Published: 2026-06-01T05:27:00Z [Link](https://economictimes.indiatimes.com/markets/expert-view/markets-poised-for-a-positive-run-if-geopolitical-risks-ease-ambareesh-baliga/articleshow/131434794.cms)
-- NVIDIA and Microsoft Reinvent Windows PCs for the Age of Personal AI | Source: The Manila Times | Published: 2026-06-01T04:31:39Z [Link](https://www.manilatimes.net/2026/06/01/tmt-newswire/globenewswire/nvidia-and-microsoft-reinvent-windows-pcs-for-the-age-of-personal-ai/2355356)
-- ‘Before, the land sustained us’: Who benefits from Guinea’s bauxite wealth? | Source: Al Jazeera | Published: 2026-06-01T01:08:05Z [Link](https://www.aljazeera.com/features/2026/6/1/before-the-land-sustained-us-who-benefits-from-guineas-bauxite-wealth)
+- Canada makes new U.S. trade proposals but warns 'turbulence' ahead | Source: Financial Post | Published: 2026-06-02T23:21:45Z [Link](https://financialpost.com/news/canada-new-us-trade-proposals-turbulence-ahead)
+- Apollo Funds Complete Sale of ALTEMIRA, Leading Pan-Asian Aluminum Packaging Company | Source: The Manila Times | Published: 2026-06-02T23:21:01Z [Link](https://www.manilatimes.net/2026/06/03/tmt-newswire/globenewswire/apollo-funds-complete-sale-of-altemira-leading-pan-asian-aluminum-packaging-company/2357387)
+- Noctua Breaks Its Air-Cooling Tradition With First-Ever AIOs Starting At €219, Reveals Next-Gen Heatsinks, PRIME TX PSU With OptiGuard & Ryzen-Ready Carbice Thermal Pads | Source: Wccftech | Published: 2026-06-02T21:22:27Z [Link](https://wccftech.com/noctua-first-aio-coolers-next-gen-heatsinks-prime-tx-psu-optiguard-carbice-thermal-pads/)
+- These ASX stocks have hit the ground running in June - can they keep rising? | Source: The Motley Fool Australia | Published: 2026-06-02T20:34:55Z [Link](https://www.fool.com.au/2026/06/03/these-asx-stocks-have-hit-the-ground-running-in-june-can-they-keep-rising/)
+- Oklahoma AG sues to stop development of aluminum smelter | Source: Tulsa World | Published: 2026-06-02T20:30:00Z [Link](https://tulsaworld.com/news/state-regional/government-politics/article_55b2100d-6e0d-4a4b-bd8b-032bd4c55fb6.html)
+- Virtus' Joe Terranova buys these AI plays with 'strong momentum, strong fundamentals’ | Source: CNBC | Published: 2026-06-02T19:42:04Z [Link](https://www.cnbc.com/2026/06/02/virtus-joe-terranova-buys-these-ai-plays-with-strong-momentum-strong-fundamentals.html)
+- AP CM's Call to Centre for Relief on Laterite Mining Lease Applications | Source: Deccan Chronicle | Published: 2026-06-02T17:46:26Z [Link](https://www.deccanchronicle.com/southern-states/andhra-pradesh/ap-cms-call-to-centre-for-relief-on-laterite-mining-lease-applications-1960909)
+- 5 Ryobi Tools That Can Do More Than One Job | Source: SlashGear | Published: 2026-06-02T15:00:00Z [Link](https://www.slashgear.com/2185396/ryobi-tool-multi-purpose-do-more-than-one-job/)
+- CM urges Centre to reach out to laterite mining lease applicants | Source: The Hindu | Published: 2026-06-02T14:05:28Z [Link](https://www.thehindu.com/news/national/andhra-pradesh/cm-urges-centre-to-reach-out-to-laterite-mining-lease-applicants/article71052986.ece)
+- Andhra CM seeks Centre's intervention over laterite mine classification changes | Source: News18 | Published: 2026-06-02T13:30:13Z [Link](https://www.news18.com/agency-feeds/andhra-cm-seeks-centres-intervention-over-laterite-mine-classification-changes-10126978.html)
+- Here’s what Hydro-Québec fought to hide from the Newfoundland and Labrador government | Source: Global News | Published: 2026-06-02T12:41:23Z [Link](https://globalnews.ca/news/11886466/hydro-quebec-newfoundland-and-labrador/)
+- Hindalco Industries, APL Apollo Tubes shares: Axis Direct's top metal bets; check target prices, outlook | Source: Business Today | Published: 2026-06-02T10:52:19Z [Link](https://www.businesstoday.in/markets/stocks/story/hindalco-industries-apl-apollo-tubes-shares-axis-directs-top-metal-bets-check-target-prices-outlook-534501-2026-06-02)
