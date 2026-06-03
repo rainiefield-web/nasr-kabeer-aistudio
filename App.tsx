@@ -2186,12 +2186,12 @@ const App: React.FC = () => {
               <span className={`text-[10px] tracking-[0.35em] uppercase font-medium ${scrolled || currentPage !== 'home' ? 'text-gray-500' : 'text-gray-300'} ${isRTL ? 'font-arabic tracking-wider' : ''} ml-px`}>{isRTL ? 'للألمنيوم' : 'Aluminum'}</span>
             </div>
           </a>
-          <div className={`hidden lg:flex items-center gap-6 lg:gap-8 text-[11px] font-bold tracking-widest uppercase ${scrolled || currentPage !== 'home' ? 'text-gray-800' : 'text-white'}`}>
-            <a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="hover:text-nasr-blue transition-colors relative group">{t.nav.about}<span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-nasr-blue transition-all duration-300 group-hover:w-full"></span></a>
-            <a href="#products" onClick={goToProducts} className={`hover:text-nasr-blue transition-colors relative group ${currentPage === 'products' ? 'text-nasr-blue' : ''}`}>{t.nav.products}<span className={`absolute -bottom-1 left-0 h-[2px] bg-nasr-blue transition-all duration-300 ${currentPage === 'products' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span></a>
-            <a href="#technology" onClick={goToTechnology} className={`hover:text-nasr-blue transition-colors relative group ${currentPage === 'technology' ? 'text-nasr-blue' : ''}`}>{t.nav.technology}<span className={`absolute -bottom-1 left-0 h-[2px] bg-nasr-blue transition-all duration-300 ${currentPage === 'technology' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span></a>
-            <a href="#sustainability" onClick={goToSustainability} className={`hover:text-nasr-blue transition-colors relative group ${currentPage === 'sustainability' ? 'text-nasr-blue' : ''}`}>{t.nav.sustainability}<span className={`absolute -bottom-1 left-0 h-[2px] bg-nasr-blue transition-all duration-300 ${currentPage === 'sustainability' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span></a>
-            <a href="#news" onClick={goToNews} className={`hover:text-nasr-blue transition-colors relative group flex items-center gap-1.5 ${currentPage === 'news' ? 'text-nasr-blue' : ''}`}><Newspaper size={14} />{t.nav.news}<span className={`absolute -bottom-1 left-0 h-[2px] bg-nasr-blue transition-all duration-300 ${currentPage === 'news' ? 'w-full' : 'w-0 group-hover:w-full'}`}></span></a>
+          <div className={`hidden lg:flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase ${scrolled || currentPage !== 'home' ? 'text-gray-800' : 'text-white'}`}>
+            <a href="#about" onClick={(e) => scrollToSection(e, 'about')} className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'}`}>{t.nav.about}</a>
+            <a href="#products" onClick={goToProducts} className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'} ${currentPage === 'products' ? 'is-active' : ''}`}>{t.nav.products}</a>
+            <a href="#technology" onClick={goToTechnology} className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'} ${currentPage === 'technology' ? 'is-active' : ''}`}>{t.nav.technology}</a>
+            <a href="#sustainability" onClick={goToSustainability} className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'} ${currentPage === 'sustainability' ? 'is-active' : ''}`}>{t.nav.sustainability}</a>
+            <a href="#news" onClick={goToNews} className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'} ${currentPage === 'news' ? 'is-active' : ''}`}><Newspaper size={14} />{t.nav.news}</a>
             <div className="flex items-center gap-4">
               <button onClick={toggleLang} className="flex items-center gap-1 hover:text-nasr-blue transition-colors"><Globe size={16} /><span>{lang === 'en' ? 'AR' : 'EN'}</span></button>
               <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className={`px-5 py-2.5 border ${scrolled || currentPage !== 'home' ? 'border-nasr-dark text-nasr-dark hover:bg-nasr-dark hover:text-white' : 'border-white text-white hover:bg-white hover:text-nasr-dark'} transition-all duration-300`}>{t.nav.contact}</a>
@@ -2270,8 +2270,8 @@ const App: React.FC = () => {
                         </div>
                       </MotionDiv>
                       <div className="grid grid-cols-2 gap-8 mt-8">
-                        <div className="raw-metal-stat p-6"><div className="text-4xl font-serif font-bold text-nasr-dark mb-2">200K</div><div className="text-xs font-bold uppercase tracking-widest text-gray-500">{t.about.statCapacity}</div></div>
-                        <div className="raw-metal-stat p-6"><div className="text-4xl font-serif font-bold text-nasr-dark mb-2">30%</div><div className="text-xs font-bold uppercase tracking-widest text-gray-500">{t.about.statExport}</div></div>
+                        <div className="raw-metal-stat p-6"><div className="relative z-10 text-4xl font-serif font-bold text-nasr-dark mb-2">200K</div><div className="relative z-10 text-xs font-bold uppercase tracking-widest text-gray-500">{t.about.statCapacity}</div></div>
+                        <div className="raw-metal-stat p-6"><div className="relative z-10 text-4xl font-serif font-bold text-nasr-dark mb-2">30%</div><div className="relative z-10 text-xs font-bold uppercase tracking-widest text-gray-500">{t.about.statExport}</div></div>
                       </div>
                     </div>
                   </div>

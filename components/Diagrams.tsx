@@ -238,7 +238,6 @@ export const ProductionProcessFlow: React.FC<DiagramProps> = ({ lang }) => {
               )}
             </div>
 
-            <div className="mb-3 font-mono text-[11px] font-semibold tracking-[0.28em] text-white/35">0{idx + 1}</div>
             <h4 className={`mb-3 font-serif text-2xl text-white ${isRTL ? 'font-arabic' : ''}`}>{step.title}</h4>
             <p className="max-w-[13.5rem] text-sm leading-relaxed text-[#B8C3C9]">{step.desc}</p>
           </MotionDiv>
@@ -358,7 +357,7 @@ export const CapacityGrowthChart: React.FC<DiagramProps> = ({ lang }) => {
                                 <MotionDiv
                                     animate={{ opacity: activePhase === phase.id ? 1 : 0.55, y: activePhase === phase.id ? 0 : 3 }}
                                     transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
-                                    className={`mt-4 rounded-full px-3 py-1 font-mono text-sm ${activePhase === phase.id ? 'bg-white/72 text-[#1E2527] shadow-sm' : 'text-gray-500'}`}
+                                    className={`mt-4 rounded-full px-3 py-1 font-sans text-sm font-semibold ${activePhase === phase.id ? 'bg-white/72 text-[#1E2527] shadow-sm' : 'text-gray-500'}`}
                                 >
                                     {phase.year}
                                 </MotionDiv>
@@ -368,7 +367,7 @@ export const CapacityGrowthChart: React.FC<DiagramProps> = ({ lang }) => {
                     </div>
 
                     <div className="absolute bottom-5 left-6 right-6 flex items-center justify-center border-t border-[#AAB4B6]/24 pt-3">
-                        <span className="font-mono text-xs uppercase tracking-[0.18em] text-gray-500">Capacity ramp-up</span>
+                        <span className="font-sans text-xs font-bold uppercase tracking-[0.18em] text-gray-500">Capacity ramp-up</span>
                     </div>
                 </div>
             </div>
