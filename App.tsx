@@ -2223,13 +2223,13 @@ const App: React.FC = () => {
           <NewsPage lang={lang} goBack={() => { setCurrentPage('home'); window.scrollTo(0, 0); }} />
         ) : (
           <>
-            <header className="relative min-h-screen flex items-center overflow-hidden bg-[#061016]">
+            <header className="raw-metal-hero relative min-h-screen flex items-center overflow-hidden">
               <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_12%,rgba(255,255,214,0.16),transparent_24%),conic-gradient(from_-22deg_at_55%_38%,rgba(255,255,214,0.34),transparent_8%,rgba(190,201,201,0.18)_15%,transparent_24%,rgba(255,255,214,0.24)_31%,transparent_43%,rgba(83,92,94,0.24)_54%,transparent_65%,rgba(255,255,214,0.20)_78%,transparent_88%,rgba(255,255,214,0.34)),linear-gradient(120deg,#242626_0%,#111517_48%,#2A2D2C_100%)]"></div>
-                <img src="/hero-background-wide.png" alt="High-end aluminum profile" fetchPriority="high" decoding="async" className="hidden md:block absolute inset-0 h-full w-full object-cover" />
-                <img src="/hero-profile-mobile.png" alt="High-end aluminum profile" fetchPriority="high" decoding="async" className="md:hidden absolute top-20 left-1/2 w-[68vw] max-w-none -translate-x-1/2 object-contain opacity-50" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#050B10]/94 via-[#050B10]/72 md:via-[#050B10]/70 lg:via-[#050B10]/22 to-transparent"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/42 via-transparent to-black/20"></div>
+                <div className="raw-metal-hero-disc"></div>
+                <img src="/hero-background-wide.png" alt="High-end aluminum profile" fetchPriority="high" decoding="async" className="raw-metal-hero-product hidden md:block absolute inset-0 h-full w-full object-cover" />
+                <img src="/hero-profile-mobile.png" alt="High-end aluminum profile" fetchPriority="high" decoding="async" className="raw-metal-hero-product md:hidden absolute top-20 left-1/2 w-[68vw] max-w-none -translate-x-1/2 object-contain opacity-55" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#111414]/94 via-[#111414]/66 md:via-[#111414]/58 lg:via-[#111414]/14 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1B1E1E]/58 via-transparent to-[#1B1E1E]/14"></div>
                 <div className="raw-metal-edge raw-metal-edge-light absolute bottom-0 left-0 right-0"></div>
               </div>
               <div className="relative z-10 container mx-auto px-6 pt-24 pb-16 max-w-7xl">

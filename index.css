@@ -15,6 +15,65 @@
 }
 
 @layer components {
+  .raw-metal-hero {
+    background:
+      radial-gradient(ellipse at 50% 18%, rgba(255, 255, 214, 0.10), transparent 24%),
+      linear-gradient(180deg, rgb(37, 38, 38), rgb(21, 24, 25) 48%, rgb(34, 37, 37));
+  }
+
+  .raw-metal-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.08;
+    background-image:
+      radial-gradient(circle at 24% 34%, rgba(255, 255, 255, 0.45) 0 0.55px, transparent 0.8px),
+      radial-gradient(circle at 72% 64%, rgba(0, 0, 0, 0.42) 0 0.65px, transparent 0.9px);
+    background-size: 3px 3px, 5px 5px;
+  }
+
+  .raw-metal-hero-disc {
+    position: absolute;
+    left: 50%;
+    top: 7vh;
+    width: min(72vw, 50rem);
+    aspect-ratio: 1.92;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    opacity: 0.42;
+    background:
+      radial-gradient(circle at 50% 50%, rgba(255, 255, 226, 0.92) 0 0.4%, transparent 0.8%),
+      conic-gradient(from -20deg at 50% 50%, rgba(255, 255, 218, 0.22), rgba(70, 76, 78, 0.20) 12%, rgba(192, 202, 202, 0.18) 24%, rgba(42, 48, 50, 0.22) 40%, rgba(255, 255, 218, 0.20) 52%, rgba(55, 62, 64, 0.22) 68%, rgba(190, 201, 201, 0.16) 82%, rgba(58, 64, 66, 0.20) 92%, rgba(255, 255, 218, 0.22)),
+      radial-gradient(ellipse at 50% 52%, rgba(220, 228, 227, 0.42), rgba(51, 58, 60, 0.58) 44%, rgba(14, 17, 18, 0.38) 68%, transparent 70%);
+    box-shadow:
+      inset 0 2px 22px rgba(255, 255, 236, 0.18),
+      inset 0 -28px 46px rgba(4, 7, 8, 0.36),
+      0 24px 70px rgba(0, 0, 0, 0.18);
+  }
+
+  .raw-metal-hero-disc::before {
+    display: none;
+  }
+
+  .raw-metal-hero-disc::after {
+    content: "";
+    position: absolute;
+    inset: -8% -4%;
+    border-radius: 50%;
+    background: linear-gradient(90deg, transparent 0 40%, rgba(255, 255, 214, 0.26) 50%, transparent 62%);
+    filter: blur(14px);
+    opacity: 0.30;
+  }
+
+  .raw-metal-hero-product {
+    opacity: 0.82;
+    filter: contrast(1.08) brightness(0.88) saturate(0.9);
+    mix-blend-mode: normal;
+    mask-image: linear-gradient(90deg, transparent 0%, black 24%, black 100%);
+  }
+
   .laser-title {
     position: relative;
     width: fit-content;
@@ -68,13 +127,13 @@
       conic-gradient(
         from 120deg,
         rgba(255, 255, 255, 0.08) 0deg,
-        rgba(255, 255, 255, 0.42) 34deg,
-        rgba(147, 210, 232, 0.58) 72deg,
-        rgba(255, 236, 194, 0.66) 116deg,
-        rgba(202, 119, 41, 0.52) 158deg,
-        rgba(255, 255, 255, 0.72) 206deg,
-        rgba(54, 82, 99, 0.28) 252deg,
-        rgba(0, 159, 227, 0.44) 302deg,
+        rgba(255, 255, 220, 0.50) 34deg,
+        rgba(188, 199, 199, 0.52) 72deg,
+        rgba(255, 255, 210, 0.66) 116deg,
+        rgba(106, 116, 118, 0.46) 158deg,
+        rgba(255, 255, 232, 0.72) 206deg,
+        rgba(54, 62, 64, 0.30) 252deg,
+        rgba(255, 255, 210, 0.42) 302deg,
         rgba(255, 255, 255, 0.08) 360deg
       );
     animation: metal-edge-spin 8.5s linear infinite;
@@ -102,7 +161,7 @@
     background: rgba(2, 7, 11, 0.92);
     box-shadow:
       0 22px 44px rgba(0, 0, 0, 0.38),
-      0 8px 22px rgba(0, 159, 227, 0.18),
+      0 8px 22px rgba(255, 255, 210, 0.12),
       inset 0 1px 0 rgba(255, 255, 255, 0.2);
   }
 
@@ -149,7 +208,7 @@
   .metal-cta:hover {
     box-shadow:
       0 28px 56px rgba(0, 0, 0, 0.44),
-      0 10px 28px rgba(0, 159, 227, 0.28),
+      0 10px 28px rgba(255, 255, 210, 0.18),
       inset 0 1px 0 rgba(255, 255, 255, 0.25);
   }
 
@@ -341,30 +400,28 @@
   }
 
   .raw-metal-edge {
-    height: clamp(3rem, 5.5vw, 5rem);
+    height: clamp(1.5rem, 3vw, 2.75rem);
     z-index: 8;
     pointer-events: none;
     overflow: hidden;
     transform: translateZ(0);
+    opacity: 0.86;
   }
 
   .raw-metal-edge::before {
     content: "";
     position: absolute;
-    inset: 46% 0 auto;
+    inset: 50% 0 auto;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 212, 0.72), rgba(226, 233, 231, 0.64), transparent);
+    background: linear-gradient(90deg, transparent, rgba(245, 246, 239, 0.42), rgba(142, 151, 151, 0.30), transparent);
   }
 
   .raw-metal-edge::after {
     content: "";
     position: absolute;
     inset: 0;
-    background:
-      radial-gradient(ellipse at 50% 50%, rgba(255, 255, 210, 0.22), transparent 55%),
-      linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.10), transparent),
-      repeating-linear-gradient(100deg, transparent 0 12px, rgba(255, 255, 255, 0.08) 12px 13px, transparent 13px 24px);
-    opacity: 0.82;
+    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.045), transparent);
+    opacity: 0.72;
   }
 
   .raw-metal-edge-top {
@@ -372,11 +429,11 @@
   }
 
   .raw-metal-edge-light {
-    background: linear-gradient(180deg, transparent, rgba(230, 232, 231, 0.24), transparent);
+    background: linear-gradient(180deg, transparent, rgba(232, 235, 232, 0.12), transparent);
   }
 
   .raw-metal-edge-dark {
-    background: linear-gradient(180deg, transparent, rgba(18, 20, 21, 0.34), transparent);
+    background: linear-gradient(180deg, transparent, rgba(18, 20, 21, 0.18), transparent);
   }
 
   .raw-metal-stat {
@@ -446,7 +503,7 @@
     }
 
     .raw-metal-edge {
-      height: 3.25rem;
+      height: 1.75rem;
     }
   }
 }

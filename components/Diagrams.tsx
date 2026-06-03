@@ -212,7 +212,6 @@ export const ProductionProcessFlow: React.FC<DiagramProps> = ({ lang }) => {
 
   return (
     <div className="relative w-full overflow-hidden rounded-[2rem] bg-[radial-gradient(ellipse_at_50%_0%,rgba(255,255,218,0.18),transparent_28%),conic-gradient(from_-20deg_at_50%_4%,rgba(255,255,218,0.26),transparent_8%,rgba(180,191,191,0.16)_15%,transparent_24%,rgba(255,255,218,0.18)_31%,transparent_43%,rgba(72,82,84,0.20)_54%,transparent_65%,rgba(255,255,218,0.16)_78%,transparent_88%,rgba(255,255,218,0.24)),linear-gradient(145deg,rgba(246,248,247,0.08),rgba(247,250,252,0.018)_44%,rgba(0,0,0,0.10))] px-5 py-10 md:px-10 md:py-12">
-      <div className="pointer-events-none absolute inset-x-6 top-6 h-28 rounded-[50%] border border-[#F8F7BC]/22 opacity-50 md:inset-x-16" />
       <div className="pointer-events-none absolute inset-x-10 top-[7.25rem] hidden h-px bg-[linear-gradient(90deg,transparent,rgba(248,247,188,0.58),rgba(238,244,247,0.48),transparent)] md:block" />
       <div className="pointer-events-none absolute inset-x-10 top-[7.25rem] hidden h-[2px] bg-[linear-gradient(90deg,transparent,rgba(248,247,188,0.42),rgba(238,244,247,0.62),rgba(156,169,176,0.42),transparent)] opacity-80 md:block" />
 
@@ -278,62 +277,99 @@ export const CapacityGrowthChart: React.FC<DiagramProps> = ({ lang }) => {
     const isRTL = lang === 'ar';
 
     const phases = [
-        { id: 1, capacity: 50000, year: "2026", label: lang === 'en' ? "Phase 1" : "المرحلة 1", color: "bg-gray-400", focus: lang === 'en' ? "Architectural" : "معماري" },
-        { id: 2, capacity: 100000, year: "2027", label: lang === 'en' ? "Phase 2" : "المرحلة 2", color: "bg-nasr-blue", focus: lang === 'en' ? "Industrial" : "صناعي" },
-        { id: 3, capacity: 200000, year: "2028", label: lang === 'en' ? "Phase 3" : "المرحلة 3", color: "bg-nasr-red", focus: lang === 'en' ? "Transportation" : "النقل" }
+        { id: 1, capacity: 50000, year: "2026", label: lang === 'en' ? "Phase 1" : "Phase 1", focus: lang === 'en' ? "Architectural" : "Architectural" },
+        { id: 2, capacity: 100000, year: "2027", label: lang === 'en' ? "Phase 2" : "Phase 2", focus: lang === 'en' ? "Industrial" : "Industrial" },
+        { id: 3, capacity: 200000, year: "2028", label: lang === 'en' ? "Phase 3" : "Phase 3", focus: lang === 'en' ? "Transportation" : "Transportation" }
     ];
 
     return (
-        <div className="bg-white rounded-sm p-8 md:p-12 border border-gray-200 shadow-xl shadow-slate-200/60">
-            <div className="flex flex-col md:flex-row gap-12 items-end">
+        <div className="relative overflow-hidden rounded-[1.75rem] border border-white/70 bg-[linear-gradient(145deg,rgba(255,255,255,0.9),rgba(225,231,231,0.76))] p-7 shadow-[0_26px_70px_rgba(26,34,38,0.13)] md:p-10">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_84%_12%,rgba(255,255,220,0.22),transparent_24%)]"></div>
+            <div className="relative flex flex-col gap-10 md:flex-row md:items-end">
                 <div className="flex-1">
-                    <h3 className={`text-nasr-dark font-serif text-3xl mb-6 ${isRTL ? 'font-arabic' : ''}`}>{t.chart.title}</h3>
-                    <p className="text-gray-600 mb-10 leading-relaxed">
+                    <h3 className={`text-nasr-dark font-serif text-3xl mb-5 ${isRTL ? 'font-arabic' : ''}`}>{t.chart.title}</h3>
+                    <p className="text-gray-600 mb-8 leading-relaxed">
                         {t.chart.desc}
                     </p>
-                    
-                    <div className="space-y-4">
+
+                    <div className="space-y-3">
                         {phases.map((phase) => (
-                            <button 
+                            <button
                                 key={phase.id}
                                 onClick={() => setActivePhase(phase.id)}
-                                className={`w-full flex items-center justify-between p-4 rounded border transition-all ${activePhase === phase.id ? 'bg-slate-50 border-nasr-blue shadow-sm' : 'bg-transparent border-gray-200 hover:bg-gray-50'}`}
+                                className={`w-full rounded-full px-4 py-3 transition-all duration-500 ease-out ${activePhase === phase.id ? 'bg-white/82 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_14px_30px_rgba(22,29,32,0.10)] ring-1 ring-[#DCE2E2]' : 'bg-white/18 hover:bg-white/42'}`}
                             >
-                                <div className="flex items-center gap-4">
-                                    <div className={`w-3 h-3 rounded-full ${activePhase === phase.id ? 'bg-nasr-accent' : 'bg-gray-300'}`}></div>
-                                    <span className={`text-nasr-dark font-serif text-lg ${isRTL ? 'font-arabic' : ''}`}>{phase.label}</span>
+                                <div className="flex items-center justify-between gap-4">
+                                    <div className="flex items-center gap-3">
+                                        <div className={`h-2.5 w-2.5 rounded-full transition-colors ${activePhase === phase.id ? 'bg-[#1E2527]' : 'bg-[#B8C1C2]'}`}></div>
+                                        <span className={`text-nasr-dark font-serif text-lg ${isRTL ? 'font-arabic' : ''}`}>{phase.label}</span>
+                                    </div>
+                                    <span className={`text-gray-500 text-sm ${isRTL ? 'font-arabic' : ''}`}>{phase.focus}</span>
                                 </div>
-                                <span className={`text-gray-500 text-sm ${isRTL ? 'font-arabic' : ''}`}>{phase.focus}</span>
                             </button>
                         ))}
                     </div>
                 </div>
 
-                <div className="flex-1 w-full h-80 flex items-end justify-around gap-4 relative border-b border-gray-200 pb-4">
-                    {/* Y-Axis Labels */}
-                    <div className={`absolute ${isRTL ? '-right-8' : '-left-8'} top-0 bottom-4 flex flex-col justify-between text-xs text-gray-400 font-mono`}>
-                        <span>200k</span>
-                        <span>100k</span>
-                        <span>50k</span>
-                        <span>0</span>
+                <div className="relative h-80 w-full flex-1 overflow-hidden rounded-[1.35rem] bg-[linear-gradient(180deg,rgba(248,250,250,0.88),rgba(215,223,224,0.56))] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.84),inset_0_-24px_48px_rgba(58,68,72,0.07)]">
+                    <div className="pointer-events-none absolute inset-x-8 bottom-[4.55rem] h-px bg-gradient-to-r from-transparent via-[#9EA9AB]/45 to-transparent"></div>
+                    <MotionDiv
+                        key={`roadmap-sheen-${activePhase}`}
+                        initial={{ opacity: 0, x: '-18%' }}
+                        animate={{ opacity: 1, x: '18%' }}
+                        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                        className="pointer-events-none absolute inset-y-8 w-1/2 rounded-full bg-[linear-gradient(90deg,transparent,rgba(255,255,230,0.22),transparent)] blur-xl"
+                    />
+
+                    <div className="absolute inset-x-7 bottom-14 top-8 flex items-end justify-around gap-5">
+                        {phases.map((phase) => {
+                            const isActive = phase.id <= activePhase;
+                            return (
+                            <button key={phase.id} onClick={() => setActivePhase(phase.id)} className="group relative flex h-full w-1/3 flex-col items-center justify-end">
+                                <MotionDiv
+                                    animate={{ opacity: isActive ? 1 : 0.58, y: isActive ? 0 : 6 }}
+                                    transition={{ duration: 0.48, ease: [0.16, 1, 0.3, 1] }}
+                                    className="mb-3 font-serif text-lg text-[#1E2527]"
+                                >
+                                    {(phase.capacity / 1000).toLocaleString()}k
+                                </MotionDiv>
+                                <MotionDiv
+                                    className="relative w-full max-w-[4.6rem] overflow-hidden rounded-full"
+                                    initial={{ height: 0 }}
+                                    animate={{
+                                        height: `${(phase.capacity / 200000) * 100}%`,
+                                        opacity: isActive ? 1 : 0.28,
+                                        scaleX: isActive ? 1 : 0.82
+                                    }}
+                                    transition={{ duration: 0.72, delay: phase.id * 0.06, ease: [0.16, 1, 0.3, 1] }}
+                                >
+                                    <MotionDiv
+                                        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,238,0.96),rgba(186,197,198,0.92)_42%,rgba(86,98,102,0.94))]"
+                                        animate={{ filter: isActive ? 'brightness(1.04)' : 'brightness(0.92)' }}
+                                        transition={{ duration: 0.5 }}
+                                    />
+                                    <div className="absolute inset-x-0 top-0 h-1/3 bg-[radial-gradient(ellipse_at_50%_0%,rgba(255,255,255,0.88),transparent_68%)]"></div>
+                                    <MotionDiv
+                                        className="absolute inset-y-0 left-1/2 w-px bg-white/55"
+                                        animate={{ opacity: isActive ? 0.72 : 0.22 }}
+                                        transition={{ duration: 0.45 }}
+                                    />
+                                </MotionDiv>
+                                <MotionDiv
+                                    animate={{ opacity: activePhase === phase.id ? 1 : 0.55, y: activePhase === phase.id ? 0 : 3 }}
+                                    transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
+                                    className={`mt-4 rounded-full px-3 py-1 font-mono text-sm ${activePhase === phase.id ? 'bg-white/72 text-[#1E2527] shadow-sm' : 'text-gray-500'}`}
+                                >
+                                    {phase.year}
+                                </MotionDiv>
+                            </button>
+                            );
+                        })}
                     </div>
 
-                    {phases.map((phase) => (
-                        <div key={phase.id} className="flex flex-col items-center w-1/3 h-full justify-end group relative">
-                            <div className="mb-3 text-nasr-dark font-bold text-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                {phase.capacity.toLocaleString()}
-                            </div>
-                            <MotionDiv 
-                                className={`w-full max-w-[60px] ${phase.id <= activePhase ? (phase.id === 3 ? 'bg-nasr-red' : phase.id === 2 ? 'bg-nasr-blue' : 'bg-gray-400') : 'bg-gray-200'} rounded-t-sm relative overflow-hidden`}
-                                initial={{ height: 0 }}
-                                animate={{ height: `${(phase.capacity / 200000) * 100}%` }}
-                                transition={{ duration: 1, delay: phase.id * 0.2 }}
-                            >
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                            </MotionDiv>
-                            <div className="mt-4 text-gray-500 text-sm font-mono">{phase.year}</div>
-                        </div>
-                    ))}
+                    <div className="absolute bottom-5 left-6 right-6 flex items-center justify-center border-t border-[#AAB4B6]/24 pt-3">
+                        <span className="font-mono text-xs uppercase tracking-[0.18em] text-gray-500">Capacity ramp-up</span>
+                    </div>
                 </div>
             </div>
         </div>
