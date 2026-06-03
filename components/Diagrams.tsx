@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Building2, Factory, Car, Zap, Hammer, ArrowRight, ShieldCheck, Settings, Truck } from 'lucide-react';
+import { Building2, Factory, Car, Zap, Hammer, ArrowRight, ShieldCheck, Settings, Truck, Boxes, Gauge, Route } from 'lucide-react';
 
 // Fix for Framer Motion types in strict environments
 const MotionDiv = motion.div as any;
@@ -189,13 +189,13 @@ export const ProductCategoryGrid: React.FC<DiagramProps> = ({ lang }) => {
 export const ProductionProcessFlow: React.FC<DiagramProps> = ({ lang }) => {
     const t = diagramContent[lang];
     const isRTL = lang === 'ar';
-    
+
     const icons = [
-        <Hammer size={32}/>,
-        <Settings size={32}/>,
-        <Factory size={32}/>,
-        <Zap size={32}/>,
-        <Truck size={32}/>
+        <Hammer size={30}/>,
+        <Settings size={30}/>,
+        <Factory size={30}/>,
+        <Zap size={30}/>,
+        <Truck size={30}/>
     ];
 
     const steps = t.process.map((step, idx) => ({
@@ -203,34 +203,74 @@ export const ProductionProcessFlow: React.FC<DiagramProps> = ({ lang }) => {
         icon: icons[idx]
     }));
 
-  return (
-    <div className="relative w-full overflow-x-auto pb-10 pt-4">
-      <div className="flex min-w-max md:min-w-0 justify-between items-start relative px-4">
-        {/* Connecting Line */}
-        <div className="absolute top-10 left-0 right-0 h-px bg-white/20 -z-10"></div>
+    const outcomes = [
+        { label: "Traceability", value: "5 controlled stages" },
+        { label: "Quality gates", value: "In-house inspection" },
+        { label: "Market reach", value: "Port-linked logistics" }
+    ];
+    const outcomeIcons = [<Route size={18} />, <Gauge size={18} />, <Boxes size={18} />];
 
+  return (
+    <div className="relative w-full overflow-hidden rounded-[2rem] bg-[radial-gradient(ellipse_at_50%_0%,rgba(255,255,218,0.18),transparent_28%),conic-gradient(from_-20deg_at_50%_4%,rgba(255,255,218,0.26),transparent_8%,rgba(180,191,191,0.16)_15%,transparent_24%,rgba(255,255,218,0.18)_31%,transparent_43%,rgba(72,82,84,0.20)_54%,transparent_65%,rgba(255,255,218,0.16)_78%,transparent_88%,rgba(255,255,218,0.24)),linear-gradient(145deg,rgba(246,248,247,0.08),rgba(247,250,252,0.018)_44%,rgba(0,0,0,0.10))] px-5 py-10 md:px-10 md:py-12">
+      <div className="pointer-events-none absolute inset-x-6 top-6 h-28 rounded-[50%] border border-[#F8F7BC]/22 opacity-50 md:inset-x-16" />
+      <div className="pointer-events-none absolute inset-x-10 top-[7.25rem] hidden h-px bg-[linear-gradient(90deg,transparent,rgba(248,247,188,0.58),rgba(238,244,247,0.48),transparent)] md:block" />
+      <div className="pointer-events-none absolute inset-x-10 top-[7.25rem] hidden h-[2px] bg-[linear-gradient(90deg,transparent,rgba(248,247,188,0.42),rgba(238,244,247,0.62),rgba(156,169,176,0.42),transparent)] opacity-80 md:block" />
+
+      <div className="grid grid-cols-1 gap-9 md:grid-cols-5 md:gap-4">
         {steps.map((step, idx) => (
-            <div key={idx} className="flex flex-col items-center w-48 group">
-                <div className="w-20 h-20 rounded-full bg-white/95 border border-white/25 flex items-center justify-center mb-6 group-hover:border-nasr-blue group-hover:scale-105 transition-all duration-500 ease-out shadow-[0_18px_45px_rgba(0,0,0,0.18)] z-10 relative">
-                    <div className="text-[#6F7D86] group-hover:text-nasr-blue transition-colors duration-300">
-                        {step.icon}
-                    </div>
-                    {/* Arrow */}
-                    {idx < steps.length - 1 && (
-                         <div className={`absolute ${isRTL ? '-left-12 rotate-180' : '-right-12'} text-white/35`}>
-                             <ArrowRight size={24} />
-                         </div>
-                    )}
-                </div>
-                <h4 className={`font-serif text-xl text-white mb-2 ${isRTL ? 'font-arabic' : ''}`}>{step.title}</h4>
-                <p className="text-center text-sm text-gray-300 px-2 leading-relaxed">{step.desc}</p>
+          <MotionDiv
+            key={step.title}
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-70px' }}
+            transition={{ delay: idx * 0.07, duration: 0.58, ease: 'easeOut' }}
+            className="group relative flex flex-col items-center text-center"
+          >
+            <div className="relative mb-7 flex h-[8.5rem] w-full items-center justify-center">
+              <div className="absolute h-28 w-28 rounded-full bg-[radial-gradient(circle,rgba(255,255,218,0.18),rgba(238,244,247,0.045)_58%,transparent_70%)] opacity-75 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-[conic-gradient(from_-18deg,rgba(255,255,232,0.98),rgba(170,181,181,0.88),rgba(255,255,210,0.84),rgba(89,101,104,0.84),rgba(255,255,232,0.98))] text-[#344044] shadow-[inset_0_1px_0_rgba(255,255,255,0.9),inset_0_-12px_24px_rgba(45,55,58,0.24),0_18px_42px_rgba(0,0,0,0.30)] ring-1 ring-[#F8F7BC]/40 transition-transform duration-500 group-hover:-translate-y-1 group-hover:text-[#151A1C]">
+                {step.icon}
+              </div>
+              {idx < steps.length - 1 && (
+                <div className={`absolute top-1/2 hidden h-px w-[calc(50%-2.7rem)] bg-white/18 md:block ${isRTL ? 'left-0' : 'right-0'}`} />
+              )}
+              {idx > 0 && (
+                <div className={`absolute top-1/2 hidden h-px w-[calc(50%-2.7rem)] bg-white/18 md:block ${isRTL ? 'right-0' : 'left-0'}`} />
+              )}
             </div>
+
+            <div className="mb-3 font-mono text-[11px] font-semibold tracking-[0.28em] text-white/35">0{idx + 1}</div>
+            <h4 className={`mb-3 font-serif text-2xl text-white ${isRTL ? 'font-arabic' : ''}`}>{step.title}</h4>
+            <p className="max-w-[13.5rem] text-sm leading-relaxed text-[#B8C3C9]">{step.desc}</p>
+          </MotionDiv>
         ))}
       </div>
+
+      <MotionDiv
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.35, duration: 0.55 }}
+        className="mt-12 grid grid-cols-1 gap-y-6 border-t border-white/10 pt-7 md:grid-cols-3 md:divide-x md:divide-white/10"
+      >
+        {outcomes.map((outcome, idx) => (
+          <div
+            key={outcome.label}
+            className="flex items-center justify-center gap-3 px-4 text-center md:justify-start md:text-left"
+          >
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/[0.07] text-[#8FC8DF] ring-1 ring-white/10">
+              {outcomeIcons[idx]}
+            </div>
+            <div>
+              <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/35">{outcome.label}</div>
+              <div className="mt-1 font-serif text-lg text-[#EEF4F7]">{outcome.value}</div>
+            </div>
+          </div>
+        ))}
+      </MotionDiv>
     </div>
   );
 };
-
 // --- CAPACITY GROWTH CHART ---
 export const CapacityGrowthChart: React.FC<DiagramProps> = ({ lang }) => {
     const [activePhase, setActivePhase] = useState(1);

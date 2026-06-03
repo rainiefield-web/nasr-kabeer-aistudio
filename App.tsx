@@ -2225,12 +2225,12 @@ const App: React.FC = () => {
           <>
             <header className="relative min-h-screen flex items-center overflow-hidden bg-[#061016]">
               <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_50%,rgba(0,159,227,0.44),transparent_38%),radial-gradient(circle_at_14%_88%,rgba(202,119,41,0.42),transparent_34%),linear-gradient(120deg,#061017_0%,#071823_48%,#062334_100%)]"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_12%,rgba(255,255,214,0.16),transparent_24%),conic-gradient(from_-22deg_at_55%_38%,rgba(255,255,214,0.34),transparent_8%,rgba(190,201,201,0.18)_15%,transparent_24%,rgba(255,255,214,0.24)_31%,transparent_43%,rgba(83,92,94,0.24)_54%,transparent_65%,rgba(255,255,214,0.20)_78%,transparent_88%,rgba(255,255,214,0.34)),linear-gradient(120deg,#242626_0%,#111517_48%,#2A2D2C_100%)]"></div>
                 <img src="/hero-background-wide.png" alt="High-end aluminum profile" fetchPriority="high" decoding="async" className="hidden md:block absolute inset-0 h-full w-full object-cover" />
                 <img src="/hero-profile-mobile.png" alt="High-end aluminum profile" fetchPriority="high" decoding="async" className="md:hidden absolute top-20 left-1/2 w-[68vw] max-w-none -translate-x-1/2 object-contain opacity-50" />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#050B10]/94 via-[#050B10]/72 md:via-[#050B10]/70 lg:via-[#050B10]/22 to-transparent"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/42 via-transparent to-black/20"></div>
-                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/44 to-transparent"></div>
+                <div className="raw-metal-edge raw-metal-edge-light absolute bottom-0 left-0 right-0"></div>
               </div>
               <div className="relative z-10 container mx-auto px-6 pt-24 pb-16 max-w-7xl">
                 <MotionDiv initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className={`max-w-[44rem] md:max-w-[40rem] lg:max-w-[44rem] mt-52 md:mt-0 ${isRTL ? 'mr-auto text-right' : 'ml-0 text-left'}`}>
@@ -2249,7 +2249,8 @@ const App: React.FC = () => {
                 </MotionDiv>
               </div>
             </header>
-            <section id="about" className="py-24 md:py-32 bg-white relative overflow-hidden">
+            <section id="about" className="raw-metal-paper py-24 md:py-32 relative overflow-hidden">
+              <div className="raw-metal-edge raw-metal-edge-dark absolute bottom-0 left-0 right-0"></div>
               <div className="container mx-auto px-6 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                   <div>
@@ -2269,8 +2270,8 @@ const App: React.FC = () => {
                         </div>
                       </MotionDiv>
                       <div className="grid grid-cols-2 gap-8 mt-8">
-                        <div className={`p-6 bg-gray-50 ${isRTL ? 'border-r-4' : 'border-l-4'} border-nasr-blue`}><div className="text-4xl font-serif font-bold text-nasr-dark mb-2">200K</div><div className="text-xs font-bold uppercase tracking-widest text-gray-500">{t.about.statCapacity}</div></div>
-                        <div className={`p-6 bg-gray-50 ${isRTL ? 'border-r-4' : 'border-l-4'} border-nasr-red`}><div className="text-4xl font-serif font-bold text-nasr-dark mb-2">30%</div><div className="text-xs font-bold uppercase tracking-widest text-gray-500">{t.about.statExport}</div></div>
+                        <div className="raw-metal-stat p-6"><div className="text-4xl font-serif font-bold text-nasr-dark mb-2">200K</div><div className="text-xs font-bold uppercase tracking-widest text-gray-500">{t.about.statCapacity}</div></div>
+                        <div className="raw-metal-stat p-6"><div className="text-4xl font-serif font-bold text-nasr-dark mb-2">30%</div><div className="text-xs font-bold uppercase tracking-widest text-gray-500">{t.about.statExport}</div></div>
                       </div>
                     </div>
                   </div>
@@ -2297,11 +2298,13 @@ const App: React.FC = () => {
                 </div>
               </div>
             </section>
-            <section className="py-24 bg-[#102633] border-t border-white/10 relative overflow-hidden">
+            <section className="raw-metal-dark py-28 relative overflow-hidden">
+              <div className="raw-metal-edge raw-metal-edge-dark raw-metal-edge-top absolute left-0 right-0 top-0"></div>
               <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
                 <StructureGrid />
               </div>
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(0,159,227,0.18),transparent_34%),radial-gradient(circle_at_85%_75%,rgba(156,169,176,0.14),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.03),rgba(0,0,0,0.06))] pointer-events-none"></div>
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(198,205,207,0.10),transparent_30%),radial-gradient(circle_at_82%_74%,rgba(80,88,91,0.28),transparent_34%)] pointer-events-none"></div>
+              <div className="raw-metal-edge raw-metal-edge-light absolute bottom-0 left-0 right-0"></div>
               <div className="container mx-auto px-6 relative z-10 max-w-7xl">
                 <MotionDiv
                   initial={{ opacity: 0, y: 34, filter: 'blur(8px)' }}
@@ -2318,11 +2321,13 @@ const App: React.FC = () => {
               </div>
             </section>
             {/* Expansion Content Section - Restored on Home Page */}
-            <section id="expansion" className="py-24 bg-[#F7FAFC] relative overflow-hidden">
+            <section id="expansion" className="raw-metal-paper py-28 relative overflow-hidden">
+              <div className="raw-metal-edge raw-metal-edge-light raw-metal-edge-top absolute left-0 right-0 top-0"></div>
               <div className="absolute inset-0 opacity-[0.04] pointer-events-none text-nasr-dark">
                 <StructureGrid />
               </div>
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(0,159,227,0.12),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(16,185,129,0.10),transparent_26%)] pointer-events-none"></div>
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(90,96,98,0.06),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(188,194,195,0.14),transparent_26%)] pointer-events-none"></div>
+              <div className="raw-metal-edge raw-metal-edge-dark absolute bottom-0 left-0 right-0"></div>
               <div className="container mx-auto px-6 relative z-10 max-w-7xl">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                   <div className="lg:col-span-5">
@@ -2343,9 +2348,10 @@ const App: React.FC = () => {
             </section>
           </>
         )}
-        <footer id="contact" className="bg-[#10212B] text-gray-400 pt-24 pb-12 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-nasr-blue via-nasr-accent to-nasr-red"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(0,159,227,0.10),transparent_30%),radial-gradient(circle_at_88%_82%,rgba(167,176,182,0.08),transparent_32%)] pointer-events-none"></div>
+        <footer id="contact" className="raw-metal-dark text-gray-400 pt-28 pb-12 relative overflow-hidden">
+          <div className="raw-metal-edge raw-metal-edge-dark raw-metal-edge-top absolute left-0 right-0 top-0"></div>
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/16 to-transparent"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(0,159,227,0.07),transparent_30%),radial-gradient(circle_at_88%_82%,rgba(167,176,182,0.07),transparent_32%)] pointer-events-none"></div>
               <div className="container mx-auto px-6 relative z-10 max-w-7xl">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
               <div className="col-span-1 md:col-span-2">
