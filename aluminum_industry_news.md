@@ -1,23 +1,22 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-06-03 12:38:27`
+Last Updated (UTC): `2026-06-04 10:58:07`
 Data Status: Price=STALE | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- Aluminum Futures Reference: `3776.5` | Symbol: `AL.F` | Ref Date: 2026-06-02 | Time: 23:00:00 | Source: Stooq [Link](https://stooq.com/q/l/?s=al.f&f=sd2t2ohlcv&h&e=csv)
-  - Status: No newer market close available yet. Showing latest available close from 2026-06-02.
+- Aluminum Futures Reference: `3736.75` | Symbol: `AL.F` | Ref Date: 2026-06-03 | Time: 23:00:00 | Source: Stooq [Link](https://stooq.com/q/l/?s=al.f&f=sd2t2ohlcv&h&e=csv)
+  - Status: No newer market close available yet. Showing latest available close from 2026-06-03.
 
 ### Latest Headlines (from GNews)
-- Canada makes new U.S. trade proposals but warns 'turbulence' ahead | Source: Financial Post | Published: 2026-06-02T23:21:45Z [Link](https://financialpost.com/news/canada-new-us-trade-proposals-turbulence-ahead)
-- Apollo Funds Complete Sale of ALTEMIRA, Leading Pan-Asian Aluminum Packaging Company | Source: The Manila Times | Published: 2026-06-02T23:21:01Z [Link](https://www.manilatimes.net/2026/06/03/tmt-newswire/globenewswire/apollo-funds-complete-sale-of-altemira-leading-pan-asian-aluminum-packaging-company/2357387)
-- Noctua Breaks Its Air-Cooling Tradition With First-Ever AIOs Starting At €219, Reveals Next-Gen Heatsinks, PRIME TX PSU With OptiGuard & Ryzen-Ready Carbice Thermal Pads | Source: Wccftech | Published: 2026-06-02T21:22:27Z [Link](https://wccftech.com/noctua-first-aio-coolers-next-gen-heatsinks-prime-tx-psu-optiguard-carbice-thermal-pads/)
-- These ASX stocks have hit the ground running in June - can they keep rising? | Source: The Motley Fool Australia | Published: 2026-06-02T20:34:55Z [Link](https://www.fool.com.au/2026/06/03/these-asx-stocks-have-hit-the-ground-running-in-june-can-they-keep-rising/)
-- Oklahoma AG sues to stop development of aluminum smelter | Source: Tulsa World | Published: 2026-06-02T20:30:00Z [Link](https://tulsaworld.com/news/state-regional/government-politics/article_55b2100d-6e0d-4a4b-bd8b-032bd4c55fb6.html)
-- Virtus' Joe Terranova buys these AI plays with 'strong momentum, strong fundamentals’ | Source: CNBC | Published: 2026-06-02T19:42:04Z [Link](https://www.cnbc.com/2026/06/02/virtus-joe-terranova-buys-these-ai-plays-with-strong-momentum-strong-fundamentals.html)
-- AP CM's Call to Centre for Relief on Laterite Mining Lease Applications | Source: Deccan Chronicle | Published: 2026-06-02T17:46:26Z [Link](https://www.deccanchronicle.com/southern-states/andhra-pradesh/ap-cms-call-to-centre-for-relief-on-laterite-mining-lease-applications-1960909)
-- 5 Ryobi Tools That Can Do More Than One Job | Source: SlashGear | Published: 2026-06-02T15:00:00Z [Link](https://www.slashgear.com/2185396/ryobi-tool-multi-purpose-do-more-than-one-job/)
-- CM urges Centre to reach out to laterite mining lease applicants | Source: The Hindu | Published: 2026-06-02T14:05:28Z [Link](https://www.thehindu.com/news/national/andhra-pradesh/cm-urges-centre-to-reach-out-to-laterite-mining-lease-applicants/article71052986.ece)
-- Andhra CM seeks Centre's intervention over laterite mine classification changes | Source: News18 | Published: 2026-06-02T13:30:13Z [Link](https://www.news18.com/agency-feeds/andhra-cm-seeks-centres-intervention-over-laterite-mine-classification-changes-10126978.html)
-- Here’s what Hydro-Québec fought to hide from the Newfoundland and Labrador government | Source: Global News | Published: 2026-06-02T12:41:23Z [Link](https://globalnews.ca/news/11886466/hydro-quebec-newfoundland-and-labrador/)
-- Hindalco Industries, APL Apollo Tubes shares: Axis Direct's top metal bets; check target prices, outlook | Source: Business Today | Published: 2026-06-02T10:52:19Z [Link](https://www.businesstoday.in/markets/stocks/story/hindalco-industries-apl-apollo-tubes-shares-axis-directs-top-metal-bets-check-target-prices-outlook-534501-2026-06-02)
+- Avista agrees to framework to provide single business with power equal to half of all Spokane County customers | Source: Spokane Spokesman-Review | Published: 2026-06-03T19:30:00Z [Link](https://www.spokesman.com/stories/2026/jun/03/avista-working-with-developer-to-provide-massive-a/)
+- Not a minor issue! Andhra CM N Chandrababu Naidu raises Major Laterite Matter with Centre | Source: The Economic Times | Published: 2026-06-03T18:37:00Z [Link](https://economictimes.indiatimes.com/news/politics-and-nation/not-a-minor-issue-andhra-cm-n-chandrababu-naidu-raises-major-laterite-matter-with-centre/articleshow/131491000.cms)
+- England stars will play in ‘cursed’ 79,000-capacity World Cup 2026 stadium when they face Panama at £1.7billion MetLife | Source: The Sun | Published: 2026-06-03T16:20:59Z [Link](https://www.thesun.co.uk/sport/38228541/world-cup-stadium-metlife-new-york-england-panama/)
+- Attorneys General Sue Trump Administration Over -2- | Source: MarketScreener | Published: 2026-06-03T15:19:48Z [Link](https://www.marketscreener.com/news/attorneys-general-sue-trump-administration-over-2-ce7f5ddfde81f02c)
+- Where a powerhouse like Canada stands in the global aluminum crisis | Source: CP24 Toronto | Published: 2026-06-03T15:02:34Z [Link](https://www.cp24.com/news/money/2026/06/03/where-a-powerhouse-like-canada-stands-in-the-global-aluminum-crisis/)
+- Alcoa Stock Is Up 10% Over the Past 5 Days as Aluminum Prices Hit 4-Year High | Source: Barchart | Published: 2026-06-03T14:41:00Z [Link](https://www.barchart.com/story/news/2284207/alcoa-stock-is-up-10-over-the-past-5-days-as-aluminum-prices-hit-4-year-high)
+- Microsoft Surface RTX Spark Dev Box Puts 1 Petaflop Of Compute On Your Desk | Source: Hot Hardware | Published: 2026-06-03T13:57:00Z [Link](https://hothardware.com/news/microsoft-surface-ai-dev-box-1-petaflop-compute)
+- NVIDIA and Microsoft Reinvent Windows PCs for the Age of Personal AI | Source: iTWire | Published: 2026-06-03T11:57:34Z [Link](https://itwire.com/your-it-news/home-it/nvidia-and-microsoft-reinvent-windows-pcs-for-the-age-of-personal-ai)
+- CMR Green Technologies IPO Fully Subscribed On Day 1; GMP Signals 33% Listing Gain | Source: Outlook Business | Published: 2026-06-03T11:08:19Z [Link](https://www.outlookbusiness.com/markets/cmr-green-technologies-ipo-fully-subscribed-on-day-1-gmp-signals-33-listing-gain)
+- Scrap aluminium recycling 'rip off' uncovered as MP claims councils 'misled' and losing out on millions | Source: The Mirror | Published: 2026-06-03T10:47:26Z [Link](https://www.mirror.co.uk/news/uk-news/aluminium-can-recycling-council-scam-37235119)
+- European Midday Briefing : Stocks Fall, Oil Rises on U.S-Iran Hostilities | Source: MarketScreener | Published: 2026-06-03T09:17:25Z [Link](https://www.marketscreener.com/news/european-midday-briefing-stocks-fall-oil-rises-on-u-s-iran-hostilities-ce7f5ddfda8cf024)
