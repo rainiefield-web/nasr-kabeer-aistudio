@@ -2277,8 +2277,8 @@ const App: React.FC = () => {
                   </div>
                   <div className="relative flex flex-col items-center lg:items-stretch gap-6">
                     <AboutImageOrbit />
-                    <MotionDiv initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.55 }} className="w-full max-w-md self-center lg:self-end">
-                      <a href="https://www.everwin.sa/" target="_blank" rel="noopener noreferrer" className="block rounded-2xl border border-white/55 bg-white/70 px-5 py-4 shadow-[0_14px_34px_rgba(12,38,54,0.10)] backdrop-blur-md transition-colors duration-200 hover:border-nasr-blue/40 hover:bg-white/82 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-nasr-blue">
+                    <MotionDiv initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.55 }} className="w-full max-w-[34rem] self-center">
+                      <a href="https://www.everwin.sa/" target="_blank" rel="noopener noreferrer" className="block rounded-[1.35rem] border border-white/70 bg-white/72 px-5 py-4 shadow-[0_16px_38px_rgba(16,38,51,0.10),inset_0_1px_0_rgba(255,255,255,0.86)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/90 hover:bg-white/82 hover:shadow-[0_22px_48px_rgba(16,38,51,0.13),inset_0_1px_0_rgba(255,255,255,0.9)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-nasr-blue">
                       <div className="flex items-start gap-3">
                         <div className="mt-0.5 rounded-full bg-white/70 p-2 shadow-sm">
                           <MapPin className="text-nasr-blue" size={16} />
