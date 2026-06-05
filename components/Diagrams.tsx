@@ -310,7 +310,7 @@ export const CapacityGrowthChart: React.FC<DiagramProps> = ({ lang }) => {
                     </div>
                 </div>
 
-                <div className="relative h-[17.5rem] w-full flex-1 overflow-hidden rounded-[1.35rem] bg-[linear-gradient(180deg,rgba(248,250,250,0.88),rgba(215,223,224,0.56))] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.84),inset_0_-24px_48px_rgba(58,68,72,0.07)] sm:h-80 sm:p-5">
+                <div className="relative h-[17.5rem] w-full overflow-hidden rounded-[1.35rem] bg-[linear-gradient(180deg,rgba(248,250,250,0.88),rgba(215,223,224,0.56))] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.84),inset_0_-24px_48px_rgba(58,68,72,0.07)] sm:h-80 sm:p-5 md:flex-1">
                     <div className="pointer-events-none absolute inset-x-4 bottom-[4.55rem] h-px bg-gradient-to-r from-transparent via-[#9EA9AB]/45 to-transparent sm:inset-x-8"></div>
                     <MotionDiv
                         key={`roadmap-sheen-${activePhase}`}
