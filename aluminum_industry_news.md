@@ -1,22 +1,26 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-06-04 10:58:07`
-Data Status: Price=STALE | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
+Last Updated (UTC): `2026-06-05 11:23:18`
+Data Status: Price=STALE | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- Aluminum Futures Reference: `3736.75` | Symbol: `AL.F` | Ref Date: 2026-06-03 | Time: 23:00:00 | Source: Stooq [Link](https://stooq.com/q/l/?s=al.f&f=sd2t2ohlcv&h&e=csv)
-  - Status: No newer market close available yet. Showing latest available close from 2026-06-03.
+- Aluminum Futures Reference: `3707.75` | Symbol: `AL.F` | Ref Date: 2026-06-04 | Time: 23:00:00 | Source: Stooq [Link](https://stooq.com/q/l/?s=al.f&f=sd2t2ohlcv&h&e=csv)
+  - Status: No newer market close available yet. Showing latest available close from 2026-06-04.
+
+### Latest Headlines (from NewsAPI)
+- WillingHeart 43" Curved Car Wash Brush w/ Extension Pole for $22 + free shipping w/ Prime | Source: Dealnews.com | Published: 2026-06-04T11:16:51Z [Link](https://www.dealnews.com/Willing-Heart-43-Curved-Car-Wash-Brush-w-Extension-Pole-for-22-free-shipping-w-Prime/21838038.html)
+- Merrell Men's Hydro Moc AT Puff Mid 1TRL Hybrid Shoes for $25 + free shipping w/ $89 | Source: Dealnews.com | Published: 2026-06-04T11:21:59Z [Link](https://www.dealnews.com/Merrell-Mens-Hydro-Moc-AT-Puff-Mid-1-TRL-Hybrid-Shoes-for-25-free-shipping-w-89/21838040.html)
 
 ### Latest Headlines (from GNews)
-- Avista agrees to framework to provide single business with power equal to half of all Spokane County customers | Source: Spokane Spokesman-Review | Published: 2026-06-03T19:30:00Z [Link](https://www.spokesman.com/stories/2026/jun/03/avista-working-with-developer-to-provide-massive-a/)
-- Not a minor issue! Andhra CM N Chandrababu Naidu raises Major Laterite Matter with Centre | Source: The Economic Times | Published: 2026-06-03T18:37:00Z [Link](https://economictimes.indiatimes.com/news/politics-and-nation/not-a-minor-issue-andhra-cm-n-chandrababu-naidu-raises-major-laterite-matter-with-centre/articleshow/131491000.cms)
-- England stars will play in ‘cursed’ 79,000-capacity World Cup 2026 stadium when they face Panama at £1.7billion MetLife | Source: The Sun | Published: 2026-06-03T16:20:59Z [Link](https://www.thesun.co.uk/sport/38228541/world-cup-stadium-metlife-new-york-england-panama/)
-- Attorneys General Sue Trump Administration Over -2- | Source: MarketScreener | Published: 2026-06-03T15:19:48Z [Link](https://www.marketscreener.com/news/attorneys-general-sue-trump-administration-over-2-ce7f5ddfde81f02c)
-- Where a powerhouse like Canada stands in the global aluminum crisis | Source: CP24 Toronto | Published: 2026-06-03T15:02:34Z [Link](https://www.cp24.com/news/money/2026/06/03/where-a-powerhouse-like-canada-stands-in-the-global-aluminum-crisis/)
-- Alcoa Stock Is Up 10% Over the Past 5 Days as Aluminum Prices Hit 4-Year High | Source: Barchart | Published: 2026-06-03T14:41:00Z [Link](https://www.barchart.com/story/news/2284207/alcoa-stock-is-up-10-over-the-past-5-days-as-aluminum-prices-hit-4-year-high)
-- Microsoft Surface RTX Spark Dev Box Puts 1 Petaflop Of Compute On Your Desk | Source: Hot Hardware | Published: 2026-06-03T13:57:00Z [Link](https://hothardware.com/news/microsoft-surface-ai-dev-box-1-petaflop-compute)
-- NVIDIA and Microsoft Reinvent Windows PCs for the Age of Personal AI | Source: iTWire | Published: 2026-06-03T11:57:34Z [Link](https://itwire.com/your-it-news/home-it/nvidia-and-microsoft-reinvent-windows-pcs-for-the-age-of-personal-ai)
-- CMR Green Technologies IPO Fully Subscribed On Day 1; GMP Signals 33% Listing Gain | Source: Outlook Business | Published: 2026-06-03T11:08:19Z [Link](https://www.outlookbusiness.com/markets/cmr-green-technologies-ipo-fully-subscribed-on-day-1-gmp-signals-33-listing-gain)
-- Scrap aluminium recycling 'rip off' uncovered as MP claims councils 'misled' and losing out on millions | Source: The Mirror | Published: 2026-06-03T10:47:26Z [Link](https://www.mirror.co.uk/news/uk-news/aluminium-can-recycling-council-scam-37235119)
-- European Midday Briefing : Stocks Fall, Oil Rises on U.S-Iran Hostilities | Source: MarketScreener | Published: 2026-06-03T09:17:25Z [Link](https://www.marketscreener.com/news/european-midday-briefing-stocks-fall-oil-rises-on-u-s-iran-hostilities-ce7f5ddfda8cf024)
+- Coalition urged to complete Aughinish Alumina investigation without delay | Source: The Irish Times | Published: 2026-06-04T18:33:49Z [Link](https://www.irishtimes.com/politics/2026/06/04/coalition-urged-to-complete-aughinish-alumina-investigation-without-delay/)
+- Best home organization products for kitchens, offices, and small space | Source: SFGATE | Published: 2026-06-04T18:30:00Z [Link](https://www.sfgate.com/shopping/article/best-home-organization-products-22287779.php)
+- Windows is back on the Microsoft menu | Source: The Verge | Published: 2026-06-04T16:00:00Z [Link](https://www.theverge.com/tech/943108/microsoft-build-2026-windows-love-notepad)
+- Hindalco sees a big window of opportunity in value-added services like Eternia | Source: The Hindu Business Line | Published: 2026-06-04T15:02:00Z [Link](https://www.thehindubusinessline.com/companies/hindalco-sees-a-big-window-of-opportunity-in-value-added-services-like-eternia/article71062022.ece)
+- Hindalco Eyes ₹1,000 Crore Eternia Revenue By FY29, Targets Growth In ₹40,000 Crore Aluminium Windows Market | Source: Free Press Journal | Published: 2026-06-04T13:17:50Z [Link](https://www.freepressjournal.in/business/hindalco-eyes-1000-crore-eternia-revenue-by-fy29-targets-growth-in-40000-crore-aluminium-windows-market)
+- Hindalco targets Rs 1,000 cr revenue from aluminium window business by FY29 | Source: News18 | Published: 2026-06-04T13:00:06Z [Link](https://www.news18.com/agency-feeds/hindalco-targets-rs-1000-cr-revenue-from-aluminium-window-business-by-fy29-10131131.html)
+- Ford May Sales Plunge -13.6%, But UBS Says 2026 Remains On Track | Source: ZeroHedge | Published: 2026-06-04T13:00:00Z [Link](https://www.zerohedge.com/markets/ford-may-results-fall-136-ubs-says-2026-remains-track)
+- Keep an eye out: Ford's EV of the future to be tested on Detroit roads | Source: Detroit Free Press | Published: 2026-06-04T11:02:20Z [Link](https://www.freep.com/story/money/cars/ford/2026/06/04/ford-ev-future-tested-detroit-roads/90386397007/)
+- Hindalco targets ₹1,000 crore from premium aluminium windows and doors business | Source: CNBC TV18 | Published: 2026-06-04T11:01:22Z [Link](https://www.cnbctv18.com/market/hindalco-opens-eternia-centre-delhi-targets-rs-1000-cr-revenue-fy29-ws-el-19919546.htm)
+- Why Delhi court closed decade-old coal block allocation case against Hindalco | Source: ThePrint | Published: 2026-06-04T10:56:52Z [Link](https://theprint.in/judiciary/why-delhi-court-closed-decade-old-coal-block-allocation-case-against-hindalco/2950568/)
+- 2026 Lexus RZ review: Quick drive | Source: PerthNow | Published: 2026-06-04T10:05:41Z [Link](https://www.perthnow.com.au/lifestyle/motoring/2026-lexus-rz-review-quick-drive-c-22386016)
