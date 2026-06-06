@@ -1,26 +1,20 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-06-05 11:23:18`
-Data Status: Price=STALE | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
+Last Updated (UTC): `2026-06-06 09:59:23`
+Data Status: Price=EMPTY | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
-### Latest Aluminum Price Data
-- Aluminum Futures Reference: `3707.75` | Symbol: `AL.F` | Ref Date: 2026-06-04 | Time: 23:00:00 | Source: Stooq [Link](https://stooq.com/q/l/?s=al.f&f=sd2t2ohlcv&h&e=csv)
-  - Status: No newer market close available yet. Showing latest available close from 2026-06-04.
-
 ### Latest Headlines (from NewsAPI)
-- WillingHeart 43" Curved Car Wash Brush w/ Extension Pole for $22 + free shipping w/ Prime | Source: Dealnews.com | Published: 2026-06-04T11:16:51Z [Link](https://www.dealnews.com/Willing-Heart-43-Curved-Car-Wash-Brush-w-Extension-Pole-for-22-free-shipping-w-Prime/21838038.html)
-- Merrell Men's Hydro Moc AT Puff Mid 1TRL Hybrid Shoes for $25 + free shipping w/ $89 | Source: Dealnews.com | Published: 2026-06-04T11:21:59Z [Link](https://www.dealnews.com/Merrell-Mens-Hydro-Moc-AT-Puff-Mid-1-TRL-Hybrid-Shoes-for-25-free-shipping-w-89/21838040.html)
+- NTPC invites bids for sub-critical thermal power to manage grid imbalances | Source: BusinessLine | Published: 2026-06-05T09:57:20Z [Link](https://www.thehindubusinessline.com/companies/ntpc-invites-bids-for-sub-critical-thermal-power-to-manage-grid-imbalances/article71064887.ece)
 
 ### Latest Headlines (from GNews)
-- Coalition urged to complete Aughinish Alumina investigation without delay | Source: The Irish Times | Published: 2026-06-04T18:33:49Z [Link](https://www.irishtimes.com/politics/2026/06/04/coalition-urged-to-complete-aughinish-alumina-investigation-without-delay/)
-- Best home organization products for kitchens, offices, and small space | Source: SFGATE | Published: 2026-06-04T18:30:00Z [Link](https://www.sfgate.com/shopping/article/best-home-organization-products-22287779.php)
-- Windows is back on the Microsoft menu | Source: The Verge | Published: 2026-06-04T16:00:00Z [Link](https://www.theverge.com/tech/943108/microsoft-build-2026-windows-love-notepad)
-- Hindalco sees a big window of opportunity in value-added services like Eternia | Source: The Hindu Business Line | Published: 2026-06-04T15:02:00Z [Link](https://www.thehindubusinessline.com/companies/hindalco-sees-a-big-window-of-opportunity-in-value-added-services-like-eternia/article71062022.ece)
-- Hindalco Eyes ₹1,000 Crore Eternia Revenue By FY29, Targets Growth In ₹40,000 Crore Aluminium Windows Market | Source: Free Press Journal | Published: 2026-06-04T13:17:50Z [Link](https://www.freepressjournal.in/business/hindalco-eyes-1000-crore-eternia-revenue-by-fy29-targets-growth-in-40000-crore-aluminium-windows-market)
-- Hindalco targets Rs 1,000 cr revenue from aluminium window business by FY29 | Source: News18 | Published: 2026-06-04T13:00:06Z [Link](https://www.news18.com/agency-feeds/hindalco-targets-rs-1000-cr-revenue-from-aluminium-window-business-by-fy29-10131131.html)
-- Ford May Sales Plunge -13.6%, But UBS Says 2026 Remains On Track | Source: ZeroHedge | Published: 2026-06-04T13:00:00Z [Link](https://www.zerohedge.com/markets/ford-may-results-fall-136-ubs-says-2026-remains-track)
-- Keep an eye out: Ford's EV of the future to be tested on Detroit roads | Source: Detroit Free Press | Published: 2026-06-04T11:02:20Z [Link](https://www.freep.com/story/money/cars/ford/2026/06/04/ford-ev-future-tested-detroit-roads/90386397007/)
-- Hindalco targets ₹1,000 crore from premium aluminium windows and doors business | Source: CNBC TV18 | Published: 2026-06-04T11:01:22Z [Link](https://www.cnbctv18.com/market/hindalco-opens-eternia-centre-delhi-targets-rs-1000-cr-revenue-fy29-ws-el-19919546.htm)
-- Why Delhi court closed decade-old coal block allocation case against Hindalco | Source: ThePrint | Published: 2026-06-04T10:56:52Z [Link](https://theprint.in/judiciary/why-delhi-court-closed-decade-old-coal-block-allocation-case-against-hindalco/2950568/)
-- 2026 Lexus RZ review: Quick drive | Source: PerthNow | Published: 2026-06-04T10:05:41Z [Link](https://www.perthnow.com.au/lifestyle/motoring/2026-lexus-rz-review-quick-drive-c-22386016)
+- Century Aluminum to Participate in Wells Fargo Industrials and Materials Conference 2026 | Source: The Manila Times | Published: 2026-06-05T20:58:07Z [Link](https://www.manilatimes.net/2026/06/06/tmt-newswire/globenewswire/century-aluminum-to-participate-in-wells-fargo-industrials-and-materials-conference-2026/2359877)
+- The Irish Times view on Aughinish Alumina: questions getting louder | Source: The Irish Times | Published: 2026-06-05T19:30:00Z [Link](https://www.irishtimes.com/opinion/editorials/2026/06/05/the-irish-times-view-on-aughinish-alumina-questions-getting-louder/)
+- AP Courts Russian Investment Across Railways, Smart Cities, Nuclear Energy and Aluminium Sectors | Source: Deccan Chronicle | Published: 2026-06-05T18:20:03Z [Link](https://www.deccanchronicle.com/southern-states/andhra-pradesh/ap-courts-russian-investment-across-railways-smart-cities-nuclear-energy-and-aluminium-sectors-1961636)
+- Nara Lokesh pitches Andhra Pradesh as India’s gateway to Arctic logistics network | Source: CNBC TV18 | Published: 2026-06-05T18:07:33Z [Link](https://www.cnbctv18.com/india/andhra-pradesh-eyes-arctic-trade-opportunity-with-port-led-growth-strategy-ws-l-19920629.htm)
+- What business leaders want - and worry about - on trade talks with U.S. | Source: Bnn Bloomberg | Published: 2026-06-05T17:58:23Z [Link](https://www.bnnbloomberg.ca/business/2026/06/05/what-business-leaders-want-and-worry-about-on-trade-talks-with-us/)
+- Quebec aluminum smelters more resilient than expected despite U.S. tariff | Source: The Globe and Mail | Published: 2026-06-05T17:43:05Z [Link](https://www.theglobeandmail.com/business/article-quebec-aluminum-smelters-more-resilient-than-expected-despite-us/)
+- Minister Lokesh pitches Andhra as India’s gateway to Arctic logistics network | Source: ThePrint | Published: 2026-06-05T17:19:18Z [Link](https://theprint.in/india/minister-lokesh-pitches-andhra-as-indias-gateway-to-arctic-logistics-network/2952238/)
+- Quebec aluminum smelters more resilient than expected | Source: CP24 Toronto | Published: 2026-06-05T15:05:32Z [Link](https://www.cp24.com/news/money/2026/06/05/quebec-aluminum-smelters-more-resilient-than-expected-despite-us-tariffs/)
+- Ireland does not want to have any ‘hand’ in supplying weapons damaging Ukraine, says Taoiseach | Source: The Irish Times | Published: 2026-06-05T13:20:57Z [Link](https://www.irishtimes.com/politics/2026/06/05/ireland-does-not-want-to-have-any-hand-in-supplying-weapons-damaging-ukraine-says-taoiseach/)
+- HP made a limited-edition Windows laptop with Ferrari, here is what it looks like | Source: India Today | Published: 2026-06-05T07:11:40Z [Link](https://www.indiatoday.in/technology/news/story/hp-made-a-limited-edition-windows-laptop-with-ferrari-here-is-what-it-looks-like-2922324-2026-06-05)
