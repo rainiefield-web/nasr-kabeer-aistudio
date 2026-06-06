@@ -7,6 +7,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { StructureGrid } from './components/StructureGrid';
 import { ProductionProcessFlow, CapacityGrowthChart } from './components/Diagrams';
+import SmoothScroll from './components/SmoothScroll';
 import {
   Menu, X, Download, MapPin, Mail, Linkedin, Twitter, ArrowRight,
   CheckCircle2, Globe, FileText, ChevronLeft, Factory,
@@ -1960,7 +1961,7 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
             <h3 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Discuss your aluminum profile needs</h3>
             <p className="text-gray-300 leading-relaxed max-w-2xl">Share drawings, alloy needs, surface treatment targets, or application requirements with our team.</p>
           </div>
-          <button onClick={() => { goBack(); setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="products-cta-button">
+          <button onClick={() => { goBack(); setTimeout(() => window.nasrLenis?.scrollTo('#contact', { offset: -88 }) ?? document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="products-cta-button">
             {content[lang].nav.contact}
             <ArrowRight size={20} />
           </button>
@@ -2209,17 +2210,27 @@ const App: React.FC = () => {
 
   const toggleLang = () => setLang(prev => prev === 'en' ? 'ar' : 'en');
 
+  const smoothScrollTo = (target: string | number) => {
+    if (window.nasrLenis) {
+      window.nasrLenis.scrollTo(target, { offset: typeof target === 'string' ? -88 : 0 });
+      return;
+    }
+    if (typeof target === 'number') {
+      window.scrollTo({ top: target, behavior: 'smooth' });
+      return;
+    }
+    document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const scrollToSection = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
     if (currentPage !== 'home') {
       setCurrentPage('home');
       setTimeout(() => {
-        const element = document.getElementById(id);
-        if (element) element.scrollIntoView({ behavior: 'smooth' });
+        smoothScrollTo(`#${id}`);
       }, 100);
     } else {
-      const element = document.getElementById(id);
-      if (element) element.scrollIntoView({ behavior: 'smooth' });
+      smoothScrollTo(`#${id}`);
     }
     setMenuOpen(false);
   };
@@ -2227,17 +2238,18 @@ const App: React.FC = () => {
   const scrollToTop = (e: React.MouseEvent) => {
     e.preventDefault();
     setCurrentPage('home');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    smoothScrollTo(0);
     setMenuOpen(false);
   };
 
-  const goToTechnology = (e: React.MouseEvent) => { e.preventDefault(); setCurrentPage('technology'); setMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); };
-  const goToSustainability = (e: React.MouseEvent) => { e.preventDefault(); setCurrentPage('sustainability'); setMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); };
-  const goToProducts = (e: React.MouseEvent) => { e.preventDefault(); setCurrentPage('products'); setMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); };
-  const goToNews = (e: React.MouseEvent) => { e.preventDefault(); setCurrentPage('news'); setMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+  const goToTechnology = (e: React.MouseEvent) => { e.preventDefault(); setCurrentPage('technology'); setMenuOpen(false); smoothScrollTo(0); };
+  const goToSustainability = (e: React.MouseEvent) => { e.preventDefault(); setCurrentPage('sustainability'); setMenuOpen(false); smoothScrollTo(0); };
+  const goToProducts = (e: React.MouseEvent) => { e.preventDefault(); setCurrentPage('products'); setMenuOpen(false); smoothScrollTo(0); };
+  const goToNews = (e: React.MouseEvent) => { e.preventDefault(); setCurrentPage('news'); setMenuOpen(false); smoothScrollTo(0); };
 
   return (
     <div className={`min-h-screen bg-[#F8FAFC] text-nasr-dark selection:bg-nasr-blue selection:text-white ${isRTL ? 'font-arabic' : 'font-sans'}`}>
+      <SmoothScroll />
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || currentPage !== 'home' ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <a href="#" onClick={scrollToTop} className={`flex items-center gap-4 group ${isRTL ? 'ml-8 lg:ml-12' : 'mr-8 lg:mr-12'}`}>
@@ -2275,13 +2287,13 @@ const App: React.FC = () => {
       </AnimatePresence>
       <main>
         {currentPage === 'technology' ? (
-          <TechnologyPage lang={lang} goBack={() => { setCurrentPage('home'); window.scrollTo(0, 0); }} />
+          <TechnologyPage lang={lang} goBack={() => { setCurrentPage('home'); smoothScrollTo(0); }} />
         ) : currentPage === 'sustainability' ? (
-          <SustainabilityPage lang={lang} goBack={() => { setCurrentPage('home'); window.scrollTo(0, 0); }} />
+          <SustainabilityPage lang={lang} goBack={() => { setCurrentPage('home'); smoothScrollTo(0); }} />
         ) : currentPage === 'products' ? (
-          <ProductsPage lang={lang} goBack={() => { setCurrentPage('home'); window.scrollTo(0, 0); }} />
+          <ProductsPage lang={lang} goBack={() => { setCurrentPage('home'); smoothScrollTo(0); }} />
         ) : currentPage === 'news' ? (
-          <NewsPage lang={lang} goBack={() => { setCurrentPage('home'); window.scrollTo(0, 0); }} />
+          <NewsPage lang={lang} goBack={() => { setCurrentPage('home'); smoothScrollTo(0); }} />
         ) : (
           <>
             <header className="raw-metal-hero relative min-h-screen flex items-center overflow-hidden">
