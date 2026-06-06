@@ -552,6 +552,282 @@
       0 24px 54px rgba(17, 24, 28, 0.13);
   }
 
+  .products-page {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 50% -10%, rgba(255, 255, 216, 0.28), transparent 24%),
+      radial-gradient(circle at 10% 12%, rgba(0, 159, 227, 0.12), transparent 25%),
+      radial-gradient(circle at 80% 34%, rgba(255, 255, 255, 0.72), transparent 28%),
+      linear-gradient(135deg, rgba(247, 248, 245, 0.98), rgba(190, 199, 198, 0.92) 46%, rgba(239, 241, 238, 0.96));
+  }
+
+  .products-page::before,
+  .products-page::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .products-page::before {
+    opacity: 0.56;
+    background:
+      radial-gradient(circle at 50% 0%, transparent 0 16%, rgba(255, 255, 220, 0.22) 16.25% 16.45%, transparent 16.7% 26%, rgba(255, 255, 220, 0.14) 26.2% 26.38%, transparent 26.7% 36%, rgba(255, 255, 220, 0.10) 36.15% 36.32%, transparent 36.7%),
+      conic-gradient(from -18deg at 50% 0%, rgba(255, 255, 220, 0.28), transparent 7%, rgba(34, 39, 40, 0.10) 13%, transparent 20%, rgba(255, 255, 220, 0.20) 28%, transparent 36%, rgba(23, 28, 30, 0.10) 44%, transparent 52%, rgba(255, 255, 220, 0.18) 60%, transparent 70%, rgba(31, 36, 37, 0.10) 78%, transparent 88%, rgba(255, 255, 220, 0.20)),
+      repeating-linear-gradient(98deg, rgba(255, 255, 255, 0.055) 0 1px, transparent 1px 7px);
+    mix-blend-mode: overlay;
+  }
+
+  .products-page::after {
+    opacity: 0.18;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.30) 0 0.6px, transparent 0.8px),
+      radial-gradient(circle at 70% 60%, rgba(0, 0, 0, 0.22) 0 0.7px, transparent 0.9px);
+    background-size: 3px 3px, 5px 5px;
+  }
+
+  .products-capacity-strip {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.70);
+    background:
+      radial-gradient(circle at 18% 0%, rgba(255, 255, 235, 0.58), transparent 42%),
+      linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(222, 228, 228, 0.68));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.92),
+      inset 0 -18px 34px rgba(91, 104, 108, 0.08),
+      0 18px 42px rgba(17, 24, 28, 0.10);
+  }
+
+  .products-capacity-strip > div {
+    padding: 1.15rem 1.25rem;
+  }
+
+  .products-capacity-strip > div + div {
+    border-left: 1px solid rgba(17, 24, 39, 0.12);
+  }
+
+  .products-capacity-value,
+  .products-capacity-label {
+    display: block;
+  }
+
+  .products-capacity-value {
+    color: rgb(17, 24, 39);
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 700;
+    line-height: 0.95;
+  }
+
+  .products-capacity-label {
+    margin-top: 0.45rem;
+    color: rgb(75, 85, 99);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .products-anchor-nav {
+    position: sticky;
+    top: 5.25rem;
+    z-index: 20;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    overflow: hidden;
+    border: 1px solid rgba(17, 24, 39, 0.12);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.20), rgba(17, 24, 39, 0.18)),
+      rgba(17, 24, 28, 0.16);
+    box-shadow:
+      0 16px 38px rgba(17, 24, 28, 0.10),
+      inset 0 1px 0 rgba(255, 255, 255, 0.58);
+    backdrop-filter: blur(18px) saturate(130%);
+  }
+
+  .products-anchor-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    min-height: 3.5rem;
+    padding: 0.85rem 1rem;
+    background:
+      radial-gradient(circle at 24% 0%, rgba(255, 255, 235, 0.40), transparent 38%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(224, 230, 230, 0.82));
+    color: rgb(31, 41, 55);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-align: center;
+    text-transform: uppercase;
+    transition: color 240ms ease, background 240ms ease;
+  }
+
+  .products-anchor-item:hover {
+    background:
+      radial-gradient(circle at 50% 0%, rgba(255, 255, 214, 0.16), transparent 40%),
+      linear-gradient(135deg, rgb(34, 35, 35), rgb(19, 23, 25) 50%, rgb(38, 42, 42));
+    color: white;
+  }
+
+  .products-showcase {
+    scroll-margin-top: 8rem;
+  }
+
+  .products-image-frame {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.56);
+    background:
+      radial-gradient(ellipse at 50% -8%, rgba(255, 255, 214, 0.20), transparent 24%),
+      linear-gradient(135deg, rgb(34, 35, 35), rgb(19, 23, 25) 42%, rgb(38, 42, 42));
+    box-shadow:
+      0 28px 70px rgba(17, 24, 28, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.22),
+      inset 0 -18px 34px rgba(0, 0, 0, 0.22);
+  }
+
+  .products-image-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(255, 255, 214, 0.10), transparent 38%),
+      linear-gradient(180deg, transparent 38%, rgba(0, 0, 0, 0.78)),
+      linear-gradient(90deg, rgba(0, 159, 227, 0.20), transparent 34%);
+  }
+
+  .products-image-frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.14;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.32) 0 0.6px, transparent 0.8px),
+      radial-gradient(circle at 70% 60%, rgba(0, 0, 0, 0.28) 0 0.7px, transparent 0.9px);
+    background-size: 3px 3px, 5px 5px;
+  }
+
+  .products-image-overlay {
+    position: absolute;
+    left: 1.4rem;
+    right: 1.4rem;
+    bottom: 1.35rem;
+    z-index: 2;
+  }
+
+  .products-index {
+    color: rgb(148, 163, 184);
+    font-family: "Oswald", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+  }
+
+  .products-capability-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .products-capability {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    min-height: 3.25rem;
+    padding: 0.75rem 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.64);
+    background:
+      radial-gradient(circle at 18% 0%, rgba(255, 255, 235, 0.45), transparent 40%),
+      linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(222, 228, 228, 0.62));
+    color: rgb(31, 41, 55);
+    font-size: 0.78rem;
+    font-weight: 800;
+  }
+
+  .products-capability svg {
+    color: rgb(0, 159, 227);
+    flex: none;
+  }
+
+  .products-application-list {
+    border-top: 1px solid rgba(17, 24, 39, 0.15);
+    background: rgba(255, 255, 255, 0.24);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42);
+  }
+
+  .products-application-row {
+    display: grid;
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+    align-items: center;
+    min-height: 3.35rem;
+    border-bottom: 1px solid rgba(17, 24, 39, 0.12);
+    color: rgb(31, 41, 55);
+    font-weight: 700;
+    transition: background 240ms ease, padding 240ms ease;
+  }
+
+  .products-application-row:hover {
+    padding-left: 0.35rem;
+    background: rgba(255, 255, 255, 0.38);
+  }
+
+  .products-application-number {
+    color: rgb(0, 159, 227);
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+  }
+
+  .products-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2.5rem;
+    background:
+      radial-gradient(ellipse at 50% -8%, rgba(255, 255, 214, 0.22), transparent 25%),
+      radial-gradient(circle at 8% 14%, rgba(0, 159, 227, 0.26), transparent 30%),
+      conic-gradient(from -18deg at 50% 0%, rgba(255, 255, 220, 0.16), transparent 12%, rgba(34, 39, 40, 0.16), transparent 36%, rgba(255, 255, 220, 0.12), transparent 70%),
+      linear-gradient(135deg, rgb(34, 35, 35), rgb(19, 23, 25) 44%, rgb(38, 42, 42));
+    box-shadow:
+      0 28px 70px rgba(17, 24, 28, 0.24),
+      inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  }
+
+  .products-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    min-height: 3.65rem;
+    padding: 0.95rem 1.45rem;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgb(0, 159, 227);
+    color: white;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: background 240ms ease, transform 240ms ease;
+  }
+
+  .products-cta-button:hover {
+    background: rgb(255, 255, 255);
+    color: rgb(17, 24, 39);
+    transform: translateY(-2px);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .laser-title-canvas,
     .metal-cta,
@@ -567,6 +843,51 @@
   }
 
   @media (max-width: 767px) {
+    .products-capacity-strip {
+      grid-template-columns: 1fr;
+    }
+
+    .products-capacity-strip > div + div {
+      border-left: 0;
+      border-top: 1px solid rgba(17, 24, 39, 0.12);
+    }
+
+    .products-anchor-nav {
+      top: 4.5rem;
+      grid-template-columns: 1fr;
+      position: relative;
+    }
+
+    .products-anchor-item {
+      justify-content: flex-start;
+      min-height: 3.15rem;
+      text-align: left;
+    }
+
+    .products-capability-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .products-image-frame {
+      aspect-ratio: 4 / 3;
+    }
+
+    .products-image-overlay {
+      left: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+    }
+
+    .products-cta {
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 1.5rem;
+    }
+
+    .products-cta-button {
+      width: 100%;
+    }
+
     .about-showcase {
       display: grid;
       grid-template-columns: 1fr;

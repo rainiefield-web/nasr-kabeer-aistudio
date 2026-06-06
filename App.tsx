@@ -1794,27 +1794,39 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
         title: "Architectural Profiles",
         subtitle: "Construction & Infrastructure",
         desc: "Meeting the demands of Saudi Arabia's mega-projects with high-performance profiles for skyscrapers and smart cities.",
+        imageLabel: "Building envelope systems",
+        imageMeta: "Curtain wall, thermal break, facade profiles",
         items: ["Curtain Wall Systems", "Thermal Break Windows", "Structural Glazing", "Decorative Facades", "Sun Control Louvers"],
+        capabilities: ["Facade-grade finishes", "Thermal break support", "Custom die development"],
         img: "/site-assets/product-architectural.png",
-        icon: Building2
+        icon: Building2,
+        imageClass: "object-[50%_50%]"
       },
       {
         id: 'ind',
         title: "Industrial Profiles",
         subtitle: "Automation & Energy",
         desc: "Precision engineering for the renewable energy sector and automated manufacturing lines.",
+        imageLabel: "Industrial performance profiles",
+        imageMeta: "Solar, heat sink, framing, enclosure applications",
         items: ["Solar Mounting Structures", "Heat Sinks & Cooling", "Automation Framing", "Modular Conveyors", "Electronic Enclosures"],
+        capabilities: ["High-tolerance extrusion", "CNC-ready sections", "Repeatable batch quality"],
         img: "/site-assets/product-industrial.png",
-        icon: Factory
+        icon: Factory,
+        imageClass: "object-[52%_48%]"
       },
       {
         id: 'trans',
         title: "Transportation Profiles",
         subtitle: "Mobility & Aerospace",
         desc: "Lightweight, high-strength alloys driving the future of EVs and rail transit in the Kingdom.",
+        imageLabel: "Lightweight mobility structures",
+        imageMeta: "EV trays, rail bodies, chassis and marine sections",
         items: ["EV Battery Trays", "Rail Transit Car Bodies", "Chassis Components", "Aerospace Interiors", "Marine Structures"],
+        capabilities: ["Weight reduction focus", "Structural alloy options", "Assembly-ready profiles"],
         img: "/site-assets/product-transportation.png",
-        icon: Car
+        icon: Car,
+        imageClass: "object-[50%_50%]"
       }
     ],
     ar: [
@@ -1852,7 +1864,7 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
   const t = content[lang].products;
 
   return (
-    <MotionDiv initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 50 }} className={`min-h-screen bg-gray-50 ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}>
+    <MotionDiv initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 50 }} className={`products-page min-h-screen ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}>
       <div className="container mx-auto px-6 mb-12 flex items-center justify-between">
         <button onClick={goBack} className="flex items-center gap-2 text-nasr-blue hover:text-nasr-dark transition-colors font-bold uppercase text-sm tracking-wider">
           <ChevronLeft size={20} className={isRTL ? "rotate-180" : ""} />
@@ -1862,44 +1874,93 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
         <AlxLogo />
       </div>
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="mb-20">
+        <div className="mb-10">
           <SectionHeading title={t.title} subtitle={t.subtitle} lang={lang} />
-          <p className={`text-gray-600 text-lg leading-relaxed max-w-3xl ${isRTL ? 'border-r-4 pr-6' : 'border-l-4 pl-6'} border-nasr-blue`}>
-            {t.desc}
-          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+            <p className={`lg:col-span-7 text-gray-600 text-lg leading-relaxed ${isRTL ? 'border-r-4 pr-6' : 'border-l-4 pl-6'} border-nasr-blue`}>
+              {t.desc}
+            </p>
+            <div className="lg:col-span-5 products-capacity-strip">
+              <div>
+                <span className="products-capacity-value">200,000</span>
+                <span className="products-capacity-label">tons/year designed capacity</span>
+              </div>
+              <div>
+                <span className="products-capacity-value">3</span>
+                <span className="products-capacity-label">application families</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="space-y-32">
-          {currentData.map((category, index) => (
-            <MotionDiv key={category.id} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8 }} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-20 items-center`}>
-              <div className="w-full lg:w-1/2">
-                <div className="relative aspect-[4/3] rounded-sm overflow-hidden shadow-2xl group">
-                  <div className="absolute inset-0 bg-nasr-blue/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-                  <img src={category.img} alt={category.title} loading="lazy" decoding="async" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent z-20">
-                    <div className="flex items-center gap-2 text-white/90 font-mono text-xs uppercase tracking-widest">
-                      <category.icon size={16} />
-                      {category.subtitle}
+        <nav className="products-anchor-nav mb-20" aria-label="Product categories">
+          {currentData.map((category) => {
+            const CategoryIcon = category.icon;
+            return (
+              <a key={category.id} href={`#product-${category.id}`} className="products-anchor-item">
+                <CategoryIcon size={18} />
+                <span>{category.title}</span>
+              </a>
+            );
+          })}
+        </nav>
+        <div className="space-y-24 lg:space-y-28">
+          {currentData.map((category, index) => {
+            const CategoryIcon = category.icon;
+            const imageLabel = 'imageLabel' in category ? category.imageLabel : category.subtitle;
+            const imageMeta = 'imageMeta' in category ? category.imageMeta : category.subtitle;
+            const capabilities = 'capabilities' in category ? category.capabilities : category.items.slice(0, 3);
+            const imageClass = 'imageClass' in category ? category.imageClass : "object-[50%_50%]";
+            return (
+              <MotionDiv id={`product-${category.id}`} key={category.id} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8 }} className={`products-showcase grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center ${index % 2 === 1 ? 'lg:[&>.products-visual]:order-2' : ''}`}>
+                <div className="products-visual lg:col-span-6">
+                  <div className="products-image-frame group">
+                    <img src={category.img} alt={category.title} loading="lazy" decoding="async" className={`w-full h-full object-cover ${imageClass} transform group-hover:scale-[1.025] transition-transform duration-700`} />
+                    <div className="products-image-overlay">
+                      <div className="flex items-center gap-3 text-white">
+                        <CategoryIcon size={22} />
+                        <div>
+                          <div className="text-sm md:text-base font-bold uppercase tracking-[0.18em]">{imageLabel}</div>
+                          <div className="text-xs md:text-sm text-white/70 mt-1">{imageMeta}</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="w-full lg:w-1/2">
-                <h3 className={`text-3xl lg:text-4xl font-serif font-bold text-nasr-dark mb-6 ${isRTL ? 'font-arabic' : ''}`}>{category.title}</h3>
-                <p className="text-gray-600 text-lg leading-relaxed mb-8">{category.desc}</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {category.items.map((item, i) => (
-                    <div key={i} className="flex items-center gap-3 p-3 rounded-sm bg-white border border-gray-100 hover:border-nasr-blue hover:shadow-md transition-all duration-300">
-                      <div className="w-2 h-2 rounded-full bg-nasr-blue"></div>
-                      <span className="text-gray-800 font-medium text-sm">{item}</span>
-                    </div>
-                  ))}
+                <div className="lg:col-span-6">
+                  <div className={`flex items-center gap-3 mb-5 ${isRTL ? 'justify-end' : ''}`}>
+                    <span className="products-index">{String(index + 1).padStart(2, '0')}</span>
+                    <span className="text-nasr-blue text-xs font-bold uppercase tracking-[0.28em]">{category.subtitle}</span>
+                  </div>
+                  <h3 className={`text-3xl lg:text-4xl font-serif font-bold text-nasr-dark mb-5 ${isRTL ? 'font-arabic' : ''}`}>{category.title}</h3>
+                  <p className="text-gray-600 text-lg leading-relaxed mb-8 max-w-2xl">{category.desc}</p>
+                  <div className="products-capability-grid mb-8">
+                    {capabilities.map((capability) => (
+                      <div key={capability} className="products-capability">
+                        <CheckCircle2 size={16} />
+                        <span>{capability}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="products-application-list">
+                    {category.items.map((item, i) => (
+                      <div key={i} className="products-application-row">
+                        <span className="products-application-number">{String(i + 1).padStart(2, '0')}</span>
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </MotionDiv>
-          ))}
+              </MotionDiv>
+            );
+          })}
         </div>
-        <div className="mt-32 text-center pb-12">
-          <button onClick={() => { goBack(); setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="inline-flex items-center gap-3 px-8 py-4 bg-nasr-blue text-white font-bold uppercase tracking-wider hover:bg-nasr-dark transition-colors rounded-sm shadow-lg hover:shadow-xl">
+        <div className="products-cta mt-28 lg:mt-32">
+          <div>
+            <div className="text-nasr-blue text-xs font-bold uppercase tracking-[0.28em] mb-3">Profile requirements</div>
+            <h3 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Discuss your aluminum profile needs</h3>
+            <p className="text-gray-300 leading-relaxed max-w-2xl">Share drawings, alloy needs, surface treatment targets, or application requirements with our team.</p>
+          </div>
+          <button onClick={() => { goBack(); setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="products-cta-button">
             {content[lang].nav.contact}
             <ArrowRight size={20} />
           </button>
