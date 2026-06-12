@@ -1,17 +1,17 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-06-11 12:06:23`
+Last Updated (UTC): `2026-06-12 11:40:44`
 Data Status: Price=FAIL: 404 Client Error: Not Found for url: https://stooq.com/q/l/?s=al.f&f=sd2t2ohlcv&h&e=csv | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Headlines (from GNews)
-- Quebec Auditor-General criticizes lack of planning in province’s battery sector strategy | Source: The Globe and Mail | Published: 2026-06-10T23:38:24Z [Link](https://www.theglobeandmail.com/business/article-quebec-auditor-general-criticizes-lack-of-planning-in-provinces/)
-- Novelis Restarts Oswego Aluminum Plant After 9-Month Outage | Source: Newsmax | Published: 2026-06-10T18:36:14Z [Link](https://www.newsmax.com/us/novelis-oswego-aluminum/2026/06/10/id/1259220/)
-- Ford's Top Aluminum Supplier Restarts New York Plant After Fires | Source: MarketScreener | Published: 2026-06-10T18:21:15Z [Link](https://www.marketscreener.com/news/ford-s-top-aluminum-supplier-restarts-new-york-plant-after-fires-ce7f5cdbdd81f725)
-- Ford aluminum supplier Novelis is back online after Oswego fires | Source: Detroit Free Press | Published: 2026-06-10T17:11:23Z [Link](https://www.freep.com/story/money/cars/ford/2026/06/10/ford-aluminum-supplier-novelis-opens-fires-oswego/90490031007/)
-- Novelis restarts production at New York plant key to Ford trucks | Source: Livemint | Published: 2026-06-10T15:13:29Z [Link](https://www.livemint.com/companies/news/novelis-restarts-production-at-new-york-plant-key-to-ford-trucks-11781104140991.html)
-- Novelis to restart plants shuttered by fires | Source: Seeking Alpha | Published: 2026-06-10T14:43:52Z [Link](https://seekingalpha.com/news/4602224-novelis-to-restart-plants-shuttered-by-fires)
-- Govt extends anti-dumping duty on aluminium foil imported from China & 3 other nations till December | Source: The Economic Times | Published: 2026-06-10T14:08:00Z [Link](https://economictimes.indiatimes.com/news/economy/foreign-trade/govt-extends-anti-dumping-duty-on-aluminium-foil-imported-from-china-3-other-nations-till-december-hindalco-industries/articleshow/131637594.cms)
-- Manaksia Coated Metals shareholders approve JPA Snacks merger | Source: scanx.trade | Published: 2026-06-10T13:40:07Z [Link](https://scanx.trade/stock-market-news/companies/manaksia-coated-shareholders-approve-jpa-snacks-merger-scheme/42469632)
-- Ford's Top Aluminum Supplier to Restart Plant After Fires | Source: MarketScreener | Published: 2026-06-10T13:35:08Z [Link](https://www.marketscreener.com/news/ford-s-top-aluminum-supplier-to-restart-plant-after-fires-ce7f5cdbdb8dfe2c)
-- Hindustan Zinc signs pact with Sulfozyme Agro to advance sustainable metal recovery | Source: The Economic Times | Published: 2026-06-10T09:43:00Z [Link](https://economictimes.indiatimes.com/industry/indl-goods/svs/metals-mining/hindustan-zinc-signs-pact-with-sulfozyme-agro-to-advance-sustainable-metal-recovery/articleshow/131631121.cms)
+- Canada Post moves to convert nearly half a million more homes to community mailboxes | Source: BayToday | Published: 2026-06-11T19:42:44Z [Link](https://www.baytoday.ca/national-news/canada-post-moves-to-convert-nearly-half-a-million-more-homes-to-community-mailboxes-12409019)
+- Bilateral deals likely to be negotiated alongside continental trade pact: LeBlanc | Source: BayToday | Published: 2026-06-11T17:46:29Z [Link](https://www.baytoday.ca/national-news/bilateral-deals-likely-to-be-negotiated-alongside-continental-trade-pact-leblanc-12407152)
+- Classic Wheels Spotlight: 1963 Chevy Corvette | Source: Shaw Local Enewspapers | Published: 2026-06-11T16:24:34Z [Link](https://www.shawlocal.com/wheels/2026/06/11/classic-wheels-spotlight-1963-chevy-corvette/)
+- SATS, ADBE, ORCL, INTC, SNDK | Source: CNBC | Published: 2026-06-11T16:21:01Z [Link](https://www.cnbc.com/2026/06/11/stocks-making-the-biggest-moves-midday-sats-adbe-orcl-intc-sndk.html)
+- Inspired Restomod Looks Like AI, But Driving It Made The Half | Source: SlashGear | Published: 2026-06-11T16:00:00Z [Link](https://www.slashgear.com/2190732/sp40-ford-inspired-restomod-roadster-driving-experience/)
+- Irish ‘head-in-the-sand’ alumina approach contrasts with Australia’s, say Social Democrats | Source: The Irish Times | Published: 2026-06-11T15:43:09Z [Link](https://www.irishtimes.com/politics/2026/06/11/irish-head-in-the-sand-alumina-approach-contrasts-with-australias-say-social-democrats/)
+- Three global companies showing strength through volatility | Source: Bnn Bloomberg | Published: 2026-06-11T15:40:51Z [Link](https://www.bnnbloomberg.ca/investing/market-outlook/2026/06/11/market-outlook-apple-novartis-rio-tinto-stand-out-on-momentum-trends/)
+- Stocks making the biggest moves premarket: Oracle, Intel, Applied Materials, Alcoa and more | Source: CNBC | Published: 2026-06-11T11:37:47Z [Link](https://www.cnbc.com/2026/06/11/stocks-making-the-biggest-moves-premarket-oracle-intel-applied-materials-alcoa-and-more.html)
+- A sharp clean-out before SpaceX | Source: MarketScreener | Published: 2026-06-11T06:09:04Z [Link](https://www.marketscreener.com/news/a-sharp-clean-out-before-spacex-ce7f5cdbd18df727)
+- Hindalco, Vedanta, Nalco shares in focus as anti dumping duty on aluminium foil extended | Source: Business Today | Published: 2026-06-11T03:30:06Z [Link](https://www.businesstoday.in/markets/stocks/story/hindalco-vedanta-nalco-shares-in-focus-as-anti-dumping-duty-on-aluminium-foil-extended-536210-2026-06-11)
