@@ -2193,6 +2193,9 @@ const App: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [lang, setLang] = useState<Language>('en');
   const [currentPage, setCurrentPage] = useState<Page>('home');
+  const [heroVideoReady, setHeroVideoReady] = useState(false);
+  const heroVideoRef = useRef<HTMLVideoElement | null>(null);
+  const heroVideoPlayedRef = useRef(false);
 
   const t = content[lang];
   const isRTL = lang === 'ar';
@@ -2209,6 +2212,39 @@ const App: React.FC = () => {
   }, [lang, isRTL]);
 
   const toggleLang = () => setLang(prev => prev === 'en' ? 'ar' : 'en');
+
+  const prepareHeroVideo = (video: HTMLVideoElement) => {
+    video.defaultPlaybackRate = 1;
+    video.playbackRate = 1;
+
+    if (!heroVideoPlayedRef.current && video.currentTime > 0.15) {
+      video.currentTime = 0;
+    }
+  };
+
+  useEffect(() => {
+    if (currentPage !== 'home' || heroVideoPlayedRef.current) return;
+
+    const video = heroVideoRef.current;
+    if (!video) return;
+
+    video.currentTime = 0;
+    video.play().catch(() => undefined);
+  }, [currentPage]);
+
+  const handleHeroVideoReady = (event: React.SyntheticEvent<HTMLVideoElement>) => {
+    prepareHeroVideo(event.currentTarget);
+    setHeroVideoReady(true);
+
+    if (!heroVideoPlayedRef.current) {
+      event.currentTarget.play().catch(() => undefined);
+    }
+  };
+
+  const handleHeroVideoPlay = (event: React.SyntheticEvent<HTMLVideoElement>) => {
+    prepareHeroVideo(event.currentTarget);
+    if (!heroVideoPlayedRef.current) heroVideoPlayedRef.current = true;
+  };
 
   const smoothScrollTo = (target: string | number) => {
     if (window.nasrLenis) {
@@ -2297,13 +2333,28 @@ const App: React.FC = () => {
         ) : (
           <>
             <header className="raw-metal-hero relative min-h-screen flex items-center overflow-hidden">
-              <div className="absolute inset-0 z-0">
+              <div className="absolute inset-0">
                 <div className="raw-metal-hero-disc"></div>
-                <img src="/hero-background-wide.png" alt="High-end aluminum profile" fetchPriority="high" decoding="async" className="raw-metal-hero-product hidden md:block absolute inset-0 h-full w-full object-cover" />
-                <img src="/hero-profile-mobile.png" alt="High-end aluminum profile" fetchPriority="high" decoding="async" className="raw-metal-hero-product md:hidden absolute top-20 left-1/2 w-[68vw] max-w-none -translate-x-1/2 object-contain opacity-55" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#111414]/94 via-[#111414]/66 md:via-[#111414]/58 lg:via-[#111414]/14 to-transparent"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1B1E1E]/58 via-transparent to-[#1B1E1E]/14"></div>
-                <div className="raw-metal-edge raw-metal-edge-light absolute bottom-0 left-0 right-0"></div>
+                <div className={`raw-metal-hero-video-shell ${heroVideoReady ? 'is-ready' : ''}`}>
+                  <video
+                    ref={heroVideoRef}
+                    className="raw-metal-hero-video-media"
+                    poster="/hero-background-wide.png"
+                    preload="auto"
+                    autoPlay={!heroVideoPlayedRef.current}
+                    muted
+                    playsInline
+                    onLoadedMetadata={handleHeroVideoReady}
+                    onCanPlay={handleHeroVideoReady}
+                    onPlay={handleHeroVideoPlay}
+                    onEnded={(event) => event.currentTarget.pause()}
+                  >
+                    <source src="/hero-metal-flow-polished.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div className="absolute inset-0 z-[3] bg-gradient-to-r from-[#111414]/94 via-[#111414]/66 md:via-[#111414]/58 lg:via-[#111414]/14 to-transparent"></div>
+                <div className="absolute inset-0 z-[3] bg-gradient-to-t from-[#1B1E1E]/58 via-transparent to-[#1B1E1E]/14"></div>
+                <div className="raw-metal-edge raw-metal-edge-light absolute bottom-0 left-0 right-0 z-[4]"></div>
               </div>
               <div className="relative z-10 container mx-auto px-6 pt-24 pb-16 max-w-7xl">
                 <MotionDiv initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className={`max-w-[44rem] md:max-w-[40rem] lg:max-w-[44rem] mt-52 md:mt-0 ${isRTL ? 'mr-auto text-right' : 'ml-0 text-left'}`}>
