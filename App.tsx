@@ -1354,12 +1354,12 @@ const AlxLogo = () => (
 );
 
 const SectionHeading = ({ title, subtitle, dark = false, lang }: { title: string, subtitle?: string, dark?: boolean, lang: Language }) => (
-  <div className="mb-4 max-w-3xl">
+  <div className="section-heading mb-4 max-w-3xl">
     <MotionDiv
       initial={{ opacity: 0, x: lang === 'en' ? -20 : 20 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6 }}
-      className={`inline-block mb-4 px-3 py-1 border ${dark ? 'border-nasr-accent text-nasr-accent' : 'border-nasr-blue text-nasr-blue'} text-xs font-bold tracking-[0.2em] uppercase rounded-sm`}
+      className={`section-kicker inline-block mb-4 px-3 py-1 border ${dark ? 'border-nasr-accent text-nasr-accent' : 'border-nasr-blue text-nasr-blue'} text-xs font-bold tracking-[0.2em] uppercase rounded-sm`}
     >
       {subtitle || "Section"}
     </MotionDiv>
@@ -1367,7 +1367,7 @@ const SectionHeading = ({ title, subtitle, dark = false, lang }: { title: string
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.1 }}
-      className={`font-serif font-medium leading-tight ${dark ? 'text-white' : 'text-nasr-dark'} ${lang === 'ar' ? 'font-arabic text-5xl md:text-6xl lg:text-7xl' : 'text-4xl md:text-5xl lg:text-6xl'}`}
+      className={`section-title font-serif font-medium leading-tight ${dark ? 'text-white' : 'text-nasr-dark'} ${lang === 'ar' ? 'font-arabic text-5xl md:text-6xl lg:text-7xl' : 'text-4xl md:text-5xl lg:text-6xl'}`}
     >
       {title}
     </MotionH2>
@@ -1498,7 +1498,7 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white flex flex-col items-center justify-center p-6 text-center">
+      <div className="news-page min-h-screen bg-white flex flex-col items-center justify-center p-6 text-center">
         <Loader2 className="w-12 h-12 text-nasr-blue animate-spin mb-4" />
         <p className="text-gray-500 font-serif uppercase tracking-widest text-sm">{t.loading}</p>
       </div>
@@ -1506,8 +1506,8 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
   }
 
   return (
-    <MotionDiv initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 50 }} className={`min-h-screen bg-white ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}>
-      <div className="container mx-auto px-6 mb-12 flex items-center justify-between">
+    <MotionDiv initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -18 }} className={`news-page min-h-screen bg-white ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}>
+      <div className="page-topbar container mx-auto px-6 mb-12 flex items-center justify-between">
         <button onClick={goBack} className="flex items-center gap-2 text-nasr-blue hover:text-nasr-dark transition-colors font-bold uppercase text-sm tracking-wider">
           <ChevronLeft size={20} className={isRTL ? "rotate-180" : ""} />
           {content[lang].nav.back}
@@ -1518,16 +1518,16 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
 
       <div className="container mx-auto px-6 max-w-7xl">
         {error && (
-          <div className="mb-8 p-4 bg-amber-50 border-l-4 border-amber-400 text-amber-800 text-sm font-medium flex items-center gap-3">
+          <div className="news-error mb-8 p-4 bg-amber-50 border-l-4 border-amber-400 text-amber-800 text-sm font-medium flex items-center gap-3">
             <ShieldCheck size={18} /> {t.error}
           </div>
         )}
-        <div className="flex flex-col lg:flex-row gap-12 items-end mb-20">
+        <div className="news-hero-row flex flex-col lg:flex-row gap-12 items-end mb-20">
           <div className="flex-1">
             <SectionHeading title={t.title} subtitle={t.subtitle} lang={lang} />
             <p className="text-gray-600 text-lg max-w-2xl leading-relaxed">{t.desc}</p>
           </div>
-          <div className="flex items-center gap-4 px-6 py-3 bg-gray-50 border border-gray-100 rounded-sm">
+          <div className="news-updated-card flex items-center gap-4 px-6 py-3 bg-gray-50 border border-gray-100 rounded-sm">
             <Clock className="text-nasr-blue" size={20} />
             <div>
               <div className="text-[10px] uppercase font-bold text-gray-400 tracking-widest">{t.lastUpdated}</div>
@@ -1539,7 +1539,7 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
         <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="space-y-8"
+          className="news-content-stack space-y-8"
         >
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {(parsedNews.prices.length ? parsedNews.prices : []).map((item, idx) => (
@@ -1548,7 +1548,7 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
                 href={item.url}
                 target="_blank"
                 rel="noreferrer"
-                className="group relative overflow-hidden bg-[#102633] text-white p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-500"
+                className="news-price-card group relative overflow-hidden bg-[#102633] text-white p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-500"
               >
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_18%,rgba(0,159,227,0.22),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.05),transparent)]"></div>
                 <div className="relative">
@@ -1578,7 +1578,7 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
               { title: "GNews", items: parsedNews.gnews },
               ...(parsedNews.googleRss.length ? [{ title: "Google News RSS", items: parsedNews.googleRss }] : []),
             ].map((group) => (
-              <div key={group.title} className="bg-white border border-gray-100 shadow-sm p-6 md:p-8">
+              <div key={group.title} className="news-source-panel bg-white border border-gray-100 shadow-sm p-6 md:p-8">
                 <div className="flex items-center justify-between gap-4 mb-6">
                   <div>
                     <div className="text-xs font-bold uppercase tracking-[0.25em] text-nasr-blue mb-2">{group.title}</div>
@@ -1613,7 +1613,7 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
           </div>
 
           {newsMarkdown && !parsedNews.prices.length && !parsedNews.newsapi.length && !parsedNews.gnews.length && !parsedNews.googleRss.length && (
-            <div className={`bg-white border border-gray-100 shadow-sm p-6 md:p-10 text-gray-700 text-sm md:text-base leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>
+            <div className={`news-markdown-panel bg-white border border-gray-100 shadow-sm p-6 md:p-10 text-gray-700 text-sm md:text-base leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>
               {renderMarkdown(displayMarkdown, isRTL)}
             </div>
           )}
@@ -1630,14 +1630,14 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
   const isRTL = lang === 'ar';
 
   return (
-    <div className="bg-white rounded-sm shadow-xl border border-gray-200 overflow-hidden mb-20">
+    <div className="integrated-route bg-white rounded-sm shadow-xl border border-gray-200 overflow-hidden mb-20">
       {/* Tab Navigation */}
-      <div className="flex flex-wrap border-b border-gray-200">
+      <div className="integrated-tabs flex flex-wrap border-b border-gray-200">
         {(['core', 'die', 'powder', 'strip'] as const).map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`flex-1 py-4 px-4 md:px-6 text-sm md:text-base font-serif font-bold uppercase tracking-wider transition-all duration-300 relative ${activeTab === tab ? 'text-nasr-blue bg-gray-50' : 'text-gray-500 hover:text-gray-800'}`}
+            className={`integrated-tab flex-1 py-4 px-4 md:px-6 text-sm md:text-base font-serif font-bold uppercase tracking-wider transition-all duration-300 relative ${activeTab === tab ? 'is-active text-nasr-blue bg-gray-50' : 'text-gray-500 hover:text-gray-800'}`}
           >
             {t.tabs[tab]}
             {activeTab === tab && (
@@ -1649,7 +1649,7 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[650px]">
         {/* Visual Flowchart Area */}
-        <div className="lg:col-span-8 bg-gray-50 p-4 md:p-8 relative overflow-hidden h-full min-h-[400px]">
+        <div className="integrated-flow lg:col-span-8 bg-gray-50 p-4 md:p-8 relative overflow-hidden h-full min-h-[400px]">
           <div className="absolute inset-0 pattern-dots opacity-30 pointer-events-none"></div>
 
           <div className="relative z-10 h-full flex flex-col items-center justify-center gap-6 md:gap-8 py-8">
@@ -1657,7 +1657,7 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
               <div className="absolute top-0 bottom-0 left-1/2 w-1 bg-gray-300 -z-10 -translate-x-1/2"></div>
 
               {t.core.steps.map((step, i) => (
-                <div key={i} className="relative bg-white border border-gray-200 p-4 rounded-sm shadow-sm flex items-center gap-4 group hover:border-nasr-blue transition-colors">
+                <div key={i} className="integrated-node relative bg-white border border-gray-200 p-4 rounded-sm shadow-sm flex items-center gap-4 group hover:border-nasr-blue transition-colors">
                   <div className="w-8 h-8 rounded-full bg-nasr-dark text-white flex items-center justify-center font-bold text-sm shrink-0">
                     {step.id}
                   </div>
@@ -1731,7 +1731,7 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
         </div>
 
         {/* Details Panel */}
-        <div className="lg:col-span-4 bg-white p-8 border-l border-gray-100 flex flex-col justify-center h-full relative">
+        <div className="integrated-detail lg:col-span-4 bg-white p-8 border-l border-gray-100 flex flex-col justify-center h-full relative">
           <div className="absolute inset-0 opacity-20 pointer-events-none bg-[linear-gradient(135deg,rgba(148,163,184,0.22)_1px,transparent_1px),linear-gradient(45deg,rgba(148,163,184,0.12)_1px,transparent_1px)] bg-[length:18px_18px,28px_28px]"></div>
           <AnimatePresence mode="popLayout">
             <MotionDiv key={activeTab} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.3 }} className="relative z-10">
@@ -1988,7 +1988,7 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
   };
 
   return (
-    <MotionDiv initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 50 }} className={`min-h-screen bg-gray-50 ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}>
+    <MotionDiv initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -18 }} className={`technology-page min-h-screen bg-gray-50 ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}>
       <div className="container mx-auto px-6 mb-8 flex items-center justify-between">
         <button onClick={goBack} className="flex items-center gap-2 text-nasr-blue hover:text-nasr-dark transition-colors font-bold uppercase text-sm tracking-wider">
           <ChevronLeft size={20} className={isRTL ? "rotate-180" : ""} />
@@ -1997,15 +1997,15 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
         <div className="hidden md:block h-[1px] flex-1 bg-gray-200 mx-8"></div>
         <AlxLogo />
       </div>
-      <div className="relative mb-16 min-h-[500px] h-auto overflow-hidden flex items-center py-12">
-        <div className="absolute inset-0">
+      <div className="tech-hero relative mb-16 min-h-[500px] h-auto overflow-hidden flex items-center py-12">
+        <div className="tech-hero-media absolute inset-0">
           <img src="/site-assets/technology-manufacturing.png" alt="Advanced Aluminum Manufacturing" loading="lazy" decoding="async" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-gray-900/20"></div>
         </div>
         <div className="container mx-auto px-6 h-full flex flex-col justify-center relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
             <div><SectionHeading title={t.title} subtitle={t.subtitle} dark lang={lang} /></div>
-            <div className="pb-4">
+            <div className="tech-hero-copy pb-4">
               <p className={`text-lg text-gray-200 leading-relaxed ${isRTL ? 'border-r-4 pr-6' : 'border-l-4 pl-6'} border-nasr-blue bg-black/30 p-4 backdrop-blur-sm rounded-sm`}>
                 {t.desc}
               </p>
@@ -2014,22 +2014,22 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
         </div>
       </div>
       <div className="container mx-auto px-6">
-        <div className="flex flex-wrap gap-4 mb-16 border-b border-gray-200 pb-1">
+        <div className="tech-route-tabs flex flex-wrap gap-4 mb-16 border-b border-gray-200 pb-1">
           {(['arch', 'ind', 'auto'] as const).map((tab) => (
-            <button key={tab} onClick={() => setActiveTab(tab)} className={`pb-4 px-4 text-lg font-serif transition-all relative ${activeTab === tab ? 'text-nasr-blue font-bold' : 'text-gray-400 hover:text-gray-600'}`}>
+            <button key={tab} onClick={() => setActiveTab(tab)} className={`tech-route-tab pb-4 px-4 text-lg font-serif transition-all relative ${activeTab === tab ? 'is-active text-nasr-blue font-bold' : 'text-gray-400 hover:text-gray-600'}`}>
               {t.tabs[tab]}
               {activeTab === tab && <MotionDiv layoutId="techTab" className="absolute bottom-0 left-0 right-0 h-1 bg-nasr-blue" />}
             </button>
           ))}
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24">
+        <div className="tech-process-grid grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24">
           <div className="lg:col-span-4">
-            <div className="sticky top-32 bg-white p-8 rounded-sm shadow-lg border border-gray-100">
-              <h3 className="text-xl font-serif mb-8 text-nasr-dark border-b pb-4">Processing Flow</h3>
+            <div className="tech-rail-card sticky top-32 bg-white p-8 rounded-sm shadow-lg border border-gray-100">
+              <h3 className="tech-rail-title text-xl font-serif mb-8 text-nasr-dark border-b pb-4">Processing Flow</h3>
               <div className="relative">
                 <div className={`absolute top-4 bottom-4 ${isRTL ? 'right-4' : 'left-4'} w-1 bg-gray-100`}></div>
                 {getSteps().map((step, idx) => (
-                  <div key={idx} className="relative flex items-start gap-4 mb-8 last:mb-0">
+                  <div key={idx} className="tech-rail-step relative flex items-start gap-4 mb-8 last:mb-0">
                     <div className={`relative z-10 w-9 h-9 rounded-full flex items-center justify-center text-white shadow-md shrink-0 ${idx % 2 === 0 ? 'bg-nasr-blue' : 'bg-nasr-dark'}`}>{idx + 1}</div>
                     <div className="pt-1"><h4 className="font-bold text-sm text-gray-800">{step.title}</h4></div>
                   </div>
@@ -2039,13 +2039,13 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
           </div>
           <div className="lg:col-span-8">
             <AnimatePresence mode="wait">
-              <MotionDiv key={activeTab} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, y: -20 }} className="space-y-8">
+              <MotionDiv key={activeTab} initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -16 }} transition={{ duration: 0.45, ease: "easeOut" }} className="tech-step-stack space-y-8">
                 {getSteps().map((step, idx) => {
                   const StepIcon = step.icon;
                   return (
-                    <div key={idx} className="bg-white p-8 rounded-sm shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 group">
+                    <div key={idx} className="tech-step-card bg-white p-8 rounded-sm shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 group">
                       <div className="flex items-start gap-6">
-                        <div className="p-4 bg-gray-50 text-nasr-blue rounded-sm group-hover:bg-nasr-blue group-hover:text-white transition-colors duration-300"><StepIcon size={32} /></div>
+                        <div className="tech-step-icon p-4 bg-gray-50 text-nasr-blue rounded-sm group-hover:bg-nasr-blue group-hover:text-white transition-colors duration-300"><StepIcon size={32} /></div>
                         <div>
                           <h3 className="text-2xl font-serif text-nasr-dark mb-2">{step.title}</h3>
                           <p className="text-nasr-blue font-medium text-sm uppercase tracking-wider mb-4">{step.desc}</p>
@@ -2066,7 +2066,7 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
             </AnimatePresence>
           </div>
         </div>
-        <div className="mt-24 pt-12 border-t border-gray-200">
+        <div className="tech-integrated-section mt-24 pt-12 border-t border-gray-200">
           <SectionHeading title={routeT.title} subtitle={routeT.subtitle} lang={lang} />
           <IntegratedRouteDiagram lang={lang} />
         </div>
@@ -2081,7 +2081,7 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
   const isRTL = lang === 'ar';
 
   return (
-    <MotionDiv initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 50 }} className={`min-h-screen bg-white ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}>
+    <MotionDiv initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -18 }} className={`sustainability-page min-h-screen bg-white ${isRTL ? 'font-arabic' : 'font-sans'} pt-24 pb-20`}>
       <div className="container mx-auto px-6 mb-12 flex items-center justify-between">
         <button onClick={goBack} className="flex items-center gap-2 text-nasr-blue hover:text-nasr-dark transition-colors font-bold uppercase text-sm tracking-wider">
           <ChevronLeft size={20} className={isRTL ? "rotate-180" : ""} />
@@ -2090,7 +2090,7 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
         <div className="hidden md:block h-[1px] flex-1 bg-gray-200 mx-8"></div>
         <AlxLogo />
       </div>
-      <section className="relative h-[80vh] min-h-[600px] bg-nasr-dark overflow-hidden mb-20 flex items-center">
+      <section className="sustainability-hero relative h-[80vh] min-h-[600px] bg-nasr-dark overflow-hidden mb-20 flex items-center">
         <div className="absolute inset-0">
           <img src="/site-assets/sustainability-forest.jpg" alt="Green Forest" loading="lazy" decoding="async" className="w-full h-full object-cover opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-nasr-dark via-nasr-dark/40 to-transparent"></div>
@@ -2099,7 +2099,7 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex items-center justify-center gap-3 mb-6 text-nasr-accent"><Leaf size={32} /><span className="font-bold uppercase tracking-widest text-sm">{t.subtitle}</span></div>
             <h1 className={`text-white font-serif font-bold mb-10 leading-none ${isRTL ? 'font-arabic text-5xl lg:text-7xl' : 'text-5xl lg:text-7xl'}`}>{t.title}</h1>
-            <div className="bg-black/30 backdrop-blur-md p-8 md:p-10 rounded-sm border-l-4 border-nasr-accent text-left">
+            <div className="sustainability-hero-panel bg-black/30 backdrop-blur-md p-8 md:p-10 rounded-sm border-l-4 border-nasr-accent text-left">
               <p className="text-white text-lg md:text-xl leading-relaxed mb-6 font-medium">{t.values.p1}</p>
               <p className="text-gray-200 text-base md:text-lg leading-relaxed mb-6">{t.values.p2}</p>
               <p className="text-nasr-accent text-base md:text-lg font-bold uppercase tracking-wide">{t.values.p3}</p>
@@ -2108,22 +2108,22 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
         </div>
       </section>
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 -mt-32 relative z-20 mb-24">
+        <div className="sustainability-stat-grid grid grid-cols-1 md:grid-cols-3 gap-8 -mt-32 relative z-20 mb-24">
           {t.stats.map((stat, i) => (
-            <MotionDiv key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} className="bg-white p-8 shadow-xl border-t-4 border-nasr-accent">
+            <MotionDiv key={i} initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ delay: i * 0.08, duration: 0.55 }} className="sustainability-stat bg-white p-8 shadow-xl border-t-4 border-nasr-accent">
               <div className="text-5xl font-bold text-nasr-dark mb-2">{stat.value}</div>
               <div className="text-nasr-accent font-bold uppercase text-sm tracking-wider mb-1">{stat.label}</div>
               <div className="text-gray-500 text-sm">{stat.sub}</div>
             </MotionDiv>
           ))}
         </div>
-        <div className="mb-32">
+        <div className="sustainability-network mb-32">
           <SectionHeading title="Recycling Infrastructure" subtitle="Strategic Network" lang={lang} />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="bg-white border border-gray-100 shadow-lg overflow-hidden group hover:border-nasr-accent transition-all duration-300">
+            <div className="sustainability-site-card bg-white border border-gray-100 shadow-lg overflow-hidden group hover:border-nasr-accent transition-all duration-300">
               <div className="relative h-64 overflow-hidden">
                 <img src="/site-assets/recycling-dammam.jpg" alt="Dammam Recycling" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                <div className="absolute top-4 right-4 bg-nasr-accent text-white px-3 py-1 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                <div className="sustainability-site-badge absolute top-4 right-4 bg-nasr-accent text-white px-3 py-1 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
                   <Zap size={14} /> {t.dammam.status}
                 </div>
               </div>
@@ -2137,10 +2137,10 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
                 </ul>
               </div>
             </div>
-            <MotionDiv initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="bg-white border border-gray-100 shadow-lg overflow-hidden group hover:border-nasr-blue transition-all duration-300 opacity-90">
+            <MotionDiv initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ delay: 0.12, duration: 0.55 }} className="sustainability-site-card bg-white border border-gray-100 shadow-lg overflow-hidden group hover:border-nasr-blue transition-all duration-300 opacity-90">
               <div className="relative h-64 overflow-hidden">
                 <img src="/site-assets/recycling-riyadh.jpg" alt="Riyadh Logistics" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                <div className="absolute top-4 right-4 bg-nasr-blue text-white px-3 py-1 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                <div className="sustainability-site-badge absolute top-4 right-4 bg-nasr-blue text-white px-3 py-1 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
                   <Box size={14} /> {t.riyadh.status}
                 </div>
               </div>
@@ -2156,12 +2156,12 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
             </MotionDiv>
           </div>
         </div>
-        <div className="bg-gray-50 p-12 lg:p-20 rounded-sm mb-32">
+        <div className="sustainability-loop bg-gray-50 p-12 lg:p-20 rounded-sm mb-32">
           <div className="text-center max-w-3xl mx-auto mb-16"><h2 className={`text-3xl lg:text-4xl font-serif font-bold mb-4 ${isRTL ? 'font-arabic' : ''}`}>{t.process.title}</h2><div className="h-1 w-20 bg-nasr-accent mx-auto"></div></div>
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
             <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-gray-300 -z-10"></div>
             {t.process.steps.map((step, i) => (
-              <div key={i} className="flex flex-col items-center text-center group">
+              <div key={i} className="sustainability-loop-step flex flex-col items-center text-center group">
                 <div className={`w-16 h-16 rounded-full border-4 bg-white flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 z-10 relative ${i === 0 || i === 4 ? 'border-nasr-dark text-nasr-dark' : 'border-nasr-accent text-nasr-accent'}`}>
                   {i === 0 ? <Recycle size={24} /> : i === 1 ? <Settings size={24} /> : i === 2 ? <Box size={24} /> : i === 3 ? <Factory size={24} /> : <Leaf size={24} />}
                 </div>
@@ -2171,12 +2171,12 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
             ))}
           </div>
         </div>
-        <div className="mb-12">
+        <div className="sustainability-impact mb-12">
           <SectionHeading title={t.impact.title} subtitle="Vision 2030" lang={lang} />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {t.impact.items.map((item, i) => (
-              <div key={i} className="p-8 border border-gray-100 hover:border-nasr-blue hover:shadow-lg transition-all duration-300 group">
-                <div className="mb-6 p-4 bg-blue-50 text-nasr-blue w-fit rounded-sm group-hover:bg-nasr-blue group-hover:text-white transition-colors">{i === 0 ? <Wind size={24} /> : i === 1 ? <Box size={24} /> : <Droplets size={24} />}</div>
+              <div key={i} className="sustainability-impact-card p-8 border border-gray-100 hover:border-nasr-blue hover:shadow-lg transition-all duration-300 group">
+                <div className="sustainability-impact-icon mb-6 p-4 bg-blue-50 text-nasr-blue w-fit rounded-sm group-hover:bg-nasr-blue group-hover:text-white transition-colors">{i === 0 ? <Wind size={24} /> : i === 1 ? <Box size={24} /> : <Droplets size={24} />}</div>
                 <h3 className="text-xl font-serif font-bold text-nasr-dark mb-4">{item.title}</h3>
                 <p className="text-gray-600 leading-relaxed text-sm">{item.desc}</p>
               </div>
@@ -2228,6 +2228,7 @@ const App: React.FC = () => {
     const video = heroVideoRef.current;
     if (!video) return;
 
+    prepareHeroVideo(video);
     video.currentTime = 0;
     video.play().catch(() => undefined);
   }, [currentPage]);
@@ -2236,7 +2237,7 @@ const App: React.FC = () => {
     prepareHeroVideo(event.currentTarget);
     setHeroVideoReady(true);
 
-    if (!heroVideoPlayedRef.current) {
+    if (currentPage === 'home' && !heroVideoPlayedRef.current) {
       event.currentTarget.play().catch(() => undefined);
     }
   };
@@ -2244,6 +2245,11 @@ const App: React.FC = () => {
   const handleHeroVideoPlay = (event: React.SyntheticEvent<HTMLVideoElement>) => {
     prepareHeroVideo(event.currentTarget);
     if (!heroVideoPlayedRef.current) heroVideoPlayedRef.current = true;
+  };
+
+  const handleHeroVideoEnded = (event: React.SyntheticEvent<HTMLVideoElement>) => {
+    heroVideoPlayedRef.current = true;
+    event.currentTarget.pause();
   };
 
   const smoothScrollTo = (target: string | number) => {
@@ -2256,6 +2262,20 @@ const App: React.FC = () => {
       return;
     }
     document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const jumpToPageTop = () => {
+    window.nasrLenis?.scrollTo(0, { immediate: true });
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  };
+
+  const returnToHomeTop = () => {
+    setCurrentPage('home');
+    jumpToPageTop();
+    window.requestAnimationFrame(() => {
+      jumpToPageTop();
+      window.requestAnimationFrame(jumpToPageTop);
+    });
   };
 
   const scrollToSection = (e: React.MouseEvent, id: string) => {
@@ -2273,8 +2293,7 @@ const App: React.FC = () => {
 
   const scrollToTop = (e: React.MouseEvent) => {
     e.preventDefault();
-    setCurrentPage('home');
-    smoothScrollTo(0);
+    returnToHomeTop();
     setMenuOpen(false);
   };
 
@@ -2296,7 +2315,7 @@ const App: React.FC = () => {
             </div>
           </a>
           <div className={`hidden lg:flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase ${scrolled || currentPage !== 'home' ? 'text-gray-800' : 'text-white'}`}>
-            <a href="#about" onClick={(e) => scrollToSection(e, 'about')} className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'}`}>{t.nav.about}</a>
+            <a href="#" onClick={scrollToTop} className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'}`}>{t.nav.about}</a>
             <a href="#products" onClick={goToProducts} className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'} ${currentPage === 'products' ? 'is-active' : ''}`}>{t.nav.products}</a>
             <a href="#technology" onClick={goToTechnology} className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'} ${currentPage === 'technology' ? 'is-active' : ''}`}>{t.nav.technology}</a>
             <a href="#sustainability" onClick={goToSustainability} className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'} ${currentPage === 'sustainability' ? 'is-active' : ''}`}>{t.nav.sustainability}</a>
@@ -2312,7 +2331,7 @@ const App: React.FC = () => {
       <AnimatePresence>
         {menuOpen && (
           <MotionDiv initial={{ x: isRTL ? '-100%' : '100%' }} animate={{ x: 0 }} exit={{ x: isRTL ? '-100%' : '100%' }} transition={{ type: 'tween', duration: 0.4 }} className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center gap-8 text-2xl font-serif text-nasr-dark">
-            <a href="#about" onClick={(e) => scrollToSection(e, 'about')}>{t.nav.about}</a>
+            <a href="#" onClick={scrollToTop}>{t.nav.about}</a>
             <a href="#products" onClick={goToProducts} className={currentPage === 'products' ? 'text-nasr-blue' : ''}>{t.nav.products}</a>
             <a href="#technology" onClick={goToTechnology} className={currentPage === 'technology' ? 'text-nasr-blue' : ''}>{t.nav.technology}</a>
             <a href="#sustainability" onClick={goToSustainability} className={currentPage === 'sustainability' ? 'text-nasr-blue' : ''}>{t.nav.sustainability}</a>
@@ -2347,16 +2366,16 @@ const App: React.FC = () => {
                     onLoadedMetadata={handleHeroVideoReady}
                     onCanPlay={handleHeroVideoReady}
                     onPlay={handleHeroVideoPlay}
-                    onEnded={(event) => event.currentTarget.pause()}
+                    onEnded={handleHeroVideoEnded}
                   >
                     <source src="/hero-metal-flow-polished.mp4" type="video/mp4" />
                   </video>
                 </div>
-                <div className="absolute inset-0 z-[3] bg-gradient-to-r from-[#111414]/94 via-[#111414]/66 md:via-[#111414]/58 lg:via-[#111414]/14 to-transparent"></div>
-                <div className="absolute inset-0 z-[3] bg-gradient-to-t from-[#1B1E1E]/58 via-transparent to-[#1B1E1E]/14"></div>
+                <div className="hero-graphite-scrim hero-graphite-scrim-side"></div>
+                <div className="hero-graphite-scrim hero-graphite-scrim-base"></div>
                 <div className="raw-metal-edge raw-metal-edge-light absolute bottom-0 left-0 right-0 z-[4]"></div>
               </div>
-              <div className="relative z-10 container mx-auto px-6 pt-24 pb-16 max-w-7xl">
+              <div className="hero-stage relative z-10 container mx-auto px-6 pt-24 pb-16 max-w-7xl">
                 <MotionDiv initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className={`max-w-[44rem] md:max-w-[40rem] lg:max-w-[44rem] mt-52 md:mt-0 ${isRTL ? 'mr-auto text-right' : 'ml-0 text-left'}`}>
                   <div className={`flex items-center gap-4 mb-7 ${isRTL ? 'justify-end' : ''}`}><span className="h-[2px] w-14 bg-nasr-accent"></span><span className={`text-nasr-accent text-xs md:text-sm font-bold ${isRTL ? 'tracking-normal' : 'tracking-[0.34em] uppercase'}`}>{t.hero.vision}</span></div>
                   <h1 className={`laser-title font-bold mb-8 text-white drop-shadow-2xl ${isRTL ? 'font-arabic text-5xl md:text-7xl leading-[1.12] tracking-normal' : 'font-serif text-5xl md:text-[4.8rem] lg:text-[5.35rem] leading-[0.92]'}`}>
@@ -2365,7 +2384,7 @@ const App: React.FC = () => {
                     <span className="laser-line laser-line-3">{t.hero.titleLine3} <span className="block lg:inline text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-300 to-gray-500 drop-shadow-sm">{t.hero.profileWord}</span></span>
                     <LaserTitleCanvas enabled={!isRTL} />
                   </h1>
-                  <p className={`text-base md:text-xl text-gray-200 font-light leading-relaxed mb-12 max-w-2xl md:max-w-[31rem] lg:max-w-2xl ${isRTL ? 'border-r-2 pr-8' : 'border-l-2 pl-8'} border-white/35`}>{t.hero.desc}</p>
+                  <p className={`hero-copy text-base md:text-xl text-gray-200 font-light leading-relaxed mb-12 max-w-2xl md:max-w-[31rem] lg:max-w-2xl ${isRTL ? 'border-r-2 pr-8' : 'border-l-2 pl-8'} border-white/35`}>{t.hero.desc}</p>
                   <div className="flex flex-col sm:flex-row gap-6">
                     <a href="#products" onClick={goToProducts} className={`metal-cta group flex items-center justify-center gap-3 px-8 py-4 font-bold ${isRTL ? 'tracking-normal' : 'uppercase tracking-wider'}`}>{t.hero.btnProduct}<ArrowRight size={20} className={`transition-transform duration-500 ease-out ${isRTL ? 'group-hover:-translate-x-1 rotate-180' : 'group-hover:translate-x-1'}`} /></a>
                     <a href="#technology" onClick={goToTechnology} className={`metal-cta-secondary flex items-center justify-center gap-3 px-8 py-4 font-bold ${isRTL ? 'tracking-normal' : 'uppercase tracking-wider'}`}>{t.hero.btnTech}</a>
@@ -2472,10 +2491,10 @@ const App: React.FC = () => {
             </section>
           </>
         )}
-        <footer id="contact" className="raw-metal-dark text-gray-400 pt-28 pb-12 relative overflow-hidden">
+        <footer id="contact" className="site-footer raw-metal-dark text-gray-400 pt-28 pb-12 relative overflow-hidden">
           <div className="raw-metal-edge raw-metal-edge-dark raw-metal-edge-top absolute left-0 right-0 top-0"></div>
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/16 to-transparent"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(0,159,227,0.07),transparent_30%),radial-gradient(circle_at_88%_82%,rgba(167,176,182,0.07),transparent_32%)] pointer-events-none"></div>
+          <div className="site-footer-glow absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(0,159,227,0.07),transparent_30%),radial-gradient(circle_at_88%_82%,rgba(167,176,182,0.07),transparent_32%)] pointer-events-none"></div>
               <div className="container mx-auto px-6 relative z-10 max-w-7xl">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
               <div className="col-span-1 md:col-span-2">

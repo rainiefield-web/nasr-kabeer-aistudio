@@ -10,16 +10,16 @@ export default {
       },
       colors: {
         nasr: {
-          silver: '#E5E7EB',
-          steel: '#4B5563',
-          dark: '#111827',
-          blue: '#009FE3',
+          silver: '#E8ECEC',
+          steel: '#647176',
+          dark: '#111719',
+          blue: '#7B868A',
           red: '#E60012',
-          accent: '#10B981',
+          accent: '#BFC2C1',
         },
       },
       backgroundImage: {
-        'metal-gradient': 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
+        'metal-gradient': 'linear-gradient(135deg, #f4f6f5 0%, #bfc8ca 100%)',
       },
     },
   },
