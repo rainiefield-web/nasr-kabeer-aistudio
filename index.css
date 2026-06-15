@@ -220,18 +220,18 @@ body {
 
   @media (min-width: 1024px) and (max-width: 1199px) {
     .raw-metal-hero-video-shell {
-      right: clamp(-5rem, -7vw, -2.5rem);
+      right: clamp(1rem, 3vw, 3rem);
       top: 50%;
-      width: min(38vw, 34rem);
+      width: min(36vw, 32rem);
       height: min(52vh, 28rem);
     }
   }
 
   @media (min-width: 768px) and (max-width: 1023px) {
     .raw-metal-hero-video-shell {
-      right: clamp(-5rem, -8vw, -2rem);
+      right: clamp(0.5rem, 3vw, 2rem);
       top: 42%;
-      width: min(38vw, 30rem);
+      width: min(36vw, 28rem);
       height: min(42vh, 28rem);
       opacity: 0;
     }

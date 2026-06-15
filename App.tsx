@@ -2270,6 +2270,8 @@ const App: React.FC = () => {
   };
 
   const returnToHomeTop = () => {
+    heroVideoPlayedRef.current = false;
+    setHeroVideoReady(false);
     setCurrentPage('home');
     jumpToPageTop();
     window.requestAnimationFrame(() => {
