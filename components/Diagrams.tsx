@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Building2, Factory, Car, ShieldCheck, Boxes, Gauge, Route, FlameKindling, Drill, ArrowRightLeft, SprayCan, Ship } from 'lucide-react';
+import { Building2, Factory, Car, ShieldCheck, Boxes, Gauge, Route, Drill, SprayCan, Ship } from 'lucide-react';
 
 // Fix for Framer Motion types in strict environments
 const MotionDiv = motion.div as any;
@@ -82,6 +82,31 @@ const diagramContent = {
 interface DiagramProps {
     lang: Language;
 }
+
+const CastingIcon = ({ size = 30 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M4 17h12" />
+    <path d="M5 17l1.5 4h8L16 17" />
+    <path d="M13 5l5 2.5-2.5 5-5-2.5Z" />
+    <path d="M17.2 9.2c1.5.8 2.8 2 2.8 3.8" />
+    <path d="M12 12c1.7.8 2.6 1.7 2.8 3" />
+    <path d="M8 7c-.8 1-.8 2 0 3" />
+    <path d="M6 4c-.9 1.1-.9 2.2 0 3.4" />
+  </svg>
+);
+
+const ExtrusionIcon = ({ size = 30 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M3 12h5" />
+    <path d="M5 9l3 3-3 3" />
+    <rect x="9" y="8" width="3" height="8" rx="0.8" />
+    <path d="M12 10h4" />
+    <path d="M12 14h4" />
+    <path d="M16 9h5" />
+    <path d="M16 15h5" />
+    <path d="M20 9v6" />
+  </svg>
+);
 
 // --- PRODUCT CATEGORY GRID ---
 export const ProductCategoryGrid: React.FC<DiagramProps> = ({ lang }) => {
@@ -191,9 +216,9 @@ export const ProductionProcessFlow: React.FC<DiagramProps> = ({ lang }) => {
     const isRTL = lang === 'ar';
 
     const icons = [
-        <FlameKindling size={30}/>,
+        <CastingIcon size={30}/>,
         <Drill size={30}/>,
-        <ArrowRightLeft size={30}/>,
+        <ExtrusionIcon size={30}/>,
         <SprayCan size={30}/>,
         <Ship size={30}/>
     ];
