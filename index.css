@@ -51,6 +51,214 @@ body {
   background: var(--nk-bg-light);
   color: var(--nk-text-dark);
 }
+
+.process-sticky-inner {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: clamp(0.65rem, 1.25vh, 1rem);
+  height: 100%;
+  padding-inline: clamp(2.4rem, 5vw, 5rem);
+  padding-block: clamp(0.9rem, 1.7vh, 1.35rem);
+}
+
+.process-sticky-frame {
+  top: clamp(4.25rem, 8.5vh, 5.35rem);
+  height: calc(100svh - clamp(4.25rem, 8.5vh, 5.35rem));
+}
+
+.process-sticky-header h2 {
+  font-size: clamp(2.15rem, 4vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.process-sticky-header p {
+  max-width: min(42rem, 100%);
+}
+
+.process-panel-shell {
+  height: 100%;
+  min-height: 0;
+}
+
+.process-flow-layout {
+  min-height: 0;
+}
+
+.process-step-stack {
+  display: grid;
+  align-content: center;
+  gap: clamp(0.45rem, 1vh, 0.85rem);
+  min-height: 0;
+}
+
+.process-step-card {
+  border-radius: 0.8rem;
+  padding: clamp(0.5rem, 1.15vh, 0.78rem) clamp(0.65rem, 1.25vw, 1rem);
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  transition:
+    background 260ms ease,
+    border-color 260ms ease;
+}
+
+.process-step-card:hover {
+  background: rgba(255, 255, 255, 0.045);
+  border-color: rgba(255, 255, 255, 0.10);
+}
+
+.process-stage-title {
+  font-size: clamp(1.45rem, 2vw, 2.15rem);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.process-media-shell {
+  height: 100%;
+  min-height: 0;
+}
+
+.process-image-panel {
+  height: 100%;
+  min-height: 0;
+}
+
+.process-step-desc p {
+  letter-spacing: 0;
+}
+
+.process-flow-footer {
+  margin-top: 0.1rem;
+}
+
+@media (max-height: 760px) {
+  .process-sticky-frame {
+    top: 4.75rem;
+    height: calc(100svh - 4.75rem);
+  }
+
+  .process-sticky-inner {
+    gap: 0.48rem;
+    padding-block: 0.55rem;
+  }
+
+  .process-sticky-header h2 {
+    font-size: clamp(1.85rem, 5.2vh, 3.05rem);
+  }
+
+  .process-sticky-header p {
+    margin-top: 0.4rem;
+    font-size: 0.86rem;
+    line-height: 1.38;
+  }
+
+  .process-stage-title {
+    font-size: clamp(1.25rem, 3.8vh, 1.8rem);
+  }
+
+  .process-stage-icon {
+    width: 2.9rem !important;
+    height: 2.9rem !important;
+  }
+
+  .process-step-desc p {
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .process-step-stack {
+    gap: 0.45rem;
+  }
+
+  .process-step-card {
+    padding-block: 0.44rem;
+  }
+
+  .process-flow-footer button {
+    padding-block: 0.52rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .process-scroll-stage {
+    min-height: 245rem;
+  }
+
+  .process-sticky-frame {
+    top: 4.35rem;
+    height: calc(100svh - 4.35rem);
+  }
+
+  .process-sticky-inner {
+    gap: 0.58rem;
+    padding-inline: clamp(1rem, 5vw, 1.4rem);
+    padding-block: 0.7rem;
+  }
+
+  .process-sticky-header h2 {
+    font-size: clamp(1.75rem, 7vw, 2.45rem);
+    line-height: 1.02;
+  }
+
+  .process-sticky-header p {
+    margin-top: 0.45rem;
+    font-size: 0.82rem;
+    line-height: 1.42;
+  }
+
+  .process-panel-shell {
+    padding: 0.85rem;
+  }
+
+  .process-flow-layout {
+    grid-template-rows: minmax(10rem, 38%) minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .process-media-shell {
+    order: -1;
+    padding: 0.55rem;
+  }
+
+  .process-step-stack {
+    gap: 0.42rem;
+  }
+
+  .process-stage-title {
+    font-size: clamp(1.18rem, 5.4vw, 1.55rem);
+    line-height: 1;
+  }
+
+  .process-stage-icon {
+    width: 2.55rem !important;
+    height: 2.55rem !important;
+  }
+
+  .process-step-card {
+    padding: 0.42rem 0.5rem;
+  }
+
+  .process-step-row {
+    gap: 0.75rem;
+  }
+
+  .process-step-desc p {
+    font-size: 0.78rem;
+    line-height: 1.38;
+  }
+
+  .process-flow-footer {
+    justify-content: center !important;
+  }
+
+  .process-flow-footer button {
+    width: 100%;
+    justify-content: center;
+    padding-block: 0.7rem;
+    font-size: 0.66rem;
+  }
+}
+
 @layer components {
   .nav-metal-tab {
     position: relative;

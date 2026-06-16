@@ -2445,26 +2445,23 @@ const App: React.FC = () => {
                 </div>
               </div>
             </section>
-            <section className="raw-metal-dark py-28 relative overflow-hidden">
+            <section id="integrated-value-chain" className="raw-metal-dark process-scroll-shell relative overflow-visible">
               <div className="raw-metal-edge raw-metal-edge-dark raw-metal-edge-top absolute left-0 right-0 top-0"></div>
               <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
                 <StructureGrid />
               </div>
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(198,205,207,0.10),transparent_30%),radial-gradient(circle_at_82%_74%,rgba(80,88,91,0.28),transparent_34%)] pointer-events-none"></div>
               <div className="raw-metal-edge raw-metal-edge-light absolute bottom-0 left-0 right-0"></div>
-              <div className="container mx-auto px-6 relative z-10 max-w-7xl">
-                <MotionDiv
-                  initial={{ opacity: 0, y: 34, filter: 'blur(8px)' }}
-                  whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                  viewport={{ once: true, margin: '-90px' }}
-                  transition={{ duration: 0.75, ease: 'easeOut' }}
-                  className="text-center max-w-3xl mx-auto mb-16"
-                >
-                  <h2 className={`font-serif mb-6 text-white ${isRTL ? 'font-arabic text-4xl md:text-6xl' : 'text-4xl md:text-5xl'}`}>{t.process.title}</h2>
-                  <p className="text-gray-300">{t.process.desc}</p>
-                </MotionDiv>
-                <ProductionProcessFlow lang={lang} />
-                <div className="mt-12 text-center"><button onClick={goToTechnology} className="inline-flex items-center gap-2 text-nasr-accent hover:text-white font-bold uppercase tracking-wider transition-colors">{lang === 'en' ? 'View Detailed Technical Route' : 'عرض المسار التقني التفصيلي'} <ArrowRight size={20} /></button></div>
+              <div className="relative z-10">
+                <ProductionProcessFlow
+                  lang={lang}
+                  title={t.process.title}
+                  desc={t.process.desc}
+                  action={{
+                    label: lang === 'en' ? 'View Detailed Technical Route' : 'عرض المسار التقني التفصيلي',
+                    onClick: goToTechnology
+                  }}
+                />
               </div>
             </section>
             {/* Expansion Content Section - Restored on Home Page */}

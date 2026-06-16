@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Building2, Factory, Car, ShieldCheck, Boxes, Gauge, Route, Drill, SprayCan, Ship } from 'lucide-react';
+import React, { useRef, useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { Building2, Factory, Car, ShieldCheck, Drill, SprayCan, Ship } from 'lucide-react';
 
 // Fix for Framer Motion types in strict environments
 const MotionDiv = motion.div as any;
@@ -81,7 +81,20 @@ const diagramContent = {
 
 interface DiagramProps {
     lang: Language;
+    title?: string;
+    desc?: string;
+    action?: {
+        label: string;
+        onClick: React.MouseEventHandler<HTMLButtonElement>;
+    };
 }
+
+type ProcessStep = {
+    title: string;
+    desc: string;
+    image: string;
+    icon: React.ReactNode;
+};
 
 const CastingIcon = ({ size = 30 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -210,89 +223,174 @@ export const ProductCategoryGrid: React.FC<DiagramProps> = ({ lang }) => {
   );
 };
 
+const ProcessStepCard: React.FC<{
+    step: ProcessStep;
+    index: number;
+    total: number;
+    progress: any;
+    isRTL: boolean;
+}> = ({ step, index, total, progress, isRTL }) => {
+    const start = index / total;
+    const middle = (index + 0.5) / total;
+    const end = (index + 1) / total;
+    const active = useTransform(progress, [start - 0.04, middle, end + 0.04], [0, 1, 0]);
+    const cardOpacity = useTransform(active, [0, 1], [0.52, 1]);
+    const descOpacity = useTransform(active, [0.15, 0.75], [0, 1]);
+    const descHeight = useTransform(active, [0, 1], ['0rem', '4.6rem']);
+    const indicatorScale = useTransform(active, [0, 1], [0.24, 1]);
+
+    return (
+        <MotionDiv
+            className={`process-step-card ${isRTL ? 'text-right' : 'text-left'}`}
+            style={{ opacity: cardOpacity }}
+        >
+            <div className={`process-step-row flex items-start gap-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                <div className="process-stage-icon relative mt-0.5 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[conic-gradient(from_-18deg,rgba(255,255,232,0.98),rgba(170,181,181,0.88),rgba(255,255,210,0.84),rgba(89,101,104,0.84),rgba(255,255,232,0.98))] text-[#344044] shadow-[inset_0_1px_0_rgba(255,255,255,0.9),inset_0_-10px_20px_rgba(45,55,58,0.22),0_14px_30px_rgba(0,0,0,0.22)] ring-1 ring-[#F8F7BC]/40">
+                        {step.icon}
+                </div>
+                <div className="min-w-0 flex-1">
+                    <div className="flex items-baseline gap-4">
+                        <span className="font-serif text-xl text-white/42">
+                        {String(index + 1).padStart(2, '0')}
+                        </span>
+                        <h3 className={`process-stage-title font-serif text-white ${isRTL ? 'font-arabic' : ''}`}>
+                            {step.title}
+                        </h3>
+                    </div>
+                    <MotionDiv className="process-step-desc overflow-hidden" style={{ opacity: descOpacity, maxHeight: descHeight }}>
+                        <p className="mt-2 max-w-[31rem] text-sm leading-relaxed text-[#C8D2D5] md:text-[0.95rem]">
+                            {step.desc}
+                        </p>
+                    </MotionDiv>
+                    <div className="mt-3 h-px overflow-hidden bg-white/10">
+                        <MotionDiv className="h-full origin-left bg-[#D7DEE0]" style={{ scaleX: indicatorScale }} />
+                    </div>
+                </div>
+            </div>
+        </MotionDiv>
+    );
+};
+
+const ProcessImagePanel: React.FC<{
+    step: ProcessStep;
+    index: number;
+    total: number;
+    progress: any;
+    isRTL: boolean;
+}> = ({ step, index, total, progress, isRTL }) => {
+    const start = index / total;
+    const holdStart = start + 0.07;
+    const holdEnd = (index + 0.86) / total;
+    const exitEnd = (index + 1.08) / total;
+    const opacity = useTransform(progress, [start - 0.04, holdStart, holdEnd, exitEnd], [0, 1, 1, 0]);
+    const x = useTransform(progress, [start, holdStart], [isRTL ? '-4%' : '4%', '0%']);
+    const scale = useTransform(progress, [start, holdStart, exitEnd], [1.035, 1, 1.015]);
+
+    return (
+            <MotionDiv
+            className="process-image-panel absolute inset-0"
+            style={{ opacity, x, zIndex: index + 1 }}
+            >
+                <MotionImg
+                    src={step.image}
+                    alt={`${step.title} process`}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    decoding="async"
+                    className="h-full w-full object-cover"
+                style={{ scale }}
+                />
+            </MotionDiv>
+    );
+};
+
 // --- PRODUCTION PROCESS FLOW ---
-export const ProductionProcessFlow: React.FC<DiagramProps> = ({ lang }) => {
+export const ProductionProcessFlow: React.FC<DiagramProps> = ({ lang, title, desc, action }) => {
     const t = diagramContent[lang];
     const isRTL = lang === 'ar';
+    const stageRef = useRef<HTMLDivElement | null>(null);
+    const { scrollYProgress } = useScroll({
+        target: stageRef,
+        offset: ['start start', 'end end']
+    });
 
     const icons = [
-        <CastingIcon size={30}/>,
-        <Drill size={30}/>,
-        <ExtrusionIcon size={30}/>,
-        <SprayCan size={30}/>,
-        <Ship size={30}/>
+        <CastingIcon size={24}/>,
+        <Drill size={24}/>,
+        <ExtrusionIcon size={24}/>,
+        <SprayCan size={24}/>,
+        <Ship size={24}/>
+    ];
+
+    const images = [
+        '/site-assets/process-casting.png',
+        '/site-assets/process-die-shop.png',
+        '/site-assets/process-extrusion.png',
+        '/site-assets/process-finishing.png',
+        '/site-assets/process-logistics.png'
     ];
 
     const steps = t.process.map((step, idx) => ({
         ...step,
-        icon: icons[idx]
+        icon: icons[idx],
+        image: images[idx]
     }));
 
-    const outcomes = [
-        { label: "Traceability", value: "5 controlled stages" },
-        { label: "Quality gates", value: "In-house inspection" },
-        { label: "Market reach", value: "Port-linked logistics" }
-    ];
-    const outcomeIcons = [<Route size={18} />, <Gauge size={18} />, <Boxes size={18} />];
+    return (
+        <div ref={stageRef} className="process-scroll-stage relative h-[520svh] min-h-[260rem]">
+            <div className="process-sticky-frame sticky flex items-center">
+                <div className="process-sticky-inner mx-auto w-full max-w-[1360px]">
+                    <div className={`process-sticky-header ${isRTL ? 'text-right' : 'text-left md:text-center'}`}>
+                        <h2 className={`font-serif text-white ${isRTL ? 'font-arabic' : ''}`}>
+                            {title || 'Integrated Value Chain'}
+                        </h2>
+                        <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-[#AEBABE] md:text-base">
+                            {desc || 'Complete in-house control from casting to finishing ensures superior quality and traceability.'}
+                        </p>
+                    </div>
 
-  return (
-    <div className="relative w-full overflow-hidden rounded-[2rem] bg-[radial-gradient(ellipse_at_50%_0%,rgba(255,255,218,0.18),transparent_28%),conic-gradient(from_-20deg_at_50%_4%,rgba(255,255,218,0.26),transparent_8%,rgba(180,191,191,0.16)_15%,transparent_24%,rgba(255,255,218,0.18)_31%,transparent_43%,rgba(72,82,84,0.20)_54%,transparent_65%,rgba(255,255,218,0.16)_78%,transparent_88%,rgba(255,255,218,0.24)),linear-gradient(145deg,rgba(246,248,247,0.08),rgba(247,250,252,0.018)_44%,rgba(0,0,0,0.10))] px-5 py-10 md:px-10 md:py-12">
-      <div className="pointer-events-none absolute inset-x-10 top-[7.25rem] hidden h-px bg-[linear-gradient(90deg,transparent,rgba(248,247,188,0.58),rgba(238,244,247,0.48),transparent)] md:block" />
-      <div className="pointer-events-none absolute inset-x-10 top-[7.25rem] hidden h-[2px] bg-[linear-gradient(90deg,transparent,rgba(248,247,188,0.42),rgba(238,244,247,0.62),rgba(156,169,176,0.42),transparent)] opacity-80 md:block" />
+                    <div className="process-panel-shell relative overflow-hidden rounded-lg border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.028)_52%,rgba(0,0,0,0.08))] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_26px_90px_rgba(0,0,0,0.20)] md:p-6 lg:p-7">
+                        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.038)_1px,transparent_1px),linear-gradient(180deg,rgba(255,255,255,0.026)_1px,transparent_1px)] bg-[length:5.5rem_5.5rem] opacity-30" />
+                        <div className="process-flow-layout relative z-10 grid h-full grid-cols-1 gap-5 lg:grid-cols-[minmax(22rem,0.92fr)_minmax(0,1.08fr)] lg:gap-8">
+                            <div className="process-step-stack">
+                                {steps.map((step, idx) => (
+                                    <ProcessStepCard
+                                        key={step.title}
+                                        step={step}
+                                        index={idx}
+                                        total={steps.length}
+                                        progress={scrollYProgress}
+                                        isRTL={isRTL}
+                                    />
+                                ))}
+                            </div>
+                            <div className="process-media-shell relative overflow-hidden rounded-lg border border-white/12 bg-white/[0.045] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_22px_60px_rgba(0,0,0,0.20)]">
+                                <div className="relative h-full overflow-hidden rounded-md">
+                                    {steps.map((step, idx) => (
+                                        <ProcessImagePanel
+                                            key={`image-${step.title}`}
+                                            step={step}
+                                            index={idx}
+                                            total={steps.length}
+                                            progress={scrollYProgress}
+                                            isRTL={isRTL}
+                                        />
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-      <div className="grid grid-cols-1 gap-9 md:grid-cols-5 md:gap-4">
-        {steps.map((step, idx) => (
-          <MotionDiv
-            key={step.title}
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-70px' }}
-            transition={{ delay: idx * 0.07, duration: 0.58, ease: 'easeOut' }}
-            className="group relative flex flex-col items-center text-center"
-          >
-            <div className="relative mb-7 flex h-[8.5rem] w-full items-center justify-center">
-              <div className="absolute h-28 w-28 rounded-full bg-[radial-gradient(circle,rgba(255,255,218,0.18),rgba(238,244,247,0.045)_58%,transparent_70%)] opacity-75 transition-opacity duration-500 group-hover:opacity-100" />
-              <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-[conic-gradient(from_-18deg,rgba(255,255,232,0.98),rgba(170,181,181,0.88),rgba(255,255,210,0.84),rgba(89,101,104,0.84),rgba(255,255,232,0.98))] text-[#344044] shadow-[inset_0_1px_0_rgba(255,255,255,0.9),inset_0_-12px_24px_rgba(45,55,58,0.24),0_18px_42px_rgba(0,0,0,0.30)] ring-1 ring-[#F8F7BC]/40 transition-transform duration-500 group-hover:-translate-y-1 group-hover:text-[#151A1C]">
-                {step.icon}
-              </div>
-              {idx < steps.length - 1 && (
-                <div className={`absolute top-1/2 hidden h-px w-[calc(50%-2.7rem)] bg-white/18 md:block ${isRTL ? 'left-0' : 'right-0'}`} />
-              )}
-              {idx > 0 && (
-                <div className={`absolute top-1/2 hidden h-px w-[calc(50%-2.7rem)] bg-white/18 md:block ${isRTL ? 'right-0' : 'left-0'}`} />
-              )}
+                    {action && (
+                        <div className={`process-flow-footer flex ${isRTL ? 'justify-start' : 'justify-end'}`}>
+                            <button onClick={action.onClick} className="inline-flex items-center gap-2 rounded-full border border-white/16 px-5 py-2.5 text-xs font-bold uppercase tracking-[0.16em] text-[#D7DEE0] transition-colors hover:border-white/32 hover:text-white">
+                                {action.label}
+                            </button>
+                        </div>
+                    )}
+                </div>
             </div>
-
-            <h4 className={`mb-3 font-serif text-2xl text-white ${isRTL ? 'font-arabic' : ''}`}>{step.title}</h4>
-            <p className="max-w-[13.5rem] text-sm leading-relaxed text-[#B8C3C9]">{step.desc}</p>
-          </MotionDiv>
-        ))}
-      </div>
-
-      <MotionDiv
-        initial={{ opacity: 0, y: 18 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.35, duration: 0.55 }}
-        className="mt-12 grid grid-cols-1 gap-y-6 border-t border-white/10 pt-7 md:grid-cols-3 md:divide-x md:divide-white/10"
-      >
-        {outcomes.map((outcome, idx) => (
-          <div
-            key={outcome.label}
-            className="flex items-center justify-center gap-3 px-4 text-center md:justify-start md:text-left"
-          >
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/[0.07] text-[#8FC8DF] ring-1 ring-white/10">
-              {outcomeIcons[idx]}
-            </div>
-            <div>
-              <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/35">{outcome.label}</div>
-              <div className="mt-1 font-serif text-lg text-[#EEF4F7]">{outcome.value}</div>
-            </div>
-          </div>
-        ))}
-      </MotionDiv>
-    </div>
-  );
+        </div>
+    );
 };
 // --- CAPACITY GROWTH CHART ---
 export const CapacityGrowthChart: React.FC<DiagramProps> = ({ lang }) => {
