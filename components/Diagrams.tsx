@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Building2, Factory, Car, Zap, Hammer, ArrowRight, ShieldCheck, Settings, Truck, Boxes, Gauge, Route } from 'lucide-react';
+import { Building2, Factory, Car, ShieldCheck, Boxes, Gauge, Route, FlameKindling, Drill, ArrowRightLeft, SprayCan, Ship } from 'lucide-react';
 
 // Fix for Framer Motion types in strict environments
 const MotionDiv = motion.div as any;
@@ -191,11 +191,11 @@ export const ProductionProcessFlow: React.FC<DiagramProps> = ({ lang }) => {
     const isRTL = lang === 'ar';
 
     const icons = [
-        <Hammer size={30}/>,
-        <Settings size={30}/>,
-        <Factory size={30}/>,
-        <Zap size={30}/>,
-        <Truck size={30}/>
+        <FlameKindling size={30}/>,
+        <Drill size={30}/>,
+        <ArrowRightLeft size={30}/>,
+        <SprayCan size={30}/>,
+        <Ship size={30}/>
     ];
 
     const steps = t.process.map((step, idx) => ({
