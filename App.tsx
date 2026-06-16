@@ -1522,13 +1522,13 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
             <ShieldCheck size={18} /> {t.error}
           </div>
         )}
-        <div className="news-hero-row flex flex-col lg:flex-row gap-12 items-end mb-20">
+        <div className="news-hero-row flex flex-col lg:flex-row gap-6 items-end mb-10">
           <div className="flex-1">
             <SectionHeading title={t.title} subtitle={t.subtitle} lang={lang} />
-            <p className="text-gray-600 text-lg max-w-2xl leading-relaxed">{t.desc}</p>
+            <p className="text-gray-600 text-base max-w-2xl leading-relaxed">{t.desc}</p>
           </div>
-          <div className="news-updated-card flex items-center gap-4 px-6 py-3 bg-gray-50 border border-gray-100 rounded-sm">
-            <Clock className="text-nasr-blue" size={20} />
+          <div className="news-updated-card flex items-center gap-3 px-4 py-3 bg-gray-50 border border-gray-100 rounded-sm">
+            <Clock className="text-nasr-blue" size={18} />
             <div>
               <div className="text-[10px] uppercase font-bold text-gray-400 tracking-widest">{t.lastUpdated}</div>
               <div className="text-sm font-bold text-nasr-dark">{lastUpdated || t.unavailable}</div>
@@ -1541,29 +1541,29 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
           whileInView={{ opacity: 1, y: 0 }}
           className="news-content-stack space-y-8"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="news-price-grid grid grid-cols-1 lg:grid-cols-2 gap-4">
             {(parsedNews.prices.length ? parsedNews.prices : []).map((item, idx) => (
               <a
                 key={`${item.symbol}-${idx}`}
                 href={item.url}
                 target="_blank"
                 rel="noreferrer"
-                className="news-price-card group relative overflow-hidden bg-[#102633] text-white p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-500"
+                className="news-price-card group relative overflow-hidden bg-[#102633] text-white p-5 md:p-6 shadow-sm hover:shadow-xl transition-all duration-500"
               >
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_18%,rgba(0,159,227,0.22),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.05),transparent)]"></div>
                 <div className="relative">
-                  <div className="flex items-center justify-between gap-4 mb-8">
-                    <div className="text-xs font-bold uppercase tracking-[0.22em] text-nasr-accent">{item.label}</div>
-                    <TrendingUp size={22} className="text-nasr-accent" />
+                  <div className="flex items-center justify-between gap-4 mb-5">
+                    <div className="text-[11px] font-bold uppercase tracking-[0.16em] text-nasr-accent">{item.label}</div>
+                    <TrendingUp size={19} className="text-nasr-accent" />
                   </div>
-                  <div className="font-serif text-5xl md:text-6xl font-semibold mb-3">{item.price}</div>
-                  <div className="grid grid-cols-2 gap-4 text-sm text-gray-300 mb-6">
+                  <div className="font-serif text-4xl md:text-5xl font-semibold mb-4">{item.price}</div>
+                  <div className="grid grid-cols-2 gap-x-5 gap-y-3 text-xs text-gray-300 mb-4">
                     <div><span className="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Symbol</span>{item.symbol}</div>
                     <div><span className="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Source</span>{item.source}</div>
                     <div><span className="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Ref Date</span>{item.date}</div>
                     <div><span className="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Time</span>{item.time || "N/A"}</div>
                   </div>
-                  {item.status && <p className="text-xs leading-relaxed text-gray-300 border-t border-white/10 pt-4">{item.status}</p>}
+                  {item.status && <p className="text-[11px] leading-relaxed text-gray-300 border-t border-white/10 pt-3">{item.status}</p>}
                 </div>
               </a>
             ))}
@@ -1572,19 +1572,19 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
             )}
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="news-columns grid grid-cols-1 lg:grid-cols-2 gap-4">
             {[
               { title: "NewsAPI", items: parsedNews.newsapi },
               { title: "GNews", items: parsedNews.gnews },
               ...(parsedNews.googleRss.length ? [{ title: "Google News RSS", items: parsedNews.googleRss }] : []),
             ].map((group) => (
-              <div key={group.title} className="news-source-panel bg-white border border-gray-100 shadow-sm p-6 md:p-8">
-                <div className="flex items-center justify-between gap-4 mb-6">
+              <div key={group.title} className="news-source-panel bg-white border border-gray-100 shadow-sm p-5 md:p-6">
+                <div className="flex items-center justify-between gap-4 mb-4">
                   <div>
-                    <div className="text-xs font-bold uppercase tracking-[0.25em] text-nasr-blue mb-2">{group.title}</div>
-                    <h3 className="font-serif text-2xl text-nasr-dark">Latest Aluminum Headlines</h3>
+                    <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-nasr-blue mb-1">{group.title}</div>
+                    <h3 className="font-serif text-xl text-nasr-dark">Latest Aluminum Headlines</h3>
                   </div>
-                  <Newspaper className="text-gray-300" size={26} />
+                  <Newspaper className="text-gray-300" size={22} />
                 </div>
                 <div className="divide-y divide-gray-100">
                   {group.items.length ? group.items.map((item, idx) => (
@@ -1593,13 +1593,13 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
                       href={item.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="group block py-5 first:pt-0 last:pb-0"
+                      className="group block py-3 first:pt-0 last:pb-0"
                     >
                       <div className="flex items-start justify-between gap-4">
-                        <h4 className="text-base font-bold leading-snug text-nasr-dark group-hover:text-nasr-blue transition-colors">{item.title}</h4>
-                        <ExternalLink size={16} className="mt-1 shrink-0 text-gray-300 group-hover:text-nasr-blue transition-colors" />
+                        <h4 className="text-sm font-semibold leading-snug text-nasr-dark group-hover:text-nasr-blue transition-colors">{item.title}</h4>
+                        <ExternalLink size={14} className="mt-1 shrink-0 text-gray-300 group-hover:text-nasr-blue transition-colors" />
                       </div>
-                      <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500">
+                      <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-gray-500">
                         <span className="font-semibold text-gray-700">{item.source}</span>
                         <span>{formatPublishedDate(item.published)}</span>
                       </div>

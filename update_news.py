@@ -9,6 +9,7 @@ import urllib.error
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from functools import wraps
+from html.parser import HTMLParser
 
 try:
     import requests
@@ -59,7 +60,8 @@ except ModuleNotFoundError:
 MIN_PRICE_THRESHOLD = 2700.0
 MAX_RETRIES = 3
 RETRY_BASE_DELAY = 2
-STOOQ_ALUMINUM_URL = "https://stooq.com/q/l/?s=al.f&f=sd2t2ohlcv&h&e=csv"
+WESTMETALL_LME_AL_CASH_TABLE_URL = "https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash"
+WESTMETALL_LME_AL_CASH_AVERAGES_URL = "https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash"
 GOOGLE_NEWS_RSS_URL = "https://news.google.com/rss/search"
 
 # MiniMax API config - set via environment variable in GitHub Secrets
@@ -524,60 +526,107 @@ def dedupe_cross_sources(newsapi_articles: list[dict], gnews_articles: list[dict
     return clean_newsapi, clean_gnews
 
 
+class _WestmetallTableParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self._in_row = False
+        self._in_cell = False
+        self._cell_parts: list[str] = []
+        self._row: list[str] = []
+        self.rows: list[list[str]] = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "tr":
+            self._in_row = True
+            self._row = []
+        elif self._in_row and tag in ("td", "th"):
+            self._in_cell = True
+            self._cell_parts = []
+
+    def handle_data(self, data):
+        if self._in_cell:
+            self._cell_parts.append(data)
+
+    def handle_endtag(self, tag):
+        if tag in ("td", "th") and self._in_cell:
+            cell = " ".join("".join(self._cell_parts).split())
+            self._row.append(cell)
+            self._in_cell = False
+        elif tag == "tr" and self._in_row:
+            if self._row:
+                self.rows.append(self._row)
+            self._in_row = False
+
+
+def _parse_westmetall_rows(html: str) -> list[list[str]]:
+    parser = _WestmetallTableParser()
+    parser.feed(html)
+    return [
+        row for row in parser.rows
+        if len(row) >= 2 and row[0].lower() not in ("date", "month")
+    ]
+
+
+def _format_usd_per_tonne(value: str) -> str:
+    return f"${value.strip()}/t"
+
+
 def fetch_latest_aluminum_price() -> tuple[list[dict], str]:
-    """
-    Stable no-key market data channel. Stooq AL.F is used as an aluminum futures
-    reference because the official LME website blocks automated requests and
-    public LME cash APIs are not reliably available without a paid key.
-    """
-    today = datetime.now(timezone.utc).date()
+    """Fetch LME aluminium cash data from Westmetall's public market tables."""
+    items: list[dict] = []
+    errors: list[str] = []
+
     try:
-        response = requests.get(STOOQ_ALUMINUM_URL, timeout=30)
+        response = requests.get(WESTMETALL_LME_AL_CASH_TABLE_URL, timeout=30)
         response.raise_for_status()
-        rows = [line.strip() for line in response.text.splitlines() if line.strip()]
-        if len(rows) < 2:
-            return [], "EMPTY"
-
-        headers = [h.strip() for h in rows[0].split(",")]
-        values = [v.strip() for v in rows[1].split(",")]
-        record = dict(zip(headers, values))
-        date_text = record.get("Date") or ""
-        close_text = record.get("Close") or ""
-
-        if not date_text or date_text == "N/D" or not close_text or close_text == "N/D":
-            return [], "EMPTY"
-
-        ref_date = datetime.strptime(date_text, "%Y-%m-%d").date()
-        age_days = (today - ref_date).days
-        is_today_weekend = today.weekday() >= 5
-        note = "Latest available market close."
-        freshness = "current"
-
-        if age_days > 0:
-            freshness = "stale"
-            if is_today_weekend:
-                note = f"No weekend session. Showing latest available close from {ref_date.isoformat()}."
-            else:
-                note = f"No newer market close available yet. Showing latest available close from {ref_date.isoformat()}."
-
-        price_item = {
-            "label": "Aluminum Futures Reference",
-            "symbol": record.get("Symbol", "AL.F"),
-            "price": close_text,
-            "date": ref_date.isoformat(),
-            "time": record.get("Time", ""),
-            "source": "Stooq",
-            "url": STOOQ_ALUMINUM_URL,
-            "freshness": freshness,
-            "note": note,
-            "open": record.get("Open", ""),
-            "high": record.get("High", ""),
-            "low": record.get("Low", ""),
-        }
-        return [price_item], "OK" if freshness == "current" else "STALE"
+        rows = _parse_westmetall_rows(response.text)
+        if rows:
+            latest = rows[0]
+            ref_date = datetime.strptime(latest[0], "%d. %B %Y").date().isoformat()
+            items.append({
+                "label": "LME Aluminium Cash-Settlement",
+                "symbol": "LME Al Cash",
+                "price": _format_usd_per_tonne(latest[1]),
+                "date": ref_date,
+                "time": "Cash settlement",
+                "source": "Westmetall",
+                "url": WESTMETALL_LME_AL_CASH_TABLE_URL,
+                "note": "Latest published LME aluminium cash settlement from Westmetall.",
+            })
+        else:
+            errors.append("daily table empty")
     except Exception as e:
-        print(f"Error fetching Stooq aluminum price: {e}")
-        return [], f"FAIL: {e}"
+        print(f"Error fetching Westmetall daily aluminum price: {e}")
+        errors.append(f"daily failed: {e}")
+
+    try:
+        response = requests.get(WESTMETALL_LME_AL_CASH_AVERAGES_URL, timeout=30)
+        response.raise_for_status()
+        rows = _parse_westmetall_rows(response.text)
+        if rows:
+            latest_average = rows[0]
+            year = datetime.now(timezone.utc).year
+            items.append({
+                "label": "Monthly Average Cash-Settlement",
+                "symbol": "LME Al Cash Avg",
+                "price": _format_usd_per_tonne(latest_average[1]),
+                "date": f"{latest_average[0]} {year}",
+                "time": "Monthly average",
+                "source": "Westmetall",
+                "url": WESTMETALL_LME_AL_CASH_AVERAGES_URL,
+                "note": "Current-year monthly average cash settlement from Westmetall.",
+            })
+        else:
+            errors.append("monthly average table empty")
+    except Exception as e:
+        print(f"Error fetching Westmetall monthly aluminum average: {e}")
+        errors.append(f"monthly failed: {e}")
+
+    if items and errors:
+        return items, "PARTIAL"
+    if items:
+        return items, "OK"
+    return [], "FAIL: " + "; ".join(errors) if errors else "EMPTY"
 
 
 def fetch_google_news_rss_fallback(max_results: int = 12) -> tuple[list[dict], str]:
@@ -884,7 +933,7 @@ def render_md(data, current_time_utc: str, status: dict) -> str:
         for item in items:
             if key == "lme":
                 lines.append(
-                    f"- {item.get('label', 'Aluminum Price')}: `{item.get('price')}` | Symbol: `{item.get('symbol', 'AL.F')}` | Ref Date: {item.get('date')} | Time: {item.get('time', '')} | Source: {item.get('source', 'N/A')} [Link]({item.get('url', STOOQ_ALUMINUM_URL)})"
+                    f"- {item.get('label', 'Aluminum Price')}: `{item.get('price')}` | Symbol: `{item.get('symbol', 'LME Al Cash')}` | Ref Date: {item.get('date')} | Time: {item.get('time', '')} | Source: {item.get('source', 'N/A')} [Link]({item.get('url', WESTMETALL_LME_AL_CASH_TABLE_URL)})"
                 )
                 note = (item.get("note") or "").strip()
                 if note:
@@ -918,7 +967,7 @@ def render_md(data, current_time_utc: str, status: dict) -> str:
 # Main
 # -----------------------------
 def main():
-    now = datetime.utcnow()
+    now = datetime.now(timezone.utc)
     current_time_utc = now.strftime("%Y-%m-%d %H:%M:%S")
     price_data, price_status = fetch_latest_aluminum_price()
 
