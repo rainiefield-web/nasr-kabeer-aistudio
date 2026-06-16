@@ -83,6 +83,7 @@ body {
 
 .process-flow-layout {
   min-height: 0;
+  overflow: hidden;
 }
 
 .process-step-stack {
@@ -211,8 +212,8 @@ body {
   }
 
   .process-flow-layout {
-    grid-template-rows: minmax(10rem, 38%) minmax(0, 1fr);
-    gap: 0.75rem;
+    grid-template-rows: minmax(8.75rem, 32%) minmax(0, 1fr);
+    gap: 0.9rem;
   }
 
   .process-media-shell {
@@ -221,7 +222,9 @@ body {
   }
 
   .process-step-stack {
+    align-content: start;
     gap: 0.42rem;
+    overflow: hidden;
   }
 
   .process-stage-title {
@@ -245,6 +248,7 @@ body {
   .process-step-desc p {
     font-size: 0.78rem;
     line-height: 1.38;
+    margin-top: 0.38rem;
   }
 
   .process-flow-footer {
@@ -256,6 +260,80 @@ body {
     justify-content: center;
     padding-block: 0.7rem;
     font-size: 0.66rem;
+  }
+}
+
+@media (max-width: 767px) and (max-height: 720px) {
+  .process-sticky-frame {
+    top: 4.45rem;
+    height: calc(100svh - 4.45rem);
+  }
+
+  .process-sticky-inner {
+    gap: 0.42rem;
+    padding-block: 0.48rem;
+  }
+
+  .process-sticky-header h2 {
+    font-size: clamp(1.48rem, 6vw, 1.9rem);
+  }
+
+  .process-sticky-header p {
+    margin-top: 0.28rem;
+    font-size: 0.72rem;
+    line-height: 1.25;
+    max-height: 2rem;
+    overflow: hidden;
+  }
+
+  .process-panel-shell {
+    padding: 0.62rem;
+  }
+
+  .process-flow-layout {
+    grid-template-rows: minmax(6.8rem, 28%) minmax(0, 1fr);
+    gap: 0.55rem;
+  }
+
+  .process-media-shell {
+    padding: 0.38rem;
+  }
+
+  .process-step-stack {
+    gap: 0.3rem;
+  }
+
+  .process-step-card {
+    border-radius: 0.62rem;
+    padding: 0.3rem 0.42rem;
+  }
+
+  .process-step-row {
+    gap: 0.55rem;
+  }
+
+  .process-stage-icon {
+    width: 2.05rem !important;
+    height: 2.05rem !important;
+  }
+
+  .process-stage-title {
+    font-size: clamp(0.98rem, 4.7vw, 1.16rem);
+  }
+
+  .process-step-desc p {
+    margin-top: 0.2rem;
+    font-size: 0.68rem;
+    line-height: 1.22;
+  }
+
+  .process-step-rule {
+    margin-top: 0.32rem;
+  }
+
+  .process-flow-footer button {
+    padding-block: 0.48rem;
+    font-size: 0.58rem;
   }
 }
 
