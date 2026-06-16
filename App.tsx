@@ -1388,6 +1388,14 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
     ? extractMarkdownSection(newsMarkdown, lang === 'ar' ? 'Arabic' : 'English')
     : '';
   const parsedNews = parseNewsReport(displayMarkdown);
+  const dailyHeadlines = [
+    ...parsedNews.newsapi,
+    ...parsedNews.gnews,
+    ...parsedNews.googleRss,
+  ].filter((item, idx, all) => {
+    const key = item.url || item.title;
+    return all.findIndex((candidate) => (candidate.url || candidate.title) === key) === idx;
+  });
 
   useEffect(() => {
     const fetchLatestNews = async (isBackgroundUpdate = false) => {
@@ -1572,44 +1580,38 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
             )}
           </div>
 
-          <div className="news-columns grid grid-cols-1 lg:grid-cols-2 gap-4">
-            {[
-              { title: "NewsAPI", items: parsedNews.newsapi },
-              { title: "GNews", items: parsedNews.gnews },
-              ...(parsedNews.googleRss.length ? [{ title: "Google News RSS", items: parsedNews.googleRss }] : []),
-            ].map((group) => (
-              <div key={group.title} className="news-source-panel bg-white border border-gray-100 shadow-sm p-5 md:p-6">
-                <div className="flex items-center justify-between gap-4 mb-4">
-                  <div>
-                    <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-nasr-blue mb-1">{group.title}</div>
-                    <h3 className="font-serif text-xl text-nasr-dark">Latest Aluminum Headlines</h3>
-                  </div>
-                  <Newspaper className="text-gray-300" size={22} />
+          <div className="news-columns grid grid-cols-1 gap-4">
+            <div className="news-source-panel bg-white border border-gray-100 shadow-sm p-5 md:p-6">
+              <div className="flex items-center justify-between gap-4 mb-4">
+                <div>
+                  <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-nasr-blue mb-1">Automatically collected today</div>
+                  <h3 className="font-serif text-xl text-nasr-dark">Daily Aluminum News From External Sources</h3>
                 </div>
-                <div className="divide-y divide-gray-100">
-                  {group.items.length ? group.items.map((item, idx) => (
-                    <a
-                      key={`${group.title}-${item.url}-${idx}`}
-                      href={item.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="group block py-3 first:pt-0 last:pb-0"
-                    >
-                      <div className="flex items-start justify-between gap-4">
-                        <h4 className="text-sm font-semibold leading-snug text-nasr-dark group-hover:text-nasr-blue transition-colors">{item.title}</h4>
-                        <ExternalLink size={14} className="mt-1 shrink-0 text-gray-300 group-hover:text-nasr-blue transition-colors" />
-                      </div>
-                      <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-gray-500">
-                        <span className="font-semibold text-gray-700">{item.source}</span>
-                        <span>{formatPublishedDate(item.published)}</span>
-                      </div>
-                    </a>
-                  )) : (
-                    <div className="py-8 text-sm text-gray-500">{t.unavailable}</div>
-                  )}
-                </div>
+                <Newspaper className="text-gray-300" size={22} />
               </div>
-            ))}
+              <div className="divide-y divide-gray-100 md:grid md:grid-cols-2 md:gap-x-6 md:divide-y-0">
+                {dailyHeadlines.length ? dailyHeadlines.map((item, idx) => (
+                  <a
+                    key={`${item.url}-${idx}`}
+                    href={item.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group block py-3 first:pt-0 md:first:pt-3"
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <h4 className="text-sm font-semibold leading-snug text-nasr-dark group-hover:text-nasr-blue transition-colors">{item.title}</h4>
+                      <ExternalLink size={14} className="mt-1 shrink-0 text-gray-300 group-hover:text-nasr-blue transition-colors" />
+                    </div>
+                    <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-gray-500">
+                      <span className="font-semibold text-gray-700">{item.source}</span>
+                      <span>{formatPublishedDate(item.published)}</span>
+                    </div>
+                  </a>
+                )) : (
+                  <div className="py-8 text-sm text-gray-500">{t.unavailable}</div>
+                )}
+              </div>
+            </div>
           </div>
 
           {newsMarkdown && !parsedNews.prices.length && !parsedNews.newsapi.length && !parsedNews.gnews.length && !parsedNews.googleRss.length && (
