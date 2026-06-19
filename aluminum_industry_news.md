@@ -1,24 +1,25 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-06-18 11:47:46`
-Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
+Last Updated (UTC): `2026-06-19 12:02:03`
+Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,405.50/t` | Symbol: `LME Al Cash` | Ref Date: 2026-06-17 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+- LME Aluminium Cash-Settlement: `$3,402.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-06-18 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,608.27/t` | Symbol: `LME Al Cash Avg` | Ref Date: June 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+- Monthly Average Cash-Settlement: `$3,593.54/t` | Symbol: `LME Al Cash Avg` | Ref Date: June 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
+### Latest Headlines (from NewsAPI)
+- Duty tweaking required to boost domestic aluminium-based manufacturing: GTRI | Source: The Times of India | Published: 2026-06-18T11:04:27Z [Link](https://economictimes.indiatimes.com/industry/indl-goods/svs/metals-mining/duty-tweaking-required-to-boost-domestic-aluminium-based-manufacturing-gtri/articleshow/131827916.cms)
+
 ### Latest Headlines (from GNews)
-- 'Buy Vedanta Aluminium', Citi says calling it top India metal pick; Here are four reasons why | Source: CNBC TV18 | Published: 2026-06-17T23:40:10Z [Link](https://www.cnbctv18.com/market/vedanta-aluminium-share-price-citi-says-buy-target-upside-triggers-top-metal-pick-19927496.htm)
-- Trump says he would 'rather not' have CUSMA, offers conflicting message on its future | Source: SooToday | Published: 2026-06-17T21:34:47Z [Link](https://www.sootoday.com/national-news/trump-says-he-would-rather-not-have-cusma-offers-conflicting-message-on-its-future-12436671)
-- Odisha govt approves 20 mega investment proposals worth Rs 76,612 crore | Source: News18 | Published: 2026-06-17T17:15:02Z [Link](https://www.news18.com/agency-feeds/odisha-govt-approves-20-mega-investment-proposals-worth-rs-76612-crore-10156911.html)
-- Newly Listed Vedanta Power Eyes Hydro, Battery Storage, Nuclear Energy For Future Growth | Source: NDTV Profit | Published: 2026-06-17T13:22:16Z [Link](https://www.ndtvprofit.com/business/newly-listed-vedanta-power-eyes-hydro-battery-storage-nuclear-energy-for-future-growth-11649865)
-- Dhabriya Polywood FY26 PAT rises 67.2% to ₹30.14 crore | Source: scanx.trade | Published: 2026-06-17T13:17:56Z [Link](https://scanx.trade/stock-market-news/companies/dhabriya-polywood-fy26-pat-rises-67-2-to-30-14-crore/43247861)
-- Shyam Metalics & Energy outlines capacity expansion roadmap | Source: scanx.trade | Published: 2026-06-17T10:24:23Z [Link](https://scanx.trade/stock-market-news/companies/shyam-metalics-energy-outlines-capacity-expansion-roadmap/43237448)
-- Capitalmind Flexi Cap Fund adds Nestle India and 10 others, exits SBI and 14 others in May | Source: The Economic Times | Published: 2026-06-17T08:51:00Z [Link](https://economictimes.indiatimes.com/mf/analysis/capitalmind-flexi-cap-fund-adds-nestle-india-and-10-others-exits-sbi-and-14-others-in-may/articleshow/131793374.cms)
-- Sensex tops 77,000, Nifty reclaims 24,000 as softer crude boosts sentiment ahead of US Fed decision, IT stocks shine | Source: The Hindu Business Line | Published: 2026-06-17T04:40:58Z [Link](https://www.thehindubusinessline.com/markets/sensex-tops-77000-nifty-reclaims-24000-as-softer-crude-boosts-sentiment-ahead-of-us-fed-decision-it-stocks-shine/article71112056.ece)
-- Mike Mazzei and Gentner Drummond advance to GOP runoff in Oklahoma governor contest | Source: NBC News | Published: 2026-06-17T01:59:17Z [Link](https://www.nbcnews.com/politics/2026-election/mike-mazzei-gentner-drummond-advance-runoff-oklahoma-gop-governor-cont-rcna350034)
-- Aluminium stocks slide as US-Iran deal eases supply fears, ends war-driven rally | Source: The Economic Times | Published: 2026-06-17T00:47:00Z [Link](https://economictimes.indiatimes.com/markets/stocks/news/aluminium-stocks-slide-as-us-iran-deal-eases-supply-fears-ends-war-driven-rally/articleshow/131783797.cms)
-- Aluminum Rises as Traders Weigh Chinese Output, Mideast Supply | Source: Livemint | Published: 2026-06-17T00:17:38Z [Link](https://www.livemint.com/market/aluminum-rises-as-traders-weigh-chinese-output-mideast-supply-11781655458554.html)
+- India to set up mega aluminium extrusion facility for defence aerospace needs | Source: The Tribune | Published: 2026-06-18T19:35:51Z [Link](https://www.tribuneindia.com/news/india/india-to-set-up-mega-aluminium-extrusion-facility-for-defence-aerospace-needs/)
+- Forged Solutions Group Completes Acquisition of Custom Alloy | Source: PR Newswire UK | Published: 2026-06-18T15:48:00Z [Link](https://www.prnewswire.co.uk/news-releases/forged-solutions-group-completes-acquisition-of-custom-alloy-302804603.html)
+- Deal Gives Iran Chance to Turbocharge Its Oil -2- | Source: MarketScreener | Published: 2026-06-18T15:28:57Z [Link](https://www.marketscreener.com/news/deal-gives-iran-chance-to-turbocharge-its-oil-2-ce7f5cddd18ff321)
+- Best luggage brands 2026, recommended by travel experts | Source: Evening Standard | Published: 2026-06-18T11:21:09Z [Link](https://www.standard.co.uk/shopping/esbest/fashion/bags/best-luggage-brands-suitcase-b1286610.html)
+- India should curb primary aluminium exports to boost manufacturing: GTRI | Source: Business Standard | Published: 2026-06-18T10:49:16Z [Link](https://www.business-standard.com/industry/news/india-should-curb-primary-aluminium-exports-to-boost-manufacturing-gtri-126061800737_1.html)
+- Defence Minister Rajnath Singh to perform bhoomi pujan for 10,000-tons aluminium extrusion press at Yantra India Limited in Nagpur | Source: Devdiscourse | Published: 2026-06-18T06:52:06Z [Link](https://www.devdiscourse.com/article/headlines/3936619-defence-minister-rajnath-singh-to-perform-bhoomi-pujan-for-10000-tons-aluminium-extrusion-press-at-yantra-india-limited-in)
+- Statkraft and Alcoa sign new power agreements to secure energy supply for the aluminium plant in Southern Norway | Source: The Manila Times | Published: 2026-06-18T06:50:14Z [Link](https://www.manilatimes.net/2026/06/18/tmt-newswire/globenewswire/statkraft-and-alcoa-sign-new-power-agreements-to-secure-energy-supply-for-the-aluminium-plant-in-southern-norway/2368124)
+- Statkraft and Alcoa sign new power agreements to secure | Source: GlobeNewswire | Published: 2026-06-18T06:30:00Z [Link](https://www.globenewswire.com/news-release/2026/06/18/3313939/0/en/statkraft-and-alcoa-sign-new-power-agreements-to-secure-energy-supply-for-the-aluminium-plant-in-southern-norway.html)
+- Hindalco, Coal India: UBS turns selectively bullish on Indian metal sector | Source: Business Standard | Published: 2026-06-18T05:39:51Z [Link](https://www.business-standard.com/markets/news/hindalco-coal-india-ubs-turns-selectively-bullish-on-indian-metal-sector-126061800319_1.html)
