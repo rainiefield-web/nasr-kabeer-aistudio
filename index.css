@@ -551,7 +551,17 @@ body {
     }
 
     .raw-metal-hero-video-shell.is-ready {
-      opacity: 0.54;
+      opacity: 0.74;
+    }
+
+    .raw-metal-hero-video-shell::after {
+      background:
+        radial-gradient(ellipse at 54% 53%, transparent 0 34%, rgba(17, 20, 20, 0.12) 52%, rgba(17, 20, 20, 0.48) 78%, rgba(17, 20, 20, 0.70) 100%),
+        linear-gradient(90deg, rgba(17, 20, 20, 0.58), rgba(17, 20, 20, 0.10) 34%, transparent 54%, rgba(17, 20, 20, 0.12) 72%, rgba(17, 20, 20, 0.62));
+    }
+
+    .raw-metal-hero-video-media {
+      filter: contrast(1.04) brightness(1.22) saturate(1.08);
     }
   }
 
