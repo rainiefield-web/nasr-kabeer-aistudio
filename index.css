@@ -26,6 +26,22 @@
     overflow-x: clip;
   }
 
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p,
+  li {
+    text-wrap: pretty;
+  }
+
   img {
     max-width: 100%;
   }
@@ -713,7 +729,7 @@ body {
 
   .metal-cta:active,
   .metal-cta-secondary:active {
-    transform: translateY(1px) scale(0.985);
+    transform: translateY(1px) scale(0.96);
   }
 
   .metal-cta:active::after,
@@ -806,6 +822,8 @@ body {
     height: 100%;
     object-fit: contain;
     display: block;
+    outline: 1px solid rgba(0, 0, 0, 0.1);
+    outline-offset: -1px;
     transform: translateZ(0);
     user-select: none;
     -webkit-user-drag: none;
@@ -844,6 +862,8 @@ body {
     object-fit: contain;
     display: block;
     background: rgba(246, 249, 250, 0.9);
+    outline: 1px solid rgba(0, 0, 0, 0.1);
+    outline-offset: -1px;
   }
 
   .about-showcase-thumb:hover,
@@ -1245,13 +1265,17 @@ body {
     font-weight: 800;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    transition: background 240ms ease, transform 240ms ease;
+    transition: background 240ms ease, color 240ms ease, transform 240ms ease;
   }
 
   .products-cta-button:hover {
     background: rgb(255, 255, 255);
     color: rgb(17, 24, 39);
     transform: translateY(-2px);
+  }
+
+  .products-cta-button:active {
+    transform: translateY(1px) scale(0.96);
   }
 
   @media (prefers-reduced-motion: reduce) {

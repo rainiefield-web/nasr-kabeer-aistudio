@@ -152,7 +152,7 @@ export const ProductCategoryGrid: React.FC<DiagramProps> = ({ lang }) => {
           <button
             key={key}
             onClick={() => setActiveCategory(key)}
-            className={`flex-1 lg:flex-none min-w-[120px] p-3 md:p-4 lg:p-6 text-left transition-all duration-300 group relative overflow-hidden flex flex-col lg:block items-center justify-center lg:items-start ${activeCategory === key ? 'bg-white text-nasr-dark shadow-md z-10' : 'text-gray-500 hover:bg-gray-100'}`}
+            className={`flex-1 lg:flex-none min-w-[120px] p-3 md:p-4 lg:p-6 text-left transition-[background-color,color,box-shadow] duration-300 group relative overflow-hidden flex flex-col lg:block items-center justify-center lg:items-start ${activeCategory === key ? 'bg-white text-nasr-dark shadow-md z-10' : 'text-gray-500 hover:bg-gray-100'}`}
             style={{ textAlign: isRTL ? 'right' : 'left' }}
           >
             {/* Desktop Active Indicator (Side) */}
@@ -419,7 +419,7 @@ export const CapacityGrowthChart: React.FC<DiagramProps> = ({ lang }) => {
                             <button
                                 key={phase.id}
                                 onClick={() => setActivePhase(phase.id)}
-                                className={`w-full rounded-full px-4 py-3 transition-all duration-500 ease-out ${activePhase === phase.id ? 'bg-white/82 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_14px_30px_rgba(22,29,32,0.10)] ring-1 ring-[#DCE2E2]' : 'bg-white/18 hover:bg-white/42'}`}
+                                className={`w-full rounded-full px-4 py-3 transition-[background-color,box-shadow] duration-500 ease-out ${activePhase === phase.id ? 'bg-white/82 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_14px_30px_rgba(22,29,32,0.10)] ring-1 ring-[#DCE2E2]' : 'bg-white/18 hover:bg-white/42'}`}
                             >
                                 <div className="flex items-center justify-between gap-3">
                                     <div className="flex min-w-0 items-center gap-3">

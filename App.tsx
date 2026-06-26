@@ -1556,7 +1556,7 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
                 href={item.url}
                 target="_blank"
                 rel="noreferrer"
-                className="news-price-card group relative overflow-hidden bg-[#102633] text-white p-5 md:p-6 shadow-sm hover:shadow-xl transition-all duration-500"
+                className="news-price-card group relative overflow-hidden bg-[#102633] text-white p-5 md:p-6 shadow-sm hover:shadow-xl transition-[box-shadow,transform,background-color] duration-500"
               >
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_18%,rgba(0,159,227,0.22),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.05),transparent)]"></div>
                 <div className="relative">
@@ -1639,7 +1639,7 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`integrated-tab flex-1 py-4 px-4 md:px-6 text-sm md:text-base font-serif font-bold uppercase tracking-wider transition-all duration-300 relative ${activeTab === tab ? 'is-active text-nasr-blue bg-gray-50' : 'text-gray-500 hover:text-gray-800'}`}
+            className={`integrated-tab flex-1 py-4 px-4 md:px-6 text-sm md:text-base font-serif font-bold uppercase tracking-wider transition-[background-color,color,box-shadow] duration-300 relative ${activeTab === tab ? 'is-active text-nasr-blue bg-gray-50' : 'text-gray-500 hover:text-gray-800'}`}
           >
             {t.tabs[tab]}
             {activeTab === tab && (
@@ -1683,7 +1683,7 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
                   </div>
 
                   {i === 1 && (
-                    <div className={`hidden lg:block absolute ${isRTL ? 'right-full mr-8' : 'left-full ml-8'} top-1/2 -translate-y-1/2 transition-all duration-300 z-20 cursor-pointer ${activeTab === 'die' ? 'scale-110 opacity-100' : 'scale-100 opacity-60 hover:opacity-100'}`} onClick={(e) => { e.stopPropagation(); setActiveTab('die'); }}>
+                    <div className={`hidden lg:block absolute ${isRTL ? 'right-full mr-8' : 'left-full ml-8'} top-1/2 -translate-y-1/2 transition-[transform,opacity] duration-300 z-20 cursor-pointer ${activeTab === 'die' ? 'scale-110 opacity-100' : 'scale-100 opacity-60 hover:opacity-100'}`} onClick={(e) => { e.stopPropagation(); setActiveTab('die'); }}>
                       <div className="flex items-center">
                         <div className={`absolute ${isRTL ? '-left-8' : '-right-8'} top-1/2 -translate-y-1/2 w-8 h-0.5 bg-nasr-red`}></div>
                         <div className={`w-40 p-3 bg-white border-l-4 border-nasr-red shadow-lg rounded-sm ${activeTab === 'die' ? 'ring-2 ring-nasr-red/30' : ''}`}>
@@ -1698,7 +1698,7 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
                   )}
 
                   {i === 3 && (
-                    <div className={`hidden lg:block absolute ${isRTL ? 'left-full ml-8' : 'right-full mr-8'} top-1/2 -translate-y-1/2 transition-all duration-300 z-20 cursor-pointer ${activeTab === 'powder' ? 'scale-110 opacity-100' : 'scale-100 opacity-60 hover:opacity-100'}`} onClick={(e) => { e.stopPropagation(); setActiveTab('powder'); }}>
+                    <div className={`hidden lg:block absolute ${isRTL ? 'left-full ml-8' : 'right-full mr-8'} top-1/2 -translate-y-1/2 transition-[transform,opacity] duration-300 z-20 cursor-pointer ${activeTab === 'powder' ? 'scale-110 opacity-100' : 'scale-100 opacity-60 hover:opacity-100'}`} onClick={(e) => { e.stopPropagation(); setActiveTab('powder'); }}>
                       <div className="flex items-center">
                         <div className={`absolute ${isRTL ? '-right-8' : '-left-8'} top-1/2 -translate-y-1/2 w-8 h-0.5 bg-nasr-blue`}></div>
                         <div className={`w-40 p-3 bg-white border-r-4 border-nasr-blue shadow-lg rounded-sm ${activeTab === 'powder' ? 'ring-2 ring-nasr-blue/30' : ''}`}>
@@ -1713,7 +1713,7 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
                   )}
 
                   {i === 4 && (
-                    <div className={`hidden lg:block absolute ${isRTL ? 'left-full ml-8' : 'right-full mr-8'} top-1/2 -translate-y-1/2 transition-all duration-300 z-20 cursor-pointer ${activeTab === 'strip' ? 'scale-110 opacity-100' : 'scale-100 opacity-60 hover:opacity-100'}`} onClick={(e) => { e.stopPropagation(); setActiveTab('strip'); }}>
+                    <div className={`hidden lg:block absolute ${isRTL ? 'left-full ml-8' : 'right-full mr-8'} top-1/2 -translate-y-1/2 transition-[transform,opacity] duration-300 z-20 cursor-pointer ${activeTab === 'strip' ? 'scale-110 opacity-100' : 'scale-100 opacity-60 hover:opacity-100'}`} onClick={(e) => { e.stopPropagation(); setActiveTab('strip'); }}>
                       <div className="flex items-center">
                         <div className={`absolute ${isRTL ? '-right-8' : '-left-8'} top-1/2 -translate-y-1/2 w-8 h-0.5 bg-nasr-accent`}></div>
                         <div className={`w-40 p-3 bg-white border-r-4 border-nasr-accent shadow-lg rounded-sm ${activeTab === 'strip' ? 'ring-2 ring-nasr-accent/30' : ''}`}>
@@ -1735,7 +1735,7 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
         {/* Details Panel */}
         <div className="integrated-detail lg:col-span-4 bg-white p-8 border-l border-gray-100 flex flex-col justify-center h-full relative">
           <div className="absolute inset-0 opacity-20 pointer-events-none bg-[linear-gradient(135deg,rgba(148,163,184,0.22)_1px,transparent_1px),linear-gradient(45deg,rgba(148,163,184,0.12)_1px,transparent_1px)] bg-[length:18px_18px,28px_28px]"></div>
-          <AnimatePresence mode="popLayout">
+          <AnimatePresence initial={false} mode="popLayout">
             <MotionDiv key={activeTab} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.3 }} className="relative z-10">
               <div className={`w-12 h-12 rounded-sm flex items-center justify-center mb-6 text-white ${activeTab === 'core' ? 'bg-nasr-dark' :
                 activeTab === 'die' ? 'bg-nasr-red' :
@@ -2018,7 +2018,7 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
       <div className="container mx-auto px-6">
         <div className="tech-route-tabs flex flex-wrap gap-4 mb-16 border-b border-gray-200 pb-1">
           {(['arch', 'ind', 'auto'] as const).map((tab) => (
-            <button key={tab} onClick={() => setActiveTab(tab)} className={`tech-route-tab pb-4 px-4 text-lg font-serif transition-all relative ${activeTab === tab ? 'is-active text-nasr-blue font-bold' : 'text-gray-400 hover:text-gray-600'}`}>
+            <button key={tab} onClick={() => setActiveTab(tab)} className={`tech-route-tab pb-4 px-4 text-lg font-serif transition-[color,font-weight] relative ${activeTab === tab ? 'is-active text-nasr-blue font-bold' : 'text-gray-400 hover:text-gray-600'}`}>
               {t.tabs[tab]}
               {activeTab === tab && <MotionDiv layoutId="techTab" className="absolute bottom-0 left-0 right-0 h-1 bg-nasr-blue" />}
             </button>
@@ -2040,7 +2040,7 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
             </div>
           </div>
           <div className="lg:col-span-8">
-            <AnimatePresence mode="wait">
+            <AnimatePresence initial={false} mode="wait">
               <MotionDiv key={activeTab} initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -16 }} transition={{ duration: 0.45, ease: "easeOut" }} className="tech-step-stack space-y-8">
                 {getSteps().map((step, idx) => {
                   const StepIcon = step.icon;
@@ -2122,7 +2122,7 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
         <div className="sustainability-network mb-32">
           <SectionHeading title="Recycling Infrastructure" subtitle="Strategic Network" lang={lang} />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="sustainability-site-card bg-white border border-gray-100 shadow-lg overflow-hidden group hover:border-nasr-accent transition-all duration-300">
+            <div className="sustainability-site-card bg-white border border-gray-100 shadow-lg overflow-hidden group hover:border-nasr-accent transition-[border-color,box-shadow] duration-300">
               <div className="relative h-64 overflow-hidden">
                 <img src="/site-assets/recycling-dammam.jpg" alt="Dammam Recycling" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="sustainability-site-badge absolute top-4 right-4 bg-nasr-accent text-white px-3 py-1 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
@@ -2139,7 +2139,7 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
                 </ul>
               </div>
             </div>
-            <MotionDiv initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ delay: 0.12, duration: 0.55 }} className="sustainability-site-card bg-white border border-gray-100 shadow-lg overflow-hidden group hover:border-nasr-blue transition-all duration-300 opacity-90">
+            <MotionDiv initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ delay: 0.12, duration: 0.55 }} className="sustainability-site-card bg-white border border-gray-100 shadow-lg overflow-hidden group hover:border-nasr-blue transition-[border-color,box-shadow] duration-300 opacity-90">
               <div className="relative h-64 overflow-hidden">
                 <img src="/site-assets/recycling-riyadh.jpg" alt="Riyadh Logistics" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="sustainability-site-badge absolute top-4 right-4 bg-nasr-blue text-white px-3 py-1 text-xs font-bold uppercase tracking-wider flex items-center gap-2">
@@ -2164,7 +2164,7 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
             <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-gray-300 -z-10"></div>
             {t.process.steps.map((step, i) => (
               <div key={i} className="sustainability-loop-step flex flex-col items-center text-center group">
-                <div className={`w-16 h-16 rounded-full border-4 bg-white flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 z-10 relative ${i === 0 || i === 4 ? 'border-nasr-dark text-nasr-dark' : 'border-nasr-accent text-nasr-accent'}`}>
+                <div className={`w-16 h-16 rounded-full border-4 bg-white flex items-center justify-center mb-6 transition-[transform,border-color,color] duration-300 group-hover:scale-110 z-10 relative ${i === 0 || i === 4 ? 'border-nasr-dark text-nasr-dark' : 'border-nasr-accent text-nasr-accent'}`}>
                   {i === 0 ? <Recycle size={24} /> : i === 1 ? <Settings size={24} /> : i === 2 ? <Box size={24} /> : i === 3 ? <Factory size={24} /> : <Leaf size={24} />}
                 </div>
                 <h4 className="font-bold text-gray-900 mb-2">{step.title}</h4>
@@ -2177,7 +2177,7 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
           <SectionHeading title={t.impact.title} subtitle="Vision 2030" lang={lang} />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {t.impact.items.map((item, i) => (
-              <div key={i} className="sustainability-impact-card p-8 border border-gray-100 hover:border-nasr-blue hover:shadow-lg transition-all duration-300 group">
+              <div key={i} className="sustainability-impact-card p-8 border border-gray-100 hover:border-nasr-blue hover:shadow-lg transition-[border-color,box-shadow] duration-300 group">
                 <div className="sustainability-impact-icon mb-6 p-4 bg-blue-50 text-nasr-blue w-fit rounded-sm group-hover:bg-nasr-blue group-hover:text-white transition-colors">{i === 0 ? <Wind size={24} /> : i === 1 ? <Box size={24} /> : <Droplets size={24} />}</div>
                 <h3 className="text-xl font-serif font-bold text-nasr-dark mb-4">{item.title}</h3>
                 <p className="text-gray-600 leading-relaxed text-sm">{item.desc}</p>
@@ -2309,7 +2309,7 @@ const App: React.FC = () => {
   return (
     <div className={`min-h-screen bg-[#F8FAFC] text-nasr-dark selection:bg-nasr-blue selection:text-white ${isRTL ? 'font-arabic' : 'font-sans'}`}>
       <SmoothScroll />
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || currentPage !== 'home' ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-6'}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,box-shadow,padding,backdrop-filter] duration-500 ${scrolled || currentPage !== 'home' ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <a href="#" onClick={scrollToTop} className={`flex items-center gap-4 group ${isRTL ? 'ml-8 lg:ml-12' : 'mr-8 lg:mr-12'}`}>
             <AlxLogo />
@@ -2325,14 +2325,14 @@ const App: React.FC = () => {
             <a href="#sustainability" onClick={goToSustainability} className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'} ${currentPage === 'sustainability' ? 'is-active' : ''}`}>{t.nav.sustainability}</a>
             <a href="#news" onClick={goToNews} className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'} ${currentPage === 'news' ? 'is-active' : ''}`}><Newspaper size={14} />{t.nav.news}</a>
             <div className="flex items-center gap-4">
-              <button onClick={toggleLang} className="flex items-center gap-1 hover:text-nasr-blue transition-colors"><Globe size={16} /><span>{lang === 'en' ? 'AR' : 'EN'}</span></button>
-              <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className={`px-5 py-2.5 border ${scrolled || currentPage !== 'home' ? 'border-nasr-dark text-nasr-dark hover:bg-nasr-dark hover:text-white' : 'border-white text-white hover:bg-white hover:text-nasr-dark'} transition-all duration-300`}>{t.nav.contact}</a>
+              <button onClick={toggleLang} className="flex min-h-10 items-center gap-1 px-2 hover:text-nasr-blue transition-colors"><Globe size={16} /><span>{lang === 'en' ? 'AR' : 'EN'}</span></button>
+              <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className={`px-5 py-2.5 border ${scrolled || currentPage !== 'home' ? 'border-nasr-dark text-nasr-dark hover:bg-nasr-dark hover:text-white' : 'border-white text-white hover:bg-white hover:text-nasr-dark'} transition-[background-color,color,border-color] duration-300`}>{t.nav.contact}</a>
             </div>
           </div>
           <div className="flex lg:hidden items-center gap-4"><button onClick={toggleLang} className={`${scrolled || currentPage !== 'home' ? 'text-nasr-dark' : 'text-white'}`}>{lang === 'en' ? 'AR' : 'EN'}</button><button className={`p-2 ${scrolled || currentPage !== 'home' ? 'text-nasr-dark' : 'text-white'}`} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X size={32} /> : <Menu size={32} />}</button></div>
         </div>
       </nav>
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {menuOpen && (
           <MotionDiv initial={{ x: isRTL ? '-100%' : '100%' }} animate={{ x: 0 }} exit={{ x: isRTL ? '-100%' : '100%' }} transition={{ type: 'tween', duration: 0.4 }} className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center gap-8 text-2xl font-serif text-nasr-dark">
             <a href="#" onClick={scrollToTop}>{t.nav.about}</a>
@@ -2425,7 +2425,7 @@ const App: React.FC = () => {
                   <div className="relative flex flex-col items-center lg:items-stretch gap-6">
                     <AboutImageOrbit />
                     <MotionDiv initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.55 }} className="w-full max-w-[34rem] self-center">
-                      <a href="https://www.everwin.sa/" target="_blank" rel="noopener noreferrer" className="block rounded-[1.35rem] border border-white/70 bg-white/72 px-5 py-4 shadow-[0_16px_38px_rgba(16,38,51,0.10),inset_0_1px_0_rgba(255,255,255,0.86)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/90 hover:bg-white/82 hover:shadow-[0_22px_48px_rgba(16,38,51,0.13),inset_0_1px_0_rgba(255,255,255,0.9)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-nasr-blue">
+                      <a href="https://www.everwin.sa/" target="_blank" rel="noopener noreferrer" className="block rounded-[1.35rem] border border-white/70 bg-white/72 px-5 py-4 shadow-[0_16px_38px_rgba(16,38,51,0.10),inset_0_1px_0_rgba(255,255,255,0.86)] backdrop-blur-md transition-[transform,border-color,background-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-white/90 hover:bg-white/82 hover:shadow-[0_22px_48px_rgba(16,38,51,0.13),inset_0_1px_0_rgba(255,255,255,0.9)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-nasr-blue">
                       <div className="flex items-start gap-3">
                         <div className="mt-0.5 rounded-full bg-white/70 p-2 shadow-sm">
                           <MapPin className="text-nasr-blue" size={16} />
@@ -2501,7 +2501,7 @@ const App: React.FC = () => {
               <div className="col-span-1 md:col-span-2">
                 <div className="mb-8"><AlxLogo /><div className={`mt-2 text-white font-serif text-xl tracking-wider uppercase ${isRTL ? 'font-arabic' : ''}`}>{isRTL ? 'نصر كبير للألمنيوم' : 'Nasr Kabeer Aluminum'}</div></div>
                 <p className="text-lg max-w-md mb-8 leading-relaxed text-gray-500">{t.footer.desc}</p>
-                <div className="flex gap-4"><a href="#" className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-nasr-blue hover:text-white transition-all duration-300"><Linkedin size={20} /></a><a href="#" className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-nasr-blue hover:text-white transition-all duration-300"><Twitter size={20} /></a></div>
+                <div className="flex gap-4"><a href="#" className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-nasr-blue hover:text-white transition-[background-color,color] duration-300"><Linkedin size={20} /></a><a href="#" className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-nasr-blue hover:text-white transition-[background-color,color] duration-300"><Twitter size={20} /></a></div>
               </div>
               <div>
                 <h4 className="text-white font-bold uppercase tracking-widest mb-8 text-sm">{t.footer.navTitle}</h4>
