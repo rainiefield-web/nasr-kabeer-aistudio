@@ -1,25 +1,27 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-06-29 12:27:25`
-Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
+Last Updated (UTC): `2026-06-30 10:53:06`
+Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,164.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-06-26 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+- LME Aluminium Cash-Settlement: `$3,160.50/t` | Symbol: `LME Al Cash` | Ref Date: 2026-06-29 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,491.20/t` | Symbol: `LME Al Cash Avg` | Ref Date: June 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+- Monthly Average Cash-Settlement: `$3,475.45/t` | Symbol: `LME Al Cash Avg` | Ref Date: June 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
+### Latest Headlines (from NewsAPI)
+- Bunker Hill Produces First Concentrate on Schedule for Shipment to Trail Smelter | Source: Financial Post | Published: 2026-06-29T10:15:48Z [Link](https://financialpost.com/globe-newswire/bunker-hill-produces-first-concentrate-on-schedule-for-shipment-to-trail-smelter)
+
 ### Latest Headlines (from GNews)
+- Tariff deal with Trump unlikely before U.S. midterms, says Canada's former trade chief | Source: CBC.ca | Published: 2026-06-29T20:58:49Z [Link](https://www.cbc.ca/news/politics/cusma-deal-u-s-midterms-9.7253072)
+- 11 Of The Best Tablet Pens You Can Buy On Amazon | Source: BGR | Published: 2026-06-29T20:02:00Z [Link](https://www.bgr.com/2199635/best-tablet-pens-buy-amazon/)
+- Technology to be central to Hindustan Zinc's next phase of growth: Chairperson | Source: The Economic Times | Published: 2026-06-29T11:09:00Z [Link](https://economictimes.indiatimes.com/industry/indl-goods/svs/metals-mining/technology-to-be-central-to-hindustan-zincs-next-phase-of-growth-chairperson/articleshow/132070513.cms)
+- Hind Zinc eyes energy transition, ventures into critical minerals | Source: The Hindu Business Line | Published: 2026-06-29T10:59:20Z [Link](https://www.thehindubusinessline.com/companies/hind-zinc-eyes-energy-transition-ventures-into-critical-minerals/article71160931.ece)
+- Redefining Architectural Freedom: Why Retract Screens Offers the Best Windows Screens for Australian Homes | Source: TechBullion | Published: 2026-06-29T10:12:15Z [Link](https://techbullion.com/redefining-architectural-freedom-why-retract-screens-offers-the-best-windows-screens-for-australian-homes/)
+- Constellium Sells Automotive Structures Joint Venture in Changchun, China | Source: The Manila Times | Published: 2026-06-29T10:02:34Z [Link](https://www.manilatimes.net/2026/06/29/tmt-newswire/globenewswire/constellium-sells-automotive-structures-joint-venture-in-changchun-china/2374678)
+- Sensex drops over 300 points, Nifty slips as geopolitical tensions weigh on markets | Source: The Hindu Business Line | Published: 2026-06-29T07:11:36Z [Link](https://www.thehindubusinessline.com/markets/sensex-drops-over-400-points-nifty-slips-as-geopolitical-tensions-weigh-on-markets/article71160351.ece)
+- Is this £430k hyper-customised Porsche 911 the GOAT? | Source: City A.M. | Published: 2026-06-29T02:56:00Z [Link](https://www.cityam.com/i-tried-to-create-the-ultimate-porsche-911-heres-my-story/)
 - Why Rio Tinto shares could be a smart long-term buy | Source: The Motley Fool Australia | Published: 2026-06-28T23:34:23Z [Link](https://www.fool.com.au/2026/06/29/why-rio-tinto-shares-could-be-a-smart-long-term-buy/)
 - Shriram Finance likely to replace Bajaj Finserv in Sensex; BSE seen entering Nifty 50 | Source: Moneycontrol | Published: 2026-06-28T23:30:50Z [Link](https://www.moneycontrol.com/news/business/markets/shriram-finance-likely-to-replace-bajaj-finserv-in-sensex-bse-seen-entering-nifty-50-13960295.html)
 - 11 Shocking Old Hollywood Secrets You Never Knew | Source: BuzzFeed | Published: 2026-06-28T18:16:02Z [Link](https://www.buzzfeed.com/graceholtzclaw/shocking-facts-about-old-hollywood-stars)
-- Message from the Editor: a dystopian vision of the future | Source: The Irish Times | Published: 2026-06-28T10:15:05Z [Link](https://www.irishtimes.com/media/2026/06/28/european-heatwave-offers-dystopian-vision-of-the-future/)
-- Infosys, Hindalco, Redington: How FPI heavy stocks fared in June as outflows hit Rs 53K crore | Source: Business Today | Published: 2026-06-28T05:30:26Z [Link](https://www.businesstoday.in/markets/stocks/story/infosys-hindalco-redington-how-fpi-heavy-stocks-fared-in-june-as-outflows-hit-rs-53k-crore-539439-2026-06-28)
-- Last minute Walmart Deals - 35+ hand-picked sales you can still get after Prime Day on Apple, Shark, Ninja, patio furniture and home upgrades | Source: Tom's Guide | Published: 2026-06-27T10:15:00Z [Link](https://www.tomsguide.com/sales-events/last-minute-walmart-deals-35-hand-picked-sales-you-can-still-get-after-prime-day-on-apple-shark-ninja-patio-furniture-and-home-upgrades)
-- The Time Ranger | The Rubenesque Purple Moo-Moo Bank Robber-ette | Source: Santa Clarita Valley Signal | Published: 2026-06-27T09:17:00Z [Link](https://signalscv.com/2026/06/the-time-ranger-the-rubenesque-purple-moo-moo-bank-robber-ette/)
-- Ireland seeks EU money to keep Aughinish Alumina open | Source: The Irish Times | Published: 2026-06-27T05:00:00Z [Link](https://www.irishtimes.com/ireland/2026/06/27/government-to-seek-eu-money-to-keep-aughinish-alumina-open/)
-- Why Indian manufacturers fear Europe's tighter rules on metal scrap exports | Source: Business Standard | Published: 2026-06-27T04:43:41Z [Link](https://www.business-standard.com/industry/news/why-indian-manufacturers-fear-europe-s-tighter-rules-on-metal-scrap-exports-126062700195_1.html)
-- These Prime Day TV deals will give you the most bang for your buck | Source: New York Post | Published: 2026-06-27T02:57:00Z [Link](https://nypost.com/shopping/best-amazon-prime-day-tv-deals-2026/)
-- These Prime Day luggage deals are taking off with or without you | Source: New York Post | Published: 2026-06-26T21:04:00Z [Link](https://nypost.com/shopping/best-amazon-prime-day-luggage-travel-deals-2026/)
-- Amazon Prime Day ends at midnight - shop the 25 best deals now | Source: Evening Standard | Published: 2026-06-26T16:51:19Z [Link](https://www.standard.co.uk/shopping/esbest/amazon-prime-day/best-amazon-prime-day-deals-b1287516.html)
