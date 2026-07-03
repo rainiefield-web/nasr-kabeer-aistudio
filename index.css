@@ -176,12 +176,15 @@ html[lang="ar"] .news-source-panel a:hover {
 
 .process-step-stack {
   display: grid;
-  align-content: center;
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+  align-content: stretch;
   gap: clamp(0.45rem, 1vh, 0.85rem);
+  height: 100%;
   min-height: 0;
 }
 
 .process-step-card {
+  min-height: 0;
   border-radius: 0.8rem;
   padding: clamp(0.5rem, 1.15vh, 0.78rem) clamp(0.65rem, 1.25vw, 1rem);
   background: rgba(255, 255, 255, 0.025);
@@ -195,6 +198,10 @@ html[lang="ar"] .news-source-panel a:hover {
 .process-step-card:hover {
   background: rgba(255, 255, 255, 0.045);
   border-color: rgba(255, 255, 255, 0.10);
+}
+
+.process-step-row {
+  min-height: 0;
 }
 
 .process-stage-title {
@@ -226,7 +233,7 @@ html[lang="ar"] .news-source-panel a:hover {
 }
 
 .process-step-desc {
-  height: 2.35rem;
+  height: clamp(1.9rem, 4.1vh, 2.3rem);
   contain: layout paint;
 }
 
@@ -282,7 +289,7 @@ html[lang="ar"] .news-source-panel a:hover {
   }
 
   .process-step-card {
-    padding-block: 0.44rem;
+    padding-block: 0.38rem;
   }
 
   .process-flow-footer button {
