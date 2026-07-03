@@ -24,9 +24,9 @@ const SmoothScroll = () => {
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       },
       autoRaf: true,
-      lerp: 0.085,
+      lerp: 0.12,
       smoothWheel: true,
-      wheelMultiplier: 0.86,
+      wheelMultiplier: 0.92,
       touchMultiplier: 1,
     });
 

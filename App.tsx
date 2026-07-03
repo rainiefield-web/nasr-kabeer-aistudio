@@ -1479,6 +1479,7 @@ const useAlxRevealStyle = (
 const AlxBrandPromiseSection: React.FC<{ lang: Language }> = ({ lang }) => {
   const stageRef = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
+  const [shaderActive, setShaderActive] = useState(false);
   const t = content[lang].alx;
   const { scrollYProgress } = useScroll({
     target: stageRef,
@@ -1496,6 +1497,22 @@ const AlxBrandPromiseSection: React.FC<{ lang: Language }> = ({ lang }) => {
   const row2 = useAlxRevealStyle(progress, 0.64, 0.76, 14);
   const row3 = useAlxRevealStyle(progress, 0.76, 0.88, 14);
 
+  useEffect(() => {
+    const section = stageRef.current;
+    if (!section || reduceMotion) {
+      setShaderActive(false);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setShaderActive(entry.isIntersecting),
+      { rootMargin: '90% 0px' }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, [reduceMotion]);
+
   return (
     <section
       id="alx-brand-promise"
@@ -1512,14 +1529,18 @@ const AlxBrandPromiseSection: React.FC<{ lang: Language }> = ({ lang }) => {
             style={reduceMotion ? { scale: 1 } : { scale: visualScale }}
           >
             <div className="alx-brand-shader-shell">
-              <GemSmoke
-                className="alx-brand-gem-smoke"
-                {...gemSmokePresets[0].params}
-                image={ALX_LOGO_SRC}
-                fit="contain"
-                suspendWhenProcessingImage
-                style={{ width: "100%", height: "100%" }}
-              />
+              {shaderActive ? (
+                <GemSmoke
+                  className="alx-brand-gem-smoke"
+                  {...gemSmokePresets[0].params}
+                  image={ALX_LOGO_SRC}
+                  fit="contain"
+                  suspendWhenProcessingImage
+                  style={{ width: "100%", height: "100%" }}
+                />
+              ) : (
+                <div className="alx-brand-shader-fallback" />
+              )}
             </div>
           </MotionDiv>
 
@@ -2400,6 +2421,7 @@ const App: React.FC = () => {
   const [lang, setLang] = useState<Language>('en');
   const [currentPage, setCurrentPage] = useState<Page>('home');
   const [heroVideoReady, setHeroVideoReady] = useState(false);
+  const [heroEffectsActive, setHeroEffectsActive] = useState(true);
   const heroVideoRef = useRef<HTMLVideoElement | null>(null);
   const heroVideoPlayedRef = useRef(false);
 
@@ -2407,10 +2429,28 @@ const App: React.FC = () => {
   const isRTL = lang === 'ar';
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    let frame = 0;
+    const updateScrollState = () => {
+      frame = 0;
+      const y = window.scrollY;
+      const nextScrolled = y > 50;
+      const nextHeroEffectsActive = currentPage === 'home' && !isRTL && y < window.innerHeight * 1.15;
+
+      setScrolled((current) => (current === nextScrolled ? current : nextScrolled));
+      setHeroEffectsActive((current) => (current === nextHeroEffectsActive ? current : nextHeroEffectsActive));
+    };
+    const handleScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(updateScrollState);
+    };
+
+    updateScrollState();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [currentPage, isRTL]);
 
   useEffect(() => {
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
@@ -2590,7 +2630,7 @@ const App: React.FC = () => {
                     <span className="laser-line laser-line-1">{t.hero.titleLine1}</span>
                     <span className="laser-line laser-line-2 text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">{t.hero.titleLine2}</span>
                     <span className="laser-line laser-line-3">{t.hero.titleLine3} <span className="block lg:inline text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-300 to-gray-500 drop-shadow-sm">{t.hero.profileWord}</span></span>
-                    <LaserTitleCanvas enabled={!isRTL} />
+                    <LaserTitleCanvas enabled={heroEffectsActive} />
                   </h1>
                   <p className={`hero-copy text-base md:text-xl text-gray-200 font-light leading-relaxed mb-12 max-w-2xl md:max-w-[31rem] lg:max-w-2xl ${isRTL ? 'border-r-2 pr-8' : 'border-l-2 pl-8'} border-white/35`}>{t.hero.desc}</p>
                   <div className="flex flex-col sm:flex-row gap-6">
