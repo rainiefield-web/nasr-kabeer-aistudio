@@ -572,12 +572,12 @@ html[lang="ar"] .news-source-panel a:hover {
     pointer-events: none;
     will-change: opacity;
     -webkit-mask-image:
-      linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.16) 15%, rgba(0, 0, 0, 0.72) 31%, black 46%, rgba(0, 0, 0, 0.82) 65%, rgba(0, 0, 0, 0.22) 86%, transparent 100%),
-      linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.20) 16%, rgba(0, 0, 0, 0.80) 33%, black 48%, rgba(0, 0, 0, 0.80) 66%, rgba(0, 0, 0, 0.20) 84%, transparent 100%);
+      linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.08) 8%, rgba(0, 0, 0, 0.38) 22%, rgba(0, 0, 0, 0.82) 39%, black 52%, rgba(0, 0, 0, 0.82) 68%, rgba(0, 0, 0, 0.36) 84%, rgba(0, 0, 0, 0.08) 95%, transparent 100%),
+      linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.10) 10%, rgba(0, 0, 0, 0.42) 25%, rgba(0, 0, 0, 0.86) 40%, black 52%, rgba(0, 0, 0, 0.78) 70%, rgba(0, 0, 0, 0.28) 88%, transparent 100%);
     -webkit-mask-composite: source-in;
     mask-image:
-      linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.16) 15%, rgba(0, 0, 0, 0.72) 31%, black 46%, rgba(0, 0, 0, 0.82) 65%, rgba(0, 0, 0, 0.22) 86%, transparent 100%),
-      linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.20) 16%, rgba(0, 0, 0, 0.80) 33%, black 48%, rgba(0, 0, 0, 0.80) 66%, rgba(0, 0, 0, 0.20) 84%, transparent 100%);
+      linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.08) 8%, rgba(0, 0, 0, 0.38) 22%, rgba(0, 0, 0, 0.82) 39%, black 52%, rgba(0, 0, 0, 0.82) 68%, rgba(0, 0, 0, 0.36) 84%, rgba(0, 0, 0, 0.08) 95%, transparent 100%),
+      linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.10) 10%, rgba(0, 0, 0, 0.42) 25%, rgba(0, 0, 0, 0.86) 40%, black 52%, rgba(0, 0, 0, 0.78) 70%, rgba(0, 0, 0, 0.28) 88%, transparent 100%);
     mask-composite: intersect;
     transition: opacity 900ms ease-out;
   }
@@ -589,11 +589,11 @@ html[lang="ar"] .news-source-panel a:hover {
     z-index: -1;
     border-radius: 50%;
     background:
-      radial-gradient(ellipse at 45% 52%, rgba(255, 178, 83, 0.20), transparent 38%),
-      radial-gradient(ellipse at 74% 42%, rgba(65, 105, 116, 0.28), transparent 42%),
-      radial-gradient(ellipse at 50% 50%, rgba(10, 13, 14, 0.10), rgba(10, 13, 14, 0.48) 78%, transparent 100%);
-    filter: blur(28px);
-    opacity: 0.84;
+      radial-gradient(ellipse at 45% 52%, rgba(255, 190, 108, 0.24), transparent 42%),
+      radial-gradient(ellipse at 74% 42%, rgba(91, 135, 145, 0.30), transparent 46%),
+      radial-gradient(ellipse at 50% 50%, rgba(10, 13, 14, 0.06), rgba(10, 13, 14, 0.30) 82%, transparent 100%);
+    filter: blur(34px);
+    opacity: 0.72;
   }
 
   .raw-metal-hero-video-shell::after {
@@ -602,13 +602,13 @@ html[lang="ar"] .news-source-panel a:hover {
     inset: -7%;
     z-index: 2;
     background:
-      radial-gradient(ellipse at 54% 53%, transparent 0 30%, rgba(17, 20, 20, 0.22) 48%, rgba(17, 20, 20, 0.78) 74%, rgba(17, 20, 20, 0.96) 100%),
-      linear-gradient(90deg, rgba(17, 20, 20, 0.88), rgba(17, 20, 20, 0.20) 34%, transparent 50%, rgba(17, 20, 20, 0.24) 70%, rgba(17, 20, 20, 0.90));
+      radial-gradient(ellipse at 54% 53%, transparent 0 38%, rgba(17, 20, 20, 0.10) 58%, rgba(17, 20, 20, 0.42) 82%, rgba(17, 20, 20, 0.68) 100%),
+      linear-gradient(90deg, rgba(17, 20, 20, 0.54), rgba(17, 20, 20, 0.12) 34%, transparent 56%, rgba(17, 20, 20, 0.12) 76%, rgba(17, 20, 20, 0.56));
     pointer-events: none;
   }
 
   .raw-metal-hero-video-shell.is-ready {
-    opacity: 0.78;
+    opacity: 0.88;
   }
 
   .raw-metal-hero-video-media {
@@ -616,7 +616,7 @@ html[lang="ar"] .news-source-panel a:hover {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    filter: contrast(1.06) brightness(0.96) saturate(1.04);
+    filter: contrast(1.04) brightness(1.16) saturate(1.08);
     transform: translateZ(0) scale(1.018);
     backface-visibility: hidden;
     will-change: transform;
@@ -659,27 +659,27 @@ html[lang="ar"] .news-source-panel a:hover {
       transform: translateX(-50%) translateZ(0);
       opacity: 0;
       -webkit-mask-image:
-        linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.22) 16%, black 42%, rgba(0, 0, 0, 0.76) 72%, transparent 100%),
-        linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.24) 18%, black 42%, rgba(0, 0, 0, 0.70) 70%, transparent 100%);
+        linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.10) 10%, rgba(0, 0, 0, 0.52) 28%, black 48%, rgba(0, 0, 0, 0.58) 76%, rgba(0, 0, 0, 0.10) 94%, transparent 100%),
+        linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.12) 12%, rgba(0, 0, 0, 0.55) 30%, black 48%, rgba(0, 0, 0, 0.54) 74%, rgba(0, 0, 0, 0.10) 92%, transparent 100%);
       -webkit-mask-composite: source-in;
       mask-image:
-        linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.22) 16%, black 42%, rgba(0, 0, 0, 0.76) 72%, transparent 100%),
-        linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.24) 18%, black 42%, rgba(0, 0, 0, 0.70) 70%, transparent 100%);
+        linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.10) 10%, rgba(0, 0, 0, 0.52) 28%, black 48%, rgba(0, 0, 0, 0.58) 76%, rgba(0, 0, 0, 0.10) 94%, transparent 100%),
+        linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.12) 12%, rgba(0, 0, 0, 0.55) 30%, black 48%, rgba(0, 0, 0, 0.54) 74%, rgba(0, 0, 0, 0.10) 92%, transparent 100%);
       mask-composite: intersect;
     }
 
     .raw-metal-hero-video-shell.is-ready {
-      opacity: 0.74;
+      opacity: 0.82;
     }
 
     .raw-metal-hero-video-shell::after {
       background:
-        radial-gradient(ellipse at 54% 53%, transparent 0 34%, rgba(17, 20, 20, 0.12) 52%, rgba(17, 20, 20, 0.48) 78%, rgba(17, 20, 20, 0.70) 100%),
-        linear-gradient(90deg, rgba(17, 20, 20, 0.58), rgba(17, 20, 20, 0.10) 34%, transparent 54%, rgba(17, 20, 20, 0.12) 72%, rgba(17, 20, 20, 0.62));
+        radial-gradient(ellipse at 54% 53%, transparent 0 40%, rgba(17, 20, 20, 0.08) 58%, rgba(17, 20, 20, 0.30) 82%, rgba(17, 20, 20, 0.50) 100%),
+        linear-gradient(90deg, rgba(17, 20, 20, 0.38), rgba(17, 20, 20, 0.08) 35%, transparent 56%, rgba(17, 20, 20, 0.08) 76%, rgba(17, 20, 20, 0.42));
     }
 
     .raw-metal-hero-video-media {
-      filter: contrast(1.04) brightness(1.22) saturate(1.08);
+      filter: contrast(1.03) brightness(1.30) saturate(1.10);
     }
   }
 
@@ -1495,13 +1495,13 @@ html[lang="ar"] .news-source-panel a:hover {
 }
 
 .hero-graphite-scrim-side {
-  background: linear-gradient(90deg, rgba(17, 23, 25, 0.94), rgba(17, 23, 25, 0.68) 38%, rgba(17, 23, 25, 0.12) 72%, transparent);
+  background: linear-gradient(90deg, rgba(17, 23, 25, 0.92), rgba(17, 23, 25, 0.64) 34%, rgba(17, 23, 25, 0.22) 58%, rgba(17, 23, 25, 0.06) 82%, transparent);
 }
 
 .hero-graphite-scrim-base {
   background:
-    linear-gradient(180deg, rgba(17, 23, 25, 0.28), transparent 34%),
-    linear-gradient(0deg, rgba(17, 23, 25, 0.70), transparent 42%);
+    linear-gradient(180deg, rgba(17, 23, 25, 0.22), transparent 38%),
+    linear-gradient(0deg, rgba(17, 23, 25, 0.56), rgba(17, 23, 25, 0.18) 32%, transparent 52%);
 }
 
 .hero-copy {
@@ -2491,7 +2491,7 @@ footer#contact .text-nasr-accent {
 
 @media (max-width: 767px) {
   .hero-graphite-scrim-side {
-    background: linear-gradient(180deg, rgba(17, 23, 25, 0.86), rgba(17, 23, 25, 0.48) 52%, rgba(17, 23, 25, 0.84));
+    background: linear-gradient(180deg, rgba(17, 23, 25, 0.78), rgba(17, 23, 25, 0.42) 48%, rgba(17, 23, 25, 0.72));
   }
 
   .products-anchor-nav {
