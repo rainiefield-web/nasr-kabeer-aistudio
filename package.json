@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
+    "@paper-design/shaders-react": "^0.0.77",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.4.0",
     "framer-motion": "^12.23.24",
