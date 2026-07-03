@@ -68,6 +68,70 @@ body {
   color: var(--nk-text-dark);
 }
 
+html[lang="ar"] body,
+html[lang="ar"] #root {
+  font-family: "Cairo", "Tahoma", "Arial", sans-serif;
+  font-feature-settings: "kern" 1;
+}
+
+html[lang="ar"] .font-serif,
+html[lang="ar"] .font-sans,
+html[lang="ar"] .font-arabic {
+  font-family: "Cairo", "Tahoma", "Arial", sans-serif !important;
+}
+
+html[lang="ar"] p,
+html[lang="ar"] li {
+  line-height: 1.85;
+}
+
+html[lang="ar"] .uppercase,
+html[lang="ar"] .section-kicker,
+html[lang="ar"] .nav-metal-tab,
+html[lang="ar"] .products-capacity-label,
+html[lang="ar"] .products-anchor-item,
+html[lang="ar"] .products-capability,
+html[lang="ar"] .products-application-row,
+html[lang="ar"] .alx-brand-kicker,
+html[lang="ar"] .integrated-tab,
+html[lang="ar"] .tech-route-tab,
+html[lang="ar"] .news-price-card,
+html[lang="ar"] .sustainability-site-badge,
+html[lang="ar"] footer h4 {
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+html[lang="ar"] .section-title,
+html[lang="ar"] .laser-title,
+html[lang="ar"] .alx-brand-proof-item strong,
+html[lang="ar"] .tech-rail-title,
+html[lang="ar"] .products-cta h3,
+html[lang="ar"] .sustainability-impact-card h3 {
+  letter-spacing: 0 !important;
+  line-height: 1.18 !important;
+}
+
+html[lang="ar"] .products-page,
+html[lang="ar"] .technology-page,
+html[lang="ar"] .sustainability-page,
+html[lang="ar"] .news-page,
+html[lang="ar"] .alx-brand-copy {
+  text-align: right;
+}
+
+html[lang="ar"] .alx-brand-lockup-main,
+html[lang="ar"] .alx-brand-promise-copy,
+html[lang="ar"] .alx-brand-proof-item {
+  transform-origin: right center;
+}
+
+html[lang="ar"] .products-application-row:hover,
+html[lang="ar"] .news-source-panel a:hover {
+  padding-right: 0.28rem;
+  padding-left: 0;
+}
+
 .process-sticky-inner {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;

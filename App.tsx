@@ -636,11 +636,11 @@ const parseNewsReport = (markdown: string) => {
   return result;
 };
 
-const formatPublishedDate = (value: string) => {
+const formatPublishedDate = (value: string, lang: Language = 'en') => {
   if (!value) return "N/A";
   const parsed = new Date(value);
   if (Number.isNaN(parsed.getTime())) return value;
-  return parsed.toLocaleString("en-GB", {
+  return parsed.toLocaleString(lang === 'ar' ? "ar-SA" : "en-GB", {
     day: "2-digit",
     month: "short",
     year: "numeric",
@@ -689,7 +689,35 @@ const content = {
     products: {
       subtitle: "Product Portfolio",
       title: "Engineered for Excellence",
-      desc: "Explore our comprehensive range of high-performance aluminum profiles designed for the most demanding applications."
+      desc: "Explore our comprehensive range of high-performance aluminum profiles designed for the most demanding applications.",
+      capacityDesigned: "tons/year designed capacity",
+      applicationFamilies: "application families",
+      categoriesAria: "Product categories",
+      ctaKicker: "Profile requirements",
+      ctaTitle: "Discuss your aluminum profile needs",
+      ctaDesc: "Share drawings, alloy needs, surface treatment targets, or application requirements with our team."
+    },
+    alx: {
+      aria: "ALX Brand Promise",
+      visualAria: "ALX Gem Smoke visual",
+      kicker: "ALX Brand Promise",
+      byline: "by NKACO",
+      promise: "Saudi-made profiles for architectural, industrial, and transportation applications.",
+      proofAria: "ALX application areas",
+      proofs: [
+        {
+          title: "Architectural systems",
+          desc: "Door, window, facade, and curtain wall profile programs."
+        },
+        {
+          title: "Industrial extrusion",
+          desc: "Precision sections for machinery, energy, and engineered assemblies."
+        },
+        {
+          title: "Transportation supply",
+          desc: "Lightweight aluminum profiles for mobility and export markets."
+        }
+      ]
     },
     process: {
       title: "Integrated Value Chain",
@@ -708,6 +736,15 @@ const content = {
         die: "Die Mfg (Aux A)",
         powder: "Powder Coating (Aux B)",
         strip: "Thermal Strips (Aux C)"
+      },
+      ui: {
+        viewDie: "View Die Mfg",
+        viewPowder: "View Powder",
+        viewStrips: "View Strips",
+        auxA: "Aux A",
+        auxB: "Aux B",
+        auxC: "Aux C",
+        processSteps: "Process Steps"
       },
       core: {
         title: "Part I: Core Aluminum Profile Manufacturing",
@@ -761,6 +798,7 @@ const content = {
       title: "Advanced Technical Route",
       subtitle: "Precision Manufacturing",
       desc: "We employ distinct technical routes optimized for Architectural, Industrial, and Automotive applications, ensuring every profile meets rigorous international standards.",
+      flowTitle: "Processing Flow",
       tabs: {
         arch: "Architectural",
         ind: "Industrial",
@@ -960,8 +998,13 @@ const content = {
           { title: "New Life", desc: "High-end profiles for city & industry." }
         ]
       },
+      network: {
+        title: "Recycling Infrastructure",
+        subtitle: "Strategic Network"
+      },
       impact: {
         title: "Strategic Impact",
+        subtitle: "Vision 2030",
         items: [
           { title: "Decarbonization", desc: "Aligning with the National Industrial Decarbonization Strategy by reducing carbon intensity." },
           { title: "Municipal Benefits", desc: "Reducing solid waste and landfill burden while creating local employment." },
@@ -974,6 +1017,14 @@ const content = {
       subtitle: "Global Market Pulse",
       desc: "Stay updated with the latest trends, market shifts, and corporate developments in the global aluminum sector.",
       lastUpdated: "Last Updated",
+      labels: {
+        symbol: "Symbol",
+        source: "Source",
+        refDate: "Ref Date",
+        time: "Time",
+        collected: "Automatically collected today",
+        externalNews: "Daily Aluminum News From External Sources"
+      },
       fullReport: "Full Update",
       unavailable: "No updates available.",
       priceAnalysis: "Market Analysis & LME",
@@ -1035,7 +1086,35 @@ const content = {
     products: {
       subtitle: "محفظة المنتجات",
       title: "هندسة من أجل التميز",
-      desc: "استكشف مجموعتنا الشاملة من مقاطع الألمنيوم عالية الأداء المصممة لأكثر التطبيقات تطلباً."
+      desc: "استكشف مجموعتنا الشاملة من مقاطع الألمنيوم عالية الأداء المصممة لأكثر التطبيقات تطلباً.",
+      capacityDesigned: "طن سنوياً طاقة تصميمية",
+      applicationFamilies: "عائلات تطبيق رئيسية",
+      categoriesAria: "فئات المنتجات",
+      ctaKicker: "متطلبات المقاطع",
+      ctaTitle: "ناقش احتياجاتك من مقاطع الألمنيوم",
+      ctaDesc: "شاركنا الرسومات، أو متطلبات السبيكة، أو أهداف المعالجة السطحية، أو احتياجات التطبيق ليتواصل معك فريقنا."
+    },
+    alx: {
+      aria: "وعد علامة ALX",
+      visualAria: "مشهد ALX بتأثير Gem Smoke",
+      kicker: "وعد علامة ALX",
+      byline: "من NKACO",
+      promise: "مقاطع ألمنيوم سعودية المنشأ للتطبيقات المعمارية والصناعية وتطبيقات النقل.",
+      proofAria: "مجالات تطبيق ALX",
+      proofs: [
+        {
+          title: "أنظمة معمارية",
+          desc: "برامج مقاطع للأبواب والنوافذ والواجهات والجدران الستائرية."
+        },
+        {
+          title: "بثق صناعي",
+          desc: "مقاطع دقيقة للآلات والطاقة والتجميعات الهندسية."
+        },
+        {
+          title: "إمداد لقطاع النقل",
+          desc: "مقاطع ألمنيوم خفيفة الوزن للتنقل وأسواق التصدير."
+        }
+      ]
     },
     process: {
       title: "سلسلة القيمة المتكاملة",
@@ -1055,12 +1134,21 @@ const content = {
         powder: "طلاء البودرة",
         strip: "شرائط العزل"
       },
+      ui: {
+        viewDie: "عرض تصنيع القوالب",
+        viewPowder: "عرض طلاء البودرة",
+        viewStrips: "عرض شرائط العزل",
+        auxA: "مساعد أ",
+        auxB: "مساعد ب",
+        auxC: "مساعد ج",
+        processSteps: "خطوات العملية"
+      },
       core: {
         title: "الجزء الأول: تصنيع مقاطع الألمنيوم الأساسية",
         desc: "التدفق المركزي المتسلسل للإنتاج من السبائك الخام إلى المقطع النهائي.",
         steps: [
-          { id: "1", title: "الصب (Billet)", desc: "الصهر عند 690-720 درجة مئوية والصب المستمر." },
-          { id: "2", title: "البثق (Forming)", desc: "تسخين السبائك والتشكيل الدقيق بالمكابس." },
+          { id: "1", title: "الصب وتحضير البيليت", desc: "الصهر عند 690-720 درجة مئوية والصب المستمر." },
+          { id: "2", title: "البثق والتشكيل", desc: "تسخين السبائك والتشكيل الدقيق بالمكابس." },
           { id: "3", title: "التقوية", desc: "المعالجة الحرارية والتعتيق (T6/T7)." },
           { id: "4", title: "معالجة السطح", desc: "طلاء البودرة أو الأنودة للحماية والجمال." },
           { id: "5", title: "التشطيب والجودة", desc: "آلات CNC دقيقة وفحص NDT/3D." }
@@ -1107,6 +1195,7 @@ const content = {
       title: "المسار التقني المتقدم",
       subtitle: "التصنيع الدقيق",
       desc: "نحن نستخدم مسارات تقنية متميزة محسنة للتطبيقات المعمارية والصناعية والسيارات، مما يضمن تلبية كل مقطع للمعايير الدولية الصارمة.",
+      flowTitle: "مسار المعالجة",
       tabs: {
         arch: "معماري",
         ind: "صناعي",
@@ -1306,8 +1395,13 @@ const content = {
           { title: "حياة جديدة", desc: "مقاطع راقية للمدينة والصناعة." }
         ]
       },
+      network: {
+        title: "بنية إعادة التدوير",
+        subtitle: "شبكة استراتيجية"
+      },
       impact: {
         title: "الأثر الاستراتيجي",
+        subtitle: "رؤية 2030",
         items: [
           { title: "إزالة الكربون", desc: "التوافق مع الاستراتيجية الوطنية للصناعة بتقليل كثافة الكربون." },
           { title: "فوائد بلدية", desc: "تقليل النفايات الصلبة وأعباء المرادم مع خلق فرص عمل." },
@@ -1320,6 +1414,14 @@ const content = {
       subtitle: "نبض السوق العالمي",
       desc: "ابق على اطلاع بآخر التوجهات، تقلبات السوق، والتطورات المؤسسية في قطاع الألمنيوم العالمي.",
       lastUpdated: "آخر تحديث",
+      labels: {
+        symbol: "الرمز",
+        source: "المصدر",
+        refDate: "تاريخ المرجع",
+        time: "الوقت",
+        collected: "تم جمعها آلياً اليوم",
+        externalNews: "أخبار الألمنيوم اليومية من مصادر خارجية"
+      },
       fullReport: "التحديث الكامل",
       unavailable: "لا توجد تحديثات متاحة.",
       priceAnalysis: "تحليل السوق وبورصة لندن (LME)",
@@ -1377,6 +1479,7 @@ const useAlxRevealStyle = (
 const AlxBrandPromiseSection: React.FC<{ lang: Language }> = ({ lang }) => {
   const stageRef = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
+  const t = content[lang].alx;
   const { scrollYProgress } = useScroll({
     target: stageRef,
     offset: ["start start", "end end"],
@@ -1398,14 +1501,14 @@ const AlxBrandPromiseSection: React.FC<{ lang: Language }> = ({ lang }) => {
       id="alx-brand-promise"
       ref={stageRef}
       className={`alx-brand-main raw-metal-paper relative ${lang === 'ar' ? 'is-rtl' : ''}`}
-      aria-label="ALX Brand Promise"
+      aria-label={t.aria}
     >
       <div className="raw-metal-edge raw-metal-edge-light raw-metal-edge-top absolute left-0 right-0 top-0"></div>
       <div className="alx-brand-stage">
         <div className="alx-brand-shell container mx-auto px-6 max-w-7xl">
           <MotionDiv
             className="alx-brand-visual"
-            aria-label="ALX Gem Smoke visual"
+            aria-label={t.visualAria}
             style={reduceMotion ? { scale: 1 } : { scale: visualScale }}
           >
             <div className="alx-brand-shader-shell">
@@ -1422,28 +1525,28 @@ const AlxBrandPromiseSection: React.FC<{ lang: Language }> = ({ lang }) => {
 
           <div className="alx-brand-copy">
             <MotionDiv className="alx-brand-lockup-main" style={brand}>
-              <p className="alx-brand-kicker">ALX Brand Promise</p>
+              <p className="alx-brand-kicker">{t.kicker}</p>
               <img className="alx-brand-logo-main" src={ALX_LOGO_SRC} alt="ALX" />
-              <p className="alx-brand-byline">by NKACO</p>
+              <p className="alx-brand-byline">{t.byline}</p>
             </MotionDiv>
             <MotionDiv className="alx-brand-promise-copy" style={promise}>
-              Saudi-made profiles for architectural, industrial, and transportation applications.
+              {t.promise}
             </MotionDiv>
-            <div className="alx-brand-proof-list" aria-label="ALX application areas">
+            <div className="alx-brand-proof-list" aria-label={t.proofAria}>
               <MotionDiv className="alx-brand-proof-item" style={row1}>
                 <span>01</span>
-                <strong>Architectural systems</strong>
-                <p>Door, window, facade, and curtain wall profile programs.</p>
+                <strong>{t.proofs[0].title}</strong>
+                <p>{t.proofs[0].desc}</p>
               </MotionDiv>
               <MotionDiv className="alx-brand-proof-item" style={row2}>
                 <span>02</span>
-                <strong>Industrial extrusion</strong>
-                <p>Precision sections for machinery, energy, and engineered assemblies.</p>
+                <strong>{t.proofs[1].title}</strong>
+                <p>{t.proofs[1].desc}</p>
               </MotionDiv>
               <MotionDiv className="alx-brand-proof-item" style={row3}>
                 <span>03</span>
-                <strong>Transportation supply</strong>
-                <p>Lightweight aluminum profiles for mobility and export markets.</p>
+                <strong>{t.proofs[2].title}</strong>
+                <p>{t.proofs[2].desc}</p>
               </MotionDiv>
             </div>
           </div>
@@ -1462,7 +1565,7 @@ const SectionHeading = ({ title, subtitle, dark = false, lang }: { title: string
       transition={{ duration: 0.6 }}
       className={`section-kicker inline-block mb-4 px-3 py-1 border ${dark ? 'border-nasr-accent text-nasr-accent' : 'border-nasr-blue text-nasr-blue'} text-xs font-bold tracking-[0.2em] uppercase rounded-sm`}
     >
-      {subtitle || "Section"}
+      {subtitle || (lang === 'ar' ? "قسم" : "Section")}
     </MotionDiv>
     <MotionH2
       initial={{ opacity: 0, y: 20 }}
@@ -1667,10 +1770,10 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
                   </div>
                   <div className="font-serif text-4xl md:text-5xl font-semibold mb-4">{item.price}</div>
                   <div className="grid grid-cols-2 gap-x-5 gap-y-3 text-xs text-gray-300 mb-4">
-                    <div><span className="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Symbol</span>{item.symbol}</div>
-                    <div><span className="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Source</span>{item.source}</div>
-                    <div><span className="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Ref Date</span>{item.date}</div>
-                    <div><span className="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">Time</span>{item.time || "N/A"}</div>
+                    <div><span className="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">{t.labels.symbol}</span>{item.symbol}</div>
+                    <div><span className="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">{t.labels.source}</span>{item.source}</div>
+                    <div><span className="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">{t.labels.refDate}</span>{item.date}</div>
+                    <div><span className="block text-[10px] uppercase tracking-widest text-gray-500 mb-1">{t.labels.time}</span>{item.time || "N/A"}</div>
                   </div>
                   {item.status && <p className="text-[11px] leading-relaxed text-gray-300 border-t border-white/10 pt-3">{item.status}</p>}
                 </div>
@@ -1685,8 +1788,8 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
             <div className="news-source-panel bg-white border border-gray-100 shadow-sm p-5 md:p-6">
               <div className="flex items-center justify-between gap-4 mb-4">
                 <div>
-                  <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-nasr-blue mb-1">Automatically collected today</div>
-                  <h3 className="font-serif text-xl text-nasr-dark">Daily Aluminum News From External Sources</h3>
+                  <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-nasr-blue mb-1">{t.labels.collected}</div>
+                  <h3 className="font-serif text-xl text-nasr-dark">{t.labels.externalNews}</h3>
                 </div>
                 <Newspaper className="text-gray-300" size={22} />
               </div>
@@ -1705,7 +1808,7 @@ const NewsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, goBa
                     </div>
                     <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-gray-500">
                       <span className="font-semibold text-gray-700">{item.source}</span>
-                      <span>{formatPublishedDate(item.published)}</span>
+                      <span>{formatPublishedDate(item.published, lang)}</span>
                     </div>
                   </a>
                 )) : (
@@ -1768,17 +1871,17 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
                     <h4 className="font-bold text-nasr-dark text-sm">{step.title}</h4>
                     {i === 1 && (
                       <button onClick={(e) => { e.stopPropagation(); setActiveTab('die'); }} className="mt-2 text-xs font-bold text-nasr-red uppercase flex items-center gap-1 lg:hidden">
-                        <PenTool size={12} /> View Die Mfg
+                        <PenTool size={12} /> {t.ui.viewDie}
                       </button>
                     )}
                     {i === 3 && (
                       <button onClick={(e) => { e.stopPropagation(); setActiveTab('powder'); }} className="mt-2 text-xs font-bold text-nasr-blue uppercase flex items-center gap-1 lg:hidden">
-                        <PaintBucket size={12} /> View Powder
+                        <PaintBucket size={12} /> {t.ui.viewPowder}
                       </button>
                     )}
                     {i === 4 && (
                       <button onClick={(e) => { e.stopPropagation(); setActiveTab('strip'); }} className="mt-2 text-xs font-bold text-nasr-accent uppercase flex items-center gap-1 lg:hidden">
-                        <Layers size={12} /> View Strips
+                        <Layers size={12} /> {t.ui.viewStrips}
                       </button>
                     )}
                   </div>
@@ -1790,7 +1893,7 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
                         <div className={`w-40 p-3 bg-white border-l-4 border-nasr-red shadow-lg rounded-sm ${activeTab === 'die' ? 'ring-2 ring-nasr-red/30' : ''}`}>
                           <div className="flex items-center gap-2 mb-1">
                             <PenTool size={16} className="text-nasr-red" />
-                            <span className="text-xs font-bold text-nasr-red uppercase">Aux A</span>
+                            <span className="text-xs font-bold text-nasr-red uppercase">{t.ui.auxA}</span>
                           </div>
                           <div className="text-xs font-bold text-gray-800 leading-tight">{t.auxA.title.split(':')[0]}</div>
                         </div>
@@ -1804,7 +1907,7 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
                         <div className={`absolute ${isRTL ? '-right-8' : '-left-8'} top-1/2 -translate-y-1/2 w-8 h-0.5 bg-nasr-blue`}></div>
                         <div className={`w-40 p-3 bg-white border-r-4 border-nasr-blue shadow-lg rounded-sm ${activeTab === 'powder' ? 'ring-2 ring-nasr-blue/30' : ''}`}>
                           <div className="flex items-center gap-2 mb-1 justify-end">
-                            <span className="text-xs font-bold text-nasr-blue uppercase">Aux B</span>
+                            <span className="text-xs font-bold text-nasr-blue uppercase">{t.ui.auxB}</span>
                             <PaintBucket size={16} className="text-nasr-blue" />
                           </div>
                           <div className="text-xs font-bold text-gray-800 leading-tight text-right">{t.auxB.title.split(':')[0]}</div>
@@ -1819,7 +1922,7 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
                         <div className={`absolute ${isRTL ? '-right-8' : '-left-8'} top-1/2 -translate-y-1/2 w-8 h-0.5 bg-nasr-accent`}></div>
                         <div className={`w-40 p-3 bg-white border-r-4 border-nasr-accent shadow-lg rounded-sm ${activeTab === 'strip' ? 'ring-2 ring-nasr-accent/30' : ''}`}>
                           <div className="flex items-center gap-2 mb-1 justify-end">
-                            <span className="text-xs font-bold text-nasr-accent uppercase">Aux C</span>
+                            <span className="text-xs font-bold text-nasr-accent uppercase">{t.ui.auxC}</span>
                             <Layers size={16} className="text-nasr-accent" />
                           </div>
                           <div className="text-xs font-bold text-gray-800 leading-tight text-right">{t.auxC.title.split(':')[0]}</div>
@@ -1857,7 +1960,7 @@ const IntegratedRouteDiagram: React.FC<{ lang: Language }> = ({ lang }) => {
                     activeTab === 'powder' ? t.auxB.desc : t.auxC.desc}
               </p>
               <div className="space-y-4">
-                <h4 className="text-xs font-bold uppercase tracking-widest text-gray-400 border-b pb-2 mb-4">Process Steps</h4>
+                <h4 className="text-xs font-bold uppercase tracking-widest text-gray-400 border-b pb-2 mb-4">{t.ui.processSteps}</h4>
                 {(activeTab === 'core' ? t.core.steps :
                   activeTab === 'die' ? t.auxA.steps :
                     activeTab === 'powder' ? t.auxB.steps : t.auxC.steps).map((step, idx) => (
@@ -1987,16 +2090,16 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
             <div className="lg:col-span-5 products-capacity-strip">
               <div>
                 <span className="products-capacity-value">200,000</span>
-                <span className="products-capacity-label">tons/year designed capacity</span>
+                <span className="products-capacity-label">{t.capacityDesigned}</span>
               </div>
               <div>
                 <span className="products-capacity-value">3</span>
-                <span className="products-capacity-label">application families</span>
+                <span className="products-capacity-label">{t.applicationFamilies}</span>
               </div>
             </div>
           </div>
         </div>
-        <nav className="products-anchor-nav mb-20" aria-label="Product categories">
+        <nav className="products-anchor-nav mb-20" aria-label={t.categoriesAria}>
           {currentData.map((category) => {
             const CategoryIcon = category.icon;
             return (
@@ -2060,13 +2163,13 @@ const ProductsPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang, 
         </div>
         <div className="products-cta mt-28 lg:mt-32">
           <div>
-            <div className="text-nasr-blue text-xs font-bold uppercase tracking-[0.28em] mb-3">Profile requirements</div>
-            <h3 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Discuss your aluminum profile needs</h3>
-            <p className="text-gray-300 leading-relaxed max-w-2xl">Share drawings, alloy needs, surface treatment targets, or application requirements with our team.</p>
+            <div className="text-nasr-blue text-xs font-bold uppercase tracking-[0.28em] mb-3">{t.ctaKicker}</div>
+            <h3 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">{t.ctaTitle}</h3>
+            <p className="text-gray-300 leading-relaxed max-w-2xl">{t.ctaDesc}</p>
           </div>
           <button onClick={() => { goBack(); setTimeout(() => window.nasrLenis?.scrollTo('#contact', { offset: -88 }) ?? document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="products-cta-button">
             {content[lang].nav.contact}
-            <ArrowRight size={20} />
+            <ArrowRight size={20} className={isRTL ? "rotate-180" : ""} />
           </button>
         </div>
       </div>
@@ -2128,7 +2231,7 @@ const TechnologyPage: React.FC<{ lang: Language, goBack: () => void }> = ({ lang
         <div className="tech-process-grid grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24">
           <div className="lg:col-span-4">
             <div className="tech-rail-card sticky top-32 bg-white p-8 rounded-sm shadow-lg border border-gray-100">
-              <h3 className="tech-rail-title text-xl font-serif mb-8 text-nasr-dark border-b pb-4">Processing Flow</h3>
+              <h3 className="tech-rail-title text-xl font-serif mb-8 text-nasr-dark border-b pb-4">{t.flowTitle}</h3>
               <div className="relative">
                 <div className={`absolute top-4 bottom-4 ${isRTL ? 'right-4' : 'left-4'} w-1 bg-gray-100`}></div>
                 {getSteps().map((step, idx) => (
@@ -2202,7 +2305,7 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex items-center justify-center gap-3 mb-6 text-nasr-accent"><Leaf size={32} /><span className="font-bold uppercase tracking-widest text-sm">{t.subtitle}</span></div>
             <h1 className={`text-white font-serif font-bold mb-10 leading-none ${isRTL ? 'font-arabic text-5xl lg:text-7xl' : 'text-5xl lg:text-7xl'}`}>{t.title}</h1>
-            <div className="sustainability-hero-panel bg-black/30 backdrop-blur-md p-8 md:p-10 rounded-sm border-l-4 border-nasr-accent text-left">
+            <div className={`sustainability-hero-panel bg-black/30 backdrop-blur-md p-8 md:p-10 rounded-sm border-nasr-accent ${isRTL ? 'border-r-4 text-right' : 'border-l-4 text-left'}`}>
               <p className="text-white text-lg md:text-xl leading-relaxed mb-6 font-medium">{t.values.p1}</p>
               <p className="text-gray-200 text-base md:text-lg leading-relaxed mb-6">{t.values.p2}</p>
               <p className="text-nasr-accent text-base md:text-lg font-bold uppercase tracking-wide">{t.values.p3}</p>
@@ -2221,7 +2324,7 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
           ))}
         </div>
         <div className="sustainability-network mb-32">
-          <SectionHeading title="Recycling Infrastructure" subtitle="Strategic Network" lang={lang} />
+          <SectionHeading title={t.network.title} subtitle={t.network.subtitle} lang={lang} />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="sustainability-site-card bg-white border border-gray-100 shadow-lg overflow-hidden group hover:border-nasr-accent transition-[border-color,box-shadow] duration-300">
               <div className="relative h-64 overflow-hidden">
@@ -2275,7 +2378,7 @@ const SustainabilityPage: React.FC<{ lang: Language, goBack: () => void }> = ({ 
           </div>
         </div>
         <div className="sustainability-impact mb-12">
-          <SectionHeading title={t.impact.title} subtitle="Vision 2030" lang={lang} />
+          <SectionHeading title={t.impact.title} subtitle={t.impact.subtitle} lang={lang} />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {t.impact.items.map((item, i) => (
               <div key={i} className="sustainability-impact-card p-8 border border-gray-100 hover:border-nasr-blue hover:shadow-lg transition-[border-color,box-shadow] duration-300 group">
