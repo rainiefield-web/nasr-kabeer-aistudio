@@ -15,7 +15,8 @@ import {
   PenTool, Beaker, Box, ExternalLink, Recycle, Leaf,
   Wind, Droplets, Building2, Car, Newspaper, TrendingUp, BarChart3, Clock, Loader2
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion, useScroll, useSpring, useTransform, type MotionValue } from 'framer-motion';
+import { GemSmoke, gemSmokePresets } from '@paper-design/shaders-react';
 
 // Fix for Framer Motion types in strict environments
 const MotionDiv = motion.div as any;
@@ -1353,6 +1354,106 @@ const AlxLogo = () => (
   />
 );
 
+const ALX_LOGO_SRC = "/site-assets/nkaco-logo.png";
+
+const useAlxRevealStyle = (
+  progress: MotionValue<number>,
+  start: number,
+  end: number,
+  travel = 18
+) => {
+  const reduceMotion = useReducedMotion();
+  const opacity = useTransform(progress, [start, end], [0, 1]);
+  const y = useTransform(progress, [start, end], [travel, 0]);
+  const scale = useTransform(progress, [start, end], [0.985, 1]);
+
+  if (reduceMotion) {
+    return { opacity: 1, y: 0, scale: 1 };
+  }
+
+  return { opacity, y, scale };
+};
+
+const AlxBrandPromiseSection: React.FC<{ lang: Language }> = ({ lang }) => {
+  const stageRef = useRef<HTMLElement>(null);
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: stageRef,
+    offset: ["start start", "end end"],
+  });
+  const progress = useSpring(scrollYProgress, {
+    stiffness: 82,
+    damping: 28,
+    mass: 0.72,
+  });
+  const visualScale = useTransform(progress, [0, 0.14], [0.978, 1]);
+  const brand = useAlxRevealStyle(progress, 0.16, 0.3, 16);
+  const promise = useAlxRevealStyle(progress, 0.34, 0.48, 18);
+  const row1 = useAlxRevealStyle(progress, 0.52, 0.64, 14);
+  const row2 = useAlxRevealStyle(progress, 0.64, 0.76, 14);
+  const row3 = useAlxRevealStyle(progress, 0.76, 0.88, 14);
+
+  return (
+    <section
+      id="alx-brand-promise"
+      ref={stageRef}
+      className={`alx-brand-main raw-metal-paper relative ${lang === 'ar' ? 'is-rtl' : ''}`}
+      aria-label="ALX Brand Promise"
+    >
+      <div className="raw-metal-edge raw-metal-edge-light raw-metal-edge-top absolute left-0 right-0 top-0"></div>
+      <div className="alx-brand-stage">
+        <div className="alx-brand-shell container mx-auto px-6 max-w-7xl">
+          <MotionDiv
+            className="alx-brand-visual"
+            aria-label="ALX Gem Smoke visual"
+            style={reduceMotion ? { scale: 1 } : { scale: visualScale }}
+          >
+            <div className="alx-brand-shader-shell">
+              <GemSmoke
+                className="alx-brand-gem-smoke"
+                {...gemSmokePresets[0].params}
+                image={ALX_LOGO_SRC}
+                fit="contain"
+                suspendWhenProcessingImage
+                style={{ width: "100%", height: "100%" }}
+              />
+            </div>
+          </MotionDiv>
+
+          <div className="alx-brand-copy">
+            <MotionDiv className="alx-brand-lockup-main" style={brand}>
+              <p className="alx-brand-kicker">ALX Brand Promise</p>
+              <img className="alx-brand-logo-main" src={ALX_LOGO_SRC} alt="ALX" />
+              <p className="alx-brand-byline">by NKACO</p>
+            </MotionDiv>
+            <MotionDiv className="alx-brand-promise-copy" style={promise}>
+              Saudi-made profiles for architectural, industrial, and transportation applications.
+            </MotionDiv>
+            <div className="alx-brand-proof-list" aria-label="ALX application areas">
+              <MotionDiv className="alx-brand-proof-item" style={row1}>
+                <span>01</span>
+                <strong>Architectural systems</strong>
+                <p>Door, window, facade, and curtain wall profile programs.</p>
+              </MotionDiv>
+              <MotionDiv className="alx-brand-proof-item" style={row2}>
+                <span>02</span>
+                <strong>Industrial extrusion</strong>
+                <p>Precision sections for machinery, energy, and engineered assemblies.</p>
+              </MotionDiv>
+              <MotionDiv className="alx-brand-proof-item" style={row3}>
+                <span>03</span>
+                <strong>Transportation supply</strong>
+                <p>Lightweight aluminum profiles for mobility and export markets.</p>
+              </MotionDiv>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="raw-metal-edge raw-metal-edge-dark absolute bottom-0 left-0 right-0"></div>
+    </section>
+  );
+};
+
 const SectionHeading = ({ title, subtitle, dark = false, lang }: { title: string, subtitle?: string, dark?: boolean, lang: Language }) => (
   <div className="section-heading mb-4 max-w-3xl">
     <MotionDiv
@@ -2396,13 +2497,13 @@ const App: React.FC = () => {
                 </MotionDiv>
               </div>
             </header>
-            <section id="about" className="raw-metal-paper py-24 md:py-32 relative overflow-hidden">
+            <section id="about" className="strategic-overview-section raw-metal-paper relative overflow-hidden">
               <div className="raw-metal-edge raw-metal-edge-dark absolute bottom-0 left-0 right-0"></div>
-              <div className="container mx-auto px-6 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                  <div>
+              <div className="strategic-overview-container container mx-auto px-6 relative z-10">
+                <div className="strategic-overview-grid grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                  <div className="strategic-overview-copy">
                     <SectionHeading title={t.about.title} subtitle={t.about.subtitle} lang={lang} />
-                    <div className="space-y-6 text-base md:text-lg text-gray-600 leading-relaxed">
+                    <div className="strategic-overview-body space-y-6 text-base md:text-lg text-gray-600 leading-relaxed">
                       <MotionDiv
                         initial={{ opacity: 0, y: 28, filter: 'blur(8px)' }}
                         whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -2416,15 +2517,15 @@ const App: React.FC = () => {
                           ))}
                         </div>
                       </MotionDiv>
-                      <div className="grid grid-cols-2 gap-8 mt-8">
+                      <div className="strategic-overview-stats grid grid-cols-2 gap-8 mt-8">
                         <div className="raw-metal-stat p-6"><div className="relative z-10 text-4xl font-serif font-bold text-nasr-dark mb-2">200K</div><div className="relative z-10 text-xs font-bold uppercase tracking-widest text-gray-500">{t.about.statCapacity}</div></div>
                         <div className="raw-metal-stat p-6"><div className="relative z-10 text-4xl font-serif font-bold text-nasr-dark mb-2">30%</div><div className="relative z-10 text-xs font-bold uppercase tracking-widest text-gray-500">{t.about.statExport}</div></div>
                       </div>
                     </div>
                   </div>
-                  <div className="relative flex flex-col items-center lg:items-stretch gap-6">
+                  <div className="strategic-overview-media relative flex flex-col items-center lg:items-stretch gap-6">
                     <AboutImageOrbit />
-                    <MotionDiv initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.55 }} className="w-full max-w-[34rem] self-center">
+                    <MotionDiv initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.55 }} className="strategic-overview-park-card w-full max-w-[34rem] self-center">
                       <a href="https://www.everwin.sa/" target="_blank" rel="noopener noreferrer" className="block rounded-[1.35rem] border border-white/70 bg-white/72 px-5 py-4 shadow-[0_16px_38px_rgba(16,38,51,0.10),inset_0_1px_0_rgba(255,255,255,0.86)] backdrop-blur-md transition-[transform,border-color,background-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-white/90 hover:bg-white/82 hover:shadow-[0_22px_48px_rgba(16,38,51,0.13),inset_0_1px_0_rgba(255,255,255,0.9)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-nasr-blue">
                       <div className="flex items-start gap-3">
                         <div className="mt-0.5 rounded-full bg-white/70 p-2 shadow-sm">
@@ -2445,6 +2546,7 @@ const App: React.FC = () => {
                 </div>
               </div>
             </section>
+            <AlxBrandPromiseSection lang={lang} />
             <section id="integrated-value-chain" className="raw-metal-dark process-scroll-shell relative overflow-visible">
               <div className="raw-metal-edge raw-metal-edge-dark raw-metal-edge-top absolute left-0 right-0 top-0"></div>
               <div className="absolute inset-0 opacity-[0.08] pointer-events-none">

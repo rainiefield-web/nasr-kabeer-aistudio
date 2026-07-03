@@ -1,0 +1,395 @@
+:root {
+  --alx-ink: #080a0d;
+  --alx-paper: #f5f5f1;
+  --alx-muted: #747b82;
+  --alx-line: rgba(8, 10, 13, 0.14);
+  --alx-blue: #009fe3;
+  --alx-red: #e60012;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: var(--alx-paper);
+  color: var(--alx-ink);
+  font-family: "Manrope", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: 0;
+  overflow-x: hidden;
+}
+
+.alx-page {
+  min-height: 320dvh;
+  background:
+    radial-gradient(circle at 11% 16%, rgba(0, 159, 227, 0.08), transparent 24rem),
+    radial-gradient(circle at 86% 78%, rgba(230, 0, 18, 0.045), transparent 26rem),
+    linear-gradient(180deg, #fbfbf7 0%, #eff2f2 100%);
+}
+
+.alx-scroll-stage {
+  position: relative;
+  height: 320dvh;
+}
+
+.alx-section {
+  position: sticky;
+  top: 0;
+  width: min(100%, 1440px);
+  height: 100dvh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.14fr) minmax(24rem, 0.86fr);
+  gap: clamp(1.5rem, 4vw, 4.5rem);
+  align-items: center;
+  padding: clamp(1rem, 2.4vh, 2rem) clamp(1.2rem, 4.6vw, 5rem);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.alx-visual {
+  position: relative;
+  height: min(72dvh, 42rem);
+  min-height: 27rem;
+  overflow: hidden;
+  border-radius: 42px;
+  background: #f0efea;
+  box-shadow:
+    0 48px 120px rgba(8, 15, 19, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72),
+    inset 0 -40px 92px rgba(90, 80, 70, 0.08);
+  isolation: isolate;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.alx-visual::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  z-index: 4;
+  border-radius: 41px;
+  pointer-events: none;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(110deg, transparent 0 33%, rgba(255, 255, 255, 0.42) 44%, transparent 56%);
+  opacity: 0.34;
+}
+
+.alx-visual::after {
+  display: none;
+}
+
+.alx-shader-shell {
+  position: absolute;
+  inset: -3%;
+  z-index: 2;
+}
+
+.alx-gem-smoke {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.alx-copy {
+  position: relative;
+  align-self: center;
+  height: min(72dvh, 42rem);
+  min-height: 27rem;
+  max-width: 38rem;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(0.5rem, 1.8vw, 1.35rem) 0 clamp(0.5rem, 1.8vw, 1.35rem) clamp(0.2rem, 1vw, 0.8rem);
+}
+
+.alx-reveal {
+  transform-origin: left center;
+  will-change: transform, opacity, filter;
+}
+
+.alx-brand-lockup {
+  width: fit-content;
+  max-width: 100%;
+}
+
+.alx-kicker {
+  margin: 0 0 clamp(0.75rem, 1.8vh, 1.1rem);
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--nk-titanium, #7e8a8e);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+}
+
+.alx-brand-logo {
+  display: block;
+  width: clamp(9.5rem, 18vw, 16rem);
+  height: auto;
+  object-fit: contain;
+}
+
+.alx-byline {
+  margin: clamp(0.65rem, 1.6vh, 0.9rem) 0 0;
+  color: var(--nk-text-muted, #637074);
+  font-size: clamp(0.98rem, 1.2vw, 1.1rem);
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.alx-promise {
+  margin: clamp(1.35rem, 3.2vh, 2rem) 0 0;
+  max-width: 33rem;
+  color: var(--nk-text-muted, #637074);
+  font-size: clamp(1.02rem, 1.22vw, 1.12rem);
+  line-height: 1.78;
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+.alx-proof-list {
+  display: grid;
+  gap: clamp(0.86rem, 2.1vh, 1.28rem);
+  margin-top: clamp(1.4rem, 3.5vh, 2.45rem);
+  max-width: 34rem;
+}
+
+.alx-proof-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr);
+  column-gap: clamp(0.9rem, 1.8vw, 1.25rem);
+  padding: 0;
+}
+
+.alx-proof-index {
+  align-self: start;
+  padding-top: 0.13rem;
+  color: rgba(99, 112, 116, 0.58);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.alx-proof-list strong {
+  color: var(--nk-text-dark, #171b1c);
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(0.98rem, 1.1vw, 1.08rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.alx-proof-list p {
+  grid-column: 2;
+  margin: 0.32rem 0 0;
+  color: var(--alx-muted);
+  font-size: 0.92rem;
+  line-height: 1.62;
+}
+
+@media (max-width: 980px) {
+  .alx-section {
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: clamp(1rem, 2.4vh, 1.5rem);
+  }
+
+  .alx-visual {
+    height: clamp(18rem, 43dvh, 31rem);
+    min-height: 0;
+  }
+
+  .alx-copy {
+    height: auto;
+    min-height: 0;
+    max-width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 620px) {
+  .alx-page {
+    width: 100%;
+    max-width: 100vw;
+    min-height: 340dvh;
+  }
+
+  .alx-scroll-stage {
+    height: 340dvh;
+  }
+
+  .alx-section {
+    width: 100%;
+    max-width: 100vw;
+    height: 100dvh;
+    padding: clamp(0.65rem, 2vh, 1rem);
+    gap: clamp(0.8rem, 2.2vh, 1.2rem);
+    overflow: hidden;
+    justify-items: start;
+  }
+
+  .alx-visual {
+    width: calc(100vw - 2rem);
+    max-width: calc(100vw - 2rem);
+    height: clamp(13.5rem, 35dvh, 22rem);
+    min-height: 0;
+    border-radius: 28px;
+    min-width: 0;
+  }
+
+  .alx-visual::before {
+    border-radius: 27px;
+  }
+
+  .alx-copy {
+    width: min(20.5rem, calc(100vw - 2rem));
+    max-width: min(20.5rem, calc(100vw - 2rem));
+    padding: 0;
+  }
+
+  .alx-kicker {
+    margin-bottom: 0.58rem;
+    font-size: 0.62rem;
+  }
+
+  .alx-brand-logo {
+    width: clamp(8.6rem, 42vw, 11rem);
+  }
+
+  .alx-byline {
+    margin-top: 0.48rem;
+    font-size: 0.92rem;
+    line-height: 1.35;
+  }
+
+  .alx-promise {
+    max-width: 100%;
+    margin: 0.82rem 0 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-wrap: auto;
+    overflow-wrap: anywhere;
+  }
+
+  .alx-proof-list {
+    margin-top: 0.92rem;
+    gap: 0.58rem;
+  }
+
+  .alx-proof-list,
+  .alx-proof-item,
+  .alx-proof-list strong,
+  .alx-proof-list p {
+    min-width: 0;
+  }
+
+  .alx-proof-item {
+    grid-template-columns: 2rem minmax(0, 1fr);
+    column-gap: 0.7rem;
+  }
+
+  .alx-proof-index {
+    font-size: 0.68rem;
+  }
+
+  .alx-proof-list strong {
+    font-size: 0.9rem;
+  }
+
+  .alx-proof-list p {
+    margin-top: 0.18rem;
+    font-size: 0.78rem;
+    line-height: 1.42;
+  }
+
+  .alx-proof-list strong,
+  .alx-proof-list p {
+    overflow-wrap: anywhere;
+  }
+
+  .alx-shader-shell {
+    inset: -6%;
+  }
+}
+
+@media (max-height: 760px) and (min-width: 621px) {
+  .alx-visual {
+    height: min(68dvh, 34rem);
+    min-height: 24rem;
+  }
+
+  .alx-brand-logo {
+    width: clamp(8.5rem, 15vw, 13rem);
+  }
+
+  .alx-promise {
+    line-height: 1.55;
+  }
+
+}
+
+@media (max-height: 720px) and (max-width: 620px) {
+  .alx-section {
+    gap: 0.65rem;
+  }
+
+  .alx-visual {
+    height: 31dvh;
+  }
+
+  .alx-kicker {
+    margin-bottom: 0.48rem;
+  }
+
+  .alx-brand-logo {
+    width: 8.2rem;
+  }
+
+  .alx-byline {
+    margin-top: 0.32rem;
+  }
+
+  .alx-promise {
+    margin-top: 0.62rem;
+    font-size: 0.82rem;
+    line-height: 1.38;
+  }
+
+  .alx-proof-list {
+    margin-top: 0.62rem;
+  }
+
+  .alx-proof-list p {
+    font-size: 0.72rem;
+    line-height: 1.32;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .alx-page,
+  .alx-scroll-stage {
+    min-height: 100dvh;
+    height: 100dvh;
+  }
+
+  .alx-reveal,
+  .alx-visual {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+}

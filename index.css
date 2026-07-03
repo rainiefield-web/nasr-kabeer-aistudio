@@ -1739,6 +1739,621 @@ footer#contact .text-nasr-accent {
   color: var(--nk-aluminum) !important;
 }
 
+/* Strategic Overview one-screen pass */
+.strategic-overview-section {
+  min-height: 100dvh;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  padding-block: clamp(3.7rem, 6.8vh, 4.9rem) clamp(1.45rem, 3vh, 2.4rem);
+}
+
+.strategic-overview-container {
+  width: 100%;
+}
+
+.strategic-overview-grid {
+  grid-template-columns: minmax(0, 1.18fr) minmax(18rem, 0.82fr);
+  gap: clamp(1.6rem, 3.8vw, 3.6rem) !important;
+}
+
+.strategic-overview-section .section-heading {
+  margin-bottom: clamp(1.1rem, 2.6vh, 1.8rem);
+}
+
+.strategic-overview-section .section-kicker {
+  margin-bottom: clamp(0.72rem, 1.7vh, 1.05rem) !important;
+  padding-bottom: 0.58rem !important;
+  font-size: 0.72rem !important;
+}
+
+.strategic-overview-section .section-title {
+  max-width: 13.2ch;
+  font-size: clamp(3.25rem, 5vw, 5.35rem) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.05em;
+}
+
+.strategic-overview-body {
+  max-width: 45rem;
+  font-size: clamp(1.08rem, 1.32vw, 1.22rem) !important;
+  line-height: 1.66 !important;
+}
+
+.strategic-overview-body p {
+  line-height: 1.7 !important;
+}
+
+.strategic-overview-body .space-y-5 {
+  gap: clamp(0.92rem, 1.8vh, 1.18rem);
+}
+
+.strategic-overview-stats {
+  gap: clamp(0.95rem, 2vw, 1.35rem) !important;
+  margin-top: clamp(1.15rem, 2.8vh, 1.65rem) !important;
+}
+
+.strategic-overview-stats .raw-metal-stat {
+  padding: clamp(1rem, 2.1vh, 1.34rem) clamp(1rem, 2vw, 1.38rem) !important;
+}
+
+.strategic-overview-stats .text-4xl {
+  font-size: clamp(2.25rem, 3.6vw, 3rem) !important;
+  line-height: 0.95;
+}
+
+.strategic-overview-stats .text-xs {
+  font-size: 0.68rem !important;
+  line-height: 1.42;
+}
+
+.strategic-overview-media {
+  gap: clamp(0.85rem, 2vh, 1.25rem) !important;
+}
+
+.strategic-overview-section .about-showcase {
+  width: min(100%, 22rem);
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  padding: 0.62rem;
+}
+
+.strategic-overview-section .about-showcase::before {
+  inset: 0.62rem;
+}
+
+.strategic-overview-section .about-showcase-main {
+  min-height: clamp(12.5rem, 30dvh, 18.5rem);
+}
+
+.strategic-overview-section .about-showcase-thumbs {
+  display: none;
+}
+
+.strategic-overview-section .about-showcase-thumb {
+  width: 3.12rem;
+  border-radius: 0.54rem;
+}
+
+.strategic-overview-park-card a {
+  display: none !important;
+  border-radius: 0.95rem !important;
+  padding: clamp(0.68rem, 1.4vh, 0.88rem) clamp(0.9rem, 1.8vw, 1.08rem) !important;
+}
+
+.strategic-overview-park-card p {
+  line-height: 1.45 !important;
+}
+
+/* ALX Brand Promise in-page scroll moment */
+.alx-brand-main {
+  min-height: 320dvh;
+}
+
+.alx-brand-stage {
+  position: relative;
+  height: 320dvh;
+}
+
+.alx-brand-shell {
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.14fr) minmax(24rem, 0.86fr);
+  gap: clamp(1.5rem, 4vw, 4.5rem);
+  align-items: center;
+  padding-block: clamp(1rem, 2.4vh, 2rem);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.alx-brand-visual {
+  position: relative;
+  height: min(72dvh, 42rem);
+  min-height: 27rem;
+  overflow: hidden;
+  border-radius: 42px;
+  background: #f0efea;
+  box-shadow:
+    0 48px 120px rgba(8, 15, 19, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72),
+    inset 0 -40px 92px rgba(90, 80, 70, 0.08);
+  isolation: isolate;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.alx-brand-visual::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  z-index: 4;
+  border-radius: 41px;
+  pointer-events: none;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(110deg, transparent 0 33%, rgba(255, 255, 255, 0.42) 44%, transparent 56%);
+  opacity: 0.34;
+}
+
+.alx-brand-shader-shell {
+  position: absolute;
+  inset: -3%;
+  z-index: 2;
+}
+
+.alx-brand-gem-smoke {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.alx-brand-copy {
+  position: relative;
+  align-self: center;
+  height: min(72dvh, 42rem);
+  min-height: 27rem;
+  max-width: 38rem;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(0.5rem, 1.8vw, 1.35rem) 0 clamp(0.5rem, 1.8vw, 1.35rem) clamp(0.2rem, 1vw, 0.8rem);
+}
+
+.alx-brand-lockup-main,
+.alx-brand-promise-copy,
+.alx-brand-proof-item {
+  transform-origin: left center;
+  will-change: transform, opacity;
+}
+
+.alx-brand-kicker {
+  margin: 0 0 clamp(0.75rem, 1.8vh, 1.1rem);
+  display: block;
+  color: var(--nk-titanium, #7e8a8e);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+}
+
+.alx-brand-logo-main {
+  display: block;
+  width: clamp(9.5rem, 18vw, 16rem);
+  height: auto;
+  object-fit: contain;
+}
+
+.alx-brand-byline {
+  margin: clamp(0.65rem, 1.6vh, 0.9rem) 0 0;
+  color: var(--nk-text-muted, #637074);
+  font-size: clamp(0.98rem, 1.2vw, 1.1rem);
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.alx-brand-promise-copy {
+  margin: clamp(1.35rem, 3.2vh, 2rem) 0 0;
+  max-width: 33rem;
+  color: var(--nk-text-muted, #637074);
+  font-size: clamp(1.02rem, 1.22vw, 1.12rem);
+  line-height: 1.78;
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+.alx-brand-proof-list {
+  display: grid;
+  gap: clamp(0.86rem, 2.1vh, 1.28rem);
+  margin-top: clamp(1.4rem, 3.5vh, 2.45rem);
+  max-width: 34rem;
+}
+
+.alx-brand-proof-item {
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr);
+  column-gap: clamp(0.9rem, 1.8vw, 1.25rem);
+}
+
+.alx-brand-proof-item span {
+  align-self: start;
+  padding-top: 0.13rem;
+  color: rgba(99, 112, 116, 0.58);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.alx-brand-proof-item strong {
+  color: var(--nk-text-dark, #171b1c);
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(0.98rem, 1.1vw, 1.08rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.alx-brand-proof-item p {
+  grid-column: 2;
+  margin: 0.32rem 0 0;
+  color: var(--nk-text-muted, #637074);
+  font-size: 0.92rem;
+  line-height: 1.62;
+}
+
+@media (max-width: 980px) {
+  .strategic-overview-section {
+    padding-block: clamp(4.1rem, 6.8vh, 5rem) clamp(1rem, 2vh, 1.65rem);
+  }
+
+  .strategic-overview-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(0.9rem, 2vh, 1.35rem) !important;
+  }
+
+  .strategic-overview-section .section-heading {
+    margin-bottom: clamp(0.78rem, 1.8vh, 1rem);
+  }
+
+  .strategic-overview-section .section-title {
+    max-width: 100%;
+    font-size: clamp(2.65rem, 7.4vw, 4.35rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  .strategic-overview-body {
+    max-width: 42rem;
+    font-size: clamp(1.04rem, 2.65vw, 1.22rem) !important;
+  }
+
+  .strategic-overview-body p {
+    line-height: 1.64 !important;
+  }
+
+  .strategic-overview-section .about-showcase {
+    width: min(100%, 24.5rem);
+    grid-template-columns: 1fr;
+  }
+
+  .strategic-overview-section .about-showcase-main {
+    min-height: clamp(8.5rem, 18dvh, 12rem);
+  }
+
+  .strategic-overview-section .about-showcase-thumbs {
+    display: none;
+  }
+
+  .alx-brand-shell {
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: clamp(1rem, 2.4vh, 1.5rem);
+  }
+
+  .alx-brand-visual {
+    height: clamp(18rem, 43dvh, 31rem);
+    min-height: 0;
+  }
+
+  .alx-brand-copy {
+    height: auto;
+    min-height: 0;
+    max-width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 767px) {
+  .strategic-overview-section {
+    min-height: 100dvh;
+    padding-block: clamp(4.35rem, 8.5vh, 4.95rem) clamp(0.72rem, 1.5vh, 1rem);
+  }
+
+  .strategic-overview-grid {
+    gap: clamp(0.58rem, 1.35vh, 0.85rem) !important;
+  }
+
+  .strategic-overview-section .section-kicker {
+    margin-bottom: 0.5rem !important;
+    padding-bottom: 0.38rem !important;
+    font-size: 0.62rem !important;
+  }
+
+  .strategic-overview-section .section-title {
+    font-size: clamp(2.35rem, 10.4vw, 3.15rem) !important;
+    line-height: 1.04 !important;
+  }
+
+  .strategic-overview-body {
+    font-size: clamp(1rem, 4.25vw, 1.1rem) !important;
+  }
+
+  .strategic-overview-body p {
+    line-height: 1.56 !important;
+  }
+
+  .strategic-overview-stats {
+    gap: 0.7rem !important;
+    margin-top: 0.8rem !important;
+  }
+
+  .strategic-overview-stats .raw-metal-stat {
+    padding: 0.72rem 0.8rem !important;
+  }
+
+  .strategic-overview-stats .text-4xl {
+    font-size: 1.9rem !important;
+  }
+
+  .strategic-overview-stats .text-xs {
+    font-size: 0.58rem !important;
+    letter-spacing: 0.13em !important;
+  }
+
+  .strategic-overview-section .about-showcase {
+    grid-template-columns: 1fr;
+    gap: 0.44rem;
+    padding: 0.48rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .strategic-overview-section .about-showcase-main {
+    min-height: clamp(7.8rem, 18dvh, 10.25rem);
+  }
+
+  .strategic-overview-section .about-showcase-thumbs {
+    display: none;
+  }
+
+  .strategic-overview-media {
+    display: none !important;
+  }
+
+  .strategic-overview-park-card {
+    display: none;
+  }
+
+  .alx-brand-main {
+    min-height: 340dvh;
+  }
+
+  .alx-brand-stage {
+    height: 340dvh;
+  }
+
+  .alx-brand-shell {
+    width: 100%;
+    max-width: 100vw;
+    height: 100dvh;
+    padding-block: clamp(0.65rem, 2vh, 1rem);
+    gap: clamp(0.8rem, 2.2vh, 1.2rem);
+    justify-items: start;
+  }
+
+  .alx-brand-visual {
+    width: calc(100vw - 2rem);
+    max-width: calc(100vw - 2rem);
+    height: clamp(13.5rem, 35dvh, 22rem);
+    min-height: 0;
+    border-radius: 28px;
+    min-width: 0;
+  }
+
+  .alx-brand-visual::before {
+    border-radius: 27px;
+  }
+
+  .alx-brand-copy {
+    width: min(20.5rem, calc(100vw - 2rem));
+    max-width: min(20.5rem, calc(100vw - 2rem));
+    padding: 0;
+  }
+
+  .alx-brand-kicker {
+    margin-bottom: 0.58rem;
+    font-size: 0.62rem;
+  }
+
+  .alx-brand-logo-main {
+    width: clamp(8.6rem, 42vw, 11rem);
+  }
+
+  .alx-brand-byline {
+    margin-top: 0.48rem;
+    font-size: 0.92rem;
+    line-height: 1.35;
+  }
+
+  .alx-brand-promise-copy {
+    max-width: 100%;
+    margin-top: 0.82rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-wrap: auto;
+    overflow-wrap: anywhere;
+  }
+
+  .alx-brand-proof-list {
+    margin-top: 0.92rem;
+    gap: 0.58rem;
+  }
+
+  .alx-brand-proof-item,
+  .alx-brand-proof-item strong,
+  .alx-brand-proof-item p {
+    min-width: 0;
+  }
+
+  .alx-brand-proof-item {
+    grid-template-columns: 2rem minmax(0, 1fr);
+    column-gap: 0.7rem;
+  }
+
+  .alx-brand-proof-item span {
+    font-size: 0.68rem;
+  }
+
+  .alx-brand-proof-item strong {
+    font-size: 0.9rem;
+  }
+
+  .alx-brand-proof-item p {
+    margin-top: 0.18rem;
+    font-size: 0.78rem;
+    line-height: 1.42;
+    overflow-wrap: anywhere;
+  }
+
+  .alx-brand-shader-shell {
+    inset: -6%;
+  }
+}
+
+@media (max-height: 760px) and (min-width: 768px) {
+  .strategic-overview-section {
+    padding-block: 4.35rem 1.2rem;
+  }
+
+  .strategic-overview-section .section-title {
+    font-size: clamp(3rem, 4.4vw, 4.45rem) !important;
+  }
+
+  .strategic-overview-body {
+    font-size: clamp(1rem, 1.18vw, 1.08rem) !important;
+  }
+
+  .strategic-overview-body p {
+    line-height: 1.52 !important;
+  }
+
+  .strategic-overview-section .about-showcase-main {
+    min-height: clamp(12.5rem, 29dvh, 18rem);
+  }
+
+  .alx-brand-visual {
+    height: min(68dvh, 34rem);
+    min-height: 24rem;
+  }
+
+  .alx-brand-logo-main {
+    width: clamp(8.5rem, 15vw, 13rem);
+  }
+
+  .alx-brand-promise-copy {
+    line-height: 1.55;
+  }
+}
+
+@media (max-height: 720px) and (max-width: 767px) {
+  .strategic-overview-section {
+    padding-block: 4.15rem 0.42rem;
+  }
+
+  .strategic-overview-section .section-heading {
+    margin-bottom: 0.48rem;
+  }
+
+  .strategic-overview-section .section-title {
+    font-size: clamp(2rem, 9vw, 2.55rem) !important;
+  }
+
+  .strategic-overview-body p {
+    line-height: 1.44 !important;
+  }
+
+  .strategic-overview-stats {
+    margin-top: 0.62rem !important;
+  }
+
+  .strategic-overview-stats .raw-metal-stat {
+    padding: 0.58rem 0.66rem !important;
+  }
+
+  .strategic-overview-stats .text-4xl {
+    font-size: 1.65rem !important;
+  }
+
+  .strategic-overview-section .about-showcase-main {
+    min-height: 6.8rem;
+  }
+
+  .strategic-overview-section .about-showcase-thumbs {
+    display: none;
+  }
+
+  .alx-brand-shell {
+    gap: 0.65rem;
+  }
+
+  .alx-brand-visual {
+    height: 31dvh;
+  }
+
+  .alx-brand-kicker {
+    margin-bottom: 0.48rem;
+  }
+
+  .alx-brand-logo-main {
+    width: 8.2rem;
+  }
+
+  .alx-brand-byline {
+    margin-top: 0.32rem;
+  }
+
+  .alx-brand-promise-copy {
+    margin-top: 0.62rem;
+    font-size: 0.82rem;
+    line-height: 1.38;
+  }
+
+  .alx-brand-proof-list {
+    margin-top: 0.62rem;
+  }
+
+  .alx-brand-proof-item p {
+    font-size: 0.72rem;
+    line-height: 1.32;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .alx-brand-main,
+  .alx-brand-stage {
+    min-height: 100dvh;
+    height: 100dvh;
+  }
+
+  .alx-brand-lockup-main,
+  .alx-brand-promise-copy,
+  .alx-brand-proof-item,
+  .alx-brand-visual {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
 @media (max-width: 767px) {
   .hero-graphite-scrim-side {
     background: linear-gradient(180deg, rgba(17, 23, 25, 0.86), rgba(17, 23, 25, 0.48) 52%, rgba(17, 23, 25, 0.84));
