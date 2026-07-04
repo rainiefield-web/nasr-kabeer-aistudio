@@ -199,7 +199,7 @@ html[lang="ar"] .news-source-panel a:hover {
 
 .process-stage-title {
   font-size: clamp(1.45rem, 2vw, 2.15rem);
-  line-height: 1;
+  line-height: 1.12;
   letter-spacing: 0;
 }
 
@@ -226,19 +226,21 @@ html[lang="ar"] .news-source-panel a:hover {
 }
 
 .process-step-desc {
-  height: clamp(2.35rem, 4.8vh, 2.85rem);
+  min-height: 0;
   contain: layout paint;
 }
 
 .process-step-desc p {
   letter-spacing: 0;
+  line-height: 1.32;
+  margin-top: 0.35rem !important;
 }
 
 .process-flow-footer {
   margin-top: 0.1rem;
 }
 
-@media (max-height: 760px) {
+@media (max-height: 820px) {
   .process-sticky-frame {
     top: 4.75rem;
     height: calc(100svh - 4.75rem);
@@ -270,11 +272,7 @@ html[lang="ar"] .news-source-panel a:hover {
 
   .process-step-desc p {
     font-size: 0.82rem;
-    line-height: 1.45;
-  }
-
-  .process-step-desc {
-    height: 2.55rem;
+    line-height: 1.28;
   }
 
   .process-step-stack {

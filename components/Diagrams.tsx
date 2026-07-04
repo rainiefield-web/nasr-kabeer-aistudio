@@ -235,7 +235,8 @@ const ProcessStepCard: React.FC<{
     const end = (index + 1) / total;
     const active = useTransform(progress, [start - 0.04, middle, end + 0.04], [0, 1, 0]);
     const cardOpacity = useTransform(active, [0, 1], [0.52, 1]);
-    const descOpacity = useTransform(active, [0.15, 0.75], [0, 1]);
+    const descOpacity = useTransform(active, [0.55, 0.85], [0, 1]);
+    const descHeight = useTransform(active, [0.12, 0.55], ['0rem', '3.8rem']);
     const indicatorScale = useTransform(active, [0, 1], [0.24, 1]);
 
     return (
@@ -256,7 +257,7 @@ const ProcessStepCard: React.FC<{
                             {step.title}
                         </h3>
                     </div>
-                    <MotionDiv className="process-step-desc overflow-hidden" style={{ opacity: descOpacity }}>
+                    <MotionDiv className="process-step-desc overflow-hidden" style={{ opacity: descOpacity, height: descHeight }}>
                         <p className="mt-2 max-w-[31rem] text-sm leading-relaxed text-[#C8D2D5] md:text-[0.95rem]">
                             {step.desc}
                         </p>
