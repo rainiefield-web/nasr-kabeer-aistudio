@@ -1,25 +1,21 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-07-04 10:03:55`
-Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
+Last Updated (UTC): `2026-07-05 10:07:24`
+Data Status: Price=FAIL: daily failed: HTTPSConnectionPool(host='www.westmetall.com', port=443): Max retries exceeded with url: /en/markdaten.php?action=table&field=LME_Al_cash (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.westmetall.com', port=443) at 0x7f31ece6ab50>, 'Connection to www.westmetall.com timed out. (connect timeout=30)')); monthly failed: HTTPSConnectionPool(host='www.westmetall.com', port=443): Max retries exceeded with url: /en/markdaten.php?action=averages&field=LME_Al_cash (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.westmetall.com', port=443) at 0x7f31eccbf090>, 'Connection to www.westmetall.com timed out. (connect timeout=30)')) | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
-### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,080.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-07-03 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
-  - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,072.17/t` | Symbol: `LME Al Cash Avg` | Ref Date: July 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
-  - Status: Current-year monthly average cash settlement from Westmetall.
+### Latest Headlines (from NewsAPI)
+- WATCH: Parties already set sail in Alaska for America's 250th | Source: Abcnews.com | Published: 2026-07-04T09:39:07Z [Link](https://abcnews.com/video/134461320/)
 
 ### Latest Headlines (from GNews)
+- 5 Foldable Ryobi Finds That Can Easily Fit Into Your Pocket Or Backpack | Source: SlashGear | Published: 2026-07-04T16:45:00Z [Link](https://www.slashgear.com/2203530/ryobi-tool-foldable-finds-fit-into-pocket-backpack/)
+- How Indian Titans Are Silently Reshaping the American Job Market | Source: The Indian Express | Published: 2026-07-04T15:16:42Z [Link](https://indianexpress.com/article/world/us-news/us-250-indian-companies-us-investment-fdi-jobs-10764528/)
+- Adani Group’s aluminium play gives it a strategic advantage in power businesses, say analysts | Source: Business Today | Published: 2026-07-04T13:38:58Z [Link](https://www.businesstoday.in/latest/corporate/story/adani-groups-aluminium-play-gives-it-a-strategic-advantage-in-power-businesses-say-analysts-541011-2026-07-04)
+- Here are Ford's winner and losers in its Q2 and first-half U.S. sales | Source: Detroit Free Press | Published: 2026-07-04T13:32:36Z [Link](https://www.freep.com/story/money/cars/ford/2026/07/04/here-are-fords-winner-and-losers-in-its-q2-and-first-half-u-s-sales/90786363007/)
+- Explained: Why aluminium is emerging as manufacturers' preferred alternative to copper | Source: The Economic Times | Published: 2026-07-04T06:43:00Z [Link](https://economictimes.indiatimes.com/markets/commodities/news/explained-why-aluminium-is-emerging-as-manufacturers-preferred-alternative-to-copper/articleshow/132176242.cms)
+- Ireland, as 'honest broker', reckons with the high price of dirty business | Source: Euronews | Published: 2026-07-04T05:00:07Z [Link](https://www.euronews.com/my-europe/2026/07/04/ireland-as-honest-broker-reckons-with-the-high-price-of-dirty-business)
+- Buy, hold, sell: Objective Corp, ResMed, and South32 shares | Source: The Motley Fool Australia | Published: 2026-07-04T00:03:32Z [Link](https://www.fool.com.au/2026/07/04/buy-hold-sell-objective-corp-resmed-and-south32-shares/)
+- Vedanta Aluminium hits record production in Q1FY27 | Source: scanx.trade | Published: 2026-07-03T23:28:15Z [Link](https://scanx.trade/stock-market-news/companies/vedanta-aluminium-hits-record-production-in-q1fy27/44666879)
+- Odisha signs memorandum of cooperation for Japan-backed projects worth ₹67,000 crore | Source: The Hindu | Published: 2026-07-03T22:55:50Z [Link](https://www.thehindu.com/news/national/odisha/odisha-signs-memorandum-of-cooperation-for-japan-backed-projects-worth-67000-crore/article71178591.ece)
 - Copper's Next Move Depends On Washington, Not The Strait Of Hormuz | Source: OilPrice | Published: 2026-07-03T19:00:00Z [Link](https://oilprice.com/Metals/Commodities/Coppers-Next-Move-Depends-On-Washington-Not-The-Strait-Of-Hormuz.html)
 - Hormuz Turns Oil Outlooks Into a Guessing Game | Source: OilPrice | Published: 2026-07-03T18:51:36Z [Link](https://oilprice.com/Energy/Energy-General/Hormuz-Turns-Oil-Outlooks-Into-a-Guessing-Game.html)
-- MEPs to vote on resolution calling for ban on Irish exports of alumina to Russia | Source: The Irish Times | Published: 2026-07-03T17:30:39Z [Link](https://www.irishtimes.com/politics/2026/07/03/meps-to-vote-on-resolution-calling-for-ban-on-irish-exports-of-alumina-to-russia/)
-- Oil Markets Grow Numb to U.S.-Iran Ceasefire Drama | Source: OilPrice | Published: 2026-07-03T16:01:00Z [Link](https://oilprice.com/Energy/Crude-Oil/Oil-Markets-Grow-Numb-to-US-Iran-Ceasefire-Drama.html)
-- Skanska builds industrial facility in Karmøy, Norway, for NOK 1.1 billion, about SEK 1.0 billion | Source: PR Newswire UK | Published: 2026-07-03T14:21:00Z [Link](https://www.prnewswire.co.uk/news-releases/skanska-builds-industrial-facility-in-karmoy-norway-for-nok-1-1-billion-about-sek-1-0-billion-302817676.html)
-- State legislatures pick up national security as Washington dithers | Source: Washington Examiner | Published: 2026-07-03T14:12:07Z [Link](https://www.washingtonexaminer.com/news/4635461/state-legislatures-national-security-fight/)
-- How Airbus Fixed The A350's Cracking Problem Without A Fleet-Wide Grounding | Source: Simple Flying | Published: 2026-07-03T14:00:19Z [Link](https://simpleflying.com/airbus-a350-fuselage-cracking-fix-no-grounding/)
-- Bell: Premier Smith says Canadians made Alberta pipeline pitch reality | Source: Calgary Herald | Published: 2026-07-03T13:24:34Z [Link](https://calgaryherald.com/opinion/columnists/bell-gratified-danielle-smith-says-canadians-made-alberta-pipeline-pitch-a-reality)
-- New Greenfield Aluminium Project To Generate 35k Jobs In Odisha: Karan Adani | Source: Republic World | Published: 2026-07-03T09:30:45Z [Link](https://www.republicworld.com/initiatives/new-greenfield-aluminium-project-to-generate-35k-jobs-in-odisha-karan-adani-2026-07-03-131092)
-- Adani Enterprises surges near 52-week high after QIP launch and ₹1.08 lakh crore Aluminium JV announcement | Source: The Hindu Business Line | Published: 2026-07-03T07:39:09Z [Link](https://www.thehindubusinessline.com/markets/stock-markets/adani-enterprises-surges-near-52-week-high-after-qip-launch-and-108-lakh-crore-aluminium-jv-announcement/article71177755.ece)
-- Adani, IHC Group ink MoU for $11.5 billion aluminium project in Odisha | Source: THE WEEK | Published: 2026-07-03T06:30:07Z [Link](https://www.theweek.in/news/biz-tech/2026/07/03/adani-irh-odisha-aluminium-project.html)
-- 2026 multibagger smallcap stock jumps another 10% after Rs 1,437-crore Vedanta Aluminium order | Source: The Economic Times | Published: 2026-07-03T05:55:00Z [Link](https://economictimes.indiatimes.com/markets/stocks/news/2026-multibagger-smallcap-stock-jumps-another-10-after-rs-1437-crore-vedanta-aluminium-order/articleshow/132153706.cms)
