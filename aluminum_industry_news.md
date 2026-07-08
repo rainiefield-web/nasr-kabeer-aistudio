@@ -1,28 +1,24 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-07-07 10:50:50`
-Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
+Last Updated (UTC): `2026-07-08 10:11:52`
+Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,105.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-07-06 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+- LME Aluminium Cash-Settlement: `$3,119.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-07-07 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,080.38/t` | Symbol: `LME Al Cash Avg` | Ref Date: July 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+- Monthly Average Cash-Settlement: `$3,088.10/t` | Symbol: `LME Al Cash Avg` | Ref Date: July 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
-### Latest Headlines (from NewsAPI)
-- Skanska wins $111m contract to build aluminium facility in Norway | Source: Biztoc.com | Published: 2026-07-06T10:32:46Z [Link](https://biztoc.com/x/638b3c20df97e32c)
-
 ### Latest Headlines (from GNews)
-- Alcoa's looming WA alumina monopoly could threaten world's only jarrah forests, environmentalists say | Source: ABC (Australian Broadcasting Corporation) | Published: 2026-07-06T22:01:04Z [Link](https://www.abc.net.au/news/2026-07-07/alcoa-purchase-south32-refinery-unlocks-jarrah-forest-mining/106871002)
-- Shyam Metalics & Energy holds investor meeting on July 6 | Source: scanx.trade | Published: 2026-07-06T21:49:41Z [Link](https://scanx.trade/stock-market-news/companies/shyam-metalics-to-host-analyst-meet-in-singapore-on-jun-23/43330982)
-- Mohali’s govt vet facilities need life support | Source: The Tribune | Published: 2026-07-06T20:12:59Z [Link](https://www.tribuneindia.com/news/chandigarh/mohalis-govt-vet-facilities-need-life-support/)
-- Anthropic signs $19 billion lease for Kentucky data center | Source: Cincinnati Cincinnati Enquirer | Published: 2026-07-06T14:18:28Z [Link](https://www.cincinnati.com/story/news/local/northern-ky/2026/07/06/anthropic-signs-19-billion-lease-for-kentucky-data-center/90820166007/)
-- Hennessey Venom F5-M: World’s Most Powerful Manual Hypercar to Debut at Goodwood | Source: The Manila Times | Published: 2026-07-06T13:10:39Z [Link](https://www.manilatimes.net/2026/07/06/tmt-newswire/globenewswire/hennessey-venom-f5-m-worlds-most-powerful-manual-hypercar-to-debut-at-goodwood/2379078)
-- Why Adani and UAE-Based IHC Are Betting $11.5 Bn in Odisha’s Aluminium Sector | Source: Outlook Business | Published: 2026-07-06T11:02:05Z [Link](https://www.outlookbusiness.com/corporate/why-adani-and-uae-based-ihc-are-betting-115-bn-in-odishas-aluminium-sector)
-- Nexans and Hydro secure long-term low-carbon aluminium supply agreement to support Europe’s grid modernisation | Source: The Manila Times | Published: 2026-07-06T10:07:13Z [Link](https://www.manilatimes.net/2026/07/06/tmt-newswire/globenewswire/nexans-and-hydro-secure-long-term-low-carbon-aluminium-supply-agreement-to-support-europes-grid-modernisation/2378854)
-- Adani storms Hindalco-Vedanta duopoly with Rs 1.1 lakh crore gambit | Source: The Economic Times | Published: 2026-07-06T08:19:00Z [Link](https://economictimes.indiatimes.com/industry/indl-goods/svs/metals-mining/gautam-adani-ihc-aluminium-joint-venture-storms-hindalco-vedanta-duopoly-with-rs-1-1-lakh-crore-gambit/articleshow/132211260.cms)
-- How Anil Agarwal is preparing to write Vedanta's next growth chapter | Source: Business Today | Published: 2026-07-06T07:05:04Z [Link](https://www.businesstoday.in/magazine/cover-story/story/how-anil-agarwal-is-preparing-to-write-vedantas-next-growth-chapter-541103-2026-07-06)
-- Tulsa World top stories for 06/29-07/05, 2026 | Source: Tulsa World | Published: 2026-07-06T05:00:00Z [Link](https://tulsaworld.com/news/local/article_54515281-845d-42de-873a-143745b43cff.html)
-- Umar Khalid book excerpt: Exploring the history of Singhbhum’s tribal societies in British India | Source: Scroll.in | Published: 2026-07-06T03:00:00Z [Link](https://scroll.in/article/1093778/umar-khalid-book-excerpt-exploring-the-history-of-singhbhums-tribal-societies-in-british-india)
-- Weekend News Roundup - Newsquawk Daily Asia-Pac Market Open | Source: ZeroHedge | Published: 2026-07-05T21:20:16Z [Link](https://www.zerohedge.com/markets/weekend-news-roundup-newsquawk-daily-asia-pac-market-open-5)
+- Several European Parliament political groups to back call to ban alumina exports to Russia | Source: The Irish Times | Published: 2026-07-07T19:51:16Z [Link](https://www.irishtimes.com/politics/2026/07/07/several-european-parliament-political-groups-to-back-call-to-ban-alumina-exports-to-russia/)
+- Sunlite Recycling Industries announces ₹37 crore strategic capacity expansion | Source: scanx.trade | Published: 2026-07-07T11:48:14Z [Link](https://scanx.trade/stock-market-news/companies/coto-invests-37-crore-to-boost-copper-and-value-added-product-capacity-by-q1-fy28/44437530)
+- More than 40% of Canadian manufacturers weighing move to U.S., KPMG poll finds | Source: The Globe and Mail | Published: 2026-07-07T11:11:35Z [Link](https://www.theglobeandmail.com/business/article-canadian-manufacturers-move-to-us-kpmg-survey/)
+- Manufacturers eyeing U.S. move as trade tensions take a toll: KPMG | Source: Bnn Bloomberg | Published: 2026-07-07T09:46:29Z [Link](https://www.bnnbloomberg.ca/business/international/2026/07/07/many-canadian-manufacturers-eyeing-us-move-as-trade-tensions-take-a-toll-kpmg/)
+- India must secure its aluminium supply chain | Source: Hindustan Times | Published: 2026-07-07T09:10:43Z [Link](https://www.hindustantimes.com/ht-insight/economy/india-must-secure-its-aluminium-supply-chain-101783415279789.html)
+- India must prepare a strategy document that charts coal’s decline | Source: ThePrint | Published: 2026-07-07T06:36:38Z [Link](https://theprint.in/opinion/india-strategy-document-coal-decline/2979484/)
+- Kibar Americas Appoints Derek Keddy as President to Lead Next Phase of Growth | Source: PR Newswire UK | Published: 2026-07-07T06:00:00Z [Link](https://www.prnewswire.co.uk/news-releases/kibar-americas-appoints-derek-keddy-as-president-to-lead-next-phase-of-growth-302818663.html)
+- India expected to become self sufficient in metals: Vedanta Group Founder Anil Agarwal | Source: Business Today | Published: 2026-07-07T04:47:19Z [Link](https://www.businesstoday.in/magazine/interview/story/india-expected-to-become-self-sufficient-in-metals-vedanta-group-founder-anil-agarwal-541325-2026-07-07)
+- Vedanta Aluminium wipes off Rs 25,000 cr worth investor wealth in under a month. Time to buy? | Source: The Economic Times | Published: 2026-07-07T04:37:00Z [Link](https://economictimes.indiatimes.com/markets/stocks/news/vedanta-aluminium-wipes-off-rs-25000-cr-worth-investor-wealth-in-under-a-month-time-to-buy/articleshow/132230375.cms)
+- The chicest luxury luggage for every kind of traveller | Source: The Sunday Times | Published: 2026-07-07T03:00:00Z [Link](https://www.thetimes.com/life-style/luxury/article/best-luxury-luggage-times-luxury-r2tz7hvsv)
+- New steel plant for Newcastle nearly three decades on from BHP's closure | Source: ABC (Australian Broadcasting Corporation) | Published: 2026-07-07T00:36:25Z [Link](https://www.abc.net.au/news/2026-07-07/green-steel-plant-newcastle-electric-powered/106887370)
