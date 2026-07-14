@@ -2088,6 +2088,75 @@ footer#contact .text-nasr-accent {
   text-wrap: balance;
 }
 
+.alx-brand-experience-action {
+  margin-top: clamp(1rem, 2.3vh, 1.45rem);
+  transform-origin: left center;
+  will-change: transform, opacity;
+}
+
+.alx-brand-experience-link {
+  display: inline-flex;
+  min-height: 3.25rem;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.35rem 0.35rem 0.35rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 999px;
+  background: rgba(23, 27, 28, 0.92);
+  box-shadow: 0 12px 30px rgba(20, 26, 28, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+  backdrop-filter: blur(18px) saturate(135%);
+  transition: background-color 220ms ease, box-shadow 220ms ease, transform 100ms ease-out;
+}
+
+.alx-brand-experience-link:hover {
+  background: rgba(35, 42, 44, 0.96);
+  box-shadow: 0 16px 36px rgba(20, 26, 28, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.alx-brand-experience-link:active {
+  transform: scale(0.97);
+}
+
+.alx-brand-experience-link:focus-visible {
+  outline: 2px solid var(--nk-blue, #009fe3);
+  outline-offset: 4px;
+}
+
+.alx-brand-experience-icon {
+  display: grid;
+  width: 2.55rem;
+  height: 2.55rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.96);
+  color: #171b1c;
+}
+
+.alx-brand-experience-icon svg {
+  transition: transform 220ms ease;
+}
+
+.alx-brand-experience-link:hover .alx-brand-experience-icon svg {
+  transform: translateX(2px);
+}
+
+.is-rtl .alx-brand-experience-action {
+  transform-origin: right center;
+}
+
+.is-rtl .alx-brand-experience-link {
+  direction: ltr;
+}
+
 .alx-brand-proof-list {
   display: grid;
   gap: clamp(0.86rem, 2.1vh, 1.28rem);
@@ -2326,6 +2395,22 @@ footer#contact .text-nasr-accent {
     overflow-wrap: anywhere;
   }
 
+  .alx-brand-experience-action {
+    margin-top: 0.7rem;
+  }
+
+  .alx-brand-experience-link {
+    min-height: 2.75rem;
+    gap: 0.65rem;
+    padding: 0.25rem 0.25rem 0.25rem 1rem;
+    font-size: 0.66rem;
+  }
+
+  .alx-brand-experience-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
   .alx-brand-proof-list {
     margin-top: 0.92rem;
     gap: 0.58rem;
@@ -2460,6 +2545,20 @@ footer#contact .text-nasr-accent {
     line-height: 1.38;
   }
 
+  .alx-brand-experience-action {
+    margin-top: 0.5rem;
+  }
+
+  .alx-brand-experience-link {
+    min-height: 2.6rem;
+    padding-left: 0.9rem;
+  }
+
+  .alx-brand-experience-icon {
+    width: 2.1rem;
+    height: 2.1rem;
+  }
+
   .alx-brand-proof-list {
     margin-top: 0.62rem;
   }
@@ -2479,11 +2578,17 @@ footer#contact .text-nasr-accent {
 
   .alx-brand-lockup-main,
   .alx-brand-promise-copy,
+  .alx-brand-experience-action,
   .alx-brand-proof-item,
   .alx-brand-visual {
     opacity: 1 !important;
     transform: none !important;
     filter: none !important;
+  }
+
+  .alx-brand-experience-link,
+  .alx-brand-experience-icon svg {
+    transition: none;
   }
 }
 
@@ -3025,6 +3130,205 @@ footer#contact .text-nasr-accent {
 .site-footer .text-nasr-red,
 .site-footer .text-nasr-accent {
   color: var(--nk-aluminum) !important;
+}
+
+/* Homepage gateway to the standalone NKACO experience. */
+.nkaco-experience-section {
+  position: relative;
+  min-height: min(84rem, 88dvh);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  background: #211b17;
+  color: #fff;
+}
+
+.nkaco-experience-backdrop,
+.nkaco-experience-shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.nkaco-experience-backdrop {
+  z-index: -3;
+  object-fit: cover;
+  object-position: 50% 50%;
+  transform: scale(1.015);
+  transition: transform 1.2s cubic-bezier(0.2, 0.75, 0.2, 1);
+}
+
+.nkaco-experience-section:hover .nkaco-experience-backdrop {
+  transform: scale(1.035);
+}
+
+.nkaco-experience-shade {
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgba(19, 16, 14, 0.9) 0%, rgba(19, 16, 14, 0.72) 31%, rgba(19, 16, 14, 0.12) 54%, rgba(19, 16, 14, 0.24) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.18), transparent 35%, rgba(0, 0, 0, 0.36));
+}
+
+.nkaco-experience-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: clamp(7rem, 14vh, 10rem);
+  padding-bottom: clamp(7rem, 14vh, 10rem);
+}
+
+.nkaco-experience-copy {
+  width: min(36rem, 46vw);
+}
+
+.nkaco-experience-kicker {
+  margin: 0 0 1.25rem;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.2em;
+}
+
+.nkaco-experience-copy h2 {
+  max-width: 34rem;
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(3rem, 5.4vw, 5.8rem);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.nkaco-experience-description {
+  max-width: 31rem;
+  margin: 1.75rem 0 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: clamp(1rem, 1.2vw, 1.16rem);
+  line-height: 1.7;
+}
+
+.nkaco-experience-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 2.25rem;
+  color: #181513;
+  background: #fff;
+  padding: 0.55rem 0.55rem 0.55rem 1.35rem;
+  font-size: 0.74rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: background-color 260ms ease, color 260ms ease;
+}
+
+.nkaco-experience-cta:hover {
+  background: var(--nk-aluminum, #c5cccd);
+  color: #111;
+}
+
+.nkaco-experience-cta-icon {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  background: #171412;
+  color: #fff;
+}
+
+.nkaco-experience-cta:hover .nkaco-experience-cta-icon svg {
+  transform: translateX(2px);
+}
+
+.nkaco-experience-cta-icon svg {
+  transition: transform 260ms ease;
+}
+
+.nkaco-experience-mark {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 51%;
+  width: clamp(8rem, 12vw, 13rem);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.nkaco-experience-mark img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.22));
+}
+
+.nkaco-experience-section.is-rtl .nkaco-experience-copy {
+  margin-left: auto;
+  text-align: right;
+}
+
+.nkaco-experience-section.is-rtl .nkaco-experience-cta {
+  padding-right: 1.35rem;
+  padding-left: 0.55rem;
+}
+
+.nkaco-experience-section.is-rtl .nkaco-experience-cta-icon svg {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 767px) {
+  .nkaco-experience-section {
+    min-height: 86dvh;
+    align-items: flex-end;
+  }
+
+  .nkaco-experience-backdrop {
+    object-position: 57% 50%;
+  }
+
+  .nkaco-experience-shade {
+    background: linear-gradient(180deg, rgba(17, 14, 12, 0.08) 0%, rgba(17, 14, 12, 0.18) 38%, rgba(17, 14, 12, 0.92) 78%, #110e0c 100%);
+  }
+
+  .nkaco-experience-inner {
+    padding-top: 26rem;
+    padding-bottom: 4rem;
+  }
+
+  .nkaco-experience-copy {
+    width: 100%;
+  }
+
+  .nkaco-experience-copy h2 {
+    max-width: 22rem;
+    font-size: clamp(2.7rem, 13vw, 4rem);
+  }
+
+  .nkaco-experience-description {
+    max-width: 27rem;
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  .nkaco-experience-mark {
+    top: 37%;
+    width: clamp(7rem, 30vw, 9.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nkaco-experience-backdrop,
+  .nkaco-experience-cta-icon svg {
+    transition: none;
+  }
+
+  .nkaco-experience-section:hover .nkaco-experience-backdrop {
+    transform: scale(1.015);
+  }
 }
 
 @media (max-width: 767px) {

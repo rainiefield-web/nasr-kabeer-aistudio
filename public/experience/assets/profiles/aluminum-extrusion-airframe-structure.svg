@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1056" height="1416" viewBox="0 0 1056 1416" fill="none">
+  <style>
+    .outline { stroke: #3a322f; stroke-opacity: .38; stroke-width: 1.35; }
+    .primary { stroke: #3a322f; stroke-opacity: .36; stroke-width: 1.2; }
+    .secondary { stroke: #3a322f; stroke-opacity: .24; stroke-width: .85; }
+    .cavity { stroke: #3a322f; stroke-opacity: .18; stroke-width: .62; }
+    .hidden { stroke: #3a322f; stroke-opacity: .14; stroke-width: .55; stroke-dasharray: 5 7; }
+    .node { stroke: #3a322f; stroke-opacity: .42; stroke-width: 1.05; }
+    .skin { fill: #fff; fill-opacity: .065; }
+    .member { fill: #fff; fill-opacity: .085; }
+    .outline, .primary, .secondary, .cavity, .hidden, .node {
+      vector-effect: non-scaling-stroke;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+
+  <g id="airframe-structural-system" transform="translate(31.68 0) scale(.94)">
+  <g id="aircraft-outline">
+    <path class="skin outline" d="M528 54C500 78 480 133 471 214C464 275 463 359 460 430C456 461 449 481 429 499L339 576L129 750L79 813L119 863L313 772L444 716L454 924L454 1036L431 1128L289 1241L315 1304L464 1233L493 1353L528 1380L563 1353L592 1233L741 1304L767 1241L625 1128L602 1036L602 924L612 716L743 772L937 863L977 813L927 750L717 576L627 499C607 481 600 461 596 430C593 359 592 275 585 214C576 133 556 78 528 54Z"/>
+    <path class="secondary" d="M528 81C507 105 493 153 486 221C480 289 481 380 476 445C473 480 461 505 439 525"/>
+    <path class="secondary" d="M528 81C549 105 563 153 570 221C576 289 575 380 580 445C583 480 595 505 617 525"/>
+    <path class="hidden" d="M119 839L325 741L444 691M937 839L731 741L612 691"/>
+    <path class="hidden" d="M315 1280L447 1214L476 1115M741 1280L609 1214L580 1115"/>
+  </g>
+
+  <g id="fuselage-main-spine">
+    <path class="member primary" d="M514 119C521 94 535 94 542 119L552 210L552 1272L528 1352L504 1272L504 210L514 119Z"/>
+    <path class="secondary" d="M528 105V1344"/>
+    <path class="cavity" d="M514 239H542M514 390H542M514 548H542M514 706H542M514 864H542M514 1022H542M514 1178H542M510 1270H546"/>
+    <path class="cavity" d="M519 130V1270M537 130V1270"/>
+  </g>
+
+  <g id="fuselage-side-rails">
+    <path class="member primary" d="M479 220L492 214L492 1198L474 1232L466 1210L472 1040L468 910L470 690L468 448L479 220Z"/>
+    <path class="member primary" d="M577 220L564 214L564 1198L582 1232L590 1210L584 1040L588 910L586 690L588 448L577 220Z"/>
+    <path class="secondary" d="M492 288H504M552 288H564M492 470H504M552 470H564M492 652H504M552 652H564M492 834H504M552 834H564M492 1016H504M552 1016H564M492 1178H504M552 1178H564"/>
+    <path class="hidden" d="M482 258V1160M574 258V1160"/>
+  </g>
+
+  <g id="wing-main-beam">
+    <path class="member primary" d="M151 736L444 574L504 588V626L444 614L177 769L151 736Z"/>
+    <path class="member primary" d="M905 736L612 574L552 588V626L612 614L879 769L905 736Z"/>
+    <path class="member primary" d="M125 818L444 679L504 681V710L449 710L146 845L125 818Z"/>
+    <path class="member primary" d="M931 818L612 679L552 681V710L607 710L910 845L931 818Z"/>
+    <path class="secondary" d="M444 594H504M552 594H612M444 694H504M552 694H612"/>
+  </g>
+
+  <g id="wing-ribs-left">
+    <path class="secondary" d="M418 523L449 710M357 575L382 741M292 629L313 771M226 684L246 801M162 737L180 832"/>
+    <path class="cavity" d="M399 548L420 701M338 600L354 724M274 655L286 753M210 709L219 782M148 761L158 811"/>
+  </g>
+
+  <g id="wing-ribs-right">
+    <path class="secondary" d="M638 523L607 710M699 575L674 741M764 629L743 771M830 684L810 801M894 737L876 832"/>
+    <path class="cavity" d="M657 548L636 701M718 600L702 724M782 655L770 753M846 709L837 782M908 761L898 811"/>
+  </g>
+
+  <g id="engine-profile-left">
+    <path class="member primary" d="M397 738C385 762 382 815 384 890C386 974 393 1031 410 1054H448C462 1027 467 971 466 890C465 807 458 758 446 738H397Z"/>
+    <path class="secondary" d="M407 758V1034M438 758V1034M384 893H466"/>
+    <path class="cavity" d="M414 774H431V1018H414Z"/>
+    <path class="secondary" d="M448 790L477 778M448 982L476 994"/>
+  </g>
+
+  <g id="engine-profile-right">
+    <path class="member primary" d="M659 738C671 762 674 815 672 890C670 974 663 1031 646 1054H608C594 1027 589 971 590 890C591 807 598 758 610 738H659Z"/>
+    <path class="secondary" d="M649 758V1034M618 758V1034M672 893H590"/>
+    <path class="cavity" d="M642 774H625V1018H642Z"/>
+    <path class="secondary" d="M608 790L579 778M608 982L580 994"/>
+  </g>
+
+  <g id="tail-frame">
+    <path class="member primary" d="M476 1088L447 1123L315 1248L327 1277L466 1210L504 1174V1128L476 1088Z"/>
+    <path class="member primary" d="M580 1088L609 1123L741 1248L729 1277L590 1210L552 1174V1128L580 1088Z"/>
+    <path class="secondary" d="M461 1140L355 1239M470 1179L393 1236M595 1140L701 1239M586 1179L663 1236"/>
+    <path class="secondary" d="M493 1220L528 1329L563 1220"/>
+    <path class="cavity" d="M478 1242L528 1361L578 1242"/>
+  </g>
+
+  <g id="connection-nodes">
+    <rect class="member node" x="437" y="579" width="22" height="22" rx="3"/>
+    <rect class="member node" x="597" y="579" width="22" height="22" rx="3"/>
+    <rect class="member node" x="438" y="682" width="20" height="20" rx="3"/>
+    <rect class="member node" x="598" y="682" width="20" height="20" rx="3"/>
+    <circle class="node" cx="448" cy="590" r="4"/>
+    <circle class="node" cx="608" cy="590" r="4"/>
+    <circle class="node" cx="448" cy="692" r="3.5"/>
+    <circle class="node" cx="608" cy="692" r="3.5"/>
+  </g>
+
+  <g id="section-details">
+    <path class="cavity" d="M96 810L118 797L134 816L113 833Z"/>
+    <path class="cavity" d="M960 810L938 797L922 816L943 833Z"/>
+    <path class="cavity" d="M404 1052L415 1037L431 1037L443 1052M652 1052L641 1037L625 1037L613 1052"/>
+    <path class="cavity" d="M515 1326H541L528 1360Z"/>
+    <path class="cavity" d="M448 584L454 590L448 596L442 590ZM608 584L614 590L608 596L602 590Z"/>
+  </g>
+  </g>
+</svg>

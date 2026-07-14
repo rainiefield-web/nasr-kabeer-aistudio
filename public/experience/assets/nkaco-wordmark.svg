@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1273 414" role="img" aria-labelledby="title desc">
+  <title id="title">NKACO</title>
+  <desc id="desc">NKACO wordmark</desc>
+  <rect width="1273" height="414" fill="none"/>
+  <text x="636.5" y="268" text-anchor="middle" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="220" font-weight="900" letter-spacing="10" fill="#4A4A48">NKACO</text>
+  <path d="M927 300h178" stroke="#13A8E5" stroke-width="18" stroke-linecap="round"/>
+  <path d="M1046 300h178" stroke="#E31E24" stroke-width="18" stroke-linecap="round"/>
+</svg>

@@ -1553,6 +1553,12 @@ const AlxBrandPromiseSection: React.FC<{ lang: Language }> = ({ lang }) => {
             <MotionDiv className="alx-brand-promise-copy" style={promise}>
               {t.promise}
             </MotionDiv>
+            <MotionDiv className="alx-brand-experience-action" style={promise}>
+              <a className="alx-brand-experience-link" href="/experience/" aria-label="Open NKACO Brand Experience">
+                <span>Brand Experience</span>
+                <span className="alx-brand-experience-icon" aria-hidden="true"><ArrowRight size={18} /></span>
+              </a>
+            </MotionDiv>
             <div className="alx-brand-proof-list" aria-label={t.proofAria}>
               <MotionDiv className="alx-brand-proof-item" style={row1}>
                 <span>01</span>
@@ -2564,6 +2570,7 @@ const App: React.FC = () => {
           </a>
           <div className={`hidden lg:flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase ${scrolled || currentPage !== 'home' ? 'text-gray-800' : 'text-white'}`}>
             <a href="#" onClick={scrollToTop} className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'}`}>{t.nav.about}</a>
+            <a href="/experience/" className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'}`}>Experience</a>
             <a href="#products" onClick={goToProducts} className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'} ${currentPage === 'products' ? 'is-active' : ''}`}>{t.nav.products}</a>
             <a href="#technology" onClick={goToTechnology} className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'} ${currentPage === 'technology' ? 'is-active' : ''}`}>{t.nav.technology}</a>
             <a href="#sustainability" onClick={goToSustainability} className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'} ${currentPage === 'sustainability' ? 'is-active' : ''}`}>{t.nav.sustainability}</a>
@@ -2580,6 +2587,7 @@ const App: React.FC = () => {
         {menuOpen && (
           <MotionDiv initial={{ x: isRTL ? '-100%' : '100%' }} animate={{ x: 0 }} exit={{ x: isRTL ? '-100%' : '100%' }} transition={{ type: 'tween', duration: 0.4 }} className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center gap-8 text-2xl font-serif text-nasr-dark">
             <a href="#" onClick={scrollToTop}>{t.nav.about}</a>
+            <a href="/experience/">Experience</a>
             <a href="#products" onClick={goToProducts} className={currentPage === 'products' ? 'text-nasr-blue' : ''}>{t.nav.products}</a>
             <a href="#technology" onClick={goToTechnology} className={currentPage === 'technology' ? 'text-nasr-blue' : ''}>{t.nav.technology}</a>
             <a href="#sustainability" onClick={goToSustainability} className={currentPage === 'sustainability' ? 'text-nasr-blue' : ''}>{t.nav.sustainability}</a>
@@ -2752,6 +2760,7 @@ const App: React.FC = () => {
                 <h4 className="text-white font-bold uppercase tracking-widest mb-8 text-sm">{t.footer.navTitle}</h4>
                 <ul className="space-y-4 text-sm">
                   <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="hover:text-nasr-accent transition-colors">{t.nav.about}</a></li>
+                  <li><a href="/experience/" className="hover:text-nasr-accent transition-colors">Experience</a></li>
                   <li><a href="#products" onClick={goToProducts} className="hover:text-nasr-accent transition-colors">{t.nav.products}</a></li>
                   <li><a href="#technology" onClick={goToTechnology} className="hover:text-nasr-accent transition-colors">{t.nav.technology}</a></li>
                   <li><a href="#sustainability" onClick={goToSustainability} className="hover:text-nasr-accent transition-colors">{t.nav.sustainability}</a></li>
