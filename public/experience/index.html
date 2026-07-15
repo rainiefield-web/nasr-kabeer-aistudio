@@ -262,8 +262,16 @@ html.clone-fallback .hero-w_bg_window_bg{
   .cta{left:0!important;right:auto!important;width:100vw!important;transform:none!important}
   .cta>.container{width:100vw!important;max-width:100vw!important;margin-left:0!important;margin-right:0!important;padding-left:12px!important;padding-right:12px!important}
   .cta>.container>.grid{width:100%!important;display:flex!important;justify-content:center!important}
-  .cta_c{position:fixed!important;left:50vw!important;bottom:36px!important;width:max-content!important;max-width:calc(100vw - 24px)!important;transform:translateX(-50%)!important}
+  .cta_c{position:fixed!important;left:50vw!important;bottom:20px!important;width:calc(100vw - 24px)!important;max-width:22rem!important;transform:translateX(-50%)!important}
+  .cta_list,.btn-cta_c,.btn-cta_magnet,.btn-cta{width:100%!important}
+  .btn-cta_btn{flex:1!important;min-width:0!important;height:52px!important}
+  .btn-cta_btn-icon{width:52px!important;height:52px!important;flex:none!important}
   .btn-cta_magnet{transform:none!important}
+  #hero .hero-s_title-l,
+  #hero .hero-s_title-r{min-width:0!important}
+  #hero .hero-s_title-l .h2,
+  #hero .hero-s_title-r .h2{font-size:clamp(48px,15vw,60px)!important;line-height:.9!important;letter-spacing:0!important}
+  #hero .hero-s_title-r .h2{white-space:normal!important}
 }
 .jet-s_title{align-items:center!important}
 .jet-s_title_divider,
@@ -295,7 +303,7 @@ html.clone-fallback .hero-w_bg_window_bg{
 }
 @media (max-width:767px){
   .jet-s_title{display:flex!important;flex-direction:column!important;gap:8px!important}
-  .jet-s_title>.h1{width:100%!important;font-size:44px!important;text-align:center!important}
+  .jet-s_title>.h1{width:100%!important;font-size:clamp(32px,9.5vw,38px)!important;text-align:center!important;overflow-wrap:normal!important}
 }
 .globe-s_city_diagram .nkaco-globe-brand{width:76px;height:28px;object-fit:contain;display:block}
 .diagram-logo .nkaco-diagram-logo{width:100%;height:100%;object-fit:contain;display:block}
@@ -318,6 +326,77 @@ html.clone-fallback .hero-w_bg_window_bg{
   image-rendering:auto;
   backface-visibility:hidden;
 }
+@media (max-width:991px){
+  html,body{max-width:100%;overflow-x:clip}
+  .features-cms{width:100%!important;margin-left:0!important;margin-right:0!important}
+  .features-cms_list{
+    gap:12px!important;
+    padding:72px 24px 36px!important;
+    scroll-padding-left:24px;
+    scroll-snap-type:x mandatory;
+    overscroll-behavior-x:contain;
+  }
+  .features-cms_list_item{
+    width:min(calc(100vw - 48px),34rem)!important;
+    flex:0 0 min(calc(100vw - 48px),34rem)!important;
+    scroll-snap-align:start;
+  }
+  .features-card,.features-card_title,.features-card_desc{width:100%!important;min-width:0!important}
+  .features-card_title .p5,.features-card_desc .p7{max-width:100%!important;overflow-wrap:break-word!important}
+  .features-card_desc{box-sizing:border-box!important;padding-right:4px!important}
+  .btn-cta_btn_label{overflow:hidden!important}
+  .btn-cta_btn_label [hover="text"]{display:block!important;white-space:nowrap!important}
+  .btn-cta_btn-icon .ico-20.is-2{display:none!important}
+  .jet{
+    top:50vh!important;
+    height:50vh!important;
+    margin-top:100vh!important;
+    margin-left:-24px!important;
+    margin-right:-24px!important;
+    display:block!important;
+    position:sticky!important;
+    transform-origin:50% 50%!important;
+    pointer-events:none!important;
+    isolation:isolate!important;
+  }
+  .img-jet{position:relative!important;z-index:2!important;transform:translateY(-50%)!important}
+  .jet-transition-blueprint{
+    position:absolute!important;
+    z-index:1!important;
+    top:0!important;
+    left:50%!important;
+    width:100%!important;
+    height:100%!important;
+    object-fit:contain!important;
+    transform:translate(-50%,-50%)!important;
+    pointer-events:none!important;
+  }
+  #profile .blueprint.b-mobile{width:100%!important;max-width:340px!important;margin-left:auto!important;margin-right:auto!important}
+  #global .globe-s_city_c{height:72%!important}
+  #global .globe-s_city_title_w{width:min(82vw,20rem)!important;max-width:20rem!important;margin:0 auto!important}
+  #global .globe-s_city_diagram{width:min(72vw,20rem)!important;height:min(72vw,20rem)!important;margin:0 auto!important}
+  #global .globe-s_city_diagram_c{transform:none!important}
+  #global .globe-s_city_diagram .nkaco-globe-brand{width:112px!important;height:40px!important}
+  #global .globe-s_city_content{margin-top:12px!important}
+  #global .city-cms_list{width:100%!important;padding-left:0!important;justify-content:center!important}
+  #global .city-cms_list_item{width:100%!important;min-width:100%!important;padding:4px 0!important}
+  #global .globe-s_bot_globe-w{width:min(54vw,13.5rem)!important;margin-left:auto!important;margin-right:auto!important}
+  #global .globe{transform:scale(.96)!important}
+  #global .globe-bot-s{padding:84px 24px 24px!important}
+  #global .globe-bot-s>.grid.fill{height:100%!important;display:flex!important;flex-direction:column!important}
+  #global .globe-bot-s_left{height:100%!important;min-width:0!important}
+  #global .globe-bot-s_left_title{width:min(78vw,19rem)!important;max-width:19rem!important}
+  #global .globe-bot-s_left_title .p5{font-size:clamp(24px,7vw,32px)!important;line-height:1.05!important;letter-spacing:0!important}
+  #global .globe-bot-s_left_bot{min-width:0!important}
+  #global .globe-bot-s_left_bot>.unit-60,
+  #global .globe-bot-s_left_bot>.socials-cms{display:none!important}
+  #global .globe-bot-s_right_contact{position:static!important;min-width:0!important;margin-bottom:18px!important}
+  #global .globe-bot-s_right_contact_title{position:static!important;align-items:flex-start!important;margin-bottom:12px!important}
+  #global .globe-bot-s_right_contact .t6{font-size:16px!important;line-height:1.2!important;overflow-wrap:anywhere!important}
+  #global .globe-bot-s_left_copyright{gap:12px!important;align-items:flex-start!important;flex-wrap:wrap!important}
+  #global .globe-bot-s_right_credits{min-width:0!important}
+  #global .globe-bot-s_right_credits .grid{width:100%!important}
+}
 /* end NKACO local overrides */
 </style><style>.nkaco-site-return{position:fixed;top:1.1rem;left:1.1rem;z-index:99999;display:inline-flex;align-items:center;gap:.65rem;padding:.72rem 1rem;background:rgba(18,18,18,.72);border:1px solid rgba(255,255,255,.2);color:#fff;font:700 11px/1 Arial,sans-serif;letter-spacing:.12em;text-decoration:none;text-transform:uppercase;backdrop-filter:blur(12px);transition:background-color .2s ease,border-color .2s ease}.nkaco-site-return:hover{background:#fff;border-color:#fff;color:#171717}.nkaco-site-return svg{width:15px;height:15px}@media(max-width:767px){.nkaco-site-return{top:.75rem;left:.75rem;padding:.64rem .75rem;font-size:9px}}@media(prefers-reduced-motion:reduce){.nkaco-site-return{transition:none}}</style></head><body class="body"><a class="nkaco-site-return" href="/" data-barba-prevent="self" onclick="event.preventDefault();event.stopPropagation();window.location.assign('/');" aria-label="Back to NKACO website"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 18-6-6 6-6"/><path d="M9 12h10"/></svg><span>Back to NKACO</span></a><div class="nkaco-fixed-header-logo" aria-label="NKACO"><img src="./assets/nkaco-logo.png" alt="NKACO" loading="eager"/></div><!-- NKACO header-logo-motion:start -->
 <script>
@@ -336,6 +415,15 @@ document.addEventListener('DOMContentLoaded', () => {
       icon.setAttribute('fill', 'none');
       icon.innerHTML = '<path d="M4.25 4.25h11.5v11.5H4.25zM7.25 7.25h5.5v5.5h-5.5zM10 4.25v3M10 12.75v3M4.25 10h3M12.75 10h3" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>';
     });
+  });
+
+  const trademark = document.querySelector('.about-s_lead-text sup');
+  if (trademark) trademark.textContent = '®';
+
+  document.querySelectorAll('.globe-bot-s_left_copyright .l1').forEach((label) => {
+    if (label.textContent.includes('NKACO. All rights reserved')) {
+      label.firstChild.textContent = '©';
+    }
   });
 });
 </script>
@@ -855,5 +943,108 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   updateClock();
   setInterval(updateClock, 30000);
+})();
+</script>
+<script id="nkaco-mobile-motion-fixes">
+(() => {
+  const mobileQuery = window.matchMedia("(max-width: 991px)");
+  const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let attempts = 0;
+
+  const install = () => {
+    if (!mobileQuery.matches || reducedMotionQuery.matches || window.__nkacoMobileMotionReady) return;
+    if (!window.gsap || !window.ScrollTrigger) {
+      if (attempts++ < 80) window.setTimeout(install, 150);
+      return;
+    }
+
+    window.__nkacoMobileMotionReady = true;
+    gsap.registerPlugin(ScrollTrigger);
+
+    const jet = document.querySelector(".jet");
+    const jetImage = document.querySelector(".img-jet");
+    const blueprintSource = document.querySelector("#profile-m .blueprint.b-mobile");
+    let transitionBlueprint = document.querySelector(".jet-transition-blueprint");
+
+    if (jet && blueprintSource && !transitionBlueprint) {
+      transitionBlueprint = blueprintSource.cloneNode(true);
+      transitionBlueprint.className = "jet-transition-blueprint";
+      transitionBlueprint.setAttribute("aria-hidden", "true");
+      jet.prepend(transitionBlueprint);
+    }
+
+    if (jet) {
+      gsap.fromTo(jet,
+        { scale: 1, yPercent: 0, translateZ: 10 },
+        {
+          scale: 0.5,
+          yPercent: 18,
+          translateZ: 10,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".jet_scroll-area",
+            start: "25% center",
+            end: "85% bottom",
+            scrub: 1.2
+          }
+        }
+      );
+    }
+
+    if (jetImage && transitionBlueprint) {
+      const clamp = gsap.utils.clamp(0, 1);
+      gsap.set(transitionBlueprint, { clipPath: "inset(100% 0 0 0)" });
+      gsap.set(jetImage, { clipPath: "inset(0 0 0% 0)" });
+
+      ScrollTrigger.create({
+        trigger: ".jet_scroll-area",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+        onUpdate: (self) => {
+          const blueprintProgress = clamp((self.progress - 0.56) / 0.22);
+          const aircraftProgress = clamp((self.progress - 0.72) / 0.16);
+          gsap.set(transitionBlueprint, {
+            clipPath: `inset(${(1 - blueprintProgress) * 100}% 0 0 0)`
+          });
+          gsap.set(jetImage, {
+            clipPath: `inset(0 0 ${aircraftProgress * 100}% 0)`
+          });
+        }
+      });
+    }
+
+    const globeArea = document.querySelector("#global .globe_scroll-area");
+    const cityLayer = document.querySelector("#global .globe-s_city");
+    const globe = document.querySelector("#global .globe-s_bot_globe-w");
+    const cta = document.querySelector(".cta_c");
+
+    if (globeArea && globe && cityLayer && cta) {
+      const clamp = gsap.utils.clamp(0, 1);
+      ScrollTrigger.create({
+        trigger: globeArea,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+        onUpdate: (self) => {
+          const globeProgress = clamp((self.progress - 0.32) / 0.68);
+          const cityProgress = clamp((self.progress - 0.48) / 0.2);
+          const ctaProgress = clamp((self.progress - 0.58) / 0.16);
+          gsap.set(globe, {
+            yPercent: 34 - (89 * globeProgress),
+            scale: 1.08 - (0.08 * globeProgress),
+            translateZ: 10
+          });
+          gsap.set(cityLayer, { autoAlpha: 1 - cityProgress });
+          gsap.set(cta, { autoAlpha: 1 - ctaProgress });
+        }
+      });
+    }
+
+    window.setTimeout(() => ScrollTrigger.refresh(), 300);
+  };
+
+  install();
+  window.addEventListener("load", install, { once: true });
 })();
 </script></body></html>
