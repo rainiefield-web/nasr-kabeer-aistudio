@@ -1,19 +1,25 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-07-16 10:03:48`
-Data Status: Price=FAIL: daily failed: HTTPSConnectionPool(host='www.westmetall.com', port=443): Max retries exceeded with url: /en/markdaten.php?action=table&field=LME_Al_cash (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.westmetall.com', port=443) at 0x7fd619757c10>, 'Connection to www.westmetall.com timed out. (connect timeout=30)')); monthly failed: HTTPSConnectionPool(host='www.westmetall.com', port=443): Max retries exceeded with url: /en/markdaten.php?action=averages&field=LME_Al_cash (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.westmetall.com', port=443) at 0x7fd619531050>, 'Connection to www.westmetall.com timed out. (connect timeout=30)')) | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
+Last Updated (UTC): `2026-07-17 09:52:07`
+Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
+### Latest Aluminum Price Data
+- LME Aluminium Cash-Settlement: `$3,170.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-07-16 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+  - Status: Latest published LME aluminium cash settlement from Westmetall.
+- Monthly Average Cash-Settlement: `$3,127.88/t` | Symbol: `LME Al Cash Avg` | Ref Date: July 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+  - Status: Current-year monthly average cash settlement from Westmetall.
+
 ### Latest Headlines (from GNews)
+- 55 Nostalgic Photos That Will Transport Boomers Back | Source: BuzzFeed | Published: 2026-07-16T16:31:02Z [Link](https://www.buzzfeed.com/briangalindo/nostalgic-things-boomers-remember-growing-up-in-1960s)
+- AirPods with ANC, AirPods Pro 3, MacBook Pro, more 9to5Mac | Source: 9to5Mac | Published: 2026-07-16T15:25:24Z [Link](https://9to5mac.com/2026/07/16/deals-airpods-with-anc-airpods-pro-3-macbook-pro/)
+- Chicken breasts transform into a lemon-garlic dream dinner | Source: The Arizona Republic | Published: 2026-07-16T12:01:19Z [Link](https://www.azcentral.com/story/entertainment/dining/recipes/2026/07/16/chicken-paillard/90901060007/)
+- Why those tiny holes in your aluminum foil aren't a bad thing | Source: The Economic Times | Published: 2026-07-16T10:01:00Z [Link](https://economictimes.indiatimes.com/news/international/us/why-those-tiny-holes-in-your-aluminum-foil-arent-a-bad-thing/articleshow/132435500.cms)
+- Why this Canadian aluminum sector is crumbling while prices boom | Source: Financial Post | Published: 2026-07-16T10:00:05Z [Link](https://financialpost.com/feature/canadian-aluminum-sector-crumbling-while-prices-boom)
+- Addmotor Freetan M-368X Semi-Recumbent Full-Suspension Electric Tricycle Technical Teardown | Source: TechBullion | Published: 2026-07-16T05:22:03Z [Link](https://techbullion.com/addmotor-freetan-m-368x-semi-recumbent-full-suspension-electric-tricycle-technical-teardown/)
+- Aughinish Alumina report will not rule out that material is used in Russian weapons | Source: The Irish Times | Published: 2026-07-16T05:00:01Z [Link](https://www.irishtimes.com/politics/2026/07/16/aughinish-alumina-report-will-not-rule-out-that-material-is-used-in-russian-weapons/)
+- upgrade' as key catalysts begin to align, Kotak says | Source: CNBC TV18 | Published: 2026-07-16T03:38:25Z [Link](https://www.cnbctv18.com/market/hindalco-industries-share-price-gets-double-upgrade-target-raised-key-catalysts-begin-to-align-kotak-19946668.htm)
+- Cedar LNG receives B.C. regulator’s approval to increase future production capacity | Source: The Globe and Mail | Published: 2026-07-15T23:17:01Z [Link](https://www.theglobeandmail.com/business/article-cedar-lng-receives-bc-regulators-approval-to-increase-future/)
 - I Travel 50 Weeks A Year. These Are The Three Pieces Of Luggage I Wouldn’t Leave Home Without. | Source: Forbes | Published: 2026-07-15T18:05:16Z [Link](https://www.forbes.com/sites/katehardcastle/2026/07/15/i-travel-50-weeks-a-year-these-are-the-three-pieces-of-luggage-i-wouldnt-leave-home-without/)
 - The Global Jostle for Critical Minerals: Developing Nations' Smelting Opportunities and Challenges | Source: Devdiscourse | Published: 2026-07-15T13:01:37Z [Link](https://www.devdiscourse.com/article/business/3950723-the-global-jostle-for-critical-minerals-developing-nations-smelting-opportunities-and-challenges)
 - Grill once, eat twice with this spicy marinated skirt steak | Source: San Diego Union-Tribune | Published: 2026-07-15T12:30:00Z [Link](https://www.sandiegouniontribune.com/2026/07/15/grill-once-eat-twice-with-this-spicy-marinated-skirt-steak/)
-- Thai Union launches shelf-stable tuna in recyclable pouch | Source: Bangkok Post | Published: 2026-07-15T12:04:00Z [Link](https://www.bangkokpost.com/thailand/pr/3286435/thai-union-launches-shelfstable-tuna-in-recyclable-pouch)
-- 4 Companies to Track as Copper Megatrend Unfolds in India | Source: The Financial Express | Published: 2026-07-15T07:58:31Z [Link](https://www.financialexpress.com/market/stock-insights/4-companies-to-track-as-copper-megatrend-unfolds-in-indianbsp/4292216/)
-- Supply tightness to keep aluminium prices firm through 1HFY27: Report | Source: The Tribune | Published: 2026-07-15T06:53:18Z [Link](https://www.tribuneindia.com/news/business/supply-tightness-to-keep-aluminium-prices-firm-through-1hfy27-report/)
-- So you want to build your own metals smelter? Andy Home | Source: Reuters | Published: 2026-07-15T05:09:56Z [Link](https://www.reuters.com/commentary/reuters-open-interest/so-you-want-build-your-own-metals-smelter-andy-home-2026-07-15/)
-- Samsung slides titanium into the foldable screen with Flex Titanium, as Apple readies liquid metal for its hinge | Source: iTWire | Published: 2026-07-15T01:35:21Z [Link](https://itwire.com/your-it-news/home-it/samsung-slides-titanium-into-the-foldable-screen-with-flex-titanium-as-apple-readies-liquid-metal-for-its-hinge)
-- Stock Market Today Highlights, July 15: Sensex, Nifty retreat from day's highs; Bank Nifty leads gains | Source: The Hindu Business Line | Published: 2026-07-15T01:12:25Z [Link](https://www.thehindubusinessline.com/markets/sensex-nifty50-today-stock-market-highlights-15-july-2026/article71220956.ece)
-- 7 High-Horsepower V6 Engines That Put The HEMI To Shame | Source: SlashGear | Published: 2026-07-15T00:30:00Z [Link](https://www.slashgear.com/2212895/v6-engines-more-horsepower-than-a-hemi/)
-- Trading ideas: IAB, CPE, Fibromat, Lagenda, PA Resources, Paragon, Sin-Kung, Tanco, TSR, CN Asia, Pensonic, Foodie, Stratus | Source: The Star | Published: 2026-07-15T00:08:00Z [Link](https://www.thestar.com.my/business/business-news/2026/07/15/trading-ideas-iab-cpe-fibromat-lagenda-pa-resources-paragon-sin-kung-tanco-tsr-cn-asia-pensonic-foodie-stratus)
-- Community Cookbook: Subs and brats for summertime | Source: Spokane Spokesman-Review | Published: 2026-07-15T00:00:00Z [Link](https://www.spokesman.com/stories/2026/jul/15/community-cookbook-subs-and-brats-for-summertime/)
