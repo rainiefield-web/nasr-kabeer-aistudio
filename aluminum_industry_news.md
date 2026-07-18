@@ -1,25 +1,28 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-07-17 09:52:07`
-Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
+Last Updated (UTC): `2026-07-18 09:19:10`
+Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,170.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-07-16 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+- LME Aluminium Cash-Settlement: `$3,154.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-07-17 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,127.88/t` | Symbol: `LME Al Cash Avg` | Ref Date: July 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+- Monthly Average Cash-Settlement: `$3,129.88/t` | Symbol: `LME Al Cash Avg` | Ref Date: July 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
+### Latest Headlines (from NewsAPI)
+- Neutrogena Hydro Boost Hyaluronic Acid Gel Eye Cream 0.5-oz. for 2 for $13 + free shipping | Source: Dealnews.com | Published: 2026-07-17T08:54:26Z [Link](https://www.dealnews.com/Neutrogena-Hydro-Boost-Hyaluronic-Acid-Gel-Eye-Cream-0-5-oz-for-2-for-13-free-shipping/21907053.html)
+
 ### Latest Headlines (from GNews)
-- 55 Nostalgic Photos That Will Transport Boomers Back | Source: BuzzFeed | Published: 2026-07-16T16:31:02Z [Link](https://www.buzzfeed.com/briangalindo/nostalgic-things-boomers-remember-growing-up-in-1960s)
-- AirPods with ANC, AirPods Pro 3, MacBook Pro, more 9to5Mac | Source: 9to5Mac | Published: 2026-07-16T15:25:24Z [Link](https://9to5mac.com/2026/07/16/deals-airpods-with-anc-airpods-pro-3-macbook-pro/)
-- Chicken breasts transform into a lemon-garlic dream dinner | Source: The Arizona Republic | Published: 2026-07-16T12:01:19Z [Link](https://www.azcentral.com/story/entertainment/dining/recipes/2026/07/16/chicken-paillard/90901060007/)
-- Why those tiny holes in your aluminum foil aren't a bad thing | Source: The Economic Times | Published: 2026-07-16T10:01:00Z [Link](https://economictimes.indiatimes.com/news/international/us/why-those-tiny-holes-in-your-aluminum-foil-arent-a-bad-thing/articleshow/132435500.cms)
-- Why this Canadian aluminum sector is crumbling while prices boom | Source: Financial Post | Published: 2026-07-16T10:00:05Z [Link](https://financialpost.com/feature/canadian-aluminum-sector-crumbling-while-prices-boom)
-- Addmotor Freetan M-368X Semi-Recumbent Full-Suspension Electric Tricycle Technical Teardown | Source: TechBullion | Published: 2026-07-16T05:22:03Z [Link](https://techbullion.com/addmotor-freetan-m-368x-semi-recumbent-full-suspension-electric-tricycle-technical-teardown/)
-- Aughinish Alumina report will not rule out that material is used in Russian weapons | Source: The Irish Times | Published: 2026-07-16T05:00:01Z [Link](https://www.irishtimes.com/politics/2026/07/16/aughinish-alumina-report-will-not-rule-out-that-material-is-used-in-russian-weapons/)
-- upgrade' as key catalysts begin to align, Kotak says | Source: CNBC TV18 | Published: 2026-07-16T03:38:25Z [Link](https://www.cnbctv18.com/market/hindalco-industries-share-price-gets-double-upgrade-target-raised-key-catalysts-begin-to-align-kotak-19946668.htm)
-- Cedar LNG receives B.C. regulator’s approval to increase future production capacity | Source: The Globe and Mail | Published: 2026-07-15T23:17:01Z [Link](https://www.theglobeandmail.com/business/article-cedar-lng-receives-bc-regulators-approval-to-increase-future/)
-- I Travel 50 Weeks A Year. These Are The Three Pieces Of Luggage I Wouldn’t Leave Home Without. | Source: Forbes | Published: 2026-07-15T18:05:16Z [Link](https://www.forbes.com/sites/katehardcastle/2026/07/15/i-travel-50-weeks-a-year-these-are-the-three-pieces-of-luggage-i-wouldnt-leave-home-without/)
-- The Global Jostle for Critical Minerals: Developing Nations' Smelting Opportunities and Challenges | Source: Devdiscourse | Published: 2026-07-15T13:01:37Z [Link](https://www.devdiscourse.com/article/business/3950723-the-global-jostle-for-critical-minerals-developing-nations-smelting-opportunities-and-challenges)
-- Grill once, eat twice with this spicy marinated skirt steak | Source: San Diego Union-Tribune | Published: 2026-07-15T12:30:00Z [Link](https://www.sandiegouniontribune.com/2026/07/15/grill-once-eat-twice-with-this-spicy-marinated-skirt-steak/)
+- AA Stock Dips as Alcoa Cuts Aluminum Production Guidance | Source: Barchart | Published: 2026-07-17T18:50:26Z [Link](https://www.barchart.com/story/news/3340561/aa-stock-dips-as-alcoa-cuts-aluminum-production-guidance)
+- Robot Decapitated in World’s First-Ever Humanoid UFC Fight | Source: Newsweek | Published: 2026-07-17T13:59:17Z [Link](https://www.newsweek.com/robot-decapitated-in-worlds-first-ever-humanoid-ufc-fight-12209126)
+- Alcoa Cuts Annual Alumina Production Outlook as Pinjarra Issues Weigh | Source: Benzinga | Published: 2026-07-17T12:09:17Z [Link](https://www.benzinga.com/markets/earnings/26/07/60520242/alcoa-cuts-annual-alumina-production-outlook-as-pinjarra-issues-weigh)
+- NFLX, SPCX, GOOGL and more | Source: CNBC | Published: 2026-07-17T11:41:10Z [Link](https://www.cnbc.com/2026/07/17/stocks-making-the-biggest-moves-premarket-nflx-spcx-googl-and-more.html)
+- Have a OnePlus phone? Here are 5 other Android phones you should buy right now | Source: Android Authority | Published: 2026-07-17T10:30:55Z [Link](https://www.androidauthority.com/oneplus-leaving-us-other-android-phone-alternatives-3687340/)
+- Does ESG investing really make sense? | Source: Money Week | Published: 2026-07-17T09:00:00Z [Link](https://moneyweek.com/investments/esg-investing/does-esg-investing-really-make-sense)
+- Aughinish Alumina warned Michael McGrath about sanctioning exports to Russia | Source: The Irish Times | Published: 2026-07-17T05:00:01Z [Link](https://www.irishtimes.com/politics/2026/07/17/aughinish-alumina-warned-michael-mcgrath-about-impact-of-sanctioning-exports-to-russia/)
+- U.S. and Australia Forge Strategic Critical Minerals Pact to Challenge China's Dominance | Source: Devdiscourse | Published: 2026-07-17T02:32:08Z [Link](https://www.devdiscourse.com/article/business/3951636-us-and-australia-forge-strategic-critical-minerals-pact-to-challenge-chinas-dominance)
+- Netflix, SpaceX, Alphabet, Alcoa and Intuitive Surgical: Why These 5 Stocks Are on Investors' Radars Toda | Source: Benzinga | Published: 2026-07-17T01:22:33Z [Link](https://www.benzinga.com/markets/equities/26/07/60515846/netflix-spacex-alphabet-alcoa-intuitive-surgical-stocks-to-watch)
+- Alcoa smashes Q2 revenue record, boosts portfolio with South32 acquisition | Source: The Motley Fool Australia | Published: 2026-07-17T00:50:01Z [Link](https://www.fool.com.au/2026/07/17/alcoa-smashes-q2-revenue-record-boosts-portfolio-with-south32-acquisition/)
+- Adani, Reliance, Birla, Vedanta, Jindal among suitors for Odisha's prized Karlapat bauxite block | Source: Livemint | Published: 2026-07-17T00:30:49Z [Link](https://www.livemint.com/companies/adani-reliance-birla-vedanta-jindal-suitors-for-odisha-karlapat-bauxite-block-aluminium-11784201324841.html)
+- Inverted duty structure in aluminium, a concern | Source: The Hindu Business Line | Published: 2026-07-17T00:30:00Z [Link](https://www.thehindubusinessline.com/opinion/inverted-duty-structure-in-aluminium-a-concern/article71230735.ece)
