@@ -1,27 +1,24 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-07-21 10:21:05`
-Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
+Last Updated (UTC): `2026-07-22 10:20:58`
+Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,156.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-07-20 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+- LME Aluminium Cash-Settlement: `$3,183.50/t` | Symbol: `LME Al Cash` | Ref Date: 2026-07-21 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,131.75/t` | Symbol: `LME Al Cash Avg` | Ref Date: July 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+- Monthly Average Cash-Settlement: `$3,135.20/t` | Symbol: `LME Al Cash Avg` | Ref Date: July 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
-### Latest Headlines (from NewsAPI)
-- Aluminum foil in air fryer: Before your next meal, experts say these 7 cooking tips can make your food crispier, cleanup easier, and your appliance safer | Source: The Times of India | Published: 2026-07-20T10:16:33Z [Link](https://economictimes.indiatimes.com/news/new-updates/aluminum-foil-in-air-fryer-before-your-next-meal-experts-say-these-7-cooking-tips-can-make-your-food-crispier-cleanup-easier-and-your-appliance-safer/articleshow/132512324.cms)
-
 ### Latest Headlines (from GNews)
-- Century Aluminum Applauds President Trump’s Action to Spur Domestic Aluminum Production | Source: The Manila Times | Published: 2026-07-20T22:01:36Z [Link](https://www.manilatimes.net/2026/07/21/tmt-newswire/globenewswire/century-aluminum-applauds-president-trumps-action-to-spur-domestic-aluminum-production/2388013)
-- How The Boeing 767 Quietly Outlived Every Aircraft Meant To End Its Career | Source: Simple Flying | Published: 2026-07-20T21:00:11Z [Link](https://simpleflying.com/how-boeing-767-quietly-outlived-every-aircraft-meant-end-career/)
-- I used the Delsey Paris Chatelet Air 2.0 luggage and beauty case for a month, and here's my tried-and-tested verdict | Source: Hindustan Times | Published: 2026-07-20T16:57:43Z [Link](https://www.hindustantimes.com/lifestyle/travel/i-used-the-delsey-paris-chatelet-air-2-0-luggage-and-beauty-case-for-a-month-and-heres-my-tried-and-tested-verdict-101784565408379.html)
-- Monday’s analyst upgrades and downgrades | Source: The Globe and Mail | Published: 2026-07-20T10:48:37Z [Link](https://www.theglobeandmail.com/investing/markets/inside-the-market/article-mondays-analyst-upgrades-and-downgrades-280/)
-- How to trade extreme weather | Source: CNBC | Published: 2026-07-20T05:54:14Z [Link](https://www.cnbc.com/2026/07/20/from-super-el-nio-to-europes-heatwave-how-to-trade-extreme-weather.html)
-- Why South32 shares edge higher on strong results and landmark deal | Source: The Motley Fool Australia | Published: 2026-07-20T01:55:04Z [Link](https://www.fool.com.au/2026/07/20/why-south32-shares-edge-higher-on-strong-results-and-landmark-deal/)
-- South32 reveals FY26 operating results | Source: The Motley Fool Australia | Published: 2026-07-19T23:18:23Z [Link](https://www.fool.com.au/2026/07/20/south32-reveals-fy26-operating-results/)
-- After fixing its engine problems, Rolls-Royce is turning to its next big challenge | Source: EUROPE SAYS | Published: 2026-07-19T20:02:23Z [Link](https://www.europesays.com/3141299/)
-- In this Holyoke baseball field, Valley Blue Sox players dream of going pro | Source: MassLive | Published: 2026-07-19T19:52:43Z [Link](https://www.masslive.com/westernmass/2026/07/in-this-holyoke-baseball-field-valley-blue-sox-players-dream-of-going-pro.html)
-- Angry Miao Battleye 75HE R2 Keyboard Made With Aluminum And Carbon Fiber | Source: Forbes | Published: 2026-07-19T10:00:00Z [Link](https://www.forbes.com/sites/marksparrow/2026/07/19/angry-miao-battleye-75he-r2-keyboard-made-with-aluminum-and-carbon-fiber/)
-- ‘Glaring loophole’ gives next gen data centres a power bill discount | Source: Australian Financial Review | Published: 2026-07-19T08:12:03Z [Link](https://www.afr.com/policy/energy-and-climate/glaring-loophole-gives-next-gen-data-centres-a-power-bill-discount-20260717-p60g4k)
+- Canada faces tough choice on US trade | Source: BBC News | Published: 2026-07-21T20:23:27Z [Link](https://www.bbc.com/news/articles/cg5l2mn8lllo)
+- Trump seeking trade leverage over Canada with new targeted tariffs: analysts | Source: SooToday | Published: 2026-07-21T19:32:26Z [Link](https://www.sootoday.com/national-news/trump-seeking-trade-leverage-over-canada-with-new-targeted-tariffs-analysts-12573311)
+- Ontario, B.C. premiers call for reprisals against U.S. for Trump's latest tariffs | Source: The Province | Published: 2026-07-21T19:21:17Z [Link](https://theprovince.com/news/canada/ontario-b-c-premiers-call-for-reprisals-against-u-s-for-trumps-latest-tariffs/wcm/94950bd3-494a-4ab9-9752-649305bc0359)
+- The Light Flip Is A Minimalist Flip Phone That Leaves Out All Those Distracting Apps | Source: Engadget | Published: 2026-07-21T15:00:00Z [Link](https://www.engadget.com/2219683/the-light-flip-is-a-minimalist-flip-phone-that-leaves-out-all-those-distracting-apps/)
+- Indian enterprises need cheap intelligence now | Source: The Hindu Business Line | Published: 2026-07-21T13:13:16Z [Link](https://www.thehindubusinessline.com/opinion/indian-enterprises-need-cheap-intelligence-now/article71249462.ece)
+- India’s renewable energy capacity jumps nearly to 288.58 GW | Source: Lokmat Times | Published: 2026-07-21T12:58:35Z [Link](https://www.lokmattimes.com/business/indias-renewable-energy-capacity-jumps-nearly-to-28858-gw-1/)
+- HBIS strives for carbon neutrality by 2050 | Source: SteelOrbis | Published: 2026-07-21T08:02:42Z [Link](https://www.steelorbis.com/steel-news/latest-news/hbis-strives-for-carbon-neutrality-by-2050-1465751.htm)
+- Buying South32 shares? Here's the dividend yield you'll get right now | Source: The Motley Fool Australia | Published: 2026-07-21T04:41:41Z [Link](https://www.fool.com.au/2026/07/21/buying-south32-shares-heres-the-dividend-yield-youll-get-right-now/)
+- US offers to halve aluminum duties for firms building in US | Source: Moneycontrol | Published: 2026-07-21T03:04:07Z [Link](https://www.moneycontrol.com/news/business/us-offers-to-halve-aluminum-duties-for-firms-building-in-us-13979072.html)
+- US President Donald Trump says he signed proclamation to adjust tariffs on aluminum imports | Source: CNBC TV18 | Published: 2026-07-21T02:32:25Z [Link](https://www.cnbctv18.com/world/us-president-donald-trump-signed-proclamation-adjust-tariffs-aluminum-imports-white-house-commerce-secretary-19950104.htm)
+- Brant resident facing several charges after Norwich collision | Source: The Expositor | Published: 2026-07-21T02:25:12Z [Link](https://www.brantfordexpositor.ca/news/local-news/brant-resident-facing-several-charges-after-norwich-collision/wcm/4bc6c1ba-f7c6-4ba3-a9ba-5879803a759e)
