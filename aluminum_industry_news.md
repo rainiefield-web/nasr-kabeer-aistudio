@@ -1,5 +1,5 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-07-26 09:54:30`
+Last Updated (UTC): `2026-07-27 11:14:51`
 Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
@@ -11,6 +11,7 @@ Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
   - Status: Current-year monthly average cash settlement from Westmetall.
 
 ### Latest Headlines (from GNews)
+- How Rolls-Royce Quietly Used The Airbus A330neo's Engine To Fix The Boeing 787's Broken One | Source: Simple Flying | Published: 2026-07-26T20:00:11Z [Link](https://simpleflying.com/how-rolls-royce-quietly-used-airbus-a330neo-engine-fix-boeing-787-broken-one/)
 - Around the bend for Samsung | Source: Toronto Sun | Published: 2026-07-25T20:51:13Z [Link](https://torontosun.com/technology/tech-essentials/around-the-bend-for-samsung)
 - 15 Famous Movie & TV Vehicles You Can Buy (But Probably Can't Afford) | Source: SlashGear | Published: 2026-07-25T16:30:00Z [Link](https://www.slashgear.com/2218776/famous-movie-tv-vehicles-can-buy-but-probably-cant-afford/)
 - Aughinish report is thin gruel as Russian demands for Irish alumina ramp up | Source: The Irish Times | Published: 2026-07-25T05:53:00Z [Link](https://www.irishtimes.com/opinion/2026/07/25/edward-burke-report-cannot-rule-out-irish-aluminium-ending-up-in-russian-weapons-this-is-thin-gruel/)
@@ -22,4 +23,3 @@ Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 - Ireland Finds No Evidence Aughinish Alumina Exports to Russia Support War Effort - UNITED24 Media | Source: EUROPE SAYS | Published: 2026-07-24T20:49:27Z [Link](https://www.europesays.com/3151749/)
 - The trash pile sitting on Virginia's doorstep might be worth more than the mine | Source: Augusta Free Press | Published: 2026-07-24T16:13:42Z [Link](https://augustafreepress.com/commercial/the-trash-pile-sitting-on-virginias-doorstep-might-be-worth-more-than-the-mine/)
 - Why Diet Coke just got more expensive in India: The link to the US-Israel-Iran conflict | Source: THE WEEK | Published: 2026-07-24T11:58:20Z [Link](https://www.theweek.in/news/biz-tech/2026/07/24/why-diet-coke-just-got-more-expensive-in-india-the-link-to-the-us-israel-iran-conflict.html)
-- War? What war? Aluminium's Gulf disruption premium vanishes | Source: Reuters | Published: 2026-07-24T11:35:38Z [Link](https://www.reuters.com/commentary/reuters-open-interest/war-what-war-aluminiums-gulf-disruption-premium-vanishes-2026-07-24/)
