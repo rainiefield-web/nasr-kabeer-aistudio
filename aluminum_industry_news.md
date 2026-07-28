@@ -1,25 +1,23 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-07-27 11:14:51`
+Last Updated (UTC): `2026-07-28 10:29:54`
 Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,175.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-07-24 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+- LME Aluminium Cash-Settlement: `$3,192.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-07-27 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,144.56/t` | Symbol: `LME Al Cash Avg` | Ref Date: July 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+- Monthly Average Cash-Settlement: `$3,147.05/t` | Symbol: `LME Al Cash Avg` | Ref Date: July 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
 ### Latest Headlines (from GNews)
-- How Rolls-Royce Quietly Used The Airbus A330neo's Engine To Fix The Boeing 787's Broken One | Source: Simple Flying | Published: 2026-07-26T20:00:11Z [Link](https://simpleflying.com/how-rolls-royce-quietly-used-airbus-a330neo-engine-fix-boeing-787-broken-one/)
-- Around the bend for Samsung | Source: Toronto Sun | Published: 2026-07-25T20:51:13Z [Link](https://torontosun.com/technology/tech-essentials/around-the-bend-for-samsung)
-- 15 Famous Movie & TV Vehicles You Can Buy (But Probably Can't Afford) | Source: SlashGear | Published: 2026-07-25T16:30:00Z [Link](https://www.slashgear.com/2218776/famous-movie-tv-vehicles-can-buy-but-probably-cant-afford/)
-- Aughinish report is thin gruel as Russian demands for Irish alumina ramp up | Source: The Irish Times | Published: 2026-07-25T05:53:00Z [Link](https://www.irishtimes.com/opinion/2026/07/25/edward-burke-report-cannot-rule-out-irish-aluminium-ending-up-in-russian-weapons-this-is-thin-gruel/)
-- Aughinish Alumina report leaves Ireland’s reputation in ruins | Source: The Irish Times | Published: 2026-07-25T05:00:01Z [Link](https://www.irishtimes.com/opinion/letters/2026/07/25/our-reputation-as-a-caring-nation-is-in-shreds-after-report-on-aughinish-aluminas-exports/)
-- Aughinish Alumina facing ‘marked’ decline in orders from Europe due to ownership concerns | Source: The Irish Times | Published: 2026-07-25T05:00:00Z [Link](https://www.irishtimes.com/ireland/2026/07/25/aughinish-alumina-sales-to-russia-significantly-increased-since-2020-report-finds/)
-- Secret Aughinish Alumina report: EU sanctions would jeopardise company ‘viability’ | Source: The Irish Times | Published: 2026-07-25T05:00:00Z [Link](https://www.irishtimes.com/ireland/2026/07/25/secret-aughinish-alumina-report-eu-sanctions-would-jeopardise-company-viability/)
-- linked refinery exposes Ireland's Ukraine dilemma | Source: EUROPE SAYS | Published: 2026-07-24T22:16:15Z [Link](https://www.europesays.com/3151877/)
-- BuzzBallz are 'greenwashing' say recycling experts | Source: BBC News | Published: 2026-07-24T21:58:56Z [Link](https://www.bbc.com/news/articles/cr490335z1eo)
-- Ireland Finds No Evidence Aughinish Alumina Exports to Russia Support War Effort - UNITED24 Media | Source: EUROPE SAYS | Published: 2026-07-24T20:49:27Z [Link](https://www.europesays.com/3151749/)
-- The trash pile sitting on Virginia's doorstep might be worth more than the mine | Source: Augusta Free Press | Published: 2026-07-24T16:13:42Z [Link](https://augustafreepress.com/commercial/the-trash-pile-sitting-on-virginias-doorstep-might-be-worth-more-than-the-mine/)
-- Why Diet Coke just got more expensive in India: The link to the US-Israel-Iran conflict | Source: THE WEEK | Published: 2026-07-24T11:58:20Z [Link](https://www.theweek.in/news/biz-tech/2026/07/24/why-diet-coke-just-got-more-expensive-in-india-the-link-to-the-us-israel-iran-conflict.html)
+- Mt. Holly aluminum smelter expansion to boost domestic primary aluminum production | Source: Live 5 News WCSC | Published: 2026-07-27T20:53:21Z [Link](https://www.live5news.com/2026/07/27/mt-holly-aluminum-smelter-expansion-boost-domestic-primary-aluminum-production/)
+- NPCIL gets sole proposal from Hindalco for Bharat Small Reactors | Source: The Economic Times | Published: 2026-07-27T19:07:00Z [Link](https://economictimes.indiatimes.com/industry/energy/power/npcil-gets-sole-proposal-from-hindalco-for-bharat-small-reactors/articleshow/132669986.cms)
+- A Wall Street Firm Just Turned Bullish On Ford And GM. It Believes Gains Could Be As High As 22% | Source: International Business Times | Published: 2026-07-27T15:33:05Z [Link](https://www.ibtimes.com/wall-street-bank-just-turned-bullish-ford-gm-it-believes-gains-could-high-22-3805753)
+- David Eby's idea to leverage critical minerals in Trump tariff dispute could backfire: B.C. mining sector | Source: The Province | Published: 2026-07-27T13:00:07Z [Link](https://theprovince.com/business/mining-industry-cool-to-ebys-idea-to-use-critical-minerals-as-leverage-in-trump-tariff-dispute)
+- Mining group cool to using minerals as leverage against Trump tariffs | Source: The Province | Published: 2026-07-27T13:00:07Z [Link](https://theprovince.com/news/local-news/mining-industry-cool-to-ebys-idea-to-use-critical-minerals-as-leverage-in-trump-tariff-dispute)
+- AI-driven transmission and storage can unlock green power | Source: Hindustan Times | Published: 2026-07-27T11:50:43Z [Link](https://www.hindustantimes.com/ht-insight/future-tech/aidriven-transmission-and-storage-can-unlock-green-power-101785152516816.html)
+- Ford and General Motors get upgraded by Jefferies, which sees sharp gains ahead | Source: CNBC | Published: 2026-07-27T10:59:54Z [Link](https://www.cnbc.com/2026/07/27/ford-and-general-motors-get-upgraded-by-jefferies-which-sees-sharp-gains-ahead.html)
+- Century Aluminum adding 150 jobs in Berkeley County with plant expansion | Source: Live 5 News WCSC | Published: 2026-07-27T08:50:04Z [Link](https://www.live5news.com/2026/07/27/century-aluminum-adding-150-jobs-berkeley-county-with-plant-expansion/)
+- European Commission will not rush into decision on possible Aughinish sanctions | Source: The Irish Times | Published: 2026-07-27T05:00:00Z [Link](https://www.irishtimes.com/politics/2026/07/27/european-commission-will-not-rush-into-decision-on-possible-aughinish-sanctions/)
+- The science behind aluminium foil: Why one side looks shiny and the other looks dull | Source: Times of India | Published: 2026-07-27T02:44:00Z [Link](https://timesofindia.indiatimes.com/life-style/spotlight/the-science-behind-aluminium-foil-why-one-side-looks-shiny-and-the-other-looks-dull/articleshow/132651211.cms)
