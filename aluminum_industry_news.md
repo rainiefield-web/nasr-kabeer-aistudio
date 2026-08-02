@@ -1,5 +1,5 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-08-01 09:53:26`
+Last Updated (UTC): `2026-08-02 09:51:47`
 Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
@@ -11,15 +11,15 @@ Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
   - Status: Current-year monthly average cash settlement from Westmetall.
 
 ### Latest Headlines (from GNews)
-- Global politics is being driven in disturbing directions by more than just strongmen | Source: ABC (Australian Broadcasting Corporation) | Published: 2026-07-31T19:00:00Z [Link](https://www.abc.net.au/news/2026-08-01/global-politics-driven-strongmen-disturbing-directions/106982606)
-- Vedanta Aluminium’s profit surges three-fold in June quarter on record revenue | Source: The Economic Times | Published: 2026-07-31T17:30:00Z [Link](https://economictimes.indiatimes.com/industry/indl-goods/svs/metals-mining/vedanta-aluminiums-profit-surges-three-fold-in-june-quarter-on-record-revenue/articleshow/132773997.cms)
-- NALCO Q1 net profit nearly doubles on higher aluminium prices, production and sales | Source: CNBC TV18 | Published: 2026-07-31T17:12:14Z [Link](https://www.cnbctv18.com/market/stocks/nalco-share-price-q1-net-profit-nearly-doubles-on-higher-aluminium-prices-production-and-sales-19959311.htm)
-- Buy Vedanta Aluminum; target of Rs 540: Motilal Oswal | Source: Moneycontrol | Published: 2026-07-31T16:55:42Z [Link](https://www.moneycontrol.com/news/business/buy-vedanta-aluminum-target-of-rs-540-motilal-oswal-13990527.html)
-- Fold 8/Ultra, Surface Pro, LG TVs, more | Source: 9to5Google | Published: 2026-07-31T15:55:30Z [Link](https://9to5google.com/2026/07/31/deals-fold-8-ultra-surface-pro-lg-tv/)
-- The Dishonesty Inside Trump’s New Tariff Plan | Source: Foreign Policy | Published: 2026-07-31T14:02:41Z [Link](https://foreignpolicy.com/2026/07/31/trump-tariffs-global-trade-dishonest-lie-economics-manufacturing-aluminum/)
-- Royal Enfield Shotgun 650 Rough Crafts Edition Sold Out; New Batch Expected? | Source: Times Now | Published: 2026-07-31T10:34:44Z [Link](https://www.timesnownews.com/auto/bike-news/royal-enfield-shotgun-650-rough-crafts-edition-sold-out-new-batch-expected-article-155223339)
-- Scrap Metal Markets Affect Alloy Wheel Recycling | Source: TechBullion | Published: 2026-07-31T08:10:36Z [Link](https://techbullion.com/how-scrap-metal-markets-affect-old-alloy-wheel-recycling/)
-- Texmaco Rail fixes broken link for Aug 4 Q1 earnings call | Source: scanx.trade | Published: 2026-07-31T07:01:37Z [Link](https://scanx.trade/stock-market-news/companies/texmaco-rail-engineering-q1-results-earnings-call-scheduled-for-aug-4/46950560)
-- My grandad's final resting place is blighted by Aughinish Alumina | Source: The Irish Sun | Published: 2026-07-31T06:00:00Z [Link](https://www.thesun.ie/news/17382850/aughinish-alumina-ireland-russia-ban-stain-cleanse/)
-- Vedanta Aluminium share price target: Why Citi, CLSA, Nuvama see up to 20% upside after Q1 earnings | Source: The Economic Times | Published: 2026-07-31T04:52:00Z [Link](https://economictimes.indiatimes.com/markets/stocks/news/vedanta-aluminium-share-price-target-why-citi-clsa-nuvama-see-up-to-20-upside-after-q1-earnings/articleshow/132756392.cms)
-- Vedanta Aluminium share price targets: Buy VAML stock, says Citi, Investec, Nuvama, MOFSL, Emkay post Q1 results | Source: Business Today | Published: 2026-07-31T02:35:42Z [Link](https://www.businesstoday.in/markets/stocks/story/vedanta-aluminium-share-price-targets-buy-vaml-stock-says-citi-investec-nuvama-mofsl-emkay-post-q1-results-546416-2026-07-31)
+- AI’s Electricity Demand Is Not the Real Problem. Its Inflexibility Is | Source: OilPrice | Published: 2026-08-01T21:00:00Z [Link](https://oilprice.com/Energy/Energy-General/AIs-Electricity-Demand-Is-Not-the-Real-Problem-Its-Inflexibility-Is.html)
+- European stocks rise as oil falls back below $100; UK could lose ‘advantage’ over EU due to Trump’s new tariffs, industry warns - as it happened | Source: EUROPE SAYS | Published: 2026-08-01T19:09:34Z [Link](https://www.europesays.com/3168020/)
+- Wired Headphones Are Back, But Don't Make These 9 Mistakes When You Buy | Source: BGR | Published: 2026-08-01T18:02:00Z [Link](https://www.bgr.com/2225584/wired-headphones-common-mistakes-buyers-guide/)
+- How lab-grown diamonds have changed the game | Source: Scroll.in | Published: 2026-08-01T16:30:00Z [Link](https://scroll.in/article/1094697/how-lab-grown-diamonds-have-changed-the-game)
+- The Verge’s 2026 back-to-school shopping guide | Source: The Verge | Published: 2026-08-01T14:00:00Z [Link](https://www.theverge.com/gadgets/968645/back-to-school-shopping-guide-gifts)
+- Central Navratna PSU NALCO Q1 Profit Jumps 88% To Rs 2,002 Crore | Source: Deccan Chronicle | Published: 2026-08-01T08:38:59Z [Link](https://www.deccanchronicle.com/business/companies/central-navratna-psu-nalco-q1-profit-jumps-88-to-rs-2002-crore-1975745)
+- How an iron ore empire began to raise doubts | Source: The Economic Times | Published: 2026-08-01T07:54:00Z [Link](https://economictimes.indiatimes.com/news/international/business/how-an-iron-ore-empire-began-to-raise-doubts/articleshow/132784734.cms)
+- Arsenic 133 times above legal level found in Aughinish Alumina groundwater | Source: The Irish Times | Published: 2026-08-01T05:00:00Z [Link](https://www.irishtimes.com/environment/2026/08/01/groundwater-under-aughinish-alumina-contains-contaminants-up-to-4700-times-legal-thresholds/)
+- ‘A ticking environmental time bomb’: What lies beneath Aughinish Alumina | Source: The Irish Times | Published: 2026-08-01T05:00:00Z [Link](https://www.irishtimes.com/environment/2026/08/01/a-ticking-environmental-time-bomb-what-lies-beneath-aughinish-alumina/)
+- ‘A ticking environmental time bomb’: What lies beneath Aughinish Alumina in Co Limerick | Source: The Irish Times | Published: 2026-08-01T05:00:00Z [Link](https://www.irishtimes.com/environment/2026/08/01/a-ticking-environmental-time-bomb-what-lies-beneath-aughinish-alumina-in-co-limerick/)
+- Aluminium signals recovery after correction; supply risks and energy concerns may drive the next leg higher | Source: The Economic Times | Published: 2026-08-01T04:30:00Z [Link](https://economictimes.indiatimes.com/markets/commodities/news/aluminium-signals-recovery-after-correction-supply-risks-and-energy-concerns-may-drive-the-next-leg-higher/articleshow/132761511.cms)
+- Vietnam targets advanced materials industry to boost technological self-reliance | Source: The Star | Published: 2026-08-01T04:09:00Z [Link](https://www.thestar.com.my/aseanplus/aseanplus-news/2026/08/01/vietnam-targets-advanced-materials-industry-to-boost-technological-self-reliance)
