@@ -1,28 +1,22 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-08-05 10:29:37`
-Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
+Last Updated (UTC): `2026-08-06 10:33:34`
+Data Status: Price=FAIL: daily failed: HTTPSConnectionPool(host='www.westmetall.com', port=443): Max retries exceeded with url: /en/markdaten.php?action=table&field=LME_Al_cash (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.westmetall.com', port=443) at 0x7f17a410bfd0>, 'Connection to www.westmetall.com timed out. (connect timeout=30)')); monthly failed: HTTPSConnectionPool(host='www.westmetall.com', port=443): Max retries exceeded with url: /en/markdaten.php?action=averages&field=LME_Al_cash (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.westmetall.com', port=443) at 0x7f17a3ee5050>, 'Connection to www.westmetall.com timed out. (connect timeout=30)')) | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
-### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,271.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-08-04 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
-  - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,265.50/t` | Symbol: `LME Al Cash Avg` | Ref Date: August 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
-  - Status: Current-year monthly average cash settlement from Westmetall.
-
 ### Latest Headlines (from NewsAPI)
-- Price de-escalation in supermarkets in July: Which products saw the biggest reductions | Source: Protothema.gr | Published: 2026-08-04T09:50:00Z [Link](https://en.protothema.gr/2026/08/04/price-de-escalation-in-supermarkets-in-july-which-products-saw-the-biggest-reductions/)
+- Gearup Soft Roof Rack 825mm 60kg Capacity $39 a Pair (Clearance) $12 Delivery ($0 C&C/ in-Store) @ Repco | Source: Ozbargain.com.au | Published: 2026-08-05T10:24:16Z [Link](https://www.ozbargain.com.au/node/970359)
 
 ### Latest Headlines (from GNews)
-- Sonbhadra: Uttar Pradesh’s Energy Capital on the Path to Transformation | Source: Times of India | Published: 2026-08-04T09:07:00Z [Link](https://timesofindia.indiatimes.com/city/lucknow/sonbhadra-uttar-pradeshs-energy-capital-on-the-path-to-transformation/articleshow/132854176.cms)
-- Zero Pledging, Low Debt, High Returns: 5 Metal Stocks Worth Watching | Source: The Financial Express | Published: 2026-08-04T06:47:10Z [Link](https://www.financialexpress.com/market/stock-insights/zero-pledging-low-debt-high-returns-5-metal-stocks-worth-watchingnbsp/4310009/)
-- The Iran war is fuelling the next oil, gold and silver rally | Source: The National | Published: 2026-08-04T05:00:00Z [Link](https://www.thenationalnews.com/business/markets/2026/08/04/is-iran-war-creating-new-commodity-winners/)
-- NALCO shares rise after two upgrades, but analysts divided between 'buy' and 'sell' | Source: CNBC TV18 | Published: 2026-08-04T04:01:48Z [Link](https://www.cnbctv18.com/market/nalco-shares-rise-after-two-upgrades-but-analysts-target-divided-between-buy-and-sell-19961033.htm)
-- First drive in the Audi A2 e-tron: Retro design meets modern e-technology | Source: Heise Online | Published: 2026-08-03T22:01:00Z [Link](https://www.heise.de/en/tests/First-drive-in-the-Audi-A2-e-tron-Retro-design-meets-modern-e-technology-11395761.html)
-- Venture Capital & Startup Funding Roundup, August 3, 2026: Atreides, Battery Ventures, NEA, Sequoia, Point72 & More | Source: TechStartups.com | Published: 2026-08-03T20:04:02Z [Link](https://techstartups.com/2026/08/03/venture-capital-startup-funding-roundup-august-3-2026-atreides-battery-ventures-nea-sequoia-point72-more/)
-- Best ergonomic desk accessories for your home office | Source: SFGATE | Published: 2026-08-03T19:30:00Z [Link](https://www.sfgate.com/shopping/article/best-ergonomic-tech-accessories-22327362.php)
-- These Are The Flashlights Harbor Freight Shoppers Recommend | Source: SlashGear | Published: 2026-08-03T16:45:00Z [Link](https://www.slashgear.com/2226859/harbor-freight-flashlight-customers-recommend-most/)
-- Lasting Solar Assets, Says AM/NS India – Outlook Business | Source: Outlook Business | Published: 2026-08-03T13:49:15Z [Link](https://www.outlookbusiness.com/spotlight/news-wire/advanced-steel-solutions-key-to-building-long-lasting-solar-assets-says-am-ns-india)
-- AM/NS India Calls for Durable Solar Infrastructure to Support India’s Green Energy Goals | Source: NewsX | Published: 2026-08-03T12:59:08Z [Link](https://www.newsx.com/nx-news/am-ns-india-calls-for-durable-solar-infrastructure-to-support-indias-green-energy-goals-256292/)
-- Eco-Tip for Monday, Aug. 3, 2026 | Source: Boulder Daily Camera | Published: 2026-08-03T10:26:18Z [Link](https://www.dailycamera.com/2026/08/03/eco-tip-for-monday-aug-3-2026/)
-- Liberty Bell Bay smelter officially enters liquidation | Source: ABC (Australian Broadcasting Corporation) | Published: 2026-08-03T06:24:58Z [Link](https://www.abc.net.au/news/2026-08-03/liberty-bell-bay-smelter-officially-enters-liquidation/106989546)
+- 'All strategic sectors' being discussed as new U.S. tariff threat looms, says Carney | Source: CBC.ca | Published: 2026-08-05T22:28:58Z [Link](https://www.cbc.ca/news/politics/us-canada-tariff-negotiations-august-deadline-9.7297274)
+- Are Fortescue shares a buy in August? | Source: The Motley Fool Australia | Published: 2026-08-05T21:44:17Z [Link](https://www.fool.com.au/2026/08/06/are-fortescue-shares-a-buy-in-august/)
+- Novelis targets debt reduction as it aims to bring leverage below 4x | Source: The Economic Times | Published: 2026-08-05T18:18:00Z [Link](https://economictimes.indiatimes.com/industry/indl-goods/svs/metals-mining/novelis-targets-debt-reduction-as-it-aims-to-bring-leverage-below-4x/articleshow/132960221.cms)
+- Glencore makes more than $10 billion (American) in first half of 2026 | Source: The North Bay Nugget | Published: 2026-08-05T14:58:50Z [Link](https://www.nugget.ca/news/glencore-makes-more-than-10-billion-american-in-first-half-of-2026)
+- Navin Fluorine Q1 profit doubles to ₹243 crore as revenue, margins surge | Source: CNBC TV18 | Published: 2026-08-05T11:47:45Z [Link](https://www.cnbctv18.com/market/earnings/navin-fluorine-q1-profit-doubles-to-rs-243-crore-as-revenue-margins-surge-19962506.htm)
+- Novelis Q1 profit jumps 71% as Hindalco arm gains from aluminium demand, cost savings | Source: CNBC TV18 | Published: 2026-08-05T10:58:35Z [Link](https://www.cnbctv18.com/market/earnings/novelis-q1-profit-jumps-71-as-hindalco-arm-gains-from-aluminium-demand-cost-savings-19962460.htm)
+- HSBC bets on Titan, ICICI, M&M, Syrma: Top 10 India stock picks with up to 47% upside | Source: The Financial Express | Published: 2026-08-05T08:44:22Z [Link](https://www.financialexpress.com/market/hsbc-bets-on-titan-icici-mampm-syrma-top-10-india-stock-picks-with-up-to-47-upside-4310968/)
+- Global Resource Circulation Equipment Market — Analysis of Key Trends, Regional Growth, Top Players, and a 10 | Source: EUROPE SAYS | Published: 2026-08-05T08:06:31Z [Link](https://www.europesays.com/3175470/)
+- HSBC picks ICICI Bank, Titan, 8 other stocks to ride a potential $25 billion FII inflow as AI trade volatility looms | Source: The Economic Times | Published: 2026-08-05T07:30:00Z [Link](https://economictimes.indiatimes.com/markets/stocks/news/hsbc-picks-icici-bank-titan-8-other-stocks-to-ride-a-potential-25-billion-fii-inflow-as-ai-trade-volatility-looms/articleshow/132902179.cms)
+- Vedanta Aluminium shares can rally up to 28%? Why Systematix initiated coverage on the stock | Source: The Economic Times | Published: 2026-08-05T06:21:00Z [Link](https://economictimes.indiatimes.com/markets/stocks/news/vedanta-aluminium-shares-can-rally-up-to-28-why-systematix-initiated-coverage-on-the-stock/articleshow/132896821.cms)
+- 2 ASX shares highly recommended to buy: Experts | Source: The Motley Fool Australia | Published: 2026-08-04T23:30:00Z [Link](https://www.fool.com.au/2026/08/05/2-asx-shares-highly-recommended-to-buy-experts-33/)
+- Trade negotiators revive proposed steel and aluminum exports quota in return for lower U.S. tariffs | Source: The Globe and Mail | Published: 2026-08-04T18:24:17Z [Link](https://www.theglobeandmail.com/world/us-politics/article-leblanc-charette-washington-carney-trump-tariffs-trade/)
