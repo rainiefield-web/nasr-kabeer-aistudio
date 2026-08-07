@@ -1,22 +1,27 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-08-06 10:33:34`
-Data Status: Price=FAIL: daily failed: HTTPSConnectionPool(host='www.westmetall.com', port=443): Max retries exceeded with url: /en/markdaten.php?action=table&field=LME_Al_cash (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.westmetall.com', port=443) at 0x7f17a410bfd0>, 'Connection to www.westmetall.com timed out. (connect timeout=30)')); monthly failed: HTTPSConnectionPool(host='www.westmetall.com', port=443): Max retries exceeded with url: /en/markdaten.php?action=averages&field=LME_Al_cash (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.westmetall.com', port=443) at 0x7f17a3ee5050>, 'Connection to www.westmetall.com timed out. (connect timeout=30)')) | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
+Last Updated (UTC): `2026-08-07 08:52:52`
+Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
+### Latest Aluminum Price Data
+- LME Aluminium Cash-Settlement: `$3,261.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-08-06 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+  - Status: Latest published LME aluminium cash settlement from Westmetall.
+- Monthly Average Cash-Settlement: `$3,255.25/t` | Symbol: `LME Al Cash Avg` | Ref Date: August 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+  - Status: Current-year monthly average cash settlement from Westmetall.
+
 ### Latest Headlines (from NewsAPI)
-- Gearup Soft Roof Rack 825mm 60kg Capacity $39 a Pair (Clearance) $12 Delivery ($0 C&C/ in-Store) @ Repco | Source: Ozbargain.com.au | Published: 2026-08-05T10:24:16Z [Link](https://www.ozbargain.com.au/node/970359)
+- Westfield Bondi dry cleaner filmed saying 'I am a racist': Shopper reveals what happened before viral confrontation as police investigate | Source: Dailymail.com | Published: 2026-08-06T08:41:23Z [Link](https://www.dailymail.com/news/article-16032491/westfield-bondi-junction-dry-cleaner-allegedly-racist-video-TikTok-melody.html)
 
 ### Latest Headlines (from GNews)
-- 'All strategic sectors' being discussed as new U.S. tariff threat looms, says Carney | Source: CBC.ca | Published: 2026-08-05T22:28:58Z [Link](https://www.cbc.ca/news/politics/us-canada-tariff-negotiations-august-deadline-9.7297274)
-- Are Fortescue shares a buy in August? | Source: The Motley Fool Australia | Published: 2026-08-05T21:44:17Z [Link](https://www.fool.com.au/2026/08/06/are-fortescue-shares-a-buy-in-august/)
-- Novelis targets debt reduction as it aims to bring leverage below 4x | Source: The Economic Times | Published: 2026-08-05T18:18:00Z [Link](https://economictimes.indiatimes.com/industry/indl-goods/svs/metals-mining/novelis-targets-debt-reduction-as-it-aims-to-bring-leverage-below-4x/articleshow/132960221.cms)
-- Glencore makes more than $10 billion (American) in first half of 2026 | Source: The North Bay Nugget | Published: 2026-08-05T14:58:50Z [Link](https://www.nugget.ca/news/glencore-makes-more-than-10-billion-american-in-first-half-of-2026)
-- Navin Fluorine Q1 profit doubles to ₹243 crore as revenue, margins surge | Source: CNBC TV18 | Published: 2026-08-05T11:47:45Z [Link](https://www.cnbctv18.com/market/earnings/navin-fluorine-q1-profit-doubles-to-rs-243-crore-as-revenue-margins-surge-19962506.htm)
-- Novelis Q1 profit jumps 71% as Hindalco arm gains from aluminium demand, cost savings | Source: CNBC TV18 | Published: 2026-08-05T10:58:35Z [Link](https://www.cnbctv18.com/market/earnings/novelis-q1-profit-jumps-71-as-hindalco-arm-gains-from-aluminium-demand-cost-savings-19962460.htm)
-- HSBC bets on Titan, ICICI, M&M, Syrma: Top 10 India stock picks with up to 47% upside | Source: The Financial Express | Published: 2026-08-05T08:44:22Z [Link](https://www.financialexpress.com/market/hsbc-bets-on-titan-icici-mampm-syrma-top-10-india-stock-picks-with-up-to-47-upside-4310968/)
-- Global Resource Circulation Equipment Market — Analysis of Key Trends, Regional Growth, Top Players, and a 10 | Source: EUROPE SAYS | Published: 2026-08-05T08:06:31Z [Link](https://www.europesays.com/3175470/)
-- HSBC picks ICICI Bank, Titan, 8 other stocks to ride a potential $25 billion FII inflow as AI trade volatility looms | Source: The Economic Times | Published: 2026-08-05T07:30:00Z [Link](https://economictimes.indiatimes.com/markets/stocks/news/hsbc-picks-icici-bank-titan-8-other-stocks-to-ride-a-potential-25-billion-fii-inflow-as-ai-trade-volatility-looms/articleshow/132902179.cms)
-- Vedanta Aluminium shares can rally up to 28%? Why Systematix initiated coverage on the stock | Source: The Economic Times | Published: 2026-08-05T06:21:00Z [Link](https://economictimes.indiatimes.com/markets/stocks/news/vedanta-aluminium-shares-can-rally-up-to-28-why-systematix-initiated-coverage-on-the-stock/articleshow/132896821.cms)
-- 2 ASX shares highly recommended to buy: Experts | Source: The Motley Fool Australia | Published: 2026-08-04T23:30:00Z [Link](https://www.fool.com.au/2026/08/05/2-asx-shares-highly-recommended-to-buy-experts-33/)
-- Trade negotiators revive proposed steel and aluminum exports quota in return for lower U.S. tariffs | Source: The Globe and Mail | Published: 2026-08-04T18:24:17Z [Link](https://www.theglobeandmail.com/world/us-politics/article-leblanc-charette-washington-carney-trump-tariffs-trade/)
+- Oil shock impact? What to expect from this reporting season | Source: The New Zealand Herald | Published: 2026-08-06T20:00:00Z [Link](https://www.nzherald.co.nz/business/markets/stock-takes/oil-shock-impact-what-to-expect-from-this-reporting-season-stock-takes/premium/GS62VUKGZJBUVBRGD2EGS4QPJU/)
+- Australian lithium miners seek more value from battery supply chains in the face of stiff competition from China | Source: ABC (Australian Broadcasting Corporation) | Published: 2026-08-06T18:48:53Z [Link](https://www.abc.net.au/news/2026-08-07/australian-lithium-miners-domestic-refineries/106619924)
+- DRC Industries brings 50 jobs to Columbus, MS | Source: Jackson Clarion-Ledger | Published: 2026-08-06T18:39:10Z [Link](https://eu.clarionledger.com/story/business/2026/08/06/drc-industries-brings-50-jobs-to-columbus-ms/91201012007/)
+- Carney says aluminum prices open way to trade deal with U.S. | Source: Financial Post | Published: 2026-08-06T17:45:01Z [Link](https://financialpost.com/commodities/carney-says-aluminum-prices-open-trade-deal-with-trump)
+- Data Center Thermal Management Market worth $32.38 billion by 2032 - Exclusive Report by MarketsandMarkets™ | Source: PR Newswire UK | Published: 2026-08-06T14:15:00Z [Link](https://www.prnewswire.co.uk/news-releases/data-center-thermal-management-market-worth-32-38-billion-by-2032---exclusive-report-by-marketsandmarkets-302844717.html)
+- HCC profit stable at ₹51 cr in Q1FY27 as EBITDA margin contracts | Source: scanx.trade | Published: 2026-08-06T13:07:47Z [Link](https://scanx.trade/stock-market-news/companies/hindustan-construction-company-q1-results-profit-rises-to-51-1-crore/47564174)
+- Pentagon war game exposed a critical U.S. aluminum risk months before Iran attacks | Source: Fortune | Published: 2026-08-06T12:52:00Z [Link](https://fortune.com/2026/08/06/pentagon-war-game-exposed-a-critical-u-s-aluminum-risk-months-before-iran-attacks/)
+- On Critical Minerals, Canada and Europe Meet in the Midstream | Source: EUROPE SAYS | Published: 2026-08-06T12:30:18Z [Link](https://www.europesays.com/3178022/)
+- HCC Q1 net profit rises marginally despite 9% revenue fall and margin pressure | Source: CNBC TV18 | Published: 2026-08-06T11:22:22Z [Link](https://www.cnbctv18.com/market/stocks/hcc-share-price-q1-net-profit-rises-marginally-despite-9-revenue-fall-and-margin-pressure-19963412.htm)
+- Buy Hindalco Industries; target of Rs 1200: ICICI Securities | Source: Moneycontrol | Published: 2026-08-06T09:18:37Z [Link](https://www.moneycontrol.com/news/business/stocks/buy-hindalco-industries-target-of-rs-1200-icici-securities-13996406.html)
+- Why are ASX mining shares so far out in front? | Source: The Motley Fool Australia | Published: 2026-08-06T05:58:00Z [Link](https://www.fool.com.au/2026/08/06/why-are-asx-mining-shares-so-far-out-in-front/)
