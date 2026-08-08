@@ -1,27 +1,28 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-08-07 08:52:52`
+Last Updated (UTC): `2026-08-08 08:34:01`
 Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,261.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-08-06 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+- LME Aluminium Cash-Settlement: `$3,279.50/t` | Symbol: `LME Al Cash` | Ref Date: 2026-08-07 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,255.25/t` | Symbol: `LME Al Cash Avg` | Ref Date: August 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+- Monthly Average Cash-Settlement: `$3,260.10/t` | Symbol: `LME Al Cash Avg` | Ref Date: August 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
 ### Latest Headlines (from NewsAPI)
-- Westfield Bondi dry cleaner filmed saying 'I am a racist': Shopper reveals what happened before viral confrontation as police investigate | Source: Dailymail.com | Published: 2026-08-06T08:41:23Z [Link](https://www.dailymail.com/news/article-16032491/westfield-bondi-junction-dry-cleaner-allegedly-racist-video-TikTok-melody.html)
+- mloda-community-frame-aggregate 0.4.2 | Source: Pypi.org | Published: 2026-08-07T07:22:40Z [Link](https://pypi.org/project/mloda-community-frame-aggregate/0.4.2/)
 
 ### Latest Headlines (from GNews)
-- Oil shock impact? What to expect from this reporting season | Source: The New Zealand Herald | Published: 2026-08-06T20:00:00Z [Link](https://www.nzherald.co.nz/business/markets/stock-takes/oil-shock-impact-what-to-expect-from-this-reporting-season-stock-takes/premium/GS62VUKGZJBUVBRGD2EGS4QPJU/)
-- Australian lithium miners seek more value from battery supply chains in the face of stiff competition from China | Source: ABC (Australian Broadcasting Corporation) | Published: 2026-08-06T18:48:53Z [Link](https://www.abc.net.au/news/2026-08-07/australian-lithium-miners-domestic-refineries/106619924)
-- DRC Industries brings 50 jobs to Columbus, MS | Source: Jackson Clarion-Ledger | Published: 2026-08-06T18:39:10Z [Link](https://eu.clarionledger.com/story/business/2026/08/06/drc-industries-brings-50-jobs-to-columbus-ms/91201012007/)
-- Carney says aluminum prices open way to trade deal with U.S. | Source: Financial Post | Published: 2026-08-06T17:45:01Z [Link](https://financialpost.com/commodities/carney-says-aluminum-prices-open-trade-deal-with-trump)
-- Data Center Thermal Management Market worth $32.38 billion by 2032 - Exclusive Report by MarketsandMarkets™ | Source: PR Newswire UK | Published: 2026-08-06T14:15:00Z [Link](https://www.prnewswire.co.uk/news-releases/data-center-thermal-management-market-worth-32-38-billion-by-2032---exclusive-report-by-marketsandmarkets-302844717.html)
-- HCC profit stable at ₹51 cr in Q1FY27 as EBITDA margin contracts | Source: scanx.trade | Published: 2026-08-06T13:07:47Z [Link](https://scanx.trade/stock-market-news/companies/hindustan-construction-company-q1-results-profit-rises-to-51-1-crore/47564174)
-- Pentagon war game exposed a critical U.S. aluminum risk months before Iran attacks | Source: Fortune | Published: 2026-08-06T12:52:00Z [Link](https://fortune.com/2026/08/06/pentagon-war-game-exposed-a-critical-u-s-aluminum-risk-months-before-iran-attacks/)
-- On Critical Minerals, Canada and Europe Meet in the Midstream | Source: EUROPE SAYS | Published: 2026-08-06T12:30:18Z [Link](https://www.europesays.com/3178022/)
-- HCC Q1 net profit rises marginally despite 9% revenue fall and margin pressure | Source: CNBC TV18 | Published: 2026-08-06T11:22:22Z [Link](https://www.cnbctv18.com/market/stocks/hcc-share-price-q1-net-profit-rises-marginally-despite-9-revenue-fall-and-margin-pressure-19963412.htm)
-- Buy Hindalco Industries; target of Rs 1200: ICICI Securities | Source: Moneycontrol | Published: 2026-08-06T09:18:37Z [Link](https://www.moneycontrol.com/news/business/stocks/buy-hindalco-industries-target-of-rs-1200-icici-securities-13996406.html)
-- Why are ASX mining shares so far out in front? | Source: The Motley Fool Australia | Published: 2026-08-06T05:58:00Z [Link](https://www.fool.com.au/2026/08/06/why-are-asx-mining-shares-so-far-out-in-front/)
+- Trump announces $3bn in mining projects as part of critical minerals push | Source: The National | Published: 2026-08-07T20:25:54Z [Link](https://www.thenationalnews.com/business/energy/2026/08/07/trump-mining-critical-minerals/)
+- Trump Unveils Billions of Dollars in Mining-Tied Deals, Investments | Source: Breitbart News Network | Published: 2026-08-07T19:12:36Z [Link](https://www.breitbart.com/politics/2026/08/07/trump-unveils-billions-of-dollars-in-mining-tied-deals-investments/)
+- Hindalco net up 75% on record India show | Source: The Financial Express | Published: 2026-08-07T18:54:48Z [Link](https://www.financialexpress.com/business/news/hindalco-net-up-75-on-record-india-show/4313385/)
+- Hindalco Industries Q1 Results: Earnings Call Audio Recording Published | Source: scanx.trade | Published: 2026-08-07T18:14:18Z [Link](https://scanx.trade/stock-market-news/companies/hindalco-industries-q1-results-earnings-call-audio-recording-published/47672048)
+- Hindalco Industries Q1 Results: Net profit rises 157% YoY to ₹7,013 crore | Source: scanx.trade | Published: 2026-08-07T17:43:01Z [Link](https://scanx.trade/stock-market-news/companies/hindalco-industries-q1-results-net-profit-rises-157-yoy-to-7-013-crore/47670169)
+- Concession Carney faces his Neville Chamberlain moment | Source: The Globe and Mail | Published: 2026-08-07T17:38:04Z [Link](https://www.theglobeandmail.com/business/commentary/article-concession-carney-faces-his-neville-chamberlain-moment/)
+- Trump to host mining CEOs as administration seeks minerals for defense supply chains | Source: The Economic Times | Published: 2026-08-07T16:50:00Z [Link](https://economictimes.indiatimes.com/news/international/world-news/trump-to-host-mining-ceos-as-administration-seeks-minerals-for-defense-supply-chains/articleshow/133038679.cms)
+- Earnings Central: SBI, Titan, Oil India and Hindalco lead a busy Friday | Source: CNBC TV18 | Published: 2026-08-07T14:57:07Z [Link](https://www.cnbctv18.com/market/earnings/earnings-central-sbi-titan-oil-india-and-hindalco-q1-results-lead-a-busy-friday-19964546.htm)
+- Q2 cost expected to rise 4-5% sequentially, likely to peak in September quarter: Satish Pai | Source: The Hindu Business Line | Published: 2026-08-07T14:51:59Z [Link](https://www.thehindubusinessline.com/companies/q2-cost-expected-to-rise-4-5-sequentially-likely-to-peak-in-september-quarter-satish-pai/article71318010.ece)
+- India, Russia discuss Vande Bharat, SJ-100 aircraft, UAVs to deepen industrial ties | Source: The Economic Times | Published: 2026-08-07T13:01:00Z [Link](https://economictimes.indiatimes.com/news/economy/foreign-trade/india-russia-discuss-vande-bharat-sj-100-aircraft-uavs-to-deepen-industrial-ties/articleshow/133034660.cms)
+- Vedanta Aluminium arm BALCO declared preferred bidder for Odisha's Karlapat bauxite block | Source: CNBC TV18 | Published: 2026-08-07T12:55:39Z [Link](https://www.cnbctv18.com/market/stocks/vedanta-aluminium-metal-share-price-arm-balco-declared-preferred-bidder-for-odishas-karlapat-bauxite-block-19964443.htm)
+- Hindalco Industries Net Profit Jumps 75% To ₹7,013 Cr In April | Source: Outlook Business | Published: 2026-08-07T11:56:49Z [Link](https://www.outlookbusiness.com/corporate/hindalco-industries-net-profit-jumps-75-to-7013-cr-in-april-june)
