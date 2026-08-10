@@ -1,5 +1,5 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-08-09 08:35:53`
+Last Updated (UTC): `2026-08-10 09:14:05`
 Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
@@ -11,7 +11,9 @@ Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
   - Status: Current-year monthly average cash settlement from Westmetall.
 
 ### Latest Headlines (from NewsAPI)
-- Aluminium foil hack to clean your refrigerator: How it works, benefits and why it keeps your fridge fresh | Source: The Times of India | Published: 2026-08-08T07:03:15Z [Link](https://economictimes.indiatimes.com/news/new-updates/aluminium-foil-hack-to-clean-your-refrigerator-how-it-works-benefits-and-why-it-keeps-your-fridge-fresh/articleshow/133048136.cms)
+- Aluminium foil to remove rust from exhaust fan: How to use this simple DIY hack safely | Source: The Times of India | Published: 2026-08-09T08:09:48Z [Link](https://economictimes.indiatimes.com/news/new-updates/aluminium-foil-to-remove-rust-from-exhaust-fan-how-to-use-this-simple-diy-hack-safely/articleshow/133064173.cms)
+- Aluminium foil hack to clean chimney filters: How it works, benefits and steps to remove stubborn grease | Source: The Times of India | Published: 2026-08-09T06:41:02Z [Link](https://economictimes.indiatimes.com/news/new-updates/aluminium-foil-hack-to-clean-chimney-filters-how-it-works-benefits-and-steps-to-remove-stubborn-grease/articleshow/133063263.cms)
+- Why are people putting aluminium foil in their freezer? It has 5 surprising cleaning and storage uses | Source: The Times of India | Published: 2026-08-09T08:03:49Z [Link](https://economictimes.indiatimes.com/magazines/panache/why-are-people-putting-aluminium-foil-in-their-freezer-it-has-5-surprising-cleaning-and-storage-uses/articleshow/133064024.cms)
 
 ### Latest Headlines (from GNews)
 - Trump praises $3 billion US investment in mineral project to counter China | Source: ThePrint | Published: 2026-08-08T09:40:17Z [Link](https://theprint.in/world/trump-praises-3-billion-us-investment-in-mineral-project-to-counter-china/3009257/)
