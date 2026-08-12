@@ -1,27 +1,29 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-08-11 08:48:37`
+Last Updated (UTC): `2026-08-12 09:07:09`
 Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,327.50/t` | Symbol: `LME Al Cash` | Ref Date: 2026-08-10 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+- LME Aluminium Cash-Settlement: `$3,373.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-08-11 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,271.33/t` | Symbol: `LME Al Cash Avg` | Ref Date: August 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+- Monthly Average Cash-Settlement: `$3,285.86/t` | Symbol: `LME Al Cash Avg` | Ref Date: August 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
 ### Latest Headlines (from NewsAPI)
-- Hindustan Copper plans to sell copper concentrate sourced from Chile to Hindalco, Adani | Source: BusinessLine | Published: 2026-08-10T08:45:30Z [Link](https://www.thehindubusinessline.com/companies/hindustan-copper-plans-to-sell-copper-concentrate-sourced-from-chile-to-hindalco-adani/article71327543.ece)
-- Hindustan Copper eyes Chile mines, plans concentrate sales to Hindalco, Adani | Source: The Times of India | Published: 2026-08-10T08:33:47Z [Link](https://economictimes.indiatimes.com/industry/indl-goods/svs/metals-mining/hindustan-copper-eyes-chile-mines-plans-concentrate-sales-to-hindalco-adani/articleshow/133092316.cms)
+- Alunorte cuts alumina output by 50% on natural gas supply shortages | Source: Biztoc.com | Published: 2026-08-11T09:04:26Z [Link](https://biztoc.com/x/c3e0de7c3946a085)
+- Sweet seller used aluminum foil on Kaju Katli instead of silver foil, was sentenced to 3 years jail; he wins case in Gujarat HC due to this reason | Source: The Times of India | Published: 2026-08-11T09:04:03Z [Link](https://economictimes.indiatimes.com/wealth/legal/will/sweet-seller-used-aluminum-foil-on-kaju-katli-instead-of-silver-foil-was-sentenced-to-3-years-jail-he-wins-case-in-gujarat-hc-due-to-this-reason/articleshow/133145889.cms)
 
 ### Latest Headlines (from GNews)
-- Photograph the sun with the ZWO ASI174MM astronomy camera | Source: Space.com | Published: 2026-08-10T14:11:15Z [Link](https://www.space.com/stargazing/skywatching-kit/this-zwo-astronomy-camera-is-perfect-for-solar-and-lunar-imaging)
-- US invests in mining: Trump announces $3 billion plan to strengthen local resources, reduce dependence on China | Source: Hindustan Times | Published: 2026-08-10T11:06:58Z [Link](https://www.hindustantimes.com/world-news/us-invests-in-mining-trump-announces-3-billion-plan-to-strengthen-local-resources-reduce-dependence-on-china-101786358642282.html)
-- Data Centre Cooling Market worth $37.62 billion by 2033 - Exclusive Report by MarketsandMarkets™ | Source: PR Newswire UK | Published: 2026-08-10T10:59:00Z [Link](https://www.prnewswire.co.uk/news-releases/data-centre-cooling-market-worth-37-62-billion-by-2033---exclusive-report-by-marketsandmarkets-302846925.html)
-- Hindustan Copper Plans Concentrate Sales To Hindalco, Adani From Chile's Codelco Mines | Source: Outlook Business | Published: 2026-08-10T09:16:22Z [Link](https://www.outlookbusiness.com/corporate/hindustan-copper-plans-concentrate-sales-to-hindalco-adani-from-chiles-codelco-mines)
-- Stocks making the biggest moves midday: Vedanta Aluminium, Hitachi, SBI, Titan, Ola and more | Source: The Financial Express | Published: 2026-08-10T08:43:10Z [Link](https://www.financialexpress.com/market/stocks-making-the-biggest-moves-midday-vedanta-aluminium-hitachi-sbi-titan-ola-and-morenbsp-4314568/)
-- India's Hindustan Copper plans to sell copper concentrate sourced from Chile to Hindalco, Adani, sources say | Source: Reuters | Published: 2026-08-10T08:30:44Z [Link](https://www.reuters.com/world/india/indias-hindustan-copper-plans-sell-copper-concentrate-sourced-chile-hindalco-2026-08-10/)
-- Hindalco MD sees aluminium at $3200-3400 per tonne, expects Novelis to improve in FY27 | Source: CNBC TV18 | Published: 2026-08-10T08:24:53Z [Link](https://www.cnbctv18.com/market/earnings/hindalco-aluminium-copper-prices-novelis-debt-fy27-19965460.htm)
-- Hindalco share price: Why brokerages are reiterating their Buy calls, raising target prices after Q1 earnings | Source: The Economic Times | Published: 2026-08-10T07:18:00Z [Link](https://economictimes.indiatimes.com/markets/stocks/news/hindalco-share-price-why-brokerages-are-reiterating-their-buy-calls-raising-target-prices-after-q1-earnings/articleshow/133089907.cms)
-- 2026 Ducati Monster launched in India at Rs 13.99 lakh, gets new V2 engine | Source: India Today | Published: 2026-08-10T06:30:20Z [Link](https://www.indiatoday.in/auto/story/2026-ducati-monster-launched-in-india-at-rs-1399-lakh-gets-new-v2-engine-2967534-2026-08-10)
-- Novelis Q1FY27 Net Income Surges 71% to $164M; Net Debt to Fall, EBITDA/Tonne to Improve | Source: scanx.trade | Published: 2026-08-10T05:28:14Z [Link](https://scanx.trade/stock-market-news/companies/hindalco-industries-q1-results-earnings-call-scheduled-for-august-5/46901135)
+- Smelter permit on hold as OK DEQ awaits builder's response | Source: Tulsa World | Published: 2026-08-11T20:15:00Z [Link](https://tulsaworld.com/news/state-regional/government-politics/article_64aae2e5-a38f-4e44-8c53-8d1122a758ec.html)
+- Most Of The World’s Aluminum Starts Out As This Strange-Looking Rock | Source: IFLScience | Published: 2026-08-11T15:21:43Z [Link](https://www.iflscience.com/most-of-the-worlds-aluminum-starts-out-as-this-strange-looking-rock-84343)
+- Oklahoma AG asks federal court to block aluminum smelter | Source: Tulsa World | Published: 2026-08-11T14:45:00Z [Link](https://tulsaworld.com/news/local/business/article_7063d32e-a466-47b6-84e0-f50bee064642.html)
+- Disneyland Paris Unveils Themed Payment Terminals, First of Any Disney Theme Park | Source: wdwnt.com | Published: 2026-08-11T13:04:51Z [Link](https://wdwnt.com/2026/08/disneyland-paris-unveils-themed-payment-terminals-first-of-any-disney-theme-park/)
+- Innovating on clean: How D-FW retailer Buff City Soap blows up growth | Source: The Dallas Morning News | Published: 2026-08-11T11:00:00Z [Link](https://www.dallasnews.com/business/retail/article/innovating-clean-d-fw-retailer-buff-city-soap-22346482.php)
+- Activists express concerns over ‘exploitation’ of bauxite deposits in Odisha | Source: The Hindu | Published: 2026-08-11T09:41:37Z [Link](https://www.thehindu.com/news/national/odisha/activists-express-concerns-over-exploitation-of-bauxite-deposits-in-odisha/article71331646.ece)
+- Hindustan Copper eyes Chilean mines, plans to supply copper to Indian companies | Source: Business Today | Published: 2026-08-11T09:28:22Z [Link](https://www.businesstoday.in/latest/trends/story/hindustan-copper-eyes-chilean-mines-plans-to-supply-copper-to-indian-companies-548481-2026-08-11)
+- Ananya Birla’s break from billionaire bubble is a reality check for her class | Source: Livemint | Published: 2026-08-11T08:18:58Z [Link](https://www.livemint.com/newsletters/company-outsider/ananya-birla-break-from-billionaire-bubble-is-a-reality-check-for-her-class-11786435732234.html)
+- Buy Hindalco Industries; target of Rs 1200: ICICI Securities | Source: Moneycontrol | Published: 2026-08-11T08:05:48Z [Link](https://www.moneycontrol.com/news/business/stocks/buy-hindalco-industries-target-of-rs-1200-icici-securities-2-14001498.html)
+- Hindalco Industries to present at Motilal Oswal investor meet | Source: scanx.trade | Published: 2026-08-11T05:27:35Z [Link](https://scanx.trade/stock-market-news/companies/hindalco-industries-to-present-at-motilal-oswal-investor-meet/47971639)
+- Here’s a radical idea for the Government: Start telling us the truth | Source: The Irish Times | Published: 2026-08-11T05:00:01Z [Link](https://www.irishtimes.com/opinion/2026/08/11/heres-a-radical-idea-for-the-government-start-telling-us-the-truth/)
+- Why Mukul Agarwal’s and Madhusudan Kela’s latest bets aren’t what they seem | Source: The Financial Express | Published: 2026-08-10T23:41:17Z [Link](https://www.financialexpress.com/market/stock-insights/why-mukul-agarwals-and-madhusudan-kelas-latest-bets-arent-what-they-seem/4314812/)
