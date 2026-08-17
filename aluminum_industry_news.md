@@ -1,5 +1,5 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-08-16 08:22:07`
+Last Updated (UTC): `2026-08-17 08:36:31`
 Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
@@ -11,15 +11,14 @@ Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
   - Status: Current-year monthly average cash settlement from Westmetall.
 
 ### Latest Headlines (from GNews)
+- Why should I have to call ActewAGL to get a better deal? | Source: The Canberra Times | Published: 2026-08-16T19:30:00Z [Link](https://www.canberratimes.com.au/story/9330257/letters-actewagl-secure-10-gas-bill-cut-act-urges-lowest-prices/)
+- India Inc's Q1 revenue growth fastest in 15 quarters, margins feel heat | Source: Business Standard | Published: 2026-08-16T18:02:46Z [Link](https://www.business-standard.com/companies/news/india-inc-s-q1-revenue-growth-fastest-in-15-quarters-margins-feel-heat-126081600371_1.html)
+- Devastating start to Pacific Northwest fire season offers a warning | Source: Anchorage Daily News | Published: 2026-08-16T16:31:35Z [Link](https://www.adn.com/nation-world/2026/08/16/devastating-start-to-pacific-northwest-fire-season-offers-a-warning/)
+- Southeast Asia Could Become Indispensable to AI Without Becoming More Powerful | Source: Modern Diplomacy | Published: 2026-08-16T11:30:03Z [Link](https://moderndiplomacy.eu/2026/08/16/southeast-asia-could-become-indispensable-to-ai-without-becoming-more-powerful/)
+- Tomago demand offers hope for NSW’s stuttering renewables rollout | Source: Australian Financial Review | Published: 2026-08-16T06:00:00Z [Link](https://www.afr.com/companies/energy/tomago-demand-offers-hope-for-nsw-s-stuttering-renewables-rollout-20260814-p60odv)
+- Adani’s Odisha power push: 6,000 MW nuclear plan, pumped storage plants and solar to build a reliable clean energy base | Source: The Financial Express | Published: 2026-08-16T05:31:19Z [Link](https://www.financialexpress.com/business/industry/adani-group-odisha-power-push-6000-mw-nuclear-plan-pumped-storage-plants-solar-to-build-reliable-clean-energy-base/4318908/)
 - Little Ferry's Launch Family Entertainment selling 92 attractions, assets | Source: NJ.com | Published: 2026-08-15T20:00:00Z [Link](https://www.nj.com/business/2026/08/mega-nj-entertainment-center-auction-offering-trampolines-bowling-lanes-virtual-reality-arena.html)
 - Maan Aluminium Q1 Results: Unaudited financials approved by board | Source: scanx.trade | Published: 2026-08-15T17:37:42Z [Link](https://scanx.trade/stock-market-news/companies/maan-aluminium-q1-results-unaudited-financials-approved-board/48361051)
 - How Hull sculptor turns industrial metal into collectable works of art | Source: Hull Daily Mail | Published: 2026-08-15T12:57:40Z [Link](https://www.hulldailymail.co.uk/news/hull-east-yorkshire-news/how-hull-sculptor-turns-industrial-11105905)
 - Google's Pixel 11 lands in Australia from $1,499 with Gemini AI doing the tapping, new Pro features and the best and brightest Pixel Watch yet | Source: iTWire | Published: 2026-08-14T23:28:31Z [Link](https://itwire.com/your-it-news/home-it/googles-pixel-11-lands-in-australia-from-1-499-with-gemini-ai-doing-the-tapping-new-pro-features-and-the-best-and-brightest-pixel-watch-yet)
 - SBS Japanese Weekly News Wrap Saturday 15 August | Source: SBS Australia | Published: 2026-08-14T22:00:00Z [Link](https://www.sbs.com.au/language/japanese/en/podcast-episode/sbs-japanese-weekly-news-wrap-saturday-15-august/d1zcd79gn)
-- Europe’s ‘Made in EU’ rules start at 5%, and they do not mention software | Source: TNW | Published: 2026-08-14T12:23:18Z [Link](https://thenextweb.com/news/made-in-eu-industrial-accelerator-act-hardware-sovereignty)
-- Weekend Reads: Fed rethink, EV race, yen rescue | Source: Reuters | Published: 2026-08-14T10:37:06Z [Link](https://www.reuters.com/commentary/reuters-open-interest/weekend-reads-fed-rethink-ev-race-yen-rescue-2026-08-14/)
-- Sensex closes 71 points lower, Nifty at 24,366: 5 reasons behind today's stock moves | Source: CNBC TV18 | Published: 2026-08-14T10:25:32Z [Link](https://www.cnbctv18.com/market/sensex-closes-71-points-lower-nifty-at-24366-5-reasons-behind-todays-stock-moves-19969715.htm)
-- 79 Years of free India: What responsibilities come with freedom? | Source: SBS Australia | Published: 2026-08-14T08:27:53Z [Link](https://www.sbs.com.au/language/hindi/en/podcast-episode/indias-80th-independence-day-what-does-freedom-mean-today-and-what-does-it-demand-of-us/bcl9vywvs)
-- Top News: Foreign Minister Penny Wong issues a warning about the risks of calls for a monoculture | Source: SBS Australia | Published: 2026-08-14T08:04:21Z [Link](https://www.sbs.com.au/language/hindi/en/podcast-episode/top-news-foreign-minister-penny-wong-issues-a-warning-about-the-risks-of-calls-for-a-monoculture/smq1l1lx5)
-- Nifty Metal tanks 3% in two days on profit-taking; NALCO, SAIL top losers | Source: Business Standard | Published: 2026-08-14T06:27:28Z [Link](https://www.business-standard.com/markets/news/nifty-metal-tanks-3-in-two-days-on-profit-taking-nalco-sail-top-losers-126081400792_1.html)
-- Explained: Why Balrampur Chini, Dhampur Sugar, Dalmia Bharat & other sugar stocks are up 12% in 2 days | Source: The Economic Times | Published: 2026-08-14T06:16:00Z [Link](https://economictimes.indiatimes.com/markets/stocks/news/explained-why-balrampur-chini-dhampur-sugar-dalmia-bharat-other-sugar-stocks-are-up-12-in-2-days/articleshow/133230683.cms)
