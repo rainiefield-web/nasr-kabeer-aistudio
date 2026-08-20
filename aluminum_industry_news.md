@@ -1,28 +1,25 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-08-19 08:30:29`
-Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
+Last Updated (UTC): `2026-08-20 08:31:24`
+Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,219.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-08-18 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+- LME Aluminium Cash-Settlement: `$3,191.50/t` | Symbol: `LME Al Cash` | Ref Date: 2026-08-19 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,277.21/t` | Symbol: `LME Al Cash Avg` | Ref Date: August 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+- Monthly Average Cash-Settlement: `$3,270.62/t` | Symbol: `LME Al Cash Avg` | Ref Date: August 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
-### Latest Headlines (from NewsAPI)
-- Wrapping cash in aluminium foil: Why are people putting their banknotes in kitchen foil to protect them? | Source: The Times of India | Published: 2026-08-18T07:29:15Z [Link](https://economictimes.indiatimes.com/news/new-updates/wrapping-cash-in-aluminium-foil-why-are-people-putting-their-banknotes-in-kitchen-foil-to-protect-them/articleshow/133314372.cms)
-
 ### Latest Headlines (from GNews)
-- Daily on Energy: Removing the Roadless Rule | Source: Washington Examiner | Published: 2026-08-18T19:33:17Z [Link](https://www.washingtonexaminer.com/daily-on-energy/4691669/daily-on-energy-removing-the-roadless-rule/)
-- The Best Ergonomic Office Chairs in 2026 | Source: Digital Trends | Published: 2026-08-18T19:00:00Z [Link](https://www.digitaltrends.com/brc/the-best-ergonomic-office-chairs-in-2026/)
-- Navratna NALCO Collaborates With Research Institutes To Advance Industrial Residue Valorisation | Source: Deccan Chronicle | Published: 2026-08-18T18:36:37Z [Link](https://www.deccanchronicle.com/nation/navratna-nalco-collaborates-with-research-institutes-to-advance-industrial-residue-valorisation-1980290)
-- Ducon Infratechnologies wins cooling system order for one of India’s largest aluminium smelters | Source: CNBC TV18 | Published: 2026-08-18T17:09:59Z [Link](https://www.cnbctv18.com/business/companies/ducon-infratechnologies-wins-cooling-system-order-for-one-of-indias-largest-aluminium-smelters-19972178.htm)
-- 4 Camera Accessories You Should Buy On Amazon (And 4 You Shouldn't) | Source: BGR | Published: 2026-08-18T14:02:00Z [Link](https://www.bgr.com/2236902/camera-accessories-should-shouldnt-buy-on-amazon/)
-- 5 Harbor Freight Boating Tools And Accessories You Shouldn't Overlook | Source: SlashGear | Published: 2026-08-18T13:45:00Z [Link](https://www.slashgear.com/2235805/harbor-freight-boating-tools-accessories-worth-buying/)
-- Havana hollowed by blackouts, hunger, and mass exodus amid US fuel embargo on Cuba | Source: Malay Mail | Published: 2026-08-18T13:00:00Z [Link](https://www.malaymail.com/news/world/2026/08/18/havana-hollowed-by-blackouts-hunger-and-mass-exodus-amid-us-fuel-embargo-on-cuba/231783)
-- DOE awards $162 million to nine critical mineral extraction projects | Source: Washington Examiner | Published: 2026-08-18T13:00:00Z [Link](https://www.washingtonexaminer.com/policy/energy-and-environment/4690443/doe-162-million-nine-mineral-extraction-projects/)
-- Morning Update: A Carney-Trump trade call | Source: The Globe and Mail | Published: 2026-08-18T10:08:46Z [Link](https://www.theglobeandmail.com/canada/article-morning-update-a-carney-trump-trade-call/)
-- Say goodbye to sticky countertops: How a simple aluminum foil hack prevents messy oil spills when pouring into glass carafes | Source: The Economic Times | Published: 2026-08-18T06:36:00Z [Link](https://economictimes.indiatimes.com/news/international/us/say-goodbye-to-sticky-countertops-how-a-simple-aluminum-foil-hack-prevents-messy-oil-spills-when-pouring-into-glass-carafes/articleshow/133313666.cms)
-- 3 U.S. Industrials That Could Gain If Tariffs Hit Canadian Metals And Lumber | Source: EUROPE SAYS | Published: 2026-08-18T06:08:28Z [Link](https://www.europesays.com/3200736/)
-- 'Real fears' for major smelter without new power deal | Source: PerthNow | Published: 2026-08-18T05:47:12Z [Link](https://www.perthnow.com.au/news/politics/real-fears-for-major-smelter-without-new-power-deal-c-22741709)
+- What's The Difference Between Billet And Cast Aluminum Engine Blocks? | Source: SlashGear | Published: 2026-08-19T19:45:00Z [Link](https://www.slashgear.com/2236498/billet-vs-cast-aluminum-engine-blocks-differences/)
+- I Tested the Pixel Watch 4: Design and Function, Working in Harmony | Source: CNET | Published: 2026-08-19T19:00:15Z [Link](https://www.cnet.com/tech/mobile/i-tested-the-pixel-watch-4-design-and-function-working-in-harmony/)
+- American manufacturers are hiring again. Could tariffs be the reason? | Source: Anchorage Daily News | Published: 2026-08-19T17:23:56Z [Link](https://www.adn.com/business-economy/2026/08/19/american-manufacturers-are-hiring-again-could-tariffs-be-the-reason/)
+- Odisha’s Aluminium Ambition: Can Mineral Wealth Of KBK Unlock Progress? | Source: Deccan Chronicle | Published: 2026-08-19T16:36:50Z [Link](https://www.deccanchronicle.com/nation/odishas-aluminium-ambition-can-mineral-wealth-of-kbk-unlock-progress-1980543)
+- Maan Aluminium Q1 Results: Net profit up 50% QoQ to ₹3 crore | Source: scanx.trade | Published: 2026-08-19T16:10:49Z [Link](https://scanx.trade/stock-market-news/companies/maan-aluminium-q1-results-net-profit-up-50-qoq-3-crore/48701439)
+- Exclusive: Utah finds a new economic and ecological partner in Argentina | Source: Salt Lake City Deseret News | Published: 2026-08-19T16:09:21Z [Link](https://www.deseret.com/utah/2026/08/19/utah-trade-mission-to-argentina-critical-minerals-saline-lakes/)
+- Texmaco Rail invests ₹6.88 crore in defence arm, stake falls to 70% | Source: scanx.trade | Published: 2026-08-19T15:40:48Z [Link](https://scanx.trade/stock-market-news/companies/texmaco-rail-invests-6-88-cr-defence-subsidiary-stake-drops-70/48699264)
+- Vedanta, NALCO, Hindustan Zinc lead Q1 margin surge: Top metals stocks ranked | Source: CNBC TV18 | Published: 2026-08-19T13:20:56Z [Link](https://www.cnbctv18.com/market/vedanta-nalco-hindustan-zinc-lead-q1-margin-surge-top-metals-stocks-ranked-19972882.htm)
+- SSP reduces lead times for conductive extrusions | Source: RubberWorld | Published: 2026-08-19T06:12:00Z [Link](https://rubberworld.com/ssp-reduces-lead-times-for-conductive-extrusions/)
+- Aluminium giant Rusal swings to first | Source: RTE.ie | Published: 2026-08-19T06:11:36Z [Link](https://www.rte.ie/news/business/2026/0819/1588448-aluminium-giant-rusal-swings-to-first-half-profit-on-high/)
+- Pilot plants in Odisha set to extract valuable rare earth elements from industrial wastes | Source: The Hindu | Published: 2026-08-19T05:21:24Z [Link](https://www.thehindu.com/news/national/odisha/pilot-plants-in-odisha-set-to-extract-valuable-rare-earth-elements-from-industrial-wastes/article71363138.ece)
+- Price Action | Prism Johnson up 8% on successful bidder for coal supply; IT stocks shine | Source: Moneycontrol | Published: 2026-08-19T04:26:54Z [Link](https://www.moneycontrol.com/news/business/markets/price-action-prism-johnson-up-8-on-successful-bidder-for-coal-supply-it-stocks-shine-14009887.html)
