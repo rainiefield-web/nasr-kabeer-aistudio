@@ -1,6 +1,6 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-08-23 08:22:53`
-Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
+Last Updated (UTC): `2026-08-24 08:41:17`
+Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
@@ -10,15 +10,12 @@ Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
 - Monthly Average Cash-Settlement: `$3,261.80/t` | Symbol: `LME Al Cash Avg` | Ref Date: August 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
-### Latest Headlines (from NewsAPI)
-- James Corden’s Former Late Late Show Bandleader Responds to Ex’s Death Allegations - Yahoo | Source: Slashdot.org | Published: 2026-08-22T07:52:08Z [Link](https://slashdot.org/firehose.pl?op=view&amp;id=185096810)
-
 ### Latest Headlines (from GNews)
+- ET World Leaders Forum: Corporate India bullish on country's growth story, says Kumar Mangalam Birla | Source: The Economic Times | Published: 2026-08-23T19:17:00Z [Link](https://economictimes.indiatimes.com/news/company/corporate-trends/et-world-leaders-forum-corporate-india-bullish-on-countrys-growth-story-says-kumar-mangalam-birla/articleshow/133446087.cms)
+- Bitter Oklahoma governor’s runoff tests Trump’s endorsement power | Source: NewsBreak | Published: 2026-08-23T16:00:00Z [Link](https://www.newsbreak.com/the-hill-560476/4845000013852-bitter-oklahoma-governor-s-runoff-tests-trump-s-endorsement-power)
+- The latest on trade negotiations between Canada and the United States | Source: BayToday | Published: 2026-08-23T02:15:24Z [Link](https://www.baytoday.ca/national-news/the-latest-on-trade-negotiations-between-canada-and-the-united-states-12695665)
+- Data centres: Why New Zealand’s digital backbone is at risk | Source: The New Zealand Herald | Published: 2026-08-23T00:00:00Z [Link](https://www.nzherald.co.nz/business/business-reports/infrastructure-report/data-centres-why-new-zealands-digital-backbone-needs-more-than-power/premium/NRD3SEJJVVAGJCJF55LI5YFVI4/)
+- US hits Canada with 50% tariffs as trade war intensifies | Source: The Boston Herald | Published: 2026-08-22T20:54:56Z [Link](https://www.bostonherald.com/2026/08/22/us-hits-canada-with-50-tariffs-as-trade-war-intensifies/)
 - 'We got attacked': Carney says retaliatory tariffs on U.S. to take effect next month | Source: SooToday | Published: 2026-08-22T17:41:42Z [Link](https://www.sootoday.com/national-news/we-got-attacked-carney-says-retaliatory-tariffs-on-us-to-take-effect-next-month-12695664)
 - US imposes 50% tariffs on Canada | Source: The National | Published: 2026-08-22T16:28:35Z [Link](https://www.thenationalnews.com/business/2026/08/22/us-imposes-50-tariffs-on-canada/)
 - Carney to hold 11 a.m. news conference after suspending trade talks with U.S. | Source: BayToday | Published: 2026-08-22T14:14:09Z [Link](https://www.baytoday.ca/national-news/carney-to-hold-11-am-news-conference-after-suspending-trade-talks-with-us-12695664)
-- US hits Canada with 50% tariffs as trade talks collapse | Source: The Irish Times | Published: 2026-08-22T06:46:00Z [Link](https://www.irishtimes.com/world/2026/08/23/us-hits-canada-with-50-tariffs-as-trade-talks-collapse/)
-- US hits Canadian goods with 50% tariffs, Mark Carney vows to retaliate | Source: Business Standard | Published: 2026-08-22T06:00:55Z [Link](https://www.business-standard.com/world-news/us-hits-canadian-goods-with-50-tariffs-mark-carney-vows-to-retaliate-126082200305_1.html)
-- Canada vows dollar-for-dollar tariff retaliation, suspends trade talks with U.S. | Source: BayToday | Published: 2026-08-22T05:26:13Z [Link](https://www.baytoday.ca/national-news/canada-vows-dollar-for-dollar-tariff-retaliation-suspends-trade-talks-with-us-12695347)
-- Ukraine imposes sanctions on Aughinish Alumina customers in Russia | Source: The Irish Times | Published: 2026-08-22T05:00:01Z [Link](https://www.irishtimes.com/politics/2026/08/22/ukraine-imposes-sanctions-on-aughinish-alumina-customers-in-russia/)
-- Nifty may hit 28,000 in the next 1 year, says Pankaj Pandey of ICICI Securities, suggests 5 stocks for up to 60% upside | Source: Livemint | Published: 2026-08-22T03:30:02Z [Link](https://www.livemint.com/market/stock-market-news/nifty-may-hit-28-000-in-the-next-1-year-says-pankaj-pandey-of-icici-securities-suggests-5-stocks-for-up-to-60-upside-11787323383377.html)
