@@ -16,7 +16,8 @@ import {
   Wind, Droplets, Building2, Car, Newspaper, TrendingUp, BarChart3, Clock, Loader2
 } from 'lucide-react';
 import { motion, AnimatePresence, useReducedMotion, useScroll, useSpring, useTransform, type MotionValue } from 'framer-motion';
-import { GemSmoke, gemSmokePresets } from '@paper-design/shaders-react';
+
+const AlxGemSmoke = React.lazy(() => import('./components/AlxGemSmoke'));
 
 // Fix for Framer Motion types in strict environments
 const MotionDiv = motion.div as any;
@@ -34,28 +35,50 @@ const aboutOrbitImages = [
 const AboutImageOrbit: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isNearViewport, setIsNearViewport] = useState(false);
+  const [shouldLoadImages, setShouldLoadImages] = useState(false);
+  const showcaseRef = useRef<HTMLDivElement | null>(null);
   const activeImage = aboutOrbitImages[activeIndex];
 
   useEffect(() => {
-    aboutOrbitImages.forEach((image) => {
-      const img = new Image();
-      img.decoding = "async";
-      img.src = image.src;
-      img.decode?.().catch(() => undefined);
-    });
+    const showcase = showcaseRef.current;
+    if (!showcase) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsNearViewport(entry.isIntersecting);
+        if (entry.isIntersecting) setShouldLoadImages(true);
+      },
+      { rootMargin: '0px' }
+    );
+
+    observer.observe(showcase);
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || !isNearViewport) return;
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % aboutOrbitImages.length);
     }, 3600);
 
     return () => window.clearInterval(timer);
-  }, [isPaused]);
+  }, [isPaused, isNearViewport]);
+
+  useEffect(() => {
+    if (!isNearViewport || !shouldLoadImages) return;
+    const timer = window.setTimeout(() => {
+      const nextImage = new Image();
+      nextImage.decoding = 'async';
+      nextImage.src = aboutOrbitImages[(activeIndex + 1) % aboutOrbitImages.length].src;
+    }, 1200);
+
+    return () => window.clearTimeout(timer);
+  }, [activeIndex, isNearViewport, shouldLoadImages]);
 
   return (
     <MotionDiv
+      ref={showcaseRef}
       initial={{ opacity: 0, y: 24, scale: 0.98 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: "-80px" }}
@@ -77,7 +100,7 @@ const AboutImageOrbit: React.FC = () => {
             transition={{ duration: 0.26, ease: "easeOut" }}
             className="about-showcase-image"
           >
-            <img src={activeImage.src} alt={activeImage.alt} loading={activeIndex === 0 ? "eager" : "lazy"} decoding="async" />
+            {shouldLoadImages && <img src={activeImage.src} alt={activeImage.alt} loading="eager" decoding="async" fetchPriority="low" />}
           </MotionDiv>
         </AnimatePresence>
       </div>
@@ -93,7 +116,7 @@ const AboutImageOrbit: React.FC = () => {
             aria-label={image.alt}
             aria-current={activeIndex === index}
           >
-            <img src={image.thumb} alt="" loading="lazy" decoding="async" />
+            {shouldLoadImages && <img src={image.thumb} alt="" loading="lazy" decoding="async" fetchPriority="low" />}
           </button>
         ))}
       </div>
@@ -1479,7 +1502,9 @@ const useAlxRevealStyle = (
 const AlxBrandPromiseSection: React.FC<{ lang: Language }> = ({ lang }) => {
   const stageRef = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
-  const [shaderActive, setShaderActive] = useState(false);
+  const [shaderMounted, setShaderMounted] = useState(false);
+  const [shaderInView, setShaderInView] = useState(false);
+  const [shaderFailed, setShaderFailed] = useState(false);
   const t = content[lang].alx;
   const { scrollYProgress } = useScroll({
     target: stageRef,
@@ -1499,19 +1524,22 @@ const AlxBrandPromiseSection: React.FC<{ lang: Language }> = ({ lang }) => {
 
   useEffect(() => {
     const section = stageRef.current;
-    if (!section || reduceMotion) {
-      setShaderActive(false);
+    if (!section || reduceMotion || shaderFailed) {
+      setShaderInView(false);
       return;
     }
 
     const observer = new IntersectionObserver(
-      ([entry]) => setShaderActive(entry.isIntersecting),
-      { rootMargin: '90% 0px' }
+      ([entry]) => {
+        setShaderInView(entry.isIntersecting);
+        if (entry.isIntersecting) setShaderMounted(true);
+      },
+      { rootMargin: '35% 0px', threshold: 0.01 }
     );
 
     observer.observe(section);
     return () => observer.disconnect();
-  }, [reduceMotion]);
+  }, [reduceMotion, shaderFailed]);
 
   return (
     <section
@@ -1529,17 +1557,24 @@ const AlxBrandPromiseSection: React.FC<{ lang: Language }> = ({ lang }) => {
             style={reduceMotion ? { scale: 1 } : { scale: visualScale }}
           >
             <div className="alx-brand-shader-shell">
-              {shaderActive ? (
-                <GemSmoke
-                  className="alx-brand-gem-smoke"
-                  {...gemSmokePresets[0].params}
-                  image={ALX_LOGO_SRC}
-                  fit="contain"
-                  suspendWhenProcessingImage
-                  style={{ width: "100%", height: "100%" }}
+              <div className="alx-brand-shader-fallback" aria-hidden="true">
+                <img
+                  className="alx-brand-shader-fallback-logo"
+                  src={ALX_LOGO_SRC}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                 />
-              ) : (
-                <div className="alx-brand-shader-fallback" />
+              </div>
+              {shaderMounted && !shaderFailed && (
+                <React.Suspense fallback={null}>
+                  <AlxGemSmoke
+                    image={ALX_LOGO_SRC}
+                    active={shaderInView}
+                    onContextLost={() => setShaderFailed(true)}
+                  />
+                </React.Suspense>
               )}
             </div>
           </MotionDiv>
@@ -1554,7 +1589,7 @@ const AlxBrandPromiseSection: React.FC<{ lang: Language }> = ({ lang }) => {
               {t.promise}
             </MotionDiv>
             <MotionDiv className="alx-brand-experience-action" style={promise}>
-              <a className="alx-brand-experience-link" href="/experience/" aria-label="Open NKACO Brand Experience">
+              <a className="alx-brand-experience-link" href="/experience/index.html" aria-label="Open NKACO Brand Experience">
                 <span>Brand Experience</span>
                 <span className="alx-brand-experience-icon" aria-hidden="true"><ArrowRight size={18} /></span>
               </a>
@@ -2428,6 +2463,7 @@ const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>('home');
   const [heroVideoReady, setHeroVideoReady] = useState(false);
   const [heroEffectsActive, setHeroEffectsActive] = useState(true);
+  const [heroVideoMayStart, setHeroVideoMayStart] = useState(false);
   const heroVideoRef = useRef<HTMLVideoElement | null>(null);
   const heroVideoPlayedRef = useRef(false);
 
@@ -2475,33 +2511,60 @@ const App: React.FC = () => {
   };
 
   useEffect(() => {
-    if (currentPage !== 'home' || heroVideoPlayedRef.current) return;
+    let fallbackTimer = 0;
+    let idleHandle = 0;
 
+    const allowVideoPlayback = () => setHeroVideoMayStart(true);
+    const schedulePlayback = () => {
+      if ('requestIdleCallback' in window) {
+        idleHandle = window.requestIdleCallback(allowVideoPlayback, { timeout: 2200 });
+      } else {
+        fallbackTimer = window.setTimeout(allowVideoPlayback, 1200);
+      }
+    };
+
+    if (document.readyState === 'complete') schedulePlayback();
+    else window.addEventListener('load', schedulePlayback, { once: true });
+
+    return () => {
+      window.removeEventListener('load', schedulePlayback);
+      if (fallbackTimer) window.clearTimeout(fallbackTimer);
+      if (idleHandle && 'cancelIdleCallback' in window) window.cancelIdleCallback(idleHandle);
+    };
+  }, []);
+
+  useEffect(() => {
     const video = heroVideoRef.current;
     if (!video) return;
 
-    prepareHeroVideo(video);
-    video.currentTime = 0;
-    video.play().catch(() => undefined);
-  }, [currentPage]);
+    const syncPlayback = () => {
+      const shouldPlay = heroVideoMayStart
+        && heroEffectsActive
+        && currentPage === 'home'
+        && document.visibilityState === 'visible';
+
+      if (shouldPlay) {
+        prepareHeroVideo(video);
+        video.play().catch(() => undefined);
+      } else {
+        video.pause();
+      }
+    };
+
+    syncPlayback();
+    document.addEventListener('visibilitychange', syncPlayback);
+    return () => document.removeEventListener('visibilitychange', syncPlayback);
+  }, [currentPage, heroEffectsActive, heroVideoMayStart]);
 
   const handleHeroVideoReady = (event: React.SyntheticEvent<HTMLVideoElement>) => {
     prepareHeroVideo(event.currentTarget);
+    if (event.currentTarget.readyState < HTMLMediaElement.HAVE_FUTURE_DATA) return;
     setHeroVideoReady(true);
-
-    if (currentPage === 'home' && !heroVideoPlayedRef.current) {
-      event.currentTarget.play().catch(() => undefined);
-    }
   };
 
   const handleHeroVideoPlay = (event: React.SyntheticEvent<HTMLVideoElement>) => {
     prepareHeroVideo(event.currentTarget);
     if (!heroVideoPlayedRef.current) heroVideoPlayedRef.current = true;
-  };
-
-  const handleHeroVideoEnded = (event: React.SyntheticEvent<HTMLVideoElement>) => {
-    heroVideoPlayedRef.current = true;
-    event.currentTarget.pause();
   };
 
   const smoothScrollTo = (target: string | number) => {
@@ -2570,7 +2633,7 @@ const App: React.FC = () => {
           </a>
           <div className={`hidden lg:flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase ${scrolled || currentPage !== 'home' ? 'text-gray-800' : 'text-white'}`}>
             <a href="#" onClick={scrollToTop} className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'}`}>{t.nav.about}</a>
-            <a href="/experience/" className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'}`}>Experience</a>
+            <a href="/experience/index.html" className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'}`}>Experience</a>
             <a href="#products" onClick={goToProducts} className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'} ${currentPage === 'products' ? 'is-active' : ''}`}>{t.nav.products}</a>
             <a href="#technology" onClick={goToTechnology} className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'} ${currentPage === 'technology' ? 'is-active' : ''}`}>{t.nav.technology}</a>
             <a href="#sustainability" onClick={goToSustainability} className={`nav-metal-tab ${scrolled || currentPage !== 'home' ? 'nav-metal-tab-light' : 'nav-metal-tab-dark'} ${currentPage === 'sustainability' ? 'is-active' : ''}`}>{t.nav.sustainability}</a>
@@ -2587,7 +2650,7 @@ const App: React.FC = () => {
         {menuOpen && (
           <MotionDiv initial={{ x: isRTL ? '-100%' : '100%' }} animate={{ x: 0 }} exit={{ x: isRTL ? '-100%' : '100%' }} transition={{ type: 'tween', duration: 0.4 }} className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center gap-8 text-2xl font-serif text-nasr-dark">
             <a href="#" onClick={scrollToTop}>{t.nav.about}</a>
-            <a href="/experience/">Experience</a>
+            <a href="/experience/index.html">Experience</a>
             <a href="#products" onClick={goToProducts} className={currentPage === 'products' ? 'text-nasr-blue' : ''}>{t.nav.products}</a>
             <a href="#technology" onClick={goToTechnology} className={currentPage === 'technology' ? 'text-nasr-blue' : ''}>{t.nav.technology}</a>
             <a href="#sustainability" onClick={goToSustainability} className={currentPage === 'sustainability' ? 'text-nasr-blue' : ''}>{t.nav.sustainability}</a>
@@ -2614,17 +2677,15 @@ const App: React.FC = () => {
                   <video
                     ref={heroVideoRef}
                     className="raw-metal-hero-video-media"
-                    poster="/hero-background-wide.png"
-                    preload="auto"
-                    autoPlay={!heroVideoPlayedRef.current}
+                    preload="metadata"
+                    loop
                     muted
                     playsInline
                     onLoadedMetadata={handleHeroVideoReady}
                     onCanPlay={handleHeroVideoReady}
                     onPlay={handleHeroVideoPlay}
-                    onEnded={handleHeroVideoEnded}
                   >
-                    <source src="/hero-metal-flow-polished.mp4" type="video/mp4" />
+                    <source src="/hero-background-profile.mp4" type="video/mp4" />
                   </video>
                 </div>
                 <div className="hero-graphite-scrim hero-graphite-scrim-side"></div>
@@ -2632,8 +2693,8 @@ const App: React.FC = () => {
                 <div className="raw-metal-edge raw-metal-edge-light absolute bottom-0 left-0 right-0 z-[4]"></div>
               </div>
               <div className="hero-stage relative z-10 container mx-auto px-6 pt-24 pb-16 max-w-7xl">
-                <MotionDiv initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className={`max-w-[44rem] md:max-w-[40rem] lg:max-w-[44rem] mt-52 md:mt-0 ${isRTL ? 'mr-auto text-right' : 'ml-0 text-left'}`}>
-                  <div className={`flex items-center gap-4 mb-7 ${isRTL ? 'justify-end' : ''}`}><span className="h-[2px] w-14 bg-nasr-accent"></span><span className={`text-nasr-accent text-xs md:text-sm font-bold ${isRTL ? 'tracking-normal' : 'tracking-[0.34em] uppercase'}`}>{t.hero.vision}</span></div>
+                <MotionDiv initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className={`hero-content max-w-[44rem] md:max-w-[40rem] lg:max-w-[44rem] mt-52 md:mt-0 ${isRTL ? 'mr-auto text-right' : 'ml-0 text-left'}`}>
+                  <div className={`hero-kicker flex items-center gap-4 mb-7 ${isRTL ? 'justify-end' : ''}`}><span className="h-[2px] w-14 bg-nasr-accent"></span><span className={`text-nasr-accent text-xs md:text-sm font-bold ${isRTL ? 'tracking-normal' : 'tracking-[0.34em] uppercase'}`}>{t.hero.vision}</span></div>
                   <h1 className={`laser-title font-bold mb-8 text-white drop-shadow-2xl ${isRTL ? 'font-arabic text-5xl md:text-7xl leading-[1.12] tracking-normal' : 'font-serif text-5xl md:text-[4.8rem] lg:text-[5.35rem] leading-[0.92]'}`}>
                     <span className="laser-line laser-line-1">{t.hero.titleLine1}</span>
                     <span className="laser-line laser-line-2 text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">{t.hero.titleLine2}</span>
@@ -2641,7 +2702,7 @@ const App: React.FC = () => {
                     <LaserTitleCanvas enabled={heroEffectsActive} />
                   </h1>
                   <p className={`hero-copy text-base md:text-xl text-gray-200 font-light leading-relaxed mb-12 max-w-2xl md:max-w-[31rem] lg:max-w-2xl ${isRTL ? 'border-r-2 pr-8' : 'border-l-2 pl-8'} border-white/35`}>{t.hero.desc}</p>
-                  <div className="flex flex-col sm:flex-row gap-6">
+                  <div className="hero-actions flex flex-col sm:flex-row gap-6">
                     <a href="#products" onClick={goToProducts} className={`metal-cta group flex items-center justify-center gap-3 px-8 py-4 font-bold ${isRTL ? 'tracking-normal' : 'uppercase tracking-wider'}`}>{t.hero.btnProduct}<ArrowRight size={20} className={`transition-transform duration-500 ease-out ${isRTL ? 'group-hover:-translate-x-1 rotate-180' : 'group-hover:translate-x-1'}`} /></a>
                     <a href="#technology" onClick={goToTechnology} className={`metal-cta-secondary flex items-center justify-center gap-3 px-8 py-4 font-bold ${isRTL ? 'tracking-normal' : 'uppercase tracking-wider'}`}>{t.hero.btnTech}</a>
                   </div>
@@ -2760,7 +2821,7 @@ const App: React.FC = () => {
                 <h4 className="text-white font-bold uppercase tracking-widest mb-8 text-sm">{t.footer.navTitle}</h4>
                 <ul className="space-y-4 text-sm">
                   <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="hover:text-nasr-accent transition-colors">{t.nav.about}</a></li>
-                  <li><a href="/experience/" className="hover:text-nasr-accent transition-colors">Experience</a></li>
+                  <li><a href="/experience/index.html" className="hover:text-nasr-accent transition-colors">Experience</a></li>
                   <li><a href="#products" onClick={goToProducts} className="hover:text-nasr-accent transition-colors">{t.nav.products}</a></li>
                   <li><a href="#technology" onClick={goToTechnology} className="hover:text-nasr-accent transition-colors">{t.nav.technology}</a></li>
                   <li><a href="#sustainability" onClick={goToSustainability} className="hover:text-nasr-accent transition-colors">{t.nav.sustainability}</a></li>

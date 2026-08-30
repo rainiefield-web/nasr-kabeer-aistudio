@@ -15,7 +15,8 @@ declare global {
 const SmoothScroll = () => {
   useEffect(() => {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduceMotion) return;
+    const coarsePointer = window.matchMedia('(pointer: coarse)').matches;
+    if (reduceMotion || coarsePointer) return;
 
     const lenis = new Lenis({
       anchors: {

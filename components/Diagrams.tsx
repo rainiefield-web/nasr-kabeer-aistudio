@@ -294,6 +294,7 @@ const ProcessImagePanel: React.FC<{
                     alt={`${step.title} process`}
                     loading={index === 0 ? 'eager' : 'lazy'}
                     decoding="async"
+                    fetchPriority="low"
                     className="h-full w-full object-cover"
                 />
             </MotionDiv>
