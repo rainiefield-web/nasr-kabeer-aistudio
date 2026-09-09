@@ -1,25 +1,25 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-09-08 12:33:45`
-Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
+Last Updated (UTC): `2026-09-09 12:39:41`
+Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,310.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-09-07 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+- LME Aluminium Cash-Settlement: `$3,325.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-09-08 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,284.40/t` | Symbol: `LME Al Cash Avg` | Ref Date: September 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+- Monthly Average Cash-Settlement: `$3,291.17/t` | Symbol: `LME Al Cash Avg` | Ref Date: September 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
-### Latest Headlines (from NewsAPI)
-- Nalco ties up with UAE's EGA for aluminium smelter expansion in Odisha | Source: Business Standard | Published: 2026-09-07T12:26:22Z [Link](https://www.business-standard.com/companies/news/nalco-ties-up-with-uae-s-ega-for-aluminium-smelter-expansion-in-odisha-126090701042_1.html)
-
 ### Latest Headlines (from GNews)
-- NALCO partners with EGA for advanced DX+ Ultra aluminium smelting technology in Odisha expansion | Source: The Economic Times | Published: 2026-09-07T16:12:00Z [Link](https://economictimes.indiatimes.com/industry/indl-goods/svs/metals-mining/nalco-partners-with-ega-for-advanced-dx-ultra-aluminium-smelting-technology-in-odisha-expansion/articleshow/133888872.cms)
-- NALCO Partners with EGA for Cutting-Edge Aluminium Smelting Technology | Source: Devdiscourse | Published: 2026-09-07T15:45:05Z [Link](https://www.devdiscourse.com/article/business/3973844-nalco-partners-with-ega-for-cutting-edge-aluminium-smelting-technology)
-- NALCO signs EGA technology deal for 0.5 MTPA Odisha smelter expansion | Source: The Tribune | Published: 2026-09-07T15:42:38Z [Link](https://www.tribuneindia.com/news/business/nalco-signs-ega-technology-deal-for-0-5-mtpa-odisha-smelter-expansion/)
-- NALCO Signs Technology Partnership Agreement With Emirates Global Aluminium | Source: Deccan Chronicle | Published: 2026-09-07T12:31:54Z [Link](https://www.deccanchronicle.com/business/companies/nalco-signs-technology-partnership-agreement-with-emirates-global-aluminium-1985537)
-- Sask. print-art studio among small businesses facing loss of U.S. customers | Source: CBC.ca | Published: 2026-09-07T11:00:00Z [Link](https://www.cbc.ca/news/canada/saskatchewan/sask-print-art-studio-among-businesses-facing-loss-of-u-s-customers-9.7333354)
-- NALCO signs deal with EGA for DX+ Ultra smelting technology | Source: scanx.trade | Published: 2026-09-07T10:35:48Z [Link](https://scanx.trade/stock-market-news/companies/nalco-signs-deal-ega-dx-ultra-smelting-technology/50319942)
-- Aluminum Refractory Materials Market worth $2.73 billion by 2031 - Exclusive Report by MarketsandMarkets™ | Source: PR Newswire UK | Published: 2026-09-07T10:15:00Z [Link](https://www.prnewswire.co.uk/news-releases/aluminum-refractory-materials-market-worth-2-73-billion-by-2031---exclusive-report-by-marketsandmarkets-302871133.html)
-- Base metals playbook: Stock selection key for investors as easy gains fade | Source: Business Standard | Published: 2026-09-07T02:55:12Z [Link](https://www.business-standard.com/markets/news/base-metals-playbook-stock-selection-key-for-investors-as-easy-gains-fade-126090700077_1.html)
-- What to cook: Classic chicken dishes that are always in style | Source: Omaha World-Herald | Published: 2026-09-06T22:15:00Z [Link](https://omaha.com/life-entertainment/nation-world/food-drink/article_b25f40a1-3316-5273-bb81-1861b6456a0e.html)
+- A 5% stake is no small bet: 4 Small caps drawing India’s super investors | Source: The Financial Express | Published: 2026-09-08T23:52:00Z [Link](https://www.financialexpress.com/market/stock-insights/a-5-stake-is-no-small-bet-4-small-caps-drawing-indias-super-investors/4334802/)
+- NALCO ties up with EGA for 0.5 MTPA smelter expansion | Source: The Financial Express | Published: 2026-09-08T19:19:37Z [Link](https://www.financialexpress.com/policy/economy-nalco-ties-up-with-ega-for-0-5-mtpa-smelter-expansion-4334823/)
+- Your Sports Car Has Plenty Of Power, So Why Can't It Tow? | Source: SlashGear | Published: 2026-09-08T16:15:00Z [Link](https://www.slashgear.com/2249667/sports-cars-with-no-tow-ratings/)
+- Capped at home, China extends its aluminium dominance abroad | Source: Reuters | Published: 2026-09-08T13:23:12Z [Link](https://www.reuters.com/commentary/reuters-open-interest/capped-home-china-extends-its-aluminium-dominance-abroad-2026-09-08/)
+- Canadian Energy Metals Achieves Proof-of-Concept for Smelter Grade Alumina from a Non-Bauxite Resource & Commences its Prefeasibility Study | Source: PR Newswire UK | Published: 2026-09-08T09:00:00Z [Link](https://www.prnewswire.co.uk/news-releases/canadian-energy-metals-achieves-proof-of-concept-for-smelter-grade-alumina-from-a-non-bauxite-resource--commences-its-prefeasibility-study-302871543.html)
+- China is building an AI future far from its biggest cities | Source: The Star | Published: 2026-09-08T08:00:00Z [Link](https://www.thestar.com.my/tech/tech-news/2026/09/08/china-is-building-an-ai-future-far-from-its-biggest-cities)
+- Dhabriya Polywood FY26 Results: Net profit rises 86% to ₹142 crore | Source: scanx.trade | Published: 2026-09-08T05:33:22Z [Link](https://scanx.trade/stock-market-news/companies/dhabriya-polywood-fy26-results-net-profit-rises-86-142-crore/50391194)
+- Is China about to become a problem for Rio Tinto shares? | Source: The Motley Fool Australia | Published: 2026-09-08T04:47:00Z [Link](https://www.fool.com.au/2026/09/08/is-china-about-to-become-a-problem-for-rio-tinto-shares/)
+- Climate justice begins with development justice | Source: Times of India | Published: 2026-09-08T04:10:00Z [Link](https://timesofindia.indiatimes.com/toi-blogs/power-policy/climate-justice-begins-with-development-justice/articleshow/133906131.cms)
+- Sensex down 400 pts, Nifty near 23,650: Rising crude prices among key factors behind market decline | Source: Moneycontrol | Published: 2026-09-08T04:09:46Z [Link](https://www.moneycontrol.com/news/business/markets/sensex-down-400-pts-nifty-below-23-700-rising-crude-prices-among-key-factors-behind-market-decline-14024886.html)
+- China races to build AI data centres far from its biggest cities to tap cheap power | Source: CNBC TV18 | Published: 2026-09-08T03:10:09Z [Link](https://www.cnbctv18.com/world/china-races-to-build-ai-data-centres-far-from-its-biggest-cities-to-tap-cheap-power-19986205.htm)
+- Stocks to watch: Asian Paints, Swiggy, RBL Bank, BoB & defence shares | Source: Business Standard | Published: 2026-09-08T02:16:21Z [Link](https://www.business-standard.com/markets/news/stocks-to-watch-asian-paints-swiggy-rbl-bank-bob-defence-shares-126090800083_1.html)
