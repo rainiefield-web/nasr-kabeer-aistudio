@@ -1,23 +1,24 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-09-15 13:04:39`
+Last Updated (UTC): `2026-09-16 13:01:45`
 Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,311.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-09-14 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+- LME Aluminium Cash-Settlement: `$3,260.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-09-15 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,302.70/t` | Symbol: `LME Al Cash Avg` | Ref Date: September 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+- Monthly Average Cash-Settlement: `$3,298.82/t` | Symbol: `LME Al Cash Avg` | Ref Date: September 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
 ### Latest Headlines (from GNews)
+- Katie Britt asked Trump for tariff breaks for Novelis, Airbus | Source: AL.com | Published: 2026-09-15T21:38:28Z [Link](https://www.al.com/politics/2026/09/katie-britt-says-report-she-asked-trump-to-spare-alabama-companies-from-tariffs-is-a-biased-hack-job.html)
+- Ford increases V-8 engines, lowers performance prices | Source: CNBC | Published: 2026-09-15T17:08:27Z [Link](https://www.cnbc.com/2026/09/15/2027-ford-f-150-trucks.html)
+- Kibar Americas Celebrates Grand Opening of Fairmont Aluminum Manufacturing Facility | Source: PR Newswire UK | Published: 2026-09-15T12:00:00Z [Link](https://www.prnewswire.co.uk/news-releases/kibar-americas-celebrates-grand-opening-of-fairmont-aluminum-manufacturing-facility-302878899.html)
+- Mytilineos to the FT: “Europe Risks Losing the Gallium Race” - METLEN’s Strategic Bet | Source: Pagenews.gr | Published: 2026-09-15T11:37:25Z [Link](https://www.pagenews.gr/2026/09/15/english-edition/mytilineos-to-the-ft-europe-risks-losing-the-gallium-race-metlens-strategic-bet/)
+- The world's hottest EVs are headed to Windsor, not Detroit | Source: Detroit Free Press | Published: 2026-09-15T11:01:55Z [Link](https://www.freep.com/story/opinion/contributors/2026/09/15/china-evs-byd-windsor-mandate/91674363007/)
+- You might have dreamed of visiting this once-perfect river. Now it's on the brink | Source: The i Paper | Published: 2026-09-15T10:00:00Z [Link](https://inews.co.uk/opinion/picture-perfect-river-exposes-threat-britains-landscape-4763476)
+- The deals and dealmakers to watch at the Canada Investment Summit | Source: The Globe and Mail | Published: 2026-09-15T01:28:54Z [Link](https://www.theglobeandmail.com/business/article-the-deals-and-dealmakers-to-watch-at-the-canada-investment-summit/)
 - NALCO shares investor presentation ahead of September 16 analyst meet | Source: scanx.trade | Published: 2026-09-14T13:46:12Z [Link](https://scanx.trade/stock-market-news/companies/nalco-hosts-investor-meet-mumbai-september-16/50403843)
 - METLEN and PETRONAS enter into LNG Supply Agreement to strengthen energy security and diversification in Southeast Europe | Source: The Kingston Whig-Standard | Published: 2026-09-14T09:35:10Z [Link](https://www.thewhig.com/press-releases/pr-newswire/metlen-and-petronas-enter-into-lng-supply-agreement-to-strengthen-energy-security-and-diversification-in-southeast-europe/)
 - 'No value': smelter blast furnace snuffed out for good | Source: PerthNow | Published: 2026-09-14T05:46:42Z [Link](https://www.perthnow.com.au/news/politics/jobs-gone-as-smelter-blast-furnace-snuffed-out-for-good-c-22868119)
 - Jobs gone as smelter blast furnace snuffed out for good | Source: The Canberra Times | Published: 2026-09-14T05:44:13Z [Link](https://www.canberratimes.com.au/story/9350012/jobs-gone-as-smelter-blast-furnace-snuffed-out-for-good/)
-- Beloved Boeing 757 Sent To The Graveyard Is Now Destroyed For Good | Source: Simple Flying | Published: 2026-09-14T02:00:24Z [Link](https://simpleflying.com/worlds-most-beloved-boeing-757-sent-graveyard-destroyed-good/)
-- Buy, hold, sell: NextDC, South32, CBA shares | Source: The Motley Fool Australia | Published: 2026-09-13T20:15:00Z [Link](https://www.fool.com.au/2026/09/14/buy-hold-sell-nextdc-south32-cba-shares/)
-- 10 Valuable Car Parts You Should Be Looking For At Junkyards | Source: SlashGear | Published: 2026-09-13T12:30:00Z [Link](https://www.slashgear.com/2251783/most-valuable-junkyard-car-parts/)
-- Odisha Hands Over 7,000 Acres For Adani-IRH Aluminium Project | Source: Deccan Chronicle | Published: 2026-09-13T12:14:14Z [Link](https://www.deccanchronicle.com/nation/odisha-hands-over-7000-acres-for-adani-irh-aluminium-project-1987220)
-- Clifton Yates jailed after stripping Parua Bay home of copper and sentimental belongings | Source: The New Zealand Herald | Published: 2026-09-13T00:00:00Z [Link](https://www.nzherald.co.nz/northern-advocate/news/clifton-yates-jailed-after-stripping-parua-bay-home-of-copper-and-sentimental-belongings/EHUIOK5GHBE4DF6LFSPHLRFCVU/)
-- Energy Markets Signal Winter Crisis and Rising Interest Rates | Source: EUROPE SAYS | Published: 2026-09-12T19:13:29Z [Link](https://www.europesays.com/3247559/)
