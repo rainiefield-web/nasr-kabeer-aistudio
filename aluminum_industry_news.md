@@ -1,24 +1,25 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-09-16 13:01:45`
+Last Updated (UTC): `2026-09-17 12:59:30`
 Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,260.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-09-15 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+- LME Aluminium Cash-Settlement: `$3,310.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-09-16 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,298.82/t` | Symbol: `LME Al Cash Avg` | Ref Date: September 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+- Monthly Average Cash-Settlement: `$3,299.75/t` | Symbol: `LME Al Cash Avg` | Ref Date: September 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
 ### Latest Headlines (from GNews)
-- Katie Britt asked Trump for tariff breaks for Novelis, Airbus | Source: AL.com | Published: 2026-09-15T21:38:28Z [Link](https://www.al.com/politics/2026/09/katie-britt-says-report-she-asked-trump-to-spare-alabama-companies-from-tariffs-is-a-biased-hack-job.html)
-- Ford increases V-8 engines, lowers performance prices | Source: CNBC | Published: 2026-09-15T17:08:27Z [Link](https://www.cnbc.com/2026/09/15/2027-ford-f-150-trucks.html)
-- Kibar Americas Celebrates Grand Opening of Fairmont Aluminum Manufacturing Facility | Source: PR Newswire UK | Published: 2026-09-15T12:00:00Z [Link](https://www.prnewswire.co.uk/news-releases/kibar-americas-celebrates-grand-opening-of-fairmont-aluminum-manufacturing-facility-302878899.html)
-- Mytilineos to the FT: “Europe Risks Losing the Gallium Race” - METLEN’s Strategic Bet | Source: Pagenews.gr | Published: 2026-09-15T11:37:25Z [Link](https://www.pagenews.gr/2026/09/15/english-edition/mytilineos-to-the-ft-europe-risks-losing-the-gallium-race-metlens-strategic-bet/)
-- The world's hottest EVs are headed to Windsor, not Detroit | Source: Detroit Free Press | Published: 2026-09-15T11:01:55Z [Link](https://www.freep.com/story/opinion/contributors/2026/09/15/china-evs-byd-windsor-mandate/91674363007/)
-- You might have dreamed of visiting this once-perfect river. Now it's on the brink | Source: The i Paper | Published: 2026-09-15T10:00:00Z [Link](https://inews.co.uk/opinion/picture-perfect-river-exposes-threat-britains-landscape-4763476)
-- The deals and dealmakers to watch at the Canada Investment Summit | Source: The Globe and Mail | Published: 2026-09-15T01:28:54Z [Link](https://www.theglobeandmail.com/business/article-the-deals-and-dealmakers-to-watch-at-the-canada-investment-summit/)
-- NALCO shares investor presentation ahead of September 16 analyst meet | Source: scanx.trade | Published: 2026-09-14T13:46:12Z [Link](https://scanx.trade/stock-market-news/companies/nalco-hosts-investor-meet-mumbai-september-16/50403843)
-- METLEN and PETRONAS enter into LNG Supply Agreement to strengthen energy security and diversification in Southeast Europe | Source: The Kingston Whig-Standard | Published: 2026-09-14T09:35:10Z [Link](https://www.thewhig.com/press-releases/pr-newswire/metlen-and-petronas-enter-into-lng-supply-agreement-to-strengthen-energy-security-and-diversification-in-southeast-europe/)
-- 'No value': smelter blast furnace snuffed out for good | Source: PerthNow | Published: 2026-09-14T05:46:42Z [Link](https://www.perthnow.com.au/news/politics/jobs-gone-as-smelter-blast-furnace-snuffed-out-for-good-c-22868119)
-- Jobs gone as smelter blast furnace snuffed out for good | Source: The Canberra Times | Published: 2026-09-14T05:44:13Z [Link](https://www.canberratimes.com.au/story/9350012/jobs-gone-as-smelter-blast-furnace-snuffed-out-for-good/)
+- BHP vs Rio Tinto: What's the better buy? | Source: The Motley Fool Australia | Published: 2026-09-16T22:18:58Z [Link](https://www.fool.com.au/2026/09/17/bhp-vs-rio-tinto-whats-the-better-buy/)
+- Aluminum firms in Canada see death of U.S. sales as tariffs bite | Source: Calgary Herald | Published: 2026-09-16T20:44:03Z [Link](https://calgaryherald.com/commodities/aluminum-canada-death-of-u-s-sales-tariffs/wcm/710106b0-ee7d-447f-a976-116f1353e9cb)
+- Aluminum firms in Canada see death of U.S. sales | Source: Financial Post | Published: 2026-09-16T20:44:03Z [Link](https://financialpost.com/commodities/aluminum-canada-death-of-u-s-sales-tariffs)
+- Blue Jays Pitcher Dies Suddenly at 45 | Source: The Daily Beast | Published: 2026-09-16T20:31:34Z [Link](https://www.thedailybeast.com/blue-jays-pitcher-brian-wolfe-dies-suddenly-at-45/)
+- ‘Peppa Pig’ Creator Targeted by Notorious Crime Gang | Source: The Daily Beast | Published: 2026-09-16T19:59:06Z [Link](https://www.thedailybeast.com/peppa-pig-creator-targeted-by-notorious-crime-gang/)
+- Victoria's power on the line as data centres boom | Source: ABC (Australian Broadcasting Corporation) | Published: 2026-09-16T19:52:11Z [Link](https://www.abc.net.au/news/2026-09-17/datacentre-boom-revives-vic-transmission-fight/107155564)
+- Beyond Oil And Gold: Venezuela Readies First US Aluminum Shipment In Years As Resource Race Heats Up | Source: ZeroHedge | Published: 2026-09-16T19:45:00Z [Link](https://www.zerohedge.com/commodities/beyond-oil-and-gold-venezuela-readies-first-us-aluminum-shipment-year-resource-race)
+- Scientists Make Wild 66-Million-Year-Old Discovery in North Dakota | Source: The Daily Beast | Published: 2026-09-16T18:29:53Z [Link](https://www.thedailybeast.com/scientists-make-wild-66-million-year-old-discovery-in-north-dakota/)
+- Merriam-Webster Adds 1,400 New Words, Including ‘Looksmaxxing’ and ‘Meme Coin’ | Source: The Daily Beast | Published: 2026-09-16T16:35:57Z [Link](https://www.thedailybeast.com/merriam-webster-adds-1400-new-words-including-looksmaxxing-and-meme-coin/)
+- Trailblazing Novelist and Playwright Dies at 77 | Source: The Daily Beast | Published: 2026-09-16T15:53:08Z [Link](https://www.thedailybeast.com/trailblazing-novelist-and-playwright-dies-at-77/)
+- Magazine Returned to Library 132 Years Late | Source: The Daily Beast | Published: 2026-09-16T15:11:22Z [Link](https://www.thedailybeast.com/magazine-returned-to-library-132-years-late/)
+- Teenage Girl Attacked by Bear That Broke Into Bedroom | Source: The Daily Beast | Published: 2026-09-16T14:23:00Z [Link](https://www.thedailybeast.com/teenage-girl-attacked-by-bear-that-broke-into-bedroom-in-monte-vista-colorado/)
