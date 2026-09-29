@@ -1,25 +1,28 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-09-28 16:23:07`
-Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
+Last Updated (UTC): `2026-09-29 14:33:16`
+Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,254.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-09-25 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+- LME Aluminium Cash-Settlement: `$3,248.50/t` | Symbol: `LME Al Cash` | Ref Date: 2026-09-28 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,283.03/t` | Symbol: `LME Al Cash Avg` | Ref Date: September 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+- Monthly Average Cash-Settlement: `$3,280.29/t` | Symbol: `LME Al Cash Avg` | Ref Date: September 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
+### Latest Headlines (from NewsAPI)
+- Green Science Alliance Developed Stable Rechargeable Aqueous Aluminum Ion Battery with Conductive Carbon Rubber Sheet as Cathode Current Collector | Source: PRNewswire | Published: 2026-09-28T14:12:00Z [Link](https://www.prnewswire.com/news-releases/green-science-alliance-developed-stable-rechargeable-aqueous-aluminum-ion-battery-with-conductive-carbon-rubber-sheet-as-cathode-current-collector-302891548.html)
+
 ### Latest Headlines (from GNews)
-- Buy, hold, sell: Xero, South32, Woodside shares | Source: The Motley Fool Australia | Published: 2026-09-27T22:45:00Z [Link](https://www.fool.com.au/2026/09/28/buy-hold-sell-xero-south32-woodside-shares/)
-- Commodities to face diverging risks as inflation, payrolls loom and Hormuz diplomacy stays fragile | Source: Moneycontrol | Published: 2026-09-27T17:21:43Z [Link](https://www.moneycontrol.com/news/opinion/commodities-to-face-diverging-risks-as-inflation-payrolls-loom-and-hormuz-diplomacy-stays-fragile-14039462.html)
-- Tribals vow to oppose renewed mining push in Odisha's Niyamgiri hills | Source: Business Standard | Published: 2026-09-27T14:09:56Z [Link](https://www.business-standard.com/industry/news/tribals-vow-to-oppose-renewed-mining-push-in-odisha-s-niyamgiri-hills-126092700633_1.html)
-- How Trump's trade war with Canada is squeezing a farm cidery in Albany | Source: EUROPE SAYS | Published: 2026-09-27T06:28:15Z [Link](https://www.europesays.com/3275097/)
-- India needs to utilise resources beneath earth to become self-sufficient: Anil Agarwal | Source: The Hindu Business Line | Published: 2026-09-27T05:33:32Z [Link](https://www.thehindubusinessline.com/companies/india-needs-to-utilise-resources-beneath-earth-to-become-self-sufficient-anil-agarwal/article71515197.ece)
-- Vedanta Odisha investment: Anil Agarwal announces Rs 1 lakh crore across key sectors - Telegraph India | Source: Telegraph India | Published: 2026-09-27T02:13:54Z [Link](https://www.telegraphindia.com/business/vedanta-odisha-investment-anil-agarwal-announces-rs-1-lakh-crore-across-key-sectors-prnt/cid/2181867)
-- Captive Coal Plants to Boost Power Output | Source: Deccan Chronicle | Published: 2026-09-26T18:33:01Z [Link](https://www.deccanchronicle.com/nation/captive-coal-plants-to-boost-power-output-1990874)
-- Centre orders captive coal power plants to maximise power output on surging demand | Source: The Hindu | Published: 2026-09-26T18:08:00Z [Link](https://www.thehindu.com/business/Industry/centre-orders-captive-coal-power-plants-to-maximise-power-output-on-surging-demand/article71514005.ece)
-- Vedanta’s Anil Agarwal backs mineral exploration, says India must shed ‘country of import’ tag | Source: Moneycontrol | Published: 2026-09-26T17:25:40Z [Link](https://www.moneycontrol.com/news/business/vedanta-s-anil-agarwal-backs-mineral-exploration-says-india-must-shed-country-of-import-tag-14039014.html)
-- Vedanta Chief Anil Agarwal Meets Odisha CM Mohan Majhi, Says Bauxite Mining Hurdles To Be Settled by November | Source: Deccan Chronicle | Published: 2026-09-26T17:08:23Z [Link](https://www.deccanchronicle.com/business/corporate-news/vedanta-chief-anil-agarwal-meets-odisha-cm-mohan-majhi-says-bauxite-mining-hurdles-to-be-settled-by-november-1990840)
-- India orders coal plants’ maximum output | Source: The Manila Times | Published: 2026-09-26T16:06:00Z [Link](https://www.manilatimes.net/2026/09/27/world/asia-oceania/india-orders-coal-plants-maximum-output/2433457)
-- Mining projects facing opposition, Vedanta chief says in Odisha: Foreigners used to instigate locals | Source: The Indian Express | Published: 2026-09-26T15:20:16Z [Link](https://indianexpress.com/article/india/anil-agarwal-foreign-instigators-vedanta-sijimali-bauxite-mine-odisha-tribal-protests-10895364/)
+- end Headphone (1) Pro to compete with Sony, Apple and Bose | Source: CNBC TV18 | Published: 2026-09-29T02:10:25Z [Link](https://www.cnbctv18.com/technology/nothing-launches-high-end-headphone-1-pro-to-compete-with-sony-apple-and-bose-20000491.htm)
+- “Giving opportunities to artists is praiseworthy”: Chirag Paswan at Masha Art’s new gallery opening | Source: Devdiscourse | Published: 2026-09-28T18:19:33Z [Link](https://www.devdiscourse.com/article/entertainment/3983429-giving-opportunities-to-artists-is-praiseworthy-chirag-paswan-at-masha-arts-new-gallery-opening)
+- Navratna PSU NALCO pays record Rs 1,083 crore dividend to Centre for FY26 | Source: Deccan Chronicle | Published: 2026-09-28T18:13:50Z [Link](https://www.deccanchronicle.com/nation/navratna-psu-nalco-pays-record-rs-1083-crore-dividend-to-centre-for-fy26-1991406)
+- Ford suddenly halts F-150 production at Michigan and Kansas City plants; thousands of workers told to stay home. Here's why | Source: The Economic Times | Published: 2026-09-28T15:27:00Z [Link](https://economictimes.indiatimes.com/news/international/global-trends/us-news-ford-suddenly-halts-f-150-production-at-michigan-and-kansas-city-plants-thousands-of-workers-told-to-stay-home-heres-why/articleshow/134546209.cms)
+- Lithium Carbonate Market to Register 22.74% CAGR Through 2031 as EV Battery Demand Accelerates, Says Mordor Intelligence | Source: PR Newswire UK | Published: 2026-09-28T15:06:00Z [Link](https://www.prnewswire.co.uk/news-releases/lithium-carbonate-market-to-register-22-74-cagr-through-2031-as-ev-battery-demand-accelerates-says-mordor-intelligence-302891622.html)
+- No coal shortage, says Reddy; plants with critical stocks rise to 82 | Source: Business Standard | Published: 2026-09-28T14:34:55Z [Link](https://www.business-standard.com/industry/news/no-coal-shortage-says-reddy-plants-with-critical-stocks-rise-to-82-126092801236_1.html)
+- A tiny town decides moratorium can’t stop NY’s biggest data center from moving in | Source: syracuse.com | Published: 2026-09-28T10:00:01Z [Link](https://www.syracuse.com/news/2026/09/a-tiny-town-decides-moratorium-cant-stop-nys-biggest-data-center-from-moving-in.html)
+- Opinion | The Economics Of Agreement | Source: News18 | Published: 2026-09-28T09:41:59Z [Link](https://www.news18.com/opinion/opinion-the-economics-of-agreement-ws-l-10357058.html)
+- Ireland is helping supply Russia’s war machine | Source: Hindustan Times | Published: 2026-09-28T09:17:52Z [Link](https://www.hindustantimes.com/world-news/ireland-is-helping-supply-russia-s-war-machine-101790586966838.html)
+- Behind bigger price tags hides a fault line in India’s growth story | Source: The Economic Times | Published: 2026-09-28T07:40:00Z [Link](https://economictimes.indiatimes.com/industry/cons-products/electronics/behind-bigger-ac-tv-refrigerator-price-tags-hides-a-fault-line-in-indias-growth-story-consumer-durables-price-hike-global-commodity-shock-copper-steel-aluminium-appliance-prices-india-localisation/articleshow/134535049.cms)
+- Explained: Vedanta, Hindustan Zinc, Hindalco to Nalco - Why metal stocks are falling today | Source: Livemint | Published: 2026-09-28T05:29:28Z [Link](https://www.livemint.com/market/stock-market-news/explained-vedanta-hindustan-zinc-hindalco-to-nalco-why-metal-stocks-are-falling-today-11790571061144.html)
+- Captive coal plants asked to maintain stocks from October 1: What it means for India's power supply | Source: CNBC TV18 | Published: 2026-09-28T04:48:34Z [Link](https://www.cnbctv18.com/energy/captive-coal-plants-asked-to-maintain-stocks-from-october-1-what-it-means-for-indias-power-supply-19999710.htm)
