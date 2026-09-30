@@ -1,28 +1,26 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-09-29 14:33:16`
+Last Updated (UTC): `2026-09-30 14:31:39`
 Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,248.50/t` | Symbol: `LME Al Cash` | Ref Date: 2026-09-28 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+- LME Aluminium Cash-Settlement: `$3,225.50/t` | Symbol: `LME Al Cash` | Ref Date: 2026-09-29 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
 - Monthly Average Cash-Settlement: `$3,280.29/t` | Symbol: `LME Al Cash Avg` | Ref Date: September 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
 ### Latest Headlines (from NewsAPI)
-- Green Science Alliance Developed Stable Rechargeable Aqueous Aluminum Ion Battery with Conductive Carbon Rubber Sheet as Cathode Current Collector | Source: PRNewswire | Published: 2026-09-28T14:12:00Z [Link](https://www.prnewswire.com/news-releases/green-science-alliance-developed-stable-rechargeable-aqueous-aluminum-ion-battery-with-conductive-carbon-rubber-sheet-as-cathode-current-collector-302891548.html)
+- Firefox 157 Arrives With Nova Redesign, Mozilla's Biggest Visual Overhaul in Years and Faster Video Calls | Source: Ibtimes.com.au | Published: 2026-09-29T14:14:09Z [Link](https://www.ibtimes.com.au/firefox-157-nova-redesign-av1-decoding-1876060)
 
 ### Latest Headlines (from GNews)
-- end Headphone (1) Pro to compete with Sony, Apple and Bose | Source: CNBC TV18 | Published: 2026-09-29T02:10:25Z [Link](https://www.cnbctv18.com/technology/nothing-launches-high-end-headphone-1-pro-to-compete-with-sony-apple-and-bose-20000491.htm)
-- “Giving opportunities to artists is praiseworthy”: Chirag Paswan at Masha Art’s new gallery opening | Source: Devdiscourse | Published: 2026-09-28T18:19:33Z [Link](https://www.devdiscourse.com/article/entertainment/3983429-giving-opportunities-to-artists-is-praiseworthy-chirag-paswan-at-masha-arts-new-gallery-opening)
-- Navratna PSU NALCO pays record Rs 1,083 crore dividend to Centre for FY26 | Source: Deccan Chronicle | Published: 2026-09-28T18:13:50Z [Link](https://www.deccanchronicle.com/nation/navratna-psu-nalco-pays-record-rs-1083-crore-dividend-to-centre-for-fy26-1991406)
-- Ford suddenly halts F-150 production at Michigan and Kansas City plants; thousands of workers told to stay home. Here's why | Source: The Economic Times | Published: 2026-09-28T15:27:00Z [Link](https://economictimes.indiatimes.com/news/international/global-trends/us-news-ford-suddenly-halts-f-150-production-at-michigan-and-kansas-city-plants-thousands-of-workers-told-to-stay-home-heres-why/articleshow/134546209.cms)
-- Lithium Carbonate Market to Register 22.74% CAGR Through 2031 as EV Battery Demand Accelerates, Says Mordor Intelligence | Source: PR Newswire UK | Published: 2026-09-28T15:06:00Z [Link](https://www.prnewswire.co.uk/news-releases/lithium-carbonate-market-to-register-22-74-cagr-through-2031-as-ev-battery-demand-accelerates-says-mordor-intelligence-302891622.html)
-- No coal shortage, says Reddy; plants with critical stocks rise to 82 | Source: Business Standard | Published: 2026-09-28T14:34:55Z [Link](https://www.business-standard.com/industry/news/no-coal-shortage-says-reddy-plants-with-critical-stocks-rise-to-82-126092801236_1.html)
-- A tiny town decides moratorium can’t stop NY’s biggest data center from moving in | Source: syracuse.com | Published: 2026-09-28T10:00:01Z [Link](https://www.syracuse.com/news/2026/09/a-tiny-town-decides-moratorium-cant-stop-nys-biggest-data-center-from-moving-in.html)
-- Opinion | The Economics Of Agreement | Source: News18 | Published: 2026-09-28T09:41:59Z [Link](https://www.news18.com/opinion/opinion-the-economics-of-agreement-ws-l-10357058.html)
-- Ireland is helping supply Russia’s war machine | Source: Hindustan Times | Published: 2026-09-28T09:17:52Z [Link](https://www.hindustantimes.com/world-news/ireland-is-helping-supply-russia-s-war-machine-101790586966838.html)
-- Behind bigger price tags hides a fault line in India’s growth story | Source: The Economic Times | Published: 2026-09-28T07:40:00Z [Link](https://economictimes.indiatimes.com/industry/cons-products/electronics/behind-bigger-ac-tv-refrigerator-price-tags-hides-a-fault-line-in-indias-growth-story-consumer-durables-price-hike-global-commodity-shock-copper-steel-aluminium-appliance-prices-india-localisation/articleshow/134535049.cms)
-- Explained: Vedanta, Hindustan Zinc, Hindalco to Nalco - Why metal stocks are falling today | Source: Livemint | Published: 2026-09-28T05:29:28Z [Link](https://www.livemint.com/market/stock-market-news/explained-vedanta-hindustan-zinc-hindalco-to-nalco-why-metal-stocks-are-falling-today-11790571061144.html)
-- Captive coal plants asked to maintain stocks from October 1: What it means for India's power supply | Source: CNBC TV18 | Published: 2026-09-28T04:48:34Z [Link](https://www.cnbctv18.com/energy/captive-coal-plants-asked-to-maintain-stocks-from-october-1-what-it-means-for-indias-power-supply-19999710.htm)
+- Niyamgiri bauxite mining: Activists oppose Vedanta revival push in Odisha hills - Telegraph India | Source: Telegraph India | Published: 2026-09-30T02:22:31Z [Link](https://www.telegraphindia.com/india/niyamgiri-bauxite-mining-activists-oppose-vedanta-revival-push-in-odisha-hills-prnt/cid/2182326)
+- Nalco aluminium growth: Revenue target rises on higher alumina output and prices - Telegraph India | Source: Telegraph India | Published: 2026-09-30T02:13:18Z [Link](https://www.telegraphindia.com/business/nalco-aluminium-growth-revenue-target-rises-on-higher-alumina-output-and-prices-prnt/cid/2182330)
+- Centre's Captive Coal Push May Add 5-7 GW, Fall Short Of Peak Demand Surge | Source: NDTV Profit | Published: 2026-09-29T15:02:27Z [Link](https://www.ndtvprofit.com/india/centres-captive-coal-push-may-add-5-7-gw-fall-short-of-peak-demand-surge-12115828)
+- Nothing Debuts $399 ‘Pro’ Headphones with Glass, Metal Design | Source: Deccan Chronicle | Published: 2026-09-29T13:28:23Z [Link](https://www.deccanchronicle.com/technology/nothing-debuts-399-pro-headphones-with-glass-metal-design-1991622)
+- Why Trumpenomics will outlive its author | Source: The Globe and Mail | Published: 2026-09-29T10:00:00Z [Link](https://www.theglobeandmail.com/business/commentary/article-why-trumpenomics-will-outlive-its-author/)
+- Letters to the editor, Sept. 29: ‘The United States prefers to dance the Hokey Pokey, take their right foot out and shoot it’ | Source: The Globe and Mail | Published: 2026-09-29T08:00:00Z [Link](https://www.theglobeandmail.com/opinion/letters/article-the-us-prefers-the-hokey-pokey-take-their-right-foot-out-and-shoot-it/)
+- NALCO contemplating new 0.5 million tonne aluminium smelter in Andhra Pradesh | Source: Daily Excelsior | Published: 2026-09-29T06:47:07Z [Link](https://www.dailyexcelsior.com/nalco-contemplating-new-0-5-million-tonne-aluminium-smelter-in-andhra-pradesh/)
+- 10 Nifty stocks that Motilal Oswal analysts are bullish on. How many do you own? | Source: The Economic Times | Published: 2026-09-29T05:41:00Z [Link](https://economictimes.indiatimes.com/markets/stocks/news/10-nifty-stocks-that-motilal-oswal-analysts-are-bullish-on-how-many-do-you-own/slideshow/134557589.cms)
+- NALCO Contemplating New 0.5 Million Tonne Aluminium Smelter in AP | Source: Deccan Chronicle | Published: 2026-09-29T05:27:08Z [Link](https://www.deccanchronicle.com/southern-states/andhra-pradesh/nalco-contemplating-new-05-million-tonne-aluminium-smelter-in-ap-1991473)
+- Nothing Headphone 1 Pro With Better Design, Noise Cancellation At $399 | Source: NDTV.com | Published: 2026-09-29T05:17:12Z [Link](https://www.ndtv.com/world-news/nothing-headphone-1-pro-with-better-design-noise-cancellation-at-399-12112746)
