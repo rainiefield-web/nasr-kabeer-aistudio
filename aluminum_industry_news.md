@@ -1,6 +1,6 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-10-03 12:58:55`
-Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
+Last Updated (UTC): `2026-10-04 13:37:46`
+Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
@@ -10,19 +10,15 @@ Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
 - Monthly Average Cash-Settlement: `$3,114.75/t` | Symbol: `LME Al Cash Avg` | Ref Date: October 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
-### Latest Headlines (from NewsAPI)
-- Amazon unveils its updated Kindle lineup | Source: GSMArena.com | Published: 2026-10-02T12:09:01Z [Link](https://www.gsmarena.com/amazon_unveils_its_updated_kindle_lineup-news-74874.php)
-
 ### Latest Headlines (from GNews)
+- The first Wi-Fi 8 gaming router is here, yet its biggest improvements already show up on today's Wi-Fi 7 devices | Source: TechRadar | Published: 2026-10-04T00:10:00Z [Link](https://www.techradar.com/pro/there-isnt-a-single-wi-fi-8-device-on-the-market-yet-this-router-is-already-outperforming-everything-you-currently-own-heres-what-you-need-to-know)
+- Jet boat tours bring more visitors to York Factory national historic site on Hudson Bay | Source: BayToday | Published: 2026-10-03T15:00:00Z [Link](https://www.baytoday.ca/columns/back-roads-bill/jet-boat-tours-bring-more-visitors-to-york-factory-national-historic-site-on-hudson-bay-12849233)
+- ever quarterly aluminium production at 649 KT | Source: CNBC TV18 | Published: 2026-10-03T12:53:38Z [Link](https://www.cnbctv18.com/market/vedanta-aluminium-reports-highest-ever-quarterly-aluminium-production-at-649-kt-20003936.htm)
+- See health scores from local restaurants in Eugene, Springfield | Source: Eugene Register-Guard | Published: 2026-10-03T11:01:21Z [Link](https://www.registerguard.com/story/entertainment/dining/restaurant-inspections/2026/10/03/lane-county-restaurant-inspections/92028122007/)
+- 53 Things To Buy From Amazon's Early Fall Prime Day Deals That Are Actually Worth Spending Your Money On | Source: HuffPost | Published: 2026-10-03T11:00:18Z [Link](https://www.huffpost.com/entry/prime-day-deals-worth-your-money-2026_l_6ac0dd7ce4b0e84f8381241e)
+- 30 Things Worth Packing For Your Next Trip That Are Already On Sale For Fall Prime Day | Source: HuffPost | Published: 2026-10-03T10:00:19Z [Link](https://www.huffpost.com/entry/prime-day-travel-deals-october-2026_l_6abffa0de4b02a789b35af1f)
+- Why Railway Aluminum Profiles Are Becoming Essential to Modern Rail Transit | Source: TechBullion | Published: 2026-10-03T08:21:11Z [Link](https://techbullion.com/why-railway-aluminum-profiles-are-becoming-essential-to-modern-rail-transit/)
 - Global Aluminum Die Casting Market to Reach USD 179.01 Bn. by 2034 as EV Growth, Lightweighting and Advanced Casting Technologies Accelerate, reports Maximize Market Research | Source: PR Newswire UK | Published: 2026-10-02T21:45:00Z [Link](https://www.prnewswire.co.uk/news-releases/global-aluminum-die-casting-market-to-reach-usd-179-01-bn-by-2034-as-ev-growth-lightweighting-and-advanced-casting-technologies-accelerate-reports-maximize-market-research-302896165.html)
 - Canada cannot afford to lose its manufacturing economy while searching for new markets | Source: The Kingston Whig-Standard | Published: 2026-10-02T19:34:24Z [Link](https://www.thewhig.com/opinion/canada-cannot-afford-to-lose-its-manufacturing-economy-while-searching-for-new-markets/)
 - Greece approves €6.6bn of private investment set to create 21,000 jobs | Source: Proto Thema | Published: 2026-10-02T19:07:29Z [Link](https://en.protothema.gr/2026/10/02/greece-approves-e6-6bn-of-private-investment-set-to-create-21000-jobs/)
 - Hindalco drops plan to buy US' AluChem over extended delays | Source: The Economic Times | Published: 2026-10-02T18:54:00Z [Link](https://economictimes.indiatimes.com/industry/indl-goods/svs/metals-mining/hindalco-drops-plan-to-buy-us-aluchem-over-extended-delays/articleshow/134645713.cms)
-- Amazon's Latest Kindle Lineup Has A Totally New Design - Here's What Changed | Source: BGR | Published: 2026-10-02T18:45:02Z [Link](https://www.bgr.com/2276113/amazon-kindle-ereader-refresh-design/)
-- Trump speaks to Oklahoma crowd ahead of midterms | Source: EUROPE SAYS | Published: 2026-10-02T18:44:40Z [Link](https://www.europesays.com/3285810/)
-- Orissa HC Rejects Vedanta Plea On 150 MT Bauxite Supply Agreement | Source: Deccan Chronicle | Published: 2026-10-02T16:23:20Z [Link](https://www.deccanchronicle.com/nation/orissa-hc-rejects-vedanta-plea-on-150-mt-bauxite-supply-agreement-1992607)
-- Andy Burnham urged to take control of troubled Scots steelworks and save jobs | Source: Daily Record | Published: 2026-10-02T09:44:21Z [Link](https://www.dailyrecord.co.uk/news/politics/andy-burnham-urged-take-control-37726708)
-- ROI-Hindalco aims to kick-start an alumina pricing revolution: Andy Home | Source: Devdiscourse | Published: 2026-10-02T06:00:18Z [Link](https://www.devdiscourse.com/article/international/3985452-roi-hindalco-aims-to-kick-start-an-alumina-pricing-revolution-andy-home)
-- Aughinish Alumina steps up lobbying as European Commission considers sanctions | Source: The Irish Times | Published: 2026-10-02T05:00:01Z [Link](https://www.irishtimes.com/ireland/2026/10/02/aughinish-steps-up-lobbying-campaign-as-european-commission-considers-sanctions/)
-- Tulsa World Opinion: Voices in opposition to and support of Inola smelter | Source: Tulsa World | Published: 2026-10-01T20:35:00Z [Link](https://tulsaworld.com/opinion/collection_6f563dee-69f9-4649-917b-9d859e07ff16.html)
-- 14 Handy Tools Small Enough To Fit In Your Backpack | Source: SlashGear | Published: 2026-10-01T20:30:00Z [Link](https://www.slashgear.com/2269064/tools-small-enough-that-fit-in-backpack/)
