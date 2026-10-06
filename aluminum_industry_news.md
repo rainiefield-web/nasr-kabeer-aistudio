@@ -1,27 +1,26 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-10-05 16:43:37`
+Last Updated (UTC): `2026-10-06 14:40:57`
 Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,109.50/t` | Symbol: `LME Al Cash` | Ref Date: 2026-10-02 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+- LME Aluminium Cash-Settlement: `$3,107.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-10-05 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,112.17/t` | Symbol: `LME Al Cash Avg` | Ref Date: October 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+- Monthly Average Cash-Settlement: `$3,117.75/t` | Symbol: `LME Al Cash Avg` | Ref Date: October 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
 ### Latest Headlines (from NewsAPI)
-- Amazon Launches Early Prime Day Discounts on AirPods, iPad, MacBook Air, and More | Source: MacRumors | Published: 2026-10-04T16:15:23Z [Link](https://www.macrumors.com/2026/10/04/amazon-early-prime-day-apple/)
+- The new Dell XPS 13 is 'a rival to Apple's new budget-friendly MacBook Neo' — with $200 price drop at Best Buy | Source: TechRadar | Published: 2026-10-05T14:22:20Z [Link](https://www.techradar.com/pro/the-new-dell-xps-13-is-a-rival-to-apples-new-budget-friendly-macbook-neo-with-usd200-price-drop-at-best-buy)
 
 ### Latest Headlines (from GNews)
-- Stock Picks Today: IndiGo, Nykaa, ITC, Bajaj Finance, DMart And More On Brokerages' Radar | Source: NDTV Profit | Published: 2026-10-05T03:01:29Z [Link](https://www.ndtvprofit.com/markets/stock-picks-today-indigo-nykaa-itc-bajaj-finance-dmart-and-more-on-brokerages-radar-12138915)
-- Stock Market Today: All You Need To Know Before Going Into Trade On October 5 | Source: NDTV Profit | Published: 2026-10-05T02:06:24Z [Link](https://www.ndtvprofit.com/markets/stock-market-today-all-you-need-to-know-before-going-into-trade-on-october-5-12138853)
-- Possible Plague Crisis in Siberia: Five Hospitals Placed Under Quarantine After Lab Tech Dies Following Test Tube Accident Containing Plague Bacteria | Source: The Gateway Pundit | Published: 2026-10-04T23:00:28Z [Link](https://www.thegatewaypundit.com/2026/10/possible-plague-crisis-siberia-five-hospitals-placed-under/)
-- Warmongering Putin Accused of Massive Plague Cover-Up | Source: The Daily Beast | Published: 2026-10-04T20:44:39Z [Link](https://www.thedailybeast.com/warmongering-vladimir-putin-accused-of-massive-pneumonic-plague-cover-up-in-siberia/)
-- Quebec has second thoughts on oil and gas development bans | Source: The Globe and Mail | Published: 2026-10-04T20:31:38Z [Link](https://www.theglobeandmail.com/business/article-quebec-has-second-thoughts-on-oil-and-gas-development-bans/)
-- Russians claim scientist who 'died of plague after breaking test tube' suffered mystery 'pneumonia' as 200 in isolation | Source: The Sun | Published: 2026-10-04T18:44:52Z [Link](https://www.thesun.co.uk/news/40578690/russians-scientist-plague-mystery-pneumonia/)
-- Map Shows Countries Hit By Plague As Russian Lab Worker Dies | Source: Newsweek | Published: 2026-10-04T16:25:39Z [Link](https://www.newsweek.com/map-shows-countries-hit-by-plague-as-russian-lab-worker-dies-12522349)
-- Black Death scare as officials claim scientist died from ‘unknown’ pneumonia | Source: The Mirror | Published: 2026-10-04T16:23:03Z [Link](https://www.mirror.co.uk/news/world-news/black-death-scare-officials-claim-37733216)
-- Google Pixel turns 10 years old today, and we're still talking about it | Source: 9to5Google | Published: 2026-10-04T13:00:00Z [Link](https://9to5google.com/2026/10/04/google-pixel-10-years-old/)
-- Amazon launches redesigned Kindle lineup with new Paperwhite, Colorsoft models | Source: Times of India | Published: 2026-10-04T09:10:00Z [Link](https://timesofindia.indiatimes.com/technology/tech-news/amazon-launches-redesigned-kindle-lineup-with-new-paperwhite-colorsoft-models/articleshow/134672469.cms)
-- The first Wi-Fi 8 gaming router is here, yet its biggest improvements already show up on today's Wi-Fi 7 devices | Source: TechRadar | Published: 2026-10-04T00:10:00Z [Link](https://www.techradar.com/pro/there-isnt-a-single-wi-fi-8-device-on-the-market-yet-this-router-is-already-outperforming-everything-you-currently-own-heres-what-you-need-to-know)
+- Trump Goon Forgets What Country He’s In | Source: The Daily Beast | Published: 2026-10-05T23:39:59Z [Link](https://www.thedailybeast.com/trump-goon-doug-burgum-forgets-what-country-hes-in/)
+- Bird flu and wind farm spark fears for threatened species at Ramsar | Source: ABC (Australian Broadcasting Corporation) | Published: 2026-10-05T20:56:52Z [Link](https://www.abc.net.au/news/2026-10-06/bird-flu-concerns-glenelg-estuary-discovery-bay-wetlands/107216812)
+- I'm not usually a fan of push carts, but this one quickly won me over | Source: GOLF.com | Published: 2026-10-05T20:56:26Z [Link](https://golf.com/gear/big-max-blade-ip-2-push-cart-i-tried-it/)
+- Changed diagnosis, test tube 'accident' & Putin crony running crisis… Did Russia cover up Black Death plague outbreak? | Source: The Sun U.S Edition | Published: 2026-10-05T20:00:00Z [Link](https://www.the-sun.com/news/17102364/evidence-russia-black-death-plague-outbreak-cover-up/)
+- Changed diagnosis, test tube 'accident' & Putin crony running crisis… Did Russia cover | Source: The Sun | Published: 2026-10-05T20:00:00Z [Link](https://www.thesun.co.uk/news/40589160/evidence-russia-black-death-plague-outbreak-cover-up/)
+- Woodside Energy vs Rio Tinto: Which ASX 200 stock is better value? | Source: The Motley Fool Australia | Published: 2026-10-05T18:00:00Z [Link](https://www.fool.com.au/2026/10/06/woodside-energy-vs-rio-tinto-which-asx-200-stock-is-better-value/)
+- bendingly good smartwatches that I simply don't want to take off | Source: The Sun | Published: 2026-10-05T16:30:00Z [Link](https://www.thesun.co.uk/tech/40581279/apple-watch-series-12-ultra-4-review-tested/)
+- Mystery death at Russian plague research institute sparks quarantine measures across Siberia | Source: The Irish Times | Published: 2026-10-05T15:07:50Z [Link](https://www.irishtimes.com/world/middle-east/2026/10/05/mystery-death-at-russian-plague-research-institute-sparks-quarantine-measures-across-siberia/)
+- AnorTech Secures Strategic Cornerstone as Greenland Mines Doubles Stake to 19.9% | Source: EUROPE SAYS | Published: 2026-10-05T13:25:44Z [Link](https://www.europesays.com/3291603/)
+- Greenland Mines Doubles AnorTech Stake to 19.9%; Extends Critical-Minerals Platform to Smelter-Grade Alumina, Lunar Construction Materials | Source: The Expositor | Published: 2026-10-05T12:48:36Z [Link](https://www.brantfordexpositor.ca/press-releases/globe-newswire/greenland-mines-doubles-anortech-stake-to-19-9-extends-critical-minerals-platform-to-smelter-grade-alumina-lunar-construction-materials/)
