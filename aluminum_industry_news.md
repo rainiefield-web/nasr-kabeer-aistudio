@@ -1,5 +1,5 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-10-10 14:09:51`
+Last Updated (UTC): `2026-10-11 14:34:43`
 Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
@@ -11,6 +11,8 @@ Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
   - Status: Current-year monthly average cash settlement from Westmetall.
 
 ### Latest Headlines (from GNews)
+- Trump hypes megaprojects to voters who lament gas, food costs | Source: Anchorage Daily News | Published: 2026-10-10T21:51:36Z [Link](https://www.adn.com/nation-world/2026/10/10/trump-hypes-megaprojects-to-voters-who-lament-gas-food-costs/)
+- To gauge the U.S.’s political currents, start in Minnesota and follow the Mississippi | Source: The Globe and Mail | Published: 2026-10-10T09:00:00Z [Link](https://www.theglobeandmail.com/world/article-midterms-us-2026-minnesota-mississippi-river/)
 - Food safety violations found at 5 Patna hotels | Source: Times of India | Published: 2026-10-09T16:37:00Z [Link](https://timesofindia.indiatimes.com/city/patna/food-safety-violations-found-at-5-patna-hotels/articleshow/134838295.cms)
 - AirPods Max 2, Mac mini, MacBook Air, Magic Mouse, more 9to5Mac | Source: 9to5Mac | Published: 2026-10-09T15:35:33Z [Link](https://9to5mac.com/2026/10/09/deals-airpods-max-2-mac-mini-macbook-air-magic-mouse/)
 - Power crunch turns into cost squeeze for discoms | Source: The Financial Express | Published: 2026-10-09T12:31:17Z [Link](https://www.financialexpress.com/business/news-power-crunch-turns-into-cost-squeeze-for-discoms-4357602/)
