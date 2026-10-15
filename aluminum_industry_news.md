@@ -1,24 +1,23 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-10-14 13:15:53`
+Last Updated (UTC): `2026-10-15 13:01:27`
 Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,036.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-10-13 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+- LME Aluminium Cash-Settlement: `$3,010.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-10-14 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,086.72/t` | Symbol: `LME Al Cash Avg` | Ref Date: October 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+- Monthly Average Cash-Settlement: `$3,079.05/t` | Symbol: `LME Al Cash Avg` | Ref Date: October 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
 ### Latest Headlines (from GNews)
-- Apple finally puts a screen on the kitchen bench with A$449 HomeView, while Apple TV 4K's price more than doubles in a year | Source: iTWire | Published: 2026-10-13T16:50:28Z [Link](https://itwire.com/your-it-news/home-it/apple-finally-puts-a-screen-on-the-kitchen-bench-with-a-449-homeview-while-apple-tv-4ks-price-more-than-doubles-in-a-year)
-- Apple HomeView: 7 features and catches worth knowing | Source: Cult of Mac | Published: 2026-10-13T16:15:54Z [Link](https://www.cultofmac.com/news/apple-homeview-features-catches-worth-knowing)
-- Stationary, moving, flexible: Batteries are the low | Source: pv magazine | Published: 2026-10-13T11:05:45Z [Link](https://www.pv-magazine.com/2026/10/13/stationary-moving-flexible-batteries-are-the-low-cost-backbone-of-the-future-energy-system/)
-- free solar carport for residential use | Source: pv magazine | Published: 2026-10-13T09:38:05Z [Link](https://www.pv-magazine.com/2026/10/13/visionpark-unveils-new-foundation-free-solar-carport-for-residential-use/)
-- 5 Stocks Where FIIs Increased Their Stakes in Q2FY27 | Source: The Financial Express | Published: 2026-10-13T07:53:28Z [Link](https://www.financialexpress.com/market/stock-insights/5-stocks-where-fiis-increased-their-stakes-in-q2fy27/4360034/)
-- ASX avoids global sell-off to close flat as banks rescue tumbling market | Source: PerthNow | Published: 2026-10-13T06:56:28Z [Link](https://www.perthnow.com.au/news/business/markets/asx-avoids-global-sell-off-to-close-flat-as-banks-rescue-tumbling-market-c-23012524)
-- Government to spend $75 million mining shares windfall | Source: PerthNow | Published: 2026-10-13T05:38:41Z [Link](https://www.perthnow.com.au/news/business/government-to-spend-75-million-mining-shares-windfall-c-23011914)
-- How to see behind the curtain at your favourite luxury brands | Source: The Sunday Times | Published: 2026-10-13T03:05:00Z [Link](https://www.thetimes.com/life-style/luxury/article/obsessed-with-luxury-brands-these-insider-tours-are-for-you-times-luxury-hm7bq2twz)
-- Smithsonian's American Latino museum finds permanent home on National Mall | Source: NewsBreak | Published: 2026-10-12T22:25:39Z [Link](https://www.newsbreak.com/pbs-newshour-513240/4942121892556-smithsonian-s-american-latino-museum-finds-permanent-home-on-national-mall)
-- 3 reasons why the Rio Tinto share price could be a buy | Source: The Motley Fool Australia | Published: 2026-10-12T22:00:00Z [Link](https://www.fool.com.au/2026/10/13/3-reasons-why-the-rio-tinto-share-price-could-be-a-buy-3/)
-- 5 Of The Coolest New Gadgets Coming Out Soon | Source: SlashGear | Published: 2026-10-12T19:15:00Z [Link](https://www.slashgear.com/2279765/coolest-new-gadgets-coming-out-soon/)
+- What’s likely to move the market | Source: CNBC | Published: 2026-10-14T22:52:30Z [Link](https://www.cnbc.com/2026/10/14/thursdays-big-stock-stories-whats-likely-to-move-the-market.html)
+- Aquaculture sector urged to seize export opportunities in India | Source: The New Zealand Herald | Published: 2026-10-14T21:34:19Z [Link](https://www.nzherald.co.nz/nz/aquaculture-sector-urged-to-seize-export-opportunities-in-india/NBSAFOFGBFF23OHYPZS5KCB2CQ/)
+- Celebrate Halloween at trick-or-treating events in DeKalb County | Source: Shaw Local Enewspapers | Published: 2026-10-14T20:30:00Z [Link](https://www.shawlocal.com/thescene/2026/10/14/celebrate-halloween-at-trick-or-treating-events-in-dekalb-county/)
+- Kumar Mangalam Birla eyes $30 billion investment amid global uncertainties: ‘You either grow or you go down’ | Source: Livemint | Published: 2026-10-14T17:35:04Z [Link](https://www.livemint.com/companies/people/kumar-mangalam-birla-eyes-30-billion-investment-amid-global-uncertainties-you-either-grow-or-you-go-down-11791997279505.html)
+- British Shares Rise; Airtel Money Makes London Debut | Source: EUROPE SAYS | Published: 2026-10-14T16:36:35Z [Link](https://www.europesays.com/3310334/)
+- Odisha: OMC signs MoU with AMD to boost critical mineral exploration | Source: Lokmat Times | Published: 2026-10-14T16:20:39Z [Link](https://www.lokmattimes.com/national/odisha-omc-signs-mou-with-amd-to-boost-critical-mineral-exploration/)
+- Kumar Mangalam Birla plans investments up to $30B by 2029 | Source: NewsBytes | Published: 2026-10-14T14:21:43Z [Link](https://www.newsbytesapp.com/news/business/kumar-mangalam-birla-plans-30b-investment-across-aditya-birla-businesses/story)
+- OMC, AMD ink MoU for critical mineral exploration in Odisha | Source: Times of India | Published: 2026-10-14T14:10:00Z [Link](https://timesofindia.indiatimes.com/city/bhubaneswar/omc-amd-ink-mou-for-critical-mineral-exploration-in-odisha/articleshow/134944784.cms)
+- Mining project threatens future of rare Jeypore ground gecko | Source: The Hindu | Published: 2026-10-14T13:55:04Z [Link](https://www.thehindu.com/sci-tech/energy-and-environment/mining-project-threatens-future-of-rare-jeypore-ground-gecko/article71582605.ece)
+- Kumar Mangalam Birla plans $30 billion push undeterred by crises | Source: The Economic Times | Published: 2026-10-14T13:51:00Z [Link](https://economictimes.indiatimes.com/news/company/corporate-trends/kumar-mangalam-birla-plans-30-billion-push-undeterred-by-crises/articleshow/134944242.cms)
