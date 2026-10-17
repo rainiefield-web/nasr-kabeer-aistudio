@@ -1,28 +1,25 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-10-16 12:58:00`
+Last Updated (UTC): `2026-10-17 11:56:14`
 Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$2,999.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-10-15 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+- LME Aluminium Cash-Settlement: `$3,014.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-10-16 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,071.77/t` | Symbol: `LME Al Cash Avg` | Ref Date: October 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+- Monthly Average Cash-Settlement: `$3,066.96/t` | Symbol: `LME Al Cash Avg` | Ref Date: October 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
 ### Latest Headlines (from NewsAPI)
-- Mixi Wide-Handle 20" Carry-On Aluminum Luggage for $114 + free shipping | Source: Dealnews.com | Published: 2026-10-15T12:57:22Z [Link](https://www.dealnews.com/Mixi-Wide-Handle-20-Carry-On-Aluminum-Luggage-for-114-free-shipping/22285529.html)
+- Basic Materials Roundup: Market Talk | Source: Biztoc.com | Published: 2026-10-16T11:41:11Z [Link](https://biztoc.com/x/7dbc433faa5f9537)
 
 ### Latest Headlines (from GNews)
-- Alcoa posts higher net income, sets sights on AliGroup completion | Source: The Motley Fool Australia | Published: 2026-10-15T23:33:14Z [Link](https://www.fool.com.au/2026/10/16/alcoa-posts-higher-net-income-sets-sights-on-aligroup-completion/)
-- Stocks making the biggest moves after hours: IBKR, JBHT, AA | Source: CNBC | Published: 2026-10-15T20:48:50Z [Link](https://www.cnbc.com/2026/10/15/stocks-making-the-biggest-moves-after-hours-ibkr-jbht-aa.html)
-- 7 Common Mistakes When Cleaning The Chrome On Classic Cars | Source: SlashGear | Published: 2026-10-15T13:30:00Z [Link](https://www.slashgear.com/2284581/how-to-clean-car-chrome-mistakes-to-avoid/)
-- ‘You either grow or you go down’: Kumar Mangalam Birla plans up to $30 billion investment in India, overseas | Source: Livemint | Published: 2026-10-15T12:00:58Z [Link](https://www.livemint.com/companies/news/you-either-grow-or-you-go-down-kumar-mangalam-birla-plans-up-to-30-billion-investment-in-india-overseas-11792061746474.html)
-- I can't wait for Apple to show Google how to make a better smart speaker | Source: Android Police | Published: 2026-10-15T11:00:10Z [Link](https://www.androidpolice.com/i-cant-wait-for-apple-to-show-google-how-to-make-a-better-smart-speaker/)
-- Make a 'sick day' kit for cold and flu season before your household gets hit | Source: NewsBreak | Published: 2026-10-15T09:02:00Z [Link](https://www.newsbreak.com/news/4947084632536-make-a-sick-day-kit-for-cold-and-flu-season-before-your-household-gets-hit)
-- Why Ireland’s Neutrality Needs the Trump Treatment | Source: Newsweek | Published: 2026-10-15T09:00:00Z [Link](https://www.newsweek.com/why-ireland-neutrality-needs-trump-treatment-12568239)
-- Sharvaya Metals to raise ₹41.92 crore via share swap and warrants | Source: scanx.trade | Published: 2026-10-15T08:58:14Z [Link](https://scanx.trade/stock-market-news/companies/sharvaya-metals-raise-41-92-crore-via-share-swap-warrants/53600281)
-- In Unreliable Boyfriend, Chrystia Freeland details the rift between her and Trudeau | Source: CBC.ca | Published: 2026-10-15T08:00:00Z [Link](https://www.cbc.ca/news/politics/chrystia-freeland-unreliable-boyfriend-memoir-9.7380824)
-- Aberdeen’s Bus Scheme Failure Is the Latest in UK Net-Zero Madness | Source: The American Conservative | Published: 2026-10-15T04:03:00Z [Link](https://www.theamericanconservative.com/aberdeens-bus-scheme-failure-is-the-latest-in-uk-net-zero-madness/)
-- Novelis Zhenjiang Named Airbus Quality Champion | Source: The Manila Times | Published: 2026-10-15T01:54:09Z [Link](https://www.manilatimes.net/2026/10/15/tmt-newswire/pr-newswire/novelis-zhenjiang-named-airbus-quality-champion/2446148)
-- What’s likely to move the market | Source: CNBC | Published: 2026-10-14T22:52:30Z [Link](https://www.cnbc.com/2026/10/14/thursdays-big-stock-stories-whats-likely-to-move-the-market.html)
+- HP Googlebook 14 Review: Great laptop, shame about the OS | Source: 9to5Google | Published: 2026-10-16T23:30:00Z [Link](https://9to5google.com/2026/10/16/hp-googlebook-14-review/)
+- 73+ Best New Products of October 2026, Approved by Professional Shoppers | Source: NBC News | Published: 2026-10-16T20:45:00Z [Link](https://www.nbcnews.com/select/shopping/best-new-products-october-2026-rcna603915)
+- Deck the halls with the 48 best men's luxury holiday gift ideas | Source: New York Post | Published: 2026-10-16T15:42:16Z [Link](https://nypost.com/article/best-luxury-gifts-for-men-this-year/)
+- ROI-Rejuvenated London Metal Exchange looks to new horizons: Andy Home | Source: Devdiscourse | Published: 2026-10-16T13:11:44Z [Link](https://www.devdiscourse.com/article/international/3993693-roi-rejuvenated-london-metal-exchange-looks-to-new-horizons-andy-home)
+- Rejuvenated London Metal Exchange looks to new horizons | Source: Reuters | Published: 2026-10-16T13:11:41Z [Link](https://www.reuters.com/commentary/reuters-open-interest/rejuvenated-london-metal-exchange-looks-new-horizons-2026-10-16/)
+- Futures Rise As Warsh Stays Mum, Tesla "Flying Car" Interrupts AI Liquidation | Source: ZeroHedge | Published: 2026-10-16T12:28:31Z [Link](https://www.zerohedge.com/markets/futures-rise-warsh-stays-mum-tesla-flying-car-interrupts-ai-liquidation)
+- TSLA, SPCX, AA, CRWV | Source: CNBC | Published: 2026-10-16T11:38:53Z [Link](https://www.cnbc.com/2026/10/16/stocks-making-the-biggest-moves-premarket-tsla-spcx-aa-crwv.html)
+- Westwater Resources Reports Strong Progress in Advancing the Coosa Graphite Mine | Source: The Expositor | Published: 2026-10-16T10:34:05Z [Link](https://www.brantfordexpositor.ca/press-releases/business-wire/westwater-resources-reports-strong-progress-in-advancing-the-coosa-graphite-mine/)
+- Trump said Iran had asked for a halt to US attacks and negotiations are still ongoing; TSLA +5% after Musk unveiled a "flying" car - Newsquawk US Market Open | Source: ZeroHedge | Published: 2026-10-16T10:11:44Z [Link](https://www.zerohedge.com/markets/trump-said-iran-had-asked-halt-us-attacks-and-negotiations-are-still-ongoing-tsla-5-after)
