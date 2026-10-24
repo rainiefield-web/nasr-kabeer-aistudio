@@ -1,25 +1,25 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-10-23 13:01:29`
-Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
+Last Updated (UTC): `2026-10-24 12:24:46`
+Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,033.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-10-22 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+- LME Aluminium Cash-Settlement: `$3,043.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-10-23 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,055.63/t` | Symbol: `LME Al Cash Avg` | Ref Date: October 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+- Monthly Average Cash-Settlement: `$3,054.88/t` | Symbol: `LME Al Cash Avg` | Ref Date: October 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
+### Latest Headlines (from NewsAPI)
+- Little Giant MEGALITE+ Model 18 300-Lb Rated Aluminum Articulating Extendable Ladder (11537-803) $159.99 + Free Shipping w/ Prime or $6 Fee per Order (0 replies) | Source: Slickdeals.net | Published: 2026-10-23T12:14:33Z [Link](https://slickdeals.net/f/20196675-little-giant-megalite-model-18-300-lb-rated-aluminum-articulating-extendable-ladder-11537-803-159-99-free-shipping-w-prime-or-6-fee-per-order)
+
 ### Latest Headlines (from GNews)
-- A new Rs 924 cr metro tender: 2 stocks positioned for India’s next order wave | Source: The Financial Express | Published: 2026-10-23T00:00:00Z [Link](https://www.financialexpress.com/market/stock-insights/a-new-rs-924-cr-metro-tender-2-stocks-positioned-for-indias-next-order-wave/4367138/)
-- Australia's Rio Tinto to invest $1.9 billion in Queensland bauxite project | Source: Reuters | Published: 2026-10-22T22:07:26Z [Link](https://www.reuters.com/world/asia-pacific/australias-rio-tinto-invest-19-billion-queensland-bauxite-project-2026-10-22/)
-- Rio Tinto to Invest $1.9 Billion to Develop Kangwinan Bauxite Project in Australia | Source: MarketScreener | Published: 2026-10-22T21:49:19Z [Link](https://www.marketscreener.com/news/rio-tinto-to-invest-1-9-billion-to-develop-kangwinan-bauxite-project-in-australia-ce785cdedf81f42c)
-- EGA completes 50% of Al Taweelah smelter restart; Axis Capital sees Aluminium at $2,800 in CY27 | Source: CNBC TV18 | Published: 2026-10-22T17:29:25Z [Link](https://www.cnbctv18.com/market/commodities/ega-completes-50-pc-of-al-taweelah-smelter-restart-axis-capital-sees-aluminium-at-2800-in-cy27-20017460.htm)
-- Media advisory - Minister Joly to announce Strategic Response Fund investment in Rio Tinto and Aluminerie Alouette | Source: The Expositor | Published: 2026-10-22T13:35:23Z [Link](https://www.brantfordexpositor.ca/press-releases/pr-newswire/media-advisory-minister-joly-to-announce-strategic-response-fund-investment-in-rio-tinto-and-aluminerie-alouette/)
-- New EU sanctions package does not propose to target Aughinish Alumina exports | Source: The Irish Times | Published: 2026-10-22T10:35:52Z [Link](https://www.irishtimes.com/ireland/2026/10/22/new-eu-sanctions-package-does-not-propose-to-target-aughinish-alumina-exports/)
-- Wood Mackenzie: Geopolitical supply shocks and AI power crunch collide across global base metals | Source: The Manila Times | Published: 2026-10-22T10:13:16Z [Link](https://www.manilatimes.net/2026/10/22/tmt-newswire/globenewswire/wood-mackenzie-geopolitical-supply-shocks-and-ai-power-crunch-collide-across-global-base-metals/2451594)
-- Why this award-winner is worth it | Source: New York Post | Published: 2026-10-22T09:30:00Z [Link](https://nypost.com/shopping/tumi-19-degree-expandable-carry-on-luggage-review/)
-- A Solution to America’s Aluminum Crunch Is Hiding in Our Landfills | Source: Mother Jones | Published: 2026-10-22T07:30:00Z [Link](https://www.motherjones.com/politics/2026/10/america-aluminum-shortage-solutions-scrap-metal-recycling-policies-technology-landfills/)
-- Buy Hindalco; target of Rs 1170: Motilal Oswal | Source: Moneycontrol | Published: 2026-10-22T06:14:30Z [Link](https://www.moneycontrol.com/news/business/stocks/buy-hindalco-target-of-rs-1170-motilal-oswal-14057465.html)
-- Vedanta Aluminium shares can jump 40%; Nomura recommends buying its peer as well | Source: CNBC TV18 | Published: 2026-10-22T04:27:20Z [Link](https://www.cnbctv18.com/market/vedanta-aluminium-shares-can-jump-40-pc-nomura-recommends-buying-its-peer-as-well-20016713.htm)
-- Hindalco Share Price: Motilal Oswal Stays Bullish On Multiple Growth Levers; Check Target Price | Source: NDTV Profit | Published: 2026-10-22T04:20:38Z [Link](https://www.ndtvprofit.com/markets/hindalco-share-price-motilal-oswal-stays-bullish-on-multiple-growth-levers-check-target-price-12218260)
+- Doctor moved to Odisha to treat Adivasis, now behind bars for anti-mining protests | Source: The Indian Express | Published: 2026-10-24T00:18:13Z [Link](https://indianexpress.com/article/india/doctor-odisha-adivasis-behind-bars-anti-mining-protests-10934464/)
+- Joly wants rolling mill in Canada | Source: Bnn Bloomberg | Published: 2026-10-23T21:34:34Z [Link](https://www.bnnbloomberg.ca/business/2026/10/23/industry-minister-melanie-joly-wants-to-build-an-aluminum-rolling-mill-in-canada/)
+- Apple Watch Ultra 4 review: Once again top of the heap, with revamped health tools and another battery boost | Source: TechRadar | Published: 2026-10-23T19:30:00Z [Link](https://www.techradar.com/health-fitness/smartwatches/apple-watch-ultra-4-review)
+- UK Court Dismisses India’s Appeal in Rakia Investment Dispute | Source: Deccan Chronicle | Published: 2026-10-23T18:02:43Z [Link](https://www.deccanchronicle.com/southern-states/andhra-pradesh/uk-court-dismisses-indias-appeal-in-rakia-investment-dispute-1998299)
+- UK court clears RAKIA’s Andhra investment claims for arbitration, dismisses India’s appeal | Source: Times of India | Published: 2026-10-23T17:22:00Z [Link](https://timesofindia.indiatimes.com/city/vijayawada/uk-court-clears-rakias-andhra-investment-claims-for-arbitration-dismisses-indias-appeal/articleshow/135151841.cms)
+- Mining for Europe's future: Critical raw materials, public attitudes and risks in enlargement partners | Source: EUROPE SAYS | Published: 2026-10-23T16:33:42Z [Link](https://www.europesays.com/3327434/)
+- Record sales lead to 225% profit surge for JSW Steel | Source: The Financial Express | Published: 2026-10-23T15:56:03Z [Link](https://www.financialexpress.com/business/news/jsw-steel-q2-results-net-profit-jumps-over-3x-to-rs-5279-crore/4368259/)
+- Government of Canada invests over $190 million to advance Canada's critical minerals sector and strengthen aluminum processing | Source: The Expositor | Published: 2026-10-23T15:53:19Z [Link](https://www.brantfordexpositor.ca/press-releases/pr-newswire/government-of-canada-invests-over-190-million-to-advance-canadas-critical-minerals-sector-and-strengthen-aluminum-processing/)
+- English Court of Appeal dismisses India's appeal in dispute with UAE-based RAKIA | Source: News18 | Published: 2026-10-23T13:00:05Z [Link](https://www.news18.com/agency-feeds/english-court-of-appeal-dismisses-indias-appeal-in-dispute-with-uae-based-rakia-10394972.html)
