@@ -1,25 +1,28 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-10-28 14:47:23`
-Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
+Last Updated (UTC): `2026-10-29 14:53:44`
+Data Status: Price=OK | NewsAPI=OK | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,078.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-10-27 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+- LME Aluminium Cash-Settlement: `$3,101.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-10-28 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,055.71/t` | Symbol: `LME Al Cash Avg` | Ref Date: October 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+- Monthly Average Cash-Settlement: `$3,057.98/t` | Symbol: `LME Al Cash Avg` | Ref Date: October 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
+### Latest Headlines (from NewsAPI)
+- Vedanta explores Rs 80,000 crore investment in Bengal for power, aluminium projects: Anil Agarwal | Source: The Times of India | Published: 2026-10-28T14:33:25Z [Link](https://economictimes.indiatimes.com/news/company/corporate-trends/vedanta-explores-rs-80000-crore-investment-in-bengal-for-power-aluminium-projects-anil-agarwal/articleshow/135269646.cms)
+
 ### Latest Headlines (from GNews)
-- Get up to 80% off on-the-go essentials with ABC Secret Savings | Source: KABC-TV | Published: 2026-10-27T15:48:22Z [Link](https://abc7.com/post/get-80-off-go-essentials-abc-secret-savings/19985407/)
-- C), MacBook Air, AirTag 2, more 9to5Mac | Source: 9to5Mac | Published: 2026-10-27T15:30:46Z [Link](https://9to5mac.com/2026/10/27/deals-airpods-apple-pencil-usb-c-macbook-air-airtag-2/)
-- Cola lifts profit forecast on international demand | Source: RTE.ie | Published: 2026-10-27T14:23:54Z [Link](https://www.rte.ie/news/business/2026/1027/1596977-coca-cola-quarterly-results/)
-- 50% US Aluminum Tariff Risks Backfiring as Canada Turns to Europe | Source: EUROPE SAYS | Published: 2026-10-27T13:52:32Z [Link](https://www.europesays.com/3335310/)
-- All the News That’s Fit: Fat burning breath, trending tiredness and deadly smog | Source: San Diego Union-Tribune | Published: 2026-10-27T12:30:11Z [Link](https://www.sandiegouniontribune.com/2026/10/27/all-the-news-thats-fit-fat-burning-breath-trending-tiredness-and-deadly-smog/)
-- Make your own fog chiller for an eerie Halloween yard | Source: USA TODAY | Published: 2026-10-27T11:21:25Z [Link](https://www.usatoday.com/story/life/problem-solved/2026/10/27/diy-fog-chiller-halloween/92395344007/)
-- Coca-Cola lifts profit forecast on international soda demand, flags higher costs | Source: Spokane Spokesman-Review | Published: 2026-10-27T11:01:00Z [Link](https://www.spokesman.com/stories/2026/oct/27/coca-cola-lifts-profit-forecast-on-international-s/)
-- Inside Doctor, Activist's Arrests as Odisha Cracks Down on Anti-Mining Protests | Source: The Quint | Published: 2026-10-27T10:33:10Z [Link](https://www.thequint.com/news/dr-randall-sequeira-arrested-as-odisha-tightens-grip-on-anti-mining-activism)
-- Top Diwali 2026 Muhurat stocks to buy: Axis Securities lists 9 shares for Samvat 2083 | Source: Livemint | Published: 2026-10-27T09:47:27Z [Link](https://www.livemint.com/market/stock-market-news/top-diwali-2026-muhurat-stocks-to-buy-axis-securities-lists-9-shares-for-samvat-2083-check-target-upside-11793090694908.html)
-- Meridian Energy courts electricity users offshore in Tiwai | Source: The New Zealand Herald | Published: 2026-10-27T02:00:00Z [Link](https://www.nzherald.co.nz/business/companies/energy/meridian-energy-courts-major-electricity-users-offshore-in-a-bid-to-strike-another-tiwai-type-of-deal-to-de-risk-new-investment/premium/URQJAY66LFHIPPPSQWQWCLPLBM/)
-- UBS Remains a Buy on Kaiser Aluminum (KALU) | Source: Markets Insider | Published: 2026-10-27T01:37:54Z [Link](https://markets.businessinsider.com/news/stocks/ubs-remains-a-buy-on-kaiser-aluminum-kalu-1036669659)
-- Diwali Muhurat Stock Picks 2026: Ashok Leyland, Eternal Among Axis Direct's Top Bets For Samvat 2083 | Source: NDTV Profit | Published: 2026-10-27T01:30:01Z [Link](https://www.ndtvprofit.com/markets/diwali-muhurat-stock-picks-2026-ashok-leyland-eternal-among-axis-directs-top-bets-for-samvat-2083-12239380)
+- Ford sees profit flattening as inflation, war take mounting toll on American car giant | Source: CNBC TV18 | Published: 2026-10-29T02:18:05Z [Link](https://www.cnbctv18.com/market/ford-sees-profit-flattening-as-inflation-war-take-mounting-toll-on-american-car-giant-20022008.htm)
+- Ford sees profit flattening as inflation, war take mounting toll | Source: Moneycontrol | Published: 2026-10-29T01:58:54Z [Link](https://www.moneycontrol.com/news/business/ford-sees-profit-flattening-as-inflation-war-take-mounting-toll-14062917.html)
+- Here's why Motilal Oswal sees 34% upside in Vedanta Aluminium despite cutting target price | Source: CNBC TV18 | Published: 2026-10-29T01:18:15Z [Link](https://www.cnbctv18.com/market/vedanta-aluminium-share-price-q2-results-motilal-oswal-sees-34-pc-upside-target-price-cut-buy-revenue-production-outlook-20021937.htm)
+- Ford’s third-quarter core profit ticks higher despite rising commodity costs | Source: The Globe and Mail | Published: 2026-10-28T20:50:43Z [Link](https://www.theglobeandmail.com/business/article-fords-third-quarter-core-profit-ticks-higher/)
+- Vedanta Group plans ₹80,000 crore investment in Bengal’s power and aluminium sector, chairman Anil Agarwal discusses proposal with CM Suvendu Adhikari at Nabanna | Source: Times of India | Published: 2026-10-28T20:08:00Z [Link](https://timesofindia.indiatimes.com/city/kolkata/vedanta-group-plans-80000-crore-investment-in-bengals-power-and-aluminium-sector-chairman-anil-agarwal-discusses-proposal-with-cm-suvendu-adhikari-at-nabanna/articleshow/135279625.cms)
+- Constellium: Q3 Earnings Snapshot | Source: WTOP | Published: 2026-10-28T18:36:25Z [Link](https://wtop.com/local/2026/10/constellium-q3-earnings-snapshot/)
+- Vedanta exploring Rs 80,000-cr investment in Bengal in power, aluminium: Anil Agarwal | Source: ThePrint | Published: 2026-10-28T18:15:22Z [Link](https://theprint.in/economy/vedanta-exploring-rs-80000-cr-investment-in-bengal-in-power-aluminium-anil-agarwal/3084582/)
+- Vedanta explores Rs 80,000 crore investment in West Bengal, says Anil Agarwal | Source: The Economic Times | Published: 2026-10-28T15:52:00Z [Link](https://economictimes.indiatimes.com/news/company/corporate-trends/vedanta-explores-rs-80000-crore-investment-in-west-bengal-says-anil-agarwal/articleshow/135271995.cms)
+- Vedanta exploring opportunities to invest ₹80,000 crore in West Bengal in power generation, aluminium smelter | Source: The Hindu Business Line | Published: 2026-10-28T15:37:10Z [Link](https://www.thehindubusinessline.com/companies/vedanta-exploring-opportunities-to-invest-80000-crore-in-west-bengal-in-power-generation-aluminium-smelter/article71637236.ece)
+- From hydrogen buses to nuclear power, green energy to drive Odisha’s next industrial wave: Vishal Dev | Source: Times of India | Published: 2026-10-28T15:35:00Z [Link](https://timesofindia.indiatimes.com/city/bhubaneswar/from-hydrogen-buses-to-nuclear-power-green-energy-to-drive-odishas-next-industrial-wave-vishal-dev/articleshow/135271601.cms)
+- Vedanta plans to assess ₹80,000-crore Bengal projects in power and aluminium, says Anil Agarwal | Source: Telegraph India | Published: 2026-10-28T15:03:24Z [Link](https://www.telegraphindia.com/business/vedanta-plans-to-assess-%e2%82%b980000-crore-bengal-projects-in-power-and-aluminium-says-anil-agarwal/cid/2186731)
+- Canada facing carbon tariff threat from European Union: internal documents | Source: EUROPE SAYS | Published: 2026-10-28T14:39:27Z [Link](https://www.europesays.com/3337556/)
