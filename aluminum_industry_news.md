@@ -1,5 +1,5 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-11-07 14:37:14`
+Last Updated (UTC): `2026-11-08 14:42:49`
 Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
@@ -11,6 +11,8 @@ Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
   - Status: Current-year monthly average cash settlement from Westmetall.
 
 ### Latest Headlines (from GNews)
+- Base metals: More Precious In Samvat 2082 | Source: The Hindu Business Line | Published: 2026-11-07T16:35:09Z [Link](https://www.thehindubusinessline.com/portfolio/personal-finance/base-metals-more-precious-in-samvat-2082/article71674916.ece)
+- Sanjeev Gupta repays Scottish Enterprise Dalzell Steel loan | Source: The Herald | Published: 2026-11-07T05:00:00Z [Link](https://www.heraldscotland.com/news/26707631.sanjeev-gupta-repays-scottish-enterprise-dalzell-steel-loan/)
 - Today’s Paper News | Source: The Hindu Business Line | Published: 2026-11-07T00:00:00Z [Link](https://www.thehindubusinessline.com/todays-paper/2026-11-07/bl_chennai/articleGO9GP3F7G-17191627.ece)
 - Hindalco earnings to stay steady even if aluminium prices fall, says MD Satish Pai; Q2 profit rises 59% | Source: The Economic Times | Published: 2026-11-06T19:11:00Z [Link](https://economictimes.indiatimes.com/industry/indl-goods/svs/metals-mining/hindalco-earnings-to-stay-steady-even-if-aluminium-prices-fall-says-md-satish-pai-q2-profit-rises-59/articleshow/135619018.cms)
 - Fall squash galette | Source: The Oregonian | Published: 2026-11-06T17:39:13Z [Link](https://www.oregonlive.com/nytcooking/2026/11/793393632-fall-squash-galette.html)
@@ -21,5 +23,3 @@ Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 - Hindalco flags coal supply constraints, sees 5% rise in aluminium costs | Source: Business Standard | Published: 2026-11-06T13:24:53Z [Link](https://www.business-standard.com/companies/news/hindalco-flags-coal-supply-constraints-sees-5-rise-in-aluminium-costs-126110601675_1.html)
 - Axis Securities Muhurat Trading Picks: 9 Top Stocks To Watch Out For In Samvat 2083 Amid Market Volatility | Source: Outlook Money | Published: 2026-11-06T12:18:25Z [Link](https://www.outlookmoney.com/invest/axis-securities-muhurat-trading-picks-top-9-stocks-to-watch-for-samvat-2083)
 - Hindalco Industries Q2 Results: Net up 59% on firm metal prices | Source: The Hindu Business Line | Published: 2026-11-06T11:32:03Z [Link](https://www.thehindubusinessline.com/companies/hindalco-industries-q2-net-up-59-at-7533-crore-on-firm-metal-prices/article71674136.ece)
-- Nippon Steel swings to net profit in H1 FY 2026-27, raises earnings forecast amid challenging market conditions | Source: SteelOrbis | Published: 2026-11-06T11:14:20Z [Link](https://www.steelorbis.com/steel-news/latest-news/nippon-steel-swings-to-net-profit-in-h1-fy-2026-27-raises-earnings-forecast-amid-challenging-market-conditions-1488851.htm)
-- Turning 100 in a trade war, a Quebec aluminum town makes a wish | Source: The Globe and Mail | Published: 2026-11-06T11:00:00Z [Link](https://www.theglobeandmail.com/canada/article-turning-100-in-a-trade-war-a-quebec-aluminum-town-makes-a-wish/)
