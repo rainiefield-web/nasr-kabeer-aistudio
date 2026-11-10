@@ -1,25 +1,25 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-11-08 14:42:49`
+Last Updated (UTC): `2026-11-10 16:00:51`
 Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,117.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-11-06 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+- LME Aluminium Cash-Settlement: `$3,147.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-11-09 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,117.80/t` | Symbol: `LME Al Cash Avg` | Ref Date: November 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+- Monthly Average Cash-Settlement: `$3,124.71/t` | Symbol: `LME Al Cash Avg` | Ref Date: November 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
 ### Latest Headlines (from GNews)
-- Base metals: More Precious In Samvat 2082 | Source: The Hindu Business Line | Published: 2026-11-07T16:35:09Z [Link](https://www.thehindubusinessline.com/portfolio/personal-finance/base-metals-more-precious-in-samvat-2082/article71674916.ece)
-- Sanjeev Gupta repays Scottish Enterprise Dalzell Steel loan | Source: The Herald | Published: 2026-11-07T05:00:00Z [Link](https://www.heraldscotland.com/news/26707631.sanjeev-gupta-repays-scottish-enterprise-dalzell-steel-loan/)
-- Today’s Paper News | Source: The Hindu Business Line | Published: 2026-11-07T00:00:00Z [Link](https://www.thehindubusinessline.com/todays-paper/2026-11-07/bl_chennai/articleGO9GP3F7G-17191627.ece)
-- Hindalco earnings to stay steady even if aluminium prices fall, says MD Satish Pai; Q2 profit rises 59% | Source: The Economic Times | Published: 2026-11-06T19:11:00Z [Link](https://economictimes.indiatimes.com/industry/indl-goods/svs/metals-mining/hindalco-earnings-to-stay-steady-even-if-aluminium-prices-fall-says-md-satish-pai-q2-profit-rises-59/articleshow/135619018.cms)
-- Fall squash galette | Source: The Oregonian | Published: 2026-11-06T17:39:13Z [Link](https://www.oregonlive.com/nytcooking/2026/11/793393632-fall-squash-galette.html)
-- Boots slashes Lynx gift set with free bag to £17 in Black Friday sale | Source: Liverpool Echo | Published: 2026-11-06T14:50:16Z [Link](https://www.liverpoolecho.co.uk/whats-on/shopping/boots-slashes-lynx-gift-set-34873451)
-- Hindalco records highest-ever PAT in Q2 at Rs 7,533 cr | Source: The Financial Express | Published: 2026-11-06T14:48:13Z [Link](https://www.financialexpress.com/business/industry-hindalco-records-highest-ever-pat-in-q2-at-rs-7533-cr-4378809/)
-- Earnings Central: From Hindalco's record quarter to Thermax's 17% fall: Friday's Q2 wrap | Source: CNBC TV18 | Published: 2026-11-06T14:40:19Z [Link](https://www.cnbctv18.com/market/earnings/earnings-central-hindalco-voltas-siemens-mphasis-gland-pharma-thermax-titan-airtel-20029201.htm)
-- Hindalco sees consolidated debt peak at ₹80,000 crore, targets Novelis leverage at 2.5x by FY31 | Source: The Hindu Business Line | Published: 2026-11-06T14:02:42Z [Link](https://www.thehindubusinessline.com/companies/hindalco-sees-consolidated-debt-peak-at-80000-crore-targets-novelis-leverage-at-25x-by-fy31/article71674345.ece)
-- Hindalco flags coal supply constraints, sees 5% rise in aluminium costs | Source: Business Standard | Published: 2026-11-06T13:24:53Z [Link](https://www.business-standard.com/companies/news/hindalco-flags-coal-supply-constraints-sees-5-rise-in-aluminium-costs-126110601675_1.html)
-- Axis Securities Muhurat Trading Picks: 9 Top Stocks To Watch Out For In Samvat 2083 Amid Market Volatility | Source: Outlook Money | Published: 2026-11-06T12:18:25Z [Link](https://www.outlookmoney.com/invest/axis-securities-muhurat-trading-picks-top-9-stocks-to-watch-for-samvat-2083)
-- Hindalco Industries Q2 Results: Net up 59% on firm metal prices | Source: The Hindu Business Line | Published: 2026-11-06T11:32:03Z [Link](https://www.thehindubusinessline.com/companies/hindalco-industries-q2-net-up-59-at-7533-crore-on-firm-metal-prices/article71674136.ece)
+- Taylor Swift and Travis Kelce find allies as war over Ohio mansion heats up | Source: Page Six | Published: 2026-11-09T23:17:20Z [Link](https://pagesix.com/2026/11/09/entertainment/taylor-swift-and-travis-kelce-find-allies-as-war-over-ohio-mansion-heats-up/)
+- Europe’s Raw Material Future Lies Next Door, If It Does Not Repeat the Past | Source: OilPrice | Published: 2026-11-09T20:00:00Z [Link](https://oilprice.com/Energy/Energy-General/Europes-Raw-Material-Future-Lies-Next-Door-If-It-Does-Not-Repeat-the-Past.html)
+- DGTR begins anti-dumping probe against certain aluminium imports from China, others | Source: The Economic Times | Published: 2026-11-09T15:44:00Z [Link](https://economictimes.indiatimes.com/news/economy/foreign-trade/dgtr-begins-anti-dumping-probe-against-certain-aluminium-imports-from-china-others/articleshow/135686745.cms)
+- Buy Hindalco Industries: target of Rs 1204: ICICI Securities | Source: Moneycontrol | Published: 2026-11-09T08:31:43Z [Link](https://www.moneycontrol.com/news/business/earnings/buy-hindalco-industries-target-of-rs-1204-icici-securities-14075403.html)
+- Copper, Novelis recovery to cushion Hindalco as aluminium prices ease: MD Satish Pai | Source: CNBC TV18 | Published: 2026-11-09T08:07:53Z [Link](https://www.cnbctv18.com/market/earnings/hindalco-copper-novelis-recovery-aluminium-prices-results-boardroom-alpha-article-20030185.htm)
+- NALCO targets Dec end production for 5th stream refinery | Source: scanx.trade | Published: 2026-11-09T06:49:19Z [Link](https://scanx.trade/stock-market-news/companies/nalco-q2fy27-results-net-profit-up-28-yoy-1-835-crore/55181090)
+- Hindalco trades higher after record Q2; analysts hold Buy ratings despite target cuts | Source: The Hindu Business Line | Published: 2026-11-09T06:49:04Z [Link](https://www.thehindubusinessline.com/markets/stock-markets/hindalco-trades-higher-after-record-q2-analysts-hold-buy-ratings-despite-target-cuts/article71681663.ece)
+- Buy Hindalco; target of Rs 1180: Motilal Oswal | Source: Moneycontrol | Published: 2026-11-09T06:40:46Z [Link](https://www.moneycontrol.com/news/business/earnings/buy-hindalco-target-of-rs-1180-motilal-oswal-14075292.html)
+- Citi Raises Nifty 50 Target To 28,000; Adds Bajaj Finance To Its Top Picks | Source: NDTV Profit | Published: 2026-11-09T06:38:40Z [Link](https://www.ndtvprofit.com/markets/citi-raises-nifty-50-target-to-28-000-adds-bajaj-finance-to-its-top-picks-12302351)
+- Aluminum vs Wood Fence Cost: GD Aluminum Releases 10-Year Total Ownership Study for Commercial Bidders | Source: TechBullion | Published: 2026-11-09T06:35:06Z [Link](https://techbullion.com/aluminum-vs-wood-fence-cost-gd-aluminum-releases-10-year-total-ownership-study-for-commercial-bidders/)
+- I ditched my other tracking cards for this one that looks incognito in my wallet - here’s why | Source: Tom's Guide | Published: 2026-11-09T06:30:00Z [Link](https://www.tomsguide.com/phones/i-ditched-my-other-tracking-cards-for-this-one-that-looks-incognito-in-my-wallet-heres-why)
+- Nalco tops ICICI Securities’ aluminium picks; Tata Steel remains a strong buy | Source: CNBC TV18 | Published: 2026-11-09T06:13:51Z [Link](https://www.cnbctv18.com/market/stocks/nalco-top-aluminium-pick-tata-steel-strong-buy-icici-securities-alpha-article-20030123.htm)
