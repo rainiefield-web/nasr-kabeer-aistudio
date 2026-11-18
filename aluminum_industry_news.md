@@ -1,24 +1,23 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-11-17 17:18:45`
+Last Updated (UTC): `2026-11-18 16:53:38`
 Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
 
 ### Latest Aluminum Price Data
-- LME Aluminium Cash-Settlement: `$3,332.00/t` | Symbol: `LME Al Cash` | Ref Date: 2026-11-16 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
+- LME Aluminium Cash-Settlement: `$3,060.50/t` | Symbol: `LME Al Cash` | Ref Date: 2026-11-17 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
 - Monthly Average Cash-Settlement: `$3,149.58/t` | Symbol: `LME Al Cash Avg` | Ref Date: November 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
 ### Latest Headlines (from GNews)
+- Tata Steel, SAIL, JSW Steel, Hindalco, Nalco, NMDC: Check price targets for top metal stocks post Q2 | Source: Business Today | Published: 2026-11-18T04:14:35Z [Link](https://www.businesstoday.in/markets/stocks/story/tata-steel-sail-jsw-steel-hindalco-nalco-nmdc-check-price-targets-for-top-metal-stocks-post-q2-568056-2026-11-18)
+- These Thanksgiving desserts are guaranteed to steal the show | Source: The Denver Post | Published: 2026-11-17T19:59:20Z [Link](https://www.denverpost.com/2026/11/17/these-thanksgiving-desserts-are-guaranteed-to-steal-the-show/)
+- In 2015, China replaced 20 cm of lime-stabilised soil beneath a 4.9-km expressway section with modified aluminium-industry waste; field tests measured a resilient modulus above 90 MPa and core samples | Source: Times of India | Published: 2026-11-17T16:00:00Z [Link](https://timesofindia.indiatimes.com/world/rest-of-world/in-2015-china-replaced-20-cm-of-lime-treated-soil-beneath-a-4-9-km-expressway-section-with-modified-aluminium-industry-waste-field-tests-measured-over-90-mpa-modulus-and-2-4-mpa-core-strength/articleshow/135880587.cms)
+- Your First Real Suitcase: Give the Gift of New Journeys with LEVEL8 Voyageur | Source: The Manila Times | Published: 2026-11-17T13:06:16Z [Link](https://www.manilatimes.net/2026/11/17/tmt-newswire/globenewswire/your-first-real-suitcase-give-the-gift-of-new-journeys-with-level8-voyageur/2472014)
+- Remal strengthens aluminium billet capabilities aligned with India's manufacturing ambitions | Source: The Tribune | Published: 2026-11-17T11:59:48Z [Link](https://www.tribuneindia.com/news/business/remal-strengthens-aluminium-billet-capabilities-aligned-with-indias-manufacturing-ambitions-2-2/)
+- Why the Pentagon is hunting for gallium in a mountain of red mud | Source: Scientific American | Published: 2026-11-17T11:00:00Z [Link](https://www.scientificamerican.com/article/why-the-pentagon-is-hunting-for-gallium-in-a-mountain-of-red-mud/)
+- China used 17,000 tonnes of treated red mud in a 4.9-km expressway subgrade trial; field tests measured over 90 MPa resilient modulus and under 1 mm FWD deflection | Source: Times of India | Published: 2026-11-17T07:50:00Z [Link](https://timesofindia.indiatimes.com/world/rest-of-world/china-used-17000-tonnes-of-treated-red-mud-in-a-4-9-km-expressway-subgrade-trial-field-tests-measured-over-90-mpa-resilient-modulus-and-under-1-mm-fwd-deflection/articleshow/135881544.cms)
+- NZ sharemarket closes flat but heads for best month in 18 months - Market close | Source: The New Zealand Herald | Published: 2026-11-17T05:30:54Z [Link](https://www.nzherald.co.nz/business/markets/shares/nz-sharemarket-closes-flat-but-heads-for-best-month-in-18-months-market-close/premium/IFQP323DNFHC3HFIWGS6LOKVHE/)
 - ROI-Crunch time for aluminium as buyers tap metal of last resort: Andy Home | Source: Devdiscourse | Published: 2026-11-17T01:00:34Z [Link](https://www.devdiscourse.com/article/international/4007838-roi-crunch-time-for-aluminium-as-buyers-tap-metal-of-last-resort-andy-home)
 - Up: ASX set to slide as Wall Street rout deepens and commodities tumble | Source: EUROPE SAYS | Published: 2026-11-17T00:10:11Z [Link](https://www.europesays.com/3380300/)
-- ARKANSAS SIGHTSEEING: Historic Benton shares its incorporation with Arkansas’ statehood | Source: Arkansas Online | Published: 2026-11-16T21:00:00Z [Link](https://www.arkansasonline.com/news/2026/nov/16/arkansas-sightseeing-historic-benton-shares-its/)
-- Rio Tinto power deal enables Tiwai Point fourth potline restart at aluminium smelter | Source: The New Zealand Herald | Published: 2026-11-16T20:19:56Z [Link](https://www.nzherald.co.nz/business/companies/energy/contact-energy-rio-tinto-power-deal-enables-tiwai-point-fourth-potline-restart-at-aluminium-smelter/OANRPOVADJCSNATV3FBME6CPFQ/)
-- 34 Products For Hosting Thanksgiving That Deserve Their Own Darn Parade | Source: HuffPost | Published: 2026-11-16T11:00:19Z [Link](https://www.huffpost.com/entry/products-for-hosting-thanksgiving-ud_l_6af4c833e4b01d00edaa17c8)
-- BJD MP Sasmit Patra questions NALCO CMD over proposed 50:50 joint venture with NLCIL | Source: Devdiscourse | Published: 2026-11-16T07:34:27Z [Link](https://www.devdiscourse.com/article/business/4007365-bjd-mp-sasmit-patra-questions-nalco-cmd-over-proposed-5050-joint-venture-with-nlcil)
-- Hindalco shares fall 1% after Novelis announces $265-million sale of China units | Source: Moneycontrol | Published: 2026-11-16T03:59:57Z [Link](https://www.moneycontrol.com/news/business/markets/hindalco-shares-fall-1-after-novelis-announces-265-million-sale-of-china-units-14080784.html)
-- Hindalco’s Novelis to sell two China businesses for $265 million | Source: The Financial Express | Published: 2026-11-16T03:38:05Z [Link](https://www.financialexpress.com/business/industry-hindalcos-novelis-to-sell-two-china-businesses-for-265-million-4385501/)
-- Hindalco shares in focus as Novelis to sell China subsidiaries for $265 million | Source: Business Today | Published: 2026-11-16T03:31:49Z [Link](https://www.businesstoday.in/markets/stocks/story/hindalco-shares-in-focus-as-novelis-to-sell-china-subsidiaries-for-265-million-567545-2026-11-16)
-- GIFT Nifty up 97 points: Hindalco, Inox Green, Texmaco Rail, Hero Motors among stocks in focus | Source: Business Today | Published: 2026-11-16T03:20:17Z [Link](https://www.businesstoday.in/markets/stocks/story/gift-nifty-up-97-points-hindalco-inox-green-texmaco-rail-hero-motors-among-stocks-in-focus-567541-2026-11-16)
-- Stocks to watch: Ashok Leyland, BEL, Hero Moto, Coal India, Tata Motors PV | Source: Business Standard | Published: 2026-11-16T02:30:10Z [Link](https://www.business-standard.com/markets/news/stocks-to-watch-ashok-leyland-bel-hero-moto-coal-india-jupiter-wagons-126111600057_1.html)
