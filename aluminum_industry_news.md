@@ -1,5 +1,5 @@
 # Aluminum Global Intelligence Report
-Last Updated (UTC): `2026-11-22 15:51:59`
+Last Updated (UTC): `2026-11-23 19:45:24`
 Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 
 ## Global English Report
@@ -7,19 +7,17 @@ Data Status: Price=OK | NewsAPI=EMPTY/FAIL | GNews=OK | GoogleRSS=SKIPPED
 ### Latest Aluminum Price Data
 - LME Aluminium Cash-Settlement: `$3,184.50/t` | Symbol: `LME Al Cash` | Ref Date: 2026-11-20 | Time: Cash settlement | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
   - Status: Latest published LME aluminium cash settlement from Westmetall.
-- Monthly Average Cash-Settlement: `$3,145.30/t` | Symbol: `LME Al Cash Avg` | Ref Date: November 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
+- Monthly Average Cash-Settlement: `$3,148.81/t` | Symbol: `LME Al Cash Avg` | Ref Date: November 2026 | Time: Monthly average | Source: Westmetall [Link](https://www.westmetall.com/en/markdaten.php?action=averages&field=LME_Al_cash)
   - Status: Current-year monthly average cash settlement from Westmetall.
 
 ### Latest Headlines (from GNews)
+- Gold, Copper, Zinc, Aluminium: Morgan Stanley's outlook on key metals | Source: Business Standard | Published: 2026-11-23T04:55:40Z [Link](https://www.business-standard.com/markets/news/gold-copper-zinc-aluminium-morgan-stanley-s-outlook-on-key-metals-126112300235_1.html)
+- Stock Picks Today: Bharat Forge, Bandhan Bank, Polycab, Hindalco, And More On Brokerages' Radar | Source: NDTV Profit | Published: 2026-11-23T01:12:51Z [Link](https://www.ndtvprofit.com/markets/stock-picks-today-bharat-forge-bandhan-bank-polycab-india-hindalco-industries-ajax-engineering-piramal-finance-and-more-on-brokerages-radar-12363778)
+- Aluminium Makers Seek Customs Duty Waiver to Cut Costs, Boost Competitiveness | Source: Lokmat Times | Published: 2026-11-22T16:44:05Z [Link](https://www.lokmattimes.com/national/aluminium-makers-seek-customs-duty-waiver-to-cut-costs-boost-competitiveness-a001-w02/)
+- No Refurb Catch: the New Apple Watch SE 3 Is Selling at No-Name Smartwatch Prices | Source: Gizmodo | Published: 2026-11-22T14:55:17Z [Link](https://gizmodo.com/no-refurb-catch-the-new-apple-watch-se-3-is-selling-at-no-name-smartwatch-prices-2000843620)
+- I’ve been using the Apple Watch Series 11 for a year, and I’d recommend buying it over the Series 12 on Black Friday | Source: TechRadar | Published: 2026-11-22T14:00:00Z [Link](https://www.techradar.com/health-fitness/fitness-trackers/ive-been-using-the-apple-watch-series-11-for-a-year-and-id-recommend-buying-it-over-the-series-12-on-black-friday)
+- Ahead of FY28 budget, aluminium product makers seek duty | Source: Moneycontrol | Published: 2026-11-22T09:08:58Z [Link](https://www.moneycontrol.com/news/business/economy/ahead-of-fy28-budget-aluminium-product-makers-seek-duty-free-imports-for-primary-metal-14086530.html)
+- Union Budget 2028: Aluminium product makers seek duty | Source: The Economic Times | Published: 2026-11-22T06:13:22Z [Link](https://economictimes.indiatimes.com/industry/indl-goods/svs/metals-mining/union-budget-2028-aluminium-product-makers-seek-duty-free-imports-for-primary-metal/articleshow/136068213.cms)
+- Ahead of FY28 budget, aluminium product makers seek duty-free imports for primary metal | Source: The Hindu Business Line | Published: 2026-11-22T05:50:23Z [Link](https://www.thehindubusinessline.com/markets/commodities/ahead-of-fy28-budget-aluminium-product-makers-seek-duty-free-imports-for-primary-metal/article71730687.ece)
+- Aluminium product makers seek zero import duty on raw metal ahead of Budget | Source: Business Standard | Published: 2026-11-22T05:46:04Z [Link](https://www.business-standard.com/industry/news/aluminium-product-makers-seek-zero-import-duty-on-raw-metal-ahead-of-budget-126112200167_1.html)
 - U.S. Democrats can’t save us from Trump | Source: Toronto Sun | Published: 2026-11-21T23:00:18Z [Link](https://torontosun.com/opinion/editorials/u-s-democrats-congress-trump-tariffs-carney-canada)
-- Hindalco vs NALCO vs Vedanta Aluminium vs Hindustan Zinc: Which metal stocks to buy for good returns? Target, SL | Source: Livemint | Published: 2026-11-21T09:47:13Z [Link](https://www.livemint.com/market/stock-market-news/hindalco-vs-nalco-vs-vedanta-aluminium-vs-hindustan-zinc-which-metal-stocks-to-buy-for-good-returns-target-sl-11795248944730.html)
-- Investing in railways - the best stocks to buy | Source: Money Week | Published: 2026-11-21T09:00:00Z [Link](https://moneyweek.com/investments/investing-in--railways-best-railway-stocks)
-- Rehire retirees to run old systems during cyber attacks, bosses told | Source: The Telegraph | Published: 2026-11-21T08:00:00Z [Link](https://www.telegraph.co.uk/news/2026/11/21/rehire-retirees-run-old-systems-cyber-attacks-internet-prep/)
-- BRZOSTEK REAL ESTATE - Ad from 2026/11/21 | Source: Auburn Pub | Published: 2026-11-21T05:00:00Z [Link](https://auburnpub.com/ads/print_ads/print_ads/real_estate/pdfdisplayad_38cd535c-d30b-5eaa-843b-4474c09e2e62.html)
-- India Inc must summon the courage to challenge government policy openly | Source: Business Standard | Published: 2026-11-21T04:00:09Z [Link](https://www.business-standard.com/opinion/columns/india-inc-must-summon-the-courage-to-challenge-government-policy-openly-126112001418_1.html)
-- India Inc doesn't dare speak up to Modi. But they whisper dark things on the sidelines | Source: ThePrint | Published: 2026-11-21T03:00:46Z [Link](https://theprint.in/national-interest/modi-corporate-india-inc-taxes/3104648/)
-- India may impose duties on cheap aluminium imports: 5 stocks that could benefit | Source: The Financial Express | Published: 2026-11-20T23:55:00Z [Link](https://www.financialexpress.com/market/stock-insights/india-may-impose-duties-on-cheap-aluminium-imports-5-stocks-that-could-benefit/4389928/)
-- Covington-based concert promoter is expanding to Nashville | Source: Baton Rouge Advocate | Published: 2026-11-20T15:45:00Z [Link](https://www.theadvocate.com/baton_rouge/news/business/promotions-new-hires-avala-jones-walker-doussan-nest-health/article_bb335ca9-16a6-4b68-a718-5d3d9a8b4d50.html)
-- Smelter report presented by Inola's environmental consultant | Source: Tulsa World | Published: 2026-11-20T14:50:00Z [Link](https://tulsaworld.com/news/state-regional/business/article_eb90808f-0908-4f75-86b4-034ec6020041.html)
-- Win Thanksgiving with this Barq's Peanut Pie | Source: Chicago Tribune | Published: 2026-11-20T11:45:10Z [Link](https://www.chicagotribune.com/2026/11/20/win-thanksgiving-with-barqs-peanut-pie/)
-- Scottish Government urges UK intervention at Liberty Steel Dalzell amid administration fears | Source: SteelOrbis | Published: 2026-11-20T11:39:13Z [Link](https://www.steelorbis.com/steel-news/latest-news/scottish-government-urges-uk-intervention-at-liberty-steel-dalzell-amid-administration-fears-1492504.htm)
